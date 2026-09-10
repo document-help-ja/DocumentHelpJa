@@ -1,692 +1,1320 @@
 <!DOCTYPE html>
-<html lang="en-JM">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document Help JA | Jamaican Government Paperwork, Simplified</title>
-<meta name="description" content="Clear, step-by-step guidance for Jamaican passports, driver's licences, and vital records — built for the diaspora and local citizens navigating PICA, TAJ, and RGD.">
-<link rel="canonical" href="https://documenthelp.ja/">
-<style>
-/* =========================================================================
-   DOCUMENT HELP JA — UNIFIED STYLESHEET
-   Zero-dependency, mobile-first. All values driven by CSS custom properties.
-   ========================================================================= */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laura Clarke Administrative Services</title>
+  <meta name="description" content="Private administrative assistance for Jamaican documents, local handling, and application guidance.">
+  <meta name="theme-color" content="#0F2537">
+  
+  <style>
+    :root {
+      /* High-Contrast Brand Palette */
+      --navy: #0F2537;
+      --navy-hover: #173752;
+      --gold: #D4AF37;
+      --gold-hover: #C29F2B;
+      --bg-page: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --border-subtle: #E2E8F0;
+      --radius: 8px;
+    }
 
-/* ---------- 1. DESIGN TOKENS ---------- */
-:root{
-  /* Color */
-  --navy:            #0A2540;   /* primary brand — headings, header, footer  */
-  --navy-deep:        #0F172A;   /* darkest surface — footer bg, overlays     */
-  --navy-soft:        #12345c;   /* hover state for navy surfaces             */
-  --teal:             #00D4B2;   /* primary accent / CTA                      */
-  --teal-deep:        #00b89b;   /* CTA hover                                  */
-  --gold:             #EAA400;   /* secondary accent — rescue boxes, warnings */
-  --gold-tint:        #FEF3DC;   /* gold background tint                      */
-  --teal-tint:        #E3FBF7;   /* teal background tint                      */
-  --bg:               #F8FAFC;   /* off-white section background              */
-  --white:            #FFFFFF;   /* card background                           */
-  --ink:              #0F172A;   /* body heading text                         */
-  --slate:            #475569;   /* body copy                                 */
-  --slate-soft:       #64748B;   /* secondary/meta text                       */
-  --line:             #E2E8F0;   /* borders, dividers                         */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-  /* Typography */
-  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --lh-body: 1.7;
-  --lh-heading: 1.25;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  /* Spacing scale (mobile-first; overridden at breakpoints below) */
-  --space-section: 24px;      /* vertical section padding, mobile   */
-  --space-card-gap: 20px;     /* gap between stacked cards, mobile  */
-  --space-container: 20px;    /* container side padding, mobile     */
+    a { text-decoration: none; color: inherit; }
+    h1, h2, h3, h4 { color: var(--navy); margin-top: 0; line-height: 1.2; }
+    p { margin-top: 0; }
+    
+    .container {
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-  /* Shape */
-  --radius: 12px;
-  --radius-sm: 8px;
-  --radius-lg: 20px;
-  --shadow-card: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.04);
-  --shadow-card-hover: 0 10px 20px -6px rgba(10,37,64,0.12);
+    section { padding: 80px 0; }
 
-  /* Layout */
-  --max-width: 1160px;
-  --touch-target: 48px;
-}
+    /* =========================================
+       1. STICKY HEADER
+       ========================================= */
+    header {
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid var(--gold);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 70px;
+    }
+    
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #FFFFFF;
+    }
+    .brand-sub {
+      font-size: 0.72rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .nav-links a { font-weight: 600; font-size: 0.95rem; color: #E2E8F0; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
 
-@media (min-width: 768px){
-  :root{
-    --space-section: 64px;
-    --space-card-gap: 28px;
-    --space-container: 32px;
-  }
-}
-@media (min-width: 1100px){
-  :root{
-    --space-section: 96px;
-  }
-}
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--navy);
+      color: #fff !important;
+      border-radius: var(--radius);
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn:hover { background: var(--navy-hover); transform: translateY(-1px); }
 
-/* ---------- 2. RESET ---------- */
-*, *::before, *::after{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
-body{
-  margin: 0;
-  font-family: var(--font-sans);
-  color: var(--slate);
-  background: var(--bg);
-  line-height: var(--lh-body);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-img{ max-width: 100%; display: block; }
-a{ color: inherit; text-decoration: none; }
-ul, ol{ margin: 0; padding: 0; list-style: none; }
-button{ font-family: inherit; }
+    /* =========================================
+       2. HERO SECTION
+       ========================================= */
+    .hero-section {
+      padding: 90px 0 80px;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
 
-h1, h2, h3, h4{
-  color: var(--ink);
-  line-height: var(--lh-heading);
-  margin: 0 0 16px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-h1{ font-size: clamp(1.9rem, 3.2vw, 2.65rem); }
-h2{ font-size: clamp(1.5rem, 2.4vw, 2rem); }
-h3{ font-size: 1.2rem; }
-p{ margin: 0 0 16px; }
-p:last-child{ margin-bottom: 0; }
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
-/* Reduced motion respect */
-@media (prefers-reduced-motion: reduce){
-  html{ scroll-behavior: auto; }
-  *{ animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-}
+    .hero-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
 
-/* Focus states — never remove, only restyle */
-a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible{
-  outline: 3px solid var(--teal);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
-}
+    .hero-title {
+      font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.35;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
 
-/* ---------- 3. LAYOUT PRIMITIVES ---------- */
-.container{
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--space-container);
-}
-.section{ padding: var(--space-section) 0; }
-.section-alt{ background: var(--bg); }
-.section-white{ background: var(--white); }
-.section-navy{ background: var(--navy); color: #cbd5e1; }
-.section-navy h2, .section-navy h3{ color: var(--white); }
+    .hero-description {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 500px;
+    }
 
-.eyebrow{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--teal-deep);
-  margin-bottom: 12px;
-}
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-.section-heading{ max-width: 640px; margin: 0 0 40px; }
-.section-heading.center{ margin-left: auto; margin-right: auto; text-align: center; }
-.section-heading p{ font-size: 1.05rem; color: var(--slate-soft); }
+    .btn-secondary-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      transition: color 0.2s;
+    }
+    .btn-secondary-link:hover { color: var(--gold); }
 
-.grid{ display: grid; gap: var(--space-card-gap); }
-.grid-2{ grid-template-columns: 1fr; }
-.grid-3{ grid-template-columns: 1fr; }
-@media (min-width: 700px){
-  .grid-2{ grid-template-columns: 1fr 1fr; }
-  .grid-3{ grid-template-columns: repeat(3, 1fr); }
-}
+    .hero-visual-frame {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(15, 37, 55, 0.05);
+      background: linear-gradient(rgba(15, 37, 55, 0.2), rgba(15, 37, 55, 0.4)),
+                  url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+    }
 
-/* ---------- 4. HEADER / NAV ---------- */
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
-}
-.nav{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 72px;
-}
-.brand{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  font-size: 1.05rem;
-  color: var(--navy);
-}
-.brand-mark{
-  width: 36px; height: 36px;
-  border-radius: var(--radius-sm);
-  background: var(--navy);
-  color: var(--teal);
-  display: grid;
-  place-items: center;
-  font-family: var(--font-sans);
-  font-weight: 800;
-  flex: none;
-}
-.nav-links{
-  display: none;
-  align-items: center;
-  gap: 28px;
-}
-.nav-links a{
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--slate);
-}
-.nav-links a:hover{ color: var(--navy); }
-.nav-cta{ display: none; }
-.nav-toggle{
-  width: var(--touch-target);
-  height: var(--touch-target);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  background: var(--white);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-}
-.nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
-  display: block; width: 18px; height: 2px; background: var(--navy); position: relative;
-}
-.nav-toggle span::before{ content:""; position:absolute; top:-6px; width:18px; height:2px; background:var(--navy); }
-.nav-toggle span::after{ content:""; position:absolute; top:6px; width:18px; height:2px; background:var(--navy); }
+    .hero-overlay-card {
+      background: rgba(15, 37, 55, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 20px;
+      color: #FFFFFF;
+      width: 100%;
+    }
 
-.mobile-nav{
-  border-top: 1px solid var(--line);
-  background: var(--white);
-}
-.mobile-nav[hidden]{ display: none; }
-.mobile-nav a{
-  display: block;
-  padding: 16px var(--space-container);
-  font-weight: 600;
-  color: var(--navy);
-  border-bottom: 1px solid var(--line);
-  min-height: var(--touch-target);
-  display: flex;
-  align-items: center;
-}
+    .hero-overlay-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #E2E8F0;
+    }
 
-@media (min-width: 900px){
-  .nav-links{ display: flex; }
-  .nav-cta{ display: inline-flex; }
-  .nav-toggle{ display: none; }
-}
+    .hero-overlay-card strong {
+      color: var(--gold);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
 
-/* ---------- 5. BUTTONS ---------- */
-.btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: var(--touch-target);
-  padding: 0 28px;
-  border-radius: var(--radius-sm);
-  font-weight: 700;
-  font-size: 0.98rem;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
-  white-space: nowrap;
-}
-.btn-primary{
-  background: var(--teal);
-  color: var(--navy-deep);
-}
-.btn-primary:hover{ background: var(--teal-deep); transform: translateY(-2px); }
-.btn-secondary{
-  background: transparent;
-  border-color: var(--navy);
-  color: var(--navy);
-}
-.btn-secondary:hover{ background: var(--navy); color: var(--white); }
-.btn-gold{
-  background: var(--gold);
-  color: var(--navy-deep);
-}
-.btn-gold:hover{ filter: brightness(0.94); }
-.btn-block{ width: 100%; }
+    /* =========================================
+       3. CORE SERVICES GRID & MODAL OVERLAY
+       ========================================= */
+    #services {
+      background: #F1F5F9;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    
+    .section-header { text-align: center; margin-bottom: 50px; max-width: 600px; margin-inline: auto; }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 24px;
+    }
 
-/* ---------- 6. CARDS ---------- */
-.card{
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-card);
-  border: 1px solid var(--line);
-  padding: 28px;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-a.card:hover, .card.is-interactive:hover{
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-3px);
-}
-.card-icon{
-  width: 48px; height: 48px;
-  border-radius: var(--radius-sm);
-  background: var(--teal-tint);
-  color: var(--navy);
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  margin-bottom: 16px;
-  flex: none;
-}
-.card h3{ margin-bottom: 8px; }
-.card p{ color: var(--slate); font-size: 0.96rem; }
-.card-link{
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 16px;
-  font-weight: 700;
-  color: var(--navy);
-  font-size: 0.92rem;
-}
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-top: 4px solid var(--gold);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 15px rgba(15, 37, 55, 0.04);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-/* ---------- 7. CALLOUT / RESCUE / STEP-0 BOXES ---------- */
-.callout{
-  border-radius: var(--radius);
-  border-left: 4px solid var(--teal);
-  background: var(--teal-tint);
-  padding: 24px 28px;
-  margin: 28px 0;
-}
-.callout h4{
-  margin: 0 0 8px;
-  font-size: 1.02rem;
-  color: var(--ink);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.callout p{ color: var(--slate); font-size: 0.96rem; }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(15, 37, 55, 0.08);
+    }
 
-/* Step 0 / prerequisite callouts */
-.callout-step0{
-  border-left-color: var(--navy);
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-left-width: 4px;
-  box-shadow: var(--shadow-card);
-}
-.callout-step0 h4{ color: var(--navy); }
+    .card h3 {
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
 
-/* Rescue box — high-contrast CTA (Tally / Calendly style hand-off) */
-.rescue-box{
-  border-radius: var(--radius-lg);
-  background: var(--navy);
-  color: var(--white);
-  padding: 32px;
-  border-left: 6px solid var(--gold);
-  margin: 32px 0;
-}
-.rescue-box h4{
-  color: var(--white);
-  font-size: 1.15rem;
-  margin-bottom: 8px;
-}
-.rescue-box p{ color: #cbd5e1; margin-bottom: 20px; }
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
 
-/* Warning / important-detail tint (gold) */
-.callout-warning{
-  border-left-color: var(--gold);
-  background: var(--gold-tint);
-}
-.callout-warning h4{ color: #7a5300; }
+    .btn-expand-trigger {
+      background: transparent;
+      border: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
 
-/* Video / deep-dive placeholder */
-.video-placeholder{
-  position: relative;
-  border-radius: var(--radius);
-  background: var(--navy-deep);
-  aspect-ratio: 16/9;
-  display: grid;
-  place-items: center;
-  color: var(--white);
-  overflow: hidden;
-  margin: 24px 0;
-  border: 1px solid var(--line);
-}
-.video-placeholder .play-btn{
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  background: var(--teal);
-  color: var(--navy-deep);
-  display: grid;
-  place-items: center;
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-}
-.video-placeholder span{ font-size: 0.85rem; color: #94a3b8; }
+    .btn-expand-trigger:hover {
+      color: var(--gold);
+    }
 
-/* ---------- 8. ACCORDION (progressive disclosure — native, zero-JS) ---------- */
-.accordion{
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--white);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  margin-bottom: var(--space-card-gap);
-}
-.accordion summary{
-  list-style: none;
-  cursor: pointer;
-  padding: 20px 24px;
-  min-height: var(--touch-target);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  font-weight: 700;
-  color: var(--ink);
-  font-size: 1.02rem;
-}
-.accordion summary::-webkit-details-marker{ display: none; }
-.accordion summary::after{
-  content: "+";
-  flex: none;
-  width: 28px; height: 28px;
-  border-radius: 50%;
-  background: var(--bg);
-  color: var(--navy);
-  display: grid;
-  place-items: center;
-  font-size: 1.1rem;
-  transition: transform 0.2s ease;
-}
-.accordion[open] summary::after{ content: "–"; }
-.accordion-body{
-  padding: 0 24px 24px;
-  color: var(--slate);
-  font-size: 0.98rem;
-}
-.accordion-body ul{ list-style: none; padding: 0; margin: 12px 0; }
-.accordion-body li{
-  position: relative;
-  padding-left: 26px;
-  margin-bottom: 10px;
-}
-.accordion-body li::before{
-  content: "";
-  position: absolute; left: 0; top: 8px;
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--teal);
-}
+    /* FULL-PAGE OVERLAY SHEET MODAL */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 37, 55, 0.7);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 2000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
 
-/* ---------- 9. HERO ---------- */
-.hero{
-  padding: 48px 0 var(--space-section);
-  background: linear-gradient(180deg, var(--white) 0%, var(--bg) 100%);
-}
-.hero-grid{ display: grid; gap: 40px; align-items: center; }
-@media (min-width: 900px){
-  .hero-grid{ grid-template-columns: 1.1fr 0.9fr; }
-}
-.hero h1{ max-width: 560px; }
-.hero-lead{ font-size: 1.1rem; color: var(--slate-soft); max-width: 520px; margin-bottom: 28px; }
-.hero-actions{ display: flex; flex-wrap: wrap; gap: 14px; }
-.hero-visual{
-  border-radius: var(--radius-lg);
-  background: var(--navy);
-  aspect-ratio: 4/3;
-  display: grid;
-  place-items: center;
-  color: var(--teal);
-  font-weight: 700;
-  overflow: hidden;
-}
-.hero-visual img{ width: 100%; height: 100%; object-fit: cover; }
+    .modal-overlay.active {
+      display: flex;
+    }
 
-/* ---------- 10. STEP LIST (How it works) ---------- */
-.steps{
-  display: grid;
-  gap: var(--space-card-gap);
-}
-@media (min-width: 700px){
-  .steps{ grid-template-columns: repeat(4, 1fr); }
-}
-.step{ padding: 4px; }
-.step-num{
-  display: inline-grid;
-  place-items: center;
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  background: var(--navy);
-  color: var(--teal);
-  font-weight: 800;
-  margin-bottom: 14px;
-}
+    .modal-container {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 750px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 12px;
+      border-top: 6px solid var(--gold);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      padding: 40px;
+      position: relative;
+      animation: modalFadeIn 0.25s ease-out;
+    }
 
-/* ---------- 11. FOOTER ---------- */
-.site-footer{
-  background: var(--navy-deep);
-  color: #94a3b8;
-  padding: var(--space-section) 0 32px;
-}
-.footer-grid{ display: grid; gap: 40px; }
-@media (min-width: 700px){
-  .footer-grid{ grid-template-columns: 1.3fr 1fr 1fr; }
-}
-.footer-col h4{
-  color: var(--white);
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 16px;
-}
-.footer-col a{
-  display: block;
-  padding: 6px 0;
-  color: #94a3b8;
-  font-size: 0.92rem;
-}
-.footer-col a:hover{ color: var(--teal); }
-.footer-bottom{
-  margin-top: 40px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  font-size: 0.82rem;
-  line-height: 1.7;
-}
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-/* ---------- 12. UTILITIES ---------- */
-.text-center{ text-align: center; }
-.mt-0{ margin-top: 0; }
-.muted{ color: var(--slate-soft); }
-.visually-hidden{
-  position: absolute; width: 1px; height: 1px;
-  padding: 0; margin: -1px; overflow: hidden;
-  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-}
-.skip-link{
-  position: absolute;
-  left: 12px; top: -60px;
-  background: var(--navy);
-  color: var(--white);
-  padding: 12px 18px;
-  border-radius: var(--radius-sm);
-  z-index: 100;
-  transition: top 0.2s ease;
-}
-.skip-link:focus{ top: 12px; }
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #F1F5F9;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--navy);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: background 0.2s;
+    }
 
-</style>
+    .modal-close-btn:hover {
+      background: #E2E8F0;
+    }
+
+    .modal-title {
+      font-size: 1.75rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .modal-subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+
+    .modal-spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      background: #F8FAFC;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      border: 1px solid #E2E8F0;
+    }
+
+    .modal-spec-item strong {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .modal-spec-item span {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .modal-section-title {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1rem;
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    .modal-list {
+      padding-left: 20px;
+      margin: 0 0 20px;
+      color: var(--text-muted);
+    }
+
+    .modal-list li { margin-bottom: 8px; }
+
+    .modal-cta-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 14px;
+      background: var(--navy);
+      color: #FFFFFF !important;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: var(--radius);
+      margin-top: 28px;
+      transition: background 0.2s;
+    }
+
+    .modal-cta-btn:hover { background: var(--navy-hover); }
+
+    /* =========================================
+       4. SMART SEARCH
+       ========================================= */
+    .search-wrapper {
+      padding: 70px 0;
+      background: #F8FAFC;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .search-section {
+      background: #FFFDF5;
+      color: var(--navy);
+      padding: 45px 40px;
+      border-radius: 14px;
+      border: 2px solid var(--gold);
+      box-shadow: 0 10px 30px rgba(15, 37, 55, 0.06);
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .search-step-badge {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .search-section h2 { color: var(--navy); margin-bottom: 8px; font-size: 1.6rem; }
+    .search-section p { color: var(--text-muted); margin-top: 0; font-size: 0.98rem; }
+
+    .search-input-wrapper {
+      position: relative;
+      margin-top: 24px;
+      max-width: 650px;
+      margin-inline: auto;
+    }
+
+    .search-section input {
+      width: 100%;
+      padding: 18px 22px;
+      font-size: 1.05rem;
+      color: var(--navy);
+      background: #FFFFFF;
+      border: 2px solid #E2E8F0;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(15, 37, 55, 0.05);
+      transition: all 0.2s ease;
+      outline: none;
+    }
+    
+    .search-section input:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.25);
+    }
+
+    #resultArea {
+      margin-top: 25px;
+      padding: 20px;
+      background: var(--bg-page);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      display: none;
+      text-align: left;
+      color: var(--text-main);
+    }
+    
+    .result-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* =========================================
+       5. DIGITAL FILING CABINET
+       ========================================= */
+    .education { background: var(--navy); color: #fff; }
+    .education h2 { color: #fff; }
+    .education .section-header p { color: #CBD5E1; }
+    
+    .cabinet {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 10px 25px;
+      color: var(--navy);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    details { border-bottom: 1px solid var(--border-subtle); padding: 20px 0; }
+    details:last-child { border-bottom: none; }
+    
+    summary {
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--gold); font-size: 1.5rem; font-weight: normal; }
+    details[open] summary::after { content: "−"; }
+    
+    .details-content { padding-top: 15px; color: var(--text-muted); font-size: 0.95rem; }
+    .details-content ul { padding-left: 20px; margin: 0; }
+    .details-content li { margin-bottom: 12px; }
+    .details-content li:last-child { margin-bottom: 0; }
+
+    /* =========================================
+       6. ABOUT SECTION
+       ========================================= */
+    .about { 
+      background: #FFFFFF; 
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 90px 0;
+    }
+    
+    .about-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-image-frame {
+      position: relative;
+      width: 100%;
+      height: 360px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 10px 25px rgba(15, 37, 55, 0.08);
+    }
+
+    .about-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-text { text-align: left; }
+    .about-text h2 { font-size: 2rem; margin-bottom: 16px; color: var(--navy); }
+    .about-text p { font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; }
+
+    /* =========================================
+       7. CLEAN MINIMAL FOOTER
+       ========================================= */
+    footer {
+      background: #08141F;
+      color: #94A3B8;
+      padding: 60px 0 30px;
+      font-size: 0.9rem;
+      border-top: 3px solid var(--gold);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .footer-brand-title {
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .footer-brand-sub {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .footer-col p {
+      line-height: 1.6;
+      color: #94A3B8;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #CBD5E1;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .contact-link {
+      color: #FFFFFF !important;
+      font-weight: 600;
+    }
+
+    /* Minimal Line Disclaimer */
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.82rem;
+      color: #64748B;
+    }
+
+    .disclaimer-text {
+      color: #64748B;
+      line-height: 1.5;
+    }
+
+    .disclaimer-text strong {
+      color: #94A3B8;
+    }
+
+    .copyright-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 8px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 900;
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      font-weight: 900;
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.05); }
+
+   /* =========================================
+       MOBILE RESPONSIVENESS (100% FLUID FIX)
+       ========================================= */
+    @media (max-width: 768px) {
+      .grid { 
+        grid-template-columns: 1fr; /* Single column layout guarantees zero horizontal scroll */
+      }
+
+      .nav-links {
+        display: none; 
+        width: 100%;
+        flex-direction: column;
+        background: var(--navy);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+      .nav-links.active { display: flex; }
+      .mobile-menu-btn { display: block; }
+      
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual-frame { height: 320px; }
+      
+      .about-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+      .about-text { text-align: center; }
+      .about-image-frame { height: 320px; max-width: 300px; margin: 0 auto; }
+      
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .modal-container { padding: 25px 20px; max-height: 85vh; }
+      .modal-spec-grid { grid-template-columns: 1fr; }
+      
+      section { padding: 50px 0; }
+      .search-section { padding: 30px 18px; }
+    }
+  </style>
 </head>
-<body>
+<body id="top">
 
-<a class="skip-link" href="#main">Skip to content</a>
+  <!-- STICKY HEADER -->
+  <header>
+    <div class="container header-content">
+      <a href="#top" class="brand">
+        <div class="brand-mark">LC</div>
+        <div class="brand-text">
+          <span class="brand-name">Laura Clarke</span>
+          <span class="brand-sub">Administrative Services</span>
+        </div>
+      </a>
+      
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+      
+      <div class="nav-links" id="navMenu">
+        <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="#education" onclick="toggleMenu()">Insights</a>
+        <a href="#about" onclick="toggleMenu()">About</a>
+      </div>
+    </div>
+  </header>
 
-<header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <span class="brand-mark">DH</span>
-      <span>Document Help JA</span>
-    </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="pica/index.html">Passports (PICA)</a>
-      <a href="#services">All Services</a>
-      <a href="#how-it-works">How It Works</a>
-    </nav>
-    <a href="#services" class="btn btn-primary nav-cta">Get Started</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
-      <span></span>
-    </button>
-  </div>
-  <nav class="mobile-nav" id="mobileNav" hidden aria-label="Mobile">
-    <a href="pica/index.html">Passports (PICA)</a>
-    <a href="#services">All Services</a>
-    <a href="#how-it-works">How It Works</a>
-  </nav>
-</header>
-
-<main id="main">
-
-  <!-- HERO -->
-  <section class="hero">
+  <!-- 1. HERO SECTION -->
+  <div class="hero-section">
     <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">Jamaica &middot; Diaspora &amp; Local</span>
-        <h1>Government paperwork, without the guesswork.</h1>
-        <p class="hero-lead">Passports, driver's licences, and vital records shouldn't require a law degree to understand. We break down exactly what PICA, TAJ, and RGD require — step by step.</p>
-        <div class="hero-actions">
-          <a href="#services" class="btn btn-primary">Explore Services</a>
-          <a href="pica/index.html" class="btn btn-secondary">Start with Passports</a>
+      
+      <!-- Left Column -->
+      <div class="hero-text">
+        <span class="hero-tag">Private Document Concierge</span>
+        <h1 class="hero-title">Jamaican document processing, sorted without the stress.</h1>
+        
+        <p class="hero-description">
+          When requirements shift and agency portals become confusing, you don't have to navigate it alone. We provide personal guidance, line-by-line audits, and local ground support so your applications move forward smoothly the first time.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" class="btn" target="_blank">Book a 15-Min Consultation</a>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20have%20a%20quick%20question%20about%20a%20document." class="btn-secondary-link" target="_blank">Message on WhatsApp &rarr;</a>
         </div>
       </div>
-      <div class="hero-visual" role="img" aria-label="Illustration placeholder — replace with brand photography">
-        <span>Hero image placeholder</span>
-      </div>
-    </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section class="section section-white" id="services">
-    <div class="container">
-      <div class="section-heading center">
-        <span class="eyebrow">What We Help With</span>
-        <h2>Three agencies. One clear path through each.</h2>
-        <p>Find your process, see exactly what's required, and know what happens next.</p>
-      </div>
-      <div class="grid grid-3">
-        <a class="card" href="pica/index.html">
-          <div class="card-icon">PP</div>
-          <h3>Passport Services (PICA)</h3>
-          <p>New applications, renewals, and lost-document replacement — including the photo and chip requirements people miss most often.</p>
-          <span class="card-link">View the guide &rarr;</span>
-        </a>
-        <a class="card" href="#">
-          <div class="card-icon">DL</div>
-          <h3>Driver's Licence (TAJ)</h3>
-          <p>Renewals, motor vehicle registration, and how to clear portal errors before they cost you a trip to the office.</p>
-          <span class="card-link">View the guide &rarr;</span>
-        </a>
-        <a class="card" href="#">
-          <div class="card-icon">VR</div>
-          <h3>Vital Records (RGD)</h3>
-          <p>Birth, marriage, and death certificates — what counts as a certified copy, and how diaspora clients can request remotely.</p>
-          <span class="card-link">View the guide &rarr;</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="section section-alt" id="how-it-works">
-    <div class="container">
-      <div class="section-heading center">
-        <span class="eyebrow">How It Works</span>
-        <h2>A simple, four-step process.</h2>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <span class="step-num">1</span>
-          <h3>Find your process</h3>
-          <p class="muted">Tell us what you're trying to accomplish — we'll point you to the right guide.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">2</span>
-          <h3>Check prerequisites</h3>
-          <p class="muted">See the "Step 0" requirements before you start, so nothing gets rejected later.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">3</span>
-          <h3>Prepare with confidence</h3>
-          <p class="muted">Follow the exact document, photo, and form requirements laid out in plain language.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">4</span>
-          <h3>Get help if you're stuck</h3>
-          <p class="muted">Book a short consult if your situation doesn't fit the standard path.</p>
+      <!-- Right Column -->
+      <div class="hero-visual-frame">
+        <div class="hero-overlay-card">
+          <strong>Organized. Thorough. Local.</strong>
+          <p>Providing structured oversight and local representation for individuals and diaspora clients worldwide.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- TRUST / RESCUE CTA -->
-  <section class="section section-white">
-    <div class="container">
-      <div class="rescue-box">
-        <h4>Not sure where to start?</h4>
-        <p>Book a free 15-minute consult and we'll tell you exactly what your situation needs — no obligation.</p>
-        <a href="#" class="btn btn-gold">Book a Free Consult</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h4 style="color:var(--teal);">Document Help JA</h4>
-        <p style="color:#94a3b8;">Independent guidance for Jamaican government processes. Not affiliated with PICA, TAJ, or RGD.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Guides</h4>
-        <a href="pica/index.html">Passports (PICA)</a>
-        <a href="#">Driver's Licence (TAJ)</a>
-        <a href="#">Vital Records (RGD)</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2026 Document Help JA. All rights reserved.
     </div>
   </div>
-</footer>
 
-<script>
-  var toggle = document.getElementById('navToggle');
-  var nav = document.getElementById('mobileNav');
-  toggle.addEventListener('click', function(){
-    var isHidden = nav.hasAttribute('hidden');
-    if(isHidden){ nav.removeAttribute('hidden'); } else { nav.setAttribute('hidden',''); }
-    toggle.setAttribute('aria-expanded', String(isHidden));
-  });
-</script>
+  <!-- 2. CORE SERVICES GRID -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Explore our primary services</h2>
+        <p style="color: var(--text-muted);">Select a service suite to view full details, requirements, and pricing.</p>
+      </div>
 
+      <div class="grid">
+
+        <!-- CARD 1 -->
+        <div class="card">
+          <div>
+            <h3>Driver's Licence Renewals</h3>
+            <p>Hybrid service covering compliance auditing, application form preparation, and submission routing.</p>
+          </div>
+          <button class="btn-expand-trigger" onclick="openModal('driver')">View Scope & Pricing &rarr;</button>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+          <div>
+            <h3>Motor Vehicle Licensing</h3>
+            <p>Annual renewal guidance, fitness & insurance status audits, and tax office preparation.</p>
+          </div>
+          <button class="btn-expand-trigger" onclick="openModal('vehicle')">View Scope & Pricing &rarr;</button>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+          <div>
+            <h3>Passport Application Support</h3>
+            <p>High-scrutiny pre-audits for Jamaican passport applications, photos, and guarantor details.</p>
+          </div>
+          <button class="btn-expand-trigger" onclick="openModal('passport')">View Scope & Pricing &rarr;</button>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+          <div>
+            <h3>Police Records & Clearances</h3>
+            <p>Thorough intake auditing, portal entry, strict name-matching, and appointment routing.</p>
+          </div>
+          <button class="btn-expand-trigger" onclick="openModal('police')">View Scope & Pricing &rarr;</button>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="card">
+          <div>
+            <h3>Vital Record Certificates</h3>
+            <p>Online search filing, entry audit, tracking, and courier dispatch setup for Birth, Marriage, or Death records.</p>
+          </div>
+          <button class="btn-expand-trigger" onclick="openModal('rgd')">View Scope & Pricing &rarr;</button>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="card">
+          <div>
+            <h3>General Consultations</h3>
+            <p>Tailored advice for complex, multi-agency, or unlisted administrative scenarios.</p>
+          </div>
+          <button class="btn-expand-trigger" onclick="openModal('consult')">View Scope & Details &rarr;</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL-PAGE MODAL SHEET OVERLAY -->
+  <div class="modal-overlay" id="serviceModal" onclick="closeModalOnOverlay(event)">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
+      
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-subtitle" id="modalSubtitle"></p>
+
+      <div class="modal-spec-grid">
+        <div class="modal-spec-item">
+          <strong>Concierge Fee</strong>
+          <span id="modalFee"></span>
+        </div>
+        <div class="modal-spec-item">
+          <strong>Turnaround / Schedule</strong>
+          <span id="modalTime"></span>
+        </div>
+      </div>
+
+      <span class="modal-section-title">What We Do:</span>
+      <ul class="modal-list" id="modalWhatWeDo"></ul>
+
+      <span class="modal-section-title" id="modalYouDoHeader">What You Do:</span>
+      <ul class="modal-list" id="modalWhatYouDo"></ul>
+
+      <a href="#" id="modalCta" class="modal-cta-btn" target="_blank">Request Assistance via WhatsApp &rarr;</a>
+    </div>
+  </div>
+
+  <!-- 3. SMART SEARCH -->
+  <div class="search-wrapper">
+    <div class="container">
+      <div class="search-section">
+        <span class="search-step-badge">Quick Safety Net</span>
+        <h2>Don't see your exact problem listed above?</h2>
+        <p>Type what you need in plain English (e.g., "Renew passport", "TRN", "Police Record", "COJ").</p>
+        
+        <div class="search-input-wrapper">
+          <input type="text" id="smartSearch" placeholder="Type what you need help with..." oninput="handleSmartSearch()">
+        </div>
+        
+        <div id="resultArea">
+          <span id="resultBadge" class="result-badge"></span>
+          <h3 id="resultTitle" style="margin-top: 0; margin-bottom: 8px;"></h3>
+          <p id="resultText" style="margin-top: 0; margin-bottom: 20px; color: var(--text-muted);"></p>
+          <a href="https://wa.me/18765612614" id="resultLink" class="btn" style="margin-top: 0; width: 100%;"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. DIGITAL FILING CABINET -->
+  <section id="education" class="education">
+    <div class="container">
+      <div class="section-header">
+        <h2>Things you might not know</h2>
+        <p>Bureaucratic rules change constantly. Here are a few recent administrative insights to save you time.</p>
+      </div>
+
+      <div class="cabinet">
+        <details>
+          <summary>Companies Office of Jamaica (COJ)</summary>
+          <div class="details-content">
+            <ul>
+              <li><strong>No More Physical Certificates:</strong> The COJ is no longer issuing physical registration certificates. When your new business is approved, the certificate is issued digitally and must be printed on your own.</li>
+              <li><strong>Email Conflicts:</strong> When applying for a new business online, the email on your application must match the email on your personal COJ portal account, or the system will flag it as an identity conflict.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Police Records (JCF) & Background Checks</summary>
+          <div class="details-content">
+            <ul>
+              <li><strong>Strict Name Consistency:</strong> The name on your online police record application must identically match the government ID you present at the interview (usually a passport). If your ID is in your maiden name and you apply in your married name, the application will be rejected.</li>
+              <li><strong>Bridging Names:</strong> If your employer requires a record in your married name but your passport is in your maiden name, get HR clearance to apply in your maiden name and attach your official RGD marriage certificate.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>Tax Administration Jamaica (TAJ)</summary>
+          <div class="details-content">
+            <ul>
+              <li><strong>Overseas TRN Applications:</strong> You do not need to fly to Jamaica to get a TRN. You can apply from the diaspora if your identity documents are properly notarized by a Notary Public in your current country and submitted by a representative in Jamaica.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ABOUT SECTION -->
+  <section id="about" class="about">
+    <div class="container about-grid">
+      <div class="about-image-frame">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Laura Clarke">
+      </div>
+      <div class="about-text">
+        <h2>About Laura Clarke</h2>
+        <p>When administrative paperwork becomes complicated, you shouldn't have to navigate it alone. I established this private concierge practice to provide clarity, care, and meticulous attention to detail for processes that often feel overwhelming.</p>
+        <p>Whether you need document auditing or trusted oversight from overseas, I handle the prep work so your submissions move forward smoothly and securely.</p>
+        <a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" class="btn" target="_blank">Book a 15-Minute Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FOOTER & LEGAL -->
+  <footer>
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <div class="footer-brand-title">Laura Clarke</div>
+          <span class="footer-brand-sub">Administrative Services</span>
+          <p>Private document preparation, compliance audits, and local representation for individuals and diaspora clients.</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#services">Services & Pricing</a></li>
+            <li><a href="#education">Insights Vault</a></li>
+            <li><a href="#about">About Laura</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h4>Direct Contact</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="https://wa.me/18765612614" class="contact-link" target="_blank">
+                WhatsApp: 876-561-2614
+              </a>
+            </li>
+            <li>
+              <a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" target="_blank">
+                Book Consultation
+              </a>
+            </li>
+            <li><span style="color: #64748B;">Linstead, Jamaica</span></li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="footer-col">
+          <h4>Legal & Policies</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="alert('Privacy Policy: All personal document details are strictly confidential. We do not share client information with third parties.')">Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" onclick="alert('Terms of Service: Our fee covers auditing, form prep, and guidance. Official government agency processing fees are separate.')">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar with Minimal Disclaimer -->
+      <div class="footer-bottom">
+        <p class="disclaimer-text">
+          <strong>Disclaimer:</strong> Laura Clarke Administrative Services is a private, independent consultancy providing document preparation and guidance. We are not a government agency and have no affiliation with TAJ, PICA, RGD, JCF, or official ministries. Application approvals remain strictly at agency discretion.
+        </p>
+        
+        <div class="copyright-row">
+          <div>&copy; 2026 Laura Clarke Administrative Services. All rights reserved.</div>
+          <div>Private Document Concierge &bull; Kingston, Jamaica</div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/18765612614" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank">WA</a>
+
+  <!-- SCRIPTS -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      if (window.innerWidth <= 768) {
+        menu.classList.toggle('active');
+      }
+    }
+
+    /* MODAL SERVICES DATA */
+    const servicesData = {
+      driver: {
+        title: "Driver's Licence Renewals",
+        subtitle: "Hybrid service covering compliance auditing, application form preparation, and submission routing.",
+        fee: "$3,000 JMD",
+        time: "Same-Day Receipt",
+        whatWeDo: [
+          "Audit records for compliance and name/address mismatches.",
+          "Complete official application form data entry on your behalf.",
+          "Deliver a print-ready PDF package with a step-by-step submission checklist."
+        ],
+        whatYouDo: [
+          "Print & sign your package (complete doctor section if required).",
+          "Drop off your completed package at your preferred tax office."
+        ],
+        waText: "Hi Laura, I would like to start a Driver's Licence Renewal ($3,000 JMD)."
+      },
+      vehicle: {
+        title: "Motor Vehicle Licensing",
+        subtitle: "Annual renewal guidance, fitness & insurance status audits, and tax office preparation.",
+        fee: "$3,000 JMD",
+        time: "1–2 Business Days",
+        whatWeDo: [
+          "Audit fitness certificate & insurance validity dates.",
+          "Prepare official licensing forms & tax office fee calculations.",
+          "Provide a simple submission checklist for quick tax office drop-off."
+        ],
+        whatYouDo: [
+          "Pass fitness test at the depot (if due) & provide valid insurance.",
+          "Submit final package at your chosen tax office."
+        ],
+        waText: "Hi Laura, I need help with Motor Vehicle Licensing ($3,000 JMD)."
+      },
+      passport: {
+        title: "Passport Application Support",
+        subtitle: "High-scrutiny pre-audits for Jamaican passport applications, photos, and guarantor details.",
+        fee: "$6,000 JMD",
+        time: "7–10 Days (Standard)",
+        whatWeDo: [
+          "Line-by-line audit of your application & guarantor details.",
+          "Check photos strictly against official passport specifications.",
+          "Handle appointment scheduling & tracking updates."
+        ],
+        whatYouDo: [
+          "Complete a brief 5-minute document intake call with us.",
+          "Provide your original vital documents & compliant photos."
+        ],
+        waText: "Hi Laura, I need Passport Application Support ($6,000 JMD)."
+      },
+      police: {
+        title: "Police Records & Clearances",
+        subtitle: "Thorough intake auditing, portal entry, strict name-matching, and appointment routing.",
+        fee: "$5,000 JMD",
+        time: "5-Day or 21-Day",
+        whatWeDo: [
+          "Conduct a thorough intake review to guarantee strict ID consistency.",
+          "Manage online portal entry & fee voucher coordination on the backend.",
+          "Schedule your fingerprinting appointment & track progress."
+        ],
+        whatYouDo: [
+          "Provide a valid Passport matching your official application name identically.",
+          "Attend your scheduled fingerprint appointment."
+        ],
+        waText: "Hi Laura, I need Police Record Assistance ($5,000 JMD)."
+      },
+      rgd: {
+        title: "Vital Record Certificates",
+        subtitle: "Online search filing, entry audit, tracking, and courier dispatch setup for Birth, Marriage, or Death records.",
+        fee: "$3,000 JMD",
+        time: "7–10 Days (Express)",
+        whatWeDo: [
+          "Audit registry details on the backend to prevent entry rejection.",
+          "File the official record search & application online.",
+          "Arrange direct courier delivery to your doorstep."
+        ],
+        whatYouDo: [
+          "Provide core record details during a brief intake call.",
+          "Receive your official certificate directly via courier."
+        ],
+        waText: "Hi Laura, I need Vital Record Certificate Assistance ($3,000 JMD)."
+      },
+      consult: {
+        title: "General Consultations",
+        subtitle: "Tailored advice for complex, multi-agency, or unlisted administrative scenarios.",
+        fee: "15 Minutes",
+        time: "Private Video Call",
+        whatWeDo: [
+          "Review your specific document timeline and requirements.",
+          "Map out step-by-step agency requirements.",
+          "Provide a custom quote for bespoke handling."
+        ],
+        whatYouDo: [],
+        isConsult: true
+      }
+    };
+
+    function openModal(key) {
+      const data = servicesData[key];
+      if (!data) return;
+
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalSubtitle').innerText = data.subtitle;
+      document.getElementById('modalFee').innerText = data.fee;
+      document.getElementById('modalTime').innerText = data.time;
+
+      const whatWeDoList = document.getElementById('modalWhatWeDo');
+      whatWeDoList.innerHTML = data.whatWeDo.map(item => `<li>${item}</li>`).join('');
+
+      const whatYouDoHeader = document.getElementById('modalYouDoHeader');
+      const whatYouDoList = document.getElementById('modalWhatYouDo');
+
+      if (data.isConsult) {
+        whatYouDoHeader.style.display = 'none';
+        whatYouDoList.style.display = 'none';
+        
+        const cta = document.getElementById('modalCta');
+        cta.innerText = "Book 15-Minute Consultation Call →";
+        cta.href = "https://calendar.app.google/DkcGkWjiSRMnujTW7";
+      } else {
+        whatYouDoHeader.style.display = 'block';
+        whatYouDoList.style.display = 'block';
+        whatYouDoList.innerHTML = data.whatYouDo.map(item => `<li>${item}</li>`).join('');
+        
+        const cta = document.getElementById('modalCta');
+        cta.innerText = "Request Assistance via WhatsApp →";
+        cta.href = `https://wa.me/18765612614?text=${encodeURIComponent(data.waText)}`;
+      }
+
+      document.getElementById('serviceModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('serviceModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeModalOnOverlay(e) {
+      if (e.target.id === 'serviceModal') {
+        closeModal();
+      }
+    }
+
+    /* SMART SEARCH ENGINE */
+    const knowledgeBase = [
+      { 
+        type: "service", 
+        keywords: ["police", "record", "clearance", "criminal", "jcf", "fingerprint", "background"], 
+        title: "Police Records & Clearances", 
+        text: "We handle thorough intake auditing, online portal entry, strict name-matching verification, and fingerprint appointment scheduling for $5,000 JMD." 
+      },
+      { 
+        type: "service", 
+        keywords: ["driver", "licence", "license", "driving", "renew licence", "taj"], 
+        title: "Driver's Licence Renewals", 
+        text: "We audit your records, complete your application form data entry, and deliver a print-ready package with a step-by-step submission checklist for $3,000 JMD." 
+      },
+      { 
+        type: "service", 
+        keywords: ["motor", "vehicle", "fitness", "registration", "car", "licensing", "title"], 
+        title: "Motor Vehicle Licensing", 
+        text: "We audit fitness & insurance validity, prepare official tax office forms, and calculate exact licensing fees for $3,000 JMD." 
+      },
+      { 
+        type: "service", 
+        keywords: ["passport", "pica", "renew passport", "travel", "guarantor"], 
+        title: "Passport Application Support", 
+        text: "High-scrutiny pre-audits for Jamaican passport applications, strictly verifying photos, guarantor details, and supporting IDs for $6,000 JMD." 
+      },
+      { 
+        type: "service", 
+        keywords: ["birth", "death", "marriage", "rgd", "certificate", "record", "vital"], 
+        title: "Vital Record Certificates", 
+        text: "Online search filing, entry auditing, tracking, and doorstep courier dispatch setup for official Birth, Marriage, or Death records for $3,000 JMD." 
+      },
+      { 
+        type: "service", 
+        keywords: ["consultation", "advice", "custom", "help", "other", "complex"], 
+        title: "General Consultations", 
+        text: "Book a 15-minute private consultation to review custom document timelines and map out multi-agency requirements." 
+      },
+      { 
+        type: "insight", 
+        keywords: ["coj", "companies office", "business certificate", "print"], 
+        title: "COJ Digital Certificates", 
+        text: "The COJ no longer issues physical registration certificates. Approved business certificates are issued digitally and must be printed by the applicant." 
+      },
+      { 
+        type: "insight", 
+        keywords: ["maiden name", "married name", "reject", "mismatch", "marriage certificate"], 
+        title: "Strict Name Consistency", 
+        text: "Government offices reject applications if names do not identically match your ID. Providing an official Marriage Certificate bridges name gaps without needing a new passport." 
+      },
+      { 
+        type: "insight", 
+        keywords: ["trn", "tax number", "overseas trn", "notarize", "diaspora"], 
+        title: "Overseas TRN Applications", 
+        text: "You can secure a TRN from abroad without flying to Jamaica if your documents are properly notarized by a local Notary Public." 
+      }
+    ];
+
+    function handleSmartSearch() {
+      const query = document.getElementById('smartSearch').value.toLowerCase().trim();
+      const resultArea = document.getElementById('resultArea');
+      const badge = document.getElementById('resultBadge');
+      const link = document.getElementById('resultLink');
+      
+      if (query.length < 2) { 
+        resultArea.style.display = 'none'; 
+        return; 
+      }
+
+      let matchFound = false;
+
+      for (let item of knowledgeBase) {
+        const isMatch = item.keywords.some(kw => {
+          const cleanKw = kw.toLowerCase();
+          return query.includes(cleanKw) || cleanKw.includes(query);
+        });
+
+        if (isMatch) {
+          document.getElementById('resultTitle').innerText = item.title;
+          document.getElementById('resultText').innerText = item.text;
+          
+          if (item.type === "service") {
+            badge.innerText = "Available Service";
+            badge.style.backgroundColor = "#0F2537";
+            badge.style.color = "#FFFFFF";
+            link.innerText = "Request Assistance on WhatsApp";
+            link.href = `https://wa.me/18765612614?text=Hi%20Laura,%20I%20am%20inquiring%20about%20${encodeURIComponent(item.title)}.`;
+          } else {
+            badge.innerText = "Helpful Insight";
+            badge.style.backgroundColor = "#D4AF37";
+            badge.style.color = "#0F2537";
+            link.innerText = "Have questions? Ask on WhatsApp";
+            link.href = `https://wa.me/18765612614?text=Hi%20Laura,%20I%20read%20your%20insight%20about%20${encodeURIComponent(item.title)}%20and%20have%20a%20question.`;
+          }
+          
+          resultArea.style.display = 'block';
+          matchFound = true; 
+          break;
+        }
+      }
+
+      if (!matchFound && query.length >= 3) {
+        badge.innerText = "Direct Support";
+        badge.style.backgroundColor = "#E2E8F0";
+        badge.style.color = "#1E293B";
+        
+        document.getElementById('resultTitle').innerText = "Let's figure this out together.";
+        document.getElementById('resultText').innerText = "We can evaluate this for you during a quick review of your document requirements.";
+        link.innerText = "Book a 15-min Consultation";
+        link.href = "https://calendar.app.google/DkcGkWjiSRMnujTW7";
+        resultArea.style.display = 'block';
+      }
+    }
+  </script>
 </body>
 </html>
