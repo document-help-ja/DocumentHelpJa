@@ -16,7 +16,7 @@
       --gold-hover: #C29F2B;
       --bg-page: #F8FAFC;
       --bg-card: #FFFFFF;
-      --bg-slate-light: #F0F4F8; /* Unified soft CTA accent */
+      --bg-slate-light: #F0F4F8;
       --text-main: #1E293B;
       --text-muted: #475569;
       --border-subtle: #E2E8F0;
@@ -306,7 +306,6 @@
       line-height: 1.6;
     }
 
-    /* Light Slate-Blue Card Footer CTA */
     .btn-card-footer {
       width: 100%;
       padding: 16px 24px;
@@ -409,7 +408,7 @@
       background: #F8FAFC;
       padding: 16px;
       border-radius: 8px;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       border: 1px solid #E2E8F0;
     }
 
@@ -422,9 +421,21 @@
     }
 
     .modal-spec-item span {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--navy);
+    }
+
+    /* Agency Fee Disclaimer Banner in Modal */
+    .modal-agency-banner {
+      background: #FFFDF5;
+      border: 1px solid #D4AF37;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      font-size: 0.88rem;
+      color: #1E293B;
+      line-height: 1.5;
     }
 
     .modal-section-title {
@@ -461,7 +472,7 @@
     .modal-cta-btn:hover { background: var(--navy-hover); }
 
     /* =========================================
-       4. SMART SEARCH (MATCHED 3D ELEVATED CARD)
+       4. SMART SEARCH
        ========================================= */
     .search-wrapper {
       padding: 70px 0;
@@ -505,7 +516,6 @@
       margin-inline: auto;
     }
 
-    /* Light Slate-Blue Input Field */
     .search-section input {
       width: 100%;
       padding: 18px 22px;
@@ -691,7 +701,6 @@
       font-weight: 600;
     }
 
-    /* Minimal Line Disclaimer */
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       padding-top: 24px;
@@ -809,7 +818,6 @@
   <div class="hero-section">
     <div class="container hero-grid">
       
-      <!-- Left Column: Title & CTAs -->
       <div class="hero-text">
         <span class="hero-tag">Private Document Concierge</span>
         <h1 class="hero-title">Jamaican document processing, sorted without the stress.</h1>
@@ -824,7 +832,6 @@
         </div>
       </div>
 
-      <!-- Right Column: Visual Frame with Floating Badge -->
       <div class="hero-visual-frame">
         <div class="hero-overlay-card">
           <span class="hero-overlay-card-dot"></span>
@@ -851,7 +858,7 @@
             <button class="card-title-btn" onclick="openModal('driver')">
               <h3>Driver's Licence Renewals</h3>
             </button>
-            <p>Hybrid service covering compliance auditing, application form preparation, and submission routing.</p>
+            <p>Compliance auditing, application form preparation, doctor section routing, and tax office drop-off prep.</p>
           </div>
           <button class="btn-card-footer" onclick="openModal('driver')">
             <span>View Scope & Pricing</span>
@@ -865,7 +872,7 @@
             <button class="card-title-btn" onclick="openModal('vehicle')">
               <h3>Motor Vehicle Licensing</h3>
             </button>
-            <p>Annual renewal guidance, fitness & insurance status audits, and tax office preparation.</p>
+            <p>Online licence renewals, printable e-Registration Certificate retrieval, and fitness/insurance status audits.</p>
           </div>
           <button class="btn-card-footer" onclick="openModal('vehicle')">
             <span>View Scope & Pricing</span>
@@ -879,7 +886,7 @@
             <button class="card-title-btn" onclick="openModal('passport')">
               <h3>Passport Application Support</h3>
             </button>
-            <p>High-scrutiny pre-audits for Jamaican passport applications, photos, and guarantor details.</p>
+            <p>High-scrutiny pre-audits for both PICA online renewals and standard in-person paper applications.</p>
           </div>
           <button class="btn-card-footer" onclick="openModal('passport')">
             <span>View Scope & Pricing</span>
@@ -893,7 +900,7 @@
             <button class="card-title-btn" onclick="openModal('police')">
               <h3>Police Records & Clearances</h3>
             </button>
-            <p>Thorough intake auditing, portal entry, strict name-matching, and appointment routing.</p>
+            <p>Intake auditing, portal entry, fingerprint appointment scheduling, and collection guidance.</p>
           </div>
           <button class="btn-card-footer" onclick="openModal('police')">
             <span>View Scope & Pricing</span>
@@ -950,6 +957,11 @@
           <strong>Turnaround / Schedule</strong>
           <span id="modalTime"></span>
         </div>
+      </div>
+
+      <!-- Agency Fee Disclaimer Banner -->
+      <div class="modal-agency-banner" id="modalAgencyBanner">
+        <strong>Agency Fee Notice:</strong> Official government agency fees (TAJ, PICA, RGD, JCF) are separate from concierge fees and vary based on your selected agency timeline (e.g., Express vs. Standard processing).
       </div>
 
       <span class="modal-section-title">What We Do:</span>
@@ -1021,6 +1033,15 @@
             </ul>
           </div>
         </details>
+
+        <details>
+          <summary>Understanding Concierge vs. Government Agency Fees</summary>
+          <div class="details-content">
+            <ul>
+              <li><strong>Two-Part Structure:</strong> Concierge fees cover administrative document auditing, portal data entry, application preparation, and local representation. Official government fees (TAJ, PICA, RGD, JCF) are charged separately at official government rates based on your selected processing speed.</li>
+            </ul>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -1046,14 +1067,12 @@
       
       <div class="footer-grid">
         
-        <!-- Column 1 -->
         <div class="footer-col">
           <div class="footer-brand-title">Laura Clarke</div>
           <span class="footer-brand-sub">Administrative Services</span>
           <p>Private document preparation, compliance audits, and local representation for individuals and diaspora clients.</p>
         </div>
 
-        <!-- Column 2 -->
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul class="footer-links">
@@ -1064,7 +1083,6 @@
           </ul>
         </div>
 
-        <!-- Column 3 -->
         <div class="footer-col">
           <h4>Direct Contact</h4>
           <ul class="footer-links">
@@ -1082,7 +1100,6 @@
           </ul>
         </div>
 
-        <!-- Column 4 -->
         <div class="footer-col">
           <h4>Legal & Policies</h4>
           <ul class="footer-links">
@@ -1093,7 +1110,6 @@
 
       </div>
 
-      <!-- Bottom Bar with Minimal Disclaimer -->
       <div class="footer-bottom">
         <p class="disclaimer-text">
           <strong>Disclaimer:</strong> Laura Clarke Administrative Services is a private, independent consultancy providing document preparation and guidance. We are not a government agency and have no affiliation with TAJ, PICA, RGD, JCF, or official ministries. Application approvals remain strictly at agency discretion.
@@ -1125,8 +1141,8 @@
       driver: {
         title: "Driver's Licence Renewals",
         subtitle: "Hybrid service covering compliance auditing, application form preparation, and submission routing.",
-        fee: "$3,000 JMD",
-        time: "Same-Day Receipt",
+        fee: "$3,000 JMD (+ Agency Fee)",
+        time: "Same-Day Package",
         whatWeDo: [
           "Audit records for compliance and name/address mismatches.",
           "Complete official application form data entry on your behalf.",
@@ -1136,60 +1152,61 @@
           "Print & sign your package (complete doctor section if required).",
           "Drop off your completed package at your preferred tax office."
         ],
-        waText: "Hi Laura, I would like to start a Driver's Licence Renewal ($3,000 JMD)."
+        waText: "Hi Laura, I would like to start a Driver's Licence Renewal ($3,000 JMD concierge fee)."
       },
       vehicle: {
         title: "Motor Vehicle Licensing",
-        subtitle: "Annual renewal guidance, fitness & insurance status audits, and tax office preparation.",
-        fee: "$3,000 JMD",
-        time: "1–2 Business Days",
+        subtitle: "Online licence renewals, e-certificate processing, and fitness/insurance status audits.",
+        fee: "$3,000 JMD (+ Agency Fee)",
+        time: "Same-Day e-Delivery",
         whatWeDo: [
-          "Audit fitness certificate & insurance validity dates.",
-          "Prepare official licensing forms & tax office fee calculations.",
-          "Provide a simple submission checklist for quick tax office drop-off."
+          "Audit fitness certificate validity and active motor insurance in the TAJ system.",
+          "Process online vehicle licence renewal and tax payment entry.",
+          "Retrieve and deliver your official printable e-Registration Certificate."
         ],
         whatYouDo: [
-          "Pass fitness test at the depot (if due) & provide valid insurance.",
-          "Submit final package at your chosen tax office."
+          "Ensure active motor insurance and a valid fitness pass at the depot.",
+          "Print your official e-Registration Certificate to keep inside your vehicle."
         ],
-        waText: "Hi Laura, I need help with Motor Vehicle Licensing ($3,000 JMD)."
+        waText: "Hi Laura, I need help with Motor Vehicle Licensing ($3,000 JMD concierge fee)."
       },
       passport: {
         title: "Passport Application Support",
-        subtitle: "High-scrutiny pre-audits for Jamaican passport applications, photos, and guarantor details.",
-        fee: "$6,000 JMD",
-        time: "7–10 Days (Standard)",
+        subtitle: "High-scrutiny pre-audits for both PICA online renewals and in-person paper applications.",
+        fee: "$6,000 JMD (+ Agency Fee)",
+        time: "7–10 Days (Standard Support)",
         whatWeDo: [
-          "Line-by-line audit of your application & guarantor details.",
-          "Check photos strictly against official passport specifications.",
-          "Handle appointment scheduling & tracking updates."
+          "Line-by-line audit of your application, photo specs, and guarantor details.",
+          "Coordinate online PICA portal submission or paper file preparation.",
+          "Manage appointment scheduling & tracking updates."
         ],
         whatYouDo: [
           "Complete a brief 5-minute document intake call with us.",
-          "Provide your original vital documents & compliant photos."
+          "Provide your original vital documents & compliant passport photos."
         ],
-        waText: "Hi Laura, I need Passport Application Support ($6,000 JMD)."
+        waText: "Hi Laura, I need Passport Application Support ($6,000 JMD concierge fee)."
       },
       police: {
         title: "Police Records & Clearances",
         subtitle: "Thorough intake auditing, portal entry, strict name-matching, and appointment routing.",
-        fee: "$5,000 JMD",
-        time: "5-Day or 21-Day",
+        fee: "$5,000 JMD (+ Agency Fee)",
+        time: "5-Day or 21-Day Options",
         whatWeDo: [
-          "Conduct a thorough intake review to guarantee strict ID consistency.",
-          "Manage online portal entry & fee voucher coordination on the backend.",
-          "Schedule your fingerprinting appointment & track progress."
+          "Conduct a thorough intake review to guarantee strict ID & name consistency.",
+          "Manage online portal entry and fee voucher coordination on the backend.",
+          "Schedule your fingerprinting appointment and track progress through completion."
         ],
         whatYouDo: [
           "Provide a valid Passport matching your official application name identically.",
-          "Attend your scheduled fingerprint appointment."
+          "Attend your scheduled fingerprinting appointment at the designated location.",
+          "Collect your completed Police Certificate upon notification."
         ],
-        waText: "Hi Laura, I need Police Record Assistance ($5,000 JMD)."
+        waText: "Hi Laura, I need Police Record Assistance ($5,000 JMD concierge fee)."
       },
       rgd: {
         title: "Vital Record Certificates",
         subtitle: "Online search filing, entry audit, tracking, and courier dispatch setup for Birth, Marriage, or Death records.",
-        fee: "$3,000 JMD",
+        fee: "$3,000 JMD (+ Agency Fee)",
         time: "7–10 Days (Express)",
         whatWeDo: [
           "Audit registry details on the backend to prevent entry rejection.",
@@ -1200,7 +1217,7 @@
           "Provide core record details during a brief intake call.",
           "Receive your official certificate directly via courier."
         ],
-        waText: "Hi Laura, I need Vital Record Certificate Assistance ($3,000 JMD)."
+        waText: "Hi Laura, I need Vital Record Certificate Assistance ($3,000 JMD concierge fee)."
       },
       consult: {
         title: "General Consultations",
@@ -1212,7 +1229,9 @@
           "Map out step-by-step agency requirements.",
           "Provide a custom quote for bespoke handling."
         ],
-        whatYouDo: [],
+        whatYouDo: [
+          "Select a time on the calendar and join the scheduled video call."
+        ],
         isConsult: true
       }
     };
@@ -1231,15 +1250,19 @@
 
       const whatYouDoHeader = document.getElementById('modalYouDoHeader');
       const whatYouDoList = document.getElementById('modalWhatYouDo');
+      const agencyBanner = document.getElementById('modalAgencyBanner');
 
       if (data.isConsult) {
-        whatYouDoHeader.style.display = 'none';
-        whatYouDoList.style.display = 'none';
+        agencyBanner.style.display = 'none';
+        whatYouDoHeader.style.display = 'block';
+        whatYouDoList.style.display = 'block';
+        whatYouDoList.innerHTML = data.whatYouDo.map(item => `<li>${item}</li>`).join('');
         
         const cta = document.getElementById('modalCta');
         cta.innerText = "Book 15-Minute Consultation Call →";
         cta.href = "https://calendar.app.google/DkcGkWjiSRMnujTW7";
       } else {
+        agencyBanner.style.display = 'block';
         whatYouDoHeader.style.display = 'block';
         whatYouDoList.style.display = 'block';
         whatYouDoList.innerHTML = data.whatYouDo.map(item => `<li>${item}</li>`).join('');
@@ -1270,31 +1293,31 @@
         type: "service", 
         keywords: ["police", "record", "clearance", "criminal", "jcf", "fingerprint", "background"], 
         title: "Police Records & Clearances", 
-        text: "We handle thorough intake auditing, online portal entry, strict name-matching verification, and fingerprint appointment scheduling for $5,000 JMD." 
+        text: "We handle thorough intake auditing, online portal entry, strict name-matching verification, and fingerprint appointment scheduling for $5,000 JMD (+ official agency fees)." 
       },
       { 
         type: "service", 
         keywords: ["driver", "licence", "license", "driving", "renew licence", "taj"], 
         title: "Driver's Licence Renewals", 
-        text: "We audit your records, complete your application form data entry, and deliver a print-ready package with a step-by-step submission checklist for $3,000 JMD." 
+        text: "We audit your records, complete your application form data entry, and deliver a print-ready package with a step-by-step submission checklist for $3,000 JMD (+ official agency fees)." 
       },
       { 
         type: "service", 
-        keywords: ["motor", "vehicle", "fitness", "registration", "car", "licensing", "title"], 
+        keywords: ["motor", "vehicle", "fitness", "registration", "car", "licensing", "title", "sticker"], 
         title: "Motor Vehicle Licensing", 
-        text: "We audit fitness & insurance validity, prepare official tax office forms, and calculate exact licensing fees for $3,000 JMD." 
+        text: "We audit fitness & insurance validity, process online renewals, and retrieve your printable e-Registration Certificate for $3,000 JMD (+ official agency fees)." 
       },
       { 
         type: "service", 
         keywords: ["passport", "pica", "renew passport", "travel", "guarantor"], 
         title: "Passport Application Support", 
-        text: "High-scrutiny pre-audits for Jamaican passport applications, strictly verifying photos, guarantor details, and supporting IDs for $6,000 JMD." 
+        text: "High-scrutiny pre-audits for both PICA online renewals and paper applications, strictly verifying photos, guarantor details, and supporting IDs for $6,000 JMD (+ official agency fees)." 
       },
       { 
         type: "service", 
         keywords: ["birth", "death", "marriage", "rgd", "certificate", "record", "vital"], 
         title: "Vital Record Certificates", 
-        text: "Online search filing, entry auditing, tracking, and doorstep courier dispatch setup for official Birth, Marriage, or Death records for $3,000 JMD." 
+        text: "Online search filing, entry auditing, tracking, and doorstep courier dispatch setup for official Birth, Marriage, or Death records for $3,000 JMD (+ official agency fees)." 
       },
       { 
         type: "service", 
