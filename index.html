@@ -16,6 +16,7 @@
       --gold-hover: #C29F2B;
       --bg-page: #F8FAFC;
       --bg-card: #FFFFFF;
+      --bg-slate-light: #F0F4F8; /* Unified soft CTA accent */
       --text-main: #1E293B;
       --text-muted: #475569;
       --border-subtle: #E2E8F0;
@@ -136,9 +137,46 @@
     }
     .btn:hover { background: var(--navy-hover); transform: translateY(-1px); }
 
-   /* =========================================
-       HERO SECTION (SIMPLIFIED & UNOBSTRUCTED)
+    /* =========================================
+       2. HERO SECTION
        ========================================= */
+    .hero-section {
+      padding: 90px 0 80px;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.35;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
     .hero-description {
       font-size: 1.05rem;
       color: var(--text-muted);
@@ -146,6 +184,21 @@
       margin-bottom: 28px;
       max-width: 480px;
     }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-secondary-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      transition: color 0.2s;
+    }
+    .btn-secondary-link:hover { color: var(--gold); }
 
     .hero-visual-frame {
       position: relative;
@@ -155,12 +208,12 @@
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(15, 37, 55, 0.08);
       background: linear-gradient(rgba(15, 37, 55, 0.05), rgba(15, 37, 55, 0.2)),
-                  url('hero-bg.jpg') center/cover no-repeat; /* <--- EDIT IMAGE FILE NAME HERE */
+                  url('hero-bg.jpg') center/cover no-repeat;
       display: flex;
       align-items: flex-end;
       padding: 16px;
     }
-    /* Minimal Floating Badge (Does not block image) */
+
     .hero-overlay-card {
       background: rgba(15, 37, 55, 0.88);
       backdrop-filter: blur(8px);
@@ -175,7 +228,7 @@
       font-size: 0.82rem;
       font-weight: 600;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      width: auto; /* Keeps card compact */
+      width: auto;
     }
 
     .hero-overlay-card-dot {
@@ -187,7 +240,7 @@
     }
 
     /* =========================================
-       3. CORE SERVICES GRID & MODAL OVERLAY
+       3. CORE SERVICES GRID (3D ELEVATED)
        ========================================= */
     #services {
       background: #F1F5F9;
@@ -199,56 +252,80 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 24px;
+      gap: 32px;
     }
 
     .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
+      background: #FFFFFF;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(15, 37, 55, 0.08), 0 8px 10px -6px rgba(15, 37, 55, 0.04);
+      border: 1px solid rgba(15, 37, 55, 0.08);
       border-top: 4px solid var(--gold);
-      border-radius: var(--radius);
-      box-shadow: 0 4px 15px rgba(15, 37, 55, 0.04);
-      padding: 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(15, 37, 55, 0.08);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px -10px rgba(15, 37, 55, 0.16), 0 10px 15px -5px rgba(15, 37, 55, 0.06);
     }
 
-    .card h3 {
-      font-size: 1.2rem;
+    .card-body {
+      padding: 28px 24px 24px;
+    }
+
+    .card-title-btn {
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0 0 12px 0;
+      text-align: left;
+      width: 100%;
+      cursor: pointer;
+      display: block;
+    }
+
+    .card-title-btn h3 {
+      font-size: 1.25rem;
       color: var(--navy);
-      margin-bottom: 8px;
+      margin: 0;
+      transition: color 0.2s ease;
+    }
+
+    .card-title-btn:hover h3 {
+      color: var(--gold);
     }
 
     .card p {
       color: var(--text-muted);
       font-size: 0.95rem;
-      margin-bottom: 20px;
-      line-height: 1.5;
+      margin: 0;
+      line-height: 1.6;
     }
 
-    .btn-expand-trigger {
-      background: transparent;
-      border: none;
+    /* Light Slate-Blue Card Footer CTA */
+    .btn-card-footer {
+      width: 100%;
+      padding: 16px 24px;
+      background: var(--bg-slate-light);
       color: var(--navy);
+      border: none;
+      border-top: 1px solid var(--border-subtle);
       font-weight: 700;
       font-size: 0.92rem;
       cursor: pointer;
-      padding: 0;
-      display: inline-flex;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 6px;
-      transition: color 0.2s;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
-    .btn-expand-trigger:hover {
-      color: var(--gold);
+    .btn-card-footer:hover {
+      background: var(--navy);
+      color: #FFFFFF;
     }
 
     /* FULL-PAGE OVERLAY SHEET MODAL */
@@ -384,21 +461,22 @@
     .modal-cta-btn:hover { background: var(--navy-hover); }
 
     /* =========================================
-       4. SMART SEARCH
+       4. SMART SEARCH (MATCHED 3D ELEVATED CARD)
        ========================================= */
     .search-wrapper {
       padding: 70px 0;
-      background: #F8FAFC;
+      background: #F1F5F9;
       border-bottom: 1px solid var(--border-subtle);
     }
 
     .search-section {
-      background: #FFFDF5;
+      background: #FFFFFF;
       color: var(--navy);
       padding: 45px 40px;
-      border-radius: 14px;
-      border: 2px solid var(--gold);
-      box-shadow: 0 10px 30px rgba(15, 37, 55, 0.06);
+      border-radius: 12px;
+      border: 1px solid rgba(15, 37, 55, 0.08);
+      border-top: 4px solid var(--gold);
+      box-shadow: 0 10px 25px -5px rgba(15, 37, 55, 0.08), 0 8px 10px -6px rgba(15, 37, 55, 0.04);
       max-width: 850px;
       margin: 0 auto;
       text-align: center;
@@ -427,20 +505,21 @@
       margin-inline: auto;
     }
 
+    /* Light Slate-Blue Input Field */
     .search-section input {
       width: 100%;
       padding: 18px 22px;
       font-size: 1.05rem;
       color: var(--navy);
-      background: #FFFFFF;
-      border: 2px solid #E2E8F0;
+      background: var(--bg-slate-light);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius);
-      box-shadow: 0 4px 12px rgba(15, 37, 55, 0.05);
       transition: all 0.2s ease;
       outline: none;
     }
     
     .search-section input:focus {
+      background: #FFFFFF;
       border-color: var(--navy);
       box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.25);
     }
@@ -448,7 +527,7 @@
     #resultArea {
       margin-top: 25px;
       padding: 20px;
-      background: var(--bg-page);
+      background: var(--bg-slate-light);
       border-left: 4px solid var(--gold);
       border-radius: 0 6px 6px 0;
       display: none;
@@ -660,17 +739,17 @@
     }
     .whatsapp-float:hover { transform: scale(1.05); }
 
-   /* =========================================
-       MOBILE RESPONSIVENESS (100% FLUID FIX)
+    /* =========================================
+       8. MOBILE RESPONSIVENESS (100% FLUID)
        ========================================= */
-  @media (max-width: 768px) {
+    @media (max-width: 768px) {
       .grid { 
         grid-template-columns: 1fr;
-        gap: 36px; /* Increased from 24px for distinct visual spacing on mobile */
+        gap: 36px;
       }
 
-      .card {
-        padding: 32px 24px; /* Generous internal padding for touch targets */
+      .card-body {
+        padding: 24px 20px 20px;
       }
 
       .nav-links {
@@ -726,11 +805,11 @@
     </div>
   </header>
 
- <!-- 1. HERO SECTION -->
+  <!-- 1. HERO SECTION -->
   <div class="hero-section">
     <div class="container hero-grid">
       
-      <!-- Left Column: Single Simplified Description -->
+      <!-- Left Column: Title & CTAs -->
       <div class="hero-text">
         <span class="hero-tag">Private Document Concierge</span>
         <h1 class="hero-title">Jamaican document processing, sorted without the stress.</h1>
@@ -745,7 +824,7 @@
         </div>
       </div>
 
-      <!-- Right Column: Full Image View with Small Corner Badge -->
+      <!-- Right Column: Visual Frame with Floating Badge -->
       <div class="hero-visual-frame">
         <div class="hero-overlay-card">
           <span class="hero-overlay-card-dot"></span>
@@ -755,6 +834,7 @@
 
     </div>
   </div>
+
   <!-- 2. CORE SERVICES GRID -->
   <section id="services">
     <div class="container">
@@ -767,56 +847,86 @@
 
         <!-- CARD 1 -->
         <div class="card">
-          <div>
-            <h3>Driver's Licence Renewals</h3>
+          <div class="card-body">
+            <button class="card-title-btn" onclick="openModal('driver')">
+              <h3>Driver's Licence Renewals</h3>
+            </button>
             <p>Hybrid service covering compliance auditing, application form preparation, and submission routing.</p>
           </div>
-          <button class="btn-expand-trigger" onclick="openModal('driver')">View Scope & Pricing &rarr;</button>
+          <button class="btn-card-footer" onclick="openModal('driver')">
+            <span>View Scope & Pricing</span>
+            <span>&rarr;</span>
+          </button>
         </div>
 
         <!-- CARD 2 -->
         <div class="card">
-          <div>
-            <h3>Motor Vehicle Licensing</h3>
+          <div class="card-body">
+            <button class="card-title-btn" onclick="openModal('vehicle')">
+              <h3>Motor Vehicle Licensing</h3>
+            </button>
             <p>Annual renewal guidance, fitness & insurance status audits, and tax office preparation.</p>
           </div>
-          <button class="btn-expand-trigger" onclick="openModal('vehicle')">View Scope & Pricing &rarr;</button>
+          <button class="btn-card-footer" onclick="openModal('vehicle')">
+            <span>View Scope & Pricing</span>
+            <span>&rarr;</span>
+          </button>
         </div>
 
         <!-- CARD 3 -->
         <div class="card">
-          <div>
-            <h3>Passport Application Support</h3>
+          <div class="card-body">
+            <button class="card-title-btn" onclick="openModal('passport')">
+              <h3>Passport Application Support</h3>
+            </button>
             <p>High-scrutiny pre-audits for Jamaican passport applications, photos, and guarantor details.</p>
           </div>
-          <button class="btn-expand-trigger" onclick="openModal('passport')">View Scope & Pricing &rarr;</button>
+          <button class="btn-card-footer" onclick="openModal('passport')">
+            <span>View Scope & Pricing</span>
+            <span>&rarr;</span>
+          </button>
         </div>
 
         <!-- CARD 4 -->
         <div class="card">
-          <div>
-            <h3>Police Records & Clearances</h3>
+          <div class="card-body">
+            <button class="card-title-btn" onclick="openModal('police')">
+              <h3>Police Records & Clearances</h3>
+            </button>
             <p>Thorough intake auditing, portal entry, strict name-matching, and appointment routing.</p>
           </div>
-          <button class="btn-expand-trigger" onclick="openModal('police')">View Scope & Pricing &rarr;</button>
+          <button class="btn-card-footer" onclick="openModal('police')">
+            <span>View Scope & Pricing</span>
+            <span>&rarr;</span>
+          </button>
         </div>
 
         <!-- CARD 5 -->
         <div class="card">
-          <div>
-            <h3>Vital Record Certificates</h3>
+          <div class="card-body">
+            <button class="card-title-btn" onclick="openModal('rgd')">
+              <h3>Vital Record Certificates</h3>
+            </button>
             <p>Online search filing, entry audit, tracking, and courier dispatch setup for Birth, Marriage, or Death records.</p>
           </div>
-          <button class="btn-expand-trigger" onclick="openModal('rgd')">View Scope & Pricing &rarr;</button>
+          <button class="btn-card-footer" onclick="openModal('rgd')">
+            <span>View Scope & Pricing</span>
+            <span>&rarr;</span>
+          </button>
         </div>
 
         <!-- CARD 6 -->
         <div class="card">
-          <div>
-            <h3>General Consultations</h3>
+          <div class="card-body">
+            <button class="card-title-btn" onclick="openModal('consult')">
+              <h3>General Consultations</h3>
+            </button>
             <p>Tailored advice for complex, multi-agency, or unlisted administrative scenarios.</p>
           </div>
-          <button class="btn-expand-trigger" onclick="openModal('consult')">View Scope & Details &rarr;</button>
+          <button class="btn-card-footer" onclick="openModal('consult')">
+            <span>View Scope & Details</span>
+            <span>&rarr;</span>
+          </button>
         </div>
 
       </div>
@@ -919,7 +1029,7 @@
   <section id="about" class="about">
     <div class="container about-grid">
       <div class="about-image-frame">
-        <img src="ecard.webp" alt="Laura Clarke">
+        <img src="laura.jpg" alt="Laura Clarke" onerror="this.src='ecard.webp'">
       </div>
       <div class="about-text">
         <h2>About Laura Clarke</h2>
@@ -954,7 +1064,7 @@
           </ul>
         </div>
 
-       <!-- Column 3: Direct Contact -->
+        <!-- Column 3 -->
         <div class="footer-col">
           <h4>Direct Contact</h4>
           <ul class="footer-links">
