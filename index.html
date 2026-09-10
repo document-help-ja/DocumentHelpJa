@@ -136,68 +136,16 @@
     }
     .btn:hover { background: var(--navy-hover); transform: translateY(-1px); }
 
-    /* =========================================
-       2. HERO SECTION
+   /* =========================================
+       HERO SECTION (SIMPLIFIED & UNOBSTRUCTED)
        ========================================= */
-    .hero-section {
-      padding: 90px 0 80px;
-      background: #FFFFFF;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .hero-text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .hero-tag {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-
-    .hero-title {
-      font-size: clamp(1.75rem, 3.2vw, 2.35rem);
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.35;
-      margin-bottom: 24px;
-      letter-spacing: -0.01em;
-    }
-
     .hero-description {
       font-size: 1.05rem;
       color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 36px;
-      max-width: 500px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 480px;
     }
-
-    .hero-cta-group {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .btn-secondary-link {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--navy);
-      transition: color 0.2s;
-    }
-    .btn-secondary-link:hover { color: var(--gold); }
 
     .hero-visual-frame {
       position: relative;
@@ -205,37 +153,38 @@
       height: 400px;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(15, 37, 55, 0.05);
-      background: linear-gradient(rgba(15, 37, 55, 0.2), rgba(15, 37, 55, 0.4)),
-                  url('hero.webp') center/cover no-repeat;
+      box-shadow: 0 10px 30px rgba(15, 37, 55, 0.08);
+      background: linear-gradient(rgba(15, 37, 55, 0.05), rgba(15, 37, 55, 0.2)),
+                  url('hero-bg.jpg') center/cover no-repeat;
       display: flex;
       align-items: flex-end;
-      padding: 24px;
+      padding: 16px;
     }
 
+    /* Minimal Floating Badge (Does not block image) */
     .hero-overlay-card {
-      background: rgba(15, 37, 55, 0.85);
+      background: rgba(15, 37, 55, 0.88);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 8px;
-      padding: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 30px;
+      padding: 8px 18px;
       color: #FFFFFF;
-      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      width: auto; /* Keeps card compact */
     }
 
-    .hero-overlay-card p {
-      margin: 0;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      color: #E2E8F0;
-    }
-
-    .hero-overlay-card strong {
-      color: var(--gold);
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.95rem;
+    .hero-overlay-card-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--gold);
+      border-radius: 50%;
+      display: inline-block;
     }
 
     /* =========================================
@@ -715,9 +664,14 @@
    /* =========================================
        MOBILE RESPONSIVENESS (100% FLUID FIX)
        ========================================= */
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
       .grid { 
-        grid-template-columns: 1fr; /* Single column layout guarantees zero horizontal scroll */
+        grid-template-columns: 1fr;
+        gap: 36px; /* Increased from 24px for distinct visual spacing on mobile */
+      }
+
+      .card {
+        padding: 32px 24px; /* Generous internal padding for touch targets */
       }
 
       .nav-links {
@@ -773,17 +727,17 @@
     </div>
   </header>
 
-  <!-- 1. HERO SECTION -->
+ <!-- 1. HERO SECTION -->
   <div class="hero-section">
     <div class="container hero-grid">
       
-      <!-- Left Column -->
+      <!-- Left Column: Single Simplified Description -->
       <div class="hero-text">
         <span class="hero-tag">Private Document Concierge</span>
         <h1 class="hero-title">Jamaican document processing, sorted without the stress.</h1>
         
         <p class="hero-description">
-          When requirements shift and agency portals become confusing, you don't have to navigate it alone. We provide personal guidance, line-by-line audits, and local ground support so your applications move forward smoothly the first time.
+          We handle the document audits, form preparations, and agency legwork so your applications move forward correctly the first time.
         </p>
 
         <div class="hero-cta-group">
@@ -792,17 +746,16 @@
         </div>
       </div>
 
-      <!-- Right Column -->
+      <!-- Right Column: Full Image View with Small Corner Badge -->
       <div class="hero-visual-frame">
         <div class="hero-overlay-card">
-          <strong>Organized. Thorough. Local.</strong>
-          <p>Providing structured oversight and local representation for individuals and diaspora clients worldwide.</p>
+          <span class="hero-overlay-card-dot"></span>
+          <span>On-the-Ground & Diaspora Representation</span>
         </div>
       </div>
 
     </div>
   </div>
-
   <!-- 2. CORE SERVICES GRID -->
   <section id="services">
     <div class="container">
@@ -1002,7 +955,7 @@
           </ul>
         </div>
 
-        <!-- Column 3 -->
+       <!-- Column 3: Direct Contact -->
         <div class="footer-col">
           <h4>Direct Contact</h4>
           <ul class="footer-links">
@@ -1016,7 +969,7 @@
                 Book Consultation
               </a>
             </li>
-            <li><span style="color: #64748B;">Linstead, Jamaica</span></li>
+            <li><span style="color: #64748B;">Local Ground Support & Diaspora</span></li>
           </ul>
         </div>
 
@@ -1039,7 +992,7 @@
         
         <div class="copyright-row">
           <div>&copy; 2026 Laura Clarke Administrative Services. All rights reserved.</div>
-          <div>Private Document Concierge &bull; Kingston, Jamaica</div>
+          <div>Private Document Concierge &bull; Jamaica</div>
         </div>
       </div>
 
