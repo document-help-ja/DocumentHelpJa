@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights Vault | Laura Clarke Administrative Services</title>
+  <meta name="description" content="Practical guides, counter rules, and administrative advice for Jamaican document processing.">
+  <meta name="theme-color" content="#0F2537">
+  
+  <link rel="canonical" href="https://documenthelpja.com/insights.html">
+
+  <style>
+    :root {
+      --navy: #0F2537;
+      --navy-hover: #173752;
+      --gold: #D4AF37;
+      --bg-page: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --bg-slate-light: #F0F4F8;
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --border-subtle: #E2E8F0;
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    h1, h2, h3 { color: var(--navy); margin-top: 0; line-height: 1.35; }
+    p { margin-top: 0; margin-bottom: 24px; font-size: 1.05rem; }
+
+    .container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid var(--gold);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 70px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .brand-name { font-weight: 700; font-size: 1.05rem; color: #FFFFFF; }
+    .brand-sub { font-size: 0.72rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; display: block; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { font-weight: 600; font-size: 0.95rem; color: #E2E8F0; }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    .page-hero {
+      background: var(--navy);
+      color: #FFFFFF;
+      padding: 70px 0 60px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .page-hero h1 { color: #FFFFFF; font-size: clamp(2rem, 3.5vw, 2.6rem); margin-bottom: 16px; }
+    .page-hero p { color: #CBD5E1; max-width: 620px; margin: 0 auto; font-size: 1.1rem; }
+
+    /* BLOG FEED */
+    .blog-feed { padding: 60px 0; }
+
+    .blog-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-top: 4px solid var(--gold);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 36px;
+      box-shadow: 0 4px 15px rgba(15, 37, 55, 0.03);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .category-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .blog-title {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .blog-excerpt {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+    }
+
+    /* HIDDEN FULL CONTENT AREA */
+    .blog-full-content {
+      display: none;
+      padding-top: 24px;
+      margin-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .blog-full-content p {
+      color: var(--text-main);
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+    }
+
+    .btn-toggle {
+      background: transparent;
+      border: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.98rem;
+      cursor: pointer;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .btn-toggle:hover { color: var(--gold); }
+
+    .whatsapp-action-box {
+      background: var(--bg-slate-light);
+      border-left: 4px solid var(--navy);
+      padding: 24px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn-wa {
+      display: inline-block;
+      padding: 12px 20px;
+      background: var(--navy);
+      color: #fff !important;
+      border-radius: var(--radius);
+      font-weight: bold;
+      font-size: 0.92rem;
+      transition: background 0.2s;
+    }
+    .btn-wa:hover { background: var(--navy-hover); }
+
+    /* FOOTER */
+    footer {
+      background: #08141F;
+      color: #94A3B8;
+      padding: 60px 0 30px;
+      font-size: 0.9rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 0.9fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { color: #FFFFFF; margin-bottom: 16px; }
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a { color: #CBD5E1; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; }
+
+    @media (max-width: 768px) {
+      .blog-card { padding: 28px 20px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .blog-title { font-size: 1.3rem; }
+      .whatsapp-action-box { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY HEADER -->
+  <header>
+    <div class="container header-content">
+      <a href="index.html#top" class="brand">
+        <div class="brand-mark">LC</div>
+        <div>
+          <span class="brand-name">Laura Clarke</span>
+          <span class="brand-sub">Administrative Services</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#services">Services</a>
+        <a href="insights.html" style="color: var(--gold);">Insights</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Insights Vault</h1>
+      <p>Practical guides, counter rules, and administrative advice to protect your applications from costly agency delays.</p>
+    </div>
+  </section>
+
+  <!-- MAIN BLOG FEED -->
+  <main class="container blog-feed">
+
+    <!-- POST 1: LOST OR STOLEN PASSPORTS -->
+    <article id="lost-stolen-passport" class="blog-card">
+      <span class="category-badge">Passport & Identity Security</span>
+      <h2 class="blog-title">Lost or Stolen Jamaican Passport? Why You Must File a Police Report Before Re-Applying</h2>
+      
+      <p class="blog-excerpt">
+        A missing passport is considered a high-priority security risk. Attempting to submit a standard renewal form to replace a missing booklet will cause immediate counter rejections at PICA...
+      </p>
+
+      <button class="btn-toggle" onclick="togglePost('lost-stolen-passport')">
+        <span class="toggle-text">Read Full Article</span> &rarr;
+      </button>
+
+      <div class="blog-full-content">
+        <p>When a passport goes missing, many people delay taking action out of fear of bureaucracy or police station visits. However, a lost passport sitting in unverified hands creates a severe identity theft risk.</p>
+        
+        <p>Attempting to submit a standard renewal application to replace a missing passport will result in immediate rejection at the PICA counter. To replace a lost or stolen Jamaican passport smoothly, you must follow these exact security protocols:</p>
+        
+        <p>First, visit the nearest police station in the parish where the loss occurred and request a written Police Receipt/Report specifically noting the lost passport number. Second, in addition to the standard application, you must complete PICA’s mandatory C-1 affidavit explaining the exact circumstances of the loss.</p>
+
+        <p>Finally, remember that lost passport replacements are excluded from PICA’s online renewal system. You must present yourself in person along with your official birth certificate, certified photos, and the original police report.</p>
+
+        <div class="whatsapp-action-box">
+          <div>
+            <strong style="color: var(--navy); display: block;">Need assistance replacing a lost passport?</strong>
+            <span style="font-size: 0.92rem; color: var(--text-muted);">We help audit your documents and prepare your replacement package.</span>
+          </div>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20need%20help%20replacing%20a%20lost%20or%20stolen%20passport." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- POST 2: DAMAGED PASSPORTS -->
+    <article id="damaged-passport" class="blog-card">
+      <span class="category-badge">PICA Compliance</span>
+      <h2 class="blog-title">Is Your Passport Damaged? Heat, Water, and Laminate Peeling Rules at PICA</h2>
+
+      <p class="blog-excerpt">
+        Passports with water stains, torn pages, or heat-peeled laminate are officially classified as damaged. Here is why they cannot be processed through online renewals...
+      </p>
+
+      <button class="btn-toggle" onclick="togglePost('damaged-passport')">
+        <span class="toggle-text">Read Full Article</span> &rarr;
+      </button>
+
+      <div class="blog-full-content">
+        <p>Jamaica’s climate frequently leads to accidental passport damage—leaving a document on a hot car dashboard, accidentally running it through a washing machine, or spilling liquids inside a travel bag.</p>
+
+        <p>PICA counter officers enforce strict rules regarding document integrity. If a passport scanner cannot read the machine-readable zone (MRZ) or if the photo laminate is peeling, the document is officially invalidated.</p>
+
+        <p>If your passport has any physical damage, do not attempt to use PICA’s automated online renewal system, as it will fail during the photo verification step. Instead, you must present the damaged booklet in person so senior clerks can verify that the security features have not been compromised.</p>
+
+        <p>Always bring your original birth certificate and valid photo ID to confirm your legal identity alongside the damaged document during counter drop-off.</p>
+
+        <div class="whatsapp-action-box">
+          <div>
+            <strong style="color: var(--navy); display: block;">Unsure if your passport counts as damaged?</strong>
+            <span style="font-size: 0.92rem; color: var(--text-muted);">Send us a scan or photo for a quick pre-audit review.</span>
+          </div>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20have%20questions%20about%20a%20damaged%20passport." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- POST 3: ADD FATHER'S NAME TO BIRTH CERTIFICATE -->
+    <article id="add-father-name" class="blog-card">
+      <span class="category-badge">RGD Vital Records</span>
+      <h2 class="blog-title">Adding a Father's Name to a Jamaican Birth Certificate: The RGD "Status" Process</h2>
+
+      <p class="blog-excerpt">
+        Adding a father’s particulars to an existing birth record requires a formal "Addition of Father's Particulars" application accompanied by a sworn Statutory Declaration...
+      </p>
+
+      <button class="btn-toggle" onclick="togglePost('add-father-name')">
+        <span class="toggle-text">Read Full Article</span> &rarr;
+      </button>
+
+      <div class="blog-full-content">
+        <p>Historically, many Jamaican birth certificates were issued without the father's name or details listed. Updating this document later in life is essential for foreign visa petitions, inheritance claims, and passport applications.</p>
+
+        <p>The Registrar General's Department (RGD) requires a specific legal procedure known as a "Status" application to update the official register.</p>
+
+        <p>Both the mother and father must sign the RGD application form and provide valid government photo identification. A Justice of the Peace (JP) or Notary Public must witness and sign a formal declaration confirming fatherhood.</p>
+
+        <p>Along with the application, the father's original birth certificate and TRN must be submitted. If the father is deceased, the RGD requires alternative legal proof, such as DNA testing, court orders, or sworn declarations from paternal relatives.</p>
+
+        <div class="whatsapp-action-box">
+          <div>
+            <strong style="color: var(--navy); display: block;">Need help navigating the RGD Status application?</strong>
+            <span style="font-size: 0.92rem; color: var(--text-muted);">We prepare your documents before submission.</span>
+          </div>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20need%20assistance%20adding%20a%20father's%20name%20to%20a%20birth%20certificate." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- POST 4: TRN WITHOUT PHOTO ID -->
+    <article id="trn-no-id" class="blog-card">
+      <span class="category-badge">Tax Administration Jamaica</span>
+      <h2 class="blog-title">No Passport or Driver's Licence? How to Get a Jamaican TRN Using Only a Birth Certificate</h2>
+
+      <p class="blog-excerpt">
+        Lacking a formal photo ID does not stop you from getting a TRN. Tax Administration Jamaica allows an alternative verification path using a certified photo and JP declaration...
+      </p>
+
+      <button class="btn-toggle" onclick="togglePost('trn-no-id')">
+        <span class="toggle-text">Read Full Article</span> &rarr;
+      </button>
+
+      <div class="blog-full-content">
+        <p>Many individuals believe that lacking a Passport, Driver’s Licence, or Electoral ID completely blocks them from obtaining a Taxpayer Registration Number (TRN). This is a common misconception.</p>
+
+        <p>Tax Administration Jamaica (TAJ) provides a clear alternative verification path for citizens without standard photo IDs by pairing an original RGD Birth Certificate with a JP-certified passport photograph and an official JP Declaration Form.</p>
+
+        <p>To do this, obtain one passport-sized photograph. A Justice of the Peace, Doctor, Attorney, or Minister of Religion must endorse the back: <em>"Certified true photograph of [Applicant Name]"</em> with their signature and date.</p>
+
+        <p>Next, print TAJ's "Declaration by Certifying Official" form and have the same JP complete and stamp it. Crucially, the residential address written on the declaration form must match the address entered on the TRN application line-for-line.</p>
+
+        <p>Because this relies on an alternative verification method, the applicant must appear in person at the Tax Office counter so the clerk can physically verify them against the certified photo.</p>
+
+        <div class="whatsapp-action-box">
+          <div>
+            <strong style="color: var(--navy); display: block;">Need help preparing a TRN package without photo ID?</strong>
+            <span style="font-size: 0.92rem; color: var(--text-muted);">We organize your pre-filled forms and JP checklists.</span>
+          </div>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20need%20help%20applying%20for%20a%20TRN%20without%20a%20photo%20ID." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- POST 5: POLICE RECORD PHOTO TRAP -->
+    <article id="police-photo-trap" class="blog-card">
+      <span class="category-badge">JCF Clearances</span>
+      <h2 class="blog-title">The $3,000 Photo Mistake: Why Certifying Your Police Record Picture Will Get You Rejected</h2>
+
+      <p class="blog-excerpt">
+        Unlike TRN or passport applications, the Criminal Records Office turns applicants away if a JP signs or stamps the photo. Here is what to avoid at your appointment...
+      </p>
+
+      <button class="btn-toggle" onclick="togglePost('police-photo-trap')">
+        <span class="toggle-text">Read Full Article</span> &rarr;
+      </button>
+
+      <div class="blog-full-content">
+        <p>Because most government applications (like Passports, Driver's Licences, and TRNs) require a Justice of the Peace to certify your passport photograph, applicants naturally assume the same rule applies to Police Records.</p>
+
+        <p>Doing so for a Police Certificate is a costly error that leads to instant rejection at the fingerprint counter. JCF forensic technicians require completely clean, uncertified passport photos. Do not allow anyone to write, stamp, or emboss the back of the picture.</p>
+
+        <p>Additionally, ensure the full legal name on your online payment receipt matches your government photo ID exactly. If using a passport in your maiden name, bring your original RGD marriage certificate as a legal bridge document.</p>
+
+        <p>Remember that police records are locked to the specific employer, embassy, or institution requested during application and cannot be reused elsewhere later.</p>
+
+        <div class="whatsapp-action-box">
+          <div>
+            <strong style="color: var(--navy); display: block;">Ready to book your Police Record fingerprinting?</strong>
+            <span style="font-size: 0.92rem; color: var(--text-muted);">We handle payment entry and appointment scheduling.</span>
+          </div>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20need%20help%20booking%20and%20preparing%20a%20Police%20Record." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- POST 6: NIS PENSION TRAP -->
+    <article id="nis-pension-trap" class="blog-card">
+      <span class="category-badge">National Insurance Scheme</span>
+      <h2 class="blog-title">The NIS Contribution Trap: Why Missing Record Audits Can Shrink Your Retirement Pension</h2>
+
+      <p class="blog-excerpt">
+        Unpaid quarterly self-employed NIS contributions create permanent gaps in your record. Learn how auditing your statement early protects your full retirement payout...
+      </p>
+
+      <button class="btn-toggle" onclick="togglePost('nis-pension-trap')">
+        <span class="toggle-text">Read Full Article</span> &rarr;
+      </button>
+
+      <div class="blog-full-content">
+        <p>Many self-employed professionals, business owners, and returning diaspora members assume that paying income taxes automatically covers their National Insurance Scheme (NIS) obligations. It does not.</p>
+
+        <p>Skipping self-employed NIS quarterly payments creates serious financial vulnerabilities that surface only when applying for retirement benefits.</p>
+
+        <p>To qualify for a full retirement pension, the Ministry of Labour requires a specific number of verified annual contribution weeks. Unrecorded years directly reduce your final monthly payout.</p>
+
+        <p>Waiting until age 60 or 65 to check your record makes retrieving past employment proof extremely difficult. Auditing your statement every few years ensures missing records are resolved immediately while records are fresh.</p>
+
+        <div class="whatsapp-action-box">
+          <div>
+            <strong style="color: var(--navy); display: block;">Have questions about your NIS contribution standing?</strong>
+            <span style="font-size: 0.92rem; color: var(--text-muted);">Book a consultation to review your document history.</span>
+          </div>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20have%20questions%20about%20NIS%20record%20audits." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- POST 7: DIASPORA TRN NOTARY PITFALLS -->
+    <article id="diaspora-trn-notary" class="blog-card">
+      <span class="category-badge">Diaspora Representation</span>
+      <h2 class="article-title">Applying for a Jamaican TRN from Abroad: The Notary Details That Cause Rejections</h2>
+
+      <p class="blog-excerpt">
+        Overseas TRN mail applications are rejected if foreign notary stamps lack an explicit commission expiration date or if form signatures vary from the ID scan...
+      </p>
+
+      <button class="btn-toggle" onclick="togglePost('diaspora-trn-notary')">
+        <span class="toggle-text">Read Full Article</span> &rarr;
+      </button>
+
+      <div class="blog-full-content">
+        <p>Members of the Jamaican diaspora living in the US, UK, or Canada do not need to fly to Jamaica to secure a Taxpayer Registration Number (TRN). However, TAJ counter clerks inspect mailed international applications under strict scrutiny.</p>
+
+        <p>Foreign Notary Public stamps must display an active commission expiration date. Incomplete or faint notary stamps will cause immediate application halts in Kingston.</p>
+
+        <p>Furthermore, the signature on your pre-filled TRN application form must match the signature on your notarized passport copy line-for-line.</p>
+
+        <p>If sending a local representative to drop off or track your package at the Tax Office in Kingston, always include a signed letter explicitly authorizing them to handle the transaction on your behalf.</p>
+
+        <div class="whatsapp-action-box">
+          <div>
+            <strong style="color: var(--navy); display: block;">Applying for a TRN from overseas?</strong>
+            <span style="font-size: 0.92rem; color: var(--text-muted);">We pre-audit your notary seals before you mail your package.</span>
+          </div>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20need%20diaspora%20TRN%20pre-audit%20assistance." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- POST 8: DRIVING ABSTRACTS -->
+    <article id="driving-abstract" class="blog-card">
+      <span class="category-badge">TAJ Compliance</span>
+      <h2 class="blog-title">Need a Jamaican Driving Abstract for Overseas Insurance or Work? What You Must Know</h2>
+
+      <p class="blog-excerpt">
+        A driving abstract is a formal compliance history detailing your Jamaican traffic record. It must be officially addressed to a specific overseas employer or insurance agency...
+      </p>
+
+      <button class="btn-toggle" onclick="togglePost('driving-abstract')">
+        <span class="toggle-text">Read Full Article</span> &rarr;
+      </button>
+
+      <div class="blog-full-content">
+        <p>Jamaican drivers moving abroad often require an official "Driving Abstract" or Driver's History Report to lower foreign car insurance premiums or satisfy commercial trucking employer checks.</p>
+
+        <p>TAJ does not issue generic driving abstracts. You must supply the exact legal name and mailing address of the receiving foreign agency before the application can be processed.</p>
+
+        <p>You must supply your original Jamaican Driver's Licence number, personal TRN, and full legal name as recorded in the TAJ database.</p>
+
+        <p>If you are already abroad, an authorized local representative in Jamaica can submit the request, pay the official fees, and retrieve the certified abstract on your behalf.</p>
+
+        <div class="whatsapp-action-box">
+          <div>
+            <strong style="color: var(--navy); display: block;">Need local ground representation for a Driving Abstract?</strong>
+            <span style="font-size: 0.92rem; color: var(--text-muted);">We handle the Tax Office filings and pickup for you.</span>
+          </div>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20need%20a%20Jamaican%20Driving%20Abstract." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- CLEAN FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="color: #fff; font-weight: 700; font-size: 1.1rem;">Laura Clarke</div>
+          <span style="color: var(--gold); font-size: 0.78rem; text-transform: uppercase; font-weight: 600;">Administrative Services</span>
+          <p style="margin-top: 12px; font-size: 0.88rem;">Private document preparation, compliance audits, and local representation.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#top">Home</a></li>
+            <li><a href="index.html#services">Services & Pricing</a></li>
+            <li><a href="insights.html">Insights Vault</a></li>
+            <li><a href="about.html">About Laura</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:info@documenthelpja.com" style="color: #fff;">info@documenthelpja.com</a></li>
+            <li><a href="https://wa.me/18765612614" target="_blank" style="color: #fff;">WhatsApp: 876-561-2614</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 12px;">
+          <strong>Disclaimer:</strong> Laura Clarke Administrative Services is a private, independent consultancy providing document preparation and guidance. We are not a government agency.
+        </p>
+        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #64748B;">
+          <div>&copy; 2026 Laura Clarke Administrative Services. All rights reserved.</div>
+          <div>Jamaica Document Concierge</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT FOR TOGGLING BLOG POSTS -->
+  <script>
+    function togglePost(id) {
+      const card = document.getElementById(id);
+      if (!card) return;
+      
+      const content = card.querySelector('.blog-full-content');
+      const toggleText = card.querySelector('.toggle-text');
+      const isVisible = content.style.display === 'block';
+
+      if (isVisible) {
+        content.style.display = 'none';
+        toggleText.innerText = 'Read Full Article';
+      } else {
+        content.style.display = 'block';
+        toggleText.innerText = 'Close Article';
+      }
+    }
+
+    // Auto-open article if linked from homepage via URL hash (e.g. insights.html#trn-no-id)
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.substring(1);
+      if (hash) {
+        const targetPost = document.getElementById(hash);
+        if (targetPost) {
+          togglePost(hash);
+          targetPost.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
