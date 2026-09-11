@@ -52,6 +52,8 @@
       --bg-page: #F8FAFC;
       --bg-card: #FFFFFF;
       --bg-slate-light: #F0F4F8;
+      --cream-bg: #FAF6F0;
+      --cream-border: #EFE2C6;
       --text-main: #1E293B;
       --text-muted: #475569;
       --border-subtle: #E2E8F0;
@@ -386,13 +388,13 @@
     .modal-container {
       background: #FFFFFF;
       width: 100%;
-      max-width: 780px;
+      max-width: 820px;
       max-height: 90vh;
       overflow-y: auto;
       border-radius: 12px;
       border-top: 6px solid var(--gold);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-      padding: 50px;
+      padding: 45px;
       position: relative;
       animation: modalFadeIn 0.25s ease-out;
     }
@@ -434,7 +436,7 @@
     .modal-subtitle {
       color: var(--text-muted);
       font-size: 1.05rem;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
       line-height: 1.6;
     }
 
@@ -443,9 +445,9 @@
       grid-template-columns: 1fr 1fr;
       gap: 24px;
       background: #F8FAFC;
-      padding: 24px;
+      padding: 20px 24px;
       border-radius: 8px;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
       border: 1px solid #E2E8F0;
     }
 
@@ -464,48 +466,97 @@
       color: var(--navy);
     }
 
-    .modal-what-to-know {
-      background: #FFFDF5;
-      border-left: 4px solid var(--gold);
-      padding: 20px;
-      border-radius: 4px;
-      margin-bottom: 32px;
-      display: none;
-    }
-
-    .modal-what-to-know strong {
-      display: block;
-      color: var(--navy);
-      margin-bottom: 8px;
-      font-size: 1rem;
-    }
-
-    .modal-what-to-know p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
     .modal-section-title {
       font-weight: 700;
       color: var(--navy);
       font-size: 1.15rem;
       display: block;
-      margin-top: 36px;
-      margin-bottom: 16px;
+      margin-top: 30px;
+      margin-bottom: 14px;
       letter-spacing: -0.01em;
     }
 
     .modal-list {
       padding-left: 22px;
-      margin: 0 0 32px;
+      margin: 0 0 28px;
       color: var(--text-muted);
       line-height: 1.8;
     }
 
-    .modal-list li { margin-bottom: 16px; }
+    .modal-list li { margin-bottom: 12px; }
     .modal-list li:last-child { margin-bottom: 0; }
+
+    /* HELPFUL REFERENCE CREAM SECTION (INSIDE MODAL) */
+    .modal-ref-box {
+      background: var(--cream-bg);
+      border: 1px solid var(--cream-border);
+      border-radius: 10px;
+      padding: 28px;
+      margin: 32px 0 20px;
+    }
+
+    .modal-ref-title {
+      color: var(--navy);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .modal-ref-sub {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .modal-ref-box details {
+      background: #FFFFFF;
+      border: 1px solid var(--cream-border);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      padding: 14px 18px;
+    }
+    .modal-ref-box details:last-child { margin-bottom: 0; }
+
+    .modal-ref-box summary {
+      font-weight: 700;
+      color: var(--navy);
+      cursor: pointer;
+      font-size: 0.98rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-ref-box summary::-webkit-details-marker { display: none; }
+    .modal-ref-box summary::after { content: "+"; font-size: 1.3rem; color: var(--gold); font-weight: bold; }
+    .modal-ref-box details[open] summary::after { content: "−"; }
+
+    .modal-ref-box details p, 
+    .modal-ref-box details ul {
+      margin: 12px 0 0;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+    .modal-ref-box details ul { padding-left: 18px; }
+    .modal-ref-box details li { margin-bottom: 6px; }
+
+    .rate-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.88rem;
+    }
+    .rate-table th, .rate-table td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .rate-table th { background: #F1F5F9; color: var(--navy); font-weight: 700; }
 
     .modal-cta-btn {
       display: block;
@@ -517,7 +568,7 @@
       font-weight: 700;
       font-size: 1.05rem;
       border-radius: var(--radius);
-      margin-top: 40px;
+      margin-top: 32px;
       transition: background 0.2s;
     }
 
@@ -822,11 +873,12 @@
       .about-image-frame { height: 320px; max-width: 300px; margin: 0 auto; }
       
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .modal-container { padding: 35px 22px; max-height: 85vh; }
+      .modal-container { padding: 32px 20px; max-height: 85vh; }
       .modal-spec-grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 24px; padding: 18px; }
       
       section { padding: 50px 0; }
       .search-section { padding: 30px 18px; }
+      .modal-ref-box { padding: 20px 16px; }
     }
   </style>
 </head>
@@ -998,12 +1050,6 @@
         </div>
       </div>
 
-      <!-- What to Know Warning Box -->
-      <div class="modal-what-to-know" id="modalWhatToKnowWrapper">
-        <strong>📌 What to Know About This Document:</strong>
-        <p id="modalWhatToKnowText"></p>
-      </div>
-
       <span class="modal-section-title">What We Do:</span>
       <ul class="modal-list" id="modalWhatWeDo"></ul>
 
@@ -1012,6 +1058,13 @@
 
       <span class="modal-section-title" id="modalGetBackHeader">How You Get It Back & Key Notes:</span>
       <ul class="modal-list" id="modalHowYouGetItBack"></ul>
+
+      <!-- HELPFUL REFERENCE INFORMATION (CREAM BOX) -->
+      <div class="modal-ref-box" id="modalRefBox" style="display: none;">
+        <span class="modal-ref-title">📌 Helpful Reference Information</span>
+        <span class="modal-ref-sub">Important official guidelines and rules to keep in mind:</span>
+        <div id="modalRefContent"></div>
+      </div>
 
       <a href="#" id="modalCta" class="modal-cta-btn" target="_blank">Request Assistance via WhatsApp &rarr;</a>
     </div>
@@ -1074,7 +1127,7 @@
           <a href="insights.html#police-photo-trap" style="font-weight: 700; color: var(--navy); font-size: 0.9rem; text-decoration: underline;">Read Full Guide &rarr;</a>
         </div>
 
-        <!-- CARD 3 (UPDATED: NIS PENSION TRAP) -->
+        <!-- CARD 3 -->
         <div class="teaser-card">
           <div>
             <span style="font-size: 0.75rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">National Insurance (NIS)</span>
@@ -1216,11 +1269,29 @@
           "<strong>Major Tax Offices (e.g., Constant Spring, Spanish Town, Montego Bay, Mandeville):</strong> While they offer on-site digital photos, bringing physical photos avoids long camera lines and system delays. Because your fee is pre-paid, you can <strong>walk out with your new physical card the same day</strong> (usually in 15 to 30 minutes)!",
           "<strong>Smaller Tax Offices (Collectorates):</strong> Physical passport photos are mandatory. Since these offices do not print cards on-site, you will drive using your 60-day receipt and return a few days later to pick up the card."
         ],
+        referenceInfo: [
+          {
+            summary: "Which tax offices offer the fastest processing?",
+            detail: "<p>For the fastest turnaround (often completed same-day or within hours), TAJ operates specialized collection hubs and major centres, including:</p><ul><li><strong>Kingston:</strong> Constant Spring Revenue Service Centre & Cross Roads Tax Office</li><li><strong>St. Andrew:</strong> Andrew’s Avenue Drop-Off Hub</li><li><strong>St. Catherine:</strong> Spanish Town & Portmore Revenue Service Centres</li><li><strong>Montego Bay:</strong> Montego Bay Revenue Service Centre</li></ul><p><em>Note: These major hubs capture your digital signature and photo directly on-site. Processing times depend on TAJ daily volume.</em></p>"
+          },
+          {
+            summary: "What happens if I use a smaller, local tax office?",
+            detail: "<p>If you choose to renew at a smaller or local tax office outside of the main hubs:</p><ul><li><strong>Passport Photos Required:</strong> You MUST bring 2 physical passport-sized photographs. Smaller offices do not have on-site digital photo capture.</li><li><strong>Extended Wait Time:</strong> The process takes longer (several days to weeks) as documentation is sent to a centralized printing facility before returning.</li></ul>"
+          },
+          {
+            summary: "What standard documents do I need to prepare?",
+            detail: "<ul><li>Your current (expired or expiring) Driver's Licence.</li><li>Your Tax Registration Number (TRN).</li><li>Completed TAJ Application Form F7.</li><li>Medical Certificate (required if over 60 years old or holding a commercial licence).</li><li>2 Certified Passport Photos (if applying via a local non-hub office).</li></ul>"
+          },
+          {
+            summary: "Can someone pick up my Driver's Licence for me?",
+            detail: "<p>Because Tax Administration Jamaica (TAJ) requires physical identity verification and signature capture, the cardholder must appear in person for final pickup. Our concierge service handles all form preparation and fee payments beforehand so your pickup is as fast as possible.</p>"
+          }
+        ],
         waText: "Hi Laura, I would like to start a Driver's Licence Renewal ($3,000 JMD concierge fee)."
       },
       vehicle: {
         title: "Motor Vehicle Licensing",
-        subtitle: "Skip the line at the Tax Office completely. We renew your private motor vehicle licence online and send the new digital certificate straight to your email. (Note: This service is exclusively for private vehicles, not commercial or PPV).",
+        subtitle: "Skip the line at the Tax Office completely. We renew your private motor vehicle licence online and send the new digital certificate straight to your email. (Note: Exclusively for private vehicles).",
         fee: "$3,000 JMD (+ Agency Fee)",
         time: "Same-Day e-Delivery",
         whatWeDo: [
@@ -1231,9 +1302,25 @@
           "Simply ensure your car has passed its fitness test at the depot and has an active motor insurance policy."
         ],
         howYouGetItBack: [
-          "We email the official certificate directly to you. Just save it to your phone and print a physical copy to keep in your glove compartment so you are fully compliant when checked by the police.",
-          "<strong>Variable Government Fees:</strong> The Tax Office does not charge a flat rate for vehicle licensing. Your official fee depends entirely on your car's engine size (cc rating). When you reach out, we will check your vehicle's specific cc rating in the system and give you the exact TAJ cost before we proceed.",
-          "<strong>System Delays:</strong> The online renewal will only go through if your insurance company and the fitness depot have successfully updated their digital records in the government's database. We verify this for you before any payment is made!"
+          "We email the official certificate directly to you. Just save it to your phone and print a physical copy to keep in your glove compartment so you are fully compliant when checked by the police."
+        ],
+        referenceInfo: [
+          {
+            summary: "How does compliance work without a windshield sticker?",
+            detail: "<p>Tax Administration Jamaica (TAJ) no longer issues physical windshield stickers for motor vehicle renewals. Everything has transitioned to a digital electronic Motor Vehicle Registration Certificate (eMVRC).</p><p>Once we process your renewal, simply print a paper copy of the eMVRC PDF we send you and keep it in your glove box, or keep the digital PDF accessible on your phone. Presenting this to the police provides full legal proof of valid registration.</p>"
+          },
+          {
+            summary: "Official TAJ Engine CC Rates & Government Fees",
+            detail: "<p>Official TAJ government licence fees are determined strictly by your vehicle's engine size:</p><table class='rate-table'><thead><tr><th>Engine Capacity (CC)</th><th>6 Months</th><th>1 Year</th></tr></thead><tbody><tr><td><strong>Up to 1,199 cc</strong></td><td>$5,220 JMD</td><td>$10,440 JMD</td></tr><tr><td><strong>1,200 cc to 1,999 cc</strong></td><td>$7,260 JMD</td><td>$14,520 JMD</td></tr><tr><td><strong>2,000 cc to 2,999 cc</strong></td><td>$10,890 JMD</td><td>$21,780 JMD</td></tr><tr><td><strong>3,000 cc & Over</strong></td><td>$17,420 JMD</td><td>$34,840 JMD</td></tr></tbody></table>"
+          },
+          {
+            summary: "Will unpaid traffic tickets block my renewal?",
+            detail: "<p><strong>Yes.</strong> If you have an unpaid traffic ticket or an outstanding court date attached to your TRN, the government portal will automatically freeze your renewal. If you are unsure of your ticket status, send us your TRN and ID via WhatsApp and we can perform a lookup prior to processing.</p>"
+          },
+          {
+            summary: "What are the prerequisite requirements before renewing?",
+            detail: "<p>Before we can process your registration online, the following must be in order:</p><ul><li><strong>Active Fitness:</strong> Your vehicle must have a valid fitness test recorded in the official database.</li><li><strong>Active Insurance:</strong> Your insurance provider must have uploaded your active policy cover note to the system.</li><li><strong>Private Vehicles Only:</strong> Online renewals are restricted to private motor vehicles (white licence plates). Commercial or PPV vehicles require physical office processing.</li></ul>"
+          }
         ],
         waText: "Hi Laura, I need help with Motor Vehicle Licensing ($3,000 JMD concierge fee)."
       },
@@ -1251,16 +1338,35 @@
           "If your application must be done on paper, you simply print the package we send, get your Guarantor (like a Justice of the Peace) to sign and verify it, and hand it in at the PICA office. (Note: We do not drop off paper passport applications in person)."
         ],
         howYouGetItBack: [
-          "You don't have to go back and wait in line! Whether your application is processed online or dropped off in person, you can choose to have your new passport delivered directly to your home or office via secure courier. If you prefer, you can also choose to collect it in person on your assigned completion date.",
-          "<strong>Processing Timelines:</strong> PICA offers different processing speeds depending on how quickly you need your passport in hand (official agency fees vary by speed): Regular Service: 7 working days, Express Service: 3 working days, Next Day Service: 1 working day (available at the main head office).",
-          "<strong>Online vs. Paper Eligibility:</strong> PICA's online renewal is the fastest option, but it has strict rules. You generally qualify for online renewal if: Your last passport was issued after 2001, you are renewing an adult passport, your passport is not lost or significantly damaged, and you are not changing your name (e.g., getting married). If your situation falls outside of these rules, do not worry—our print-ready paper package ensures your in-person visit goes exactly as planned!"
+          "You don't have to go back and wait in line! Whether your application is processed online or dropped off in person, you can choose to have your new passport delivered directly to your home or office via secure courier."
+        ],
+        referenceInfo: [
+          {
+            summary: "Category 1: Adult Passport Renewals",
+            detail: "<p>For adults renewing an existing 10-year Jamaican passport:</p><ul><li>Current / Expired Passport booklet.</li><li>Two (2) recent passport-sized photographs (one certified by an eligible official).</li><li>Tax Registration Number (TRN) card or number.</li><li>Completed PICA Passport Application Form.</li></ul>"
+          },
+          {
+            summary: "Category 2: First-Time Adult & Minor (Child) Passports",
+            detail: "<p>For individuals obtaining a passport for the first time or for children under 18:</p><ul><li>Official RGD Birth Certificate (with adoption or citizenship documents if applicable).</li><li>Parent or Legal Guardian's valid Photo ID (for minor applications).</li><li>Parent's consent signature on the application form.</li><li>Two (2) certified passport-sized photographs.</li></ul>"
+          },
+          {
+            summary: "Category 3: Lost, Stolen, or Damaged Passports",
+            detail: "<p>If your previous passport was lost, stolen, or damaged, additional security verifications apply:</p><ul><li>Official Police Report detailing the loss or theft.</li><li>Damaged passport booklet (if damaged).</li><li>Valid government-issued Photo ID (Voter's Card, Driver's Licence).</li><li>Completed PICA Lost/Damaged Passport Declaration Form.</li></ul>"
+          },
+          {
+            summary: "Category 4: Name Changes & Marriage Adjustments",
+            detail: "<p>For passports requiring name updates following marriage, divorce, or deed poll:</p><ul><li>Original RGD Marriage Certificate, Divorce Decree Absolute, or Deed Poll.</li><li>Current Passport booklet.</li><li>Updated TRN record matching your new legal name.</li><li>Two (2) certified passport-sized photographs in your new legal name.</li></ul>"
+          },
+          {
+            summary: "Can Laura Clarke Assist Clients Living Outside Jamaica (Diaspora)?",
+            detail: "<p>Yes. We assist overseas clients with document preparation, eligibility audits, and photo compliance checks before you submit to your nearest Jamaican Consulate or Embassy, helping you avoid long mail-back turnaround delays.</p>"
+          }
         ],
         waText: "Hi Laura, I need Passport Application Support ($6,000 JMD concierge fee)."
       },
       police: {
         title: "Police Records & Clearances",
         subtitle: "We handle the online portal, pay your fees, and secure your fingerprinting appointment at the most convenient location so you can just walk in with your paperwork ready.",
-        whatToKnow: "A police record is not a generic certificate that you can keep and hand out to multiple different places. It is a targeted background check that is securely tied to the specific organization (employer, embassy, or school) requesting it. During the application, you must provide us with the exact name and address of that institution, and the final certificate will be officially addressed directly to them. Because it is locked to that specific requestor, it cannot be reused for a different institution later.",
         fee: "$5,000 JMD (+ Agency Fee)",
         time: "5-Day or 21-Day Options",
         whatWeDo: [
@@ -1272,9 +1378,21 @@
           "Take those documents, along with your passport-sized photos and your ID, to the police station at your scheduled appointment time."
         ],
         howYouGetItBack: [
-          "You will not receive the record on the same day you do your fingerprints. You will return to the station to collect your final printed Police Certificate based on the processing speed you paid for.",
-          "<strong>Choosing Your Station:</strong> You do not have to use the busiest police station! If the main office is fully booked, we can select a different approved fingerprinting location with a shorter wait list so you get your appointment much faster.",
-          "<strong>Official Government Processing Fees:</strong> The Jamaica Constabulary Force charges based on how fast you need the record back after your fingerprint appointment: Regular (21 Working Days): $3,000 JMD, Express (5 Working Days): $6,000 JMD, Premium (Next Day): $8,000 JMD (Note: This tier is sometimes temporarily suspended by the JCF)."
+          "You will return to the station to collect your final printed Police Certificate based on the processing speed you paid for."
+        ],
+        referenceInfo: [
+          {
+            summary: "Targeted Background Checks & Recipient Locks",
+            detail: "<p>A police record is not a generic certificate that you can keep and hand out to multiple places. It is a targeted background check that is securely tied to the specific organization (employer, embassy, or school) requesting it. The final certificate will be officially addressed directly to them and cannot be reused for a different institution later.</p>"
+          },
+          {
+            summary: "Crucial Photo Trap Warning (Uncertified Photos)",
+            detail: "<p>Unlike TRN or Passport applications, JCF forensic technicians require completely plain, uncertified passport photos. If a Justice of the Peace signs, stamps, or embosses the back of your photo, the station counter clerk will reject it on the spot.</p>"
+          },
+          {
+            summary: "Official JCF Processing Fees & Subsite Locations",
+            detail: "<p>The Jamaica Constabulary Force charges based on processing speed:</p><ul><li><strong>Regular (21 Working Days):</strong> $3,000 JMD</li><li><strong>Express (5 Working Days):</strong> $6,000 JMD</li><li><strong>Premium (Next Day):</strong> $8,000 JMD (Subject to station capacity)</li></ul><p>Approved fingerprint subsites include Kingston (Duke St CRO), St. James (Summit), St. Mary (Pompano Bay), and Clarendon (May Pen).</p>"
+          }
         ],
         waText: "Hi Laura, I need Police Record Assistance ($5,000 JMD concierge fee)."
       },
@@ -1291,8 +1409,25 @@
           "Provide us with the precise details of the event. (Pro tip: If you have an old or damaged copy of the certificate, giving us the \"Entry Number\" makes the online portal accept the application much faster!)"
         ],
         howYouGetItBack: [
-          "You don't have to visit the RGD! You can choose to have the official printed certificate delivered right to your door via secure courier (both locally and overseas), or you can choose to pick it up at a local RGD branch if you prefer.",
-          "<strong>Agency Fees & Processing Speeds:</strong> The RGD offers different processing speeds depending on your urgency. During the application, you can choose Standard processing or pay extra for Express service. We will coordinate your preferred timeline and delivery method upfront."
+          "You can choose to have the official printed certificate delivered right to your door via secure courier (both locally and overseas), or pick it up at a local RGD branch."
+        ],
+        referenceInfo: [
+          {
+            summary: "Birth Certificate Lookup Requirements",
+            detail: "<p>To locate and request an official Jamaican Birth Certificate, gather:</p><ul><li><strong>Full Name at Birth:</strong> First, middle, and last name recorded at birth.</li><li><strong>Date & Place of Birth:</strong> Day, month, year, and parish.</li><li><strong>Mother's Full Maiden Name:</strong> Essential for database record matching.</li><li><strong>Father's Full Name:</strong> Required if listed on original entry.</li><li><strong>Birth Entry Number (Optional):</strong> Dramatically accelerates online lookup.</li></ul>"
+          },
+          {
+            summary: "Marriage Certificate Lookup Requirements",
+            detail: "<p>To request a Marriage Certificate copy for passport updates or spousal visas:</p><ul><li><strong>Groom's Full Name:</strong> Prior to marriage.</li><li><strong>Bride's Full Maiden Name:</strong> Prior to marriage.</li><li><strong>Date & Venue:</strong> Exact date, church/resort/venue, and parish.</li><li><strong>Officiant's Name:</strong> Name of Marriage Officer, Minister, or JP.</li></ul>"
+          },
+          {
+            summary: "Death Certificate Lookup Requirements",
+            detail: "<p>To secure a Death Certificate for estates or banking:</p><ul><li><strong>Full Legal Name of Deceased:</strong> First, middle, and last name.</li><li><strong>Date & Place of Passing:</strong> Day, month, year, hospital/residence, and parish.</li><li><strong>Age at Death & Gender.</strong></li></ul>"
+          },
+          {
+            summary: "Processing Speeds & Proxy Pickup Rules",
+            detail: "<p>RGD certificate applications offer two main speeds: Express Service (~7 to 10 working days) or Ordinary Service (~6 weeks). If using a proxy bearer at a local branch, your bearer must present a valid Photo ID and an Authorization Letter stamped by a JP.</p>"
+          }
         ],
         waText: "Hi Laura, I need Vital Record Certificate Assistance ($3,000 JMD concierge fee)."
       },
@@ -1321,14 +1456,6 @@
       document.getElementById('modalFee').innerText = data.fee;
       document.getElementById('modalTime').innerText = data.time;
 
-      const whatToKnowWrapper = document.getElementById('modalWhatToKnowWrapper');
-      if (data.whatToKnow) {
-        whatToKnowWrapper.style.display = 'block';
-        document.getElementById('modalWhatToKnowText').innerHTML = data.whatToKnow;
-      } else {
-        whatToKnowWrapper.style.display = 'none';
-      }
-
       const whatWeDoList = document.getElementById('modalWhatWeDo');
       whatWeDoList.innerHTML = data.whatWeDo.map(item => `<li>${item}</li>`).join('');
 
@@ -1338,6 +1465,9 @@
       const howYouGetBackHeader = document.getElementById('modalGetBackHeader');
       const howYouGetBackList = document.getElementById('modalHowYouGetItBack');
 
+      const refBox = document.getElementById('modalRefBox');
+      const refContent = document.getElementById('modalRefContent');
+
       if (data.isConsult) {
         whatYouDoHeader.style.display = 'block';
         whatYouDoList.style.display = 'block';
@@ -1345,6 +1475,7 @@
         
         howYouGetBackHeader.style.display = 'none';
         howYouGetBackList.style.display = 'none';
+        refBox.style.display = 'none';
         
         const cta = document.getElementById('modalCta');
         cta.innerText = "Book 15-Minute Consultation Call →";
@@ -1361,6 +1492,19 @@
         } else {
           howYouGetBackHeader.style.display = 'none';
           howYouGetBackList.style.display = 'none';
+        }
+
+        // Render Helpful Reference Info Box (Cream Section)
+        if (data.referenceInfo && data.referenceInfo.length > 0) {
+          refBox.style.display = 'block';
+          refContent.innerHTML = data.referenceInfo.map(item => `
+            <details>
+              <summary>${item.summary}</summary>
+              <div>${item.detail}</div>
+            </details>
+          `).join('');
+        } else {
+          refBox.style.display = 'none';
         }
         
         const cta = document.getElementById('modalCta');
