@@ -115,17 +115,32 @@
       margin-bottom: 10px;
     }
 
-    .blog-title {
-      font-size: 1.5rem;
-      margin-bottom: 16px;
-      letter-spacing: -0.01em;
-    }
+    /* SOFTENED BLOG TITLES */
+.blog-title {
+  font-size: 1.3rem;            /* Scaled down from 1.5rem to reduce visual weight */
+  font-weight: 600;             /* Softer medium-bold instead of heavy 700/800 */
+  color: #2C3E50;               /* Muted Slate Navy instead of intense dark navy */
+  margin-bottom: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
 
-    .blog-excerpt {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      margin-bottom: 20px;
-    }
+/* SUBTLE COLOR POP ON HOVER */
+.blog-card:hover .blog-title {
+  color: var(--navy);           /* Gently darkens to brand navy only when focused */
+}
+
+/* SOFTER CATEGORY EYEBROW */
+.category-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #B8860B;               /* Slightly deeper, warmer gold for low eye strain */
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
 
     /* HIDDEN FULL CONTENT AREA */
     .blog-full-content {
