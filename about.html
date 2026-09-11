@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Laura Clarke &middot; Administrative Services Jamaica</title>
+  <meta name="description" content="Learn about Laura Clarke Administrative Services—your private, independent administrative proxy and document concierge in Jamaica.">
+  <meta name="theme-color" content="#0F2537">
+  <link rel="canonical" href="https://documenthelpja.com/about.html">
+
+  <style>
+    :root {
+      --navy: #0F2537;
+      --navy-hover: #173752;
+      --gold: #D4AF37;
+      --gold-hover: #C29F2B;
+      --bg-page: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --bg-slate-light: #F0F4F8;
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --border-subtle: #E2E8F0;
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    h1, h2, h3, h4 { color: var(--navy); margin-top: 0; line-height: 1.25; }
+    p { margin-top: 0; margin-bottom: 1rem; }
+
+    .container {
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid var(--gold);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 70px;
+    }
+    
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #FFFFFF;
+    }
+    .brand-sub {
+      font-size: 0.72rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .nav-links a { font-weight: 600; font-size: 0.95rem; color: #E2E8F0; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero-about {
+      background: #FFFFFF;
+      padding: 70px 0 50px;
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+    .hero-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .hero-title {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .hero-lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* STORY SECTION */
+    .story-section {
+      padding: 60px 0;
+    }
+    .story-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 48px;
+      border: 1px solid var(--border-subtle);
+      border-top: 4px solid var(--gold);
+      box-shadow: 0 10px 25px -5px rgba(15, 37, 55, 0.05);
+      margin-bottom: 60px;
+    }
+    .story-card p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .story-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* APPROACH SECTION */
+    .approach-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .approach-header h2 {
+      font-size: 1.85rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+    .tier-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 32px 28px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 6px 18px rgba(15, 37, 55, 0.04);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .tier-number {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .tier-title {
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .tier-badge {
+      display: inline-block;
+      background: var(--bg-slate-light);
+      color: var(--navy);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+    .tier-desc {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: var(--navy);
+      color: #FFFFFF;
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      border-bottom: 4px solid var(--gold);
+    }
+    .cta-banner h3 {
+      color: #FFFFFF;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+    .cta-banner p {
+      color: #CBD5E1;
+      max-width: 550px;
+      margin: 0 auto 24px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: var(--gold);
+      color: var(--navy) !important;
+      border-radius: var(--radius);
+      font-weight: 700;
+      text-align: center;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn:hover { background: var(--gold-hover); transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer {
+      background: #08141F;
+      color: #94A3B8;
+      padding: 60px 0 30px;
+      font-size: 0.9rem;
+      border-top: 3px solid var(--gold);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .footer-brand-title {
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .footer-brand-sub {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .footer-col p {
+      line-height: 1.6;
+      color: #94A3B8;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a { color: #CBD5E1; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .contact-link { color: #FFFFFF !important; font-weight: 600; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.82rem;
+      color: #64748B;
+    }
+    .disclaimer-text { color: #64748B; line-height: 1.5; }
+    .disclaimer-text strong { color: #94A3B8; }
+    .copyright-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .story-card { padding: 28px 20px; }
+      .cta-banner { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY HEADER -->
+  <header>
+    <div class="container header-content">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">LC</div>
+        <div class="brand-text">
+          <span class="brand-name">Laura Clarke</span>
+          <span class="brand-sub">Administrative Services</span>
+        </div>
+      </a>
+      
+      <div class="nav-links">
+        <a href="index.html#top">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#education">Insights</a>
+        <a href="about.html" style="color: var(--gold);">About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero-about">
+    <div class="container">
+      <span class="hero-tag">On-the-Ground Advocacy</span>
+      <h1 class="hero-title">About Laura Clarke Administrative Services</h1>
+      <p class="hero-lead">We believe that securing your essential Jamaican documents should be a transparent, efficient, and stress-free experience.</p>
+    </div>
+  </div>
+
+  <main class="story-section">
+    <div class="container">
+      
+      <!-- MAIN COPY CARD -->
+      <div class="story-card">
+        <p>Operating through our digital hub at <strong>DocumentHelpJA.com</strong>, we serve as your trusted independent administrative proxy and guide. We don't just read you the rules from a website—we operate based on real-world, on-the-ground experience navigating Jamaican government offices.</p>
+        
+        <p>We know exactly how strict collectorates can be about signature matches, authorization letters, and ID requirements, and we use that expertise to ensure your applications are perfectly prepared the first time.</p>
+        
+        <p>We are not a government agency; we are your private advocate. Whether you are a local professional navigating a busy schedule or a member of the diaspora managing affairs from afar, we handle the heavy lifting so you don't have to.</p>
+      </div>
+
+      <!-- APPROACH GRID -->
+      <div class="approach-header">
+        <h2>How We Work: Our Three-Tiered Approach</h2>
+        <p style="color: var(--text-muted);">Because government regulations dictate how certain documents must be processed, we offer three distinct levels of support tailored to your specific needs.</p>
+      </div>
+
+      <div class="approach-grid">
+        
+        <!-- TIER 1 -->
+        <div class="tier-card">
+          <span class="tier-number">Level 1</span>
+          <h3 class="tier-title">Full Proxy & Concierge</h3>
+          <span class="tier-badge">Start-to-Finish Representation</span>
+          <p class="tier-desc">For applications that legally permit full third-party processing. We handle the entire lifecycle of your request—from organizing paperwork and submitting applications to tracking final approvals. You simply provide required information securely, and we deliver the final result.</p>
+        </div>
+
+        <!-- TIER 2 -->
+        <div class="tier-card">
+          <span class="tier-number">Level 2</span>
+          <h3 class="tier-title">Hybrid Assistance</h3>
+          <span class="tier-badge">Prepared by Us, Completed by You</span>
+          <p class="tier-desc">For applications requiring mandatory physical presence or biometrics (e.g., Police Records). We handle complex portal applications and fee payments on your behalf. You step in only when legally necessary—simply attending your pre-scheduled appointment for fingerprinting and collection.</p>
+        </div>
+
+        <!-- TIER 3 -->
+        <div class="tier-card">
+          <span class="tier-number">Level 3</span>
+          <h3 class="tier-title">Advisory & Document Auditing</h3>
+          <span class="tier-badge">Pre-Audit & Counter Guidance</span>
+          <p class="tier-desc">For restricted processes where you must appear in person. We serve as your expert guide, auditing your paperwork before you go. We verify authorization letters, ID signatures, and forms against strict counter standards so you aren't turned away over minor technicalities.</p>
+        </div>
+
+      </div>
+
+      <!-- CTA BANNER -->
+      <div class="cta-banner">
+        <h3>Ready to get your paperwork sorted?</h3>
+        <p>Let's discuss your specific document requirements and map out the exact steps forward.</p>
+        <a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" class="btn" target="_blank">Book a 15-Minute Consultation &rarr;</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <div class="footer-col">
+          <div class="footer-brand-title">Laura Clarke</div>
+          <span class="footer-brand-sub">Administrative Services</span>
+          <p>Private document preparation, compliance audits, and local representation for individuals and diaspora clients.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#top">Home</a></li>
+            <li><a href="index.html#services">Services & Pricing</a></li>
+            <li><a href="index.html#education">Insights Vault</a></li>
+            <li><a href="about.html">About Laura</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Contact</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="mailto:info@documenthelpja.com" class="contact-link">
+                info@documenthelpja.com
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/18765612614" class="contact-link" target="_blank">
+                WhatsApp: 876-561-2614
+              </a>
+            </li>
+            <li>
+              <a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" target="_blank">
+                Book Consultation
+              </a>
+            </li>
+            <li><span style="color: #64748B;">Local Ground Support & Diaspora</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal & Policies</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="disclaimer-text">
+          <strong>Disclaimer:</strong> Laura Clarke Administrative Services is a private, independent consultancy providing document preparation and guidance. We are not a government agency and have no affiliation with TAJ, PICA, RGD, JCF, or official ministries. Application approvals remain strictly at agency discretion.
+        </p>
+        
+        <div class="copyright-row">
+          <div>&copy; 2026 Laura Clarke Administrative Services. All rights reserved.</div>
+          <div>Private Document Concierge &bull; Jamaica</div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
