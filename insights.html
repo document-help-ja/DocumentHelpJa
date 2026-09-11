@@ -46,7 +46,7 @@
       padding: 0 24px;
     }
 
-    /* HEADER */
+    /* HEADER & MOBILE NAVIGATION */
     header {
       background: var(--navy);
       color: #fff;
@@ -76,9 +76,20 @@
     }
     .brand-name { font-weight: 700; font-size: 1.05rem; color: #FFFFFF; }
     .brand-sub { font-size: 0.72rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; display: block; }
-    .nav-links { display: flex; gap: 24px; }
-    .nav-links a { font-weight: 600; font-size: 0.95rem; color: #E2E8F0; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-weight: 600; font-size: 0.95rem; color: #E2E8F0; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
 
     /* HERO */
     .page-hero {
@@ -210,7 +221,22 @@
     .footer-links a { color: #CBD5E1; }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; }
 
+    /* RESPONSIVE MOBILE STYLES */
     @media (max-width: 768px) {
+      .nav-links {
+        display: none; 
+        width: 100%;
+        flex-direction: column;
+        background: var(--navy);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+      .nav-links.active { display: flex; }
+      .mobile-menu-btn { display: block; }
+
       .blog-card { padding: 28px 20px; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .blog-title { font-size: 1.3rem; }
@@ -220,7 +246,7 @@
 </head>
 <body>
 
-  <!-- STICKY HEADER -->
+  <!-- STICKY HEADER WITH MOBILE MENU -->
   <header>
     <div class="container header-content">
       <a href="index.html#top" class="brand">
@@ -230,10 +256,13 @@
           <span class="brand-sub">Administrative Services</span>
         </div>
       </a>
-      <div class="nav-links">
-        <a href="index.html#services">Services</a>
-        <a href="insights.html" style="color: var(--gold);">Insights</a>
-        <a href="about.html">About</a>
+      
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+
+      <div class="nav-links" id="navMenu">
+        <a href="index.html#services" onclick="toggleMenu()">Services</a>
+        <a href="insights.html" style="color: var(--gold);" onclick="toggleMenu()">Insights</a>
+        <a href="about.html" onclick="toggleMenu()">About</a>
       </div>
     </div>
   </header>
@@ -554,8 +583,15 @@
     </div>
   </footer>
 
-  <!-- SCRIPT FOR TOGGLING BLOG POSTS -->
+  <!-- SCRIPTS FOR TOGGLING MENU & BLOG POSTS -->
   <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      if (window.innerWidth <= 768) {
+        menu.classList.toggle('active');
+      }
+    }
+
     function togglePost(id) {
       const card = document.getElementById(id);
       if (!card) return;
