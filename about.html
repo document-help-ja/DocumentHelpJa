@@ -45,7 +45,7 @@
       padding: 0 24px;
     }
 
-    /* HEADER */
+    /* HEADER & NAVIGATION */
     header {
       background: var(--navy);
       color: #fff;
@@ -104,6 +104,17 @@
     }
     .nav-links a { font-weight: 600; font-size: 0.95rem; color: #E2E8F0; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
 
     /* HERO */
     .hero-about {
@@ -312,7 +323,22 @@
       padding-top: 8px;
     }
 
+    /* RESPONSIVE MOBILE STYLES */
     @media (max-width: 768px) {
+      .nav-links {
+        display: none; 
+        width: 100%;
+        flex-direction: column;
+        background: var(--navy);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+      }
+      .nav-links.active { display: flex; }
+      .mobile-menu-btn { display: block; }
+
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .story-card { padding: 28px 20px; }
       .cta-banner { padding: 28px 20px; }
@@ -321,7 +347,7 @@
 </head>
 <body>
 
-  <!-- STICKY HEADER -->
+  <!-- STICKY HEADER WITH MOBILE MENU -->
   <header>
     <div class="container header-content">
       <a href="index.html" class="brand">
@@ -332,11 +358,13 @@
         </div>
       </a>
       
-      <div class="nav-links">
-        <a href="index.html#top">Home</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#education">Insights</a>
-        <a href="about.html" style="color: var(--gold);">About</a>
+      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+
+      <div class="nav-links" id="navMenu">
+        <a href="index.html#top" onclick="toggleMenu()">Home</a>
+        <a href="index.html#services" onclick="toggleMenu()">Services</a>
+        <a href="insights.html" onclick="toggleMenu()">Insights</a>
+        <a href="about.html" style="color: var(--gold);" onclick="toggleMenu()">About</a>
       </div>
     </div>
   </header>
@@ -423,7 +451,7 @@
           <ul class="footer-links">
             <li><a href="index.html#top">Home</a></li>
             <li><a href="index.html#services">Services & Pricing</a></li>
-            <li><a href="index.html#education">Insights Vault</a></li>
+            <li><a href="insights.html">Insights Vault</a></li>
             <li><a href="about.html">About Laura</a></li>
           </ul>
         </div>
@@ -473,6 +501,16 @@
 
     </div>
   </footer>
+
+  <!-- SCRIPT FOR TOGGLING MENU -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      if (window.innerWidth <= 768) {
+        menu.classList.toggle('active');
+      }
+    }
+  </script>
 
 </body>
 </html>
