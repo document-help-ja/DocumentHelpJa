@@ -464,7 +464,6 @@
       color: var(--navy);
     }
 
-    /* What to Know Callout Box */
     .modal-what-to-know {
       background: #FFFDF5;
       border-left: 4px solid var(--gold);
@@ -610,41 +609,28 @@
     }
 
     /* =========================================
-       5. DIGITAL FILING CABINET
+       5. INSIGHTS VAULT PREVIEW SECTION
        ========================================= */
     .education { background: var(--navy); color: #fff; }
     .education h2 { color: #fff; }
     .education .section-header p { color: #CBD5E1; }
-    
-    .cabinet {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      padding: 10px 25px;
+
+    .teaser-card {
+      background: #FFFFFF;
+      padding: 28px;
+      border-radius: 12px;
+      border-top: 4px solid var(--gold);
       color: var(--navy);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-    details { border-bottom: 1px solid var(--border-subtle); padding: 20px 0; }
-    details:last-child { border-bottom: none; }
-    
-    summary {
-      font-weight: 700;
-      font-size: 1.05rem;
-      cursor: pointer;
-      list-style: none;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; color: var(--gold); font-size: 1.5rem; font-weight: normal; }
-    details[open] summary::after { content: "−"; }
-    
-    .details-content { padding-top: 15px; color: var(--text-muted); font-size: 0.95rem; }
-    .details-content ul { padding-left: 20px; margin: 0; }
-    .details-content li { margin-bottom: 12px; }
-    .details-content li:last-child { margin-bottom: 0; }
+
+    .teaser-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
 
     /* =========================================
        6. ABOUT SECTION
@@ -849,7 +835,7 @@
   <!-- STICKY HEADER -->
   <header>
     <div class="container header-content">
-      <a href="#top" class="brand">
+      <a href="index.html#top" class="brand">
         <div class="brand-mark">LC</div>
         <div class="brand-text">
           <span class="brand-name">Laura Clarke</span>
@@ -861,8 +847,8 @@
       
       <div class="nav-links" id="navMenu">
         <a href="#services" onclick="toggleMenu()">Services</a>
-        <a href="#education" onclick="toggleMenu()">Insights</a>
-        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="insights.html">Insights</a>
+        <a href="about.html">About</a>
       </div>
     </div>
   </header>
@@ -1053,159 +1039,150 @@
     </div>
   </div>
 
-  <!-- 4. DIGITAL FILING CABINET -->
+  <!-- 4. INSIGHTS VAULT PREVIEW SECTION -->
   <section id="education" class="education">
     <div class="container">
       <div class="section-header">
-        <h2>Things you might not know</h2>
-        <p>Bureaucratic rules change constantly. Here are a few recent administrative insights to save you time.</p>
+        <h2>Things You Might Not Know</h2>
+        <p>Bureaucratic rules change constantly. Read our practical guides before filing your application.</p>
       </div>
 
-      <div class="cabinet">
-        <details>
-          <summary>Driving Abstracts & Driver's History Reports</summary>
-          <div class="details-content">
-            <ul>
-              <li><strong>Institution-Specific:</strong> A driving abstract is a formal compliance document detailing your driving history, traffic tickets, and accident record in Jamaica. It is usually requested by overseas commercial employers, trucking companies, or foreign insurance agencies.</li>
-              <li><strong>Exact Details Needed:</strong> This report must be specifically addressed to the institution asking for it. You cannot reuse it for multiple employers. You must have their exact official name and address on hand before the application process begins.</li>
-            </ul>
-          </div>
-        </details>
+      <!-- TEASER CARDS GRID -->
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
 
-        <details>
-          <summary>Companies Office of Jamaica (COJ)</summary>
-          <div class="details-content">
-            <ul>
-              <li><strong>No More Physical Certificates:</strong> The COJ is no longer issuing physical registration certificates. When your new business is approved, the certificate is issued digitally and must be printed on your own.</li>
-              <li><strong>Email Conflicts:</strong> When applying for a new business online, the email on your application must match the email on your personal COJ portal account, or the system will flag it as an identity conflict.</li>
-            </ul>
+        <!-- CARD 1 -->
+        <div class="teaser-card">
+          <div>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">TRN Applications</span>
+            <h3 style="font-size: 1.15rem; margin-bottom: 12px; line-height: 1.3;">No Passport or Driver's Licence? How to Get a Jamaican TRN Using Only a Birth Certificate</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 20px;">
+              Think you can't get a TRN without formal photo ID? Tax Administration Jamaica has an alternative verification path using a certified photo and JP declaration.
+            </p>
           </div>
-        </details>
-        
-        <details>
-          <summary>National Insurance Scheme (NIS) & Pensions</summary>
-          <div class="details-content">
-            <ul>
-              <li><strong>The Self-Employed Gap:</strong> Self-employed individuals are required to make their own NIS contributions. Skipping these quarterly payments means missing out on the minimum contribution weeks needed to qualify for a full retirement pension.</li>
-              <li><strong>Record Auditing:</strong> You don't have to wait until retirement age to check your standing. You can audit your NIS contribution history through the Ministry of Labour & Social Security (MLSS) to fix missing years early.</li>
-            </ul>
-          </div>
-        </details>
+          <a href="insights.html#trn-no-id" style="font-weight: 700; color: var(--navy); font-size: 0.9rem; text-decoration: underline;">Read Full Guide &rarr;</a>
+        </div>
 
-        <details>
-          <summary>Police Records (JCF) & Background Checks</summary>
-          <div class="details-content">
-            <ul>
-              <li><strong>Institution-Specific:</strong> A police record is not a generic certificate you can keep and copy. It is a targeted background check securely tied to the specific organization (employer, embassy, or school) requesting it. The final certificate will be officially addressed directly to them and cannot be reused.</li>
-              <li><strong>Strict Name Consistency:</strong> The name on your online police record application must identically match the government ID you present at the interview (usually a passport). If your ID is in your maiden name and you apply in your married name, the application will be rejected.</li>
-              <li><strong>Bridging Names:</strong> If your employer requires a record in your married name but your passport is in your maiden name, get HR clearance to apply in your maiden name and attach your official RGD marriage certificate.</li>
-            </ul>
+        <!-- CARD 2 -->
+        <div class="teaser-card">
+          <div>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">Police Records</span>
+            <h3 style="font-size: 1.15rem; margin-bottom: 12px; line-height: 1.3;">The $3,000 Photo Mistake: Why Certifying Your Police Record Picture Will Get You Rejected</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 20px;">
+              Unlike TRN or Passport applications, the Criminal Records Office turns applicants away if a JP signs or embosses the photo. Here is what to avoid.
+            </p>
           </div>
-        </details>
+          <a href="insights.html#police-photo-trap" style="font-weight: 700; color: var(--navy); font-size: 0.9rem; text-decoration: underline;">Read Full Guide &rarr;</a>
+        </div>
 
-        <details>
-          <summary>Tax Administration Jamaica (TAJ)</summary>
-          <div class="details-content">
-            <ul>
-              <li><strong>Overseas TRN Applications:</strong> You do not need to fly to Jamaica to get a TRN. You can apply from the diaspora if your identity documents are properly notarized by a Notary Public in your current country and submitted by a representative in Jamaica.</li>
-            </ul>
-          </div>
-        </details>
+        <!-- CARD 3 (UPDATED: NIS PENSION TRAP) -->
+<div class="teaser-card">
+  <div>
+    <span style="font-size: 0.75rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">National Insurance (NIS)</span>
+    <h3 style="font-size: 1.15rem; margin-bottom: 12px; line-height: 1.3;">The NIS Contribution Trap: Why Missing Record Audits Can Shrink Your Pension</h3>
+    <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 20px;">
+      Many workers and self-employed Jamaicans discover missing contribution years only when applying for retirement. Learn how auditing your statement early protects your full payout.
+    </p>
+  </div>
+  <a href="insights.html#nis-pension-trap" style="font-weight: 700; color: var(--navy); font-size: 0.9rem; text-decoration: underline;">Read Full Guide &rarr;</a>
+</div>
 
-        <details>
-          <summary>Understanding Concierge vs. Government Agency Fees</summary>
-          <div class="details-content">
-            <ul>
-              <li><strong>Two-Part Structure:</strong> Concierge fees cover administrative document auditing, portal data entry, application preparation, and local representation. Official government fees (TAJ, PICA, RGD, JCF) are charged separately at official government rates based on your selected processing speed.</li>
-            </ul>
-          </div>
-        </details>
       </div>
+
+      <!-- VIEW ALL BUTTON -->
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="insights.html" class="btn" style="background: var(--gold); color: var(--navy) !important;">Explore Full Insights Vault &rarr;</a>
+      </div>
+
     </div>
   </section>
 
-  <!-- 5. ABOUT SECTION -->
-  <section id="about" class="about">
-    <div class="container about-grid">
-      <div class="about-image-frame">
-        <img src="laura.jpg" alt="Laura Clarke" onerror="this.src='ecard.webp'">
-      </div>
-      <div class="about-text">
-        <h2>About Laura Clarke</h2>
-        <p>When administrative paperwork becomes complicated, you shouldn't have to navigate it alone. I established this private concierge practice to provide clarity, care, and meticulous attention to detail for processes that often feel overwhelming.</p>
-        <p>Whether you need document auditing or trusted oversight from overseas, I handle the prep work so your submissions move forward smoothly and securely.</p>
-        <a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" class="btn" target="_blank">Book a 15-Minute Consultation</a>
+ <!-- 5. ABOUT SECTION (HOMEPAGE TEASER) -->
+<section id="about" class="about">
+  <div class="container about-grid">
+    <div class="about-image-frame">
+      <img src="laura.jpg" alt="Laura Clarke" onerror="this.src='ecard.webp'">
+    </div>
+    <div class="about-text">
+      <h2>About Laura Clarke</h2>
+      <p>When administrative paperwork becomes complicated, you shouldn't have to navigate it alone. I established this private concierge practice to provide clarity, care, and meticulous attention to detail for processes that often feel overwhelming.</p>
+      <p>Whether you need document auditing or trusted oversight from overseas, I handle the prep work so your submissions move forward smoothly and securely.</p>
+      
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-top: 20px;">
+        <a href="about.html" class="btn">Read Full Profile & Background &rarr;</a>
+        <a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" class="btn-secondary-link" target="_blank">Book a Consultation &rarr;</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- 6. FOOTER & LEGAL -->
-<footer>
-  <div class="container">
-    
-    <div class="footer-grid">
+  <footer>
+    <div class="container">
       
-      <div class="footer-col">
-        <div class="footer-brand-title">Laura Clarke</div>
-        <span class="footer-brand-sub">Administrative Services</span>
-        <p>Private document preparation, compliance audits, and local representation for individuals and diaspora clients.</p>
+      <div class="footer-grid">
+        
+        <div class="footer-col">
+          <div class="footer-brand-title">Laura Clarke</div>
+          <span class="footer-brand-sub">Administrative Services</span>
+          <p>Private document preparation, compliance audits, and local representation for individuals and diaspora clients.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#top">Home</a></li>
+            <li><a href="index.html#services">Services & Pricing</a></li>
+            <li><a href="insights.html">Insights Vault</a></li>
+            <li><a href="about.html">About Laura</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Contact</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="mailto:info@documenthelpja.com" class="contact-link">
+                info@documenthelpja.com
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/18765612614" class="contact-link" target="_blank">
+                WhatsApp: 876-561-2614
+              </a>
+            </li>
+            <li>
+              <a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" target="_blank">
+                Book Consultation
+              </a>
+            </li>
+            <li><span style="color: #64748B;">Local Ground Support & Diaspora</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal & Policies</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+
       </div>
 
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <ul class="footer-links">
-          <li><a href="index.html#top">Home</a></li>
-          <li><a href="index.html#services">Services & Pricing</a></li>
-          <li><a href="index.html#education">Insights Vault</a></li>
-          <li><a href="about.html">About Laura</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Direct Contact</h4>
-        <ul class="footer-links">
-          <li>
-            <a href="mailto:info@documenthelpja.com" class="contact-link">
-              info@documenthelpja.com
-            </a>
-          </li>
-          <li>
-            <a href="https://wa.me/18765612614" class="contact-link" target="_blank">
-              WhatsApp: 876-561-2614
-            </a>
-          </li>
-          <li>
-            <a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" target="_blank">
-              Book Consultation
-            </a>
-          </li>
-          <li><span style="color: #64748B;">Local Ground Support & Diaspora</span></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Legal & Policies</h4>
-        <ul class="footer-links">
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <p class="disclaimer-text">
+          <strong>Disclaimer:</strong> Laura Clarke Administrative Services is a private, independent consultancy providing document preparation and guidance. We are not a government agency and have no affiliation with TAJ, PICA, RGD, JCF, or official ministries. Application approvals remain strictly at agency discretion.
+        </p>
+        
+        <div class="copyright-row">
+          <div>&copy; 2026 Laura Clarke Administrative Services. All rights reserved.</div>
+          <div>Private Document Concierge &bull; Jamaica</div>
+        </div>
       </div>
 
     </div>
+  </footer>
 
-    <div class="footer-bottom">
-      <p class="disclaimer-text">
-        <strong>Disclaimer:</strong> Laura Clarke Administrative Services is a private, independent consultancy providing document preparation and guidance. We are not a government agency and have no affiliation with TAJ, PICA, RGD, JCF, or official ministries. Application approvals remain strictly at agency discretion.
-      </p>
-      
-      <div class="copyright-row">
-        <div>&copy; 2026 Laura Clarke Administrative Services. All rights reserved.</div>
-        <div>Private Document Concierge &bull; Jamaica</div>
-      </div>
-    </div>
-
-  </div>
-</footer>
   <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/18765612614" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank">WA</a>
 
@@ -1220,7 +1197,7 @@
 
     /* MODAL SERVICES DATA */
     const servicesData = {
-driver: {
+      driver: {
         title: "Driver's Licence Renewals",
         subtitle: "We handle the messy paperwork and pay your fees in advance so you can skip the cashier line at the Tax Office. Your in-person visit becomes a quick, easy drop-off.",
         fee: "$3,000 JMD (+ Agency Fee)",
@@ -1502,8 +1479,8 @@ driver: {
             badge.innerText = "Helpful Insight";
             badge.style.backgroundColor = "#D4AF37";
             badge.style.color = "#0F2537";
-            link.innerText = "Have questions? Ask on WhatsApp";
-            link.href = `https://wa.me/18765612614?text=Hi%20Laura,%20I%20read%20your%20insight%20about%20${encodeURIComponent(item.title)}%20and%20have%20a%20question.`;
+            link.innerText = "Read Full Guide in Insights Vault";
+            link.href = `insights.html`;
           }
           
           resultArea.style.display = 'block';
