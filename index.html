@@ -7,6 +7,7 @@
   <meta name="description" content="Private administrative assistance for Jamaican documents, local handling, and application guidance.">
   <meta name="theme-color" content="#0F2537">
   <meta name="p:domain_verify" content="e3535e6305964ef227e4afe43774fc23"/>
+  
   <!-- Social Media Sharing (Open Graph / Facebook / LinkedIn) -->
   <meta property="og:title" content="Laura Clarke Administrative Services">
   <meta property="og:description" content="Private document concierge for Jamaican administrative processes, local handling, and application guidance.">
@@ -20,8 +21,9 @@
   <meta name="twitter:description" content="Private document concierge for Jamaican administrative processes.">
   <meta name="twitter:image" content="https://documenthelpja.com/hero.webp">
 
-  <!-- Canonical Link (Prevents duplicate content issues) -->
+  <!-- Canonical Link -->
   <link rel="canonical" href="https://documenthelpja.com/">
+  
   <!-- Schema Markup for Local Business -->
   <script type="application/ld+json">
   {
@@ -29,7 +31,7 @@
     "@type": "ProfessionalService",
     "name": "Laura Clarke Administrative Services",
     "description": "Private administrative assistance for Jamaican documents, local handling, and application guidance.",
-    "url": "https://yourwebsite.com/",
+    "url": "https://documenthelpja.com/",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Linstead",
@@ -39,6 +41,7 @@
     "telephone": "+18765612614"
   }
   </script>
+  
   <style>
     :root {
       /* High-Contrast Brand Palette */
@@ -272,7 +275,7 @@
     }
 
     /* =========================================
-       3. CORE SERVICES GRID (3D ELEVATED)
+       3. CORE SERVICES GRID
        ========================================= */
     #services {
       background: #F1F5F9;
@@ -383,13 +386,13 @@
     .modal-container {
       background: #FFFFFF;
       width: 100%;
-      max-width: 750px;
+      max-width: 780px;
       max-height: 90vh;
       overflow-y: auto;
       border-radius: 12px;
       border-top: 6px solid var(--gold);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-      padding: 40px;
+      padding: 50px;
       position: relative;
       animation: modalFadeIn 0.25s ease-out;
     }
@@ -422,25 +425,27 @@
     }
 
     .modal-title {
-      font-size: 1.75rem;
+      font-size: 1.85rem;
       color: var(--navy);
-      margin-bottom: 6px;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
     }
 
     .modal-subtitle {
       color: var(--text-muted);
-      font-size: 1rem;
-      margin-bottom: 24px;
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+      line-height: 1.6;
     }
 
     .modal-spec-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 24px;
       background: #F8FAFC;
-      padding: 16px;
+      padding: 24px;
       border-radius: 8px;
-      margin-bottom: 16px;
+      margin-bottom: 32px;
       border: 1px solid #E2E8F0;
     }
 
@@ -450,54 +455,70 @@
       text-transform: uppercase;
       color: var(--text-muted);
       letter-spacing: 0.05em;
+      margin-bottom: 6px;
     }
 
     .modal-spec-item span {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--navy);
     }
 
-    /* Agency Fee Disclaimer Banner in Modal */
-    .modal-agency-banner {
+    /* What to Know Callout Box */
+    .modal-what-to-know {
       background: #FFFDF5;
-      border: 1px solid #D4AF37;
-      padding: 12px 16px;
-      border-radius: 8px;
-      margin-bottom: 24px;
-      font-size: 0.88rem;
-      color: #1E293B;
-      line-height: 1.5;
+      border-left: 4px solid var(--gold);
+      padding: 20px;
+      border-radius: 4px;
+      margin-bottom: 32px;
+      display: none;
+    }
+
+    .modal-what-to-know strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .modal-what-to-know p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
     .modal-section-title {
       font-weight: 700;
       color: var(--navy);
-      font-size: 1rem;
+      font-size: 1.15rem;
       display: block;
-      margin-top: 18px;
-      margin-bottom: 8px;
+      margin-top: 36px;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
     }
 
     .modal-list {
-      padding-left: 20px;
-      margin: 0 0 20px;
+      padding-left: 22px;
+      margin: 0 0 32px;
       color: var(--text-muted);
+      line-height: 1.8;
     }
 
-    .modal-list li { margin-bottom: 8px; }
+    .modal-list li { margin-bottom: 16px; }
+    .modal-list li:last-child { margin-bottom: 0; }
 
     .modal-cta-btn {
       display: block;
       width: 100%;
       text-align: center;
-      padding: 14px;
+      padding: 16px;
       background: var(--navy);
       color: #FFFFFF !important;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.05rem;
       border-radius: var(--radius);
-      margin-top: 28px;
+      margin-top: 40px;
       transition: background 0.2s;
     }
 
@@ -781,7 +802,7 @@
     .whatsapp-float:hover { transform: scale(1.05); }
 
     /* =========================================
-       8. MOBILE RESPONSIVENESS (100% FLUID)
+       8. MOBILE RESPONSIVENESS
        ========================================= */
     @media (max-width: 768px) {
       .grid { 
@@ -815,8 +836,8 @@
       .about-image-frame { height: 320px; max-width: 300px; margin: 0 auto; }
       
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .modal-container { padding: 25px 20px; max-height: 85vh; }
-      .modal-spec-grid { grid-template-columns: 1fr; }
+      .modal-container { padding: 35px 22px; max-height: 85vh; }
+      .modal-spec-grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 24px; padding: 18px; }
       
       section { padding: 50px 0; }
       .search-section { padding: 30px 18px; }
@@ -890,7 +911,7 @@
             <button class="card-title-btn" onclick="openModal('driver')">
               <h3>Driver's Licence Renewals</h3>
             </button>
-            <p>Compliance auditing, application form preparation, doctor section routing, and tax office drop-off prep.</p>
+            <p>Paperwork prep, pre-paid tax fees, payment receipts for 60-day legal driving compliance, and tax office drop-off guidance.</p>
           </div>
           <button class="btn-card-footer" onclick="openModal('driver')">
             <span>View Scope & Pricing</span>
@@ -904,7 +925,7 @@
             <button class="card-title-btn" onclick="openModal('vehicle')">
               <h3>Motor Vehicle Licensing</h3>
             </button>
-            <p>Online licence renewals, printable e-Registration Certificate retrieval, and fitness/insurance status audits.</p>
+            <p>Online licence renewals, e-Registration Certificate retrieval, and fitness/insurance status audits for private vehicles.</p>
           </div>
           <button class="btn-card-footer" onclick="openModal('vehicle')">
             <span>View Scope & Pricing</span>
@@ -918,7 +939,7 @@
             <button class="card-title-btn" onclick="openModal('passport')">
               <h3>Passport Application Support</h3>
             </button>
-            <p>High-scrutiny pre-audits for both PICA online renewals and standard in-person paper applications.</p>
+            <p>PICA online renewal eligibility checks, pre-audits, paper application package preparation, and courier setup.</p>
           </div>
           <button class="btn-card-footer" onclick="openModal('passport')">
             <span>View Scope & Pricing</span>
@@ -932,7 +953,7 @@
             <button class="card-title-btn" onclick="openModal('police')">
               <h3>Police Records & Clearances</h3>
             </button>
-            <p>Intake auditing, portal entry, fingerprint appointment scheduling, and collection guidance.</p>
+            <p>Portal data entry, pre-paid fees, fingerprint appointment booking at optimal station locations, and pickup tracking.</p>
           </div>
           <button class="btn-card-footer" onclick="openModal('police')">
             <span>View Scope & Pricing</span>
@@ -946,7 +967,7 @@
             <button class="card-title-btn" onclick="openModal('rgd')">
               <h3>Vital Record Certificates</h3>
             </button>
-            <p>Online search filing, entry audit, tracking, and courier dispatch setup for Birth, Marriage, or Death records.</p>
+            <p>Online search filing, entry auditing, fee payment, and doorstep courier delivery for Birth, Marriage, or Death records.</p>
           </div>
           <button class="btn-card-footer" onclick="openModal('rgd')">
             <span>View Scope & Pricing</span>
@@ -991,9 +1012,10 @@
         </div>
       </div>
 
-      <!-- Agency Fee Disclaimer Banner -->
-      <div class="modal-agency-banner" id="modalAgencyBanner">
-        <strong>Agency Fee Notice:</strong> Official government agency fees (TAJ, PICA, RGD, JCF) are separate from concierge fees and vary based on your selected agency timeline (e.g., Express vs. Standard processing).
+      <!-- What to Know Warning Box -->
+      <div class="modal-what-to-know" id="modalWhatToKnowWrapper">
+        <strong>📌 What to Know About This Document:</strong>
+        <p id="modalWhatToKnowText"></p>
       </div>
 
       <span class="modal-section-title">What We Do:</span>
@@ -1001,6 +1023,9 @@
 
       <span class="modal-section-title" id="modalYouDoHeader">What You Do:</span>
       <ul class="modal-list" id="modalWhatYouDo"></ul>
+
+      <span class="modal-section-title" id="modalGetBackHeader">How You Get It Back & Key Notes:</span>
+      <ul class="modal-list" id="modalHowYouGetItBack"></ul>
 
       <a href="#" id="modalCta" class="modal-cta-btn" target="_blank">Request Assistance via WhatsApp &rarr;</a>
     </div>
@@ -1012,7 +1037,7 @@
       <div class="search-section">
         <span class="search-step-badge">Quick Safety Net</span>
         <h2>Don't see your exact problem listed above?</h2>
-        <p>Type what you need in plain English (e.g., "Renew passport", "TRN", "Police Record", "COJ").</p>
+        <p>Type what you need in plain English (e.g., "Renew passport", "TRN", "Police Record", "Abstract").</p>
         
         <div class="search-input-wrapper">
           <input type="text" id="smartSearch" placeholder="Type what you need help with..." oninput="handleSmartSearch()">
@@ -1035,10 +1060,18 @@
         <h2>Things you might not know</h2>
         <p>Bureaucratic rules change constantly. Here are a few recent administrative insights to save you time.</p>
       </div>
-      
-     
 
       <div class="cabinet">
+        <details>
+          <summary>Driving Abstracts & Driver's History Reports</summary>
+          <div class="details-content">
+            <ul>
+              <li><strong>Institution-Specific:</strong> A driving abstract is a formal compliance document detailing your driving history, traffic tickets, and accident record in Jamaica. It is usually requested by overseas commercial employers, trucking companies, or foreign insurance agencies.</li>
+              <li><strong>Exact Details Needed:</strong> This report must be specifically addressed to the institution asking for it. You cannot reuse it for multiple employers. You must have their exact official name and address on hand before the application process begins.</li>
+            </ul>
+          </div>
+        </details>
+
         <details>
           <summary>Companies Office of Jamaica (COJ)</summary>
           <div class="details-content">
@@ -1048,7 +1081,8 @@
             </ul>
           </div>
         </details>
-         <details>
+        
+        <details>
           <summary>National Insurance Scheme (NIS) & Pensions</summary>
           <div class="details-content">
             <ul>
@@ -1062,6 +1096,7 @@
           <summary>Police Records (JCF) & Background Checks</summary>
           <div class="details-content">
             <ul>
+              <li><strong>Institution-Specific:</strong> A police record is not a generic certificate you can keep and copy. It is a targeted background check securely tied to the specific organization (employer, embassy, or school) requesting it. The final certificate will be officially addressed directly to them and cannot be reused.</li>
               <li><strong>Strict Name Consistency:</strong> The name on your online police record application must identically match the government ID you present at the interview (usually a passport). If your ID is in your maiden name and you apply in your married name, the application will be rejected.</li>
               <li><strong>Bridging Names:</strong> If your employer requires a record in your married name but your passport is in your maiden name, get HR clearance to apply in your maiden name and attach your official RGD marriage certificate.</li>
             </ul>
@@ -1181,99 +1216,115 @@
 
     /* MODAL SERVICES DATA */
     const servicesData = {
-      driver: {
+driver: {
         title: "Driver's Licence Renewals",
-        subtitle: "Hybrid service covering compliance auditing, application form preparation, and submission routing.",
+        subtitle: "We handle the messy paperwork and pay your fees in advance so you can skip the cashier line at the Tax Office. Your in-person visit becomes a quick, easy drop-off.",
         fee: "$3,000 JMD (+ Agency Fee)",
         time: "Same-Day Package",
         whatWeDo: [
-          "Audit records for compliance and name/address mismatches.",
-          "Complete official application form data entry on your behalf.",
-          "Deliver a print-ready PDF package with a step-by-step submission checklist."
+          "We fill out your forms, check the system for errors, and pay your Tax Office fee upfront.",
+          "Then, we email you a complete, print-ready package that includes your official payment receipts."
         ],
         whatYouDo: [
-          "Print & sign your package (complete doctor section if required).",
-          "Drop off your completed package at your preferred tax office."
+          "Print the package. Keep one copy of the receipt for yourself—this legally allows you to drive for 60 days!",
+          "Take the application and the second copy of the receipt to drop off at the Tax Office (after getting your doctor to sign it, if required)."
+        ],
+        howYouGetItBack: [
+          "When you hand in your paperwork, the Tax Office will process your physical card. Your timeline depends entirely on the location you choose:",
+          "<strong>Major Tax Offices (e.g., Constant Spring, Spanish Town, Montego Bay, Mandeville):</strong> You do not need to bring a photo; they take it on-site. Because your fee is pre-paid, you will complete the process and <strong>walk out with your new physical card the exact same day</strong> (usually in just 15 to 30 minutes)!",
+          "<strong>Smaller Tax Offices (Collectorates):</strong> You must bring your own physical passport-sized photos. Since they do not print cards on-site, you will drive using your 60-day receipt and return a few days later to pick up the printed card."
         ],
         waText: "Hi Laura, I would like to start a Driver's Licence Renewal ($3,000 JMD concierge fee)."
       },
       vehicle: {
         title: "Motor Vehicle Licensing",
-        subtitle: "Online licence renewals, e-certificate processing, and fitness/insurance status audits.",
+        subtitle: "Skip the line at the Tax Office completely. We renew your private motor vehicle licence online and send the new digital certificate straight to your email. (Note: This service is exclusively for private vehicles, not commercial or PPV).",
         fee: "$3,000 JMD (+ Agency Fee)",
         time: "Same-Day e-Delivery",
         whatWeDo: [
-          "Audit fitness certificate validity and active motor insurance in the TAJ system.",
-          "Process online vehicle licence renewal and tax payment entry.",
-          "Retrieve and deliver your official printable e-Registration Certificate."
+          "We check the government TAJ system to ensure your fitness and insurance are actively reflecting.",
+          "We process your renewal taxes online, and download your new official e-Registration certificate."
         ],
         whatYouDo: [
-          "Ensure active motor insurance and a valid fitness pass at the depot.",
-          "Print your official e-Registration Certificate to keep inside your vehicle."
+          "Simply ensure your car has passed its fitness test at the depot and has an active motor insurance policy."
+        ],
+        howYouGetItBack: [
+          "We email the official certificate directly to you. Just save it to your phone and print a physical copy to keep in your glove compartment so you are fully compliant when checked by the police.",
+          "<strong>Variable Government Fees:</strong> The Tax Office does not charge a flat rate for vehicle licensing. Your official fee depends entirely on your car's engine size (cc rating). When you reach out, we will check your vehicle's specific cc rating in the system and give you the exact TAJ cost before we proceed.",
+          "<strong>System Delays:</strong> The online renewal will only go through if your insurance company and the fitness depot have successfully updated their digital records in the government's database. We verify this for you before any payment is made!"
         ],
         waText: "Hi Laura, I need help with Motor Vehicle Licensing ($3,000 JMD concierge fee)."
       },
       passport: {
         title: "Passport Application Support",
-        subtitle: "High-scrutiny pre-audits for both PICA online renewals and in-person paper applications.",
+        subtitle: "Don't risk getting your passport application rejected and delayed. We first check if you can skip the line by renewing online. If not, we prepare a flawless paper application package for you to submit.",
         fee: "$6,000 JMD (+ Agency Fee)",
         time: "7–10 Days (Standard Support)",
         whatWeDo: [
-          "Line-by-line audit of your application, photo specs, and guarantor details.",
-          "Coordinate online PICA portal submission or paper file preparation.",
-          "Manage appointment scheduling & tracking updates."
+          "First, we check your eligibility for PICA's online renewal system. If you are eligible, we process the entire online application for you.",
+          "If you must apply in person, we meticulously fill out the paper form, check your photo specifications, and email you a print-ready PDF package with a strict submission checklist."
         ],
         whatYouDo: [
-          "Complete a brief 5-minute document intake call with us.",
-          "Provide your original vital documents & compliant passport photos."
+          "Provide us with your current passport details and photos.",
+          "If your application must be done on paper, you simply print the package we send, get your Guarantor (like a Justice of the Peace) to sign and verify it, and hand it in at the PICA office. (Note: We do not drop off paper passport applications in person)."
+        ],
+        howYouGetItBack: [
+          "You don't have to go back and wait in line! Whether your application is processed online or dropped off in person, you can choose to have your new passport delivered directly to your home or office via secure courier. If you prefer, you can also choose to collect it in person on your assigned completion date.",
+          "<strong>Processing Timelines:</strong> PICA offers different processing speeds depending on how quickly you need your passport in hand (official agency fees vary by speed): Regular Service: 7 working days, Express Service: 3 working days, Next Day Service: 1 working day (available at the main head office).",
+          "<strong>Online vs. Paper Eligibility:</strong> PICA's online renewal is the fastest option, but it has strict rules. You generally qualify for online renewal if: Your last passport was issued after 2001, you are renewing an adult passport, your passport is not lost or significantly damaged, and you are not changing your name (e.g., getting married). If your situation falls outside of these rules, do not worry—our print-ready paper package ensures your in-person visit goes exactly as planned!"
         ],
         waText: "Hi Laura, I need Passport Application Support ($6,000 JMD concierge fee)."
       },
       police: {
         title: "Police Records & Clearances",
-        subtitle: "Thorough intake auditing, portal entry, strict name-matching, and appointment routing.",
+        subtitle: "We handle the online portal, pay your fees, and secure your fingerprinting appointment at the most convenient location so you can just walk in with your paperwork ready.",
+        whatToKnow: "A police record is not a generic certificate that you can keep and hand out to multiple different places. It is a targeted background check that is securely tied to the specific organization (employer, embassy, or school) requesting it. During the application, you must provide us with the exact name and address of that institution, and the final certificate will be officially addressed directly to them. Because it is locked to that specific requestor, it cannot be reused for a different institution later.",
         fee: "$5,000 JMD (+ Agency Fee)",
         time: "5-Day or 21-Day Options",
         whatWeDo: [
-          "Conduct a thorough intake review to guarantee strict ID & name consistency.",
-          "Manage online portal entry and fee voucher coordination on the backend.",
-          "Schedule your fingerprinting appointment and track progress through completion."
+          "We carefully fill out the government's online application to ensure your details perfectly match their system.",
+          "We pay your official processing fee in advance, lock in the exact date and time for your fingerprinting, and email you the complete package."
         ],
         whatYouDo: [
-          "Provide a valid Passport matching your official application name identically.",
-          "Attend your scheduled fingerprinting appointment at the designated location.",
-          "Collect your completed Police Certificate upon notification."
+          "Print the application form and the payment receipt we send you.",
+          "Take those documents, along with your passport-sized photos and your ID, to the police station at your scheduled appointment time."
+        ],
+        howYouGetItBack: [
+          "You will not receive the record on the same day you do your fingerprints. You will return to the station to collect your final printed Police Certificate based on the processing speed you paid for.",
+          "<strong>Choosing Your Station:</strong> You do not have to use the busiest police station! If the main office is fully booked, we can select a different approved fingerprinting location with a shorter wait list so you get your appointment much faster.",
+          "<strong>Official Government Processing Fees:</strong> The Jamaica Constabulary Force charges based on how fast you need the record back after your fingerprint appointment: Regular (21 Working Days): $3,000 JMD, Express (5 Working Days): $6,000 JMD, Premium (Next Day): $8,000 JMD (Note: This tier is sometimes temporarily suspended by the JCF)."
         ],
         waText: "Hi Laura, I need Police Record Assistance ($5,000 JMD concierge fee)."
       },
       rgd: {
         title: "Vital Record Certificates",
-        subtitle: "Online search filing, entry audit, tracking, and courier dispatch setup for Birth, Marriage, or Death records.",
+        subtitle: "Skip the crowded lines at the Registrar General's Department (RGD). We handle the strict online application for your official certificates so you never have to step foot in the office.",
         fee: "$3,000 JMD (+ Agency Fee)",
         time: "7–10 Days (Express)",
         whatWeDo: [
-          "Audit registry details on the backend to prevent entry rejection.",
-          "File the official record search & application online.",
-          "Arrange direct courier delivery to your doorstep."
+          "We use the official RGD portal to file your certificate application and pay the fees online.",
+          "We make sure all the mandatory details (like exact names, event dates, and entry numbers) are keyed in perfectly so the system accepts it without requiring an in-person manual search."
         ],
         whatYouDo: [
-          "Provide core record details during a brief intake call.",
-          "Receive your official certificate directly via courier."
+          "Provide us with the precise details of the event. (Pro tip: If you have an old or damaged copy of the certificate, giving us the \"Entry Number\" makes the online portal accept the application much faster!)"
+        ],
+        howYouGetItBack: [
+          "You don't have to visit the RGD! You can choose to have the official printed certificate delivered right to your door via secure courier (both locally and overseas), or you can choose to pick it up at a local RGD branch if you prefer.",
+          "<strong>Agency Fees & Processing Speeds:</strong> The RGD offers different processing speeds depending on your urgency. During the application, you can choose Standard processing or pay extra for Express service. We will coordinate your preferred timeline and delivery method upfront."
         ],
         waText: "Hi Laura, I need Vital Record Certificate Assistance ($3,000 JMD concierge fee)."
       },
       consult: {
         title: "General Consultations",
-        subtitle: "Tailored advice for complex, multi-agency, or unlisted administrative scenarios.",
+        subtitle: "Have a confusing paperwork problem that isn't listed here? Let's get on a call and figure out exactly what the government needs from you.",
         fee: "15 Minutes",
         time: "Private Video Call",
         whatWeDo: [
-          "Review your specific document timeline and requirements.",
-          "Map out step-by-step agency requirements.",
-          "Provide a custom quote for bespoke handling."
+          "We listen to your specific situation and give you a clear, step-by-step list of what to do next.",
+          "If you want us to handle the process for you, we will tell you exactly how much it will cost."
         ],
         whatYouDo: [
-          "Select a time on the calendar and join the scheduled video call."
+          "Pick a 15-minute slot on our calendar and join the video or phone call."
         ],
         isConsult: true
       }
@@ -1288,27 +1339,47 @@
       document.getElementById('modalFee').innerText = data.fee;
       document.getElementById('modalTime').innerText = data.time;
 
+      const whatToKnowWrapper = document.getElementById('modalWhatToKnowWrapper');
+      if (data.whatToKnow) {
+        whatToKnowWrapper.style.display = 'block';
+        document.getElementById('modalWhatToKnowText').innerHTML = data.whatToKnow;
+      } else {
+        whatToKnowWrapper.style.display = 'none';
+      }
+
       const whatWeDoList = document.getElementById('modalWhatWeDo');
       whatWeDoList.innerHTML = data.whatWeDo.map(item => `<li>${item}</li>`).join('');
 
       const whatYouDoHeader = document.getElementById('modalYouDoHeader');
       const whatYouDoList = document.getElementById('modalWhatYouDo');
-      const agencyBanner = document.getElementById('modalAgencyBanner');
+      
+      const howYouGetBackHeader = document.getElementById('modalGetBackHeader');
+      const howYouGetBackList = document.getElementById('modalHowYouGetItBack');
 
       if (data.isConsult) {
-        agencyBanner.style.display = 'none';
         whatYouDoHeader.style.display = 'block';
         whatYouDoList.style.display = 'block';
         whatYouDoList.innerHTML = data.whatYouDo.map(item => `<li>${item}</li>`).join('');
+        
+        howYouGetBackHeader.style.display = 'none';
+        howYouGetBackList.style.display = 'none';
         
         const cta = document.getElementById('modalCta');
         cta.innerText = "Book 15-Minute Consultation Call →";
         cta.href = "https://calendar.app.google/DkcGkWjiSRMnujTW7";
       } else {
-        agencyBanner.style.display = 'block';
         whatYouDoHeader.style.display = 'block';
         whatYouDoList.style.display = 'block';
         whatYouDoList.innerHTML = data.whatYouDo.map(item => `<li>${item}</li>`).join('');
+        
+        if (data.howYouGetItBack && data.howYouGetItBack.length > 0) {
+          howYouGetBackHeader.style.display = 'block';
+          howYouGetBackList.style.display = 'block';
+          howYouGetBackList.innerHTML = data.howYouGetItBack.map(item => `<li>${item}</li>`).join('');
+        } else {
+          howYouGetBackHeader.style.display = 'none';
+          howYouGetBackList.style.display = 'none';
+        }
         
         const cta = document.getElementById('modalCta');
         cta.innerText = "Request Assistance via WhatsApp →";
@@ -1336,31 +1407,37 @@
         type: "service", 
         keywords: ["police", "record", "clearance", "criminal", "jcf", "fingerprint", "background"], 
         title: "Police Records & Clearances", 
-        text: "We handle thorough intake auditing, online portal entry, strict name-matching verification, and fingerprint appointment scheduling for $5,000 JMD (+ official agency fees)." 
+        text: "We handle thorough intake auditing, online portal entry, pre-paid agency fees, and fingerprint appointment scheduling at optimal station locations." 
+      },
+      { 
+        type: "insight", 
+        keywords: ["abstract", "driving abstract", "driving history", "driver's history", "accident record", "tickets"], 
+        title: "Driving Abstracts & Driver's History", 
+        text: "Driving abstracts are formal compliance documents detailing your Jamaican driving history. They must be addressed to a specific overseas employer or insurance agency and cannot be reused." 
       },
       { 
         type: "service", 
         keywords: ["driver", "licence", "license", "driving", "renew licence", "taj"], 
         title: "Driver's Licence Renewals", 
-        text: "We audit your records, complete your application form data entry, and deliver a print-ready package with a step-by-step submission checklist for $3,000 JMD (+ official agency fees)." 
+        text: "We audit your records, complete form data entry, pre-pay your Tax Office fees, and deliver a print-ready package with official receipts for 60-day legal driving compliance." 
       },
       { 
         type: "service", 
         keywords: ["motor", "vehicle", "fitness", "registration", "car", "licensing", "title", "sticker"], 
         title: "Motor Vehicle Licensing", 
-        text: "We audit fitness & insurance validity, process online renewals, and retrieve your printable e-Registration Certificate for $3,000 JMD (+ official agency fees)." 
+        text: "We audit fitness & insurance validity, process online renewals for private vehicles, and deliver your printable e-Registration Certificate directly to your inbox." 
       },
       { 
         type: "service", 
         keywords: ["passport", "pica", "renew passport", "travel", "guarantor"], 
         title: "Passport Application Support", 
-        text: "High-scrutiny pre-audits for both PICA online renewals and paper applications, strictly verifying photos, guarantor details, and supporting IDs for $6,000 JMD (+ official agency fees)." 
+        text: "Check eligibility for PICA online renewals or receive a flawless paper package audit before submission." 
       },
       { 
         type: "service", 
         keywords: ["birth", "death", "marriage", "rgd", "certificate", "record", "vital"], 
         title: "Vital Record Certificates", 
-        text: "Online search filing, entry auditing, tracking, and doorstep courier dispatch setup for official Birth, Marriage, or Death records for $3,000 JMD (+ official agency fees)." 
+        text: "Online application filing, entry auditing, fee payment, and doorstep courier delivery setup for official Birth, Marriage, or Death records." 
       },
       { 
         type: "service", 
