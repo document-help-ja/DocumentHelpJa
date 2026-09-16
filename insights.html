@@ -3,20 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insights Vault | Laura Clarke Administrative Services</title>
-  <meta name="description" content="Practical guides, counter rules, and administrative advice for Jamaican document processing.">
+  <title>Laura Clarke Administrative Services</title>
+  <meta name="description" content="Private administrative concierge for Jamaican documents, line-skipping convenience, and complete handling.">
   <meta name="theme-color" content="#0F2537">
+  <meta name="p:domain_verify" content="e3535e6305964ef227e4afe43774fc23"/>
   
-  <link rel="canonical" href="https://documenthelpja.com/insights.html">
+  <!-- Social Media Sharing (Open Graph / Facebook / LinkedIn) -->
+  <meta property="og:title" content="Laura Clarke Administrative Services">
+  <meta property="og:description" content="Private document concierge for Jamaican administrative processes, local handling, and application guidance.">
+  <meta property="og:image" content="https://documenthelpja.com/hero.webp">
+  <meta property="og:url" content="https://documenthelpja.com/">
+  <meta property="og:type" content="website">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Laura Clarke Administrative Services">
+  <meta name="twitter:description" content="Private document concierge for Jamaican administrative processes.">
+  <meta name="twitter:image" content="https://documenthelpja.com/hero.webp">
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://documenthelpja.com/">
+  
+  <!-- Schema Markup for Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Laura Clarke Administrative Services",
+    "description": "Private administrative concierge for Jamaican documents, line-skipping convenience, and complete handling.",
+    "url": "https://documenthelpja.com/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Linstead",
+      "addressRegion": "St. Catherine",
+      "addressCountry": "JM"
+    },
+    "telephone": "+18765612614"
+  }
+  </script>
+  
   <style>
     :root {
+      /* High-Contrast Brand Palette */
       --navy: #0F2537;
       --navy-hover: #173752;
       --gold: #D4AF37;
+      --gold-hover: #C29F2B;
       --bg-page: #F8FAFC;
       --bg-card: #FFFFFF;
       --bg-slate-light: #F0F4F8;
+      --cream-bg: #FAF6F0;
+      --cream-border: #EFE2C6;
       --text-main: #1E293B;
       --text-muted: #475569;
       --border-subtle: #E2E8F0;
@@ -31,22 +68,26 @@
       background-color: var(--bg-page);
       color: var(--text-main);
       margin: 0;
-      line-height: 1.85;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
     a { text-decoration: none; color: inherit; }
-    h1, h2, h3 { color: var(--navy); margin-top: 0; line-height: 1.35; }
-    p { margin-top: 0; margin-bottom: 24px; font-size: 1.05rem; }
-
+    h1, h2, h3, h4 { color: var(--navy); margin-top: 0; line-height: 1.2; }
+    p { margin-top: 0; }
+    
     .container {
       width: 100%;
-      max-width: 860px;
+      max-width: 1050px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* HEADER & MOBILE NAVIGATION */
+    section { padding: 80px 0; }
+
+    /* =========================================
+       1. STICKY HEADER
+       ========================================= */
     header {
       background: var(--navy);
       color: #fff;
@@ -56,13 +97,20 @@
       border-bottom: 3px solid var(--gold);
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
+    
     .header-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
       min-height: 70px;
     }
-    .brand { display: flex; align-items: center; gap: 12px; }
+    
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
     .brand-mark {
       display: grid;
       place-items: center;
@@ -73,13 +121,34 @@
       color: var(--gold);
       font-size: 0.9rem;
       font-weight: 700;
+      letter-spacing: 1px;
     }
-    .brand-name { font-weight: 700; font-size: 1.05rem; color: #FFFFFF; }
-    .brand-sub { font-size: 0.72rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; display: block; }
-    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #FFFFFF;
+    }
+    .brand-sub {
+      font-size: 0.72rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
     .nav-links a { font-weight: 600; font-size: 0.95rem; color: #E2E8F0; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
-
+    
     .mobile-menu-btn {
       display: none;
       background: transparent;
@@ -91,122 +160,606 @@
       cursor: pointer;
     }
 
-    /* HERO */
-    .page-hero {
-      background: var(--navy);
-      color: #FFFFFF;
-      padding: 70px 0 60px;
-      text-align: center;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .page-hero h1 { color: #FFFFFF; font-size: clamp(2rem, 3.5vw, 2.6rem); margin-bottom: 16px; }
-    .page-hero p { color: #CBD5E1; max-width: 620px; margin: 0 auto; font-size: 1.1rem; }
-
-    /* BLOG FEED & CARDS */
-    .blog-feed { padding: 60px 0; }
-
-    .blog-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-top: 4px solid var(--gold);
-      border-radius: 12px;
-      padding: 36px 40px;
-      margin-bottom: 36px;
-      box-shadow: 0 4px 15px rgba(15, 37, 55, 0.03);
-      transition: box-shadow 0.2s ease;
-    }
-
-    /* SOFTER CATEGORY EYEBROW */
-    .category-badge {
+    .btn {
       display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #B8860B;               /* Softened warm gold */
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-    }
-
-    /* SOFTENED BLOG TITLES */
-    .blog-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #2C3E50;               /* Soft slate navy */
-      margin-bottom: 14px;
-      line-height: 1.4;
-      letter-spacing: -0.01em;
-      transition: color 0.2s ease;
-    }
-
-    /* SUBTLE COLOR POP ON HOVER */
-    .blog-card:hover .blog-title {
-      color: var(--navy);           /* Darkens smoothly on hover */
-    }
-
-    /* UNIFIED PARAGRAPH TEXT COLOR */
-    .blog-excerpt,
-    .blog-full-content p {
-      color: var(--text-muted);     /* Standardized to readable slate */
-      font-size: 1.05rem;
-      line-height: 1.85;
-      margin-bottom: 24px;
-    }
-
-    /* HIDDEN FULL CONTENT AREA */
-    .blog-full-content {
-      display: none;
-      padding-top: 24px;
-      margin-top: 24px;
-      border-top: 1px solid var(--border-subtle);
-      animation: fadeIn 0.3s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .btn-toggle {
-      background: transparent;
-      border: none;
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 0.98rem;
-      cursor: pointer;
-      padding: 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.2s;
-    }
-    .btn-toggle:hover { color: var(--gold); }
-
-    .whatsapp-action-box {
-      background: var(--bg-slate-light);
-      border-left: 4px solid var(--navy);
-      padding: 24px;
-      border-radius: 0 8px 8px 0;
-      margin-top: 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .btn-wa {
-      display: inline-block;
-      padding: 12px 20px;
+      padding: 12px 24px;
       background: var(--navy);
       color: #fff !important;
       border-radius: var(--radius);
       font-weight: bold;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn:hover { background: var(--navy-hover); transform: translateY(-1px); }
+
+    /* =========================================
+       2. HERO SECTION
+       ========================================= */
+    .hero-section {
+      padding: 90px 0 80px;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.35;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-description {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 480px;
+    }
+
+    .special-pricing-badge {
+      display: inline-block;
+      background: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #FCD34D;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-secondary-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      transition: color 0.2s;
+    }
+    .btn-secondary-link:hover { color: var(--gold); }
+
+    .hero-visual-frame {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(15, 37, 55, 0.08);
+      background: linear-gradient(rgba(15, 37, 55, 0.05), rgba(15, 37, 55, 0.2)),
+                  url('hero.webp') center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+
+    .hero-overlay-card {
+      background: rgba(15, 37, 55, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 30px;
+      padding: 8px 18px;
+      color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      width: auto;
+    }
+
+    .hero-overlay-card-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--gold);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* =========================================
+       3. CORE SERVICES GRID
+       ========================================= */
+    #services {
+      background: #F1F5F9;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    
+    .section-header { text-align: center; margin-bottom: 50px; max-width: 600px; margin-inline: auto; }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 32px;
+    }
+
+    .card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(15, 37, 55, 0.08), 0 8px 10px -6px rgba(15, 37, 55, 0.04);
+      border: 1px solid rgba(15, 37, 55, 0.08);
+      border-top: 4px solid var(--gold);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px -10px rgba(15, 37, 55, 0.16), 0 10px 15px -5px rgba(15, 37, 55, 0.06);
+    }
+
+    .card-body {
+      padding: 28px 24px 24px;
+    }
+
+    .card-title-btn {
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0 0 12px 0;
+      text-align: left;
+      width: 100%;
+      cursor: pointer;
+      display: block;
+    }
+
+    .card-title-btn h3 {
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin: 0;
+      transition: color 0.2s ease;
+    }
+
+    .card-title-btn:hover h3 {
+      color: var(--gold);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .btn-card-footer {
+      width: 100%;
+      padding: 16px 24px;
+      background: var(--bg-slate-light);
+      color: var(--navy);
+      border: none;
+      border-top: 1px solid var(--border-subtle);
+      font-weight: 700;
       font-size: 0.92rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-card-footer:hover {
+      background: var(--navy);
+      color: #FFFFFF;
+    }
+
+    /* FULL-PAGE OVERLAY SHEET MODAL */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 37, 55, 0.7);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 2000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-container {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 820px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 12px;
+      border-top: 6px solid var(--gold);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      padding: 45px;
+      position: relative;
+      animation: modalFadeIn 0.25s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #F1F5F9;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--navy);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
       transition: background 0.2s;
     }
-    .btn-wa:hover { background: var(--navy-hover); }
 
-    /* FOOTER */
+    .modal-close-btn:hover {
+      background: #E2E8F0;
+    }
+
+    .modal-title {
+      font-size: 1.85rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .modal-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .modal-spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      background: #F8FAFC;
+      padding: 20px 24px;
+      border-radius: 8px;
+      margin-bottom: 28px;
+      border: 1px solid #E2E8F0;
+    }
+
+    .modal-spec-item strong {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .modal-spec-item span {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .modal-section-title {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1.15rem;
+      display: block;
+      margin-top: 30px;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .modal-list {
+      padding-left: 22px;
+      margin: 0 0 28px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .modal-list li { margin-bottom: 12px; }
+    .modal-list li:last-child { margin-bottom: 0; }
+
+    /* HELPFUL REFERENCE CREAM SECTION (INSIDE MODAL) */
+    .modal-ref-box {
+      background: var(--cream-bg);
+      border: 1px solid var(--cream-border);
+      border-radius: 10px;
+      padding: 28px;
+      margin: 32px 0 20px;
+    }
+
+    .modal-ref-title {
+      color: var(--navy);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .modal-ref-sub {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .modal-ref-box details {
+      background: #FFFFFF;
+      border: 1px solid var(--cream-border);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      padding: 14px 18px;
+    }
+    .modal-ref-box details:last-child { margin-bottom: 0; }
+
+    .modal-ref-box summary {
+      font-weight: 700;
+      color: var(--navy);
+      cursor: pointer;
+      font-size: 0.98rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-ref-box summary::-webkit-details-marker { display: none; }
+    .modal-ref-box summary::after { content: "+"; font-size: 1.3rem; color: var(--gold); font-weight: bold; }
+    .modal-ref-box details[open] summary::after { content: "−"; }
+
+    .modal-ref-box details p, 
+    .modal-ref-box details ul {
+      margin: 12px 0 0;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+    .modal-ref-box details ul { padding-left: 18px; }
+    .modal-ref-box details li { margin-bottom: 6px; }
+
+    .rate-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.88rem;
+    }
+    .rate-table th, .rate-table td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .rate-table th { background: #F1F5F9; color: var(--navy); font-weight: 700; }
+
+    .modal-btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .modal-cta-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 16px;
+      background: var(--navy);
+      color: #FFFFFF !important;
+      font-weight: 700;
+      font-size: 1.05rem;
+      border-radius: var(--radius);
+      transition: background 0.2s;
+    }
+
+    .modal-cta-btn:hover { background: var(--navy-hover); }
+
+    .modal-pdf-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 14px;
+      background: var(--cream-bg);
+      color: var(--navy);
+      border: 2px solid var(--gold);
+      font-weight: 700;
+      font-size: 0.98rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .modal-pdf-btn:hover {
+      background: #F5E9D3;
+    }
+
+    /* =========================================
+       4. SMART SEARCH
+       ========================================= */
+    .search-wrapper {
+      padding: 70px 0;
+      background: #F1F5F9;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .search-section {
+      background: #FFFFFF;
+      color: var(--navy);
+      padding: 45px 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(15, 37, 55, 0.08);
+      border-top: 4px solid var(--gold);
+      box-shadow: 0 10px 25px -5px rgba(15, 37, 55, 0.08), 0 8px 10px -6px rgba(15, 37, 55, 0.04);
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .search-step-badge {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .search-section h2 { color: var(--navy); margin-bottom: 8px; font-size: 1.6rem; }
+    .search-section p { color: var(--text-muted); margin-top: 0; font-size: 0.98rem; }
+
+    .search-input-wrapper {
+      position: relative;
+      margin-top: 24px;
+      max-width: 650px;
+      margin-inline: auto;
+    }
+
+    .search-section input {
+      width: 100%;
+      padding: 18px 22px;
+      font-size: 1.05rem;
+      color: var(--navy);
+      background: var(--bg-slate-light);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+      outline: none;
+    }
+    
+    .search-section input:focus {
+      background: #FFFFFF;
+      border-color: var(--navy);
+      box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.25);
+    }
+
+    #resultArea {
+      margin-top: 25px;
+      padding: 20px;
+      background: var(--bg-slate-light);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      display: none;
+      text-align: left;
+      color: var(--text-main);
+    }
+    
+    .result-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* =========================================
+       5. INSIGHTS VAULT PREVIEW SECTION
+       ========================================= */
+    .education { background: var(--navy); color: #fff; }
+    .education h2 { color: #fff; }
+    .education .section-header p { color: #CBD5E1; }
+
+    .teaser-card {
+      background: #FFFFFF;
+      padding: 28px;
+      border-radius: 12px;
+      border-top: 4px solid var(--gold);
+      color: var(--navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .teaser-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    /* =========================================
+       6. ABOUT SECTION
+       ========================================= */
+    .about { 
+      background: #FFFFFF; 
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 90px 0;
+    }
+    
+    .about-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-image-frame {
+      position: relative;
+      width: 100%;
+      height: 360px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 3px solid var(--gold);
+      box-shadow: 0 10px 25px rgba(15, 37, 55, 0.08);
+    }
+
+    .about-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-text { text-align: left; }
+    .about-text h2 { font-size: 2rem; margin-bottom: 16px; color: var(--navy); }
+    .about-text p { font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; }
+
+    /* =========================================
+       7. CLEAN MINIMAL FOOTER
+       ========================================= */
     footer {
       background: #08141F;
       color: #94A3B8;
@@ -214,15 +767,127 @@
       font-size: 0.9rem;
       border-top: 3px solid var(--gold);
     }
-    .footer-grid { display: grid; grid-template-columns: 1.4fr 0.9fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .footer-col h4 { color: #FFFFFF; margin-bottom: 16px; }
-    .footer-links { list-style: none; padding: 0; margin: 0; }
-    .footer-links li { margin-bottom: 10px; }
-    .footer-links a { color: #CBD5E1; }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; }
 
-    /* RESPONSIVE MOBILE STYLES */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .footer-brand-title {
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .footer-brand-sub {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .footer-col p {
+      line-height: 1.6;
+      color: #94A3B8;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #CBD5E1;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .contact-link {
+      color: #FFFFFF !important;
+      font-weight: 600;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.82rem;
+      color: #64748B;
+    }
+
+    .disclaimer-text {
+      color: #64748B;
+      line-height: 1.5;
+    }
+
+    .disclaimer-text strong {
+      color: #94A3B8;
+    }
+
+    .copyright-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 8px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 900;
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      font-weight: 900;
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.05); }
+
+    /* =========================================
+       8. MOBILE RESPONSIVENESS
+       ========================================= */
     @media (max-width: 768px) {
+      .grid { 
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .card-body {
+        padding: 24px 20px 20px;
+      }
+
       .nav-links {
         display: none; 
         width: 100%;
@@ -236,317 +901,327 @@
       }
       .nav-links.active { display: flex; }
       .mobile-menu-btn { display: block; }
-
-      .blog-card { padding: 28px 20px; }
+      
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual-frame { height: 320px; }
+      
+      .about-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+      .about-text { text-align: center; }
+      .about-image-frame { height: 320px; max-width: 300px; margin: 0 auto; }
+      
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .blog-title { font-size: 1.3rem; }
-      .whatsapp-action-box { flex-direction: column; align-items: flex-start; }
+      .modal-container { padding: 32px 20px; max-height: 85vh; }
+      .modal-spec-grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 24px; padding: 18px; }
+      
+      section { padding: 50px 0; }
+      .search-section { padding: 30px 18px; }
+      .modal-ref-box { padding: 20px 16px; }
     }
   </style>
 </head>
-<body>
+<body id="top">
 
-  <!-- STICKY HEADER WITH MOBILE MENU -->
+  <!-- STICKY HEADER -->
   <header>
     <div class="container header-content">
       <a href="index.html#top" class="brand">
         <div class="brand-mark">LC</div>
-        <div>
+        <div class="brand-text">
           <span class="brand-name">Laura Clarke</span>
           <span class="brand-sub">Administrative Services</span>
         </div>
       </a>
       
       <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-
+      
       <div class="nav-links" id="navMenu">
-        <a href="index.html#services" onclick="toggleMenu()">Services</a>
-        <a href="insights.html" style="color: var(--gold);" onclick="toggleMenu()">Insights</a>
-        <a href="about.html" onclick="toggleMenu()">About</a>
+        <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="insights.html">Insights</a>
+        <a href="about.html">About</a>
       </div>
     </div>
   </header>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
+  <!-- 1. HERO SECTION -->
+  <div class="hero-section">
+    <div class="container hero-grid">
+      
+      <div class="hero-text">
+        <span class="hero-tag">Private Document Concierge</span>
+        <h1 class="hero-title">Jamaican document processing, completely handled for you.</h1>
+        
+        <p class="hero-description">
+          Skip the endless lines, counter rejections, and bureaucratic hassle. We take care of the document audits, fee payments, and agency legwork so your paperwork is sorted stress-free.
+        </p>
+
+        <span class="special-pricing-badge">✨ Limited-Time Introductory Rates Active This Month</span>
+
+        <div class="hero-cta-group">
+          <a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" class="btn" target="_blank">Book a 15-Min Consultation</a>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20have%20a%20quick%20question%20about%20a%20document." class="btn-secondary-link" target="_blank">Message on WhatsApp &rarr;</a>
+        </div>
+      </div>
+
+      <div class="hero-visual-frame">
+        <div class="hero-overlay-card">
+          <span class="hero-overlay-card-dot"></span>
+          <span>On-the-Ground & Diaspora Representation</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2. CORE SERVICES GRID -->
+  <section id="services">
     <div class="container">
-      <h1>Insights Vault</h1>
-      <p>Practical guides, counter rules, and administrative advice to protect your applications from costly agency delays.</p>
+      <div class="section-header">
+        <h2>Explore our primary services</h2>
+        <p style="color: var(--text-muted);">Select a service suite to view full details, requirements, and special promotional rates for this month.</p>
+      </div>
+
+      <div class="grid">
+
+        <!-- CARD 1 -->
+        <div class="card">
+          <div class="card-body">
+            <button class="card-title-btn" onclick="openModal('driver')">
+              <h3>Driver's Licence Renewals</h3>
+            </button>
+            <p>Form prep, pre-paid tax fees, payment receipts for 60-day legal driving compliance, and fast-track drop-off guidance.</p>
+          </div>
+          <button class="btn-card-footer" onclick="openModal('driver')">
+            <span>View Scope & Special Rate</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+          <div class="card-body">
+            <button class="card-title-btn" onclick="openModal('vehicle')">
+              <h3>Motor Vehicle Licensing</h3>
+            </button>
+            <p>Done-for-you licence renewals, e-Registration Certificate retrieval, and fitness/insurance status audits for private vehicles.</p>
+          </div>
+          <button class="btn-card-footer" onclick="openModal('vehicle')">
+            <span>View Scope & Special Rate</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+          <div class="card-body">
+            <button class="card-title-btn" onclick="openModal('passport')">
+              <h3>Passport Application Support</h3>
+            </button>
+            <p>Full passport renewal management, line-for-line photo & document audits, error prevention, and direct courier setup.</p>
+          </div>
+          <button class="btn-card-footer" onclick="openModal('passport')">
+            <span>View Scope & Special Rate</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+          <div class="card-body">
+            <button class="card-title-btn" onclick="openModal('police')">
+              <h3>Police Records & Clearances</h3>
+            </button>
+            <p>Complete filing handling, pre-paid agency fees, optimal fingerprint appointment booking, and status tracking.</p>
+          </div>
+          <button class="btn-card-footer" onclick="openModal('police')">
+            <span>View Scope & Special Rate</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="card">
+          <div class="card-body">
+            <button class="card-title-btn" onclick="openModal('rgd')">
+              <h3>Vital Record Certificates</h3>
+            </button>
+            <p>End-to-end certificate retrieval, record audits, pre-paid fees, and doorstep courier delivery for Birth, Marriage, or Death records.</p>
+          </div>
+          <button class="btn-card-footer" onclick="openModal('rgd')">
+            <span>View Scope & Special Rate</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="card">
+          <div class="card-body">
+            <button class="card-title-btn" onclick="openModal('consult')">
+              <h3>General Consultations</h3>
+            </button>
+            <p>Tailored advice for complex, multi-agency, or unlisted administrative scenarios.</p>
+          </div>
+          <button class="btn-card-footer" onclick="openModal('consult')">
+            <span>View Scope & Details</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- MAIN BLOG FEED -->
-  <main class="container blog-feed">
-
-    <!-- POST 1: LOST OR STOLEN PASSPORTS -->
-    <article id="lost-stolen-passport" class="blog-card">
-      <span class="category-badge">Passport & Identity Security</span>
-      <h2 class="blog-title">Lost or Stolen Jamaican Passport? Why You Must File a Police Report Before Re-Applying</h2>
+  <!-- FULL-PAGE MODAL SHEET OVERLAY -->
+  <div class="modal-overlay" id="serviceModal" onclick="closeModalOnOverlay(event)">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
       
-      <p class="blog-excerpt">
-        A missing passport is considered a high-priority security risk. Attempting to submit a standard renewal form to replace a missing booklet will cause immediate counter rejections at PICA...
-      </p>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-subtitle" id="modalSubtitle"></p>
 
-      <button class="btn-toggle" onclick="togglePost('lost-stolen-passport')">
-        <span class="toggle-text">Read Full Article</span> &rarr;
-      </button>
+      <div class="modal-spec-grid">
+        <div class="modal-spec-item">
+          <strong>Concierge Fee (This Month's Special)</strong>
+          <span id="modalFee"></span>
+        </div>
+        <div class="modal-spec-item">
+          <strong>Turnaround / Schedule</strong>
+          <span id="modalTime"></span>
+        </div>
+      </div>
 
-      <div class="blog-full-content">
-        <p>When a passport goes missing, many people delay taking action out of fear of bureaucracy or police station visits. However, a lost passport sitting in unverified hands creates a severe identity theft risk.</p>
+      <span class="modal-section-title">What We Do For You:</span>
+      <ul class="modal-list" id="modalWhatWeDo"></ul>
+
+      <span class="modal-section-title" id="modalYouDoHeader">What You Provide:</span>
+      <ul class="modal-list" id="modalWhatYouDo"></ul>
+
+      <span class="modal-section-title" id="modalGetBackHeader">Delivery & Key Notes:</span>
+      <ul class="modal-list" id="modalHowYouGetItBack"></ul>
+
+      <!-- HELPFUL REFERENCE INFORMATION (CREAM BOX) -->
+      <div class="modal-ref-box" id="modalRefBox" style="display: none;">
+        <span class="modal-ref-title">📌 Helpful Reference Information</span>
+        <span class="modal-ref-sub">Important official guidelines and rules to keep in mind:</span>
+        <div id="modalRefContent"></div>
+      </div>
+
+      <div class="modal-btn-group">
+        <a href="#" id="modalCta" class="modal-cta-btn" target="_blank">Request Assistance via WhatsApp &rarr;</a>
+        <button class="modal-pdf-btn" id="modalPdfBtn" onclick="printServicePDF()">📄 Download / Print PDF Fact Sheet</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SMART SEARCH -->
+  <div class="search-wrapper">
+    <div class="container">
+      <div class="search-section">
+        <span class="search-step-badge">Quick Safety Net</span>
+        <h2>Don't see your exact problem listed above?</h2>
+        <p>Type what you need in plain English (e.g., "Renew passport", "TRN", "Police Record", "Abstract").</p>
         
-        <p>Attempting to submit a standard renewal application to replace a missing passport will result in immediate rejection at the PICA counter. To replace a lost or stolen Jamaican passport smoothly, you must follow these exact security protocols:</p>
+        <div class="search-input-wrapper">
+          <input type="text" id="smartSearch" placeholder="Type what you need help with..." oninput="handleSmartSearch()">
+        </div>
         
-        <p>First, visit the nearest police station in the parish where the loss occurred and request a written Police Receipt/Report specifically noting the lost passport number. Second, in addition to the standard application, you must complete PICA’s mandatory C-1 affidavit explaining the exact circumstances of the loss.</p>
-
-        <p>Finally, remember that lost passport replacements are excluded from PICA’s online renewal system. You must present yourself in person along with your official birth certificate, certified photos, and the original police report.</p>
-
-        <div class="whatsapp-action-box">
-          <div>
-            <strong style="color: var(--navy); display: block;">Need assistance replacing a lost passport?</strong>
-            <span style="font-size: 0.92rem; color: var(--text-muted);">We help audit your documents and prepare your replacement package.</span>
-          </div>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20need%20help%20replacing%20a%20lost%20or%20stolen%20passport." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
+        <div id="resultArea">
+          <span id="resultBadge" class="result-badge"></span>
+          <h3 id="resultTitle" style="margin-top: 0; margin-bottom: 8px;"></h3>
+          <p id="resultText" style="margin-top: 0; margin-bottom: 20px; color: var(--text-muted);"></p>
+          <a href="https://wa.me/18765612614" id="resultLink" class="btn" style="margin-top: 0; width: 100%;"></a>
         </div>
       </div>
-    </article>
+    </div>
+  </div>
 
-    <!-- POST 2: DAMAGED PASSPORTS -->
-    <article id="damaged-passport" class="blog-card">
-      <span class="category-badge">PICA Compliance</span>
-      <h2 class="blog-title">Is Your Passport Damaged? Heat, Water, and Laminate Peeling Rules at PICA</h2>
+  <!-- 4. INSIGHTS VAULT PREVIEW SECTION -->
+  <section id="education" class="education">
+    <div class="container">
+      <div class="section-header">
+        <h2>Things You Might Not Know</h2>
+        <p>Bureaucratic rules change constantly. Read our practical guides before filing your application.</p>
+      </div>
 
-      <p class="blog-excerpt">
-        Passports with water stains, torn pages, or heat-peeled laminate are officially classified as damaged. Here is why they cannot be processed through online renewals...
-      </p>
+      <!-- TEASER CARDS GRID -->
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
 
-      <button class="btn-toggle" onclick="togglePost('damaged-passport')">
-        <span class="toggle-text">Read Full Article</span> &rarr;
-      </button>
-
-      <div class="blog-full-content">
-        <p>Jamaica’s climate frequently leads to accidental passport damage—leaving a document on a hot car dashboard, accidentally running it through a washing machine, or spilling liquids inside a travel bag.</p>
-
-        <p>PICA counter officers enforce strict rules regarding document integrity. If a passport scanner cannot read the machine-readable zone (MRZ) or if the photo laminate is peeling, the document is officially invalidated.</p>
-
-        <p>If your passport has any physical damage, do not attempt to use PICA’s automated online renewal system, as it will fail during the photo verification step. Instead, you must present the damaged booklet in person so senior clerks can verify that the security features have not been compromised.</p>
-
-        <p>Always bring your original birth certificate and valid photo ID to confirm your legal identity alongside the damaged document during counter drop-off.</p>
-
-        <div class="whatsapp-action-box">
+        <!-- CARD 1 -->
+        <div class="teaser-card">
           <div>
-            <strong style="color: var(--navy); display: block;">Unsure if your passport counts as damaged?</strong>
-            <span style="font-size: 0.92rem; color: var(--text-muted);">Send us a scan or photo for a quick pre-audit review.</span>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">TRN Applications</span>
+            <h3 style="font-size: 1.15rem; margin-bottom: 12px; line-height: 1.3;">No Passport or Driver's Licence? How to Get a Jamaican TRN Using Only a Birth Certificate</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 20px;">
+              Think you can't get a TRN without formal photo ID? Tax Administration Jamaica has an alternative verification path using a certified photo and JP declaration.
+            </p>
           </div>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20have%20questions%20about%20a%20damaged%20passport." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
+          <a href="insights.html#trn-no-id" style="font-weight: 700; color: var(--navy); font-size: 0.9rem; text-decoration: underline;">Read Full Guide &rarr;</a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="teaser-card">
+          <div>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">Police Records</span>
+            <h3 style="font-size: 1.15rem; margin-bottom: 12px; line-height: 1.3;">Why Certifying Your Police Record Picture Will Get You Rejected</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 20px;">
+              Unlike TRN or Passport applications, the Criminal Records Office turns applicants away if a JP signs or embosses the photo. Here is what to avoid.
+            </p>
+          </div>
+          <a href="insights.html#police-photo-trap" style="font-weight: 700; color: var(--navy); font-size: 0.9rem; text-decoration: underline;">Read Full Guide &rarr;</a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="teaser-card">
+          <div>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">National Insurance (NIS)</span>
+            <h3 style="font-size: 1.15rem; margin-bottom: 12px; line-height: 1.3;">The NIS Contribution Trap: Why Missing Record Audits Can Shrink Your Pension</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5; margin-bottom: 20px;">
+              Many workers and self-employed Jamaicans discover missing contribution years only when applying for retirement. Learn how auditing your statement early protects your full payout.
+            </p>
+          </div>
+          <a href="insights.html#nis-pension-trap" style="font-weight: 700; color: var(--navy); font-size: 0.9rem; text-decoration: underline;">Read Full Guide &rarr;</a>
+        </div>
+
+      </div>
+
+      <!-- VIEW ALL BUTTON -->
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="insights.html" class="btn" style="background: var(--gold); color: var(--navy) !important;">Explore Full Insights Vault &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. ABOUT SECTION (HOMEPAGE TEASER) -->
+  <section id="about" class="about">
+    <div class="container about-grid">
+      <div class="about-image-frame">
+        <img src="laura.jpg" alt="Laura Clarke" onerror="this.src='ecard.webp'">
+      </div>
+      <div class="about-text">
+        <h2>About Laura Clarke</h2>
+        <p>When administrative paperwork becomes complicated, you shouldn't have to spend your valuable hours navigating it alone. I established this private concierge practice to give you back your time, providing meticulous care and attention to detail for processes that often feel overwhelming.</p>
+        <p>Whether you need professional application pre-audits or trusted oversight from overseas, I handle the heavy lifting so your submissions move forward smoothly and securely on the first try.</p>
+        
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-top: 20px;">
+          <a href="about.html" class="btn">Read Full Profile & Background &rarr;</a>
+          <a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" class="btn-secondary-link" target="_blank">Book a Consultation &rarr;</a>
         </div>
       </div>
-    </article>
+    </div>
+  </section>
 
-    <!-- POST 3: ADD FATHER'S NAME TO BIRTH CERTIFICATE -->
-    <article id="add-father-name" class="blog-card">
-      <span class="category-badge">RGD Vital Records</span>
-      <h2 class="blog-title">Adding a Father's Name to a Jamaican Birth Certificate: The RGD "Status" Process</h2>
-
-      <p class="blog-excerpt">
-        Adding a father’s particulars to an existing birth record requires a formal "Addition of Father's Particulars" application accompanied by a sworn Statutory Declaration...
-      </p>
-
-      <button class="btn-toggle" onclick="togglePost('add-father-name')">
-        <span class="toggle-text">Read Full Article</span> &rarr;
-      </button>
-
-      <div class="blog-full-content">
-        <p>Historically, many Jamaican birth certificates were issued without the father's name or details listed. Updating this document later in life is essential for foreign visa petitions, inheritance claims, and passport applications.</p>
-
-        <p>The Registrar General's Department (RGD) requires a specific legal procedure known as a "Status" application to update the official register.</p>
-
-        <p>Both the mother and father must sign the RGD application form and provide valid government photo identification. A Justice of the Peace (JP) or Notary Public must witness and sign a formal declaration confirming fatherhood.</p>
-
-        <p>Along with the application, the father's original birth certificate and TRN must be submitted. If the father is deceased, the RGD requires alternative legal proof, such as DNA testing, court orders, or sworn declarations from paternal relatives.</p>
-
-        <div class="whatsapp-action-box">
-          <div>
-            <strong style="color: var(--navy); display: block;">Need help navigating the RGD Status application?</strong>
-            <span style="font-size: 0.92rem; color: var(--text-muted);">We prepare your documents before submission.</span>
-          </div>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20need%20assistance%20adding%20a%20father's%20name%20to%20a%20birth%20certificate." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- POST 4: TRN WITHOUT PHOTO ID -->
-    <article id="trn-no-id" class="blog-card">
-      <span class="category-badge">Tax Administration Jamaica</span>
-      <h2 class="blog-title">No Passport or Driver's Licence? How to Get a Jamaican TRN Using Only a Birth Certificate</h2>
-
-      <p class="blog-excerpt">
-        Lacking a formal photo ID does not stop you from getting a TRN. Tax Administration Jamaica allows an alternative verification path using a certified photo and JP declaration...
-      </p>
-
-      <button class="btn-toggle" onclick="togglePost('trn-no-id')">
-        <span class="toggle-text">Read Full Article</span> &rarr;
-      </button>
-
-      <div class="blog-full-content">
-        <p>Many individuals believe that lacking a Passport, Driver’s Licence, or Electoral ID completely blocks them from obtaining a Taxpayer Registration Number (TRN). This is a common misconception.</p>
-
-        <p>Tax Administration Jamaica (TAJ) provides a clear alternative verification path for citizens without standard photo IDs by pairing an original RGD Birth Certificate with a JP-certified passport photograph and an official JP Declaration Form.</p>
-
-        <p>To do this, obtain one passport-sized photograph. A Justice of the Peace, Doctor, Attorney, or Minister of Religion must endorse the back: <em>"Certified true photograph of [Applicant Name]"</em> with their signature and date.</p>
-
-        <p>Next, print TAJ's "Declaration by Certifying Official" form and have the same JP complete and stamp it. Crucially, the residential address written on the declaration form must match the address entered on the TRN application line-for-line.</p>
-
-        <p>Because this relies on an alternative verification method, the applicant must appear in person at the Tax Office counter so the clerk can physically verify them against the certified photo.</p>
-
-        <div class="whatsapp-action-box">
-          <div>
-            <strong style="color: var(--navy); display: block;">Need help preparing a TRN package without photo ID?</strong>
-            <span style="font-size: 0.92rem; color: var(--text-muted);">We organize your pre-filled forms and JP checklists.</span>
-          </div>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20need%20help%20applying%20for%20a%20TRN%20without%20a%20photo%20ID." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- POST 5: POLICE RECORD PHOTO TRAP -->
-    <article id="police-photo-trap" class="blog-card">
-      <span class="category-badge">JCF Clearances</span>
-      <h2 class="blog-title">The $3,000 Photo Mistake: Why Certifying Your Police Record Picture Will Get You Rejected</h2>
-
-      <p class="blog-excerpt">
-        Unlike TRN or passport applications, the Criminal Records Office turns applicants away if a JP signs or stamps the photo. Here is what to avoid at your appointment...
-      </p>
-
-      <button class="btn-toggle" onclick="togglePost('police-photo-trap')">
-        <span class="toggle-text">Read Full Article</span> &rarr;
-      </button>
-
-      <div class="blog-full-content">
-        <p>Because most government applications (like Passports, Driver's Licences, and TRNs) require a Justice of the Peace to certify your passport photograph, applicants naturally assume the same rule applies to Police Records.</p>
-
-        <p>Doing so for a Police Certificate is a costly error that leads to instant rejection at the fingerprint counter. JCF forensic technicians require completely clean, uncertified passport photos. Do not allow anyone to write, stamp, or emboss the back of the picture.</p>
-
-        <p>Additionally, ensure the full legal name on your online payment receipt matches your government photo ID exactly. If using a passport in your maiden name, bring your original RGD marriage certificate as a legal bridge document.</p>
-
-        <p>Remember that police records are locked to the specific employer, embassy, or institution requested during application and cannot be reused elsewhere later.</p>
-
-        <div class="whatsapp-action-box">
-          <div>
-            <strong style="color: var(--navy); display: block;">Ready to book your Police Record fingerprinting?</strong>
-            <span style="font-size: 0.92rem; color: var(--text-muted);">We handle payment entry and appointment scheduling.</span>
-          </div>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20need%20help%20booking%20and%20preparing%20a%20Police%20Record." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- POST 6: NIS PENSION TRAP -->
-    <article id="nis-pension-trap" class="blog-card">
-      <span class="category-badge">National Insurance Scheme</span>
-      <h2 class="blog-title">The NIS Contribution Trap: Why Missing Record Audits Can Shrink Your Retirement Pension</h2>
-
-      <p class="blog-excerpt">
-        Unpaid quarterly self-employed NIS contributions create permanent gaps in your record. Learn how auditing your statement early protects your full retirement payout...
-      </p>
-
-      <button class="btn-toggle" onclick="togglePost('nis-pension-trap')">
-        <span class="toggle-text">Read Full Article</span> &rarr;
-      </button>
-
-      <div class="blog-full-content">
-        <p>Many self-employed professionals, business owners, and returning diaspora members assume that paying income taxes automatically covers their National Insurance Scheme (NIS) obligations. It does not.</p>
-
-        <p>Skipping self-employed NIS quarterly payments creates serious financial vulnerabilities that surface only when applying for retirement benefits.</p>
-
-        <p>To qualify for a full retirement pension, the Ministry of Labour requires a specific number of verified annual contribution weeks. Unrecorded years directly reduce your final monthly payout.</p>
-
-        <p>Waiting until age 60 or 65 to check your record makes retrieving past employment proof extremely difficult. Auditing your statement every few years ensures missing records are resolved immediately while records are fresh.</p>
-
-        <div class="whatsapp-action-box">
-          <div>
-            <strong style="color: var(--navy); display: block;">Have questions about your NIS contribution standing?</strong>
-            <span style="font-size: 0.92rem; color: var(--text-muted);">Book a consultation to review your document history.</span>
-          </div>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20have%20questions%20about%20NIS%20record%20audits." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- POST 7: DIASPORA TRN NOTARY PITFALLS -->
-    <article id="diaspora-trn-notary" class="blog-card">
-      <span class="category-badge">Diaspora Representation</span>
-      <h2 class="blog-title">Applying for a Jamaican TRN from Abroad: The Notary Details That Cause Rejections</h2>
-
-      <p class="blog-excerpt">
-        Overseas TRN mail applications are rejected if foreign notary stamps lack an explicit commission expiration date or if form signatures vary from the ID scan...
-      </p>
-
-      <button class="btn-toggle" onclick="togglePost('diaspora-trn-notary')">
-        <span class="toggle-text">Read Full Article</span> &rarr;
-      </button>
-
-      <div class="blog-full-content">
-        <p>Members of the Jamaican diaspora living in the US, UK, or Canada do not need to fly to Jamaica to secure a Taxpayer Registration Number (TRN). However, TAJ counter clerks inspect mailed international applications under strict scrutiny.</p>
-
-        <p>Foreign Notary Public stamps must display an active commission expiration date. Incomplete or faint notary stamps will cause immediate application halts in Kingston.</p>
-
-        <p>Furthermore, the signature on your pre-filled TRN application form must match the signature on your notarized passport copy line-for-line.</p>
-
-        <p>If sending a local representative to drop off or track your package at the Tax Office in Kingston, always include a signed letter explicitly authorizing them to handle the transaction on your behalf.</p>
-
-        <div class="whatsapp-action-box">
-          <div>
-            <strong style="color: var(--navy); display: block;">Applying for a TRN from overseas?</strong>
-            <span style="font-size: 0.92rem; color: var(--text-muted);">We pre-audit your notary seals before you mail your package.</span>
-          </div>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20need%20diaspora%20TRN%20pre-audit%20assistance." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- POST 8: DRIVING ABSTRACTS -->
-    <article id="driving-abstract" class="blog-card">
-      <span class="category-badge">TAJ Compliance</span>
-      <h2 class="blog-title">Need a Jamaican Driving Abstract for Overseas Insurance or Work? What You Must Know</h2>
-
-      <p class="blog-excerpt">
-        A driving abstract is a formal compliance history detailing your Jamaican traffic record. It must be officially addressed to a specific overseas employer or insurance agency...
-      </p>
-
-      <button class="btn-toggle" onclick="togglePost('driving-abstract')">
-        <span class="toggle-text">Read Full Article</span> &rarr;
-      </button>
-
-      <div class="blog-full-content">
-        <p>Jamaican drivers moving abroad often require an official "Driving Abstract" or Driver's History Report to lower foreign car insurance premiums or satisfy commercial trucking employer checks.</p>
-
-        <p>TAJ does not issue generic driving abstracts. You must supply the exact legal name and mailing address of the receiving foreign agency before the application can be processed.</p>
-
-        <p>You must supply your original Jamaican Driver's Licence number, personal TRN, and full legal name as recorded in the TAJ database.</p>
-
-        <p>If you are already abroad, an authorized local representative in Jamaica can submit the request, pay the official fees, and retrieve the certified abstract on your behalf.</p>
-
-        <div class="whatsapp-action-box">
-          <div>
-            <strong style="color: var(--navy); display: block;">Need local ground representation for a Driving Abstract?</strong>
-            <span style="font-size: 0.92rem; color: var(--text-muted);">We handle the Tax Office filings and pickup for you.</span>
-          </div>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura,%20I%20need%20a%20Jamaican%20Driving%20Abstract." class="btn-wa" target="_blank">Chat on WhatsApp &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-  </main>
-
-  <!-- CLEAN FOOTER -->
+  <!-- 6. FOOTER & LEGAL -->
   <footer>
     <div class="container">
+      
       <div class="footer-grid">
+        
         <div class="footer-col">
-          <div style="color: #fff; font-weight: 700; font-size: 1.1rem;">Laura Clarke</div>
-          <span style="color: var(--gold); font-size: 0.78rem; text-transform: uppercase; font-weight: 600;">Administrative Services</span>
-          <p style="margin-top: 12px; font-size: 0.88rem;">Private document preparation, compliance audits, and local representation.</p>
+          <div class="footer-brand-title">Laura Clarke</div>
+          <span class="footer-brand-sub">Administrative Services</span>
+          <p>Private document concierge, compliance pre-audits, and local representation for individuals and diaspora clients.</p>
         </div>
+
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul class="footer-links">
@@ -556,34 +1231,57 @@
             <li><a href="about.html">About Laura</a></li>
           </ul>
         </div>
+
         <div class="footer-col">
-          <h4>Contact</h4>
+          <h4>Direct Contact</h4>
           <ul class="footer-links">
-            <li><a href="mailto:info@documenthelpja.com" style="color: #fff;">info@documenthelpja.com</a></li>
-            <li><a href="https://wa.me/18765612614" target="_blank" style="color: #fff;">WhatsApp: 876-561-2614</a></li>
+            <li>
+              <a href="mailto:info@documenthelpja.com" class="contact-link">
+                info@documenthelpja.com
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/18765612614" class="contact-link" target="_blank">
+                WhatsApp: 876-561-2614
+              </a>
+            </li>
+            <li>
+              <a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" target="_blank">
+                Book Consultation
+              </a>
+            </li>
+            <li><span style="color: #64748B;">Local Ground Support & Diaspora</span></li>
           </ul>
         </div>
+
         <div class="footer-col">
-          <h4>Legal</h4>
+          <h4>Legal & Policies</h4>
           <ul class="footer-links">
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
           </ul>
         </div>
+
       </div>
+
       <div class="footer-bottom">
-        <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 12px;">
-          <strong>Disclaimer:</strong> Laura Clarke Administrative Services is a private, independent consultancy providing document preparation and guidance. We are not a government agency.
+        <p class="disclaimer-text">
+          <strong>Disclaimer:</strong> Laura Clarke Administrative Services is a private, independent consultancy providing document preparation and guidance. We are not a government agency and have no affiliation with TAJ, PICA, RGD, JCF, or official ministries. Application approvals remain strictly at agency discretion.
         </p>
-        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #64748B;">
+        
+        <div class="copyright-row">
           <div>&copy; 2026 Laura Clarke Administrative Services. All rights reserved.</div>
-          <div>Jamaica Document Concierge</div>
+          <div>Private Document Concierge &bull; Jamaica</div>
         </div>
       </div>
+
     </div>
   </footer>
 
-  <!-- SCRIPTS FOR TOGGLING MENU & BLOG POSTS -->
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/18765612614" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank">WA</a>
+
+  <!-- SCRIPTS -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById('navMenu');
@@ -592,35 +1290,483 @@
       }
     }
 
-    function togglePost(id) {
-      const card = document.getElementById(id);
-      if (!card) return;
-      
-      const content = card.querySelector('.blog-full-content');
-      const toggleText = card.querySelector('.toggle-text');
-      const isVisible = content.style.display === 'block';
+    /* MODAL SERVICES DATA */
+    const servicesData = {
+      driver: {
+        title: "Driver's Licence Renewals",
+        subtitle: "We handle the messy paperwork and pay your fees in advance so you can skip the cashier line at the Tax Office. Turn a stressful multi-hour errand into a fast, effortless drop-off.",
+        fee: "$3,000 JMD Special Rate (+ Agency Fee)",
+        time: "Same-Day Package",
+        whatWeDo: [
+          "We fill out your forms, verify your details for errors, and pay your Tax Office fee upfront.",
+          "We prepare a complete, print-ready package that includes your official payment receipts."
+        ],
+        whatYouDo: [
+          "Print the package. Keep one copy of the receipt for yourself—this legally allows you to drive for 60 days!",
+          "Drop off the application and receipt at the Tax Office (after getting your doctor to sign it, if required).",
+          "<strong>Pro Tip:</strong> Take two (2) physical passport-sized photos with you to avoid long camera lines and system delays."
+        ],
+        howYouGetItBack: [
+          "When you hand in your paperwork, the Tax Office will process your physical card:",
+          "<strong>Major Tax Offices (e.g., Constant Spring, Spanish Town, Montego Bay, Mandeville):</strong> Because your fee is pre-paid, you can <strong>walk out with your new physical card the same day</strong> (usually in 15 to 30 minutes)!",
+          "<strong>Smaller Tax Offices (Collectorates):</strong> Physical passport photos are mandatory. You will drive using your 60-day receipt and return a few days later to pick up your card."
+        ],
+        referenceInfo: [
+          {
+            summary: "Which tax offices offer the fastest processing?",
+            detail: "<p>For the fastest turnaround, TAJ operates specialized collection hubs and major centres, including:</p><ul><li><strong>Kingston:</strong> Constant Spring Revenue Service Centre & Cross Roads Tax Office</li><li><strong>St. Andrew:</strong> Andrew’s Avenue Drop-Off Hub</li><li><strong>St. Catherine:</strong> Spanish Town & Portmore Revenue Service Centres</li><li><strong>Montego Bay:</strong> Montego Bay Revenue Service Centre</li></ul>"
+          },
+          {
+            summary: "What happens if I use a smaller, local tax office?",
+            detail: "<p>If you choose to renew at a smaller or local tax office outside of the main hubs:</p><ul><li><strong>Passport Photos Required:</strong> You MUST bring 2 physical passport-sized photographs. Smaller offices do not have on-site digital photo capture.</li><li><strong>Extended Wait Time:</strong> The process takes longer as documentation is sent to a centralized printing facility before returning.</li></ul>"
+          },
+          {
+            summary: "What standard documents do I need to prepare?",
+            detail: "<ul><li>Your current (expired or expiring) Driver's Licence.</li><li>Your Tax Registration Number (TRN).</li><li>Completed TAJ Application Form F7.</li><li>Medical Certificate (required if over 60 years old or holding a commercial licence).</li><li>2 Certified Passport Photos (if applying via a local non-hub office).</li></ul>"
+          },
+          {
+            summary: "Can someone pick up my Driver's Licence for me?",
+            detail: "<p>Because Tax Administration Jamaica (TAJ) requires physical identity verification and signature capture, the cardholder must appear in person for final pickup. Our concierge service handles all form preparation and fee payments beforehand so your pickup is as fast as possible.</p>"
+          }
+        ],
+        waText: "Hi Laura, I would like to start a Driver's Licence Renewal ($3,000 JMD special promotional rate)."
+      },
+      vehicle: {
+        title: "Motor Vehicle Licensing",
+        subtitle: "Save valuable time and skip the Tax Office completely. We handle your entire private vehicle renewal from start to finish and deliver your official e-Registration Certificate directly to your inbox.",
+        fee: "$3,000 JMD Special Rate (+ Agency Fee)",
+        time: "Same-Day e-Delivery",
+        whatWeDo: [
+          "We check the government database to ensure your fitness and insurance are actively reflecting.",
+          "We process your full renewal and download your official e-Registration certificate on your behalf."
+        ],
+        whatYouDo: [
+          "Ensure your car has passed its fitness test at the depot and has an active motor insurance policy."
+        ],
+        howYouGetItBack: [
+          "We email the official certificate directly to you. Just save it to your phone and print a physical copy to keep in your glove compartment for full legal compliance when checked by the police."
+        ],
+        referenceInfo: [
+          {
+            summary: "How does compliance work without a windshield sticker?",
+            detail: "<p>Tax Administration Jamaica (TAJ) no longer issues physical windshield stickers for motor vehicle renewals. Everything has transitioned to a digital electronic Motor Vehicle Registration Certificate (eMVRC).</p><p>Once we process your renewal, simply print a paper copy of the eMVRC PDF we send you and keep it in your glove box, or keep the digital PDF accessible on your phone. Presenting this to the police provides full legal proof of valid registration.</p>"
+          },
+          {
+            summary: "Official TAJ Engine CC Rates & Government Fees",
+            detail: "<p>Official TAJ government licence fees are determined strictly by your vehicle's engine size:</p><table class='rate-table'><thead><tr><th>Engine Capacity (CC)</th><th>6 Months</th><th>1 Year</th></tr></thead><tbody><tr><td><strong>Up to 1,199 cc</strong></td><td>$5,220 JMD</td><td>$10,440 JMD</td></tr><tr><td><strong>1,200 cc to 1,999 cc</strong></td><td>$7,260 JMD</td><td>$14,520 JMD</td></tr><tr><td><strong>2,000 cc to 2,999 cc</strong></td><td>$10,890 JMD</td><td>$21,780 JMD</td></tr><tr><td><strong>3,000 cc & Over</strong></td><td>$17,420 JMD</td><td>$34,840 JMD</td></tr></tbody></table>"
+          },
+          {
+            summary: "Will unpaid traffic tickets block my renewal?",
+            detail: "<p><strong>Yes.</strong> If you have an unpaid traffic ticket or an outstanding court date attached to your TRN, the system will automatically freeze your renewal. If you are unsure of your ticket status, send us your TRN via WhatsApp and we can perform a lookup prior to processing.</p>"
+          },
+          {
+            summary: "What are the prerequisite requirements before renewing?",
+            detail: "<p>Before we can process your registration, the following must be in order:</p><ul><li><strong>Active Fitness:</strong> Your vehicle must have a valid fitness test recorded in the official database.</li><li><strong>Active Insurance:</strong> Your insurance provider must have uploaded your active policy cover note to the system.</li><li><strong>Private Vehicles Only:</strong> Renewals are restricted to private motor vehicles (white licence plates). Commercial or PPV vehicles require physical office processing.</li></ul>"
+          }
+        ],
+        waText: "Hi Laura, I need help with Motor Vehicle Licensing ($3,000 JMD special promotional rate)."
+      },
+      passport: {
+        title: "Passport Application Support",
+        subtitle: "Avoid long lines, wasted trips, and costly counter rejections. We handle your complete passport application end-to-end—pre-auditing your photo specs, signatures, and forms for guaranteed accuracy.",
+        fee: "$6,000 JMD Special Rate (+ Agency Fee)",
+        time: "7–10 Days (Standard Support)",
+        whatWeDo: [
+          "We handle your entire application process from start to finish with zero guesswork.",
+          "We conduct a strict pre-audit of your photos, signatures, and document details to guarantee a rejection-proof submission.",
+          "We process all required filings and set up secure doorstep courier delivery."
+        ],
+        whatYouDo: [
+          "Provide us with your current passport details, photos, and reference contacts.",
+          "If an in-person submission is required for your passport category, simply hand in the print-ready, pre-audited package we prepare for you."
+        ],
+        howYouGetItBack: [
+          "Enjoy direct, secure courier delivery of your new passport straight to your home or office."
+        ],
+        referenceInfo: [
+          {
+            summary: "Category 1: Adult Passport Renewals",
+            detail: "<p>For adults renewing an existing 10-year Jamaican passport:</p><ul><li>Current / Expired Passport booklet.</li><li>Two (2) recent passport-sized photographs (one certified by an eligible official).</li><li>Tax Registration Number (TRN) card or number.</li><li>Completed PICA Passport Application Form.</li></ul>"
+          },
+          {
+            summary: "Category 2: First-Time Adult & Minor (Child) Passports",
+            detail: "<p>For individuals obtaining a passport for the first time or for children under 18:</p><ul><li>Official RGD Birth Certificate (with adoption or citizenship documents if applicable).</li><li>Parent or Legal Guardian's valid Photo ID (for minor applications).</li><li>Parent's consent signature on the application form.</li><li>Two (2) certified passport-sized photographs.</li></ul>"
+          },
+          {
+            summary: "Category 3: Lost, Stolen, or Damaged Passports",
+            detail: "<p>If your previous passport was lost, stolen, or damaged, additional security verifications apply:</p><ul><li>Official Police Report detailing the loss or theft.</li><li>Damaged passport booklet (if damaged).</li><li>Valid government-issued Photo ID (Voter's Card, Driver's Licence).</li><li>Completed PICA Lost/Damaged Passport Declaration Form.</li></ul>"
+          },
+          {
+            summary: "Category 4: Name Changes & Marriage Adjustments",
+            detail: "<p>For passports requiring name updates following marriage, divorce, or deed poll:</p><ul><li>Original RGD Marriage Certificate, Divorce Decree Absolute, or Deed Poll.</li><li>Current Passport booklet.</li><li>Updated TRN record matching your new legal name.</li><li>Two (2) certified passport-sized photographs in your new legal name.</li></ul>"
+          },
+          {
+            summary: "Can Laura Clarke Assist Clients Living Outside Jamaica (Diaspora)?",
+            detail: "<p>Yes. We assist overseas clients with document preparation, eligibility audits, and photo compliance checks before you submit to your nearest Jamaican Consulate or Embassy, helping you avoid long mail-back turnaround delays.</p>"
+          }
+        ],
+        waText: "Hi Laura, I need Passport Application Support ($6,000 JMD special promotional rate)."
+      },
+      police: {
+        title: "Police Records & Clearances",
+        subtitle: "Skip the administrative headache. We manage your full application, pay your fees, and lock in your fingerprinting slot at the most convenient station so you walk in stress-free.",
+        fee: "$5,000 JMD Special Rate (+ Agency Fee)",
+        time: "5-Day or 21-Day Options",
+        whatWeDo: [
+          "We complete your application data entry with meticulous accuracy to ensure total name matching.",
+          "We pre-pay your official processing fee and schedule your preferred fingerprinting appointment, emailing you the complete submission pack."
+        ],
+        whatYouDo: [
+          "Print the application form and payment receipt we prepare for you.",
+          "Bring those documents, your passport photos, and your ID to the station at your reserved appointment time."
+        ],
+        howYouGetItBack: [
+          "Collect your official printed Police Certificate directly from the station based on your selected processing speed."
+        ],
+        referenceInfo: [
+          {
+            summary: "Targeted Background Checks & Recipient Locks",
+            detail: "<p>A police record is not a generic certificate that you can keep and hand out to multiple places. It is a targeted background check that is securely tied to the specific organization (employer, embassy, or school) requesting it. The final certificate will be officially addressed directly to them and cannot be reused for a different institution later.</p>"
+          },
+          {
+            summary: "Crucial Photo Trap Warning (Uncertified Photos)",
+            detail: "<p>Unlike TRN or Passport applications, JCF forensic technicians require completely plain, uncertified passport photos. If a Justice of the Peace signs, stamps, or embosses the back of your photo, the station counter clerk will reject it on the spot.</p>"
+          },
+          {
+            summary: "Official JCF Processing Fees & Subsite Locations",
+            detail: "<p>The Jamaica Constabulary Force charges based on processing speed:</p><ul><li><strong>Regular (21 Working Days):</strong> $3,000 JMD</li><li><strong>Express (5 Working Days):</strong> $6,000 JMD</li><li><strong>Premium (Next Day):</strong> $8,000 JMD (Subject to station capacity)</li></ul><p>Approved fingerprint subsites include Kingston (Duke St CRO), St. James (Summit), St. Mary (Pompano Bay), and Clarendon (May Pen).</p>"
+          }
+        ],
+        waText: "Hi Laura, I need Police Record Assistance ($5,000 JMD special promotional rate)."
+      },
+      rgd: {
+        title: "Vital Record Certificates",
+        subtitle: "Skip the crowded lines and endless waiting at the Registrar General's Department (RGD). We handle the entire retrieval process so you get your official certificates hassle-free.",
+        fee: "$3,000 JMD Special Rate (+ Agency Fee)",
+        time: "7–10 Days (Express)",
+        whatWeDo: [
+          "We file your certificate request, audit entry details, and process all required fees on your behalf.",
+          "We make sure all mandatory details (exact names, event dates, entry numbers) are verified so your application is approved without manual search delays."
+        ],
+        whatYouDo: [
+          "Provide us with the details of the event. (Pro tip: An old or damaged copy of the certificate with an 'Entry Number' accelerates processing significantly!)"
+        ],
+        howYouGetItBack: [
+          "Receive your official printed certificate delivered right to your door via secure courier (locally or overseas), or select branch pickup."
+        ],
+        referenceInfo: [
+          {
+            summary: "Birth Certificate Lookup Requirements",
+            detail: "<p>To locate and request an official Jamaican Birth Certificate, gather:</p><ul><li><strong>Full Name at Birth:</strong> First, middle, and last name recorded at birth.</li><li><strong>Date & Place of Birth:</strong> Day, month, year, and parish.</li><li><strong>Mother's Full Maiden Name:</strong> Essential for database record matching.</li><li><strong>Father's Full Name:</strong> Required if listed on original entry.</li><li><strong>Birth Entry Number (Optional):</strong> Dramatically accelerates lookup.</li></ul>"
+          },
+          {
+            summary: "Marriage Certificate Lookup Requirements",
+            detail: "<p>To request a Marriage Certificate copy for passport updates or spousal visas:</p><ul><li><strong>Groom's Full Name:</strong> Prior to marriage.</li><li><strong>Bride's Full Maiden Name:</strong> Prior to marriage.</li><li><strong>Date & Venue:</strong> Exact date, church/resort/venue, and parish.</li><li><strong>Officiant's Name:</strong> Name of Marriage Officer, Minister, or JP.</li></ul>"
+          },
+          {
+            summary: "Death Certificate Lookup Requirements",
+            detail: "<p>To secure a Death Certificate for estates or banking:</p><ul><li><strong>Full Legal Name of Deceased:</strong> First, middle, and last name.</li><li><strong>Date & Place of Passing:</strong> Day, month, year, hospital/residence, and parish.</li><li><strong>Age at Death & Gender.</strong></li></ul>"
+          },
+          {
+            summary: "Processing Speeds & Proxy Pickup Rules",
+            detail: "<p>RGD certificate applications offer two main speeds: Express Service (~7 to 10 working days) or Ordinary Service (~6 weeks). If using a proxy bearer at a local branch, your bearer must present a valid Photo ID and an Authorization Letter stamped by a JP.</p>"
+          }
+        ],
+        waText: "Hi Laura, I need Vital Record Certificate Assistance ($3,000 JMD special promotional rate)."
+      },
+      consult: {
+        title: "General Consultations",
+        subtitle: "Have a confusing paperwork problem that isn't listed here? Let's get on a call and figure out exactly what the government needs from you.",
+        fee: "15 Minutes",
+        time: "Private Video Call",
+        whatWeDo: [
+          "We listen to your specific situation and give you a clear, step-by-step list of what to do next.",
+          "If you want us to handle the process for you, we will give you a clear, upfront quote."
+        ],
+        whatYouDo: [
+          "Pick a 15-minute slot on our calendar and join the video or phone call."
+        ],
+        isConsult: true
+      }
+    };
 
-      if (isVisible) {
-        content.style.display = 'none';
-        toggleText.innerText = 'Read Full Article';
+    function openModal(key) {
+      const data = servicesData[key];
+      if (!data) return;
+
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalSubtitle').innerText = data.subtitle;
+      document.getElementById('modalFee').innerText = data.fee;
+      document.getElementById('modalTime').innerText = data.time;
+
+      const whatWeDoList = document.getElementById('modalWhatWeDo');
+      whatWeDoList.innerHTML = data.whatWeDo.map(item => `<li>${item}</li>`).join('');
+
+      const whatYouDoHeader = document.getElementById('modalYouDoHeader');
+      const whatYouDoList = document.getElementById('modalWhatYouDo');
+      
+      const howYouGetBackHeader = document.getElementById('modalGetBackHeader');
+      const howYouGetBackList = document.getElementById('modalHowYouGetItBack');
+
+      const refBox = document.getElementById('modalRefBox');
+      const refContent = document.getElementById('modalRefContent');
+      const pdfBtn = document.getElementById('modalPdfBtn');
+
+      if (data.isConsult) {
+        // CONSULTATION CARD SPECIFIC SETUP
+        whatYouDoHeader.style.display = 'block';
+        whatYouDoList.style.display = 'block';
+        whatYouDoList.innerHTML = data.whatYouDo.map(item => `<li>${item}</li>`).join('');
+        
+        howYouGetBackHeader.style.display = 'none';
+        howYouGetBackList.style.display = 'none';
+        refBox.style.display = 'none';
+        
+        // HIDE PDF BUTTON FOR CONSULTATIONS
+        if (pdfBtn) pdfBtn.style.display = 'none';
+        
+        const cta = document.getElementById('modalCta');
+        cta.innerText = "Book 15-Minute Consultation Call →";
+        cta.href = "https://calendar.app.google/DkcGkWjiSRMnujTW7";
       } else {
-        content.style.display = 'block';
-        toggleText.innerText = 'Close Article';
+        // STANDARD DOCUMENT SERVICES (SHOW PDF BUTTON)
+        whatYouDoHeader.style.display = 'block';
+        whatYouDoList.style.display = 'block';
+        whatYouDoList.innerHTML = data.whatYouDo.map(item => `<li>${item}</li>`).join('');
+        
+        if (data.howYouGetItBack && data.howYouGetItBack.length > 0) {
+          howYouGetBackHeader.style.display = 'block';
+          howYouGetBackList.style.display = 'block';
+          howYouGetBackList.innerHTML = data.howYouGetItBack.map(item => `<li>${item}</li>`).join('');
+        } else {
+          howYouGetBackHeader.style.display = 'none';
+          howYouGetBackList.style.display = 'none';
+        }
+
+        // SHOW PDF BUTTON FOR ALL MULTI-STEP DOCUMENT SERVICES
+        if (pdfBtn) pdfBtn.style.display = 'block';
+
+        // Render Helpful Reference Info Box (Cream Section)
+        if (data.referenceInfo && data.referenceInfo.length > 0) {
+          refBox.style.display = 'block';
+          refContent.innerHTML = data.referenceInfo.map(item => `
+            <details>
+              <summary>${item.summary}</summary>
+              <div>${item.detail}</div>
+            </details>
+          `).join('');
+        } else {
+          refBox.style.display = 'none';
+        }
+        
+        const cta = document.getElementById('modalCta');
+        cta.innerText = "Request Assistance via WhatsApp →";
+        cta.href = `https://wa.me/18765612614?text=${encodeURIComponent(data.waText)}`;
+      }
+
+      document.getElementById('serviceModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('serviceModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function closeModalOnOverlay(e) {
+      if (e.target.id === 'serviceModal') {
+        closeModal();
       }
     }
 
-    // Auto-open article if linked from homepage via URL hash (e.g. insights.html#trn-no-id)
-    window.addEventListener('DOMContentLoaded', () => {
-      const hash = window.location.hash.substring(1);
-      if (hash) {
-        const targetPost = document.getElementById(hash);
-        if (targetPost) {
-          togglePost(hash);
-          targetPost.scrollIntoView({ behavior: 'smooth' });
+    /* INSTANT PDF FACT SHEET GENERATOR */
+    function printServicePDF() {
+      const title = document.getElementById('modalTitle').innerText;
+      const subtitle = document.getElementById('modalSubtitle').innerText;
+      const fee = document.getElementById('modalFee').innerText;
+      const time = document.getElementById('modalTime').innerText;
+      const whatWeDo = document.getElementById('modalWhatWeDo').innerHTML;
+      const whatYouDo = document.getElementById('modalWhatYouDo').innerHTML;
+      const getBackHeader = document.getElementById('modalGetBackHeader').innerText;
+      const getBack = document.getElementById('modalHowYouGetItBack').innerHTML;
+
+      const printWindow = window.open('', '_blank');
+      printWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>${title} - Client Fact Sheet | Laura Clarke Admin Services</title>
+          <style>
+            body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; padding: 40px; color: #1E293B; line-height: 1.6; }
+            .header-banner { border-bottom: 3px solid #D4AF37; padding-bottom: 16px; margin-bottom: 24px; display: flex; justify-space-between; align-items: center; }
+            .brand-name { color: #0F2537; font-size: 22px; font-weight: 800; margin: 0; }
+            .brand-sub { color: #D4AF37; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+            .doc-title { color: #0F2537; font-size: 24px; font-weight: 800; margin-top: 10px; margin-bottom: 6px; }
+            .doc-subtitle { color: #475569; font-size: 13px; margin-bottom: 20px; }
+            .spec-box { background: #F8FAFC; border: 1px solid #E2E8F0; padding: 16px; border-radius: 8px; margin-bottom: 24px; display: flex; gap: 40px; }
+            .spec-item strong { font-size: 11px; text-transform: uppercase; color: #64748B; display: block; margin-bottom: 4px; }
+            .spec-item span { font-size: 15px; font-weight: 700; color: #0F2537; }
+            .sec-heading { color: #0F2537; font-size: 15px; font-weight: 700; border-bottom: 1px solid #E2E8F0; padding-bottom: 6px; margin-top: 22px; margin-bottom: 10px; }
+            ul { padding-left: 20px; color: #334155; margin-top: 0; font-size: 13px; }
+            li { margin-bottom: 8px; }
+            .footer { margin-top: 40px; border-top: 2px solid #E2E8F0; padding-top: 16px; text-align: center; font-size: 11px; color: #64748B; }
+          </style>
+        </head>
+        <body>
+          <div class="header-banner">
+            <div>
+              <div class="brand-name">Laura Clarke</div>
+              <div class="brand-sub">Administrative Services &bull; Private Document Concierge</div>
+            </div>
+            <div style="text-align: right; font-size: 11px; color: #64748B;">
+              WhatsApp: 876-561-2614<br>documenthelpja.com
+            </div>
+          </div>
+          <div class="doc-title">${title}</div>
+          <div class="doc-subtitle">${subtitle}</div>
+          <div class="spec-box">
+            <div class="spec-item"><strong>Concierge Fee</strong><span>${fee}</span></div>
+            <div class="spec-item"><strong>Turnaround Time</strong><span>${time}</span></div>
+          </div>
+          <div class="sec-heading">What We Do For You:</div>
+          <ul>${whatWeDo}</ul>
+          <div class="sec-heading">What You Provide:</div>
+          <ul>${whatYouDo}</ul>
+          <div class="sec-heading">${getBackHeader}</div>
+          <ul>${getBack}</ul>
+          <div class="footer">
+            Laura Clarke Administrative Services &bull; Private Document Concierge &bull; Kingston & St. Catherine, Jamaica
+          </div>
+        </body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.focus();
+      setTimeout(() => {
+        printWindow.print();
+        printWindow.close();
+      }, 250);
+    }
+
+    /* SMART SEARCH ENGINE */
+    const knowledgeBase = [
+      { 
+        type: "service", 
+        keywords: ["police", "record", "clearance", "criminal", "jcf", "fingerprint", "background"], 
+        title: "Police Records & Clearances", 
+        text: "We handle complete filing entry, pre-paid agency fees, and fingerprint appointment scheduling at optimal station locations." 
+      },
+      { 
+        type: "insight", 
+        keywords: ["abstract", "driving abstract", "driving history", "driver's history", "accident record", "tickets"], 
+        title: "Driving Abstracts & Driver's History", 
+        text: "Driving abstracts are formal compliance documents detailing your Jamaican driving history. They must be addressed to a specific overseas employer or insurance agency." 
+      },
+      { 
+        type: "service", 
+        keywords: ["driver", "licence", "license", "driving", "renew licence", "taj"], 
+        title: "Driver's Licence Renewals", 
+        text: "We audit your records, complete form data entry, pre-pay your Tax Office fees, and deliver a print-ready package with official receipts for 60-day legal driving compliance." 
+      },
+      { 
+        type: "service", 
+        keywords: ["motor", "vehicle", "fitness", "registration", "car", "licensing", "title", "sticker"], 
+        title: "Motor Vehicle Licensing", 
+        text: "We audit fitness & insurance validity, process full renewals for private vehicles, and deliver your printable e-Registration Certificate directly to your inbox." 
+      },
+      { 
+        type: "service", 
+        keywords: ["passport", "pica", "renew passport", "travel", "guarantor"], 
+        title: "Passport Application Support", 
+        text: "End-to-end passport renewal management, photo audits, form pre-audits, and error-prevention prior to submission." 
+      },
+      { 
+        type: "service", 
+        keywords: ["birth", "death", "marriage", "rgd", "certificate", "record", "vital"], 
+        title: "Vital Record Certificates", 
+        text: "End-to-end certificate retrieval, record audits, fee payment, and doorstep courier delivery setup for official Birth, Marriage, or Death records." 
+      },
+      { 
+        type: "service", 
+        keywords: ["consultation", "advice", "custom", "help", "other", "complex"], 
+        title: "General Consultations", 
+        text: "Book a 15-minute private consultation to review custom document timelines and map out multi-agency requirements." 
+      },
+      { 
+        type: "insight", 
+        keywords: ["coj", "companies office", "business certificate", "print"], 
+        title: "COJ Digital Certificates", 
+        text: "The COJ no longer issues physical registration certificates. Approved business certificates are issued digitally and delivered electronically." 
+      },
+      { 
+        type: "insight", 
+        keywords: ["maiden name", "married name", "reject", "mismatch", "marriage certificate"], 
+        title: "Strict Name Consistency", 
+        text: "Government offices reject applications if names do not identically match your ID. Providing an official Marriage Certificate bridges name gaps seamlessly." 
+      },
+      { 
+        type: "insight", 
+        keywords: ["trn", "tax number", "overseas trn", "notarize", "diaspora"], 
+        title: "Overseas TRN Applications", 
+        text: "You can secure a TRN from abroad without flying to Jamaica if your documents are properly notarized by a local Notary Public." 
+      }
+    ];
+
+    function handleSmartSearch() {
+      const query = document.getElementById('smartSearch').value.toLowerCase().trim();
+      const resultArea = document.getElementById('resultArea');
+      const badge = document.getElementById('resultBadge');
+      const link = document.getElementById('resultLink');
+      
+      if (query.length < 2) { 
+        resultArea.style.display = 'none'; 
+        return; 
+      }
+
+      let matchFound = false;
+
+      for (let item of knowledgeBase) {
+        const isMatch = item.keywords.some(kw => {
+          const cleanKw = kw.toLowerCase();
+          return query.includes(cleanKw) || cleanKw.includes(query);
+        });
+
+        if (isMatch) {
+          document.getElementById('resultTitle').innerText = item.title;
+          document.getElementById('resultText').innerText = item.text;
+          
+          if (item.type === "service") {
+            badge.innerText = "Available Service";
+            badge.style.backgroundColor = "#0F2537";
+            badge.style.color = "#FFFFFF";
+            link.innerText = "Request Assistance on WhatsApp";
+            link.href = `https://wa.me/18765612614?text=Hi%20Laura,%20I%20am%20inquiring%20about%20${encodeURIComponent(item.title)}.`;
+          } else {
+            badge.innerText = "Helpful Insight";
+            badge.style.backgroundColor = "#D4AF37";
+            badge.style.color = "#0F2537";
+            link.innerText = "Read Full Guide in Insights Vault";
+            link.href = `insights.html`;
+          }
+          
+          resultArea.style.display = 'block';
+          matchFound = true; 
+          break;
         }
       }
-    });
-  </script>
 
+      if (!matchFound && query.length >= 3) {
+        badge.innerText = "Direct Support";
+        badge.style.backgroundColor = "#E2E8F0";
+        badge.style.color = "#1E293B";
+        
+        document.getElementById('resultTitle').innerText = "Let's figure this out together.";
+        document.getElementById('resultText').innerText = "We can evaluate this for you during a quick review of your document requirements.";
+        link.innerText = "Book a 15-min Consultation";
+        link.href = "https://calendar.app.google/DkcGkWjiSRMnujTW7";
+        resultArea.style.display = 'block';
+      }
+    }
+  </script>
 </body>
 </html>
