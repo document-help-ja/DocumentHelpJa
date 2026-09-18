@@ -4,15 +4,23 @@
   <!-- Homepage -->
   <url>
     <loc>https://documenthelpja.com/</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Frequently Asked Questions -->
+  <url>
+    <loc>https://documenthelpja.com/faq.html</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- Insights Vault -->
   <url>
     <loc>https://documenthelpja.com/insights.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -20,7 +28,7 @@
   <!-- About Laura -->
   <url>
     <loc>https://documenthelpja.com/about.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -28,7 +36,7 @@
   <!-- Privacy Policy -->
   <url>
     <loc>https://documenthelpja.com/privacy.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -36,7 +44,7 @@
   <!-- Terms of Service -->
   <url>
     <loc>https://documenthelpja.com/terms.html</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
