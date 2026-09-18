@@ -934,8 +934,10 @@
       
       <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
       
+      <!-- HEADER NAV: Standalone live links -->
       <div class="nav-links" id="navMenu">
         <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="faq.html">FAQ</a>
         <a href="insights.html">Insights</a>
         <a href="about.html">About</a>
       </div>
@@ -1222,11 +1224,13 @@
           <p>Private document concierge, compliance pre-audits, and local representation for individuals and diaspora clients.</p>
         </div>
 
+        <!-- FOOTER NAV: Dead link removed -->
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul class="footer-links">
             <li><a href="index.html#top">Home</a></li>
             <li><a href="index.html#services">Services & Pricing</a></li>
+            <li><a href="faq.html">Frequently Asked Questions</a></li>
             <li><a href="insights.html">Insights Vault</a></li>
             <li><a href="about.html">About Laura</a></li>
           </ul>
@@ -1648,13 +1652,19 @@
       }, 250);
     }
 
-    /* SMART SEARCH ENGINE */
+    /* SMART SEARCH ENGINE: Updated with FAQ page links */
     const knowledgeBase = [
       { 
         type: "service", 
         keywords: ["police", "record", "clearance", "criminal", "jcf", "fingerprint", "background"], 
         title: "Police Records & Clearances", 
         text: "We handle complete filing entry, pre-paid agency fees, and fingerprint appointment scheduling at optimal station locations." 
+      },
+      { 
+        type: "insight", 
+        keywords: ["faq", "questions", "common questions", "nuances", "traps", "rejection"], 
+        title: "Frequently Asked Questions & Traps", 
+        text: "Read our full guide on common counter rejections, PICA photo rules, JCF police record traps, and TAJ vehicle renewals." 
       },
       { 
         type: "insight", 
@@ -1745,8 +1755,8 @@
             badge.innerText = "Helpful Insight";
             badge.style.backgroundColor = "#D4AF37";
             badge.style.color = "#0F2537";
-            link.innerText = "Read Full Guide in Insights Vault";
-            link.href = `insights.html`;
+            link.innerText = item.title === "Frequently Asked Questions & Traps" ? "Read Full FAQ Guide" : "Read Full Guide in Insights Vault";
+            link.href = item.title === "Frequently Asked Questions & Traps" ? "faq.html" : "insights.html";
           }
           
           resultArea.style.display = 'block';
