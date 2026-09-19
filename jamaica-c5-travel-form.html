@@ -3,454 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Don't Let the Online Travel Form Trap Your Barrels at the Wharf - Laura Clarke Admin Services</title>
+  <title>Jamaica C5 Travel Form &amp; Barrel Clearance Guide - Laura Clarke Admin Services</title>
   <style>
     :root {
-      --navy: #0F2537;
-      --navy-hover: #173752;
-      --gold: #D4AF37;
-      --bg-page: #F8FAFC;
-      --bg-card: #FFFFFF;
-      --bg-slate-light: #F0F4F8;
-      --text-main: #1E293B;
-      --text-muted: #475569;
-      --border-subtle: #E2E8F0;
+      --navy: #0F2537; --navy-hover: #173752; --gold: #D4AF37;
+      --bg-page: #F8FAFC; --bg-card: #FFFFFF; --bg-slate-light: #F0F4F8;
+      --text-main: #1E293B; --text-muted: #475569; --border-subtle: #E2E8F0;
       --radius: 8px;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-page);
-      color: var(--text-main);
-      margin: 0;
-      line-height: 1.85;
-      -webkit-font-smoothing: antialiased;
-    }
-
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background-color: var(--bg-page); color: var(--text-main); margin: 0; line-height: 1.85; -webkit-font-smoothing: antialiased; }
     a { text-decoration: none; color: inherit; }
-
-    /* =========================================
-       1. GLOBAL CONTAINER
-       ========================================= */
-    .container {
-      width: 100%;
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* =========================================
-       2. STICKY HEADER
-       ========================================= */
-    header {
-      background: var(--navy);
-      color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 3px solid var(--gold);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+    .container { width: 100%; max-width: 1050px; margin: 0 auto; padding: 0 24px; }
     
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      min-height: 70px;
-    }
-    
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      color: var(--gold);
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.15;
-    }
-    .brand-name {
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: #FFFFFF;
-    }
-    .brand-sub {
-      font-size: 0.72rem;
-      color: var(--gold);
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-    }
+    /* HEADER */
+    header { background: var(--navy); color: #fff; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--gold); box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .header-content { display: flex; justify-content: space-between; align-items: center; min-height: 70px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border: 2px solid var(--gold); border-radius: 50%; color: var(--gold); font-size: 0.9rem; font-weight: 700; letter-spacing: 1px; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+    .brand-name { font-weight: 700; font-size: 1.05rem; color: #FFFFFF; }
+    .brand-sub { font-size: 0.72rem; color: var(--gold); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
     .nav-links a { font-weight: 600; font-size: 0.95rem; color: #E2E8F0; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
-    
-    .mobile-menu-btn {
-      display: none;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.3);
-      color: #fff;
-      padding: 8px 12px;
-      border-radius: 4px;
-      font-size: 1.2rem;
-      cursor: pointer;
+    .mobile-menu-btn { display: none; background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 8px 12px; border-radius: 4px; font-size: 1.2rem; cursor: pointer; }
+
+    /* MAIN ARTICLE */
+    main { max-width: 860px; margin: 40px auto; padding: 40px; background-color: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-subtle); border-top: 4px solid var(--gold); box-shadow: 0 4px 15px rgba(15, 37, 55, 0.03); }
+    h1 { color: #2C3E50; font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 600; line-height: 1.35; margin-bottom: 24px; letter-spacing: -0.01em; margin-top: 0; }
+    h2 { color: var(--navy); font-size: 1.35rem; font-weight: 600; margin-top: 0; margin-bottom: 16px; line-height: 1.4; }
+    p { margin-bottom: 20px; color: var(--text-muted); font-size: 1.05rem; line-height: 1.85; margin-top: 0; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--navy); }
+    ul { margin-top: 0; margin-bottom: 20px; padding-left: 20px; color: var(--text-muted); font-size: 1.05rem; }
+
+    /* SECTION STYLING FOR BREAKING UP DENSE TEXT */
+    .content-section {
+      margin-bottom: 28px;
+    }
+    .content-card-alt {
+      background-color: var(--bg-slate-light);
+      border-left: 4px solid var(--navy);
+      padding: 28px 32px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 28px;
     }
 
-    /* =========================================
-       3. MAIN ARTICLE CONTAINER
-       ========================================= */
-    main {
-      max-width: 860px;
-      margin: 40px auto;
-      padding: 40px;
-      background-color: var(--bg-card);
-      border-radius: 12px;
-      border: 1px solid var(--border-subtle);
-      border-top: 4px solid var(--gold);
-      box-shadow: 0 4px 15px rgba(15, 37, 55, 0.03);
-    }
+    /* FOOTER */
+    footer { background: #08141F; color: #94A3B8; padding: 32px 0 20px; margin-top: 40px; font-size: 0.85rem; border-top: 3px solid var(--gold); }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 0.9fr 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+    .footer-col h4 { color: #FFFFFF; font-size: 0.95rem; margin-bottom: 12px; font-weight: 700; margin-top: 0; }
+    .footer-brand-title { color: #FFFFFF; font-size: 1.05rem; font-weight: 700; margin-bottom: 2px; }
+    .footer-brand-sub { color: var(--gold); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; display: block; }
+    .footer-col p { line-height: 1.5; color: #94A3B8; margin-top: 0; }
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: 6px; }
+    .footer-links a { color: #CBD5E1; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+    .disclaimer-text { color: #64748B; line-height: 1.3; margin-top: 0; font-size: 0.7rem; }
+    .copyright-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding-top: 4px; font-size: 0.75rem; color: #64748B; }
 
-    h1 {
-      color: #2C3E50;
-      font-size: clamp(1.6rem, 3vw, 2.1rem);
-      font-weight: 600;
-      line-height: 1.35;
-      margin-bottom: 24px;
-      letter-spacing: -0.01em;
-      margin-top: 0;
-    }
-
-    h2 {
-      color: var(--navy);
-      font-size: 1.35rem;
-      font-weight: 600;
-      margin-top: 36px;
-      margin-bottom: 16px;
-      line-height: 1.4;
-    }
-
-    p {
-      margin-bottom: 24px;
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      line-height: 1.85;
-      margin-top: 0;
-    }
-
-    strong {
-      color: var(--navy);
-    }
-
-    /* =========================================
-       4. FOOTER (Condensed)
-       ========================================= */
-    footer {
-      background: #08141F;
-      color: #94A3B8;
-      padding: 32px 0 20px;
-      margin-top: 40px;
-      font-size: 0.85rem;
-      border-top: 3px solid var(--gold);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 0.9fr 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 24px;
-    }
-
-    .footer-col h4 {
-      color: #FFFFFF;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-      font-weight: 700;
-      margin-top: 0;
-    }
-
-    .footer-brand-title {
-      color: #FFFFFF;
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-
-    .footer-brand-sub {
-      color: var(--gold);
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .footer-col p {
-      line-height: 1.5;
-      color: #94A3B8;
-      margin-top: 0;
-    }
-
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-links li {
-      margin-bottom: 6px;
-    }
-
-    .footer-links a {
-      color: #CBD5E1;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: var(--gold);
-    }
-
-    .contact-link {
-      color: #FFFFFF !important;
-      font-weight: 600;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .disclaimer-text {
-      color: #64748B;
-      line-height: 1.3;
-      margin-top: 0;
-      font-size: 0.7rem; /* Minimized font size for compact look */
-    }
-
-    .disclaimer-text strong {
-      color: #94A3B8;
-    }
-
-    .copyright-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding-top: 4px;
-      font-size: 0.75rem;
-      color: #64748B;
-    }
-
-    /* =========================================
-       5. MOBILE RESPONSIVENESS
-       ========================================= */
     @media (max-width: 768px) {
-      .nav-links {
-        display: none; 
-        width: 100%;
-        flex-direction: column;
-        background: var(--navy);
-        position: absolute;
-        top: 70px;
-        left: 0;
-        padding: 20px;
-        border-top: 1px solid rgba(255,255,255,0.1);
-      }
+      .nav-links { display: none; width: 100%; flex-direction: column; background: var(--navy); position: absolute; top: 70px; left: 0; padding: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
       .nav-links.active { display: flex; }
       .mobile-menu-btn { display: block; }
-      
-      main {
-        margin: 24px 16px;
-        padding: 28px 20px;
-      }
+      main { margin: 24px 16px; padding: 28px 20px; }
+      .content-card-alt { padding: 20px 20px; }
       .footer-grid { grid-template-columns: 1fr; gap: 24px; }
     }
   </style>
 </head>
 <body id="top">
-
-  <!-- STICKY HEADER -->
   <header>
     <div class="container header-content">
       <a href="index.html#top" class="brand">
         <div class="brand-mark">LC</div>
-        <div class="brand-text">
-          <span class="brand-name">Laura Clarke</span>
-          <span class="brand-sub">Administrative Services</span>
-        </div>
+        <div class="brand-text"><span class="brand-name">Laura Clarke</span><span class="brand-sub">Administrative Services</span></div>
       </a>
-      
       <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-      
       <div class="nav-links" id="navMenu">
-        <a href="index.html#services" onclick="toggleMenu()">Services</a>
-        <a href="faq.html">FAQ</a>
-        <a href="insights.html" style="color: var(--gold);">Insights</a>
-        <a href="about.html">About</a>
+        <a href="index.html#services">Services</a><a href="faq.html">FAQ</a><a href="insights.html" style="color: var(--gold);">Insights</a><a href="about.html">About</a>
       </div>
     </div>
   </header>
 
-  <!-- MAIN ARTICLE -->
   <main>
-    <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #B8860B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;">Customs &amp; Barrel Clearance</span>
+    <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #B8860B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px;">CUSTOMS &amp; BARREL CLEARANCE</span>
     
+    <div style="font-size: 0.82rem; color: #64748B; margin-bottom: 24px; font-weight: 500;">Updated: September 18, 2026</div>
+
     <h1>Don't Let the Online Travel Form Trap Your Barrels at the Wharf: The Simple Guide to the Jamaica C5</h1>
 
-    <p>We’ve all been there. You are standing in line at the airport, fumbling for a blue or black pen to fill out that long yellow customs card. Those days are officially over.</p>
+    <div class="content-section">
+      <p>Every year, thousands of Jamaicans returning home for visits—and diaspora members shipping household goods—run into expensive, stressful delays at the wharf. The culprit is almost always the same: a simple misunderstanding of the <strong>Jamaica C5 Customs Passenger Declaration Form</strong>.</p>
 
-    <p>Jamaica has fully transitioned to the digital C5 Passenger Declaration form. While this makes breezing through immigration much faster, it has introduced a few tricky moments for travelers—especially if you have shipped barrels back home.</p>
-    
-    <p>If you don't answer the baggage questions correctly on your phone before you fly, clearing your barrels at the wharf can become a stressful, expensive headache.</p>
+      <p>Since Jamaica fully transitioned from paper cards to the official digital portal (<strong>enterjamaica.gov.jm</strong>), filling out this online form before you land at Norman Manley or Sangster International Airport is mandatory. But what many travelers don't realize is that how you answer the baggage questions on your phone directly dictates whether you get the discounted clearance rate at the wharf later that week.</p>
+    </div>
 
-    <h2>Where do I find the official online travel form, and does it cost money?</h2>
+    <!-- SECTION 1: REGULAR WHITE BG -->
+    <div class="content-section">
+      <h2>The Portal URL &amp; The "Free" Golden Rule</h2>
+      <p>First and most importantly: <strong>Submitting your official C5 declaration is 100% free.</strong> Always access the form directly through the official government web address: <strong>enterjamaica.gov.jm</strong>.</p>
+      <p>Beware of third-party scam websites that ask for credit card payments to process or "expedite" your C5 card. The Jamaican government never charges a fee for completing this form. You can complete it up to 30 days prior to your arrival date on any smartphone, tablet, or laptop.</p>
+    </div>
 
-    <p>Let’s clear this up right now: <strong>The official Jamaica C5 form is 100% free</strong>. You should never have to enter your credit card information just to declare your arrival in Jamaica.</p>
+    <!-- SECTION 2: SLATE BLUE CARD BG (BREAKS UP DENSE TEXT) -->
+    <div class="content-card-alt">
+      <h2>Accompanied vs. Unaccompanied Baggage: The Unspoken Rule</h2>
+      <p>This is where most travelers get caught in a trap. On the digital C5 form, you will be asked to declare both <strong>Accompanied Baggage</strong> and <strong>Unaccompanied Baggage</strong>.</p>
 
-    <p>You can access the secure portal directly at <strong>enterjamaica.gov.jm</strong>. Unfortunately, there are scam websites out there designed to look like the government portal that will charge you $20 or $30 USD to process the form.</p>
+      <ul>
+        <li><strong>Accompanied Baggage:</strong> The suitcases, carry-ons, and personal items travelling on the exact same flight with you.</li>
+        <li><strong>Unaccompanied Baggage:</strong> Any barrels, crates, or commercial cargo shipped separately by sea or air freight that will arrive before or after your flight.</li>
+      </ul>
 
-    <p>To avoid rushing at the airport, you can fill out the C5 form online up to 30 days before your travel date. Save the confirmation QR code to your phone or print a screenshot, and you are good to go.</p>
+      <p>If you shipped barrels through a sea freight company and plan to clear them at the Kingston Wharves or Montego Bay port, <strong>you MUST declare that you have Unaccompanied Baggage on your digital C5 form.</strong></p>
+    </div>
 
-    <h2>How do I fill out the valuation section—do I need to list the value of everything in my suitcase?</h2>
+    <!-- SECTION 3: REGULAR WHITE BG -->
+    <div class="content-section">
+      <h2>Securing Your Airport Red Line Stamp</h2>
+      <p>When you land in Jamaica and walk through Airport Customs, you must present your C5 QR code. Because you declared unaccompanied barrels, the Customs Officer will process your declaration and direct you through the <strong>Red Line / Red Channel</strong>.</p>
+      <p>The officer will inspect or verify your document and stamp your official passport or clearance slip. <strong>Do not skip or lose this stamp!</strong> This physical Red Line airport verification is what proves to Jamaica Customs at the wharf that your barrels belong to a returning passenger, unlocking the concessional flat clearance fee (such as the standard JMD $6,500 flat fee for personal barrels) rather than full commercial duties.</p>
+    </div>
 
-    <p>This is where many travelers get anxious. They see the valuation section and start calculating the cost of every used t-shirt, lotion, and pair of shoes they packed.</p>
+    <!-- SECTION 4: SLATE BLUE CARD BG (BREAKS UP DENSE TEXT) -->
+    <div class="content-card-alt">
+      <h2>Used Clothes and Personal Effects Exemption</h2>
+      <p>Another area of confusion is itemized valuation. Used personal clothing, basic toiletries, and used household goods for personal use do not require line-by-line commercial itemization on the form, provided they fall within the allowance thresholds.</p>
+      <p>You only need to itemize commercial goods, new electronics in unopened boxes, tools of trade, or items intended for resale. Over-declaring everyday personal used garments as expensive new imports is a frequent mistake that inflates your customs valuation unnecessarily.</p>
+    </div>
 
-    <p>Breathe easy. <strong>Used personal items do not require an itemized valuation</strong>. Things like your worn clothing, personal toiletries, and your own laptop fall under standard accompanied baggage.</p>
-
-    <p>You only need to declare and list the value for <strong>new items, electronics, gifts for others, or goods intended for resale</strong>. Always keep your receipts for these items to prove the value, and be honest with your estimates to avoid heavy fines.</p>
-
-    <h2>I shipped two barrels to the wharf—how do I answer the baggage questions on the form?</h2>
-
-    <p>When you are traveling, the suitcases you check onto the airplane with you are called "Accompanied Baggage."</p>
-
-    <p>But those barrels you packed full of food, toiletries, and household goods and shipped via sea freight weeks ago? Those are classified as <strong>"Unaccompanied Baggage."</strong></p>
-
-    <p>When the online C5 form asks if you have unaccompanied baggage, you must select <strong>"Yes."</strong> Do not skip this step! Declaring your shipped barrels officially links your travel record to your cargo at the wharf, which is essential for clearance.</p>
-
-    <h2>Why did the airport customs officer send me to the Red Line if I don't have anything illegal?</h2>
-
-    <p>When you arrive in Jamaica and collect your suitcases, you usually have a choice: the Green Line (Nothing to Declare) or the Red Line (Goods to Declare).</p>
-
-    <p>If you declared Unaccompanied Baggage (your barrels) on your C5 form, you <strong>must go to the Red Line</strong>. Don't worry—you aren't in trouble.</p>
-
-    <p>Going to the Red Line is a mandatory step where the customs officer stamps your passport and your C5 declaration. This stamp proves to Jamaica Customs at the wharf that you are an arriving passenger.</p>
-
-    <p>Why is that important? Because arriving passengers who ship non-commercial personal-effects barrels are entitled to the <strong>JMD $6,500 flat rate clearance</strong> at the wharf. If you bypass the Red Line and don't get that stamp, Customs may treat your barrels as commercial imports—meaning you will pay drastically higher duties and taxes.</p>
-
-    <!-- ARTICLE DISCLAIMER -->
     <p style="font-size: 0.85rem; color: #64748B; margin-top: 32px; border-top: 1px solid #E2E8F0; padding-top: 16px; line-height: 1.6;"><em>Disclaimer: The information provided by Laura Clarke Administrative Services is for educational and guidance purposes based on the latest available government guidelines at the time of publication. Official policies, fees, and portal requirements are subject to change by the respective Jamaican authorities. For personalized assistance with your documentation, contact our concierge team directly.</em></p>
   </main>
 
-  <!-- STANDALONE WHATSAPP ACTION BOX (OUTSIDE ARTICLE BODY) -->
   <div style="max-width: 860px; margin: 32px auto; background: var(--bg-slate-light); border-left: 4px solid var(--navy); padding: 24px; border-radius: 0 8px 8px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);">
     <div>
-      <strong style="color: var(--navy); display: block; font-size: 1.05rem; margin-bottom: 4px;">Need help clearing your barrels or handling Jamaica Customs?</strong>
-      <span style="font-size: 0.92rem; color: var(--text-muted);">Skip the wharf queues and let our document concierges handle the hassle for you.</span>
+      <strong style="color: var(--navy); display: block; font-size: 1.05rem; margin-bottom: 4px;">Need help pre-auditing your C5 form or wharf documentation?</strong>
+      <span style="font-size: 0.92rem; color: var(--text-muted);">We make sure your airport paperwork and barrel declarations align perfectly.</span>
     </div>
-    <a href="https://wa.me/18765612614?text=Hi%20Laura%20Clarke%20Admin%21%20I%20need%20help%20with%20customs%20clearance%20and%20the%20C5%20form." style="display: inline-block; padding: 12px 20px; background: var(--navy); color: #ffffff; border-radius: 8px; font-weight: bold; font-size: 0.92rem; text-decoration: none; transition: background 0.2s;" target="_blank">Chat on WhatsApp &rarr;</a>
+    <a href="https://wa.me/18765612614" style="display: inline-block; padding: 12px 20px; background: var(--navy); color: #ffffff; border-radius: 8px; font-weight: bold; font-size: 0.92rem; text-decoration: none; transition: background 0.2s;" target="_blank">Chat on WhatsApp &rarr;</a>
   </div>
 
-  <!-- SITE FOOTER -->
   <footer>
     <div class="container">
-      
       <div class="footer-grid">
-        
         <div class="footer-col">
           <div class="footer-brand-title">Laura Clarke</div>
           <span class="footer-brand-sub">Administrative Services</span>
           <p>Private document concierge, compliance pre-audits, and local representation for individuals and diaspora clients.</p>
         </div>
-
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul class="footer-links">
-            <li><a href="index.html#top">Home</a></li>
-            <li><a href="index.html#services">Services & Pricing</a></li>
-            <li><a href="faq.html">Frequently Asked Questions</a></li>
-            <li><a href="insights.html">Insights Vault</a></li>
-            <li><a href="about.html">About Laura</a></li>
+            <li><a href="index.html#top">Home</a></li><li><a href="index.html#services">Services & Pricing</a></li><li><a href="faq.html">FAQ</a></li><li><a href="insights.html">Insights Vault</a></li><li><a href="about.html">About Laura</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <h4>Direct Contact</h4>
           <ul class="footer-links">
-            <li>
-              <a href="mailto:info@documenthelpja.com" class="contact-link">
-                info@documenthelpja.com
-              </a>
-            </li>
-            <li>
-              <a href="https://wa.me/18765612614" class="contact-link" target="_blank">
-                WhatsApp: 876-561-2614
-              </a>
-            </li>
-            <li>
-              <a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" target="_blank">
-                Book Consultation
-              </a>
-            </li>
-            <li><span style="color: #64748B;">Local Ground Support & Diaspora</span></li>
+            <li><a href="mailto:info@documenthelpja.com" class="contact-link">info@documenthelpja.com</a></li>
+            <li><a href="https://wa.me/18765612614" class="contact-link" target="_blank">WhatsApp: 876-561-2614</a></li>
+            <li><a href="https://calendar.app.google/DkcGkWjiSRMnujTW7" target="_blank">Book Consultation</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <h4>Legal & Policies</h4>
           <ul class="footer-links">
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li>
           </ul>
         </div>
-
       </div>
-
       <div class="footer-bottom">
-        <p class="disclaimer-text">
-          <strong>Disclaimer:</strong> Laura Clarke Administrative Services is a private, independent consultancy providing document preparation and guidance. We are not a government agency and have no affiliation with TAJ, PICA, RGD, JCF, or official ministries. Application approvals remain strictly at agency discretion.
-        </p>
-        
+        <p class="disclaimer-text"><strong>Disclaimer:</strong> Laura Clarke Administrative Services is a private, independent consultancy providing document preparation and guidance. We are not a government agency.</p>
         <div class="copyright-row">
           <div>&copy; 2026 Laura Clarke Administrative Services. All rights reserved.</div>
-          <div>Private Document Concierge &bull; Jamaica</div>
+          <div>Jamaica Document Concierge</div>
         </div>
       </div>
-
     </div>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('navMenu');
-      if (window.innerWidth <= 768) {
-        menu.classList.toggle('active');
-      }
-    }
-  </script>
+  <script>function toggleMenu() { const menu = document.getElementById('navMenu'); if (window.innerWidth <= 768) { menu.classList.toggle('active'); } }</script>
 </body>
 </html>
