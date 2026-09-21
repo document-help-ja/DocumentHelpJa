@@ -402,19 +402,47 @@
             </div>
           </div>
 
-          <div class="newsletter-box">
+        <div class="newsletter-box">
             <h4>The Administrative Brief</h4>
             <p>Join our mailing list for private updates on policy changes, processing times, and new diaspora guides.</p>
             
-            <!-- Functional MailerLite Form -->
-            <form action="https://assets.mailerlite.com/jsonp/2650626/forms/199240121633998056/subscribe" method="post" target="_blank">
+            <!-- Updated Form with AJAX handling -->
+            <form id="newsletter-form" action="https://assets.mailerlite.com/jsonp/2650626/forms/199240121633998056/subscribe" method="post">
               <input type="email" name="fields[email]" placeholder="Email Address" required>
-              <button type="submit">Subscribe</button>
+              <button type="submit" id="sub-btn">Subscribe</button>
             </form>
-          </div>
-        </div>
 
-      </div>
+            <!-- Inline Success Message -->
+            <div id="newsletter-success" style="display: none; padding: 16px 0; color: var(--navy); font-weight: 600; font-size: 0.95rem; line-height: 1.5;">
+              ✓ Thank you for subscribing! Check your inbox shortly for your welcome message.
+            </div>
+          </div>
+
+          <script>
+            document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+              e.preventDefault();
+              const form = this;
+              const btn = document.getElementById('sub-btn');
+              const successMsg = document.getElementById('newsletter-success');
+              
+              btn.innerText = 'Sending...';
+              btn.disabled = true;
+
+              fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form)
+              })
+              .then(response => response.json())
+              .then(data => {
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+              })
+              .catch(error => {
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+              });
+            });
+          </script>
 
     </main>
   </div>
