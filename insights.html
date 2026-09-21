@@ -34,19 +34,14 @@
     }
     a { text-decoration: none; color: inherit; }
     
-    /* MINIMALIST HEADER WITH NAVIGATION */
+    /* MINIMALIST HEADER & MOBILE NAV */
     header { background: #FFFFFF; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-thin); }
-    .header-content { display: flex; justify-content: space-between; align-items: center; min-height: 64px; padding: 0 24px; max-width: 1000px; margin: 0 auto; }
-    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--navy); letter-spacing: 0.02em; transition: color 0.2s; }
-    .brand:hover { color: var(--gold); }
-
-    /* EDITORIAL NAV LINKS */
-    .nav-links { display: flex; gap: 28px; align-items: center; }
-    .nav-link { font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; transition: color 0.2s; }
-    .nav-link:hover { color: var(--navy); }
-    .nav-link.active { color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
-    .nav-cta { padding: 6px 14px; border: 1px solid var(--navy); border-radius: 4px; color: var(--navy); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; transition: all 0.2s; }
-    .nav-cta:hover { background: var(--navy); color: #FFFFFF; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; min-height: 60px; padding: 0 24px; max-width: 1000px; margin: 0 auto; position: relative; }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem; color: var(--navy); letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); font-weight: 700; }
+    .mobile-menu-btn { display: none; background: transparent; border: none; font-size: 1.4rem; color: var(--navy); cursor: pointer; padding: 4px; }
 
     /* PAGE CONTAINER */
     .insights-container { max-width: 1000px; margin: 48px auto 80px auto; padding: 0 24px; }
@@ -127,11 +122,8 @@
       letter-spacing: 0.08em;
       font-weight: 600;
     }
-    .footer-nav { display: flex; gap: 16px; margin-top: 12px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
-    .footer-nav a { color: #D1D5DB; transition: color 0.2s; }
-    .footer-nav a:hover { color: var(--gold); }
     .footer-disclaimer { 
-      max-width: 500px; 
+      max-width: 550px; 
       line-height: 1.6; 
       color: #9CA3AF;
     }
@@ -139,8 +131,9 @@
 
     /* RESPONSIVE MOBILE ADJUSTMENTS */
     @media (max-width: 800px) {
-      .nav-links { gap: 16px; }
-      .nav-link { font-size: 0.75rem; }
+      .mobile-menu-btn { display: block; }
+      .nav-links { display: none; width: 100%; flex-direction: column; background: #FFFFFF; position: absolute; top: 60px; left: 0; padding: 20px 24px; border-bottom: 1px solid var(--border-thin); box-shadow: 0 4px 12px rgba(0,0,0,0.05); gap: 16px; align-items: flex-start; }
+      .nav-links.active { display: flex; }
       .featured-article { grid-template-columns: 1fr; gap: 24px; }
       .featured-img-container { height: 220px; }
       .latest-card { grid-template-columns: 1fr; gap: 16px; }
@@ -153,16 +146,19 @@
 </head>
 <body>
 
-  <!-- MINIMAL HEADER WITH GLOBAL NAVIGATION -->
+  <!-- MINIMAL HEADER & NAVIGATION -->
   <header>
     <div class="header-content">
-      <a href="index.html" class="brand">Laura Clarke</a>
-      <nav class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="index.html#services" class="nav-link">Services</a>
-        <a href="insights.html" class="nav-link active">Insights</a>
-        <a href="https://wa.me/18765612614" class="nav-cta" target="_blank">Inquire</a>
-      </nav>
+      <a href="index.html#top" class="brand">Laura Clarke</a>
+      
+      <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle Navigation Menu">☰</button>
+
+      <div class="nav-links" id="navMenu">
+        <a href="index.html#services" onclick="toggleMenu()">Services</a>
+        <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+        <a href="insights.html" class="active" onclick="toggleMenu()">Insights</a>
+        <a href="about.html" onclick="toggleMenu()">About</a>
+      </div>
     </div>
   </header>
 
@@ -178,7 +174,7 @@
     <span class="section-label">Featured Guide</span>
     <a href="jamaican-citizenship-by-descent.html" class="featured-article">
       <div class="featured-img-container">
-        <img src="assets/citizenship-descent-hero.webp" alt="Jamaican passport resting on heritage documents">
+        <img src="images/citizenship-descent-hero.jpg" alt="Jamaican passport resting on heritage documents">
       </div>
       <div>
         <div class="card-meta">
@@ -197,7 +193,7 @@
       <span class="section-label">Latest Brief</span>
       <a href="jamaica-drivers-license-renewal-guide.html" class="latest-card">
         <div class="latest-img-container">
-          <img src="assets/driver-license-renewal-hero.jfif" alt="Jamaican driver's licence renewal application">
+          <img src="images/driver-license-renewal-hero.jpg" alt="Jamaican driver's licence renewal application">
         </div>
         <div>
           <div class="card-meta">
@@ -263,7 +259,7 @@
       </ul>
     </div>
 
-    <!-- NEWSLETTER INTEGRATION -->
+    <!-- NEWSLETTER INTEGRATION WITH INLINE AJAX SUCCESS -->
     <div class="insights-newsletter">
       <div>
         <h3>The Administrative Brief</h3>
@@ -271,10 +267,15 @@
       </div>
       <div>
         <!-- Functional MailerLite Form -->
-        <form action="https://assets.mailerlite.com/jsonp/2650626/forms/199240121633998056/subscribe" method="post" target="_blank">
+        <form id="newsletter-form" action="https://assets.mailerlite.com/jsonp/2650626/forms/199240121633998056/subscribe" method="post">
           <input type="email" name="fields[email]" placeholder="Email Address" required>
-          <button type="submit">Subscribe</button>
+          <button type="submit" id="sub-btn">Subscribe</button>
         </form>
+
+        <!-- Inline Success Message -->
+        <div id="newsletter-success" style="display: none; padding: 12px 0; color: var(--navy); font-weight: 600; font-size: 0.95rem; line-height: 1.5;">
+          ✓ Thank you for subscribing! Check your inbox shortly for your welcome message.
+        </div>
       </div>
     </div>
 
@@ -286,11 +287,6 @@
       <div>
         <div class="footer-brand">Laura Clarke</div>
         <div class="footer-sub">Administrative Concierge & Diaspora Consultancy</div>
-        <div class="footer-nav">
-          <a href="index.html">Home</a>
-          <a href="index.html#services">Services</a>
-          <a href="insights.html">Insights</a>
-        </div>
       </div>
       <div class="footer-disclaimer">
         <p style="margin: 0;"><strong>Disclaimer:</strong> Information provided is for educational and administrative guidance purposes only and does not constitute formal legal advice. Requirements and processing times are subject to official government changes.</p>
@@ -298,6 +294,40 @@
       </div>
     </div>
   </footer>
+
+  <!-- JAVASCRIPT FOR MOBILE MENU & FORM SUBMISSION -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      if (window.innerWidth <= 800) {
+        menu.classList.toggle('active');
+      }
+    }
+
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      const btn = document.getElementById('sub-btn');
+      const successMsg = document.getElementById('newsletter-success');
+      
+      btn.innerText = 'Sending...';
+      btn.disabled = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(response => response.json())
+      .then(data => {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+      })
+      .catch(error => {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+      });
+    });
+  </script>
 
 </body>
 </html>
