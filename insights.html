@@ -34,10 +34,19 @@
     }
     a { text-decoration: none; color: inherit; }
     
-    /* MINIMALIST HEADER */
+    /* MINIMALIST HEADER WITH NAVIGATION */
     header { background: #FFFFFF; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-thin); }
-    .header-content { display: flex; justify-content: space-between; align-items: center; min-height: 60px; padding: 0 24px; max-width: 1200px; margin: 0 auto; }
-    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem; color: var(--navy); letter-spacing: 0.02em; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; min-height: 64px; padding: 0 24px; max-width: 1000px; margin: 0 auto; }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--navy); letter-spacing: 0.02em; transition: color 0.2s; }
+    .brand:hover { color: var(--gold); }
+
+    /* EDITORIAL NAV LINKS */
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-link { font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; transition: color 0.2s; }
+    .nav-link:hover { color: var(--navy); }
+    .nav-link.active { color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+    .nav-cta { padding: 6px 14px; border: 1px solid var(--navy); border-radius: 4px; color: var(--navy); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; transition: all 0.2s; }
+    .nav-cta:hover { background: var(--navy); color: #FFFFFF; }
 
     /* PAGE CONTAINER */
     .insights-container { max-width: 1000px; margin: 48px auto 80px auto; padding: 0 24px; }
@@ -118,8 +127,11 @@
       letter-spacing: 0.08em;
       font-weight: 600;
     }
+    .footer-nav { display: flex; gap: 16px; margin-top: 12px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .footer-nav a { color: #D1D5DB; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--gold); }
     .footer-disclaimer { 
-      max-width: 550px; 
+      max-width: 500px; 
       line-height: 1.6; 
       color: #9CA3AF;
     }
@@ -127,6 +139,8 @@
 
     /* RESPONSIVE MOBILE ADJUSTMENTS */
     @media (max-width: 800px) {
+      .nav-links { gap: 16px; }
+      .nav-link { font-size: 0.75rem; }
       .featured-article { grid-template-columns: 1fr; gap: 24px; }
       .featured-img-container { height: 220px; }
       .latest-card { grid-template-columns: 1fr; gap: 16px; }
@@ -139,10 +153,16 @@
 </head>
 <body>
 
-  <!-- MINIMAL HEADER -->
+  <!-- MINIMAL HEADER WITH GLOBAL NAVIGATION -->
   <header>
     <div class="header-content">
-      <div class="brand">Laura Clarke</div>
+      <a href="index.html" class="brand">Laura Clarke</a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="insights.html" class="nav-link active">Insights</a>
+        <a href="https://wa.me/18765612614" class="nav-cta" target="_blank">Inquire</a>
+      </nav>
     </div>
   </header>
 
@@ -266,6 +286,11 @@
       <div>
         <div class="footer-brand">Laura Clarke</div>
         <div class="footer-sub">Administrative Concierge & Diaspora Consultancy</div>
+        <div class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="index.html#services">Services</a>
+          <a href="insights.html">Insights</a>
+        </div>
       </div>
       <div class="footer-disclaimer">
         <p style="margin: 0;"><strong>Disclaimer:</strong> Information provided is for educational and administrative guidance purposes only and does not constitute formal legal advice. Requirements and processing times are subject to official government changes.</p>
