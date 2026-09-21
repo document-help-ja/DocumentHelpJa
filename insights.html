@@ -3,401 +3,276 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insights Vault | Laura Clarke Administrative Services</title>
-  <meta name="description" content="Practical guides, counter rules, and administrative advice for Jamaican document processing.">
-  <meta name="theme-color" content="#0F2537">
   
-  <link rel="canonical" href="https://documenthelpja.com/insights.html">
+  <title>Insights Vault | Laura Clarke Administrative Services</title>
+  <meta name="description" content="Practical guides, counter rules, and administrative advice for Jamaican civil document processing, citizenship, and compliance.">
+  
+  <!-- GOOGLE FONTS: Editorial Serif for Headlines -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --navy: #0F2537;
-      --navy-hover: #173752;
-      --gold: #D4AF37;
-      --bg-page: #F8FAFC;
-      --bg-card: #FFFFFF;
-      --bg-slate-light: #F0F4F8;
-      --text-main: #1E293B;
-      --text-muted: #475569;
-      --border-subtle: #E2E8F0;
-      --radius: 8px;
+      --navy: #111827; /* Darker, ink-like black/navy for editorial text */
+      --gold: #C5A059;
+      --bg-page: #FFFFFF; /* Pure white edge-to-edge */
+      --text-main: #374151;
+      --text-muted: #6B7280;
+      --border-thin: #E5E7EB;
     }
-
+    
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-page);
-      color: var(--text-main);
-      margin: 0;
-      line-height: 1.85;
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, sans-serif; 
+      background-color: var(--bg-page); 
+      color: var(--text-main); 
+      margin: 0; 
+      line-height: 1.85; 
       -webkit-font-smoothing: antialiased;
     }
-
     a { text-decoration: none; color: inherit; }
-    h1, h2, h3 { color: var(--navy); margin-top: 0; line-height: 1.35; }
-    p { margin-top: 0; margin-bottom: 24px; font-size: 1.05rem; }
-
-    .container {
-      width: 100%;
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* =========================================
-       1. STICKY HEADER
-       ========================================= */
-    header {
-      background: var(--navy);
-      color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 3px solid var(--gold);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      min-height: 70px;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      color: var(--gold);
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-    .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
-    .brand-name { font-weight: 700; font-size: 1.05rem; color: #FFFFFF; }
-    .brand-sub { font-size: 0.72rem; color: var(--gold); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
-    .nav-links { display: flex; gap: 24px; align-items: center; }
-    .nav-links a { font-weight: 600; font-size: 0.95rem; color: #E2E8F0; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--gold); }
     
-    .mobile-menu-btn {
-      display: none;
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.3);
-      color: #fff;
-      padding: 8px 12px;
-      border-radius: 4px;
-      font-size: 1.2rem;
-      cursor: pointer;
+    /* MINIMALIST HEADER */
+    header { background: #FFFFFF; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-thin); }
+    .header-content { display: flex; justify-content: space-between; align-items: center; min-height: 60px; padding: 0 24px; max-width: 1200px; margin: 0 auto; }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem; color: var(--navy); letter-spacing: 0.02em; }
+
+    /* PAGE CONTAINER */
+    .insights-container { max-width: 1000px; margin: 48px auto 80px auto; padding: 0 24px; }
+
+    /* EDITORIAL HEADER BLOCK */
+    .vault-header { border-bottom: 1px solid var(--border-thin); padding-bottom: 32px; margin-bottom: 56px; }
+    .vault-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 4vw, 3.4rem); color: var(--navy); margin: 0 0 12px 0; font-weight: 700; letter-spacing: -0.02em; }
+    .vault-header p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; color: var(--text-muted); margin: 0; }
+
+    /* SECTION HEADERS */
+    .section-label { font-family: -apple-system, sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--navy); border-bottom: 2px solid var(--navy); padding-bottom: 8px; margin-bottom: 32px; display: inline-block; }
+
+    /* 1. FEATURED ARTICLE */
+    .featured-article { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; margin-bottom: 72px; padding-bottom: 64px; border-bottom: 1px solid var(--border-thin); align-items: center; }
+    .featured-img-container { width: 100%; height: 340px; background: #F3F4F6; overflow: hidden; }
+    .featured-img-container img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+    .featured-article:hover .featured-img-container img { transform: scale(1.02); }
+    .card-meta { display: flex; gap: 12px; font-size: 0.75rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+    .featured-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 2.5vw, 2.2rem); color: var(--navy); margin: 0 0 16px 0; line-height: 1.25; font-weight: 700; }
+    .featured-excerpt { font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; }
+    .read-link { font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy); text-decoration: underline; text-underline-offset: 4px; }
+    .featured-article:hover .read-link { color: var(--gold); }
+
+    /* 2. LATEST ARTICLE */
+    .latest-section { margin-bottom: 72px; padding-bottom: 64px; border-bottom: 1px solid var(--border-thin); }
+    .latest-card { display: grid; grid-template-columns: 280px 1fr; gap: 32px; align-items: center; }
+    .latest-img-container { width: 100%; height: 190px; background: #F3F4F6; overflow: hidden; }
+    .latest-img-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .latest-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin: 0 0 12px 0; font-weight: 700; line-height: 1.3; }
+
+    /* 3. SIMPLE LIST ARCHIVE */
+    .archive-section { margin-bottom: 80px; }
+    .archive-list { list-style: none; padding: 0; margin: 0; }
+    .archive-item { padding: 24px 0; border-bottom: 1px solid var(--border-thin); display: grid; grid-template-columns: 140px 1fr 120px; gap: 24px; align-items: baseline; transition: background 0.2s; }
+    .archive-item:hover .archive-title { color: var(--gold); }
+    .archive-cat { font-size: 0.75rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; }
+    .archive-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: var(--navy); margin: 0 0 6px 0; transition: color 0.2s; }
+    .archive-desc { font-size: 0.95rem; color: var(--text-muted); margin: 0; line-height: 1.6; }
+    .archive-date { font-size: 0.8rem; color: var(--text-muted); text-align: right; }
+
+    /* NEWSLETTER INTEGRATION */
+    .insights-newsletter { padding: 40px; border: 1px solid var(--border-thin); background: #FAFAFA; margin-bottom: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .insights-newsletter h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--navy); margin: 0 0 12px 0; }
+    .insights-newsletter p { font-size: 0.95rem; color: var(--text-muted); margin: 0; line-height: 1.6; }
+    .insights-newsletter input { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid var(--border-thin); font-family: inherit; font-size: 0.95rem; background: #FFFFFF; }
+    .insights-newsletter button { width: 100%; padding: 12px; background: var(--navy); color: #FFF; border: none; font-weight: 600; cursor: pointer; transition: 0.2s; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .insights-newsletter button:hover { background: var(--gold); color: var(--navy); }
+
+    /* EDITORIAL FOOTER */
+    footer { 
+      border-top: 2px solid var(--gold); 
+      padding: 56px 24px 48px 24px; 
+      background: var(--navy); 
+      color: #9CA3AF; 
     }
-
-    /* =========================================
-       2. PAGE HERO
-       ========================================= */
-    .page-hero {
-      background: var(--navy);
-      color: #FFFFFF;
-      padding: 70px 0 60px;
-      text-align: center;
-      border-bottom: 1px solid var(--border-subtle);
+    .footer-content { 
+      max-width: 1000px; 
+      margin: 0 auto; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: flex-start; 
+      flex-wrap: wrap; 
+      gap: 32px; 
+      font-size: 0.85rem; 
+      color: #9CA3AF; 
     }
-    .page-hero h1 { color: #FFFFFF; font-size: clamp(2rem, 3.5vw, 2.6rem); margin-bottom: 16px; }
-    .page-hero p { color: #CBD5E1; max-width: 620px; margin: 0 auto; font-size: 1.1rem; }
-
-    /* =========================================
-       3. BLOG FEED & CARDS
-       ========================================= */
-    .blog-feed { padding: 60px 0; max-width: 860px; }
-
-    .blog-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-top: 4px solid var(--gold);
-      border-radius: 12px;
-      padding: 36px 40px;
-      margin-bottom: 36px;
-      box-shadow: 0 4px 15px rgba(15, 37, 55, 0.03);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      display: block; /* Make the whole card area behave properly */
+    .footer-brand { 
+      font-family: 'Playfair Display', serif; 
+      font-weight: 700; 
+      font-size: 1.15rem; 
+      color: #FFFFFF; 
+      margin-bottom: 6px; 
     }
-
-    .blog-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 25px rgba(15, 37, 55, 0.08);
-    }
-
-    .card-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .category-badge {
-      display: inline-block;
+    .footer-sub {
+      color: var(--gold);
       font-size: 0.75rem;
-      font-weight: 700;
-      color: #B8860B;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-    }
-
-    .post-date {
-      font-size: 0.8rem;
-      color: #64748B;
-      font-weight: 500;
-    }
-
-    .blog-title {
-      font-size: 1.4rem;
       font-weight: 600;
-      color: #2C3E50;
-      margin-bottom: 14px;
-      line-height: 1.4;
-      letter-spacing: -0.01em;
-      transition: color 0.2s ease;
     }
+    .footer-disclaimer { 
+      max-width: 550px; 
+      line-height: 1.6; 
+      color: #9CA3AF;
+    }
+    .footer-disclaimer strong { color: #E5E7EB; }
 
-    .blog-card:hover .blog-title {
-      color: var(--navy);
-    }
-
-    .blog-excerpt {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 24px;
-    }
-
-    .btn-read-more {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 0.98rem;
-      transition: color 0.2s;
-    }
-    .blog-card:hover .btn-read-more {
-      color: var(--gold);
-    }
-
-    /* =========================================
-       4. FOOTER
-       ========================================= */
-    footer {
-      background: #08141F;
-      color: #94A3B8;
-      padding: 32px 0 20px;
-      font-size: 0.85rem;
-      border-top: 3px solid var(--gold);
-    }
-    .footer-grid { display: grid; grid-template-columns: 1.4fr 0.9fr 1fr 1fr; gap: 24px; margin-bottom: 24px; }
-    .footer-col h4 { color: #FFFFFF; font-size: 0.95rem; margin-bottom: 12px; margin-top: 0; }
-    .footer-brand-title { color: #FFFFFF; font-size: 1.05rem; font-weight: 700; margin-bottom: 2px; }
-    .footer-brand-sub { color: var(--gold); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; display: block; }
-    .footer-col p { line-height: 1.5; color: #94A3B8; margin-top: 0; }
-    .footer-links { list-style: none; padding: 0; margin: 0; }
-    .footer-links li { margin-bottom: 6px; }
-    .footer-links a { color: #CBD5E1; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 16px; display: flex; flex-direction: column; gap: 8px; }
-    .disclaimer-text { color: #64748B; line-height: 1.3; margin-top: 0; font-size: 0.7rem; }
-    .copyright-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding-top: 4px; font-size: 0.75rem; color: #64748B; }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none; 
-        width: 100%;
-        flex-direction: column;
-        background: var(--navy);
-        position: absolute;
-        top: 70px;
-        left: 0;
-        padding: 20px;
-        border-top: 1px solid rgba(255,255,255,0.1);
-      }
-      .nav-links.active { display: flex; }
-      .mobile-menu-btn { display: block; }
-      .blog-card { padding: 28px 20px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+    /* RESPONSIVE MOBILE ADJUSTMENTS */
+    @media (max-width: 800px) {
+      .featured-article { grid-template-columns: 1fr; gap: 24px; }
+      .featured-img-container { height: 220px; }
+      .latest-card { grid-template-columns: 1fr; gap: 16px; }
+      .latest-img-container { height: 200px; }
+      .archive-item { grid-template-columns: 1fr; gap: 8px; }
+      .archive-date { text-align: left; }
+      .insights-newsletter { grid-template-columns: 1fr; gap: 24px; padding: 24px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- STICKY HEADER -->
+  <!-- MINIMAL HEADER -->
   <header>
-    <div class="container header-content">
-      <a href="index.html#top" class="brand">
-        <div class="brand-mark">LC</div>
-        <div class="brand-text">
-          <span class="brand-name">Laura Clarke</span>
-          <span class="brand-sub">Administrative Services</span>
-        </div>
-      </a>
-      
-      <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-
-      <div class="nav-links" id="navMenu">
-        <a href="index.html#services" onclick="toggleMenu()">Services</a>
-        <a href="faq.html">FAQ</a>
-        <a href="insights.html" style="color: var(--gold);" onclick="toggleMenu()">Insights</a>
-        <a href="about.html" onclick="toggleMenu()">About</a>
-      </div>
+    <div class="header-content">
+      <div class="brand">Laura Clarke</div>
     </div>
   </header>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="container">
+  <div class="insights-container">
+    
+    <!-- PAGE TITLE BLOCK -->
+    <div class="vault-header">
       <h1>Insights Vault</h1>
-      <p>Practical guides, counter rules, and administrative advice to protect your applications from costly agency delays.</p>
+      <p>Counter rules, statutory requirements, and practical advice to safeguard your Jamaican document processing.</p>
     </div>
-  </section>
 
-  <!-- MAIN BLOG FEED -->
-  <main class="container blog-feed">
-
-    <!-- POST: DRIVER'S & VEHICLE LICENCE GUIDE -->
-    <a href="jamaica-drivers-licence-renewal-guide.html" class="blog-card">
-      <div class="card-meta">
-        <span class="category-badge">TAJ &amp; Road Transport Compliance</span>
-        <span class="post-date">Updated: Sept 18, 2026</span>
+    <!-- 1. FEATURED ARTICLE -->
+    <span class="section-label">Featured Guide</span>
+    <a href="jamaican-citizenship-by-descent.html" class="featured-article">
+      <div class="featured-img-container">
+        <img src="images/citizenship-descent-hero.jpg" alt="Jamaican passport resting on heritage documents">
       </div>
-      <h2 class="blog-title">Driver's Licence vs. Motor Vehicle Licensing: How Unpaid Tickets &amp; Missing TRNs Block Renewals</h2>
-      
-      <p class="blog-excerpt">
-        An unexpected system hold at the Tax Office counter can stall your renewal for weeks. Learn how the Traffic Management System, unlinked TRNs, and name mismatches freeze both driver's licences and vehicle registrations...
-      </p>
-
-      <span class="btn-read-more">Read Full Article &rarr;</span>
+      <div>
+        <div class="card-meta">
+          <span>PICA Lineage</span>
+          <span>&bull;</span>
+          <span>Sept 21, 2026</span>
+        </div>
+        <h2 class="featured-title">Jamaican Citizenship by Descent: Scenarios, Requirements & Document Traps</h2>
+        <p class="featured-excerpt">Claiming your Jamaican heritage is a constitutional right, but navigating PICA requires line-for-line documentary alignment. Learn how to verify your lineage without getting stuck in bureaucratic limbo.</p>
+        <span class="read-link">Read Full Guide &rarr;</span>
+      </div>
     </a>
 
-    <!-- POST 1: POLICE RECORDS -->
-    <a href="jamaica-police-record-guide.html" class="blog-card">
-      <div class="card-meta">
-        <span class="category-badge">JCF Clearances</span>
-        <span class="post-date">Updated: Sept 18, 2026</span>
+    <!-- 2. LATEST ARTICLE -->
+    <div class="latest-section">
+      <span class="section-label">Latest Brief</span>
+      <a href="jamaica-drivers-license-renewal-guide.html" class="latest-card">
+        <div class="latest-img-container">
+          <img src="images/driver-license-renewal-hero.jpg" alt="Jamaican driver's licence renewal application">
+        </div>
+        <div>
+          <div class="card-meta">
+            <span>TAJ Compliance</span>
+            <span>&bull;</span>
+            <span>Sept 18, 2026</span>
+          </div>
+          <h2 class="latest-title">How Unpaid Traffic Tickets & Missing TRN Links Block Your Driver's Licence Renewal</h2>
+          <p class="archive-desc">Automated system holds at Tax Administration Jamaica can halt your licence renewal instantly. Here is how to resolve ticket holds and legacy TRN disconnects before visiting the counter.</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- 3. SIMPLE LIST OF OTHER GUIDES -->
+    <div class="archive-section">
+      <span class="section-label">Administrative Archive</span>
+      <ul class="archive-list">
+        
+        <li>
+          <a href="jamaica-police-record-guide.html" class="archive-item">
+            <span class="archive-cat">JCF Clearances</span>
+            <div>
+              <h3 class="archive-title">Don't Get Turned Away: The Essential Guide to Getting a Jamaican Police Record</h3>
+              <p class="archive-desc">Avoid the five most common application errors that cause immediate counter rejection at the Criminal Records Office.</p>
+            </div>
+            <span class="archive-date">Sept 18, 2026</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="replace-lost-jamaican-passport.html" class="archive-item">
+            <span class="archive-cat">PICA Identity</span>
+            <div>
+              <h3 class="archive-title">Lost, Stolen, or Damaged Passport? Why You Can't Submit a Standard Renewal</h3>
+              <p class="archive-desc">The legal differences between replacing a missing booklet versus an expired passport, including affidavit and police report requirements.</p>
+            </div>
+            <span class="archive-date">Sept 18, 2026</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="trn-without-photo-id.html" class="archive-item">
+            <span class="archive-cat">TAJ Services</span>
+            <div>
+              <h3 class="archive-title">No Passport or Licence? How to Secure a Jamaican TRN Using Only a Birth Certificate</h3>
+              <p class="archive-desc">Tax Administration Jamaica's alternative verification pathway for individuals lacking primary photo identification.</p>
+            </div>
+            <span class="archive-date">Sept 18, 2026</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="customs-c5.html" class="archive-item">
+            <span class="archive-cat">Customs & Freight</span>
+            <div>
+              <h3 class="archive-title">Don't Let the Online C5 Form Trap Your Barrels at the Wharf</h3>
+              <p class="archive-desc">A step-by-step breakdown of Jamaica's digital passenger declaration form to prevent costly customs holds.</p>
+            </div>
+            <span class="archive-date">Sept 18, 2026</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- NEWSLETTER INTEGRATION -->
+    <div class="insights-newsletter">
+      <div>
+        <h3>The Administrative Brief</h3>
+        <p>Subscribe for private updates on processing times, policy shifts at PICA and the RGD, and new diaspora guides.</p>
       </div>
-      <h2 class="blog-title">Don't Get Turned Away at the Station: The Essential Guide to Getting a Jamaican Police Record</h2>
-      
-      <p class="blog-excerpt">
-        A single typo in your name, a Justice of the Peace stamp on your photo, or a married name mismatch can instantly derail your clearance timeline. Learn the 5 crucial traps to avoid...
-      </p>
-
-      <span class="btn-read-more">Read Full Article &rarr;</span>
-    </a>
-
-    <!-- POST 2: LOST PASSPORT -->
-    <a href="replace-lost-jamaican-passport.html" class="blog-card">
-      <div class="card-meta">
-        <span class="category-badge">Passport & Identity Security</span>
-        <span class="post-date">Updated: Sept 18, 2026</span>
+      <div>
+        <!-- Functional MailerLite Form -->
+        <form action="https://assets.mailerlite.com/jsonp/2650626/forms/199240121633998056/subscribe" method="post" target="_blank">
+          <input type="email" name="fields[email]" placeholder="Email Address" required>
+          <button type="submit">Subscribe</button>
+        </form>
       </div>
-      <h2 class="blog-title">Lost, Stolen, or Damaged Jamaican Passport? Why You Can't Just Fill Out a Standard Renewal</h2>
-      
-      <p class="blog-excerpt">
-        Attempting to submit a standard renewal form to replace a missing booklet will cause immediate counter rejections at PICA. Learn when you need a Police Report versus an Affidavit...
-      </p>
+    </div>
 
-      <span class="btn-read-more">Read Full Article &rarr;</span>
-    </a>
+  </div>
 
-    <!-- POST 3: TRN WITHOUT ID -->
-    <a href="trn-without-photo-id.html" class="blog-card">
-      <div class="card-meta">
-        <span class="category-badge">Tax Administration Jamaica</span>
-        <span class="post-date">Updated: Sept 18, 2026</span>
-      </div>
-      <h2 class="blog-title">No Passport or Driver's Licence? How to Get a Jamaican TRN Using Only a Birth Certificate</h2>
-      
-      <p class="blog-excerpt">
-        Lacking a formal photo ID does not stop you from getting a TRN. Tax Administration Jamaica allows an alternative verification path using a certified photo and JP declaration form...
-      </p>
-
-      <span class="btn-read-more">Read Full Article &rarr;</span>
-    </a>
-
-    <!-- POST 4: C5 TRAVEL FORM -->
-    <a href="jamaica-c5-travel-form.html" class="blog-card">
-      <div class="card-meta">
-        <span class="category-badge">Customs & Barrel Clearance</span>
-        <span class="post-date">Updated: Sept 18, 2026</span>
-      </div>
-      <h2 class="blog-title">Don't Let the Online Travel Form Trap Your Barrels at the Wharf: The Simple Guide to the Jamaica C5</h2>
-      
-      <p class="blog-excerpt">
-        Jamaica has fully transitioned to the digital C5 Passenger Declaration form. If you don't answer the baggage questions correctly before you fly, clearing your barrels can become an expensive headache...
-      </p>
-
-      <span class="btn-read-more">Read Full Article &rarr;</span>
-    </a>
-
-  </main>
-
-  <!-- CLEAN FOOTER -->
+  <!-- EDITORIAL FOOTER -->
   <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <div class="footer-brand-title">Laura Clarke</div>
-          <span class="footer-brand-sub">Administrative Services</span>
-          <p>Private document concierge, compliance pre-audits, and local representation for individuals and diaspora clients.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html#top">Home</a></li>
-            <li><a href="index.html#services">Services & Pricing</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="insights.html">Insights Vault</a></li>
-            <li><a href="about.html">About Laura</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul class="footer-links">
-            <li><a href="mailto:info@documenthelpja.com" style="color: #fff;">info@documenthelpja.com</a></li>
-            <li><a href="https://wa.me/18765612614" target="_blank" style="color: #fff;">WhatsApp: 876-561-2614</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <ul class="footer-links">
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-          </ul>
-        </div>
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">Laura Clarke</div>
+        <div class="footer-sub">Administrative Concierge & Diaspora Consultancy</div>
       </div>
-      <div class="footer-bottom">
-        <p class="disclaimer-text">
-          <strong>Disclaimer:</strong> Laura Clarke Administrative Services is a private, independent consultancy providing document preparation and guidance. We are not a government agency.
-        </p>
-        <div class="copyright-row">
-          <div>&copy; 2026 Laura Clarke Administrative Services. All rights reserved.</div>
-          <div>Jamaica Document Concierge</div>
-        </div>
+      <div class="footer-disclaimer">
+        <p style="margin: 0;"><strong>Disclaimer:</strong> Information provided is for educational and administrative guidance purposes only and does not constitute formal legal advice. Requirements and processing times are subject to official government changes.</p>
+        <p style="margin: 12px 0 0 0; color: #6B7280;">&copy; 2026 Laura Clarke. All rights reserved.</p>
       </div>
     </div>
   </footer>
-
-  <!-- MOBILE MENU SCRIPT -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('navMenu');
-      if (window.innerWidth <= 768) {
-        menu.classList.toggle('active');
-      }
-    }
-  </script>
 
 </body>
 </html>
