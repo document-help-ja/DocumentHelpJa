@@ -37,13 +37,33 @@
     a { text-decoration: none; color: inherit; }
     
     /* PROGRESS BAR */
-    .progress-container { width: 100%; height: 3px; background: transparent; position: fixed; top: 60px; z-index: 999; }
+    .progress-container { width: 100%; height: 3px; background: transparent; position: fixed; top: 64px; z-index: 999; }
     .progress-bar { height: 3px; background: var(--gold); width: 0%; }
 
-    /* MINIMALIST HEADER */
+    /* EDITORIAL HEADER WITH MOBILE NAV */
     header { background: #FFFFFF; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-thin); }
-    .header-content { display: flex; justify-content: space-between; align-items: center; min-height: 60px; padding: 0 24px; max-width: 1200px; margin: 0 auto; }
-    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem; color: var(--navy); letter-spacing: 0.02em; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; min-height: 64px; padding: 0 24px; max-width: 1200px; margin: 0 auto; position: relative; }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--navy); letter-spacing: 0.02em; transition: color 0.2s; }
+    .brand:hover { color: var(--gold); }
+
+    /* EDITORIAL NAV LINKS */
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-link { font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; transition: color 0.2s; }
+    .nav-link:hover { color: var(--navy); }
+    .nav-link.active { color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
+    .nav-cta { padding: 6px 14px; border: 1px solid var(--navy); border-radius: 4px; color: var(--navy); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; transition: all 0.2s; }
+    .nav-cta:hover { background: var(--navy); color: #FFFFFF; }
+
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border-thin);
+      color: var(--navy);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
 
     /* LAYOUT GRID */
     .page-container { max-width: 1200px; margin: 48px auto 80px auto; padding: 0 24px; display: grid; grid-template-columns: 240px 1fr; gap: 80px; }
@@ -54,7 +74,7 @@
     .toc-link { display: block; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px; transition: color 0.2s; }
     .toc-link:hover { color: var(--navy); font-weight: 600; }
 
-    /* MAIN CONTENT AREA - No borders, no shadows */
+    /* MAIN CONTENT AREA */
     .article-body { max-width: 760px; }
     
     /* COMPACT HERO IMAGE */
@@ -86,18 +106,18 @@
     ul { margin: 0 0 32px 0; padding-left: 24px; font-size: 1.1rem; color: #4B5563; line-height: 1.8; }
     li { margin-bottom: 12px; }
 
-    /* EDITORIAL PULL-QUOTE (Replacing the Key Takeaways Box) */
+    /* EDITORIAL PULL-QUOTE */
     .editorial-takeaways { margin: 56px 0; padding: 32px 0; border-top: 2px solid var(--navy); border-bottom: 1px solid var(--border-thin); }
     .editorial-takeaways h3 { margin: 0 0 20px 0; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em; font-family: -apple-system, sans-serif; font-weight: 700; }
     .editorial-takeaways ul { margin: 0; list-style-type: square; }
 
-    /* SIDE-BY-SIDE GRID (Clean, no boxes) */
+    /* SIDE-BY-SIDE GRID */
     .grid-2-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 48px; margin-top: 32px; }
     .grid-card { padding-top: 24px; border-top: 1px solid var(--border-thin); }
     .grid-card h4 { margin: 0 0 12px 0; font-size: 1.3rem; }
     .grid-card p { margin-bottom: 0; font-size: 1.05rem; }
 
-    /* TRAP CALLOUTS (Editorial Lines, no tint) */
+    /* TRAP CALLOUTS */
     .trap-callout { border-left: 2px solid var(--trap-red); padding-left: 24px; margin: 48px 0; }
     .trap-title { color: var(--trap-red); font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; display: block; }
     .trap-callout p { margin-bottom: 0; font-size: 1.15rem; font-family: 'Playfair Display', serif; font-style: italic; color: var(--navy); line-height: 1.6; }
@@ -111,9 +131,8 @@
     .tab-content { padding: 32px 0; display: none; }
     .tab-content.active { display: block; }
 
-    /* --- END OF ARTICLE RESOURCE HUB --- */
+    /* RESOURCE HUB */
     .resource-hub { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--border-thin); }
-    
     .share-bar { display: flex; gap: 16px; margin-bottom: 48px; align-items: center; flex-wrap: wrap; }
     .share-btn { padding: 8px 20px; border: 1px solid var(--border-thin); border-radius: 4px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: 0.2s; background: transparent; }
     .share-btn:hover { border-color: var(--navy); color: var(--navy); }
@@ -133,7 +152,7 @@
     .newsletter-box button { width: 100%; padding: 12px; background: var(--navy); color: #FFF; border: none; font-weight: 600; cursor: pointer; transition: 0.2s; font-size: 0.95rem; letter-spacing: 0.05em; text-transform: uppercase; }
     .newsletter-box button:hover { background: var(--gold); color: var(--navy); }
 
-   /* EDITORIAL FOOTER */
+    /* EDITORIAL FOOTER */
     footer { 
       border-top: 2px solid var(--gold); 
       padding: 56px 24px 48px 24px; 
@@ -166,6 +185,9 @@
       letter-spacing: 0.08em;
       font-weight: 600;
     }
+    .footer-nav { display: flex; gap: 16px; margin-top: 12px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .footer-nav a { color: #D1D5DB; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--gold); }
     .footer-disclaimer { 
       max-width: 600px; 
       line-height: 1.6; 
@@ -177,6 +199,24 @@
 
     /* RESPONSIVE MOBILE ADJUSTMENTS */
     @media (max-width: 900px) {
+      .mobile-menu-btn { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background: #FFFFFF;
+        flex-direction: column;
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--border-thin);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        align-items: flex-start;
+      }
+      .nav-links.active { display: flex; }
+      .nav-cta { width: 100%; text-align: center; display: block; margin-top: 8px; }
+
       .page-container { grid-template-columns: 1fr; gap: 0; margin-top: 24px; }
       .sidebar { display: none; }
       .article-body { max-width: 100%; }
@@ -195,15 +235,22 @@
   <!-- PROGRESS BAR -->
   <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
 
-  <!-- MINIMAL HEADER -->
+  <!-- MINIMAL HEADER WITH NAVIGATION & MOBILE TOGGLE -->
   <header>
     <div class="header-content">
-      <div class="brand">Laura Clarke</div>
+      <a href="index.html" class="brand">Laura Clarke</a>
+      <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle Navigation">☰</button>
+      <nav class="nav-links" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="insights.html" class="nav-link active">Insights</a>
+        <a href="https://wa.me/18765612614" class="nav-cta" target="_blank">Inquire</a>
+      </nav>
     </div>
   </header>
 
   <div class="page-container">
-    <!-- STICKY TABLE OF CONTENTS -->
+    <!-- STICKY TABLE OF CONTENTS (Desktop) -->
     <aside class="sidebar">
       <h4>In This Article</h4>
       <a href="#takeaways" class="toc-link">Key Takeaways</a>
@@ -215,7 +262,7 @@
 
     <main class="article-body">
       
-      <!-- HERO IMAGE (Compact Desktop/Mobile) -->
+      <!-- HERO IMAGE -->
       <div class="hero-image-container">
         <img src="assets/citizenship-descent-hero.webp" alt="Jamaican passport resting on family heritage documents">
       </div>
@@ -232,7 +279,7 @@
         
         <div class="author-bar">
           <div class="author-pic">
-            <img src="images/ecard.webp" alt="Laura Clarke">
+            <img src="assets/ecard.webp" alt="Laura Clarke">
           </div>
           <div>
             <div style="font-weight: 600; font-size: 0.95rem; color: var(--navy);">Laura Clarke</div>
@@ -372,12 +419,17 @@
     </main>
   </div>
 
- <!-- EDITORIAL FOOTER -->
+  <!-- EDITORIAL FOOTER -->
   <footer>
     <div class="footer-content">
       <div>
         <div class="footer-brand">Laura Clarke</div>
         <div class="footer-sub">Administrative Concierge & Diaspora Consultancy</div>
+        <div class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="index.html#services">Services</a>
+          <a href="insights.html">Insights</a>
+        </div>
       </div>
       <div class="footer-disclaimer">
         <p style="margin: 0;"><strong>Disclaimer:</strong> Information provided is for educational and administrative guidance purposes only and does not constitute formal legal advice. Processing times and agency requirements are subject to official government changes.</p>
@@ -386,9 +438,10 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT FOR TABS & SCROLL PROGRESS -->
+  <!-- JAVASCRIPT FOR TABS, SCROLL PROGRESS & MOBILE MENU -->
   <script>
     window.onscroll = function() { updateProgress() };
+    
     function updateProgress() {
       var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -410,6 +463,11 @@
       document.getElementById(tabName).style.display = "block";
       setTimeout(() => document.getElementById(tabName).classList.add("active"), 10);
       evt.currentTarget.className += " active";
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('active');
     }
   </script>
 </body>
