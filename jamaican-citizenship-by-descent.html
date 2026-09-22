@@ -7,7 +7,42 @@
   <!-- PREMIUM SEO & SOCIAL SHARING TAGS -->
   <title>Jamaican Citizenship by Descent: Scenarios, Requirements & Document Traps</title>
   <meta name="description" content="A complete guide to claiming Jamaican Citizenship by Descent. Learn the document traps, timelines, and how to verify your lineage through PICA without delays.">
-  
+  <meta name="author" content="Laura Clarke">
+  <!-- TODO: confirm this is the real published URL before going live -->
+  <link rel="canonical" href="https://www.documenthelpja.com/jamaican-citizenship-by-descent.html">
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn previews) -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Laura Clarke Administrative Services">
+  <meta property="og:title" content="Jamaican Citizenship by Descent: Scenarios, Requirements & Document Traps">
+  <meta property="og:description" content="A complete guide to claiming Jamaican Citizenship by Descent. Learn the document traps, timelines, and how to verify your lineage through PICA without delays.">
+  <meta property="og:url" content="https://www.documenthelpja.com/jamaican-citizenship-by-descent.html">
+  <!-- TODO: swap in a real 1200x630 image once the hero photo is final -->
+  <meta property="og:image" content="https://www.documenthelpja.com/assets/citizenship-descent-hero.webp">
+  <meta property="article:published_time" content="2026-09-21">
+  <meta property="article:modified_time" content="2026-09-21">
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jamaican Citizenship by Descent: Scenarios, Requirements & Document Traps">
+  <meta name="twitter:description" content="A complete guide to claiming Jamaican Citizenship by Descent, and the document traps that get files rejected.">
+  <meta name="twitter:image" content="https://www.documenthelpja.com/assets/citizenship-descent-hero.webp">
+
+  <!-- Article schema, for rich search results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Jamaican Citizenship by Descent: Scenarios, Requirements & Document Traps",
+    "description": "A complete guide to claiming Jamaican Citizenship by Descent. Learn the document traps, timelines, and how to verify your lineage through PICA without delays.",
+    "datePublished": "2026-09-21",
+    "dateModified": "2026-09-21",
+    "author": { "@type": "Person", "name": "Laura Clarke" },
+    "publisher": { "@type": "Organization", "name": "Laura Clarke Administrative Services" },
+    "mainEntityOfPage": "https://www.documenthelpja.com/jamaican-citizenship-by-descent.html"
+  }
+  </script>
+
   <!-- GOOGLE FONTS: Editorial Serif for Headlines -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +61,11 @@
     
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    :focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; border-radius: 3px; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
     body { 
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, sans-serif; 
       background-color: var(--bg-page); 
@@ -71,8 +111,9 @@
     /* STICKY TOC - Minimalist */
     .sidebar { position: sticky; top: 100px; align-self: start; }
     .sidebar h4 { margin-top: 0; color: var(--navy); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px solid var(--navy); padding-bottom: 12px; margin-bottom: 24px; }
-    .toc-link { display: block; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px; transition: color 0.2s; }
+    .toc-link { display: block; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px; transition: color 0.2s, border-color 0.2s; padding-left: 12px; border-left: 2px solid transparent; }
     .toc-link:hover { color: var(--navy); font-weight: 600; }
+    .toc-link.active { color: var(--navy); font-weight: 600; border-left-color: var(--gold); }
 
     /* MAIN CONTENT AREA */
     .article-body { max-width: 760px; }
@@ -130,6 +171,46 @@
     .tab-btn.active { color: var(--navy); border-bottom: 2px solid var(--navy); }
     .tab-content { padding: 32px 0; display: none; }
     .tab-content.active { display: block; }
+
+    /* CHECKLIST PROGRESS */
+    .checklist-progress { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; gap: 16px; flex-wrap: wrap; }
+    .checklist-count { font-size: 0.85rem; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.08em; }
+    .checklist-bar { flex: 1 1 160px; height: 4px; background: var(--border-thin); }
+    .checklist-bar i { display: block; height: 100%; width: 0%; background: var(--gold); transition: width 0.3s ease; }
+    .checklist-reset { background: none; border: none; font-family: inherit; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; padding: 4px; }
+    .checklist-reset:hover { color: var(--navy); }
+
+    /* CHECKLIST ITEMS (replaces plain bullets in tab panels) */
+    .check-list { list-style: none; margin: 0 0 8px 0; padding: 0; }
+    .check-item { border-top: 1px solid var(--border-thin); }
+    .check-item:first-child { border-top: none; }
+    .check-label { display: grid; grid-template-columns: 24px 1fr; gap: 14px; align-items: start; padding: 14px 2px; cursor: pointer; }
+    .check-label input { position: absolute; opacity: 0; width: 24px; height: 24px; margin: 0; cursor: pointer; }
+    .check-box { width: 22px; height: 22px; margin-top: 2px; border: 2px solid var(--navy); background: #fff; position: relative; flex-shrink: 0; }
+    .check-box::after { content: ""; position: absolute; left: 5px; top: 1px; width: 6px; height: 11px; border: solid var(--gold); border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); opacity: 0; }
+    .check-label input:checked + .check-box { background: var(--navy); }
+    .check-label input:checked + .check-box::after { opacity: 1; }
+    .check-label input:focus-visible + .check-box { outline: 3px solid var(--navy); outline-offset: 2px; }
+    .check-label input:checked ~ .check-text strong { text-decoration: line-through; text-decoration-color: var(--gold); text-decoration-thickness: 2px; }
+    .check-text { font-size: 1.1rem; color: #4B5563; line-height: 1.6; }
+    .checklist-done { display: none; margin-top: 16px; padding: 14px 16px; background: #F3F4F6; font-size: 0.9rem; font-weight: 600; color: var(--navy); }
+    .checklist-done.show { display: block; }
+
+    /* MID-ARTICLE CTA */
+    .mid-cta { margin: 56px 0; padding: 28px 32px; border: 1.5px solid var(--navy); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 28px; }
+    .mid-cta p { margin: 0; font-size: 1rem; color: var(--text-main); max-width: 34em; }
+    .mid-cta strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); font-weight: 700; margin-bottom: 4px; }
+    .mid-cta-btn { flex-shrink: 0; padding: 12px 22px; background: var(--navy); color: #fff; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; white-space: nowrap; }
+    .mid-cta-btn:hover { background: var(--gold); color: var(--navy); }
+
+    /* RELATED GUIDES */
+    .related-guides { margin-bottom: 56px; }
+    .related-guides h4 { margin: 0 0 24px 0; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--navy); border-bottom: 1px solid var(--navy); padding-bottom: 12px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .related-card { border-top: 2px solid var(--navy); padding-top: 14px; }
+    .related-card h5 { margin: 0 0 8px 0; font-family: 'Playfair Display', serif; font-size: 1.1rem; line-height: 1.3; color: var(--navy); font-weight: 700; }
+    .related-card:hover h5 { color: var(--gold); }
+    .related-card p { margin: 0; font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
 
     /* RESOURCE HUB */
     .resource-hub { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--border-thin); }
@@ -227,6 +308,8 @@
       .hub-grid { grid-template-columns: 1fr; gap: 48px; }
       .inline-image-container { height: 220px; }
       .tab-btn { padding: 12px 16px; font-size: 0.9rem; }
+      .related-grid { grid-template-columns: 1fr; gap: 28px; }
+      .mid-cta { padding: 24px 20px; }
     }
   </style>
 </head>
@@ -239,7 +322,7 @@
   <header>
     <div class="header-content">
       <a href="index.html" class="brand">Laura Clarke</a>
-      <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle Navigation">☰</button>
+      <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="navMenu">☰</button>
       <nav class="nav-links" id="navMenu">
         <a href="index.html" class="nav-link">Home</a>
         <a href="index.html#services" class="nav-link">Services</a>
@@ -279,7 +362,7 @@
         
         <div class="author-bar">
           <div class="author-pic">
-            <img src="assets/profile.webp" alt="Laura Clarke">
+            <img src="assets/profile.jpg" alt="Laura Clarke">
           </div>
           <div>
             <div style="font-weight: 600; font-size: 0.95rem; color: var(--navy);">Laura Clarke</div>
@@ -334,31 +417,44 @@
 
       <!-- MINIMAL TABS -->
       <div class="tab-container">
-        <div class="tabs">
-          <button class="tab-btn active" onclick="openTab(event, 'Adult')">Adult Applicants (18+)</button>
-          <button class="tab-btn" onclick="openTab(event, 'Minor')">Minor Applicants (Under 18)</button>
+        <div class="tabs" role="tablist" aria-label="Applicant type">
+          <button class="tab-btn active" id="tabbtn-Adult" role="tab" aria-selected="true" aria-controls="Adult" onclick="openTab(event, 'Adult')">Adult Applicants (18+)</button>
+          <button class="tab-btn" id="tabbtn-Minor" role="tab" aria-selected="false" aria-controls="Minor" tabindex="-1" onclick="openTab(event, 'Minor')">Minor Applicants (Under 18)</button>
         </div>
-        
-        <div id="Adult" class="tab-content active">
-          <ul>
-            <li><strong>Application Form:</strong> Completed Citizenship by Descent Form.</li>
-            <li><strong>Applicant’s Birth Certificate:</strong> Original long-form birth certificate.</li>
-            <li><strong>Parent/Grandparent Birth Certificate:</strong> Original RGD computerized certificate.</li>
-            <li><strong>Photo ID:</strong> Valid driver's licence or passport for the applicant.</li>
-            <li><strong>Name Change Proof:</strong> Original Marriage Certificates or Deed Polls.</li>
-            <li><strong>Photographs:</strong> Two (2) identical passport-sized photos.</li>
+
+        <div class="checklist-progress">
+          <span class="checklist-count" id="checklist-count" aria-live="polite">0 of 6 gathered</span>
+          <div class="checklist-bar" aria-hidden="true"><i id="checklist-fill"></i></div>
+          <button type="button" class="checklist-reset" id="checklist-reset">Clear ticks</button>
+        </div>
+
+        <div id="Adult" class="tab-content active" role="tabpanel" aria-labelledby="tabbtn-Adult" data-total="6">
+          <ul class="check-list">
+            <li class="check-item"><label class="check-label"><input type="checkbox" data-id="adult-1"><span class="check-box" aria-hidden="true"></span><span class="check-text"><strong>Application Form:</strong> Completed Citizenship by Descent Form.</span></label></li>
+            <li class="check-item"><label class="check-label"><input type="checkbox" data-id="adult-2"><span class="check-box" aria-hidden="true"></span><span class="check-text"><strong>Applicant’s Birth Certificate:</strong> Original long-form birth certificate.</span></label></li>
+            <li class="check-item"><label class="check-label"><input type="checkbox" data-id="adult-3"><span class="check-box" aria-hidden="true"></span><span class="check-text"><strong>Parent/Grandparent Birth Certificate:</strong> Original RGD computerized certificate.</span></label></li>
+            <li class="check-item"><label class="check-label"><input type="checkbox" data-id="adult-4"><span class="check-box" aria-hidden="true"></span><span class="check-text"><strong>Photo ID:</strong> Valid driver's licence or passport for the applicant.</span></label></li>
+            <li class="check-item"><label class="check-label"><input type="checkbox" data-id="adult-5"><span class="check-box" aria-hidden="true"></span><span class="check-text"><strong>Name Change Proof:</strong> Original Marriage Certificates or Deed Polls.</span></label></li>
+            <li class="check-item"><label class="check-label"><input type="checkbox" data-id="adult-6"><span class="check-box" aria-hidden="true"></span><span class="check-text"><strong>Photographs:</strong> Two (2) identical passport-sized photos.</span></label></li>
           </ul>
         </div>
-        
-        <div id="Minor" class="tab-content">
-          <ul>
-            <li><strong>Application Form:</strong> Form R4, signed by the parent or legal guardian.</li>
-            <li><strong>Child’s Birth Certificate:</strong> Original long-form birth certificate.</li>
-            <li><strong>Parent’s Proof:</strong> Original RGD birth certificate or Jamaican Passport of the parent.</li>
-            <li><strong>Parent's Photo ID:</strong> Valid government ID of the signing parent.</li>
-            <li><strong>Photographs:</strong> Two (2) identical passport photos of the minor.</li>
+
+        <div id="Minor" class="tab-content" role="tabpanel" aria-labelledby="tabbtn-Minor" data-total="5" hidden>
+          <ul class="check-list">
+            <li class="check-item"><label class="check-label"><input type="checkbox" data-id="minor-1"><span class="check-box" aria-hidden="true"></span><span class="check-text"><strong>Application Form:</strong> Form R4, signed by the parent or legal guardian.</span></label></li>
+            <li class="check-item"><label class="check-label"><input type="checkbox" data-id="minor-2"><span class="check-box" aria-hidden="true"></span><span class="check-text"><strong>Child’s Birth Certificate:</strong> Original long-form birth certificate.</span></label></li>
+            <li class="check-item"><label class="check-label"><input type="checkbox" data-id="minor-3"><span class="check-box" aria-hidden="true"></span><span class="check-text"><strong>Parent’s Proof:</strong> Original RGD birth certificate or Jamaican Passport of the parent.</span></label></li>
+            <li class="check-item"><label class="check-label"><input type="checkbox" data-id="minor-4"><span class="check-box" aria-hidden="true"></span><span class="check-text"><strong>Parent's Photo ID:</strong> Valid government ID of the signing parent.</span></label></li>
+            <li class="check-item"><label class="check-label"><input type="checkbox" data-id="minor-5"><span class="check-box" aria-hidden="true"></span><span class="check-text"><strong>Photographs:</strong> Two (2) identical passport photos of the minor.</span></label></li>
           </ul>
         </div>
+        <div class="checklist-done" id="checklist-done" role="status">Everything's gathered. Next, check that every name matches across every document before you file.</div>
+      </div>
+
+      <!-- MID-ARTICLE CTA -->
+      <div class="mid-cta">
+        <p><strong>Have the documents but unsure the names line up?</strong>We pre-audit your RGD records for name consistency before you file with PICA.</p>
+        <a href="https://wa.me/18765612614" class="mid-cta-btn" target="_blank" rel="noopener">Message on WhatsApp</a>
       </div>
 
       <!-- INLINE IMAGE 2 -->
@@ -385,12 +481,31 @@
 
       <!-- END OF ARTICLE RESOURCE HUB -->
       <div class="resource-hub">
-        
+
         <div class="share-bar">
           <span style="font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--navy);">Share Article</span>
-          <button class="share-btn">WhatsApp</button>
-          <button class="share-btn">Facebook</button>
-          <button class="share-btn">Copy Link</button>
+          <a class="share-btn" id="share-wa" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="share-btn" id="share-fb" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+          <button class="share-btn" id="share-copy" type="button">Copy Link</button>
+        </div>
+
+      <!-- RELATED GUIDES -->
+        <div class="related-guides">
+          <h4>Keep Reading</h4>
+          <div class="related-grid">
+            <a class="related-card" href="jamaican-police-record.html">
+              <h5>Applying for a Jamaican Police Record</h5>
+              <p>Clear the confusion around fingerprinting, processing times, and overseas applications.</p>
+            </a>
+            <a class="related-card" href="lost-jamaican-passport.html">
+              <h5>Replacing a Lost or Stolen Jamaican Passport</h5>
+              <p>The exact steps, police report requirements, and PICA penalty fees to get your travel document back.</p>
+            </a>
+            <a class="related-card" href="trn-without-photo-id.html">
+              <h5>Getting a TRN Without a Valid Photo ID</h5>
+              <p>How to navigate TAJ requirements and secure your taxpayer number when your primary identification has expired.</p>
+            </a>
+          </div>
         </div>
 
         <div class="hub-grid">
@@ -466,14 +581,14 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT FOR TABS, SCROLL PROGRESS & MOBILE MENU -->
+  <!-- JAVASCRIPT FOR TABS, SCROLL PROGRESS, TOC HIGHLIGHT, CHECKLIST & SHARING -->
   <script>
     window.onscroll = function() { updateProgress() };
-    
+
     function updateProgress() {
       var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var scrolled = (winScroll / height) * 100;
+      var scrolled = height > 0 ? (winScroll / height) * 100 : 0;
       document.getElementById("myBar").style.width = scrolled + "%";
     }
 
@@ -483,20 +598,111 @@
       for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
         tabcontent[i].classList.remove("active");
+        tabcontent[i].hidden = true;
       }
       tablinks = document.getElementsByClassName("tab-btn");
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
+        tablinks[i].setAttribute("aria-selected", "false");
+        tablinks[i].tabIndex = -1;
       }
-      document.getElementById(tabName).style.display = "block";
-      setTimeout(() => document.getElementById(tabName).classList.add("active"), 10);
+      var panel = document.getElementById(tabName);
+      panel.style.display = "block";
+      panel.hidden = false;
+      setTimeout(() => panel.classList.add("active"), 10);
       evt.currentTarget.className += " active";
+      evt.currentTarget.setAttribute("aria-selected", "true");
+      evt.currentTarget.tabIndex = 0;
+      refreshChecklist();
     }
 
     function toggleMenu() {
       const menu = document.getElementById('navMenu');
-      menu.classList.toggle('active');
+      const btn = document.getElementById('menuBtn');
+      const open = menu.classList.toggle('active');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     }
+
+    /* TOC scrollspy: highlight the section currently in view */
+    (function () {
+      var links = document.querySelectorAll('.toc-link');
+      if (!links.length || !('IntersectionObserver' in window)) return;
+      var map = {};
+      links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            links.forEach(function (a) { a.classList.remove('active'); });
+            if (map[en.target.id]) map[en.target.id].classList.add('active');
+          }
+        });
+      }, { rootMargin: '-15% 0px -70% 0px' });
+      Object.keys(map).forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) io.observe(el);
+      });
+    })();
+
+    /* Interactive checklist: ticks persist in this browser via localStorage */
+    var CHECKLIST_KEY = 'lc-pica-checklist-v1';
+    var checklistState = {};
+    try { checklistState = JSON.parse(localStorage.getItem(CHECKLIST_KEY) || '{}'); } catch (e) { checklistState = {}; }
+    function saveChecklist() {
+      try { localStorage.setItem(CHECKLIST_KEY, JSON.stringify(checklistState)); } catch (e) {}
+    }
+    function refreshChecklist() {
+      var panel = document.querySelector('.tab-content.active') || document.getElementById('Adult');
+      var boxes = panel.querySelectorAll('input[type="checkbox"]');
+      var total = panel.dataset.total || boxes.length;
+      var n = 0;
+      boxes.forEach(function (b) { if (b.checked) n++; });
+      var countEl = document.getElementById('checklist-count');
+      var fillEl = document.getElementById('checklist-fill');
+      var doneEl = document.getElementById('checklist-done');
+      countEl.textContent = n + ' of ' + total + ' gathered';
+      fillEl.style.width = (total > 0 ? (n / total * 100) : 0) + '%';
+      doneEl.classList.toggle('show', total > 0 && n === Number(total));
+    }
+    document.querySelectorAll('.check-list input[type="checkbox"]').forEach(function (box) {
+      box.checked = !!checklistState[box.dataset.id];
+      box.addEventListener('change', function () {
+        checklistState[box.dataset.id] = box.checked;
+        saveChecklist();
+        refreshChecklist();
+      });
+    });
+    document.getElementById('checklist-reset').addEventListener('click', function () {
+      checklistState = {};
+      saveChecklist();
+      document.querySelectorAll('.check-list input[type="checkbox"]').forEach(function (b) { b.checked = false; });
+      refreshChecklist();
+    });
+    refreshChecklist();
+
+    /* Share bar: real WhatsApp/Facebook share links, working copy-link button */
+    (function () {
+      var url = window.location.href;
+      var title = document.title;
+      var wa = document.getElementById('share-wa');
+      var fb = document.getElementById('share-fb');
+      var copyBtn = document.getElementById('share-copy');
+      if (wa) wa.href = 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url);
+      if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function () {
+          function done() {
+            var original = copyBtn.textContent;
+            copyBtn.textContent = 'Link Copied';
+            setTimeout(function () { copyBtn.textContent = original; }, 2000);
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(done, function () { window.prompt('Copy this link:', url); });
+          } else {
+            window.prompt('Copy this link:', url);
+          }
+        });
+      }
+    })();
   </script>
 </body>
 </html>
