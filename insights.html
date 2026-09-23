@@ -122,11 +122,14 @@
     .skip-link { position: absolute; left: -9999px; top: 8px; background: var(--gold-btn); color: var(--on-gold); padding: 8px 14px; z-index: 2000; font-weight: 700; }
     .skip-link:focus { left: 8px; }
     .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    
+    /* ENLARGED PAGE WRAPPER (approx 1 inch / 96px padding on sides) */
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 0 96px; }
 
     /* CONTAINERS */
-    main.wrap { max-width: 1180px; padding: 32px 24px 64px; }
-    .panel { background: var(--bg); border: 1px solid #333331; border-radius: 18px; padding: clamp(32px, 5vw, 64px) clamp(24px, 6vw, 80px); margin-bottom: 28px; }
+    main.wrap { max-width: 1400px; padding: 48px 96px 80px; }
+    
+    .panel { background: var(--bg); border: 1px solid #333331; border-radius: 18px; padding: clamp(32px, 4vw, 48px) clamp(24px, 5vw, 56px); margin-bottom: 32px; }
     .panel:last-child { margin-bottom: 0; }
     .hero.panel { padding-top: 0; padding-bottom: 0; }
 
@@ -142,13 +145,13 @@
     .nav-links a.nav-cta:hover { background: #fff; }
     .mobile-menu-btn { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; padding: 6px; }
 
-   /* PAGE INTRO */
+    /* PAGE INTRO */
     .intro { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px; }
     .intro-text { flex: 1 1 500px; }
     .intro h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.1; letter-spacing: -0.01em; color: #fff; margin: 0; }
     .intro .h1-tag { display: block; margin-top: 16px; font-family: var(--sans); font-size: clamp(1.15rem, 2vw, 1.35rem); font-weight: 400; line-height: 1.5; color: var(--text-muted); max-width: 40ch; letter-spacing: 0; }
     
-    /* NEW AUTHOR BADGE (RIGHT SIDE) */
+    /* AUTHOR BADGE */
     .intro-author { display: flex; align-items: center; gap: 16px; background: var(--surface); padding: 20px 24px; border-radius: 16px; border: 1px solid var(--line); flex-shrink: 0; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
     .intro-author img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); background: var(--page); }
     .intro-author-info p { margin: 0; line-height: 1.4; }
@@ -170,14 +173,44 @@
     .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 12px; }
     .meta .cat-link { color: var(--gold); font-weight: 600; }
 
-    /* FEATURED (Keeping its own background style, but updating to gradient to match new look) */
-    .hero { position: relative; min-height: 460px; display: flex; align-items: center; overflow: hidden; padding-top: 0; padding-bottom: 0; }
-    .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #FDE68A 0%, #D9B872 100%); }
-    .hero-icon { position: absolute; right: 12%; top: 50%; transform: translateY(-50%); width: 200px; height: 200px; stroke: #1F1F1E; fill: none; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; opacity: 0.15; transition: transform 0.6s ease; }
-    .hero:hover .hero-icon { transform: translateY(-50%) scale(1.05); }
-    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(43,43,41,1) 0%, rgba(43,43,41,0.95) 40%, rgba(43,43,41,0.4) 60%, rgba(43,43,41,0) 100%); pointer-events: none; }
-    .hero > .hero-inner { position: relative; z-index: 1; width: 100%; }
-    .hero-content { width: 38%; min-width: 300px; padding: 56px 0; }
+    /* FEATURED HERO (SPLIT LAYOUT) */
+    .hero.panel { 
+      display: flex; 
+      flex-direction: row-reverse; 
+      padding: 0; 
+      overflow: hidden; 
+      align-items: stretch; 
+      min-height: auto; 
+    }
+    .hero-bg { 
+      position: relative; 
+      width: 55%; 
+      min-height: 400px;
+      background-color: var(--bg);
+    }
+    .hero-bg img { 
+      position: absolute;
+      inset: 0;
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover; 
+      object-position: center; 
+      display: block; 
+      transition: transform 0.6s ease; 
+    }
+    .hero:hover .hero-bg img { 
+      transform: scale(1.02); 
+    }
+    .hero > .hero-inner { 
+      position: relative; 
+      z-index: 1; 
+      width: 45%; 
+      display: flex;
+      align-items: center;
+      padding: 56px 48px;
+      background-color: var(--bg);
+    }
+    .hero-content { width: 100%; }
     .hero-label { font-size: 1rem; font-weight: 600; color: var(--gold); margin: 0 0 14px; }
     .hero .meta { color: var(--text); margin-bottom: 10px; }
     .hero-title { font-size: clamp(1.35rem, 2vw, 1.7rem); font-weight: 700; line-height: 1.25; color: #fff; margin: 0 0 16px; text-wrap: balance; }
@@ -187,8 +220,10 @@
     .hero:hover .hero-title a { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 6px; }
     .hero .card-link::after { z-index: 0; }
 
-    /* LIGHT, PUNCHY IMAGE CARDS */
-    .media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    /* WIDE HERO-SIZED IMAGE CARDS (3:1 Rectangle) */
+    .media { position: relative; aspect-ratio: 3 / 1; overflow: hidden; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .card:hover .media img { transform: scale(1.04); }
     .media-icon { width: 64px; height: 64px; stroke: #1F1F1E; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.9; z-index: 2; transition: transform 0.4s ease; }
     .card:hover .media-icon { transform: scale(1.1); }
     
@@ -233,8 +268,10 @@
     .filter-pill:hover { border-color: var(--text-muted); }
     .filter-pill[aria-pressed="true"] { background: var(--gold-btn); border-color: var(--on-gold); color: var(--on-gold); font-weight: 700; }
     .archive-count { font-size: 0.9375rem; color: var(--text-muted); margin: -12px 0 12px; min-height: 1em; }
-    .guide-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 40px; column-gap: 28px; }
+    
+    .guide-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 48px; column-gap: 36px; }
     .guide-grid li.is-hidden { display: none; }
+    
     .archive-empty { display: none; padding: 24px 0; color: var(--text); }
     .archive-empty.show { display: block; }
     .archive-empty a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
@@ -269,9 +306,12 @@
     @media (max-width: 900px) { .guide-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 800px) {
       .mobile-menu-btn { display: block; }
-      main.wrap { padding: 16px 12px 40px; }
-      .panel { border-radius: 14px; padding: 32px 22px; margin-bottom: 16px; }
-      .hero.panel { padding-top: 0; padding-bottom: 0; }
+      
+      /* Reset padding tight on mobile so text isn't squeezed */
+      .wrap { padding: 0 20px; }
+      main.wrap { padding: 16px 20px 40px; }
+      .panel { border-radius: 14px; padding: 32px 24px; margin-bottom: 24px; }
+      
       .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px calc(32px + env(safe-area-inset-bottom, 0px)); background: var(--page); border-top: 1px solid #2E2E2C; overflow-y: auto; }
       .nav-links.active { display: flex; }
       .nav-links a { font-size: 1.125rem; color: var(--text); padding: 16px 0; border-bottom: 1px solid #2E2E2C; }
@@ -280,10 +320,22 @@
       .mobile-menu-btn { width: 44px; height: 44px; }
       body.menu-open { overflow: hidden; }
       body.menu-open .wa-float { display: none; }
-      .hero { min-height: 560px; align-items: flex-end; }
-      .hero-icon { top: 24px; right: 50%; transform: translateX(50%); width: 120px; height: 120px; opacity: 0.1; }
-      .hero::after { background: linear-gradient(0deg, rgba(43,43,41,0.98) 0%, rgba(43,43,41,0.9) 45%, rgba(43,43,41,0.2) 80%); }
-      .hero-content { width: 100%; min-width: 0; padding: 180px 0 36px; }
+      
+      /* MOBILE HERO SETTINGS */
+      .hero.panel { 
+        flex-direction: column; 
+        padding: 0;
+      }
+      .hero-bg { 
+        width: 100%; 
+        height: 240px; 
+        min-height: auto; 
+      }
+      .hero > .hero-inner { 
+        width: 100%; 
+        padding: 32px 24px; 
+      }
+      
       .audit-cta, .newsletter { grid-template-columns: 1fr; gap: 24px; }
       .guide-grid { grid-template-columns: 1fr; }
       .archive-search { max-width: none; }
@@ -333,46 +385,41 @@
     </section>
 
   <!-- FEATURED HERO -->
-<section class="hero panel" aria-labelledby="hero-label">
-  <div class="hero-bg">
-    <!-- 1. Add your full background image here -->
-    <img src="assets/citizenship-descent-hero.webp" alt="Jamaican passport and documents" fetchpriority="high" decoding="async">
-    
-    <!-- Optional: You can keep the SVG as a faint watermark, or delete it -->
-    <svg class="hero-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 17h6"/></svg>
-  </div>
-  <div class="hero-inner">
-    <article class="hero-content card">
-      <h2 class="hero-label" id="hero-label">Featured guide</h2>
-      <div class="meta">
-        <button type="button" class="cat-link" onclick="selectCategory(event, 'pica-identity')">Passports &amp; Citizenship</button>
-        <time datetime="2026-09-21">Sept 21, 2026</time>
-      </div>
-      <h3 class="hero-title"><a href="/jamaican-citizenship-by-descent" class="card-link">How Do I Claim Jamaican Citizenship Through a Jamaican Parent?</a></h3>
-      <p class="hero-desc">Claiming your Jamaican heritage is a constitutional right, but PICA needs every document to line up. Here's how to prove your lineage without getting stuck.</p>
-      <span class="hero-btn" aria-hidden="true">Read the guide</span>
-    </article>
-  </div>
-</section>
+  <section class="hero panel" aria-labelledby="hero-label">
+    <div class="hero-bg">
+      <img src="assets/citizenship-descent-hero.webp" alt="Jamaican passport and documents" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero-inner">
+      <article class="hero-content card">
+        <h2 class="hero-label" id="hero-label">Featured guide</h2>
+        <div class="meta">
+          <button type="button" class="cat-link" onclick="selectCategory(event, 'pica-identity')">Passports &amp; Citizenship</button>
+          <time datetime="2026-09-21">Sept 21, 2026</time>
+        </div>
+        <h3 class="hero-title"><a href="/jamaican-citizenship-by-descent" class="card-link">How Do I Claim Jamaican Citizenship Through a Jamaican Parent?</a></h3>
+        <p class="hero-desc">Claiming your Jamaican heritage is a constitutional right, but PICA needs every document to line up. Here's how to prove your lineage without getting stuck.</p>
+        <span class="hero-btn" aria-hidden="true">Read the guide</span>
+      </article>
+    </div>
+  </section>
 
     <section class="latest-guides panel" aria-labelledby="latest-guides-title">
       <h2 class="section-title" id="latest-guides-title">Latest guides</h2>
       <ul class="guide-grid">
         <li>
          <!-- DRIVER'S LICENCE GUIDE -->
-<article class="guide-card card">
-  <div class="media">
-    <!-- Replace src with your actual image path -->
-    <img src="assets/driver-license-renewal-hero.jfif" alt="Jamaican driver's licence renewal application" width="800" height="500" loading="lazy" decoding="async">
-  </div>
-  <div class="card-body">
-    <div class="meta">
-      <button type="button" class="cat-link" onclick="selectCategory(event, 'taj-services')">TRN &amp; Licences</button>
-      <time datetime="2026-09-18">Sept 18, 2026</time>
-    </div>
-    <h3 class="card-title"><a href="/jamaica-drivers-license-renewal-guide" class="card-link">Why Won't My Driver's Licence Renew? Clearing Ticket and TRN Holds</a></h3>
-  </div>
-</article>
+        <article class="guide-card card">
+          <div class="media">
+            <img src="assets/driver-license-renewal-hero.jfif" alt="Jamaican driver's licence renewal application" width="800" height="500" loading="lazy" decoding="async">
+          </div>
+          <div class="card-body">
+            <div class="meta">
+              <button type="button" class="cat-link" onclick="selectCategory(event, 'taj-services')">TRN &amp; Licences</button>
+              <time datetime="2026-09-18">Sept 18, 2026</time>
+            </div>
+            <h3 class="card-title"><a href="/jamaica-drivers-license-renewal-guide" class="card-link">Why Won't My Driver's Licence Renew? Clearing Ticket and TRN Holds</a></h3>
+          </div>
+        </article>
         </li>
         <li>
           <!-- SKY PUNCH -->
