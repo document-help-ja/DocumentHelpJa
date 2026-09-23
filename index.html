@@ -69,6 +69,7 @@
           "description": "Private document concierge and administrative compliance pre-audit services in Jamaica, for local and overseas clients.",
           "url": "https://www.lauraclarkeservices.com/",
           "telephone": "+1-876-561-2614",
+          "email": "info@documenthelpja.com",
           "image": "https://www.lauraclarkeservices.com/images/og-share-1200x630.jpg",
           "address": { "@type": "PostalAddress", "addressRegion": "St. Catherine", "addressCountry": "JM" },
           "areaServed": [
@@ -119,12 +120,35 @@
         :focus-visible { outline: 3px solid #C89B3C; outline-offset: 2px; border-radius: 4px; }
         .touch-target { min-height: 44px; min-width: 44px; }
 
-        .service-row { position: relative; transition: background-color .2s ease, border-color .2s ease; border-left: 4px solid transparent; }
-        .service-row:hover, .service-row:focus-within { border-left-color: #C89B3C; background-color: #FFFFFF; }
+        /* Services: image-led cards. Coloured cover = agency; swap for a photo later if you like. */
+        .svc-section { background-color: #E8EEEB; }
+        .service-row { position: relative; display: flex; background: #FFFFFF; border: 1px solid #D3DCD7; border-radius: 10px; overflow: hidden; transition: box-shadow .2s ease, border-color .2s ease; }
+        .service-row:hover, .service-row:focus-within { border-color: var(--accent, #C89B3C); box-shadow: 0 12px 28px -14px rgba(11,46,36,.45); }
+        .service-row:active { background: #F6F8F7; }
+        .svc-cover { flex: 0 0 92px; background: var(--accent, #181A1B); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 12px 6px; text-align: center; }
+        .svc-cover i { font-size: 26px; transition: transform .25s ease; }
+        .svc-cover span { font-size: 11px; font-weight: 700; letter-spacing: .06em; opacity: .9; }
+        .service-row:hover .svc-cover i { transform: scale(1.08); }
+        .svc-body { position: static; flex: 1; min-width: 0; padding: 14px 40px 14px 16px; }
+        .svc-title { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 1.05rem; line-height: 1.25; color: #181A1B; margin-bottom: 4px; }
+        .svc-desc { font-size: .875rem; line-height: 1.45; color: #4B5563; }
+        .svc-cta { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #8A6420; font-size: 12px; }
+        .svc-cta-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+        @media (min-width: 640px) {
+            .service-row { flex-direction: column; }
+            .svc-cover { flex-basis: auto; height: 124px; }
+            .svc-cover i { font-size: 34px; }
+            .svc-body { display: flex; flex-direction: column; padding: 18px 20px 20px; }
+            .svc-desc { flex: 1; }
+            .svc-cta { position: static; transform: none; display: flex; align-items: center; gap: 6px; margin-top: 16px; font-size: .875rem; font-weight: 600; }
+            .svc-cta-text { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
+            .svc-cta i { font-size: 11px; transition: transform .2s ease; }
+            .service-row:hover .svc-cta i { transform: translateX(3px); }
+        }
         .service-row .stretched::after { content: ""; position: absolute; inset: 0; }
         .service-row .stretched:focus-visible { outline: none; }
-        .service-row .stretched:focus-visible::after { outline: 3px solid #C89B3C; outline-offset: -3px; }
-        .service-item[hidden], #no-results[hidden] { display: none !important; }
+        .service-row .stretched:focus-visible::after { outline: 3px solid #C89B3C; outline-offset: -3px; border-radius: 10px; }
+        .service-item[hidden] { display: none !important; }
 
         .filter-btn { background: #fff; color: #374151; border: 1px solid #D1D5DB; }
         .filter-btn:hover { border-color: #C89B3C; }
@@ -155,10 +179,9 @@
         .svc-spec-label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #6B7280; letter-spacing: 0.05em; }
         .svc-spec-val { display: block; font-size: 13px; font-weight: 600; color: #181A1B; margin-top: 2px; }
 
-        .mobile-cta { padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px)); }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-gold selection:text-white pb-24 md:pb-0">
+<body class="antialiased selection:bg-brand-gold selection:text-white">
 
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-white focus:text-brand-dark focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg">Skip to main content</a>
 
@@ -173,31 +196,26 @@
                 </span>
             </a>
 
-            <ul class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-700">
-                <li><a href="#how-it-works" class="hover:text-brand-goldText transition py-2 touch-target inline-flex items-center">How It Works</a></li>
-                <li><a href="#services" class="hover:text-brand-goldText transition py-2 touch-target inline-flex items-center">Featured Services</a></li>
-                <li><a href="#insights" class="hover:text-brand-goldText transition py-2 touch-target inline-flex items-center">Insights &amp; Advisory</a></li>
+            <ul class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-700">
+                <li><a href="#services" class="hover:text-brand-goldText transition py-2 touch-target inline-flex items-center">Services</a></li>
+                <li><a href="#insights" class="hover:text-brand-goldText transition py-2 touch-target inline-flex items-center">Insights</a></li>
+                <li><a href="/about" class="hover:text-brand-goldText transition py-2 touch-target inline-flex items-center">About</a></li>
+                <li><a href="#contact" class="hover:text-brand-goldText transition py-2 touch-target inline-flex items-center">Contact</a></li>
             </ul>
 
             <div class="flex items-center gap-2">
-                <!-- Book Consultation opens Google Calendar Modal -->
-                <a href="#consultation" data-dialog="consultation" class="hidden sm:flex bg-gray-100 hover:bg-gray-200 text-brand-dark px-4 py-2.5 rounded-md text-sm font-medium transition items-center gap-2 touch-target cursor-pointer">
-                    <i class="far fa-calendar-alt text-brand-goldText" aria-hidden="true"></i> Book Consultation
+                <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20document." target="_blank" rel="noopener" data-wa="nav" class="flex bg-brand-dark text-white px-4 md:px-5 py-2.5 rounded-md text-sm font-medium hover:bg-gray-800 transition items-center gap-2 shadow-sm touch-target">
+                    <i class="fab fa-whatsapp text-brand-gold text-lg" aria-hidden="true"></i> <span class="hidden md:inline">WhatsApp Us</span><span class="md:hidden">Chat</span>
                 </a>
-                <!-- WhatsApp Us points to WhatsApp -->
-                <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20document." target="_blank" rel="noopener" data-wa="nav" class="bg-brand-dark text-white px-4 sm:px-5 py-2.5 rounded-md text-sm font-medium hover:bg-gray-800 transition flex items-center gap-2 shadow-sm touch-target">
-                    <i class="fab fa-whatsapp text-brand-gold text-lg" aria-hidden="true"></i> <span class="hidden sm:inline">WhatsApp Us</span><span class="sm:hidden">Chat</span>
-                </a>
-                <details class="lg:hidden relative" id="mobile-menu">
+                <details class="md:hidden relative" id="mobile-menu">
                     <summary class="list-none touch-target flex items-center justify-center rounded-md border border-gray-300 cursor-pointer [&::-webkit-details-marker]:hidden" aria-label="Menu">
                         <i class="fas fa-bars text-brand-dark" aria-hidden="true"></i>
                     </summary>
-                    <ul class="absolute right-0 mt-2 w-60 bg-white border border-gray-200 rounded-lg shadow-xl py-2 text-sm font-medium text-gray-800">
-                        <li><a href="#how-it-works" class="block px-4 py-3 hover:bg-gray-50">How It Works</a></li>
-                        <li><a href="#services" class="block px-4 py-3 hover:bg-gray-50">Featured Services</a></li>
-                        <li><a href="#insights" class="block px-4 py-3 hover:bg-gray-50">Insights &amp; Advisory</a></li>
-                        <li><a href="#brief" class="block px-4 py-3 hover:bg-gray-50">The Administrative Brief</a></li>
-                        <li class="border-t border-gray-100 mt-1 pt-1"><a href="#consultation" data-dialog="consultation" class="block px-4 py-3 hover:bg-gray-50">Book a Consultation</a></li>
+                    <ul class="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-xl py-2 text-sm font-medium text-gray-800">
+                        <li><a href="#services" class="block px-4 py-3 hover:bg-gray-50">Services</a></li>
+                        <li><a href="#insights" class="block px-4 py-3 hover:bg-gray-50">Insights</a></li>
+                        <li><a href="/about" class="block px-4 py-3 hover:bg-gray-50">About</a></li>
+                        <li><a href="#contact" class="block px-4 py-3 hover:bg-gray-50">Contact</a></li>
                     </ul>
                 </details>
             </div>
@@ -206,13 +224,13 @@
 
     <main id="main">
         <!-- HERO -->
-        <section class="relative bg-brand-dark text-white overflow-hidden py-12 lg:py-16" aria-labelledby="hero-title">
+        <section class="relative bg-brand-dark text-white overflow-hidden pb-10 lg:py-16" aria-labelledby="hero-title">
             <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-slate-900/90" aria-hidden="true"></div>
 
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid lg:grid-cols-12 gap-8 items-center mb-8">
+                <div class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
                     <div class="lg:col-span-7 space-y-4">
-                        <p class="inline-block text-brand-gold text-xs font-semibold tracking-widest uppercase border-b border-brand-gold/30 pb-1">
+                        <p class="hidden sm:inline-block text-brand-gold text-xs font-semibold tracking-widest uppercase border-b border-brand-gold/30 pb-1">
                             Private document representation in Jamaica &amp; overseas
                         </p>
                         <h1 id="hero-title" class="text-3xl sm:text-4xl lg:text-5xl font-heading leading-tight text-white">
@@ -222,222 +240,193 @@
                         <p class="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl">
                             We pre-audit your paperwork against each agency's exact counter rules, then handle the physical legwork, so you avoid rejections, delays and queues at PICA, TAJ, RGD and JCF.
                         </p>
+                        <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                            <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20a%20quick%20document%20check." target="_blank" rel="noopener" data-wa="hero-quick-check" class="w-full sm:w-auto bg-brand-gold text-brand-dark px-7 py-3.5 rounded-md font-semibold text-sm hover:bg-brand-goldHover transition shadow-lg flex items-center justify-center gap-2 touch-target">
+                                <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i> WhatsApp Quick Check
+                            </a>
+                            <a href="#consultation" data-dialog="consultation" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3.5 rounded-md font-medium text-sm transition flex items-center justify-center gap-2 touch-target cursor-pointer">
+                                <i class="far fa-calendar-alt text-brand-gold text-xs" aria-hidden="true"></i> Book a Consultation
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="lg:col-span-5 flex justify-center">
-                        <figure class="relative w-full max-w-md rounded-xl overflow-hidden border-2 border-brand-gold/30 shadow-2xl">
+                    <div class="lg:col-span-5 order-first lg:order-none -mx-4 sm:mx-0 flex justify-center">
+                        <figure class="relative w-full lg:max-w-md overflow-hidden sm:mt-8 lg:mt-0 sm:rounded-xl sm:border-2 sm:border-brand-gold/30 sm:shadow-2xl">
     <img src="/assets/hero.webp"
-         sizes="(min-width: 1024px) 448px, 100vw"
          width="800" height="576" fetchpriority="high" decoding="async"
          alt="Laura Clarke, Executive Administrative Concierge"
-         class="w-full h-64 sm:h-72 object-cover">
+         class="w-full aspect-[16/10] sm:aspect-auto sm:h-72 object-cover">
     <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent" aria-hidden="true"></div>
     <figcaption class="absolute bottom-3 left-4 right-4 text-xs text-gray-100 bg-brand-dark/85 backdrop-blur-md p-2.5 rounded border border-white/10 flex items-center justify-between gap-2">
         <span><i class="fas fa-check-circle text-brand-gold mr-1" aria-hidden="true"></i> Pre-audit compliance</span>
         <span><i class="fas fa-shield-alt text-brand-gold mr-1" aria-hidden="true"></i> Direct representation</span>
     </figcaption>
 </figure>
-                                                    </figure>
                     </div>
                 </div>
 
-                <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-start gap-4">
-                    <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20a%20quick%20document%20check." target="_blank" rel="noopener" data-wa="hero-quick-check" class="w-full sm:w-auto bg-brand-gold text-brand-dark px-7 py-3.5 rounded-md font-semibold text-sm hover:bg-brand-goldHover transition shadow-lg flex items-center justify-center gap-2 touch-target">
-                        <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i> WhatsApp Quick Check
-                    </a>
-                    <a href="#consultation" data-dialog="consultation" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3.5 rounded-md font-medium text-sm transition flex items-center justify-center gap-2 touch-target cursor-pointer">
-                        <i class="far fa-calendar-alt text-brand-gold text-xs" aria-hidden="true"></i> Book a Consultation
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- AGENCIES BANNER -->
-        <section class="bg-white border-b border-gray-200 py-4 shadow-sm" aria-labelledby="agencies-title">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
-                <h2 id="agencies-title" class="font-body text-gray-700 font-semibold whitespace-nowrap flex items-center gap-2 text-sm">
-                    <i class="fas fa-shield-alt text-brand-goldText" aria-hidden="true"></i> Navigating official processes across:
-                </h2>
-                <ul class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-gray-900 font-bold text-xs sm:text-sm">
-                    <li>PICA <span class="text-gray-600 font-normal">(Passports)</span></li>
-                    <li>TAJ <span class="text-gray-600 font-normal">(TRN &amp; Tax)</span></li>
-                    <li>RGD <span class="text-gray-600 font-normal">(Registry)</span></li>
-                    <li>JCF <span class="text-gray-600 font-normal">(Police Records)</span></li>
-                    <li>MFAFT <span class="text-gray-600 font-normal">(Apostille)</span></li>
-                    <li class="text-brand-goldText font-semibold bg-amber-50 px-2.5 py-1 rounded border border-amber-200">+ Other public bodies</li>
-                </ul>
             </div>
         </section>
 
         <!-- HOW IT WORKS -->
-        <section class="py-12 bg-white border-b border-gray-200" id="how-it-works" aria-labelledby="how-title">
+        <section class="py-10 bg-white border-b border-gray-200" id="how-it-works" aria-labelledby="how-title">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-8">
-                    <h2 id="how-title" class="text-2xl sm:text-3xl font-heading text-brand-dark">How We Work Together</h2>
-                    <p class="text-sm text-gray-600 mt-2">A simple, transparent process from first message to finished document.</p>
+                <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 mb-6">
+                    <h2 id="how-title" class="text-2xl sm:text-3xl font-heading text-brand-dark">How it works</h2>
+                    <a href="/about" class="text-sm font-semibold text-brand-goldText hover:underline">More about us</a>
                 </div>
-                <ol class="grid md:grid-cols-3 gap-6">
-                    <li class="bg-brand-light p-6 rounded-lg border border-gray-200">
-                        <span class="w-8 h-8 bg-brand-dark text-brand-gold rounded-full flex items-center justify-center font-bold text-sm mb-4" aria-hidden="true">1</span>
-                        <h3 class="font-heading font-bold text-lg text-brand-dark mb-2">Document Pre-Audit</h3>
-                        <p class="text-sm text-gray-600">Send us a WhatsApp photo of your existing IDs and documents. We audit everything against exact agency rules before any filing fees are paid.</p>
+                <ol class="grid gap-6 md:grid-cols-3 md:gap-8">
+                    <li class="flex gap-4">
+                        <span class="w-8 h-8 shrink-0 bg-brand-dark text-brand-gold rounded-full flex items-center justify-center font-bold text-sm" aria-hidden="true">1</span>
+                        <div>
+                            <h3 class="font-heading font-bold text-lg text-brand-dark leading-tight">Pre-audit</h3>
+                            <p class="text-sm text-gray-600 mt-1">We check your documents against the agency's exact rules before you pay any government fees.</p>
+                        </div>
                     </li>
-                    <li class="bg-brand-light p-6 rounded-lg border border-gray-200">
-                        <span class="w-8 h-8 bg-brand-dark text-brand-gold rounded-full flex items-center justify-center font-bold text-sm mb-4" aria-hidden="true">2</span>
-                        <h3 class="font-heading font-bold text-lg text-brand-dark mb-2">Brief Consultation &amp; Setup</h3>
-                        <p class="text-sm text-gray-600">We complete application details over a brief call, set up portal entries and coordinate fee payments. Exact spellings and addresses are confirmed by text.</p>
+                    <li class="flex gap-4">
+                        <span class="w-8 h-8 shrink-0 bg-brand-dark text-brand-gold rounded-full flex items-center justify-center font-bold text-sm" aria-hidden="true">2</span>
+                        <div>
+                            <h3 class="font-heading font-bold text-lg text-brand-dark leading-tight">Setup</h3>
+                            <p class="text-sm text-gray-600 mt-1">We complete the application with you by phone and arrange the government fees.</p>
+                        </div>
                     </li>
-                    <li class="bg-brand-light p-6 rounded-lg border border-gray-200">
-                        <span class="w-8 h-8 bg-brand-dark text-brand-gold rounded-full flex items-center justify-center font-bold text-sm mb-4" aria-hidden="true">3</span>
-                        <h3 class="font-heading font-bold text-lg text-brand-dark mb-2">Turnkey or Guided Filing</h3>
-                        <p class="text-sm text-gray-600">Depending on agency rules, we either handle it 100% turnkey through to pickup, or use hybrid guided filing: a pre-audited file for any mandatory in-person biometric or fingerprint appointment.</p>
+                    <li class="flex gap-4">
+                        <span class="w-8 h-8 shrink-0 bg-brand-dark text-brand-gold rounded-full flex items-center justify-center font-bold text-sm" aria-hidden="true">3</span>
+                        <div>
+                            <h3 class="font-heading font-bold text-lg text-brand-dark leading-tight">Filing</h3>
+                            <p class="text-sm text-gray-600 mt-1">We file and collect for you, or prepare your file for any in-person fingerprint or biometrics appointment.</p>
+                        </div>
                     </li>
                 </ol>
+                <div class="mt-8 rounded-lg border border-gray-200 bg-brand-light p-5 sm:p-6 flex gap-4">
+                    <span class="w-10 h-10 shrink-0 rounded-full bg-brand-emerald text-white flex items-center justify-center" aria-hidden="true"><i class="fas fa-lock text-sm"></i></span>
+                    <div>
+                        <h3 id="privacy-title" class="font-heading font-bold text-lg text-brand-dark leading-tight">How we protect your documents</h3>
+                        <ul class="checklist mt-3 grid gap-2 sm:grid-cols-2 sm:gap-x-8 text-sm text-gray-700">
+                            <li>Used only to prepare and file your application</li>
+                            <li>Shared only with the agency processing your request</li>
+                            <li>Never sold, published or passed to third parties</li>
+                            <li>Securely deleted once your application is complete</li>
+                        </ul>
+                        <p class="mt-3 text-xs text-gray-600">Full details are in our <a href="/privacy" class="underline text-brand-goldText">Privacy Policy</a>.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- SERVICES DIRECTORY -->
-        <section class="py-16 bg-brand-light" id="services" aria-labelledby="services-title">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-14 sm:py-16 svc-section" id="services" aria-labelledby="services-title">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-8">
                     <h2 id="services-title" class="text-3xl font-heading text-brand-dark mb-3">Featured Administrative Services</h2>
                     <p class="text-base text-gray-600 max-w-2xl mx-auto">
-                        Our most requested services are below. <strong>This list isn't exhaustive.</strong> Click any service to view its exact requirements, government fees, and concierge retainer.
+                        Our most requested services. Tap any one to see exactly what we need from you, the government fee and our retainer.
                     </p>
                 </div>
 
-                <div class="max-w-xl mx-auto mb-8 bg-white p-4 rounded-xl shadow-sm border border-gray-200" role="search">
-                    <label for="service-search" class="block text-sm font-semibold text-brand-dark mb-1">Looking for a specific document or agency?</label>
-                    <p id="search-hint" class="text-xs text-gray-600 mb-3">Type to filter the directory, or browse by category below.</p>
-                    <div class="relative">
-                        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" aria-hidden="true"></i>
-                        <input type="search" id="service-search" aria-describedby="search-hint" autocomplete="off" placeholder="e.g. passport, TRN, police, licence…" class="w-full min-h-[44px] pl-11 pr-4 py-3 rounded-lg bg-gray-50 border border-gray-300 focus:border-brand-gold focus:bg-white text-sm transition">
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-2 mb-8" role="group" aria-label="Filter services by category">
-                    <button type="button" class="filter-btn touch-target px-5 py-2.5 rounded-full text-sm font-medium transition" data-filter="all" aria-pressed="true">All featured services</button>
-                    <button type="button" class="filter-btn touch-target px-5 py-2.5 rounded-full text-sm font-medium transition" data-filter="identity" aria-pressed="false">Identity &amp; travel</button>
-                    <button type="button" class="filter-btn touch-target px-5 py-2.5 rounded-full text-sm font-medium transition" data-filter="legal" aria-pressed="false">Legal &amp; registry</button>
-                    <button type="button" class="filter-btn touch-target px-5 py-2.5 rounded-full text-sm font-medium transition" data-filter="auto" aria-pressed="false">Driving &amp; vehicles</button>
+                <div class="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:justify-center mb-8" role="group" aria-label="Filter services by category">
+                    <button type="button" class="filter-btn touch-target px-3 sm:px-5 py-2.5 rounded-full text-sm font-medium transition" data-filter="all" aria-pressed="true">All services</button>
+                    <button type="button" class="filter-btn touch-target px-3 sm:px-5 py-2.5 rounded-full text-sm font-medium transition" data-filter="identity" aria-pressed="false">Identity &amp; travel</button>
+                    <button type="button" class="filter-btn touch-target px-3 sm:px-5 py-2.5 rounded-full text-sm font-medium transition" data-filter="legal" aria-pressed="false">Legal &amp; registry</button>
+                    <button type="button" class="filter-btn touch-target px-3 sm:px-5 py-2.5 rounded-full text-sm font-medium transition" data-filter="auto" aria-pressed="false">Driving &amp; vehicles</button>
                 </div>
                 <p class="sr-only" aria-live="polite" id="filter-status"></p>
 
-                <ul class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden divide-y divide-gray-100">
+                <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5">
 
-                    <li class="service-item service-row p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-cat="identity" data-keywords="passport pica travel renewal lost stolen minor child name change">
-                        <div class="flex items-start gap-4">
-                            <span class="w-16 sm:w-20 shrink-0 mt-0.5 block text-center bg-blue-50 text-blue-800 text-xs font-bold py-1.5 rounded uppercase tracking-wider border border-blue-100">PICA</span>
-                            <div class="flex-1">
-                                <h3 class="font-semibold text-base sm:text-lg text-brand-dark mb-1 leading-tight"><a href="#passport" class="stretched" data-dialog="passport">Passport Renewal &amp; Replacement</a></h3>
-                                <p class="text-sm text-gray-600 leading-snug">First-time applications, adult renewals, minor applications and lost passport replacements.</p>
-                            </div>
+                    <li class="service-item service-row" data-cat="identity" data-keywords="passport pica travel renewal lost stolen minor child name change" style="--accent:#1E40AF">
+                        <div class="svc-cover"><i class="fas fa-passport" aria-hidden="true"></i><span>PICA</span></div>
+                        <div class="svc-body">
+                            <h3 class="svc-title"><a href="#passport" class="stretched" data-dialog="passport">Passport Renewal &amp; Replacement</a></h3>
+                            <p class="svc-desc">First-time applications, adult renewals, minor applications and lost passport replacements.</p>
+                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">What we need from you</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
-                        <span class="text-sm text-brand-goldText font-semibold whitespace-nowrap flex items-center gap-1.5 sm:ml-4" aria-hidden="true">What we need from you <i class="fas fa-chevron-right text-xs"></i></span>
                     </li>
 
-                    <li class="service-item service-row p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-cat="identity" data-keywords="trn tax taj taxpayer registration number card diaspora overseas">
-                        <div class="flex items-start gap-4">
-                            <span class="w-16 sm:w-20 shrink-0 mt-0.5 block text-center bg-green-50 text-green-800 text-xs font-bold py-1.5 rounded uppercase tracking-wider border border-green-100">TAJ</span>
-                            <div class="flex-1">
-                                <h3 class="font-semibold text-base sm:text-lg text-brand-dark mb-1 leading-tight"><a href="#trn" class="stretched" data-dialog="trn">Taxpayer Registration Number (TRN)</a></h3>
-                                <p class="text-sm text-gray-600 leading-snug">New TRN applications, notarised diaspora representation and official card retrievals.</p>
-                            </div>
+                    <li class="service-item service-row" data-cat="identity" data-keywords="trn tax taj taxpayer registration number card diaspora overseas" style="--accent:#166534">
+                        <div class="svc-cover"><i class="fas fa-id-card" aria-hidden="true"></i><span>TAJ</span></div>
+                        <div class="svc-body">
+                            <h3 class="svc-title"><a href="#trn" class="stretched" data-dialog="trn">Taxpayer Registration Number (TRN)</a></h3>
+                            <p class="svc-desc">New TRN applications, notarised diaspora representation and official card retrievals.</p>
+                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">What we need from you</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
-                        <span class="text-sm text-brand-goldText font-semibold whitespace-nowrap flex items-center gap-1.5 sm:ml-4" aria-hidden="true">What we need from you <i class="fas fa-chevron-right text-xs"></i></span>
                     </li>
 
-                    <li class="service-item service-row p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-cat="legal" data-keywords="police record certificate character clearance jcf fingerprint criminal background">
-                        <div class="flex items-start gap-4">
-                            <span class="w-16 sm:w-20 shrink-0 mt-0.5 block text-center bg-slate-100 text-slate-800 text-xs font-bold py-1.5 rounded uppercase tracking-wider border border-slate-200">JCF</span>
-                            <div class="flex-1">
-                                <h3 class="font-semibold text-base sm:text-lg text-brand-dark mb-1 leading-tight"><a href="#police-record" class="stretched" data-dialog="police-record">Police Records &amp; Clearance Certificates</a></h3>
-                                <p class="text-sm text-gray-600 leading-snug">Local fingerprint scheduling, overseas fingerprint submission and certificate pickup.</p>
-                            </div>
+                    <li class="service-item service-row" data-cat="legal" data-keywords="police record certificate character clearance jcf fingerprint criminal background" style="--accent:#334155">
+                        <div class="svc-cover"><i class="fas fa-fingerprint" aria-hidden="true"></i><span>JCF</span></div>
+                        <div class="svc-body">
+                            <h3 class="svc-title"><a href="#police-record" class="stretched" data-dialog="police-record">Police Records &amp; Clearance Certificates</a></h3>
+                            <p class="svc-desc">Local fingerprint scheduling, overseas fingerprint submission and certificate pickup.</p>
+                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">What we need from you</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
-                        <span class="text-sm text-brand-goldText font-semibold whitespace-nowrap flex items-center gap-1.5 sm:ml-4" aria-hidden="true">What we need from you <i class="fas fa-chevron-right text-xs"></i></span>
                     </li>
 
-                    <li class="service-item service-row p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-cat="legal" data-keywords="apostille authentication legalisation legalization mofa mfaft foreign affairs hague notary overseas">
-                        <div class="flex items-start gap-4">
-                            <span class="w-16 sm:w-20 shrink-0 mt-0.5 block text-center bg-purple-50 text-purple-800 text-xs font-bold py-1.5 rounded uppercase tracking-wider border border-purple-100">MFAFT</span>
-                            <div class="flex-1">
-                                <h3 class="font-semibold text-base sm:text-lg text-brand-dark mb-1 leading-tight"><a href="#apostille" class="stretched" data-dialog="apostille">Apostille &amp; Document Authentication</a></h3>
-                                <p class="text-sm text-gray-600 leading-snug">Getting Jamaican public records recognised abroad, by apostille or by authentication and legalisation.</p>
-                            </div>
+                    <li class="service-item service-row" data-cat="legal" data-keywords="apostille authentication legalisation legalization mofa mfaft foreign affairs hague notary overseas" style="--accent:#6B21A8">
+                        <div class="svc-cover"><i class="fas fa-stamp" aria-hidden="true"></i><span>MFAFT</span></div>
+                        <div class="svc-body">
+                            <h3 class="svc-title"><a href="#apostille" class="stretched" data-dialog="apostille">Apostille &amp; Document Authentication</a></h3>
+                            <p class="svc-desc">Getting Jamaican public records recognised abroad, by apostille or by authentication and legalisation.</p>
+                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">What we need from you</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
-                        <span class="text-sm text-brand-goldText font-semibold whitespace-nowrap flex items-center gap-1.5 sm:ml-4" aria-hidden="true">What we need from you <i class="fas fa-chevron-right text-xs"></i></span>
                     </li>
 
-                    <li class="service-item service-row p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-cat="legal" data-keywords="rgd birth marriage death certificate registrar genealogy correction search">
-                        <div class="flex items-start gap-4">
-                            <span class="w-16 sm:w-20 shrink-0 mt-0.5 block text-center bg-rose-50 text-rose-800 text-xs font-bold py-1.5 rounded uppercase tracking-wider border border-rose-100">RGD</span>
-                            <div class="flex-1">
-                                <h3 class="font-semibold text-base sm:text-lg text-brand-dark mb-1 leading-tight"><a href="#rgd-certificates" class="stretched" data-dialog="rgd-certificates">Birth, Marriage &amp; Death Certificates</a></h3>
-                                <p class="text-sm text-gray-600 leading-snug">Official certificate searches, genealogical retrievals and registry corrections.</p>
-                            </div>
+                    <li class="service-item service-row" data-cat="legal" data-keywords="rgd birth marriage death certificate registrar genealogy correction search" style="--accent:#9F1239">
+                        <div class="svc-cover"><i class="fas fa-scroll" aria-hidden="true"></i><span>RGD</span></div>
+                        <div class="svc-body">
+                            <h3 class="svc-title"><a href="#rgd-certificates" class="stretched" data-dialog="rgd-certificates">Birth, Marriage &amp; Death Certificates</a></h3>
+                            <p class="svc-desc">Official certificate searches, genealogical retrievals and registry corrections.</p>
+                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">What we need from you</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
-                        <span class="text-sm text-brand-goldText font-semibold whitespace-nowrap flex items-center gap-1.5 sm:ml-4" aria-hidden="true">What we need from you <i class="fas fa-chevron-right text-xs"></i></span>
                     </li>
 
-                    <li class="service-item service-row p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-cat="auto" data-keywords="driver license licence driving permit renewal lost stolen substitute ita taj medical">
-                        <div class="flex items-start gap-4">
-                            <span class="w-16 sm:w-20 shrink-0 mt-0.5 block text-center bg-amber-50 text-amber-900 text-xs font-bold py-1.5 rounded uppercase tracking-wider border border-amber-200">TAJ/ITA</span>
-                            <div class="flex-1">
-                                <h3 class="font-semibold text-base sm:text-lg text-brand-dark mb-1 leading-tight"><a href="#drivers-licence" class="stretched" data-dialog="drivers-licence">Driver's Licence Renewal &amp; Replacement</a></h3>
-                                <p class="text-sm text-gray-600 leading-snug">Renewal of expired licences, lost card replacements and medical endorsement submissions.</p>
-                            </div>
+                    <li class="service-item service-row" data-cat="auto" data-keywords="driver license licence driving permit renewal lost stolen substitute ita taj medical" style="--accent:#92400E">
+                        <div class="svc-cover"><i class="fas fa-car" aria-hidden="true"></i><span>TAJ/ITA</span></div>
+                        <div class="svc-body">
+                            <h3 class="svc-title"><a href="#drivers-licence" class="stretched" data-dialog="drivers-licence">Driver's Licence Renewal &amp; Replacement</a></h3>
+                            <p class="svc-desc">Renewal of expired licences, lost card replacements and medical endorsement submissions.</p>
+                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">What we need from you</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
-                        <span class="text-sm text-brand-goldText font-semibold whitespace-nowrap flex items-center gap-1.5 sm:ml-4" aria-hidden="true">What we need from you <i class="fas fa-chevron-right text-xs"></i></span>
                     </li>
 
-                    <li class="service-item service-row p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-cat="auto" data-keywords="motor vehicle car registration license licence fitness insurance tax office renewal">
-                        <div class="flex items-start gap-4">
-                            <span class="w-16 sm:w-20 shrink-0 mt-0.5 block text-center bg-amber-50 text-amber-900 text-xs font-bold py-1.5 rounded uppercase tracking-wider border border-amber-200">TAJ</span>
-                            <div class="flex-1">
-                                <h3 class="font-semibold text-base sm:text-lg text-brand-dark mb-1 leading-tight"><a href="#vehicle-licence" class="stretched" data-dialog="vehicle-licence">Motor Vehicle Licence Renewal</a></h3>
-                                <p class="text-sm text-gray-600 leading-snug">Skip tax office lines for annual vehicle registration and fitness renewal processing.</p>
-                            </div>
+                    <li class="service-item service-row" data-cat="auto" data-keywords="motor vehicle car registration license licence fitness insurance tax office renewal" style="--accent:#92400E">
+                        <div class="svc-cover"><i class="fas fa-car-side" aria-hidden="true"></i><span>TAJ</span></div>
+                        <div class="svc-body">
+                            <h3 class="svc-title"><a href="#vehicle-licence" class="stretched" data-dialog="vehicle-licence">Motor Vehicle Licence Renewal</a></h3>
+                            <p class="svc-desc">Skip tax office lines for annual vehicle registration and fitness renewal processing.</p>
+                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">What we need from you</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
-                        <span class="text-sm text-brand-goldText font-semibold whitespace-nowrap flex items-center gap-1.5 sm:ml-4" aria-hidden="true">What we need from you <i class="fas fa-chevron-right text-xs"></i></span>
                     </li>
 
-                    <li class="service-item service-row p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-cat="auto" data-keywords="driving abstract record history ita insurance dmv verification">
-                        <div class="flex items-start gap-4">
-                            <span class="w-16 sm:w-20 shrink-0 mt-0.5 block text-center bg-yellow-50 text-yellow-900 text-xs font-bold py-1.5 rounded uppercase tracking-wider border border-yellow-200">ITA</span>
-                            <div class="flex-1">
-                                <h3 class="font-semibold text-base sm:text-lg text-brand-dark mb-1 leading-tight"><a href="#driving-abstract" class="stretched" data-dialog="driving-abstract">Driving Abstracts &amp; Record Verification</a></h3>
-                                <p class="text-sm text-gray-600 leading-snug">Official driving history records for foreign licensing or insurance validation overseas.</p>
-                            </div>
+                    <li class="service-item service-row" data-cat="auto" data-keywords="driving abstract record history ita insurance dmv verification" style="--accent:#854D0E">
+                        <div class="svc-cover"><i class="fas fa-file-lines" aria-hidden="true"></i><span>ITA</span></div>
+                        <div class="svc-body">
+                            <h3 class="svc-title"><a href="#driving-abstract" class="stretched" data-dialog="driving-abstract">Driving Abstracts &amp; Record Verification</a></h3>
+                            <p class="svc-desc">Official driving history records for foreign licensing or insurance validation overseas.</p>
+                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">What we need from you</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
-                        <span class="text-sm text-brand-goldText font-semibold whitespace-nowrap flex items-center gap-1.5 sm:ml-4" aria-hidden="true">What we need from you <i class="fas fa-chevron-right text-xs"></i></span>
                     </li>
                 </ul>
 
-                <div id="no-results" class="bg-white rounded-xl border border-gray-200 p-6 text-center" hidden>
-                    <h3 class="font-heading text-xl text-brand-dark mb-1">Service not listed? We can still help.</h3>
-                    <p class="text-sm text-gray-600 mb-4">Nothing in our featured directory matches "<span id="no-results-term"></span>", but this list isn't exhaustive. Tell us what you need and we'll confirm how we can assist.</p>
-                    <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20service%20that%20isn%27t%20listed." target="_blank" rel="noopener" data-wa="search-no-results" class="inline-flex items-center gap-2 bg-brand-dark text-white px-5 py-3 rounded-md font-semibold text-sm hover:bg-gray-800 transition touch-target">
-                        <i class="fab fa-whatsapp text-brand-gold text-lg" aria-hidden="true"></i> Ask us on WhatsApp
-                    </a>
-                </div>
 
-                <div class="mt-8 bg-brand-dark rounded-xl p-6 sm:p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg border border-gray-800">
-                    <div class="flex-1">
-                        <h3 class="text-xl font-heading text-white mb-2">Didn't find your service?</h3>
-                        <p class="text-sm text-gray-300 leading-relaxed">
-                            We routinely help with specialised administrative tasks such as <strong class="text-white">visa administrative readiness</strong>, land title searches and custom ministry filings. Book a brief consultation to see how we can help.
-                        </p>
+                <aside class="mt-8 sm:mt-10 relative overflow-hidden rounded-xl bg-brand-dark text-white border-l-4 border-brand-gold shadow-lg" aria-labelledby="unlisted-title">
+                    <div class="p-6 sm:p-8 lg:p-10 grid gap-6 lg:grid-cols-12 lg:items-center">
+                        <div class="lg:col-span-8">
+                            <h3 id="unlisted-title" class="text-2xl sm:text-3xl font-heading text-white">Need something that isn't listed?</h3>
+                            <p class="mt-2 text-gray-300 max-w-2xl">These are only our most requested services. If it involves a Jamaican government office, send us a message and we'll confirm whether we can help and what it involves.</p>
+                            <ul class="mt-5 flex flex-wrap gap-2 text-sm" aria-label="Other things we help with">
+                                <li class="px-3 py-1.5 rounded-full bg-white/10 border border-white/15">Visa administrative readiness</li>
+                                <li class="px-3 py-1.5 rounded-full bg-white/10 border border-white/15">Land title searches</li>
+                                <li class="px-3 py-1.5 rounded-full bg-white/10 border border-white/15">Ministry filings</li>
+                                <li class="px-3 py-1.5 rounded-full bg-white/10 border border-white/15">Other public bodies</li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-4 lg:text-right">
+                            <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20service%20that%20isn%27t%20listed." target="_blank" rel="noopener" data-wa="unlisted-ask" class="w-full lg:w-auto inline-flex items-center justify-center gap-2 bg-brand-gold text-brand-dark px-7 py-3.5 rounded-md font-semibold text-sm hover:bg-brand-goldHover transition shadow-lg touch-target">
+                                <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i> Ask about your service
+                            </a>
+                        </div>
                     </div>
-                    <div class="shrink-0 w-full sm:w-auto flex flex-col gap-3">
-                        <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20have%20a%20question%20about%20a%20service%20that%20isn%27t%20listed." target="_blank" rel="noopener" data-wa="unlisted-ask" class="w-full sm:w-auto bg-brand-gold text-brand-dark px-6 py-3 rounded-md font-semibold text-sm hover:bg-brand-goldHover transition flex items-center justify-center gap-2 touch-target">
-                            <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i> Ask Us on WhatsApp
-                        </a>
-                        <a href="#consultation" data-dialog="consultation" class="w-full sm:w-auto bg-white/10 text-white px-6 py-3 rounded-md font-medium text-sm hover:bg-white/20 transition border border-white/20 flex items-center justify-center gap-2 touch-target cursor-pointer">
-                            <i class="far fa-calendar-check text-brand-gold text-xs" aria-hidden="true"></i> Book a Consultation
-                        </a>
-                    </div>
-                </div>
+                </aside>
             </div>
         </section>
 
@@ -527,46 +516,37 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-brand-dark text-gray-300 text-sm">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-white/10">
-            <div class="md:col-span-2">
-                <p class="font-heading text-white text-xl font-bold mb-2">Laura Clarke Administrative Services</p>
-                <p class="mb-4">Professional, on-the-ground document representation and compliance auditing for local and overseas clients.</p>
-                <ul class="space-y-2">
+    <footer id="contact" class="bg-brand-dark text-gray-300 text-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row md:items-start md:justify-between gap-5 border-b border-white/10">
+            <div>
+                <p class="font-heading text-white text-lg font-bold">Laura Clarke Administrative Services</p>
+                <ul class="mt-3 space-y-1.5 text-gray-400">
                     <li><i class="fas fa-map-marker-alt text-brand-gold w-5" aria-hidden="true"></i> St. Catherine, Jamaica</li>
-                    <li><a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20document." target="_blank" rel="noopener" data-wa="footer" class="hover:text-brand-gold inline-flex items-center min-h-[44px]"><i class="fab fa-whatsapp text-brand-gold w-5" aria-hidden="true"></i> WhatsApp messaging &amp; consultations</a></li>
+                    <li><a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20document." target="_blank" rel="noopener" data-wa="footer" class="text-gray-200 hover:text-brand-gold inline-flex items-center min-h-[32px]"><i class="fab fa-whatsapp text-brand-gold w-5" aria-hidden="true"></i> +1 (876) 561-2614</a></li>
+                    <li><a href="mailto:info@documenthelpja.com" class="text-gray-200 hover:text-brand-gold inline-flex items-center min-h-[32px] break-all"><i class="far fa-envelope text-brand-gold w-5" aria-hidden="true"></i> info@documenthelpja.com</a></li>
                 </ul>
             </div>
-            <nav aria-labelledby="footer-links-title">
-                <h2 id="footer-links-title" class="font-body text-white font-semibold mb-4 text-sm">Quick links</h2>
-                <ul>
-                    <li><a href="#how-it-works" class="hover:text-brand-gold transition inline-flex items-center min-h-[44px]">How It Works</a></li>
-                    <li><a href="#services" class="hover:text-brand-gold transition inline-flex items-center min-h-[44px]">Services Directory</a></li>
-                    <li><a href="/blog" class="hover:text-brand-gold transition inline-flex items-center min-h-[44px]">Insights &amp; Blog</a></li>
-                    <li><a href="/about" class="hover:text-brand-gold transition inline-flex items-center min-h-[44px]">About Us</a></li>
-                </ul>
-            </nav>
-            <nav aria-labelledby="footer-legal-title">
-                <h2 id="footer-legal-title" class="font-body text-white font-semibold mb-4 text-sm">Legal</h2>
-                <ul>
-                    <li><a href="/terms" class="hover:text-brand-gold transition inline-flex items-center min-h-[44px]">Terms of Service</a></li>
-                    <li><a href="/privacy" class="hover:text-brand-gold transition inline-flex items-center min-h-[44px]">Privacy Policy</a></li>
-                    <li><a href="/refunds" class="hover:text-brand-gold transition inline-flex items-center min-h-[44px]">Refund &amp; Cancellation Policy</a></li>
+            <nav aria-label="Footer">
+                <ul class="flex flex-wrap gap-x-6 gap-y-1">
+                    <li><a href="#services" class="hover:text-brand-gold transition inline-flex items-center min-h-[40px]">Services</a></li>
+                    <li><a href="/blog" class="hover:text-brand-gold transition inline-flex items-center min-h-[40px]">Insights</a></li>
+                    <li><a href="/about" class="hover:text-brand-gold transition inline-flex items-center min-h-[40px]">About us</a></li>
                 </ul>
             </nav>
         </div>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-xs text-gray-400 leading-relaxed">
-            <p class="mb-3"><strong class="text-gray-300">Disclaimer:</strong> Laura Clarke Administrative Services is an independent, private representation and administrative agency. We are not affiliated with, endorsed by, or representing the Government of Jamaica, PICA, TAJ, RGD, JCF, ITA, MFAFT or any government ministry or agency. Government fees are paid to the relevant agency and are separate from our concierge retainer. You may always apply to any agency directly yourself.</p>
-            <p>&copy; <span id="year">2026</span> Laura Clarke Administrative Services. All rights reserved.</p>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-xs text-gray-400 leading-relaxed">
+            <p class="max-w-4xl">Laura Clarke Administrative Services is an independent, private representation and administrative agency. We are not affiliated with, endorsed by, or representing the Government of Jamaica, PICA, TAJ, RGD, JCF, ITA, MFAFT or any government ministry or agency. Government fees are paid to the relevant agency and are separate from our concierge retainer. You may always apply to any agency directly yourself.</p>
+            <div class="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <p>&copy; <span id="year">2026</span> Laura Clarke Administrative Services</p>
+                <ul class="flex flex-wrap gap-x-5">
+                    <li><a href="/terms" class="hover:text-brand-gold inline-flex items-center min-h-[32px]">Terms</a></li>
+                    <li><a href="/privacy" class="hover:text-brand-gold inline-flex items-center min-h-[32px]">Privacy</a></li>
+                    <li><a href="/refunds" class="hover:text-brand-gold inline-flex items-center min-h-[32px]">Refunds &amp; cancellations</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 
-    <!-- Mobile sticky CTA -->
-    <div class="mobile-cta md:hidden fixed bottom-0 inset-x-0 z-30 bg-white/95 backdrop-blur border-t border-gray-200 px-4 pt-3">
-        <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20a%20quick%20document%20check." target="_blank" rel="noopener" data-wa="sticky-mobile" class="w-full bg-brand-dark text-white py-3 rounded-md font-semibold text-sm flex items-center justify-center gap-2 touch-target">
-            <i class="fab fa-whatsapp text-brand-gold text-lg" aria-hidden="true"></i> WhatsApp Quick Check
-        </a>
-    </div>
 
 
     <!-- ================= SERVICE & CONSULTATION DIALOGS ================= -->
@@ -581,7 +561,7 @@
         </div>
         <div class="p-4 sm:p-6">
             <!-- Google Calendar Appointment Scheduling begin -->
-            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ24v8vZefGbJfwB2cgwYn78G9vc4JRiKSj6ZKIOx327k-wxtCTaxo0t2x7Dngbw90pjytAjbpWA?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ24v8vZefGbJfwB2cgwYn78G9vc4JRiKSj6ZKIOx327k-wxtCTaxo0t2x7Dngbw90pjytAjbpWA?gv=true" title="Book a consultation with Laura Clarke (Google Calendar)" loading="lazy" style="border: 0" width="100%" height="600"></iframe>
             <!-- end Google Calendar Appointment Scheduling -->
         </div>
     </dialog>
@@ -1219,9 +1199,27 @@
         function closeAll() {
             dialogs.forEach(d => { if (d.open) { d.dataset.silent = '1'; d.close(); } });
         }
+        /* Service windows: the first dropdown opens automatically, and opening one closes the others */
+        function resetAccordions(d) {
+            d.querySelectorAll('details.acc').forEach((acc, i) => { acc.open = i === 0; });
+        }
+        dialogs.forEach(d => {
+            const accs = Array.from(d.querySelectorAll('details.acc'));
+            accs.forEach(acc => acc.addEventListener('toggle', () => {
+                if (!acc.open) return;
+                accs.forEach(other => { if (other !== acc) other.open = false; });
+                // keep the newly opened section's heading in view, just below the window's title bar
+                requestAnimationFrame(() => {
+                    const head = d.firstElementChild;
+                    const top = acc.getBoundingClientRect().top - d.getBoundingClientRect().top + d.scrollTop - head.offsetHeight - 12;
+                    if (d.open) d.scrollTo({ top: Math.max(0, top), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+                });
+            }));
+        });
+
         function syncToHash() {
             const d = byId(decodeURIComponent(location.hash.slice(1)));
-            if (d) { if (!d.open) { closeAll(); d.showModal(); } }
+            if (d) { if (!d.open) { closeAll(); resetAccordions(d); d.showModal(); d.scrollTop = 0; } }
             else { closeAll(); }
         }
 
@@ -1250,37 +1248,21 @@
 
         const buttons = document.querySelectorAll('.filter-btn');
         const items = Array.from(document.querySelectorAll('.service-item'));
-        const search = document.getElementById('service-search');
         const status = document.getElementById('filter-status');
-        const empty = document.getElementById('no-results');
-        const emptyTerm = document.getElementById('no-results-term');
-        let category = 'all';
-        let debounce;
 
-        const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        items.forEach(item => { item.dataset.index = norm(item.textContent + ' ' + (item.dataset.keywords || '')); });
-
-        function apply() {
-            const terms = norm(search.value.trim()).split(/\s+/).filter(Boolean);
+        function apply(category) {
             let shown = 0;
             items.forEach(item => {
-                const catOk = category === 'all' || item.dataset.cat === category;
-                const textOk = terms.every(t => item.dataset.index.includes(t));
-                item.hidden = !(catOk && textOk);
+                item.hidden = !(category === 'all' || item.dataset.cat === category);
                 if (!item.hidden) shown++;
             });
-            empty.hidden = shown !== 0;
-            emptyTerm.textContent = search.value.trim() || 'this category';
             status.textContent = shown === 1 ? '1 service shown' : shown + ' services shown';
         }
 
         buttons.forEach(btn => btn.addEventListener('click', () => {
-            category = btn.dataset.filter;
-            search.value = '';
             buttons.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
-            apply();
+            apply(btn.dataset.filter);
         }));
-        search.addEventListener('input', () => { clearTimeout(debounce); debounce = setTimeout(apply, 120); });
 
         const menu = document.getElementById('mobile-menu');
         if (menu) menu.addEventListener('click', e => { if (e.target.closest('a')) menu.open = false; });
