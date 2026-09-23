@@ -220,8 +220,8 @@
     .hero:hover .hero-title a { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 6px; }
     .hero .card-link::after { z-index: 0; }
 
-    /* WIDE HERO-SIZED IMAGE CARDS (3:1 Rectangle) */
-    .media { position: relative; aspect-ratio: 3 / 1; overflow: hidden; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    /* CLASSIC TALLER IMAGE CARDS (3:2 Rectangle) */
+    .media { position: relative; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
     .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
     .card:hover .media img { transform: scale(1.04); }
     
@@ -327,7 +327,17 @@
       }
       
       .audit-cta, .newsletter { grid-template-columns: 1fr; gap: 24px; }
-      .guide-grid { grid-template-columns: 1fr; }
+      
+      /* SEPARATE THE CARDS ON MOBILE */
+      .guide-grid { 
+        grid-template-columns: 1fr; 
+        row-gap: 48px; 
+      }
+      .guide-grid li:not(:last-child) {
+        border-bottom: 1px solid #333331;
+        padding-bottom: 48px;
+      }
+
       .archive-search { max-width: none; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       footer { padding-bottom: 100px; }
