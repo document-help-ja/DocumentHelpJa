@@ -209,15 +209,16 @@
         .service-row .stretched:focus-visible::after { outline: 3px solid #C89B3C; outline-offset: -3px; border-radius: 10px; }
         .service-item[hidden] { display: none !important; }
 
+        /* SINGLE COLUMN MOBILE VIEW */
         @media (max-width: 640px) {
           .svc-grid { 
-            grid-template-columns: repeat(2, 1fr) !important; 
-            gap: 12px !important; 
+            grid-template-columns: 1fr !important; 
+            gap: 24px !important; 
           }
-          .svc-media { aspect-ratio: 16 / 10; }
-          .svc-body { padding: 12px 14px; }
-          .svc-title { font-size: 0.95rem; }
-          .svc-cta { margin-top: 8px; font-size: 0.8rem; }
+          .svc-media { aspect-ratio: 3 / 2; }
+          .svc-body { padding: 20px 22px; }
+          .svc-title { font-size: 1.1rem; }
+          .svc-cta { margin-top: 12px; font-size: 0.875rem; }
         }
 
         .filter-btn { background: #fff; color: #374151; border: 1px solid #D1D5DB; }
@@ -395,8 +396,14 @@
                 </div>
                 <p class="sr-only" aria-live="polite" id="filter-status"></p>
 
+                <!-- LOGICALLY GROUPED SERVICE CARDS -->
                 <ul class="svc-grid grid gap-3 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5">
 
+                    <!-- ==========================================
+                         GROUP 1: IDENTITY & LEGAL CLEARANCES
+                         ========================================== -->
+                         
+                    <!-- 1. PASSPORT -->
                     <li class="service-item service-row" data-cat="identity" data-keywords="passport pica travel renewal lost stolen minor child name change">
                         <div class="svc-media">
                             <span class="svc-badge">PICA</span>
@@ -408,39 +415,7 @@
                         </div>
                     </li>
 
-                    <li class="service-item service-row" data-cat="identity" data-keywords="trn tax taj taxpayer registration number card diaspora overseas">
-                        <div class="svc-media">
-                            <span class="svc-badge">TAJ</span>
-                            <img src="assets/trn-application.webp" alt="Jamaican TRN Application" loading="lazy" decoding="async">
-                        </div>
-                        <div class="svc-body">
-                            <h3 class="svc-title"><a href="#trn" class="stretched" data-dialog="trn">Taxpayer Registration Number (TRN)</a></h3>
-                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
-                        </div>
-                    </li>
-
-                    <li class="service-item service-row" data-cat="legal" data-keywords="police record certificate character clearance jcf fingerprint criminal background">
-                        <div class="svc-media">
-                            <span class="svc-badge">JCF</span>
-                            <img src="assets/police-record.webp" alt="Jamaican Police Record Application" loading="lazy" decoding="async">
-                        </div>
-                        <div class="svc-body">
-                            <h3 class="svc-title"><a href="#police-record" class="stretched" data-dialog="police-record">Police Records &amp; Clearance Certificates</a></h3>
-                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
-                        </div>
-                    </li>
-
-                    <li class="service-item service-row" data-cat="legal" data-keywords="apostille authentication legalisation legalization mofa mfaft foreign affairs hague notary overseas">
-                        <div class="svc-media">
-                            <span class="svc-badge">MFAFT</span>
-                            <img src="assets/lost-official-documents.webp" alt="Document Apostille and Legalisation" loading="lazy" decoding="async">
-                        </div>
-                        <div class="svc-body">
-                            <h3 class="svc-title"><a href="#apostille" class="stretched" data-dialog="apostille">Apostille &amp; Document Authentication</a></h3>
-                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
-                        </div>
-                    </li>
-
+                    <!-- 2. RGD (BIRTH/MARRIAGE/DEATH) -->
                     <li class="service-item service-row" data-cat="legal" data-keywords="rgd birth marriage death certificate registrar genealogy correction search">
                         <div class="svc-media">
                             <span class="svc-badge">RGD</span>
@@ -452,6 +427,48 @@
                         </div>
                     </li>
 
+                    <!-- 3. POLICE RECORD -->
+                    <li class="service-item service-row" data-cat="legal" data-keywords="police record certificate character clearance jcf fingerprint criminal background">
+                        <div class="svc-media">
+                            <span class="svc-badge">JCF</span>
+                            <img src="assets/police-record.webp" alt="Jamaican Police Record Application" loading="lazy" decoding="async">
+                        </div>
+                        <div class="svc-body">
+                            <h3 class="svc-title"><a href="#police-record" class="stretched" data-dialog="police-record">Police Records &amp; Clearance Certificates</a></h3>
+                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </li>
+
+                    <!-- 4. APOSTILLE -->
+                    <li class="service-item service-row" data-cat="legal" data-keywords="apostille authentication legalisation legalization mofa mfaft foreign affairs hague notary overseas">
+                        <div class="svc-media">
+                            <span class="svc-badge">MFAFT</span>
+                            <img src="assets/lost-stolen-passport.webp" alt="Document Apostille and Legalisation" loading="lazy" decoding="async">
+                        </div>
+                        <div class="svc-body">
+                            <h3 class="svc-title"><a href="#apostille" class="stretched" data-dialog="apostille">Apostille &amp; Document Authentication</a></h3>
+                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </li>
+
+
+                    <!-- ==========================================
+                         GROUP 2: TAJ & ITA (Licences & Taxes)
+                         ========================================== -->
+
+                    <!-- 5. TRN -->
+                    <li class="service-item service-row" data-cat="identity" data-keywords="trn tax taj taxpayer registration number card diaspora overseas">
+                        <div class="svc-media">
+                            <span class="svc-badge">TAJ</span>
+                            <img src="assets/trn-application.webp" alt="Jamaican TRN Application" loading="lazy" decoding="async">
+                        </div>
+                        <div class="svc-body">
+                            <h3 class="svc-title"><a href="#trn" class="stretched" data-dialog="trn">Taxpayer Registration Number (TRN)</a></h3>
+                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </li>
+
+                    <!-- 6. DRIVER'S LICENCE -->
                     <li class="service-item service-row" data-cat="auto" data-keywords="driver license licence driving permit renewal lost stolen substitute ita taj medical">
                         <div class="svc-media">
                             <span class="svc-badge">TAJ / ITA</span>
@@ -463,6 +480,7 @@
                         </div>
                     </li>
 
+                    <!-- 7. MOTOR VEHICLE LICENCE -->
                     <li class="service-item service-row" data-cat="auto" data-keywords="motor vehicle car registration license licence fitness insurance tax office renewal">
                         <div class="svc-media">
                             <span class="svc-badge">TAJ</span>
@@ -474,6 +492,7 @@
                         </div>
                     </li>
 
+                    <!-- 8. DRIVING ABSTRACT -->
                     <li class="service-item service-row" data-cat="auto" data-keywords="driving abstract record history ita insurance dmv verification">
                         <div class="svc-media">
                             <span class="svc-badge">ITA</span>
@@ -484,6 +503,7 @@
                             <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
                     </li>
+
                 </ul>
 
                 <aside class="mt-8 sm:mt-10 relative overflow-hidden rounded-xl bg-brand-dark text-white border-l-4 border-brand-gold shadow-lg" aria-labelledby="unlisted-title">
@@ -1186,7 +1206,7 @@
             <form method="dialog"><button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 bg-gray-100 rounded-full touch-target flex items-center justify-center transition" aria-label="Close motor vehicle licence details"><i class="fas fa-times" aria-hidden="true"></i></button></form>
             <span class="bg-amber-50 text-amber-900 text-xs font-bold px-2.5 py-1 rounded uppercase">TAJ / Tax Office</span>
             <h2 id="mv-title" class="text-2xl font-heading text-brand-dark mt-2 mb-1 pr-10">Motor Vehicle Licensing</h2>
-            <p class="text-sm text-gray-600 mb-2">Skip tax office lines for annual vehicle registration and fitness renewal processing.</p>
+            <p class="text-sm text-gray-600 mb-2">Skip the tax office lines for annual vehicle registration and fitness renewal processing.</p>
             <p class="text-sm text-gray-600">Review the requirements and service details below.</p>
         </div>
         <div class="p-6 sm:px-8 pb-8 space-y-3">
