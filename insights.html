@@ -1,419 +1,632 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-JM">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Insights Vault | Laura Clarke Administrative Services</title>
-  <meta name="description" content="Practical guides, counter rules, and administrative advice for Jamaican civil document processing, citizenship, and compliance.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- SEO: keyword-first title (~60 chars show in Google), brand at the end -->
+  <title>Jamaica Document Guides: TRN, Passport & Police Records | Laura Clarke</title>
+  <meta name="description" content="Step-by-step guides to Jamaican TRNs, police records, passports, citizenship by descent and C5 barrel clearance, plus the counter rules behind rejections.">
   <meta name="author" content="Laura Clarke">
-  <!-- TODO: confirm this is the real published URL before going live -->
-  <link rel="canonical" href="https://www.documenthelpja.com/insights.html">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#2B2B29">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://www.lauraclarkeservices.com/blog">
 
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn previews) -->
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_JM">
   <meta property="og:site_name" content="Laura Clarke Administrative Services">
-  <meta property="og:title" content="Insights Vault | Laura Clarke Administrative Services">
-  <meta property="og:description" content="Practical guides, counter rules, and administrative advice for Jamaican civil document processing, citizenship, and compliance.">
-  <meta property="og:url" content="https://www.documenthelpja.com/insights.html">
-  <!-- TODO: swap in a real 1200x630 image -->
-  <meta property="og:image" content="https://www.documenthelpja.com/images/citizenship-descent-hero.jpg">
+  <meta property="og:title" content="Insights Vault: Jamaican Document Guides & Counter Rules">
+  <meta property="og:description" content="How to get a TRN without photo ID, a police record, a replacement passport, citizenship by descent and C5 barrel clearance, without counter rejections.">
+  <meta property="og:url" content="https://www.lauraclarkeservices.com/blog">
+  <meta property="og:image" content="https://www.lauraclarkeservices.com/images/og-share-1200x630.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Laura Clarke Administrative Services">
 
   <!-- Twitter / X card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Insights Vault | Laura Clarke Administrative Services">
-  <meta name="twitter:description" content="Practical guides, counter rules, and administrative advice for Jamaican civil document processing, citizenship, and compliance.">
-  <meta name="twitter:image" content="https://www.documenthelpja.com/images/citizenship-descent-hero.jpg">
+  <meta name="twitter:title" content="Insights Vault: Jamaican Document Guides & Counter Rules">
+  <meta name="twitter:description" content="How to get a TRN without photo ID, a police record, a replacement passport, citizenship by descent and C5 barrel clearance, without counter rejections.">
+  <meta name="twitter:image" content="https://www.lauraclarkeservices.com/images/og-share-1200x630.jpg">
 
-  <!-- Blog listing schema, for rich search results -->
+  <!-- Structured data: business + blog + every post + breadcrumb -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Insights Vault",
-    "description": "Practical guides, counter rules, and administrative advice for Jamaican civil document processing, citizenship, and compliance.",
-    "url": "https://www.documenthelpja.com/insights.html",
-    "publisher": { "@type": "Organization", "name": "Laura Clarke Administrative Services" },
-    "blogPost": [
-      { "@type": "BlogPosting", "headline": "Jamaican Citizenship by Descent: Scenarios, Requirements & Document Traps", "url": "https://www.documenthelpja.com/jamaican-citizenship-by-descent.html", "datePublished": "2026-09-21", "author": { "@type": "Person", "name": "Laura Clarke" } },
-      { "@type": "BlogPosting", "headline": "How Unpaid Traffic Tickets & Missing TRN Links Block Your Driver's Licence Renewal", "url": "https://www.documenthelpja.com/jamaica-drivers-license-renewal-guide.html", "datePublished": "2026-09-18", "author": { "@type": "Person", "name": "Laura Clarke" } }
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.lauraclarkeservices.com/#business",
+        "name": "Laura Clarke Administrative Services",
+        "url": "https://www.lauraclarkeservices.com/",
+        "email": "hello@lauraclarkeservices.com",
+        "image": "https://www.lauraclarkeservices.com/assets/profile.webp",
+        "description": "Administrative concierge, document pre-audits and local representation for Jamaican civil documents: PICA, RGD, TAJ, JCF Criminal Records Office and Jamaica Customs.",
+        "areaServed": [
+          { "@type": "Country", "name": "Jamaica" },
+          { "@type": "Country", "name": "United States" },
+          { "@type": "Country", "name": "United Kingdom" },
+          { "@type": "Country", "name": "Canada" }
+        ],
+        "founder": { "@id": "https://www.lauraclarkeservices.com/#laura" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.lauraclarkeservices.com/#laura",
+        "name": "Laura Clarke",
+        "url": "https://www.lauraclarkeservices.com/about",
+        "image": "https://www.lauraclarkeservices.com/assets/profile.webp",
+        "worksFor": { "@id": "https://www.lauraclarkeservices.com/#business" }
+      },
+      {
+        "@type": "Blog",
+        "@id": "https://www.lauraclarkeservices.com/blog#blog",
+        "name": "Insights Vault",
+        "description": "Practical guides, counter rules, and administrative advice for Jamaican civil document processing, citizenship, and compliance.",
+        "url": "https://www.lauraclarkeservices.com/blog",
+        "inLanguage": "en-JM",
+        "publisher": { "@id": "https://www.lauraclarkeservices.com/#business" },
+        "blogPost": [
+          { "@type": "BlogPosting", "headline": "How Do I Claim Jamaican Citizenship Through a Jamaican Parent?", "url": "https://www.lauraclarkeservices.com/jamaican-citizenship-by-descent", "datePublished": "2026-09-21", "author": { "@id": "https://www.lauraclarkeservices.com/#laura" } },
+          { "@type": "BlogPosting", "headline": "Why Won't My Driver's Licence Renew? Clearing Ticket and TRN Holds", "url": "https://www.lauraclarkeservices.com/jamaica-drivers-license-renewal-guide", "datePublished": "2026-09-18", "author": { "@id": "https://www.lauraclarkeservices.com/#laura" } },
+          { "@type": "BlogPosting", "headline": "How Do I Get a Jamaican Police Record Without Being Turned Away?", "url": "https://www.lauraclarkeservices.com/jamaica-police-record-guide", "datePublished": "2026-09-18", "author": { "@id": "https://www.lauraclarkeservices.com/#laura" } },
+          { "@type": "BlogPosting", "headline": "How Do I Replace a Lost, Stolen or Damaged Jamaican Passport?", "url": "https://www.lauraclarkeservices.com/replace-lost-jamaican-passport", "datePublished": "2026-09-18", "author": { "@id": "https://www.lauraclarkeservices.com/#laura" } },
+          { "@type": "BlogPosting", "headline": "Can I Get a TRN Without a Passport or Driver's Licence?", "url": "https://www.lauraclarkeservices.com/trn-without-photo-id", "datePublished": "2026-09-18", "author": { "@id": "https://www.lauraclarkeservices.com/#laura" } },
+          { "@type": "BlogPosting", "headline": "How Do I Fill Out the C5 Form So My Barrels Clear Customs?", "url": "https://www.lauraclarkeservices.com/jamaica-c5-travel-form", "datePublished": "2026-09-18", "author": { "@id": "https://www.lauraclarkeservices.com/#laura" } }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.lauraclarkeservices.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Insights Vault", "item": "https://www.lauraclarkeservices.com/blog" }
+        ]
+      }
     ]
   }
   </script>
 
-  <!-- GOOGLE FONTS: Editorial Serif for Headlines -->
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --navy: #111827; /* Darker, ink-like black/navy for editorial text */
-      --gold: #C5A059;
-      --bg-page: #FFFFFF; /* Pure white edge-to-edge */
-      --text-main: #374151;
-      --text-muted: #6B7280;
-      --border-thin: #E5E7EB;
+      color-scheme: dark;
+      --page: #1B1B1A;        /* darker surround outside containers */
+      --bg: #2B2B29;          /* charcoal containers */
+      --surface: #343432;     /* cards, panels */
+      --surface-2: #3C3C39;   /* hover */
+      --line: #4A4A46;        /* borders */
+      --text: #EFEEEB;        /* 12.2:1 on page */
+      --text-muted: #C9C7C2;  /* 8.4:1 on page, 6.6:1 on hover */
+      --text-faint: #B0AEA8;  /* dates, placeholders only */
+      --gold: #D9B872;        /* accent text: 7.5:1 on page */
+      --gold-btn: #C89B3C;    /* button fill (matching homepage gold) */
+      --on-gold: #181A1B;     /* text on gold buttons (matching homepage dark) */
+      --wa-green: #1E7F4F;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, sans-serif;
+      --serif: 'Playfair Display', Georgia, serif;
     }
-    
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, sans-serif; 
-      background-color: var(--bg-page); 
-      color: var(--text-main); 
-      margin: 0; 
-      line-height: 1.85; 
-      -webkit-font-smoothing: antialiased;
-    }
-    a { text-decoration: none; color: inherit; }
+    html { scroll-behavior: smooth; background: var(--page); }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    body { margin: 0; overflow-x: hidden; background: var(--page); color: var(--text); font-family: var(--sans); font-size: 1.0625rem; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    p { max-width: 68ch; }
+    ::placeholder { color: var(--text-faint); opacity: 1; }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .skip-link { position: absolute; left: -9999px; top: 8px; background: var(--gold-btn); color: var(--on-gold); padding: 8px 14px; z-index: 2000; font-weight: 700; }
+    .skip-link:focus { left: 8px; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+    /* CONTAINERS */
+    main.wrap { max-width: 1180px; padding: 32px 24px 64px; }
+    .panel { background: var(--bg); border: 1px solid #333331; border-radius: 18px; padding: clamp(32px, 5vw, 64px) clamp(24px, 6vw, 80px); margin-bottom: 28px; }
+    .panel:last-child { margin-bottom: 0; }
+    .hero.panel { padding-top: 0; padding-bottom: 0; }
+
+    /* HEADER */
+    header { position: sticky; top: 0; z-index: 1000; background: var(--page); border-bottom: 1px solid #2E2E2C; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; min-height: 64px; position: relative; }
+    .brand { font-family: var(--serif); font-weight: 700; font-size: 1.25rem; color: #fff; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; }
+    .nav-links a.active { box-shadow: inset 0 -2px 0 var(--gold); padding-bottom: 4px; }
+    .nav-links a.nav-cta { color: var(--on-gold); background: var(--gold-btn); padding: 9px 16px; font-weight: 700; border-radius: 4px; }
+    .nav-links a.nav-cta:hover { background: #fff; }
+    .mobile-menu-btn { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; padding: 6px; }
+
+   /* PAGE INTRO */
+    .intro { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px; }
+    .intro-text { flex: 1 1 500px; }
+    .intro h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.1; letter-spacing: -0.01em; color: #fff; margin: 0; }
+    .intro .h1-tag { display: block; margin-top: 16px; font-family: var(--sans); font-size: clamp(1.15rem, 2vw, 1.35rem); font-weight: 400; line-height: 1.5; color: var(--text-muted); max-width: 40ch; letter-spacing: 0; }
     
-    /* MINIMALIST HEADER & MOBILE NAV */
-    header { background: #FFFFFF; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-thin); }
-    .header-content { display: flex; justify-content: space-between; align-items: center; min-height: 60px; padding: 0 24px; max-width: 1000px; margin: 0 auto; position: relative; }
-    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem; color: var(--navy); letter-spacing: 0.02em; }
-    .nav-links { display: flex; gap: 24px; align-items: center; }
-    .nav-links a { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--navy); font-weight: 700; }
-    .mobile-menu-btn { display: none; background: transparent; border: none; font-size: 1.4rem; color: var(--navy); cursor: pointer; padding: 4px; }
+    /* NEW AUTHOR BADGE (RIGHT SIDE) */
+    .intro-author { display: flex; align-items: center; gap: 16px; background: var(--surface); padding: 20px 24px; border-radius: 16px; border: 1px solid var(--line); flex-shrink: 0; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    .intro-author img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); background: var(--page); }
+    .intro-author-info p { margin: 0; line-height: 1.4; }
+    .intro-author-name { font-family: var(--serif); font-weight: 700; color: #fff; font-size: 1.25rem; }
+    .intro-author-title { color: var(--gold); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px !important; }
+    .intro-author-link { font-size: 0.875rem; color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+    .intro-author-link:hover { color: #fff; }
 
-    /* PAGE CONTAINER */
-    .insights-container { max-width: 1000px; margin: 48px auto 80px auto; padding: 0 24px; }
+    /* SECTION TITLES */
+    .section-title { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0 24px; line-height: 1.3; }
 
-    /* EDITORIAL HEADER BLOCK */
-    .vault-header { border-bottom: 1px solid var(--border-thin); padding-bottom: 32px; margin-bottom: 56px; }
-    .vault-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 4vw, 3.4rem); color: var(--navy); margin: 0 0 12px 0; font-weight: 700; letter-spacing: -0.02em; }
-    .vault-header p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; color: var(--text-muted); margin: 0; }
+    /* SHARED CARD CLICK AREA */
+    .card { position: relative; }
+    .card-link::after { content: ""; position: absolute; inset: 0; z-index: 0; }
+    .card-link:focus-visible { outline: none; }
+    .card-link:focus-visible::after { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 8px; }
+    .cat-link { position: relative; z-index: 1; background: none; border: none; padding: 10px 0; margin: -10px 0; font: inherit; color: inherit; cursor: pointer; text-align: left; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
+    .cat-link:hover { text-decoration-color: currentColor; }
+    .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; font-size: 0.9375rem; color: var(--text-muted); margin-bottom: 12px; }
+    .meta .cat-link { color: var(--gold); font-weight: 600; }
 
-    /* SECTION HEADERS */
-    .section-label { font-family: -apple-system, sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--navy); border-bottom: 2px solid var(--navy); padding-bottom: 8px; margin-bottom: 32px; display: inline-block; }
+    /* FEATURED (Keeping its own background style, but updating to gradient to match new look) */
+    .hero { position: relative; min-height: 460px; display: flex; align-items: center; overflow: hidden; padding-top: 0; padding-bottom: 0; }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #FDE68A 0%, #D9B872 100%); }
+    .hero-icon { position: absolute; right: 12%; top: 50%; transform: translateY(-50%); width: 200px; height: 200px; stroke: #1F1F1E; fill: none; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; opacity: 0.15; transition: transform 0.6s ease; }
+    .hero:hover .hero-icon { transform: translateY(-50%) scale(1.05); }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(43,43,41,1) 0%, rgba(43,43,41,0.95) 40%, rgba(43,43,41,0.4) 60%, rgba(43,43,41,0) 100%); pointer-events: none; }
+    .hero > .hero-inner { position: relative; z-index: 1; width: 100%; }
+    .hero-content { width: 38%; min-width: 300px; padding: 56px 0; }
+    .hero-label { font-size: 1rem; font-weight: 600; color: var(--gold); margin: 0 0 14px; }
+    .hero .meta { color: var(--text); margin-bottom: 10px; }
+    .hero-title { font-size: clamp(1.35rem, 2vw, 1.7rem); font-weight: 700; line-height: 1.25; color: #fff; margin: 0 0 16px; text-wrap: balance; }
+    .hero-desc { font-size: 1rem; line-height: 1.6; color: var(--text); margin: 0 0 24px; }
+    .hero-btn { display: inline-block; padding: 12px 22px; border-radius: 6px; background: var(--gold-btn); color: var(--on-gold); font-weight: 700; font-size: 1rem; transition: background 0.2s; }
+    .hero:hover .hero-btn { background: #fff; }
+    .hero:hover .hero-title a { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+    .hero .card-link::after { z-index: 0; }
 
-    /* CATEGORY BADGES: now clickable, jump to and filter the archive */
-    .card-meta { display: flex; gap: 12px; align-items: center; font-size: 0.75rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
-    .cat-link { background: none; border: none; padding: 0; margin: 0; font: inherit; color: inherit; text-transform: inherit; letter-spacing: inherit; cursor: pointer; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; transition: text-decoration-color 0.2s; }
-    .cat-link:hover { text-decoration-color: var(--gold); }
+    /* LIGHT, PUNCHY IMAGE CARDS */
+    .media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .media-icon { width: 64px; height: 64px; stroke: #1F1F1E; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.9; z-index: 2; transition: transform 0.4s ease; }
+    .card:hover .media-icon { transform: scale(1.1); }
+    
+    /* VIBRANT GRADIENT UTILITY CLASSES */
+    .bg-punch-gold { background: linear-gradient(135deg, #FDE68A 0%, #D9B872 100%); }
+    .bg-punch-mint { background: linear-gradient(135deg, #D1FAE5 0%, #34D399 100%); }
+    .bg-punch-sky { background: linear-gradient(135deg, #E0F2FE 0%, #38BDF8 100%); }
+    .bg-punch-rose { background: linear-gradient(135deg, #FFE4E6 0%, #FB7185 100%); }
+    .bg-punch-lavender { background: linear-gradient(135deg, #F3E8FF 0%, #C084FC 100%); }
+    .bg-punch-peach { background: linear-gradient(135deg, #FFEDD5 0%, #FB923C 100%); }
 
-    /* AUTHOR BYLINE CHIP (Featured / Latest cards) */
-    .card-byline { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-    .card-byline img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--gold); }
-    .card-byline span { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); }
-    .card-byline b { color: var(--navy); font-weight: 700; }
-    .card-byline .dot { color: var(--border-thin); }
+    .card-body { padding: 16px 2px 0; }
+    .card .meta { font-size: 0.9375rem; margin-bottom: 6px; }
+    .card-title { font-size: 1rem; font-weight: 400; line-height: 1.45; color: #fff; margin: 0; text-wrap: balance; }
+    .card:hover .card-title { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 5px; }
 
-    /* CATEGORY FILTER BAR */
+    .see-all { display: inline-block; padding: 10px 0; margin-top: 18px; color: var(--gold); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+    .see-all:hover { color: #fff; }
+
+    /* PRE-AUDIT CALLOUT */
+    .audit-cta { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; border-left: 4px solid var(--gold); }
+    .audit-cta h2 { font-size: 1.6rem; font-weight: 700; color: #fff; line-height: 1.3; margin: 0 0 12px; }
+    .audit-cta p { margin: 0; color: var(--text-muted); }
+    .audit-cta ul { list-style: none; padding: 0; margin: 16px 0 0; color: var(--text); }
+    .audit-cta li { position: relative; padding-left: 22px; margin-bottom: 6px; }
+    .audit-cta li::before { content: ""; position: absolute; left: 0; top: 0.8em; width: 10px; height: 2px; background: var(--gold); }
+    .wa-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px 20px; border-radius: 6px; background: var(--gold-btn); color: var(--on-gold); font-weight: 700; font-size: 1.0625rem; transition: background 0.2s; }
+    .wa-btn:hover { background: #fff; }
+    .wa-btn svg { width: 20px; height: 20px; fill: currentColor; }
+    .cta-note { display: block; margin-top: 12px; text-align: center; font-size: 0.9375rem; color: var(--text-muted); }
+    .cta-note a { display: inline-block; padding: 8px 0; color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ALL GUIDES */
+    .guides { scroll-margin-top: 84px; }
+    .tools { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 28px; }
+    .archive-search { position: relative; flex: 1 1 280px; max-width: 380px; }
+    .archive-search input { width: 100%; padding: 12px 14px 12px 42px; border-radius: 6px; border: 1px solid var(--line); background: var(--page); color: var(--text); font: inherit; font-size: 1rem; }
+    .archive-search input:focus { border-color: var(--gold); }
+    .archive-search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; stroke: var(--text-faint); fill: none; stroke-width: 2; pointer-events: none; }
     .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
-    .filter-pill { font-family: -apple-system, sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; color: var(--text-muted); background: #fff; border: 1px solid var(--border-thin); border-radius: 999px; padding: 8px 16px; cursor: pointer; transition: border-color 0.2s, background 0.2s, color 0.2s; }
-    .filter-pill:hover { border-color: var(--navy); color: var(--navy); }
-    .filter-pill[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
-
-    /* SEARCH BOX */
-    .archive-search { position: relative; margin-bottom: 24px; max-width: 360px; }
-    .archive-search input { width: 100%; padding: 11px 14px 11px 38px; border: 1px solid var(--border-thin); font-family: inherit; font-size: 0.92rem; background: #fff; color: var(--text-main); }
-    .archive-search input:focus-visible { outline: 2px solid var(--navy); outline-offset: 1px; }
-    .archive-search svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; stroke: var(--text-muted); fill: none; stroke-width: 2; pointer-events: none; }
-    .archive-empty { display: none; padding: 24px 0; color: var(--text-muted); font-size: 0.95rem; }
+    .filter-pill { min-height: 44px; padding: 9px 18px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--text); font: inherit; font-size: 0.9375rem; font-weight: 500; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+    .filter-pill:hover { border-color: var(--text-muted); }
+    .filter-pill[aria-pressed="true"] { background: var(--gold-btn); border-color: var(--on-gold); color: var(--on-gold); font-weight: 700; }
+    .archive-count { font-size: 0.9375rem; color: var(--text-muted); margin: -12px 0 12px; min-height: 1em; }
+    .guide-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 40px; column-gap: 28px; }
+    .guide-grid li.is-hidden { display: none; }
+    .archive-empty { display: none; padding: 24px 0; color: var(--text); }
     .archive-empty.show { display: block; }
-    .archive-item.is-hidden { display: none; }
+    .archive-empty a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
 
-    /* 1. FEATURED ARTICLE */
-    .featured-article { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; margin-bottom: 72px; padding-bottom: 64px; border-bottom: 1px solid var(--border-thin); align-items: center; }
-    .featured-img-container { width: 100%; height: 340px; background: #F3F4F6; overflow: hidden; }
-    .featured-img-container img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
-    .featured-article:hover .featured-img-container img { transform: scale(1.02); }
-    .featured-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 2.5vw, 2.2rem); color: var(--navy); margin: 0 0 16px 0; line-height: 1.25; font-weight: 700; }
-    .featured-excerpt { font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; }
-    .read-link { font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy); text-decoration: underline; text-underline-offset: 4px; }
-    .featured-article:hover .read-link { color: var(--gold); }
+    /* NEWSLETTER */
+    .newsletter { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .newsletter h2 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; color: #fff; line-height: 1.25; margin: 0 0 12px; }
+    .newsletter p { margin: 0; color: var(--text-muted); }
+    .newsletter input { width: 100%; padding: 13px 14px; margin-bottom: 12px; border-radius: 6px; border: 1px solid var(--line); background: var(--page); color: var(--text); font: inherit; font-size: 1rem; }
+    .newsletter input:focus { border-color: var(--gold); }
+    .newsletter button { width: 100%; padding: 13px; border: none; border-radius: 6px; background: var(--gold-btn); color: var(--on-gold); font: inherit; font-size: 1.0625rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+    .newsletter button:hover { background: #fff; }
+    .newsletter .form-note { font-size: 0.9375rem; margin-top: 8px; color: var(--text-faint); }
+    #newsletter-success { display: none; color: var(--text); font-weight: 600; }
 
-    /* 2. LATEST ARTICLE */
-    .latest-section { margin-bottom: 72px; padding-bottom: 64px; border-bottom: 1px solid var(--border-thin); }
-    .latest-card { display: grid; grid-template-columns: 280px 1fr; gap: 32px; align-items: center; }
-    .latest-img-container { width: 100%; height: 190px; background: #F3F4F6; overflow: hidden; }
-    .latest-img-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .latest-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin: 0 0 12px 0; font-weight: 700; line-height: 1.3; }
+    /* FOOTER */
+    footer { background: #151514; border-top: 1px solid #2E2E2C; padding: 56px 0 48px; color: var(--text-muted); }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; }
+    .footer-brand { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .footer-sub { color: var(--gold); font-size: 0.9375rem; }
+    .footer-heading { color: #fff; font-size: 1rem; font-weight: 700; margin: 0 0 10px; }
+    .footer-links { list-style: none; margin: 0; padding: 0; line-height: 1.5; }
+    .footer-links a, .footer-contact a { display: inline-block; padding: 8px 0; }
+    footer a { color: var(--text); }
+    footer a:hover { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+    .footer-disclaimer { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 0.9375rem; line-height: 1.65; }
+    .footer-disclaimer p { max-width: none; margin: 0; }
+    .footer-disclaimer strong { color: var(--text); }
 
-    /* 3. SIMPLE LIST ARCHIVE */
-    .archive-section { margin-bottom: 80px; }
-    .archive-list { list-style: none; padding: 0; margin: 0; }
-    .archive-item { padding: 24px 0; border-bottom: 1px solid var(--border-thin); display: grid; grid-template-columns: 140px 1fr 120px; gap: 24px; align-items: baseline; transition: background 0.2s; }
-    .archive-item:hover .archive-title { color: var(--gold); }
-    .archive-cat { font-size: 0.75rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; }
-    .archive-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: var(--navy); margin: 0 0 6px 0; transition: color 0.2s; }
-    .archive-desc { font-size: 0.95rem; color: var(--text-muted); margin: 0; line-height: 1.6; }
-    .archive-date { font-size: 0.8rem; color: var(--text-muted); text-align: right; }
+    .wa-float { display: none; }
 
-    /* NEWSLETTER INTEGRATION */
-    .insights-newsletter { padding: 40px; border: 1px solid var(--border-thin); background: #FAFAFA; margin-bottom: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .insights-newsletter h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--navy); margin: 0 0 12px 0; }
-    .insights-newsletter p { font-size: 0.95rem; color: var(--text-muted); margin: 0; line-height: 1.6; }
-    .insights-newsletter input { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid var(--border-thin); font-family: inherit; font-size: 0.95rem; background: #FFFFFF; }
-    .insights-newsletter button { width: 100%; padding: 12px; background: var(--navy); color: #FFF; border: none; font-weight: 600; cursor: pointer; transition: 0.2s; font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase; }
-    .insights-newsletter button:hover { background: var(--gold); color: var(--navy); }
-
-    /* EDITORIAL FOOTER */
-    footer { 
-      border-top: 2px solid var(--gold); 
-      padding: 56px 24px 48px 24px; 
-      background: var(--navy); 
-      color: #9CA3AF; 
-    }
-    .footer-content { 
-      max-width: 1000px; 
-      margin: 0 auto; 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: flex-start; 
-      flex-wrap: wrap; 
-      gap: 32px; 
-      font-size: 0.85rem; 
-      color: #9CA3AF; 
-    }
-    .footer-brand { 
-      font-family: 'Playfair Display', serif; 
-      font-weight: 700; 
-      font-size: 1.15rem; 
-      color: #FFFFFF; 
-      margin-bottom: 6px; 
-    }
-    .footer-sub {
-      color: var(--gold);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 600;
-    }
-    .footer-disclaimer { 
-      max-width: 550px; 
-      line-height: 1.6; 
-      color: #9CA3AF;
-    }
-    .footer-disclaimer strong { color: #E5E7EB; }
-
-    /* RESPONSIVE MOBILE ADJUSTMENTS */
+    @media (max-width: 900px) { .guide-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 800px) {
       .mobile-menu-btn { display: block; }
-      .nav-links { display: none; width: 100%; flex-direction: column; background: #FFFFFF; position: absolute; top: 60px; left: 0; padding: 20px 24px; border-bottom: 1px solid var(--border-thin); box-shadow: 0 4px 12px rgba(0,0,0,0.05); gap: 16px; align-items: flex-start; }
+      main.wrap { padding: 16px 12px 40px; }
+      .panel { border-radius: 14px; padding: 32px 22px; margin-bottom: 16px; }
+      .hero.panel { padding-top: 0; padding-bottom: 0; }
+      .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px calc(32px + env(safe-area-inset-bottom, 0px)); background: var(--page); border-top: 1px solid #2E2E2C; overflow-y: auto; }
       .nav-links.active { display: flex; }
-      .featured-article { grid-template-columns: 1fr; gap: 24px; }
-      .featured-img-container { height: 220px; }
-      .latest-card { grid-template-columns: 1fr; gap: 16px; }
-      .latest-img-container { height: 200px; }
-      .archive-item { grid-template-columns: 1fr; gap: 8px; }
-      .archive-date { text-align: left; }
-      .insights-newsletter { grid-template-columns: 1fr; gap: 24px; padding: 24px; }
-      .filter-bar { gap: 8px; }
-      .archive-search { max-width: 100%; }
+      .nav-links a { font-size: 1.125rem; color: var(--text); padding: 16px 0; border-bottom: 1px solid #2E2E2C; }
+      .nav-links a.active { box-shadow: none; padding-bottom: 16px; color: var(--gold); }
+      .nav-links a.nav-cta { margin-top: 24px; padding: 15px 20px; text-align: center; border-bottom: none; border-radius: 8px; }
+      .mobile-menu-btn { width: 44px; height: 44px; }
+      body.menu-open { overflow: hidden; }
+      body.menu-open .wa-float { display: none; }
+      .hero { min-height: 560px; align-items: flex-end; }
+      .hero-icon { top: 24px; right: 50%; transform: translateX(50%); width: 120px; height: 120px; opacity: 0.1; }
+      .hero::after { background: linear-gradient(0deg, rgba(43,43,41,0.98) 0%, rgba(43,43,41,0.9) 45%, rgba(43,43,41,0.2) 80%); }
+      .hero-content { width: 100%; min-width: 0; padding: 180px 0 36px; }
+      .audit-cta, .newsletter { grid-template-columns: 1fr; gap: 24px; }
+      .guide-grid { grid-template-columns: 1fr; }
+      .archive-search { max-width: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      footer { padding-bottom: 100px; }
+      .wa-float { display: flex; align-items: center; justify-content: center; position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); width: 56px; height: 56px; border-radius: 50%; background: var(--wa-green); color: #fff; box-shadow: 0 6px 18px rgba(0,0,0,0.5); z-index: 900; }
+      .wa-float svg { width: 28px; height: 28px; fill: currentColor; }
     }
   </style>
 </head>
 <body>
 
-  <!-- MINIMAL HEADER & NAVIGATION -->
-  <header>
-    <div class="header-content">
-      <a href="index.html#top" class="brand">Laura Clarke</a>
-      
-      <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle Navigation Menu">☰</button>
+  <a href="#main" class="skip-link">Skip to guides</a>
 
-      <div class="nav-links" id="navMenu">
-        <a href="index.html#services" onclick="toggleMenu()">Services</a>
-        <a href="faq.html" onclick="toggleMenu()">FAQ</a>
-        <a href="insights.html" class="active" onclick="toggleMenu()">Insights</a>
-        <a href="about.html" onclick="toggleMenu()">About</a>
-      </div>
+  <header>
+    <div class="wrap header-content">
+      <a href="/" class="brand">Laura Clarke</a>
+      <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+      <nav class="nav-links" id="navMenu" aria-label="Main">
+        <a href="/#services" onclick="closeMenu()">Services</a>
+        <a href="/faq.html" onclick="closeMenu()">FAQ</a>
+        <a href="/blog" class="active" aria-current="page" onclick="closeMenu()">Insights</a>
+        <a href="/about" onclick="closeMenu()">About</a>
+        <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20a%20document%20pre-audit." class="nav-cta" target="_blank" rel="noopener">Book a pre-audit</a>
+      </nav>
     </div>
   </header>
 
-  <div class="insights-container">
-    
-    <!-- PAGE TITLE BLOCK -->
-    <div class="vault-header">
-      <h1>Insights Vault</h1>
-      <p>Counter rules, statutory requirements, and practical advice to safeguard your Jamaican document processing.</p>
-    </div>
+  <main id="main" class="wrap">
 
-    <!-- 1. FEATURED ARTICLE -->
-    <span class="section-label">Featured Guide</span>
-    <a href="jamaican-citizenship-by-descent.html" class="featured-article">
-      <div class="featured-img-container">
-        <img src="assets/citizenship-descent-hero.webp" alt="Jamaican passport resting on heritage documents">
+   <section class="intro panel">
+      <div class="intro-text">
+        <h1>Insights Vault
+          <span class="h1-tag">Clear answers to Jamaican document questions: passports, TRNs, police records, citizenship and customs.</span>
+        </h1>
+      </div>
+      
+      <!-- LARGER PROFILE BADGE -->
+      <div class="intro-author">
+        <img src="assets/profile.webp" alt="Laura Clarke" width="88" height="88">
+        <div class="intro-author-info">
+          <p class="intro-author-title">Written By</p>
+          <p class="intro-author-name">Laura Clarke</p>
+          <a href="/about" class="intro-author-link">Read my story &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED HERO -->
+    <section class="hero panel" aria-labelledby="hero-label">
+      <div class="hero-bg">
+        <svg class="hero-icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 17h6"/></svg>
+      </div>
+      <div class="hero-inner">
+        <article class="hero-content card">
+          <h2 class="hero-label" id="hero-label">Featured guide</h2>
+          <div class="meta">
+            <button type="button" class="cat-link" onclick="selectCategory(event, 'pica-identity')">Passports &amp; Citizenship</button>
+            <time datetime="2026-09-21">Sept 21, 2026</time>
+          </div>
+          <h3 class="hero-title"><a href="/jamaican-citizenship-by-descent" class="card-link">How Do I Claim Jamaican Citizenship Through a Jamaican Parent?</a></h3>
+          <p class="hero-desc">Claiming your Jamaican heritage is a constitutional right, but PICA needs every document to line up. Here's how to prove your lineage without getting stuck.</p>
+          <span class="hero-btn" aria-hidden="true">Read the guide</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="latest-guides panel" aria-labelledby="latest-guides-title">
+      <h2 class="section-title" id="latest-guides-title">Latest guides</h2>
+      <ul class="guide-grid">
+        <li>
+          <!-- MINT PUNCH -->
+          <article class="guide-card card">
+            <div class="media bg-punch-mint">
+              <svg class="media-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="8.5" cy="12" r="2"/><path d="M13 10h5M13 14h3"/></svg>
+            </div>
+            <div class="card-body">
+              <div class="meta">
+                <button type="button" class="cat-link" onclick="selectCategory(event, 'taj-services')">TRN &amp; Licences</button>
+                <time datetime="2026-09-18">Sept 18, 2026</time>
+              </div>
+              <h3 class="card-title"><a href="/jamaica-drivers-license-renewal-guide" class="card-link">Why Won't My Driver's Licence Renew? Clearing Ticket and TRN Holds</a></h3>
+            </div>
+          </article>
+        </li>
+        <li>
+          <!-- SKY PUNCH -->
+          <article class="guide-card card">
+            <div class="media bg-punch-sky">
+              <svg class="media-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 9.5 4-1.2 7-5.1 7-9.5V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div class="card-body">
+              <div class="meta">
+                <button type="button" class="cat-link" onclick="selectCategory(event, 'jcf-clearances')">Police Records</button>
+                <time datetime="2026-09-18">Sept 18, 2026</time>
+              </div>
+              <h3 class="card-title"><a href="/jamaica-police-record-guide" class="card-link">How Do I Get a Jamaican Police Record Without Being Turned Away?</a></h3>
+            </div>
+          </article>
+        </li>
+        <li>
+          <!-- LAVENDER PUNCH -->
+          <article class="guide-card card">
+            <div class="media bg-punch-lavender">
+              <svg class="media-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 17h6"/></svg>
+            </div>
+            <div class="card-body">
+              <div class="meta">
+                <button type="button" class="cat-link" onclick="selectCategory(event, 'pica-identity')">Passports &amp; Citizenship</button>
+                <time datetime="2026-09-18">Sept 18, 2026</time>
+              </div>
+              <h3 class="card-title"><a href="/replace-lost-jamaican-passport" class="card-link">How Do I Replace a Lost, Stolen or Damaged Jamaican Passport?</a></h3>
+            </div>
+          </article>
+        </li>
+      </ul>
+      <a href="#archive" class="see-all">See all guides</a>
+    </section>
+
+    <section class="audit-cta panel" aria-labelledby="audit-heading">
+      <div>
+        <h2 id="audit-heading">Not sure your documents will pass the counter?</h2>
+        <p>Send them for a pre-audit before you queue or ship anything. Laura checks them against current agency requirements and tells you exactly what to fix.</p>
+        <ul>
+          <li>In Jamaica: skip the wasted trip and the second queue.</li>
+          <li>Overseas: local representation, so you don't have to fly home.</li>
+        </ul>
       </div>
       <div>
-        <div class="card-meta">
-          <button type="button" class="cat-link" onclick="selectCategory(event, 'pica-lineage')">PICA Lineage</button>
-          <span>&bull;</span>
-          <span>Sept 21, 2026</span>
-        </div>
-        <div class="card-byline">
-          <img src="assets/profile.webp" alt="">
-          <span>By <b>Laura Clarke</b></span>
-        </div>
-        <h2 class="featured-title">Jamaican Citizenship by Descent: Scenarios, Requirements & Document Traps</h2>
-        <p class="featured-excerpt">Claiming your Jamaican heritage is a constitutional right, but navigating PICA requires line-for-line documentary alignment. Learn how to verify your lineage without getting stuck in bureaucratic limbo.</p>
-        <span class="read-link">Read Full Guide &rarr;</span>
+        <a class="wa-btn" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20read%20your%20guides%20and%20I%27d%20like%20a%20pre-audit%20for%3A%20" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></svg> Message Laura on WhatsApp</a>
+        <span class="cta-note">Or email <a href="mailto:hello@lauraclarkeservices.com">hello@lauraclarkeservices.com</a></span>
       </div>
-    </a>
+    </section>
 
-    <!-- 2. LATEST ARTICLE -->
-    <div class="latest-section">
-      <span class="section-label">Latest Brief</span>
-      <a href="jamaica-drivers-license-renewal-guide.html" class="latest-card">
-        <div class="latest-img-container">
-          <img src="assets/driver-license-renewal-hero.jfif" alt="Jamaican driver's licence renewal application">
+    <section class="guides panel" id="archive" aria-labelledby="guides-title">
+      <h2 class="section-title" id="guides-title">All guides</h2>
+      <div class="tools">
+        <div class="archive-search" role="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <label for="archiveSearch" class="visually-hidden">Search guides</label>
+          <input type="search" id="archiveSearch" placeholder="Search: TRN, barrel, police record…" autocomplete="off">
+        </div>
+      </div>
+      <div class="filter-bar" id="filterBar" role="group" aria-label="Filter by topic">
+        <button type="button" class="filter-pill" data-cat="all" aria-pressed="true" onclick="setCategory('all')">All guides</button>
+        <button type="button" class="filter-pill" data-cat="jcf-clearances" aria-pressed="false" onclick="setCategory('jcf-clearances')">Police records</button>
+        <button type="button" class="filter-pill" data-cat="pica-identity" aria-pressed="false" onclick="setCategory('pica-identity')">Passports &amp; citizenship</button>
+        <button type="button" class="filter-pill" data-cat="taj-services" aria-pressed="false" onclick="setCategory('taj-services')">TRN &amp; licences</button>
+        <button type="button" class="filter-pill" data-cat="customs-freight" aria-pressed="false" onclick="setCategory('customs-freight')">Customs &amp; barrels</button>
+      </div>
+      <p class="archive-count" id="archiveCount" aria-live="polite"></p>
+      
+      <ul class="guide-grid" id="archiveList">
+        <li data-category="pica-identity" data-keywords="citizenship descent heritage parent born abroad birth certificate rgd pica">
+          <!-- GOLD PUNCH -->
+          <article class="guide-card card">
+            <div class="media bg-punch-gold">
+              <svg class="media-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 17h6"/></svg>
+            </div>
+            <div class="card-body">
+              <div class="meta">
+                <button type="button" class="cat-link" onclick="selectCategory(event, 'pica-identity')">Passports &amp; Citizenship</button>
+                <time datetime="2026-09-21">Sept 21, 2026</time>
+              </div>
+              <h3 class="card-title"><a href="/jamaican-citizenship-by-descent" class="card-link">How Do I Claim Jamaican Citizenship Through a Jamaican Parent?</a></h3>
+            </div>
+          </article>
+        </li>
+        <li data-category="taj-services" data-keywords="drivers license licence renewal traffic ticket fines trn taj">
+          <!-- MINT PUNCH -->
+          <article class="guide-card card">
+            <div class="media bg-punch-mint">
+              <svg class="media-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="8.5" cy="12" r="2"/><path d="M13 10h5M13 14h3"/></svg>
+            </div>
+            <div class="card-body">
+              <div class="meta">
+                <button type="button" class="cat-link" onclick="selectCategory(event, 'taj-services')">TRN &amp; Licences</button>
+                <time datetime="2026-09-18">Sept 18, 2026</time>
+              </div>
+              <h3 class="card-title"><a href="/jamaica-drivers-license-renewal-guide" class="card-link">Why Won't My Driver's Licence Renew? Clearing Ticket and TRN Holds</a></h3>
+            </div>
+          </article>
+        </li>
+        <li data-category="jcf-clearances" data-keywords="police certificate police clearance criminal record certificate fingerprints cro character jcf">
+          <!-- SKY PUNCH -->
+          <article class="guide-card card">
+            <div class="media bg-punch-sky">
+              <svg class="media-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 9.5 4-1.2 7-5.1 7-9.5V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div class="card-body">
+              <div class="meta">
+                <button type="button" class="cat-link" onclick="selectCategory(event, 'jcf-clearances')">Police Records</button>
+                <time datetime="2026-09-18">Sept 18, 2026</time>
+              </div>
+              <h3 class="card-title"><a href="/jamaica-police-record-guide" class="card-link">How Do I Get a Jamaican Police Record Without Being Turned Away?</a></h3>
+            </div>
+          </article>
+        </li>
+        <li data-category="pica-identity" data-keywords="passport lost stolen damaged replacement affidavit police report pica">
+          <!-- LAVENDER PUNCH -->
+          <article class="guide-card card">
+            <div class="media bg-punch-lavender">
+              <svg class="media-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 17h6"/></svg>
+            </div>
+            <div class="card-body">
+              <div class="meta">
+                <button type="button" class="cat-link" onclick="selectCategory(event, 'pica-identity')">Passports &amp; Citizenship</button>
+                <time datetime="2026-09-18">Sept 18, 2026</time>
+              </div>
+              <h3 class="card-title"><a href="/replace-lost-jamaican-passport" class="card-link">How Do I Replace a Lost, Stolen or Damaged Jamaican Passport?</a></h3>
+            </div>
+          </article>
+        </li>
+        <li data-category="taj-services" data-keywords="trn taxpayer registration number no id no photo id birth certificate expired id taj">
+          <!-- PEACH PUNCH -->
+          <article class="guide-card card">
+            <div class="media bg-punch-peach">
+              <svg class="media-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="8.5" cy="12" r="2"/><path d="M13 10h5M13 14h3"/></svg>
+            </div>
+            <div class="card-body">
+              <div class="meta">
+                <button type="button" class="cat-link" onclick="selectCategory(event, 'taj-services')">TRN &amp; Licences</button>
+                <time datetime="2026-09-18">Sept 18, 2026</time>
+              </div>
+              <h3 class="card-title"><a href="/trn-without-photo-id" class="card-link">Can I Get a TRN Without a Passport or Driver's Licence?</a></h3>
+            </div>
+          </article>
+        </li>
+        <li data-category="customs-freight" data-keywords="c5 barrel barrels wharf customs declaration shipping returning resident jca">
+          <!-- ROSE PUNCH -->
+          <article class="guide-card card">
+            <div class="media bg-punch-rose">
+              <svg class="media-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8 12 4l8 4v8l-8 4-8-4V8Z"/><path d="m4 8 8 4 8-4M12 12v8"/></svg>
+            </div>
+            <div class="card-body">
+              <div class="meta">
+                <button type="button" class="cat-link" onclick="selectCategory(event, 'customs-freight')">Customs &amp; Barrels</button>
+                <time datetime="2026-09-18">Sept 18, 2026</time>
+              </div>
+              <h3 class="card-title"><a href="/jamaica-c5-travel-form" class="card-link">How Do I Fill Out the C5 Form So My Barrels Clear Customs?</a></h3>
+            </div>
+          </article>
+        </li>
+      </ul>
+      <p class="archive-empty" id="archiveEmpty">
+        No guide covers that yet. <button type="button" class="cat-link" style="color:var(--gold)" onclick="clearFilters()">Clear filters</button>, or
+        <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20couldn%27t%20find%20a%20guide%20for%20my%20situation%3A%20" target="_blank" rel="noopener">describe your situation to Laura on WhatsApp</a>.
+      </p>
+    </section>
+
+    <section class="newsletter panel" aria-labelledby="newsletter-heading">
+      <div>
+        <h2 id="newsletter-heading">Get It Right the First Time</h2>
+        <p>Checklists, rule changes and counter tips that get your documents approved on the first visit, sent straight to your inbox.</p>
+      </div>
+      <div>
+        <form id="newsletter-form" action="https://assets.mailerlite.com/jsonp/2650626/forms/199240121633998056/subscribe" method="post">
+          <label for="nl-email" class="visually-hidden">Email address</label>
+          <input type="email" id="nl-email" name="fields[email]" placeholder="Email address" autocomplete="email" required>
+          <button type="submit" id="sub-btn">Send me the updates</button>
+          <p class="form-note">Unsubscribe anytime.</p>
+        </form>
+        <div id="newsletter-success" role="status">✓ Thank you for subscribing! Check your inbox shortly for your welcome message.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Laura Clarke</div>
+          <div class="footer-sub">Administrative Concierge &amp; Diaspora Consultancy</div>
+          <p class="footer-contact" style="margin:12px 0 0; line-height:1.4;">
+            <a href="https://wa.me/18765612614" target="_blank" rel="noopener">WhatsApp Laura</a><br>
+            <a href="mailto:hello@lauraclarkeservices.com">hello@lauraclarkeservices.com</a>
+          </p>
         </div>
         <div>
-          <div class="card-meta">
-            <button type="button" class="cat-link" onclick="selectCategory(event, 'taj-compliance')">TAJ Compliance</button>
-            <span>&bull;</span>
-            <span>Sept 18, 2026</span>
-          </div>
-          <div class="card-byline">
-            <img src="assets/profile.webp" alt="">
-            <span>By <b>Laura Clarke</b></span>
-          </div>
-          <h2 class="latest-title">How Unpaid Traffic Tickets & Missing TRN Links Block Your Driver's Licence Renewal</h2>
-          <p class="archive-desc">Automated system holds at Tax Administration Jamaica can halt your licence renewal instantly. Here is how to resolve ticket holds and legacy TRN disconnects before visiting the counter.</p>
+          <p class="footer-heading">Popular guides</p>
+          <ul class="footer-links">
+            <li><a href="/trn-without-photo-id">TRN without photo ID</a></li>
+            <li><a href="/jamaica-police-record-guide">Jamaican police record</a></li>
+            <li><a href="/replace-lost-jamaican-passport">Replace a lost passport</a></li>
+            <li><a href="/jamaican-citizenship-by-descent">Citizenship by descent</a></li>
+            <li><a href="/jamaica-c5-travel-form">C5 form &amp; barrel clearance</a></li>
+          </ul>
         </div>
-      </a>
-    </div>
-
-    <!-- 3. SIMPLE LIST OF OTHER GUIDES -->
-    <div class="archive-section" id="archive">
-      <span class="section-label">Administrative Archive</span>
-
-      <div class="archive-search">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input type="search" id="archiveSearch" placeholder="Search guides by title or topic" aria-label="Search guides">
-      </div>
-
-      <div class="filter-bar" id="filterBar" role="group" aria-label="Filter by category">
-        <button type="button" class="filter-pill" data-cat="all" aria-pressed="true" onclick="setCategory('all')">All Topics</button>
-        <button type="button" class="filter-pill" data-cat="jcf-clearances" aria-pressed="false" onclick="setCategory('jcf-clearances')">JCF Clearances</button>
-        <button type="button" class="filter-pill" data-cat="pica-identity" aria-pressed="false" onclick="setCategory('pica-identity')">PICA Identity</button>
-        <button type="button" class="filter-pill" data-cat="taj-services" aria-pressed="false" onclick="setCategory('taj-services')">TAJ Services</button>
-        <button type="button" class="filter-pill" data-cat="customs-freight" aria-pressed="false" onclick="setCategory('customs-freight')">Customs &amp; Freight</button>
-      </div>
-
-      <ul class="archive-list" id="archiveList">
-        
-        <li data-category="jcf-clearances">
-          <a href="jamaica-police-record-guide.html" class="archive-item">
-            <button type="button" class="archive-cat cat-link" onclick="selectCategory(event, 'jcf-clearances')">JCF Clearances</button>
-            <div>
-              <h3 class="archive-title">Don't Get Turned Away: The Essential Guide to Getting a Jamaican Police Record</h3>
-              <p class="archive-desc">Avoid the five most common application errors that cause immediate counter rejection at the Criminal Records Office.</p>
-            </div>
-            <span class="archive-date">Sept 18, 2026</span>
-          </a>
-        </li>
-
-        <li data-category="pica-identity">
-          <a href="replace-lost-jamaican-passport.html" class="archive-item">
-            <button type="button" class="archive-cat cat-link" onclick="selectCategory(event, 'pica-identity')">PICA Identity</button>
-            <div>
-              <h3 class="archive-title">Lost, Stolen, or Damaged Passport? Why You Can't Submit a Standard Renewal</h3>
-              <p class="archive-desc">The legal differences between replacing a missing booklet versus an expired passport, including affidavit and police report requirements.</p>
-            </div>
-            <span class="archive-date">Sept 18, 2026</span>
-          </a>
-        </li>
-
-        <li data-category="taj-services">
-          <a href="trn-without-photo-id.html" class="archive-item">
-            <button type="button" class="archive-cat cat-link" onclick="selectCategory(event, 'taj-services')">TAJ Services</button>
-            <div>
-              <h3 class="archive-title">No Passport or Licence? How to Secure a Jamaican TRN Using Only a Birth Certificate</h3>
-              <p class="archive-desc">Tax Administration Jamaica's alternative verification pathway for individuals lacking primary photo identification.</p>
-            </div>
-            <span class="archive-date">Sept 18, 2026</span>
-          </a>
-        </li>
-
-        <li data-category="customs-freight">
-          <a href="jamaica-c5-travel-form.html" class="archive-item">
-            <button type="button" class="archive-cat cat-link" onclick="selectCategory(event, 'customs-freight')">Customs &amp; Freight</button>
-            <div>
-              <h3 class="archive-title">Don't Let the Online C5 Form Trap Your Barrels at the Wharf</h3>
-              <p class="archive-desc">A step-by-step breakdown of Jamaica's digital passenger declaration form to prevent costly customs holds.</p>
-            </div>
-            <span class="archive-date">Sept 18, 2026</span>
-          </a>
-        </li>
-
-      </ul>
-      <p class="archive-empty" id="archiveEmpty">No guides match that search or category yet. <button type="button" class="cat-link" onclick="clearFilters()">Clear filters</button></p>
-    </div>
-
-    <!-- NEWSLETTER INTEGRATION WITH INLINE AJAX SUCCESS -->
-    <div class="insights-newsletter">
-      <div>
-        <h3>The Administrative Brief</h3>
-        <p>Subscribe for private updates on processing times, policy shifts at PICA and the RGD, and new diaspora guides.</p>
-      </div>
-      <div>
-        <!-- Functional MailerLite Form -->
-        <form id="newsletter-form" action="https://assets.mailerlite.com/jsonp/2650626/forms/199240121633998056/subscribe" method="post">
-          <input type="email" name="fields[email]" placeholder="Email Address" required>
-          <button type="submit" id="sub-btn">Subscribe</button>
-        </form>
-
-        <!-- Inline Success Message -->
-        <div id="newsletter-success" style="display: none; padding: 12px 0; color: var(--navy); font-weight: 600; font-size: 0.95rem; line-height: 1.5;">
-          ✓ Thank you for subscribing! Check your inbox shortly for your welcome message.
+        <div>
+          <p class="footer-heading">Site</p>
+          <ul class="footer-links">
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+            <li><a href="/about">About Laura</a></li>
+            <li><a href="/blog">Insights Vault</a></li>
+          </ul>
         </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- EDITORIAL FOOTER -->
-  <footer>
-    <div class="footer-content">
-      <div>
-        <div class="footer-brand">Laura Clarke</div>
-        <div class="footer-sub">Administrative Concierge & Diaspora Consultancy</div>
       </div>
       <div class="footer-disclaimer">
-        <p style="margin: 0;"><strong>Disclaimer:</strong> Information provided is for educational and administrative guidance purposes only and does not constitute formal legal advice. Requirements and processing times are subject to official government changes.</p>
-        <p style="margin: 12px 0 0 0; color: #6B7280;">&copy; 2026 Laura Clarke. All rights reserved.</p>
+        <p><strong>Disclaimer:</strong> Information provided is for educational and administrative guidance purposes only and does not constitute formal legal advice. Requirements and processing times are subject to official government changes.</p>
+        <p style="margin-top:12px; color:var(--text-faint);">&copy; <span id="year">2026</span> Laura Clarke Administrative Services. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- JAVASCRIPT FOR MOBILE MENU, FORM SUBMISSION, CATEGORY FILTER & SEARCH -->
+  <a class="wa-float" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20document." target="_blank" rel="noopener" aria-label="Message Laura on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></svg></a>
+  
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById('navMenu');
-      if (window.innerWidth <= 800) {
-        menu.classList.toggle('active');
-      }
-    }
+    /* Year Updater */
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    /* MOBILE MENU */
+    function toggleMenu() {
+      var menu = document.getElementById('navMenu');
+      var btn = document.getElementById('menuBtn');
+      var open = menu.classList.toggle('active');
+      document.body.classList.toggle('menu-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      btn.textContent = open ? '✕' : '☰';
+    }
+    function closeMenu() {
+      var menu = document.getElementById('navMenu');
+      if (menu.classList.contains('active')) toggleMenu();
+    }
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 800) closeMenu(); });
+
+    /* NEWSLETTER */
+    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
       e.preventDefault();
-      const form = this;
-      const btn = document.getElementById('sub-btn');
-      const successMsg = document.getElementById('newsletter-success');
-      
+      var form = this;
+      var btn = document.getElementById('sub-btn');
+      var successMsg = document.getElementById('newsletter-success');
       btn.innerText = 'Sending...';
       btn.disabled = true;
-
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form)
-      })
-      .then(response => response.json())
-      .then(data => {
-        form.style.display = 'none';
-        successMsg.style.display = 'block';
-      })
-      .catch(error => {
-        form.style.display = 'none';
-        successMsg.style.display = 'block';
-      });
+      fetch(form.action, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
+        .then(function () { form.style.display = 'none'; successMsg.style.display = 'block'; })
+        .catch(function () { form.style.display = 'none'; successMsg.style.display = 'block'; });
     });
 
-    /* CATEGORY FILTER + SEARCH for the Administrative Archive */
+    /* CATEGORY FILTER + SEARCH */
     var activeCategory = 'all';
 
     function applyFilters() {
@@ -422,13 +635,16 @@
       var visibleCount = 0;
       items.forEach(function (li) {
         var matchesCategory = activeCategory === 'all' || li.dataset.category === activeCategory;
-        var text = li.textContent.toLowerCase();
-        var matchesSearch = term === '' || text.indexOf(term) !== -1;
+        var text = (li.textContent + ' ' + (li.dataset.keywords || '')).toLowerCase();
+        var matchesSearch = term === '' || term.split(/\s+/).every(function (w) { return text.indexOf(w) !== -1; });
         var visible = matchesCategory && matchesSearch;
         li.classList.toggle('is-hidden', !visible);
         if (visible) visibleCount++;
       });
       document.getElementById('archiveEmpty').classList.toggle('show', visibleCount === 0);
+      var filtered = term !== '' || activeCategory !== 'all';
+      document.getElementById('archiveCount').textContent =
+        filtered && visibleCount > 0 ? 'Showing ' + visibleCount + ' of ' + items.length + ' guides' : '';
     }
 
     function setCategory(cat) {
@@ -437,15 +653,20 @@
         pill.setAttribute('aria-pressed', pill.dataset.cat === cat ? 'true' : 'false');
       });
       applyFilters();
+      /* Shareable topic links */
+      if (window.history && history.replaceState) {
+        var url = new URL(window.location.href);
+        if (cat === 'all') url.searchParams.delete('topic'); else url.searchParams.set('topic', cat);
+        history.replaceState(null, '', url);
+      }
     }
 
-    /* Category badges on Featured / Latest / Archive cards: filter the archive
-       and scroll to it, without triggering the card's own link navigation. */
+    /* Category badges: filter the list and scroll to it without opening the card */
     function selectCategory(evt, cat) {
       evt.preventDefault();
       evt.stopPropagation();
       setCategory(cat);
-      document.getElementById('archive').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('archive').scrollIntoView({ block: 'start' });
     }
 
     function clearFilters() {
@@ -454,6 +675,12 @@
     }
 
     document.getElementById('archiveSearch').addEventListener('input', applyFilters);
+
+    /* Open on a topic when linked from an article page */
+    (function () {
+      var topic = new URLSearchParams(window.location.search).get('topic');
+      if (topic && document.querySelector('.filter-pill[data-cat="' + topic + '"]')) setCategory(topic);
+    })();
   </script>
 
 </body>
