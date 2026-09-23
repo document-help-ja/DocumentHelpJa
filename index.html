@@ -407,7 +407,7 @@
                     <li class="service-item service-row" data-cat="identity" data-keywords="passport pica travel renewal lost stolen minor child name change">
                         <div class="svc-media">
                             <span class="svc-badge">PICA</span>
-                            <img src="assets/pica.webp" alt="Jamaican Passport Services" loading="lazy" decoding="async">
+                            <img src="assets/citizenship-descent-hero.webp" alt="Jamaican Passport Services" loading="lazy" decoding="async">
                         </div>
                         <div class="svc-body">
                             <h3 class="svc-title"><a href="#passport" class="stretched" data-dialog="passport">Passport Renewal &amp; Replacement</a></h3>
@@ -419,7 +419,7 @@
                     <li class="service-item service-row" data-cat="legal" data-keywords="rgd birth marriage death certificate registrar genealogy correction search">
                         <div class="svc-media">
                             <span class="svc-badge">RGD</span>
-                            <img src="assets/citizenship-descent-hero.webp" alt="Birth Marriage Death Certificates" loading="lazy" decoding="async">
+                            <img src="assets/rgd-certificates.webp" alt="Birth Marriage Death Certificates" loading="lazy" decoding="async">
                         </div>
                         <div class="svc-body">
                             <h3 class="svc-title"><a href="#rgd-certificates" class="stretched" data-dialog="rgd-certificates">Birth, Marriage &amp; Death Certificates</a></h3>
@@ -968,7 +968,7 @@
                         <div class="svc-spec-grid">
                             <div class="svc-spec-item">
                                 <span class="svc-spec-label">Government Fee</span>
-                                <span class="svc-spec-val">Statutory Ministry Stamp Fee</span>
+                                <span class="svc-spec-val">$3,500 JMD (Regular) / $5,000 JMD (Express)</span>
                             </div>
                             <div class="svc-spec-item">
                                 <span class="svc-spec-label">Concierge Retainer</span>
@@ -994,7 +994,7 @@
                         <div class="svc-spec-grid">
                             <div class="svc-spec-item">
                                 <span class="svc-spec-label">Government Fee</span>
-                                <span class="svc-spec-val">Statutory Ministry Stamp Fee</span>
+                                <span class="svc-spec-val">$3,500 JMD (Regular) / $5,000 JMD (Express)</span>
                             </div>
                             <div class="svc-spec-item">
                                 <span class="svc-spec-label">Concierge Retainer</span>
@@ -1067,8 +1067,8 @@
                     <div class="svc-spec-box">
                         <div class="svc-spec-grid">
                             <div class="svc-spec-item">
-                                <span class="svc-spec-label">RGD Government Fee</span>
-                                <span class="svc-spec-val">$1,500 – $3,000 JMD (Search Fee)</span>
+                                <span class="svc-spec-label">RGD Search Fee</span>
+                                <span class="svc-spec-val">$1,500 JMD</span>
                             </div>
                             <div class="svc-spec-item">
                                 <span class="svc-spec-label">Concierge Retainer</span>
@@ -1223,7 +1223,7 @@
                         <div class="svc-spec-grid">
                             <div class="svc-spec-item">
                                 <span class="svc-spec-label">TAJ Government Fee</span>
-                                <span class="svc-spec-val">Varies by Engine CC Rating</span>
+                                <span class="svc-spec-val">Starts at $9,240 JMD</span>
                             </div>
                             <div class="svc-spec-item">
                                 <span class="svc-spec-label">Concierge Retainer</span>
@@ -1267,7 +1267,7 @@
                         <div class="svc-spec-grid">
                             <div class="svc-spec-item">
                                 <span class="svc-spec-label">ITA Government Fee</span>
-                                <span class="svc-spec-val">Standard ITA Processing Fee</span>
+                                <span class="svc-spec-val">$3,000 JMD</span>
                             </div>
                             <div class="svc-spec-item">
                                 <span class="svc-spec-label">Concierge Retainer</span>
@@ -1373,14 +1373,6 @@
 
         const menu = document.getElementById('mobile-menu');
         if (menu) menu.addEventListener('click', e => { if (e.target.closest('a')) menu.open = false; });
-
-        document.addEventListener('click', e => {
-            const wa = e.target.closest('a[data-wa]');
-            if (!wa) return;
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({ event: 'whatsapp_click', wa_location: wa.dataset.wa });
-            if (typeof window.gtag === 'function') window.gtag('event', 'whatsapp_click', { wa_location: wa.dataset.wa });
-        });
 
         document.getElementById('year').textContent = new Date().getFullYear();
 
