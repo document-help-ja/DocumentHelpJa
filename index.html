@@ -118,35 +118,107 @@
         :focus-visible { outline: 3px solid #C89B3C; outline-offset: 2px; border-radius: 4px; }
         .touch-target { min-height: 44px; min-width: 44px; }
 
-        /* Services: image-led cards. Coloured cover = agency; swap for a photo later if you like. */
         .svc-section { background-color: #E8EEEB; }
-        .service-row { position: relative; display: flex; background: #FFFFFF; border: 1px solid #D3DCD7; border-radius: 10px; overflow: hidden; transition: box-shadow .2s ease, border-color .2s ease; }
-        .service-row:hover, .service-row:focus-within { border-color: var(--accent, #C89B3C); box-shadow: 0 12px 28px -14px rgba(11,46,36,.45); }
-        .service-row:active { background: #F6F8F7; }
-        .svc-cover { flex: 0 0 92px; background: var(--accent, #181A1B); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 12px 6px; text-align: center; }
-        .svc-cover i { font-size: 26px; transition: transform .25s ease; }
-        .svc-cover span { font-size: 11px; font-weight: 700; letter-spacing: .06em; opacity: .9; }
-        .service-row:hover .svc-cover i { transform: scale(1.08); }
-        .svc-body { position: static; flex: 1; min-width: 0; padding: 14px 40px 14px 16px; }
-        .svc-title { font-family: "Playfair Display", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 1.05rem; line-height: 1.25; color: #181A1B; margin-bottom: 4px; }
-        .svc-desc { font-size: .875rem; line-height: 1.45; color: #4B5563; }
-        .svc-cta { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: #8A6420; font-size: 12px; }
-        .svc-cta-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-        @media (min-width: 640px) {
-            .service-row { flex-direction: column; }
-            .svc-cover { flex-basis: auto; height: 124px; }
-            .svc-cover i { font-size: 34px; }
-            .svc-body { display: flex; flex-direction: column; padding: 18px 20px 20px; }
-            .svc-desc { flex: 1; }
-            .svc-cta { position: static; transform: none; display: flex; align-items: center; gap: 6px; margin-top: 16px; font-size: .875rem; font-weight: 600; }
-            .svc-cta-text { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
-            .svc-cta i { font-size: 11px; transition: transform .2s ease; }
-            .service-row:hover .svc-cta i { transform: translateX(3px); }
+        
+        /* PHOTO-LED SERVICE CARDS */
+        .service-row { 
+          position: relative; 
+          display: flex; 
+          flex-direction: column; 
+          background: #FFFFFF; 
+          border: 1px solid #D3DCD7; 
+          border-radius: 10px; 
+          overflow: hidden; 
+          transition: box-shadow .2s ease, border-color .2s ease, transform .2s ease; 
         }
-        .service-row .stretched::after { content: ""; position: absolute; inset: 0; }
+        .service-row:hover, .service-row:focus-within { 
+          border-color: #C89B3C; 
+          box-shadow: 0 12px 28px -14px rgba(11,46,36,.45); 
+          transform: translateY(-2px); 
+        }
+
+        .svc-media { 
+          position: relative; 
+          aspect-ratio: 3 / 2; 
+          width: 100%; 
+          overflow: hidden; 
+          background: #E5E7EB; 
+        }
+        .svc-media img { 
+          position: absolute; 
+          inset: 0; 
+          width: 100%; 
+          height: 100%; 
+          object-fit: cover; 
+          transition: transform 0.4s ease; 
+        }
+        .service-row:hover .svc-media img { 
+          transform: scale(1.05); 
+        }
+
+        .svc-badge { 
+          position: absolute; 
+          top: 10px; 
+          right: 10px; 
+          background: rgba(255, 255, 255, 0.9); 
+          backdrop-filter: blur(4px); 
+          color: #181A1B; 
+          font-size: 11px; 
+          font-weight: 700; 
+          letter-spacing: .06em; 
+          padding: 4px 8px; 
+          border-radius: 4px; 
+          border: 1px solid #D3DCD7; 
+          z-index: 2; 
+        }
+
+        .svc-body { 
+          position: static; 
+          flex: 1; 
+          display: flex; 
+          flex-direction: column; 
+          padding: 16px; 
+        }
+        .svc-title { 
+          font-family: "Playfair Display", Georgia, "Times New Roman", serif; 
+          font-weight: 700; 
+          font-size: 1.05rem; 
+          line-height: 1.25; 
+          color: #181A1B; 
+          margin-bottom: 4px; 
+        }
+        .svc-cta { 
+          display: flex; 
+          align-items: center; 
+          gap: 6px; 
+          margin-top: 10px; 
+          font-size: .875rem; 
+          font-weight: 600; 
+          color: #8A6420; 
+        }
+        .svc-cta i { 
+          font-size: 11px; 
+          transition: transform .2s ease; 
+        }
+        .service-row:hover .svc-cta i { 
+          transform: translateX(4px); 
+        }
+
+        .service-row .stretched::after { content: ""; position: absolute; inset: 0; z-index: 10; }
         .service-row .stretched:focus-visible { outline: none; }
         .service-row .stretched:focus-visible::after { outline: 3px solid #C89B3C; outline-offset: -3px; border-radius: 10px; }
         .service-item[hidden] { display: none !important; }
+
+        @media (max-width: 640px) {
+          .svc-grid { 
+            grid-template-columns: repeat(2, 1fr) !important; 
+            gap: 12px !important; 
+          }
+          .svc-media { aspect-ratio: 16 / 10; }
+          .svc-body { padding: 12px 14px; }
+          .svc-title { font-size: 0.95rem; }
+          .svc-cta { margin-top: 8px; font-size: 0.8rem; }
+        }
 
         .filter-btn { background: #fff; color: #374151; border: 1px solid #D1D5DB; }
         .filter-btn:hover { border-color: #C89B3C; }
@@ -323,81 +395,96 @@
                 </div>
                 <p class="sr-only" aria-live="polite" id="filter-status"></p>
 
-                <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5">
+                <ul class="svc-grid grid gap-3 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5">
 
-                    <li class="service-item service-row" data-cat="identity" data-keywords="passport pica travel renewal lost stolen minor child name change" style="--accent:#1E40AF">
-                        <div class="svc-cover"><i class="fas fa-passport" aria-hidden="true"></i><span>PICA</span></div>
+                    <li class="service-item service-row" data-cat="identity" data-keywords="passport pica travel renewal lost stolen minor child name change">
+                        <div class="svc-media">
+                            <span class="svc-badge">PICA</span>
+                            <img src="assets/citizenship-descent-hero.webp" alt="Jamaican Passport Services" loading="lazy" decoding="async">
+                        </div>
                         <div class="svc-body">
                             <h3 class="svc-title"><a href="#passport" class="stretched" data-dialog="passport">Passport Renewal &amp; Replacement</a></h3>
-                            <p class="svc-desc">First-time applications, adult renewals, minor applications and lost passport replacements.</p>
-                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">Learn more</span> <i class="fas fa-chevron-right"></i></span>
+                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
                     </li>
 
-                    <li class="service-item service-row" data-cat="identity" data-keywords="trn tax taj taxpayer registration number card diaspora overseas" style="--accent:#166534">
-                        <div class="svc-cover"><i class="fas fa-id-card" aria-hidden="true"></i><span>TAJ</span></div>
+                    <li class="service-item service-row" data-cat="identity" data-keywords="trn tax taj taxpayer registration number card diaspora overseas">
+                        <div class="svc-media">
+                            <span class="svc-badge">TAJ</span>
+                            <img src="assets/trn-application.webp" alt="Jamaican TRN Application" loading="lazy" decoding="async">
+                        </div>
                         <div class="svc-body">
                             <h3 class="svc-title"><a href="#trn" class="stretched" data-dialog="trn">Taxpayer Registration Number (TRN)</a></h3>
-                            <p class="svc-desc">New TRN applications, notarised diaspora representation and official card retrievals.</p>
-                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">Learn more</span> <i class="fas fa-chevron-right"></i></span>
+                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
                     </li>
 
-                    <li class="service-item service-row" data-cat="legal" data-keywords="police record certificate character clearance jcf fingerprint criminal background" style="--accent:#334155">
-                        <div class="svc-cover"><i class="fas fa-fingerprint" aria-hidden="true"></i><span>JCF</span></div>
+                    <li class="service-item service-row" data-cat="legal" data-keywords="police record certificate character clearance jcf fingerprint criminal background">
+                        <div class="svc-media">
+                            <span class="svc-badge">JCF</span>
+                            <img src="assets/police-record.webp" alt="Jamaican Police Record Application" loading="lazy" decoding="async">
+                        </div>
                         <div class="svc-body">
                             <h3 class="svc-title"><a href="#police-record" class="stretched" data-dialog="police-record">Police Records &amp; Clearance Certificates</a></h3>
-                            <p class="svc-desc">Local fingerprint scheduling, overseas fingerprint submission and certificate pickup.</p>
-                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">Learn more</span> <i class="fas fa-chevron-right"></i></span>
+                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
                     </li>
 
-                    <li class="service-item service-row" data-cat="legal" data-keywords="apostille authentication legalisation legalization mofa mfaft foreign affairs hague notary overseas" style="--accent:#6B21A8">
-                        <div class="svc-cover"><i class="fas fa-stamp" aria-hidden="true"></i><span>MFAFT</span></div>
+                    <li class="service-item service-row" data-cat="legal" data-keywords="apostille authentication legalisation legalization mofa mfaft foreign affairs hague notary overseas">
+                        <div class="svc-media">
+                            <span class="svc-badge">MFAFT</span>
+                            <img src="assets/lost-official-documents.webp" alt="Document Apostille and Legalisation" loading="lazy" decoding="async">
+                        </div>
                         <div class="svc-body">
                             <h3 class="svc-title"><a href="#apostille" class="stretched" data-dialog="apostille">Apostille &amp; Document Authentication</a></h3>
-                            <p class="svc-desc">Getting Jamaican public records recognised abroad, by apostille or by authentication and legalisation.</p>
-                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">Learn more</span> <i class="fas fa-chevron-right"></i></span>
+                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
                     </li>
 
-                    <li class="service-item service-row" data-cat="legal" data-keywords="rgd birth marriage death certificate registrar genealogy correction search" style="--accent:#9F1239">
-                        <div class="svc-cover"><i class="fas fa-scroll" aria-hidden="true"></i><span>RGD</span></div>
+                    <li class="service-item service-row" data-cat="legal" data-keywords="rgd birth marriage death certificate registrar genealogy correction search">
+                        <div class="svc-media">
+                            <span class="svc-badge">RGD</span>
+                            <img src="assets/citizenship-descent-hero.webp" alt="Birth Marriage Death Certificates" loading="lazy" decoding="async">
+                        </div>
                         <div class="svc-body">
                             <h3 class="svc-title"><a href="#rgd-certificates" class="stretched" data-dialog="rgd-certificates">Birth, Marriage &amp; Death Certificates</a></h3>
-                            <p class="svc-desc">Official certificate searches, genealogical retrievals and registry corrections.</p>
-                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">Learn more</span> <i class="fas fa-chevron-right"></i></span>
+                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
                     </li>
 
-                    <li class="service-item service-row" data-cat="auto" data-keywords="driver license licence driving permit renewal lost stolen substitute ita taj medical" style="--accent:#92400E">
-                        <div class="svc-cover"><i class="fas fa-car" aria-hidden="true"></i><span>TAJ/ITA</span></div>
+                    <li class="service-item service-row" data-cat="auto" data-keywords="driver license licence driving permit renewal lost stolen substitute ita taj medical">
+                        <div class="svc-media">
+                            <span class="svc-badge">TAJ / ITA</span>
+                            <img src="assets/driver-license-renewal-hero.webp" alt="Jamaican Driver's Licence Renewal" loading="lazy" decoding="async">
+                        </div>
                         <div class="svc-body">
                             <h3 class="svc-title"><a href="#drivers-licence" class="stretched" data-dialog="drivers-licence">Driver's Licence Renewal &amp; Replacement</a></h3>
-                            <p class="svc-desc">Renewal of expired licences, lost card replacements and medical endorsement submissions.</p>
-                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">Learn more</span> <i class="fas fa-chevron-right"></i></span>
+                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
                     </li>
 
-                    <li class="service-item service-row" data-cat="auto" data-keywords="motor vehicle car registration license licence fitness insurance tax office renewal" style="--accent:#92400E">
-                        <div class="svc-cover"><i class="fas fa-car-side" aria-hidden="true"></i><span>TAJ</span></div>
+                    <li class="service-item service-row" data-cat="auto" data-keywords="motor vehicle car registration license licence fitness insurance tax office renewal">
+                        <div class="svc-media">
+                            <span class="svc-badge">TAJ</span>
+                            <img src="assets/wharf-barrel-clearance.webp" alt="Motor Vehicle Registration" loading="lazy" decoding="async">
+                        </div>
                         <div class="svc-body">
                             <h3 class="svc-title"><a href="#vehicle-licence" class="stretched" data-dialog="vehicle-licence">Motor Vehicle Licence Renewal</a></h3>
-                            <p class="svc-desc">Skip tax office lines for annual vehicle registration and fitness renewal processing.</p>
-                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">Learn more</span> <i class="fas fa-chevron-right"></i></span>
+                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
                     </li>
 
-                    <li class="service-item service-row" data-cat="auto" data-keywords="driving abstract record history ita insurance dmv verification" style="--accent:#854D0E">
-                        <div class="svc-cover"><i class="fas fa-file-lines" aria-hidden="true"></i><span>ITA</span></div>
+                    <li class="service-item service-row" data-cat="auto" data-keywords="driving abstract record history ita insurance dmv verification">
+                        <div class="svc-media">
+                            <span class="svc-badge">ITA</span>
+                            <img src="assets/driver-license-renewal-hero.webp" alt="Driving Abstracts and Records" loading="lazy" decoding="async">
+                        </div>
                         <div class="svc-body">
                             <h3 class="svc-title"><a href="#driving-abstract" class="stretched" data-dialog="driving-abstract">Driving Abstracts &amp; Record Verification</a></h3>
-                            <p class="svc-desc">Official driving history records for foreign licensing or insurance validation overseas.</p>
-                            <span class="svc-cta" aria-hidden="true"><span class="svc-cta-text">Learn more</span> <i class="fas fa-chevron-right"></i></span>
+                            <span class="svc-cta" aria-hidden="true"><span>Learn more</span> <i class="fas fa-chevron-right"></i></span>
                         </div>
                     </li>
                 </ul>
-
 
                 <aside class="mt-8 sm:mt-10 relative overflow-hidden rounded-xl bg-brand-dark text-white border-l-4 border-brand-gold shadow-lg" aria-labelledby="unlisted-title">
                     <div class="p-6 sm:p-8 lg:p-10 grid gap-6 lg:grid-cols-12 lg:items-center">
@@ -564,6 +651,7 @@
             <form method="dialog"><button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 bg-gray-100 rounded-full touch-target flex items-center justify-center transition" aria-label="Close passport details"><i class="fas fa-times" aria-hidden="true"></i></button></form>
             <span class="bg-blue-50 text-blue-800 text-xs font-bold px-2.5 py-1 rounded uppercase">PICA</span>
             <h2 id="passport-title" class="text-2xl font-heading text-brand-dark mt-2 mb-1 pr-10">Jamaican Passport Services</h2>
+            <p class="text-sm text-gray-600 mb-2">First-time applications, adult renewals, minor applications and lost passport replacements.</p>
             <p class="text-sm text-gray-600">Select your application type below to view its exact requirements, government fees, and concierge retainer.</p>
         </div>
         <div class="p-6 sm:px-8 pb-8 space-y-3">
@@ -693,6 +781,7 @@
             <form method="dialog"><button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 bg-gray-100 rounded-full touch-target flex items-center justify-center transition" aria-label="Close TRN details"><i class="fas fa-times" aria-hidden="true"></i></button></form>
             <span class="bg-green-50 text-green-800 text-xs font-bold px-2.5 py-1 rounded uppercase">TAJ</span>
             <h2 id="trn-title" class="text-2xl font-heading text-brand-dark mt-2 mb-1 pr-10">TRN Applications &amp; Retrievals</h2>
+            <p class="text-sm text-gray-600 mb-2">New TRN applications, notarised diaspora representation and official card retrievals.</p>
             <p class="text-sm text-gray-600">Select your applicant location below to view exact requirements and concierge retainers.</p>
         </div>
         <div class="p-6 sm:px-8 pb-8 space-y-3">
@@ -762,6 +851,7 @@
             <form method="dialog"><button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 bg-gray-100 rounded-full touch-target flex items-center justify-center transition" aria-label="Close police record details"><i class="fas fa-times" aria-hidden="true"></i></button></form>
             <span class="bg-slate-100 text-slate-800 text-xs font-bold px-2.5 py-1 rounded uppercase">JCF</span>
             <h2 id="police-title" class="text-2xl font-heading text-brand-dark mt-2 mb-1 pr-10">Police Records &amp; Clearance Certificates</h2>
+            <p class="text-sm text-gray-600 mb-2">Local fingerprint scheduling, overseas fingerprint submission and certificate pickup.</p>
             <p class="text-sm text-gray-600">Select your filing method below to view requirements and government speed tiers.</p>
         </div>
         <div class="p-6 sm:px-8 pb-8 space-y-3">
@@ -841,6 +931,7 @@
             <form method="dialog"><button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 bg-gray-100 rounded-full touch-target flex items-center justify-center transition" aria-label="Close apostille details"><i class="fas fa-times" aria-hidden="true"></i></button></form>
             <span class="bg-purple-50 text-purple-800 text-xs font-bold px-2.5 py-1 rounded uppercase">MFAFT</span>
             <h2 id="apostille-title" class="text-2xl font-heading text-brand-dark mt-2 mb-1 pr-10">Apostille &amp; Authentication</h2>
+            <p class="text-sm text-gray-600 mb-2">Getting Jamaican public records recognised abroad, by apostille or by authentication and legalisation.</p>
             <p class="text-sm text-gray-600">Select your filing type below to view requirements and ministry authentication fees.</p>
         </div>
         <div class="p-6 sm:px-8 pb-8 space-y-3">
@@ -911,6 +1002,7 @@
             <form method="dialog"><button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 bg-gray-100 rounded-full touch-target flex items-center justify-center transition" aria-label="Close RGD certificate details"><i class="fas fa-times" aria-hidden="true"></i></button></form>
             <span class="bg-rose-50 text-rose-800 text-xs font-bold px-2.5 py-1 rounded uppercase">RGD</span>
             <h2 id="rgd-title" class="text-2xl font-heading text-brand-dark mt-2 mb-1 pr-10">Birth, Marriage &amp; Death Certificates</h2>
+            <p class="text-sm text-gray-600 mb-2">Official certificate searches, genealogical retrievals and registry corrections.</p>
             <p class="text-sm text-gray-600">Select your service type below. Note: Copy applications require a known Entry Number; otherwise an RGD search is required.</p>
         </div>
         <div class="p-6 sm:px-8 pb-8 space-y-3">
@@ -992,6 +1084,7 @@
             <form method="dialog"><button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 bg-gray-100 rounded-full touch-target flex items-center justify-center transition" aria-label="Close driver's licence details"><i class="fas fa-times" aria-hidden="true"></i></button></form>
             <span class="bg-amber-50 text-amber-900 text-xs font-bold px-2.5 py-1 rounded uppercase">TAJ / ITA</span>
             <h2 id="dl-title" class="text-2xl font-heading text-brand-dark mt-2 mb-1 pr-10">Driver's Licence Renewal &amp; Replacement</h2>
+            <p class="text-sm text-gray-600 mb-2">Renewal of expired licences, lost card replacements and medical endorsement submissions.</p>
             <p class="text-sm text-gray-600">Select your transaction type below to view exact TAJ fees and concierge retainers.</p>
         </div>
         <div class="p-6 sm:px-8 pb-8 space-y-3">
@@ -1093,7 +1186,8 @@
             <form method="dialog"><button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 bg-gray-100 rounded-full touch-target flex items-center justify-center transition" aria-label="Close motor vehicle licence details"><i class="fas fa-times" aria-hidden="true"></i></button></form>
             <span class="bg-amber-50 text-amber-900 text-xs font-bold px-2.5 py-1 rounded uppercase">TAJ / Tax Office</span>
             <h2 id="mv-title" class="text-2xl font-heading text-brand-dark mt-2 mb-1 pr-10">Motor Vehicle Licensing</h2>
-            <p class="text-sm text-gray-600">Skip the tax office lines for annual vehicle registration renewals.</p>
+            <p class="text-sm text-gray-600 mb-2">Skip tax office lines for annual vehicle registration and fitness renewal processing.</p>
+            <p class="text-sm text-gray-600">Review the requirements and service details below.</p>
         </div>
         <div class="p-6 sm:px-8 pb-8 space-y-3">
             <details class="acc">
@@ -1137,6 +1231,7 @@
             <form method="dialog"><button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 bg-gray-100 rounded-full touch-target flex items-center justify-center transition" aria-label="Close driving abstract details"><i class="fas fa-times" aria-hidden="true"></i></button></form>
             <span class="bg-yellow-50 text-yellow-900 text-xs font-bold px-2.5 py-1 rounded uppercase">ITA</span>
             <h2 id="abs-title" class="text-2xl font-heading text-brand-dark mt-2 mb-1 pr-10">Driving Abstracts</h2>
+            <p class="text-sm text-gray-600 mb-2">Official driving history records for foreign licensing or insurance validation overseas.</p>
             <p class="text-sm text-gray-600">Official driving history retrieval for foreign insurance or licensing.</p>
         </div>
         <div class="p-6 sm:px-8 pb-8 space-y-3">
