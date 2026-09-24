@@ -160,6 +160,14 @@
     .intro-author-link { font-size: 0.875rem; color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
     .intro-author-link:hover { color: #fff; }
 
+    /* QUICK TOPICS ROW */
+    .quick-topics-wrapper { margin-bottom: 32px; }
+    .quick-topics-label { font-size: 0.85rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; display: block; }
+    .quick-topics { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; -ms-overflow-style: none; }
+    .quick-topics::-webkit-scrollbar { display: none; }
+    .topic-chip { flex-shrink: 0; background: var(--surface); border: 1px solid var(--line); color: var(--text); font: inherit; font-size: 0.95rem; font-weight: 600; padding: 10px 20px; border-radius: 999px; cursor: pointer; transition: all 0.2s; }
+    .topic-chip:hover { border-color: var(--gold); color: #fff; }
+
     /* SECTION TITLES */
     .section-title { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0 24px; line-height: 1.3; }
 
@@ -372,6 +380,17 @@
         </div>
       </div>
     </section>
+
+  <!-- QUICK TOPIC JUMP LINKS -->
+  <div class="quick-topics-wrapper">
+    <span class="quick-topics-label">Jump to a topic:</span>
+    <nav class="quick-topics" aria-label="Topic Categories">
+      <button type="button" class="topic-chip" onclick="selectCategory(event, 'pica-identity')">Passports &amp; Citizenship</button>
+      <button type="button" class="topic-chip" onclick="selectCategory(event, 'jcf-clearances')">Police Records</button>
+      <button type="button" class="topic-chip" onclick="selectCategory(event, 'taj-services')">TRN &amp; Licences</button>
+      <button type="button" class="topic-chip" onclick="selectCategory(event, 'customs-freight')">Customs &amp; Barrels</button>
+    </nav>
+  </div>
 
   <!-- FEATURED HERO -->
   <section class="hero panel" aria-labelledby="hero-label">
