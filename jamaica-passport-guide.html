@@ -24,12 +24,6 @@
   <meta property="article:published_time" content="2026-09-18">
   <meta property="article:modified_time" content="2026-09-24">
 
-  <!-- Twitter / X Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Complete Jamaican Passport Guide">
-  <meta name="twitter:description" content="Every PICA passport scenario, and the document mistakes that get files turned away at the counter.">
-  <meta name="twitter:image" content="https://www.documenthelpja.com/assets/citizenship-descent-hero.webp">
-
   <!-- Article Schema for Search Engine Rich Snippets -->
   <script type="application/ld+json">
   {
@@ -76,30 +70,30 @@
     /* ============ DARK CITADEL BRAND THEME ============ */
     :root {
       color-scheme: dark;
-      --page: #1B1B1A;        /* Dark surround */
-      --bg: #2B2B29;          /* Panel background */
-      --surface: #343432;     /* Card surface */
-      --surface-elevated: #3E3E3B; /* Alternating scenario surface */
-      --inset: #232321;       /* Inset box surface */
-      --line: #4A4A46;        /* Subtle borders */
-      --card-border: #4A4944;  /* Card container borders */
-      --text: #EFEEEB;        /* Primary high-contrast text */
-      --text-muted: #C9C7C2;  /* Body copy */
-      --text-faint: #B0AEA8;  /* Metadata & dates */
-      --gold: #D9B872;        /* Gold accent text */
-      --gold-btn: #C89B3C;    /* Button fill */
-      --on-gold: #181A1B;     /* Text on gold buttons */
-      --trap-red: #F08A7E;    /* Warning highlight */
+      --page: #1B1B1A;        
+      --bg: #2B2B29;          
+      --surface: #343432;     
+      --surface-elevated: #3E3E3B; 
+      --inset: #232321;       
+      --line: #4A4A46;        
+      --card-border: #4A4944;  
+      --text: #EFEEEB;        
+      --text-muted: #C9C7C2;  
+      --text-faint: #B0AEA8;  
+      --gold: #D9B872;        
+      --gold-btn: #C89B3C;    
+      --on-gold: #181A1B;     
+      --trap-red: #F08A7E;    
       --fill-bg: rgba(217, 184, 114, 0.18);
       --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --serif: 'Playfair Display', Georgia, serif;
 
       /* SCENARIO BADGE ACCENT COLORS */
-      --badge-online: #1E7F4F;   /* Green for Fast Online Renewal */
-      --badge-paper: #3B82F6;    /* Blue for First-Time Paper Booklet */
-      --badge-minor: #8B5CF6;    /* Purple for Minors */
-      --badge-name: #EC4899;     /* Rose for Name Changes */
-      --badge-security: #D97706; /* Amber for Lost / Damaged Clearance */
+      --badge-online: #1E7F4F;   
+      --badge-paper: #3B82F6;    
+      --badge-minor: #8B5CF6;    
+      --badge-name: #EC4899;     
+      --badge-security: #D97706; 
     }
 
     * { box-sizing: border-box; }
@@ -128,9 +122,6 @@
 
     .progress-container { position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; pointer-events: none; }
     .progress-bar { height: 3px; background: var(--gold); width: 0%; }
-
-    /* MOBILE CONTENTS DRAWER */
-    .mobile-toc { display: none; }
 
     /* ============ LAYOUT ============ */
     .page-container { max-width: 1200px; margin: 32px auto 80px auto; padding: 0 24px; display: grid; grid-template-columns: 240px 1fr; gap: 40px; }
@@ -176,7 +167,7 @@
     .editorial-takeaways h3 { margin: 0 0 16px 0; font-family: var(--sans); font-size: 1.1rem; font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.08em; }
     .editorial-takeaways ul { margin: 0; padding-left: 20px; color: var(--text-muted); }
 
-    /* SCENARIO FILTER CHIPS */
+    /* SCENARIO FILTER BUTTONS (Grid on Desktop, Stacks on Mobile) */
     .scenario-filter { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 24px 0 0 0; }
     .scenario-chip { display: flex; flex-direction: column; gap: 4px; text-align: left; background: var(--inset); border: 1px solid var(--line); border-top: 3px solid var(--line); padding: 14px 16px; border-radius: 6px; cursor: pointer; color: var(--text-muted); transition: border-color 0.2s, background-color 0.2s; }
     .scenario-chip:hover { border-top-color: var(--gold); }
@@ -184,6 +175,32 @@
     .chip-num { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); }
     .chip-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: #FFFFFF; }
     .chip-desc { font-size: 0.85rem; line-height: 1.4; }
+
+    /* CHECKLIST DROPDOWN (Mobile Only) */
+    .ui-dropdown {
+      display: block;
+      width: 100%;
+      padding: 18px 20px;
+      font-size: 1.05rem;
+      font-family: var(--sans);
+      font-weight: 600;
+      color: #FFFFFF;
+      background: var(--inset);
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--gold);
+      border-radius: 8px;
+      cursor: pointer;
+      appearance: none;
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%23D9B872" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      margin: 24px 0 0 0;
+      transition: outline 0.2s, border-color 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .ui-dropdown:hover { border-color: var(--gold); }
+    .ui-dropdown:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .ui-dropdown option { background: var(--bg); color: #FFFFFF; font-weight: 500; }
 
     .filter-status { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin: 16px 0 0 0; padding: 12px 16px; background: var(--surface); border-left: 3px solid var(--gold); font-size: 0.92rem; color: #FFFFFF; border-radius: 4px; }
     .filter-clear { background: none; border: none; padding: 0; font-family: inherit; font-size: 0.88rem; font-weight: 700; color: var(--gold); text-decoration: underline; cursor: pointer; }
@@ -226,12 +243,18 @@
     .copy-template { background: var(--gold-btn); color: var(--on-gold); border: none; padding: 6px 14px; font-size: 0.8rem; font-weight: 700; border-radius: 4px; cursor: pointer; transition: background 0.2s; }
     .copy-template:hover { background: #FFFFFF; }
 
-    /* CHECKLIST TABS */
+    /* CHECKLIST INTERFACE */
     .tab-container { margin: 28px 0 0 0; }
-    .tabs { display: flex; border-bottom: 1px solid var(--line); overflow-x: auto; }
+    
+    /* Desktop Tabs */
+    .desktop-tabs { display: flex; border-bottom: 1px solid var(--line); overflow-x: auto; margin-bottom: 20px; }
     .tab-btn { background: transparent; border: none; padding: 14px 20px; font-size: 0.95rem; font-weight: 600; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; transition: color 0.2s; }
     .tab-btn:hover { color: #FFFFFF; }
     .tab-btn.active { color: #FFFFFF; border-bottom-color: var(--gold); }
+    
+    /* Mobile Checklist Dropdown (hidden on desktop) */
+    .mobile-checklist-dropdown { display: none; margin-bottom: 24px; }
+
     .tab-content { padding-top: 16px; display: none; }
     .tab-content.active { display: block; }
 
@@ -277,20 +300,35 @@
     .footer-links a { color: var(--text-muted); transition: color 0.2s; }
     .footer-links a:hover { color: var(--gold); }
 
+    /* MOBILE-SPECIFIC LAYOUT & TABLE STACKING */
     @media (max-width: 900px) {
-      .page-container { grid-template-columns: 1fr; padding: 0 16px; margin-top: 16px; }
+      .page-container { display: flex; flex-direction: column; padding: 0 16px; margin-top: 16px; gap: 0; }
       .sidebar { display: none; }
+      
       .mobile-menu-btn { display: block; }
       .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 24px; background: var(--page); border-top: 1px solid #2E2E2C; z-index: 999; }
       .nav-links.active { display: flex; }
       .nav-links a { font-size: 1.1rem; padding: 14px 0; border-bottom: 1px solid #2E2E2C; }
       .nav-links a.nav-cta { margin-top: 20px; text-align: center; border: none; }
 
-      .mobile-toc { display: block; position: sticky; top: 64px; z-index: 990; background: rgba(27, 27, 26, 0.96); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-      .mobile-toc-btn { width: 100%; display: flex; align-items: center; gap: 10px; padding: 0 20px; min-height: 46px; background: none; border: 0; color: #FFFFFF; font-family: inherit; cursor: pointer; }
-      .mt-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); }
-      .mt-current { flex: 1; font-size: 0.92rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; }
-      .mobile-toc-list { max-height: 60vh; overflow-y: auto; padding: 8px 12px 16px; background: var(--bg); border-top: 1px solid var(--line); }
+      /* Convert Scenario Grid to Vertical Stack on Mobile */
+      .scenario-filter { grid-template-columns: 1fr; }
+
+      /* Convert Checklist Tabs to Dropdown on Mobile */
+      .desktop-tabs { display: none; }
+      .mobile-checklist-dropdown { display: block; }
+
+      /* Fix Checklist Overflow */
+      .check-label { padding: 12px; gap: 10px; }
+      .checklist-progress { flex-direction: column; align-items: flex-start; gap: 12px; }
+      
+      /* Mobile Stacking Tables */
+      .data-table thead { display: none; }
+      .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; }
+      .data-table tr { margin-bottom: 16px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--inset); }
+      .data-table td { padding: 12px 16px 12px 45%; text-align: right; position: relative; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
+      .data-table tr:last-child td { border-bottom: none; }
+      .data-table td::before { content: attr(data-label); position: absolute; left: 16px; top: 14px; width: 40%; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--gold); text-align: left; line-height: 1.2; }
 
       .audit-cta { grid-template-columns: 1fr; gap: 20px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -315,16 +353,6 @@
     </div>
     <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
   </header>
-
-  <!-- MOBILE CONTENTS DRAWER -->
-  <div class="mobile-toc">
-    <button type="button" class="mobile-toc-btn" id="mobileTocBtn" aria-expanded="false">
-      <span class="mt-label">Contents</span>
-      <span class="mt-current" id="mtCurrent">Key Takeaways</span>
-      <span style="font-size: 0.8rem;">▼</span>
-    </button>
-    <nav class="mobile-toc-list" id="mobileTocList" hidden></nav>
-  </div>
 
   <div class="page-container">
     
@@ -389,17 +417,13 @@
         </ul>
       </div>
 
-      <!-- INTERACTIVE SCENARIO FILTER -->
+      <!-- UNIVERSAL SCENARIO BUTTONS -->
       <div class="content-card">
         <h2 id="scenarios">Which Scenario Are You?</h2>
-        <p>Select your situation below to highlight the exact steps that apply to you:</p>
+        <p>Select your situation below to display the exact steps and requirements that apply to you:</p>
 
+        <!-- GRID CHIPS (Tiles on Desktop, Stacked List on Mobile) -->
         <div class="scenario-filter" role="group" aria-label="Filter this guide by scenario">
-          <button type="button" class="scenario-chip" data-filter="all" aria-pressed="true">
-            <span class="chip-num">Everything</span>
-            <span class="chip-title">All Scenarios</span>
-            <span class="chip-desc">Read the full master guide.</span>
-          </button>
           <button type="button" class="scenario-chip" data-filter="online" data-tab="Online" aria-pressed="false">
             <span class="chip-num">Scenario 1</span>
             <span class="chip-title">Online Renewal</span>
@@ -425,11 +449,16 @@
             <span class="chip-title">Lost / Damaged</span>
             <span class="chip-desc">Police reports and PICA clearance unit.</span>
           </button>
+          <button type="button" class="scenario-chip" data-filter="all" aria-pressed="false" style="border-top-color: var(--line);">
+            <span class="chip-num">Everything</span>
+            <span class="chip-title">Read Full Guide</span>
+            <span class="chip-desc">Show all scenarios at once.</span>
+          </button>
         </div>
 
         <div class="filter-status" id="filter-status" hidden>
           <span id="filter-status-text"></span>
-          <button type="button" class="filter-clear" id="filter-clear">Show all scenarios</button>
+          <button type="button" class="filter-clear" id="filter-clear">Clear filter</button>
         </div>
       </div>
 
@@ -490,14 +519,14 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Under 3 Years</strong></td>
-                  <td data-label="At the counter">Child <strong>does not</strong> need to attend the PICA counter. Parent submits.</td>
-                  <td data-label="Signatures &amp; verification">Parent signs Section C. JP endorses 1 photo. No child signature.</td>
+                  <td data-label="Age Threshold"><strong>Under 3 Years</strong></td>
+                  <td data-label="At the Counter">Child <strong>does not</strong> need to attend the PICA counter. Parent submits.</td>
+                  <td data-label="Signatures &amp; Verification">Parent signs Section C. JP endorses 1 photo. No child signature.</td>
                 </tr>
                 <tr>
-                  <td><strong>3 to 17 Years</strong></td>
-                  <td data-label="At the counter">Child <strong>must be physically present</strong> with parent/guardian.</td>
-                  <td data-label="Signatures &amp; verification">Child signs Section A if 12+. Parent signs Section C. JP endorses 1 photo.</td>
+                  <td data-label="Age Threshold"><strong>3 to 17 Years</strong></td>
+                  <td data-label="At the Counter">Child <strong>must be physically present</strong> with parent/guardian.</td>
+                  <td data-label="Signatures &amp; Verification">Child signs Section A if 12+. Parent signs Section C. JP endorses 1 photo.</td>
                 </tr>
               </tbody>
             </table>
@@ -581,24 +610,24 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong>Adult (18+) In Jamaica</strong></td>
-                <td>JMD $6,500</td>
-                <td><strong>JMD $11,500</strong></td>
+                <td data-label="Application Type"><strong>Adult (18+) In Jamaica</strong></td>
+                <td data-label="Standard Fee">JMD $6,500</td>
+                <td data-label="Lost / Damaged"><strong>JMD $11,500</strong></td>
               </tr>
               <tr>
-                <td><strong>Minor (Under 18) In Jamaica</strong></td>
-                <td>JMD $4,000</td>
-                <td><strong>JMD $7,000</strong></td>
+                <td data-label="Application Type"><strong>Minor (Under 18) In Jamaica</strong></td>
+                <td data-label="Standard Fee">JMD $4,000</td>
+                <td data-label="Lost / Damaged"><strong>JMD $7,000</strong></td>
               </tr>
               <tr>
-                <td><strong>Express / Same-Day (Kingston HQ)</strong></td>
-                <td>JMD $11,500 / $16,500</td>
-                <td>Subject to investigative approval time</td>
+                <td data-label="Application Type"><strong>Express / Same-Day (Kingston HQ)</strong></td>
+                <td data-label="Standard Fee">JMD $11,500 / $16,500</td>
+                <td data-label="Lost / Damaged">Subject to investigative approval time</td>
               </tr>
               <tr>
-                <td><strong>Overseas Submissions</strong></td>
-                <td>USD $120 / GBP £110 / CAD $140 approx.</td>
-                <td>Additional consular clearance fees apply</td>
+                <td data-label="Application Type"><strong>Overseas Submissions</strong></td>
+                <td data-label="Standard Fee">USD $120 / GBP £110 / CAD $140 approx.</td>
+                <td data-label="Lost / Damaged">Additional consular clearance fees apply</td>
               </tr>
             </tbody>
           </table>
@@ -606,15 +635,26 @@
       </section>
 
       <!-- STATEFUL CHECKLISTS -->
-      <section class="content-card">
+      <section class="content-card" id="checklist-section">
         <h2 id="checklists">Interactive Document Checklist</h2>
         <p>Select your application type and tick off each item as you gather it. Your ticks save automatically on this device:</p>
 
         <div class="tab-container" data-checklist-key="lc-passport-checklist-v2">
-          <div class="tabs" role="tablist" aria-label="Application type">
+          
+          <!-- MOBILE CHECKLIST DROPDOWN (Replaces tabs on small screens) -->
+          <div class="mobile-checklist-dropdown">
+            <select class="ui-dropdown" id="checklistDropdown" aria-label="Select checklist type" style="margin-top: 0;">
+              <option value="Online">Checklist: Online Renewal</option>
+              <option value="FirstTime">Checklist: First-Time Adult</option>
+              <option value="Minor">Checklist: Minor Application</option>
+            </select>
+          </div>
+
+          <!-- DESKTOP TABS (Replaces dropdown on large screens) -->
+          <div class="desktop-tabs" role="tablist" aria-label="Application type">
             <button class="tab-btn active" id="tabbtn-Online" role="tab" aria-selected="true" aria-controls="Online" onclick="openTab(event, 'Online')">Online Renewal</button>
             <button class="tab-btn" id="tabbtn-FirstTime" role="tab" aria-selected="false" aria-controls="FirstTime" tabindex="-1" onclick="openTab(event, 'FirstTime')">First-Time Adult</button>
-            <button class="tab-btn" id="tabbtn-Minor" role="tab" aria-selected="false" aria-controls="Minor" tabindex="-1" onclick="openTab(event, 'Minor')">Minor</button>
+            <button class="tab-btn" id="tabbtn-Minor" role="tab" aria-selected="false" aria-controls="Minor" tabindex="-1" onclick="openTab(event, 'Minor')">Minor Application</button>
           </div>
 
           <div class="checklist-progress">
@@ -738,19 +778,6 @@
       menu.classList.toggle('active');
     }
 
-    var mtBtn = document.getElementById('mobileTocBtn');
-    var mtList = document.getElementById('mobileTocList');
-    if (mtBtn && mtList) {
-      document.querySelectorAll('.sidebar .toc-link').forEach(function (a) {
-        var c = a.cloneNode(true);
-        c.addEventListener('click', function() { mtList.hidden = true; });
-        mtList.appendChild(c);
-      });
-      mtBtn.addEventListener('click', function () {
-        mtList.hidden = !mtList.hidden;
-      });
-    }
-
     /* SCENARIO FILTERING LOGIC */
     (function () {
       var chips = document.querySelectorAll('.scenario-chip');
@@ -759,11 +786,13 @@
 
       function apply(filter) {
         chips.forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.filter === filter ? 'true' : 'false'); });
+        
         document.querySelectorAll('[data-scenario]').forEach(function (el) {
           el.hidden = !(filter === 'all' || el.dataset.scenario.indexOf(filter) > -1);
         });
-        status.hidden = filter === 'all';
-        if (filter !== 'all') {
+        
+        status.hidden = (filter === 'all' || filter === 'none');
+        if (filter !== 'all' && filter !== 'none') {
           statusText.textContent = 'Showing only selected scenario details.';
         }
       }
@@ -771,25 +800,50 @@
       chips.forEach(function (c) {
         c.addEventListener('click', function () {
           apply(c.dataset.filter);
+          
+          /* Auto-switch the Checklist tab/dropdown at the bottom based on Scenario choice */
           if (c.dataset.tab) {
-            var tabBtn = document.getElementById('tabbtn-' + c.dataset.tab);
-            if (tabBtn) tabBtn.click();
+            openTab(null, c.dataset.tab);
           }
         });
       });
 
-      document.getElementById('filter-clear').addEventListener('click', function () { apply('all'); });
+      document.getElementById('filter-clear').addEventListener('click', function () { apply('none'); });
+      
+      /* SET DEFAULT HIDDEN STATE ON LOAD */
+      apply('none');
     })();
 
-    /* TABBED CHECKLIST ENGINE */
+    /* TABBED & DROPDOWN CHECKLIST ENGINE */
     function openTab(evt, tabName) {
       document.querySelectorAll('.tab-content').forEach(function (p) { p.classList.remove('active'); p.hidden = true; });
       document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+      
       var panel = document.getElementById(tabName);
-      panel.hidden = false;
-      panel.classList.add('active');
-      evt.currentTarget.classList.add('active');
+      if(panel) {
+        panel.hidden = false;
+        panel.classList.add('active');
+      }
+      
+      if (evt && evt.currentTarget) {
+        evt.currentTarget.classList.add('active');
+      } else {
+        var desktopTab = document.getElementById('tabbtn-' + tabName);
+        if(desktopTab) desktopTab.classList.add('active');
+      }
+
+      var drop = document.getElementById('checklistDropdown');
+      if(drop) drop.value = tabName;
+
       refreshChecklist();
+    }
+
+    /* LISTEN TO MOBILE CHECKLIST DROPDOWN */
+    var checklistDrop = document.getElementById('checklistDropdown');
+    if (checklistDrop) {
+      checklistDrop.addEventListener('change', function(e) {
+        openTab(null, e.target.value);
+      });
     }
 
     var CHECKLIST_KEY = 'lc-passport-checklist-v2';
