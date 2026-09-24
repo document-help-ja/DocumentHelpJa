@@ -67,12 +67,11 @@
     .nav-links a.nav-cta { color: var(--on-gold); background: var(--gold-btn); padding: 9px 16px; font-weight: 700; border-radius: 4px; }
     .mobile-menu-btn { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; padding: 6px; }
 
-    /* SECTION 1: BALANCED HERO HEADER (TITLE LEFT / ENLARGED PROFILE RIGHT) */
+    /* SECTION 1: HERO HEADER */
     .hero-band { padding: clamp(40px, 6vw, 64px) clamp(24px, 5vw, 56px); background: var(--canvas); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; border-bottom: 1px solid var(--line); }
     .hero-text h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(2.2rem, 4.5vw, 3.2rem); line-height: 1.15; color: #fff; margin: 0; }
     .hero-text .h1-tag { display: block; margin-top: 14px; font-family: var(--sans); font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--text-muted); font-weight: 400; line-height: 1.6; }
     
-    /* ENLARGED PROFILE CARD PANEL */
     .hero-profile-panel { background: var(--surface-dark); border: 1px solid var(--line); border-radius: 16px; padding: 28px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
     .hero-profile-panel img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); margin-bottom: 14px; }
     .hero-profile-panel h3 { font-family: var(--serif); font-size: 1.35rem; color: #fff; margin: 0 0 4px; font-weight: 700; }
@@ -86,7 +85,7 @@
     .topic-chip:hover { border-color: var(--gold); color: #fff; background: var(--surface-alt); }
     .topic-chip::after { content: "↓"; color: var(--gold); font-weight: 700; }
 
-    /* SECTION 3: FEATURED VIDEO */
+    /* SECTION 3: FEATURED VIDEO SECTION */
     .video-section { padding: clamp(40px, 6vw, 64px) clamp(24px, 5vw, 56px); background: var(--canvas); border-bottom: 1px solid var(--line); }
     .section-title { font-family: var(--serif); font-size: 1.65rem; font-weight: 700; color: #fff; margin: 0 0 24px; }
     
@@ -112,7 +111,7 @@
     .meta { font-size: 0.85rem; color: var(--gold); margin-bottom: 6px; font-weight: 600; }
     .guide-grid li.is-hidden { display: none !important; }
 
-    /* SECTION 5: HIGH-CONTRAST PRE-AUDIT BANNER TO FINISH PAGE */
+    /* SECTION 5: HIGH-CONTRAST PRE-AUDIT BANNER */
     .banner-strip { background: var(--banner-light); color: var(--text-dark); padding: clamp(40px, 6vw, 56px) clamp(24px, 5vw, 56px); }
     .banner-strip h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--text-dark); margin: 0 0 8px; }
     .banner-strip p { color: #4A4A46; font-size: 1rem; margin: 0 0 28px; }
@@ -137,7 +136,7 @@
 
     .wa-float { display: none; }
 
-    /* RESPONSIVE MOBILE STACKING */
+    /* RESPONSIVE MOBILE EDGE-TO-EDGE VIDEO BREAKOUT */
     @media (max-width: 800px) {
       .mobile-menu-btn { display: block !important; }
       
@@ -152,7 +151,17 @@
       .banner-cards { grid-template-columns: 1fr; gap: 12px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 
-      /* MOBILE COMPACT DIRECTORY LIST (HIDE IMAGE THUMBNAILS) */
+      /* FULL-BLEED MOBILE VIDEO: STRETCHES SIDE-TO-SIDE (PORTRAIT & LANDSCAPE) */
+      .full-bleed-video { 
+        margin-left: calc(-1 * clamp(24px, 5vw, 56px)) !important; 
+        margin-right: calc(-1 * clamp(24px, 5vw, 56px)) !important; 
+        border-radius: 0 !important; 
+        border-left: none !important; 
+        border-right: none !important; 
+        width: calc(100% + (2 * clamp(24px, 5vw, 56px))) !important;
+      }
+
+      /* MOBILE COMPACT DIRECTORY LIST */
       .guide-grid { grid-template-columns: 1fr; row-gap: 18px; }
       .guide-grid li { border-bottom: 1px solid var(--line); padding-bottom: 16px; }
       .guide-grid .media { display: none !important; }
@@ -207,7 +216,7 @@
       </nav>
     </div>
 
-    <!-- FEATURED VIDEO SECTION -->
+    <!-- FEATURED VIDEO SECTION (SIDE-TO-SIDE FULL BLEED ON MOBILE) -->
     <section class="video-section">
       <h2 class="section-title">Featured Video Breakdown</h2>
       <div class="full-bleed-video">
