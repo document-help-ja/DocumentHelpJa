@@ -123,7 +123,7 @@
     .skip-link:focus { left: 8px; }
     .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
     
-    /* ENLARGED PAGE WRAPPER (approx 1 inch / 96px padding on sides) */
+    /* ENLARGED PAGE WRAPPER */
     .wrap { max-width: 1400px; margin: 0 auto; padding: 0 96px; }
 
     /* CONTAINERS */
@@ -160,13 +160,13 @@
     .intro-author-link { font-size: 0.875rem; color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
     .intro-author-link:hover { color: #fff; }
 
-    /* QUICK TOPICS ROW */
-    .quick-topics-wrapper { margin-bottom: 32px; }
-    .quick-topics-label { font-size: 0.85rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; display: block; }
-    .quick-topics { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; -ms-overflow-style: none; }
-    .quick-topics::-webkit-scrollbar { display: none; }
-    .topic-chip { flex-shrink: 0; background: var(--surface); border: 1px solid var(--line); color: var(--text); font: inherit; font-size: 0.95rem; font-weight: 600; padding: 10px 20px; border-radius: 999px; cursor: pointer; transition: all 0.2s; }
-    .topic-chip:hover { border-color: var(--gold); color: #fff; }
+    /* STACKED TOPICS PACK */
+    .quick-topics-wrapper { margin-bottom: 32px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; }
+    .quick-topics-label { font-size: 0.85rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; display: block; }
+    .quick-topics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .topic-chip { background: var(--bg); border: 1px solid var(--line); color: var(--text); font: inherit; font-size: 0.95rem; font-weight: 600; padding: 12px 16px; border-radius: 8px; cursor: pointer; text-align: left; transition: all 0.2s; display: flex; align-items: center; justify-content: space-between; }
+    .topic-chip:hover { border-color: var(--gold); color: #fff; background: var(--surface-2); }
+    .topic-chip::after { content: "↓"; color: var(--gold); font-weight: 700; }
 
     /* SECTION TITLES */
     .section-title { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0 24px; line-height: 1.3; }
@@ -182,42 +182,11 @@
     .meta .cat-link { color: var(--gold); font-weight: 600; }
 
     /* FEATURED HERO (SPLIT LAYOUT) */
-    .hero.panel { 
-      display: flex; 
-      flex-direction: row-reverse; 
-      padding: 0; 
-      overflow: hidden; 
-      align-items: stretch; 
-      min-height: auto; 
-    }
-    .hero-bg { 
-      position: relative; 
-      width: 55%; 
-      min-height: 400px;
-      background-color: var(--bg);
-    }
-    .hero-bg img { 
-      position: absolute;
-      inset: 0;
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      object-position: center; 
-      display: block; 
-      transition: transform 0.6s ease; 
-    }
-    .hero:hover .hero-bg img { 
-      transform: scale(1.02); 
-    }
-    .hero > .hero-inner { 
-      position: relative; 
-      z-index: 1; 
-      width: 45%; 
-      display: flex;
-      align-items: center;
-      padding: 56px 48px;
-      background-color: var(--bg);
-    }
+    .hero.panel { display: flex; flex-direction: row-reverse; padding: 0; overflow: hidden; align-items: stretch; }
+    .hero-bg { position: relative; width: 55%; min-height: 400px; background-color: var(--bg); }
+    .hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform 0.6s ease; }
+    .hero:hover .hero-bg img { transform: scale(1.02); }
+    .hero > .hero-inner { position: relative; z-index: 1; width: 45%; display: flex; align-items: center; padding: 56px 48px; background-color: var(--bg); }
     .hero-content { width: 100%; }
     .hero-label { font-size: 1rem; font-weight: 600; color: var(--gold); margin: 0 0 14px; }
     .hero .meta { color: var(--text); margin-bottom: 10px; }
@@ -226,9 +195,8 @@
     .hero-btn { display: inline-block; padding: 12px 22px; border-radius: 6px; background: var(--gold-btn); color: var(--on-gold); font-weight: 700; font-size: 1rem; transition: background 0.2s; }
     .hero:hover .hero-btn { background: #fff; }
     .hero:hover .hero-title a { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 6px; }
-    .hero .card-link::after { z-index: 0; }
 
-    /* CLASSIC TALLER IMAGE CARDS (3:2 Rectangle) */
+    /* CLASSIC CARDS */
     .media { position: relative; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
     .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
     .card:hover .media img { transform: scale(1.04); }
@@ -238,7 +206,7 @@
     .card-title { font-size: 1rem; font-weight: 400; line-height: 1.45; color: #fff; margin: 0; text-wrap: balance; }
     .card:hover .card-title { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 5px; }
 
-    .see-all { display: inline-block; padding: 10px 0; margin-top: 18px; color: var(--gold); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+    .see-all { display: inline-block; padding: 10px 0; margin-top: 18px; color: var(--gold); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
     .see-all:hover { color: #fff; }
 
     /* PRE-AUDIT CALLOUT */
@@ -254,19 +222,16 @@
     .cta-note { display: block; margin-top: 12px; text-align: center; font-size: 0.9375rem; color: var(--text-muted); }
     .cta-note a { display: inline-block; padding: 8px 0; color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 
-    /* ALL GUIDES */
+    /* COMPACT ARCHIVE & DIRECTORY LIST FOR MOBILE */
     .guides { scroll-margin-top: 84px; }
-    .tools { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 28px; }
-    .archive-search { position: relative; flex: 1 1 280px; max-width: 380px; }
+    
+    .archive-search { position: relative; width: 100%; max-width: 380px; margin-bottom: 20px; }
     .archive-search input { width: 100%; padding: 12px 14px 12px 42px; border-radius: 6px; border: 1px solid var(--line); background: var(--page); color: var(--text); font: inherit; font-size: 1rem; }
     .archive-search input:focus { border-color: var(--gold); }
     .archive-search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; stroke: var(--text-faint); fill: none; stroke-width: 2; pointer-events: none; }
-    .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
-    .filter-pill { min-height: 44px; padding: 9px 18px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--text); font: inherit; font-size: 0.9375rem; font-weight: 500; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
-    .filter-pill:hover { border-color: var(--text-muted); }
-    .filter-pill[aria-pressed="true"] { background: var(--gold-btn); border-color: var(--on-gold); color: var(--on-gold); font-weight: 700; }
-    .archive-count { font-size: 0.9375rem; color: var(--text-muted); margin: -12px 0 12px; min-height: 1em; }
     
+    .archive-count { font-size: 0.9375rem; color: var(--gold); margin-bottom: 16px; font-weight: 600; min-height: 1em; }
+
     .guide-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 48px; column-gap: 36px; }
     .guide-grid li.is-hidden { display: none; }
     
@@ -293,12 +258,12 @@
     @media (max-width: 900px) { .guide-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 800px) {
       .mobile-menu-btn { display: block; }
-      
-      /* Reset padding tight on mobile so text isn't squeezed */
       .wrap { padding: 0 20px; }
       main.wrap { padding: 16px 20px 40px; }
       .panel { border-radius: 14px; padding: 32px 24px; margin-bottom: 24px; }
       
+      .quick-topics { grid-template-columns: 1fr; }
+
       .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px calc(32px + env(safe-area-inset-bottom, 0px)); background: var(--page); border-top: 1px solid #2E2E2C; overflow-y: auto; }
       .nav-links.active { display: flex; }
       .nav-links a { font-size: 1.125rem; color: var(--text); padding: 16px 0; border-bottom: 1px solid #2E2E2C; }
@@ -308,32 +273,18 @@
       body.menu-open { overflow: hidden; }
       body.menu-open .wa-float { display: none; }
       
-      /* MOBILE HERO SETTINGS */
-      .hero.panel { 
-        flex-direction: column; 
-        padding: 0;
-      }
-      .hero-bg { 
-        width: 100%; 
-        height: 240px; 
-        min-height: auto; 
-      }
-      .hero > .hero-inner { 
-        width: 100%; 
-        padding: 32px 24px; 
-      }
+      .hero.panel { flex-direction: column; padding: 0; }
+      .hero-bg { width: 100%; height: 240px; min-height: auto; }
+      .hero > .hero-inner { width: 100%; padding: 32px 24px; }
       
       .audit-cta { grid-template-columns: 1fr; gap: 24px; }
       
-      /* SEPARATE THE CARDS ON MOBILE */
-      .guide-grid { 
-        grid-template-columns: 1fr; 
-        row-gap: 48px; 
-      }
-      .guide-grid li:not(:last-child) {
-        border-bottom: 1px solid #333331;
-        padding-bottom: 48px;
-      }
+      /* CONVERT ARCHIVE GRID TO A COMPACT MOBILE DIRECTORY LIST */
+      .guide-grid { grid-template-columns: 1fr; row-gap: 16px; }
+      .guide-grid li { border-bottom: 1px solid var(--line); padding-bottom: 16px; }
+      .guide-grid .media { display: none; } /* Hide big image thumbnails on mobile list to save space */
+      .card-body { padding: 0; }
+      .card-title { font-size: 1.05rem; font-weight: 600; }
 
       .archive-search { max-width: none; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -381,9 +332,9 @@
       </div>
     </section>
 
-  <!-- QUICK TOPIC JUMP LINKS -->
+  <!-- STACKED TOPIC PACK FOR EASY MOBILE TAPPING -->
   <div class="quick-topics-wrapper">
-    <span class="quick-topics-label">Jump to a topic:</span>
+    <span class="quick-topics-label">Jump Directly To A Topic:</span>
     <nav class="quick-topics" aria-label="Topic Categories">
       <button type="button" class="topic-chip" onclick="selectCategory(event, 'pica-identity')">Passports &amp; Citizenship</button>
       <button type="button" class="topic-chip" onclick="selectCategory(event, 'jcf-clearances')">Police Records</button>
@@ -492,7 +443,7 @@
           </article>
         </li>
       </ul>
-      <a href="#archive" class="see-all">See all guides</a>
+      <a class="see-all" onclick="selectCategory(event, 'all')">See all guides in the vault &rarr;</a>
     </section>
 
     <!-- LOW-FRICTION PRE-AUDIT CALLOUT -->
@@ -511,22 +462,16 @@
       </div>
     </section>
 
+    <!-- FULL GUIDES DIRECTORY ARCHIVE -->
     <section class="guides panel" id="archive" aria-labelledby="guides-title">
-      <h2 class="section-title" id="guides-title">All guides</h2>
-      <div class="tools">
-        <div class="archive-search" role="search">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <label for="archiveSearch" class="visually-hidden">Search guides</label>
-          <input type="search" id="archiveSearch" placeholder="Search: TRN, barrel, police record…" autocomplete="off">
-        </div>
+      <h2 class="section-title" id="guides-title">All Guides Directory</h2>
+
+      <div class="archive-search" role="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <label for="archiveSearch" class="visually-hidden">Search guides</label>
+        <input type="search" id="archiveSearch" placeholder="Search: TRN, barrel, police record…" autocomplete="off">
       </div>
-      <div class="filter-bar" id="filterBar" role="group" aria-label="Filter by topic">
-        <button type="button" class="filter-pill" data-cat="all" aria-pressed="true" onclick="setCategory('all')">All guides</button>
-        <button type="button" class="filter-pill" data-cat="jcf-clearances" aria-pressed="false" onclick="setCategory('jcf-clearances')">Police records</button>
-        <button type="button" class="filter-pill" data-cat="pica-identity" aria-pressed="false" onclick="setCategory('pica-identity')">Passports &amp; citizenship</button>
-        <button type="button" class="filter-pill" data-cat="taj-services" aria-pressed="false" onclick="setCategory('taj-services')">TRN &amp; licences</button>
-        <button type="button" class="filter-pill" data-cat="customs-freight" aria-pressed="false" onclick="setCategory('customs-freight')">Customs &amp; barrels</button>
-      </div>
+
       <p class="archive-count" id="archiveCount" aria-live="polite"></p>
       
       <ul class="guide-grid" id="archiveList">
@@ -709,7 +654,7 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
     window.addEventListener('resize', function () { if (window.innerWidth > 800) closeMenu(); });
 
-    /* CATEGORY FILTER + SEARCH */
+    /* CATEGORY FILTER + SEARCH ENGINE */
     var activeCategory = 'all';
 
     function applyFilters() {
@@ -725,18 +670,20 @@
         if (visible) visibleCount++;
       });
       document.getElementById('archiveEmpty').classList.toggle('show', visibleCount === 0);
-      var filtered = term !== '' || activeCategory !== 'all';
+      var categoryNames = {
+        'all': 'All Topics',
+        'pica-identity': 'Passports & Citizenship',
+        'jcf-clearances': 'Police Records',
+        'taj-services': 'TRN & Licences',
+        'customs-freight': 'Customs & Barrels'
+      };
       document.getElementById('archiveCount').textContent =
-        filtered && visibleCount > 0 ? 'Showing ' + visibleCount + ' of ' + items.length + ' guides' : '';
+        'Showing ' + visibleCount + ' guide' + (visibleCount !== 1 ? 's' : '') + ' under ' + (categoryNames[activeCategory] || 'selected topic');
     }
 
     function setCategory(cat) {
       activeCategory = cat;
-      document.querySelectorAll('.filter-pill').forEach(function (pill) {
-        pill.setAttribute('aria-pressed', pill.dataset.cat === cat ? 'true' : 'false');
-      });
       applyFilters();
-      /* Shareable topic links */
       if (window.history && history.replaceState) {
         var url = new URL(window.location.href);
         if (cat === 'all') url.searchParams.delete('topic'); else url.searchParams.set('topic', cat);
@@ -744,12 +691,11 @@
       }
     }
 
-    /* Category badges: filter the list and scroll to it without opening the card */
     function selectCategory(evt, cat) {
       evt.preventDefault();
       evt.stopPropagation();
       setCategory(cat);
-      document.getElementById('archive').scrollIntoView({ block: 'start' });
+      document.getElementById('archive').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function clearFilters() {
@@ -762,7 +708,7 @@
     /* Open on a topic when linked from an article page */
     (function () {
       var topic = new URLSearchParams(window.location.search).get('topic');
-      if (topic && document.querySelector('.filter-pill[data-cat="' + topic + '"]')) setCategory(topic);
+      if (topic) setCategory(topic);
     })();
   </script>
 
