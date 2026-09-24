@@ -85,7 +85,7 @@
     .topic-chip:hover { border-color: var(--gold); color: #fff; background: var(--surface-alt); }
     .topic-chip::after { content: "↓"; color: var(--gold); font-weight: 700; }
 
-    /* SECTION 3: FEATURED VIDEO SECTION */
+    /* SECTION 3: FEATURED VIDEO */
     .video-section { padding: clamp(40px, 6vw, 64px) clamp(24px, 5vw, 56px); background: var(--canvas); border-bottom: 1px solid var(--line); }
     .section-title { font-family: var(--serif); font-size: 1.65rem; font-weight: 700; color: #fff; margin: 0 0 24px; }
     
@@ -96,12 +96,8 @@
     .hero-btn { display: inline-block; padding: 12px 24px; border-radius: 6px; background: var(--gold-btn); color: var(--on-gold); font-weight: 700; font-size: 0.95rem; transition: background 0.2s; }
     .hero-btn:hover { background: #fff; }
 
-    /* SECTION 4: MASTER DIRECTORY LIST */
+    /* SECTION 4: MASTER DIRECTORY LIST & SHOW MORE BUTTON */
     .directory-section { padding: clamp(40px, 6vw, 64px) clamp(24px, 5vw, 56px); background: var(--surface-alt); border-bottom: 1px solid var(--line); }
-    
-    .archive-search { position: relative; width: 100%; max-width: 420px; margin-bottom: 28px; }
-    .archive-search input { width: 100%; padding: 13px 16px 13px 44px; border-radius: 6px; border: 1px solid var(--line); background: var(--canvas); color: var(--text); font-size: 1rem; }
-    .archive-search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; stroke: var(--text-faint); fill: none; stroke-width: 2; }
     
     .guide-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 40px; column-gap: 32px; }
     .media { position: relative; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 8px; margin-bottom: 14px; }
@@ -111,7 +107,12 @@
     .meta { font-size: 0.85rem; color: var(--gold); margin-bottom: 6px; font-weight: 600; }
     .guide-grid li.is-hidden { display: none !important; }
 
-    /* SECTION 5: HIGH-CONTRAST PRE-AUDIT BANNER */
+    /* SHOW MORE BUTTON STYLING */
+    .show-more-wrapper { text-align: center; margin-top: 36px; }
+    .show-more-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--canvas); border: 1px solid var(--line); color: var(--gold); font-size: 0.95rem; font-weight: 700; padding: 12px 28px; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+    .show-more-btn:hover { background: var(--surface-dark); border-color: var(--gold); color: #fff; }
+
+    /* SECTION 5: HIGH-CONTRAST CREAM TEXT BANNER STRIP */
     .banner-strip { background: var(--banner-light); color: var(--text-dark); padding: clamp(40px, 6vw, 56px) clamp(24px, 5vw, 56px); }
     .banner-strip h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--text-dark); margin: 0 0 8px; }
     .banner-strip p { color: #4A4A46; font-size: 1rem; margin: 0 0 28px; }
@@ -136,7 +137,7 @@
 
     .wa-float { display: none; }
 
-    /* RESPONSIVE MOBILE EDGE-TO-EDGE VIDEO BREAKOUT */
+    /* RESPONSIVE MOBILE STACKING */
     @media (max-width: 800px) {
       .mobile-menu-btn { display: block !important; }
       
@@ -151,7 +152,7 @@
       .banner-cards { grid-template-columns: 1fr; gap: 12px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 
-      /* FULL-BLEED MOBILE VIDEO: STRETCHES SIDE-TO-SIDE (PORTRAIT & LANDSCAPE) */
+      /* FULL-BLEED MOBILE VIDEO */
       .full-bleed-video { 
         margin-left: calc(-1 * clamp(24px, 5vw, 56px)) !important; 
         margin-right: calc(-1 * clamp(24px, 5vw, 56px)) !important; 
@@ -191,7 +192,7 @@
   <!-- UNIFIED PAGE CANVAS CONTAINER -->
   <div class="page-canvas">
 
-    <!-- HERO HEADER (DESCRIPTION LEFT / ENLARGED PROFILE RIGHT) -->
+    <!-- HERO HEADER -->
     <section class="hero-band">
       <div class="hero-text">
         <h1>Insights Vault
@@ -216,7 +217,7 @@
       </nav>
     </div>
 
-    <!-- FEATURED VIDEO SECTION (SIDE-TO-SIDE FULL BLEED ON MOBILE) -->
+    <!-- FEATURED VIDEO SECTION -->
     <section class="video-section">
       <h2 class="section-title">Featured Video Breakdown</h2>
       <div class="full-bleed-video">
@@ -242,51 +243,45 @@
     <!-- MASTER DIRECTORY SLOTS -->
     <section class="directory-section" id="archive">
       <h2 class="section-title">All Guides Directory</h2>
-
-      <div class="archive-search">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input type="search" id="archiveSearch" placeholder="Search: TRN, barrel, police record…" autocomplete="off">
-      </div>
-
       <div id="archiveCount" style="color:var(--gold); font-weight:700; font-size:0.9rem; margin-bottom:24px;">Showing All Guides</div>
       
       <ul class="guide-grid" id="archiveList">
-        <li data-category="pica-identity" data-keywords="citizenship descent heritage parent born abroad birth certificate rgd pica">
+        <li data-category="pica-identity">
           <article>
             <div class="media"><img src="assets/citizenship-descent-hero.webp" alt="Jamaican citizenship documents" loading="lazy"></div>
             <div class="meta">Passports &amp; Citizenship</div>
             <h3 class="card-title"><a href="/jamaican-citizenship-by-descent">How Do I Claim Jamaican Citizenship Through a Jamaican Parent? &rarr;</a></h3>
           </article>
         </li>
-        <li data-category="pica-identity" data-keywords="passport renewal lost stolen damaged replacement affidavit minor pica">
+        <li data-category="pica-identity">
           <article>
             <div class="media"><img src="assets/lost-stolen-passport.webp" alt="Jamaican passport" loading="lazy"></div>
             <div class="meta">Passports &amp; Citizenship</div>
             <h3 class="card-title"><a href="/jamaica-passport-guide">The Complete Jamaican Passport Application &amp; Renewal Guide &rarr;</a></h3>
           </article>
         </li>
-        <li data-category="jcf-clearances" data-keywords="police certificate police clearance criminal record certificate fingerprints cro character jcf">
+        <li data-category="jcf-clearances">
           <article>
             <div class="media"><img src="assets/police-record.webp" alt="Police record document" loading="lazy"></div>
             <div class="meta">Police Records</div>
             <h3 class="card-title"><a href="/jamaica-police-record-guide">How Do I Get a Jamaican Police Record Without Being Turned Away? &rarr;</a></h3>
           </article>
         </li>
-        <li data-category="taj-services" data-keywords="drivers license licence renewal traffic ticket fines trn taj">
+        <li data-category="taj-services">
           <article>
             <div class="media"><img src="assets/driver-license-renewal-hero.webp" alt="Driver's licence renewal" loading="lazy"></div>
             <div class="meta">TRN &amp; Licences</div>
             <h3 class="card-title"><a href="/jamaica-drivers-license-renewal-guide">Why Won't My Driver's Licence Renew? Clearing Ticket &amp; TRN Holds &rarr;</a></h3>
           </article>
         </li>
-        <li data-category="taj-services" data-keywords="trn taxpayer registration number no id no photo id birth certificate expired id taj">
+        <li data-category="taj-services">
           <article>
             <div class="media"><img src="assets/trn-application.webp" alt="TRN application document" loading="lazy"></div>
             <div class="meta">TRN &amp; Licences</div>
             <h3 class="card-title"><a href="/trn-without-photo-id">Can I Get a TRN Without a Passport or Driver's Licence? &rarr;</a></h3>
           </article>
         </li>
-        <li data-category="customs-freight" data-keywords="c5 barrel barrels wharf customs declaration shipping returning resident jca">
+        <li data-category="customs-freight">
           <article>
             <div class="media"><img src="assets/wharf-barrel-clearance.webp" alt="Customs barrel shipping" loading="lazy"></div>
             <div class="meta">Customs &amp; Barrels</div>
@@ -294,6 +289,13 @@
           </article>
         </li>
       </ul>
+
+      <!-- PROGRESSIVE SHOW MORE BUTTON -->
+      <div class="show-more-wrapper" id="showMoreWrapper" style="display: none;">
+        <button type="button" class="show-more-btn" id="showMoreBtn" onclick="showMoreGuides()">
+          Show More Guides &darr;
+        </button>
+      </div>
     </section>
 
     <!-- HIGH-CONTRAST CREAM TEXT BANNER STRIP -->
@@ -383,23 +385,39 @@
       }
     }
 
-    /* FILTER ENGINE */
+    /* PROGRESSIVE FILTER ENGINE WITH "SHOW MORE" LOGIC */
     var activeCategory = 'all';
+    var visibleLimit = 3; // Display 3 guides initially by default
 
     function applyFilters() {
-      var term = document.getElementById('archiveSearch').value.trim().toLowerCase();
       var items = document.querySelectorAll('#archiveList li');
-      var visibleCount = 0;
+      var matchingItems = [];
 
       items.forEach(function (li) {
         var matchesCat = activeCategory === 'all' || li.dataset.category === activeCategory;
-        var text = (li.textContent + ' ' + (li.dataset.keywords || '')).toLowerCase();
-        var matchesSearch = term === '' || term.split(/\s+/).every(function (w) { return text.indexOf(w) !== -1; });
-        var visible = matchesCat && matchesSearch;
-        
-        li.classList.toggle('is-hidden', !visible);
-        if (visible) visibleCount++;
+        if (matchesCat) {
+          matchingItems.push(li);
+        } else {
+          li.classList.add('is-hidden');
+        }
       });
+
+      // Show items up to the visibleLimit
+      matchingItems.forEach(function (li, index) {
+        if (index < visibleLimit) {
+          li.classList.remove('is-hidden');
+        } else {
+          li.classList.add('is-hidden');
+        }
+      });
+
+      // Show/Hide "Show More" Button
+      var showMoreWrapper = document.getElementById('showMoreWrapper');
+      if (matchingItems.length > visibleLimit) {
+        showMoreWrapper.style.display = 'block';
+      } else {
+        showMoreWrapper.style.display = 'none';
+      }
 
       var names = {
         'all': 'All Topics',
@@ -409,16 +427,24 @@
         'customs-freight': 'Customs & Barrels'
       };
       
-      document.getElementById('archiveCount').textContent = 'Showing ' + visibleCount + ' guide(s) under ' + (names[activeCategory] || 'selected topic');
+      var countText = 'Showing ' + Math.min(visibleLimit, matchingItems.length) + ' of ' + matchingItems.length + ' guide(s) under ' + (names[activeCategory] || 'selected topic');
+      document.getElementById('archiveCount').textContent = countText;
+    }
+
+    function showMoreGuides() {
+      visibleLimit += 3; // Load 3 more guides each click
+      applyFilters();
     }
 
     function selectCategory(cat) {
       activeCategory = cat;
+      visibleLimit = 3; // Reset to 3 when switching topics
       applyFilters();
       document.getElementById('archive').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    document.getElementById('archiveSearch').addEventListener('input', applyFilters);
+    // Initialize on page load
+    applyFilters();
   </script>
 
 </body>
