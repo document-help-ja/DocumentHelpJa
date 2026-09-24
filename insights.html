@@ -85,19 +85,30 @@
     .topic-chip:hover { border-color: var(--gold); color: #fff; background: var(--surface-alt); }
     .topic-chip::after { content: "↓"; color: var(--gold); font-weight: 700; }
 
-    /* SECTION 3: SPACIOUS FEATURED VIDEO SECTION */
+    /* SECTION 3: PROPORTIONAL DESKTOP FEATURED VIDEO SECTION */
     .video-section { padding: clamp(40px, 6vw, 64px) clamp(24px, 5vw, 56px); background: var(--canvas); border-bottom: 1px solid var(--line); }
     .section-title { font-family: var(--serif); font-size: 1.65rem; font-weight: 700; color: #fff; margin: 0 0 24px; }
     
-    .full-bleed-video { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid var(--line); background: #000; margin-bottom: 32px; }
+    /* CONSTRAINED DESKTOP VIDEO HEIGHT (PREVENTS OVERSIZED DESKTOP SCREEN TAKEOVER) */
+    .full-bleed-video { 
+      position: relative; 
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: 360px; /* Reduced desktop height constraint */
+      overflow: hidden; 
+      border-radius: 12px; 
+      border: 1px solid var(--line); 
+      background: #000; 
+      margin: 0 auto 28px; 
+    }
     .full-bleed-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
     .video-meta-bar { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
-    .video-subtitle { font-family: var(--serif); font-size: 1.2rem; color: #fff; margin: 0; font-weight: 600; line-height: 1.35; }
-    .video-desc { color: var(--text-muted); margin: 0; font-size: 0.92rem; line-height: 1.6; }
+    .video-subtitle { font-family: var(--serif); font-size: 1.25rem; color: #fff; margin: 0; font-weight: 600; line-height: 1.4; }
+    .video-desc { color: var(--text-muted); margin: 0; font-size: 0.95rem; line-height: 1.65; }
 
     .video-cta-wrap { margin-top: 8px; }
-    .hero-btn { display: inline-block; padding: 10px 18px; border-radius: 6px; background: var(--gold-btn); color: var(--on-gold); font-weight: 700; font-size: 0.88rem; transition: background 0.2s; border: none; }
+    .hero-btn { display: inline-block; padding: 12px 22px; border-radius: 6px; background: var(--gold-btn); color: var(--on-gold); font-weight: 700; font-size: 0.9rem; transition: background 0.2s; border: none; }
     .hero-btn:hover { background: #fff; }
 
     /* SECTION 4: MASTER DIRECTORY LIST */
@@ -141,7 +152,7 @@
 
     .wa-float { display: none; }
 
-    /* RESPONSIVE MOBILE OPTIMIZATION WITH SPACIOUS TALLER VIDEO */
+    /* RESPONSIVE MOBILE OPTIMIZATION */
     @media (max-width: 800px) {
       .mobile-menu-btn { display: block !important; }
       
@@ -156,21 +167,32 @@
       .banner-cards { grid-template-columns: 1fr; gap: 12px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 
-      /* TALLER FULL-BLEED MOBILE VIDEO FOR EXTRA IMPACT & HEIGHT */
+      .video-section {
+        padding-bottom: 56px !important;
+      }
+
+      /* TALL FULL DEVICE-WIDTH VIDEO FOR MOBILE ONLY */
       .full-bleed-video { 
+        max-height: none !important;
+        aspect-ratio: auto !important;
         margin-left: calc(-1 * clamp(24px, 5vw, 56px)) !important; 
         margin-right: calc(-1 * clamp(24px, 5vw, 56px)) !important; 
         border-radius: 0 !important; 
         border-left: none !important; 
         border-right: none !important; 
         width: calc(100% + (2 * clamp(24px, 5vw, 56px))) !important;
-        padding-bottom: 75% !important; /* 4:3 Aspect Ratio for taller screen presence */
+        padding-bottom: 85% !important; /* Mobile video presence */
         margin-bottom: 28px !important;
       }
 
-      .video-meta-bar { gap: 12px !important; margin-top: 16px !important; }
-      .video-subtitle { font-size: 1.1rem !important; }
-      .video-desc { font-size: 0.88rem !important; line-height: 1.5 !important; }
+      .video-meta-bar { 
+        gap: 16px !important; 
+        margin-top: 20px !important; 
+        margin-bottom: 24px !important; 
+      }
+      
+      .video-subtitle { font-size: 1.15rem !important; line-height: 1.4 !important; }
+      .video-desc { font-size: 0.9rem !important; line-height: 1.6 !important; }
 
       /* MOBILE COMPACT DIRECTORY LIST */
       .guide-grid { grid-template-columns: 1fr; row-gap: 18px; }
@@ -231,7 +253,7 @@
     <section class="video-section">
       <h2 class="section-title">Featured Video Breakdown</h2>
       
-      <!-- TALLER FULL-BLEED MOBILE VIDEO CONTAINER -->
+      <!-- PROPORTIONAL DESKTOP / FULL-BLEED MOBILE VIDEO -->
       <div class="full-bleed-video">
         <iframe 
           src="https://www.youtube.com/embed/xMT5dmElM3Y?autoplay=1&mute=1&loop=1&playlist=xMT5dmElM3Y&start=0&end=20&controls=1" 
@@ -241,7 +263,6 @@
         </iframe>
       </div>
 
-      <!-- SPACIOUS DESCRIPTION & COMPACT BUTTON BELOW VIDEO -->
       <div class="video-meta-bar">
         <h3 class="video-subtitle">Jamaican Passport Renewals: The Realities Nobody Explains</h3>
         <p class="video-desc">Watch our breakdown covering PICA rules, photo checkers, fee calculators, minor thresholds, lost clearances, and courier delivery.</p>
