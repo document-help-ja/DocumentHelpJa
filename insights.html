@@ -4,29 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <!-- SEO: keyword-first title (~60 chars show in Google), brand at the end -->
   <title>Jamaica Document Guides: TRN, Passport & Police Records | Laura Clarke</title>
   <meta name="description" content="Step-by-step guides to Jamaican TRNs, police records, passports, citizenship by descent and C5 barrel clearance, plus the counter rules behind rejections.">
   <meta name="author" content="Laura Clarke">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#2B2B29">
+  <meta name="theme-color" content="#121211">
   <meta name="color-scheme" content="dark">
   <link rel="canonical" href="https://www.lauraclarkeservices.com/blog">
 
-  <!-- Open Graph (Facebook, WhatsApp, LinkedIn previews) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_JM">
   <meta property="og:site_name" content="Laura Clarke Administrative Services">
   <meta property="og:title" content="Insights Vault: Jamaican Document Guides & Counter Rules">
-  <meta property="og:description" content="How to get a TRN without photo ID, a police record, a replacement passport, citizenship by descent and C5 barrel clearance, without counter rejections.">
+  <meta property="og:description" content="How to get a TRN without photo ID, a police record, a replacement passport, citizenship by descent and C5 barrel clearance.">
   <meta property="og:url" content="https://www.lauraclarkeservices.com/blog">
   <meta property="og:image" content="https://www.lauraclarkeservices.com/images/og-share-1200x630.jpg">
-
-  <!-- Twitter / X card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Insights Vault: Jamaican Document Guides & Counter Rules">
-  <meta name="twitter:description" content="How to get a TRN without photo ID, a police record, a replacement passport, citizenship by descent and C5 barrel clearance, without counter rejections.">
-  <meta name="twitter:image" content="https://www.lauraclarkeservices.com/images/og-share-1200x630.jpg">
 
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,152 +29,133 @@
   <style>
     :root {
       color-scheme: dark;
-      --page: #1B1B1A;        
-      --bg: #2B2B29;          
-      --surface: #343432;     
-      --surface-2: #3C3C39;   
-      --line: #4A4A46;        
+      --page: #121211;        /* Base surround background */
+      --canvas: #232321;      /* Unified main container canvas */
+      --surface-alt: #2D2D2A;  /* Soft tonal variation strip */
+      --surface-dark: #191918; /* Darker inset strip */
+      --banner-light: #F5F2E9;/* High-contrast cream banner strip */
+      --line: #3E3E3A;        
       --text: #EFEEEB;        
+      --text-dark: #181A1B;   /* Text on light banners */
       --text-muted: #C9C7C2;  
       --text-faint: #B0AEA8;  
       --gold: #D9B872;        
       --gold-btn: #C89B3C;    
       --on-gold: #181A1B;     
       --wa-green: #1E7F4F;
-      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, sans-serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --serif: 'Playfair Display', Georgia, serif;
     }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; background: var(--page); }
     body { margin: 0; overflow-x: hidden; background: var(--page); color: var(--text); font-family: var(--sans); font-size: 1.0625rem; line-height: 1.7; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
-    p { max-width: 68ch; }
-    
-    .wrap { max-width: 1400px; margin: 0 auto; padding: 0 96px; }
-    main.wrap { max-width: 1400px; padding: 48px 96px 80px; }
-    
-    .panel { background: var(--bg); border: 1px solid #333331; border-radius: 18px; padding: clamp(32px, 4vw, 48px) clamp(24px, 5vw, 56px); margin-bottom: 32px; }
+    p { max-width: 68ch; margin-bottom: 16px; }
 
-    /* HEADER */
-    header { position: sticky; top: 0; z-index: 1000; background: var(--page); border-bottom: 1px solid #2E2E2C; }
-    .header-content { display: flex; justify-content: space-between; align-items: center; min-height: 64px; }
+    /* UNIFIED MAIN CONTAINER CANVAS */
+    .page-canvas { max-width: 1200px; margin: 0 auto; background: var(--canvas); border-left: 1px solid var(--line); border-right: 1px solid var(--line); overflow: hidden; }
+
+    /* ANCHORED HEADER */
+    header { position: sticky; top: 0; z-index: 1000; background: var(--page); border-bottom: 2px solid var(--gold); }
+    .header-content { display: flex; justify-content: space-between; align-items: center; min-height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
     .brand { font-family: var(--serif); font-weight: 700; font-size: 1.25rem; color: #fff; }
     .nav-links { display: flex; gap: 28px; align-items: center; }
     .nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: #fff; }
-    .nav-links a.active { box-shadow: inset 0 -2px 0 var(--gold); padding-bottom: 4px; }
+    .nav-links a.active { border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
     .nav-links a.nav-cta { color: var(--on-gold); background: var(--gold-btn); padding: 9px 16px; font-weight: 700; border-radius: 4px; }
-    .nav-links a.nav-cta:hover { background: #fff; }
-    .mobile-menu-btn { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+    .mobile-menu-btn { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; padding: 6px; }
 
-    /* PAGE INTRO */
-    .intro { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px; }
-    .intro-text { flex: 1 1 500px; }
-    .intro h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.1; color: #fff; margin: 0; }
-    .intro .h1-tag { display: block; margin-top: 16px; font-family: var(--sans); font-size: clamp(1.15rem, 2vw, 1.35rem); color: var(--text-muted); }
+    /* SECTION 1: BALANCED HERO HEADER (TITLE LEFT / ENLARGED PROFILE RIGHT) */
+    .hero-band { padding: clamp(40px, 6vw, 64px) clamp(24px, 5vw, 56px); background: var(--canvas); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; border-bottom: 1px solid var(--line); }
+    .hero-text h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(2.2rem, 4.5vw, 3.2rem); line-height: 1.15; color: #fff; margin: 0; }
+    .hero-text .h1-tag { display: block; margin-top: 14px; font-family: var(--sans); font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--text-muted); font-weight: 400; line-height: 1.6; }
     
-    .intro-author { display: flex; align-items: center; gap: 16px; background: var(--surface); padding: 20px 24px; border-radius: 16px; border: 1px solid var(--line); }
-    .intro-author img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
-    .intro-author-name { font-family: var(--serif); font-weight: 700; color: #fff; font-size: 1.25rem; }
-    .intro-author-title { color: var(--gold); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 4px !important; }
+    /* ENLARGED PROFILE CARD PANEL */
+    .hero-profile-panel { background: var(--surface-dark); border: 1px solid var(--line); border-radius: 16px; padding: 28px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+    .hero-profile-panel img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); margin-bottom: 14px; }
+    .hero-profile-panel h3 { font-family: var(--serif); font-size: 1.35rem; color: #fff; margin: 0 0 4px; font-weight: 700; }
+    .hero-profile-panel p { color: var(--gold); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin: 0; }
 
-    /* TOPIC DIRECTORY PACK */
-    .quick-topics-wrapper { margin-bottom: 32px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; }
-    .quick-topics-label { font-size: 0.85rem; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; display: block; }
-    .quick-topics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-    .topic-chip { background: var(--bg); border: 1px solid var(--line); color: var(--text); font-size: 0.95rem; font-weight: 600; padding: 12px 16px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; width: 100%; text-align: left; transition: all 0.2s; }
-    .topic-chip:hover { border-color: var(--gold); color: #fff; background: var(--surface-2); }
+    /* SECTION 2: TOPIC DIRECTORY SLOTS */
+    .directory-pack { padding: clamp(32px, 5vw, 48px) clamp(24px, 5vw, 56px); background: var(--surface-dark); border-bottom: 1px solid var(--line); }
+    .directory-label { font-size: 0.8rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 20px; display: block; }
+    .quick-topics { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .topic-chip { background: var(--canvas); border: 1px solid var(--line); color: var(--text); font-size: 0.95rem; font-weight: 600; padding: 14px 18px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; width: 100%; text-align: left; transition: all 0.2s; }
+    .topic-chip:hover { border-color: var(--gold); color: #fff; background: var(--surface-alt); }
     .topic-chip::after { content: "↓"; color: var(--gold); font-weight: 700; }
 
-    /* SECTION TITLES */
-    .section-title { font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0 24px; }
+    /* SECTION 3: FEATURED VIDEO */
+    .video-section { padding: clamp(40px, 6vw, 64px) clamp(24px, 5vw, 56px); background: var(--canvas); border-bottom: 1px solid var(--line); }
+    .section-title { font-family: var(--serif); font-size: 1.65rem; font-weight: 700; color: #fff; margin: 0 0 24px; }
+    
+    .full-bleed-video { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid var(--line); background: #000; margin-bottom: 28px; }
+    .full-bleed-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-    /* FEATURED VIDEO SECTION */
-    .hero-btn { display: inline-block; padding: 10px 18px; border-radius: 6px; background: var(--gold-btn); color: var(--on-gold); font-weight: 700; font-size: 0.95rem; transition: background 0.2s; }
+    .video-meta-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; }
+    .hero-btn { display: inline-block; padding: 12px 24px; border-radius: 6px; background: var(--gold-btn); color: var(--on-gold); font-weight: 700; font-size: 0.95rem; transition: background 0.2s; }
     .hero-btn:hover { background: #fff; }
 
-   /* HIGHLIGHTED / CONTRASTING PRE-AUDIT CONTAINER */
-    .preaudit-container { 
-      margin-bottom: 44px; 
-      background: #1F1F1E; /* Distinct darker inset surface to break up page flow */
-      border: 1px solid var(--line); 
-      border-top: 3px solid var(--gold); /* Accent highlight bar */
-      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-    }
-    .preaudit-header { margin-bottom: 20px; }
-    .preaudit-header h2 { font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 6px; }
-    .preaudit-header p { font-size: 0.95rem; color: var(--text-muted); margin: 0; }
+    /* SECTION 4: MASTER DIRECTORY LIST */
+    .directory-section { padding: clamp(40px, 6vw, 64px) clamp(24px, 5vw, 56px); background: var(--surface-alt); border-bottom: 1px solid var(--line); }
     
-    .preaudit-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .audit-card { 
-      background: #282826; /* Slightly lighter card inside darker container */
-      border: 1px solid #3A3A37; 
-      border-radius: 10px; 
-      padding: 18px 20px; 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      transition: border-color 0.2s, transform 0.2s; 
-    }
-    .audit-card:hover { border-color: var(--gold); transform: translateY(-2px); }
-    .audit-card-info h3 { font-size: 0.98rem; font-weight: 700; color: #fff; margin: 0 0 3px; }
-    .audit-card-info p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
-    .audit-btn { font-size: 0.85rem; font-weight: 700; padding: 9px 15px; border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
-    .audit-btn-wa { background: var(--gold-btn); color: var(--on-gold); border: none; }
-    .audit-btn-wa:hover { background: #fff; }
-    .audit-btn-mail { background: transparent; border: 1px solid var(--line); color: var(--text-muted); }
-    .audit-btn-mail:hover { border-color: var(--gold); color: #fff; }
-
-    /* INCREASED CONTAINER MARGINS FOR MOBILE BREATHING ROOM */
-    @media (max-width: 800px) {
-      .panel { margin-bottom: 32px; padding: 28px 20px; }
-      .quick-topics-wrapper { margin-bottom: 32px; }
-      .preaudit-container { margin-bottom: 36px; padding: 28px 20px; }
-    }
-
-    /* GUIDE GRID & TEXT DIRECTORY LIST */
-    .guide-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 48px; column-gap: 36px; }
-    .media { position: relative; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 8px; margin-bottom: 12px; }
+    .archive-search { position: relative; width: 100%; max-width: 420px; margin-bottom: 28px; }
+    .archive-search input { width: 100%; padding: 13px 16px 13px 44px; border-radius: 6px; border: 1px solid var(--line); background: var(--canvas); color: var(--text); font-size: 1rem; }
+    .archive-search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; stroke: var(--text-faint); fill: none; stroke-width: 2; }
+    
+    .guide-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 40px; column-gap: 32px; }
+    .media { position: relative; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 8px; margin-bottom: 14px; }
     .media img { width: 100%; height: 100%; object-fit: cover; }
-    .card-title { font-size: 1.1rem; font-weight: 600; color: #fff; margin: 0; line-height: 1.4; }
+    .card-title { font-size: 1.05rem; font-weight: 600; color: #fff; margin: 0; line-height: 1.4; }
     .card-title a:hover { color: var(--gold); text-decoration: underline; }
     .meta { font-size: 0.85rem; color: var(--gold); margin-bottom: 6px; font-weight: 600; }
-
-    /* SEARCH & ARCHIVE DIRECTORY */
-    .archive-search { position: relative; width: 100%; max-width: 380px; margin-bottom: 24px; }
-    .archive-search input { width: 100%; padding: 12px 14px 12px 42px; border-radius: 6px; border: 1px solid var(--line); background: var(--page); color: var(--text); font-size: 1rem; }
-    .archive-search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; stroke: var(--text-faint); fill: none; stroke-width: 2; }
     .guide-grid li.is-hidden { display: none !important; }
 
-    /* FOOTER (FULL HOMEPAGE CONNECTED FOOTER) */
-    footer { background: #151514; border-top: 1px solid #2E2E2C; padding: 56px 0 48px; color: var(--text-muted); }
-    .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; }
+    /* SECTION 5: HIGH-CONTRAST PRE-AUDIT BANNER TO FINISH PAGE */
+    .banner-strip { background: var(--banner-light); color: var(--text-dark); padding: clamp(40px, 6vw, 56px) clamp(24px, 5vw, 56px); }
+    .banner-strip h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--text-dark); margin: 0 0 8px; }
+    .banner-strip p { color: #4A4A46; font-size: 1rem; margin: 0 0 28px; }
+
+    .banner-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .banner-card { background: #FFFFFF; border: 1px solid #E2DEC9; border-radius: 12px; padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .banner-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-dark); margin: 0 0 4px; }
+    .banner-card p { font-size: 0.88rem; color: #5C5C56; margin: 0; }
+    .banner-btn-wa { background: var(--gold-btn); color: var(--on-gold); font-weight: 700; padding: 11px 20px; border-radius: 6px; font-size: 0.9rem; white-space: nowrap; }
+    .banner-btn-mail { background: var(--text-dark); color: #fff; font-weight: 700; padding: 11px 20px; border-radius: 6px; font-size: 0.9rem; white-space: nowrap; }
+
+    /* GROUNDED FOOTER */
+    footer { background: #0B0B0B; border-top: 2px solid var(--gold); padding: 56px 0 48px; color: var(--text-muted); }
+    .footer-grid { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; }
     .footer-brand { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
-    .footer-sub { color: var(--gold); font-size: 0.9375rem; font-weight: 600; }
+    .footer-sub { color: var(--gold); font-size: 0.92rem; font-weight: 600; }
     .footer-heading { color: #fff; font-size: 1rem; font-weight: 700; margin: 0 0 10px; }
     .footer-links { list-style: none; margin: 0; padding: 0; line-height: 1.6; }
-    .footer-links a, .footer-contact a { display: inline-block; padding: 6px 0; font-size: 0.9375rem; color: var(--text-muted); transition: color 0.2s; }
+    .footer-links a, .footer-contact a { display: inline-block; padding: 6px 0; font-size: 0.92rem; color: var(--text-muted); transition: color 0.2s; }
     .footer-links a:hover, .footer-contact a:hover { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
-    .footer-disclaimer { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 0.88rem; line-height: 1.65; color: var(--text-faint); }
-    .footer-disclaimer strong { color: var(--text-muted); }
+    .footer-disclaimer { max-width: 1200px; margin: 40px auto 0; padding: 24px 24px 0; border-top: 1px solid #222220; font-size: 0.85rem; line-height: 1.65; color: var(--text-faint); }
 
     .wa-float { display: none; }
 
-    /* RESPONSIVE MOBILE OPTIMIZATION */
+    /* RESPONSIVE MOBILE STACKING */
     @media (max-width: 800px) {
-      .wrap { padding: 0 20px; }
-      main.wrap { padding: 16px 20px 40px; }
-      .panel { border-radius: 14px; padding: 24px 20px; margin-bottom: 20px; }
+      .mobile-menu-btn { display: block !important; }
       
+      .nav-links { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 16px 24px calc(32px + env(safe-area-inset-bottom, 0px)); background: var(--page); border-top: 1px solid #2E2E2C; z-index: 999; overflow-y: auto; }
+      .nav-links.active { display: flex !important; }
+      .nav-links a { font-size: 1.1rem; padding: 16px 0; border-bottom: 1px solid #2E2E2C; }
+      .nav-links a.active { box-shadow: none; color: var(--gold); }
+      .nav-links a.nav-cta { margin-top: 24px; text-align: center; border: none; border-radius: 8px; padding: 14px; }
+
+      .hero-band { grid-template-columns: 1fr; gap: 28px; }
       .quick-topics { grid-template-columns: 1fr; }
-      .preaudit-cards { grid-template-columns: 1fr; gap: 12px; }
+      .banner-cards { grid-template-columns: 1fr; gap: 12px; }
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 
-      /* TRANSFORM CARDS TO COMPACT TEXT DIRECTORY ON MOBILE */
-      .guide-grid { grid-template-columns: 1fr; row-gap: 16px; }
-      .guide-grid li { border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+      /* MOBILE COMPACT DIRECTORY LIST (HIDE IMAGE THUMBNAILS) */
+      .guide-grid { grid-template-columns: 1fr; row-gap: 18px; }
+      .guide-grid li { border-bottom: 1px solid var(--line); padding-bottom: 16px; }
       .guide-grid .media { display: none !important; }
-      .card-title { font-size: 1.05rem; }
 
       .wa-float { display: flex; align-items: center; justify-content: center; position: fixed; right: 16px; bottom: 20px; width: 56px; height: 56px; border-radius: 50%; background: var(--wa-green); color: #fff; z-index: 900; }
       .wa-float svg { width: 28px; height: 28px; fill: currentColor; }
@@ -190,42 +164,41 @@
 </head>
 <body>
 
-  <!-- NAVIGATION HEADER -->
+  <!-- ANCHORED HEADER -->
   <header>
-    <div class="wrap header-content">
+    <div class="header-content">
       <a href="/" class="brand">Laura Clarke</a>
-      <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+      <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">☰</button>
       <nav class="nav-links" id="navMenu">
-        <a href="/#services">Services</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/blog" class="active">Insights</a>
-        <a href="/about">About</a>
+        <a href="/#services" onclick="closeMenu()">Services</a>
+        <a href="/faq.html" onclick="closeMenu()">FAQ</a>
+        <a href="/blog" class="active" onclick="closeMenu()">Insights</a>
+        <a href="/about" onclick="closeMenu()">About</a>
         <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20a%20document%20pre-audit." class="nav-cta" target="_blank" rel="noopener">Book a pre-audit</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="wrap">
+  <!-- UNIFIED PAGE CANVAS CONTAINER -->
+  <div class="page-canvas">
 
-    <!-- INTRO PANEL -->
-    <section class="intro panel">
-      <div class="intro-text">
+    <!-- HERO HEADER (DESCRIPTION LEFT / ENLARGED PROFILE RIGHT) -->
+    <section class="hero-band">
+      <div class="hero-text">
         <h1>Insights Vault
           <span class="h1-tag">Clear answers to Jamaican document questions: passports, TRNs, police records, citizenship and customs.</span>
         </h1>
       </div>
-      <div class="intro-author">
-        <img src="assets/profile.webp" alt="Laura Clarke" width="88" height="88">
-        <div>
-          <div class="intro-author-title">Written By</div>
-          <div class="intro-author-name">Laura Clarke</div>
-        </div>
+      <div class="hero-profile-panel">
+        <img src="assets/profile.webp" alt="Laura Clarke" width="120" height="120">
+        <h3>Laura Clarke</h3>
+        <p>Lead Concierge &amp; Author</p>
       </div>
     </section>
 
-    <!-- STACKED TOPIC DIRECTORY PACK -->
-    <div class="quick-topics-wrapper">
-      <span class="quick-topics-label">Jump Directly To A Topic Directory:</span>
+    <!-- TOPIC DIRECTORY SLOTS -->
+    <div class="directory-pack">
+      <span class="directory-label">Jump Directly To A Topic Directory:</span>
       <nav class="quick-topics">
         <button type="button" class="topic-chip" onclick="selectCategory('pica-identity')">Passports &amp; Citizenship</button>
         <button type="button" class="topic-chip" onclick="selectCategory('jcf-clearances')">Police Records</button>
@@ -234,11 +207,11 @@
       </nav>
     </div>
 
-    <!-- FEATURED VIDEO GUIDE -->
-    <section class="featured-video panel" aria-labelledby="video-title">
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); margin-bottom: 24px;">
+    <!-- FEATURED VIDEO SECTION -->
+    <section class="video-section">
+      <h2 class="section-title">Featured Video Breakdown</h2>
+      <div class="full-bleed-video">
         <iframe 
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
           src="https://www.youtube.com/embed/xMT5dmElM3Y?autoplay=1&mute=1&loop=1&playlist=xMT5dmElM3Y&start=0&end=20&controls=1" 
           title="Jamaican Passport Renewal Guide - Laura Clarke Administrative Services" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -246,46 +219,19 @@
         </iframe>
       </div>
 
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px;">
+      <div class="video-meta-bar">
         <div style="flex: 1 1 400px;">
-          <span style="display: inline-block; background: var(--gold-btn); color: var(--on-gold); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; margin-bottom: 10px;">Featured Video Breakdown</span>
-          <h2 class="section-title" id="video-title" style="margin: 0 0 8px; font-family: var(--serif);">Jamaican Passport Renewals: The Realities Nobody Explains</h2>
-          <p style="color: var(--text-muted); margin: 0;">Watch our full breakdown covering PICA rules, photo checkers, fee calculators, minor thresholds, lost passport clearances, and doorstep delivery.</p>
+          <h3 style="font-family: var(--serif); font-size: 1.25rem; color: #fff; margin: 0 0 6px;">Jamaican Passport Renewals: The Realities Nobody Explains</h3>
+          <p style="color: var(--text-muted); margin: 0; font-size: 0.95rem;">Watch our full breakdown covering PICA rules, photo checkers, fee calculators, minor thresholds, lost passport clearances, and doorstep delivery.</p>
         </div>
         <div>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20watched%20your%20passport%20video%20and%20I%27d%20like%20a%20pre-audit." target="_blank" rel="noopener" class="hero-btn" style="white-space: nowrap;">Get Passport Pre-Audit &rarr;</a>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20watched%20your%20passport%20video%20and%20I%27d%20like%20a%20pre-audit." target="_blank" rel="noopener" class="hero-btn">Get Passport Pre-Audit &rarr;</a>
         </div>
       </div>
     </section>
 
-    <!-- CONSERVATIVE, MINIMAL PRE-AUDIT CALLOUT CARDS -->
-    <section class="preaudit-container panel">
-      <div class="preaudit-header">
-        <h2>Unsure if your file will pass?</h2>
-        <p>Avoid wasted fees and counter turn-aways. Have your document package pre-audited before you queue or submit.</p>
-      </div>
-
-      <div class="preaudit-cards">
-        <div class="audit-card">
-          <div class="audit-card-info">
-            <h3>WhatsApp Pre-Audit</h3>
-            <p>Fast review via direct message.</p>
-          </div>
-          <a class="audit-btn audit-btn-wa" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20was%20browsing%20your%20Insights%20Vault%20and%20would%20like%20a%20pre-audit%20before%20I%20pay%20my%20fees." target="_blank" rel="noopener">Message Us &rarr;</a>
-        </div>
-
-        <div class="audit-card">
-          <div class="audit-card-info">
-            <h3>Email Consult</h3>
-            <p>Send non-urgent document queries.</p>
-          </div>
-          <a class="audit-btn audit-btn-mail" href="mailto:hello@lauraclarkeservices.com">Email Laura &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- MASTER DOCUMENT DIRECTORY -->
-    <section class="guides panel" id="archive">
+    <!-- MASTER DIRECTORY SLOTS -->
+    <section class="directory-section" id="archive">
       <h2 class="section-title">All Guides Directory</h2>
 
       <div class="archive-search">
@@ -293,46 +239,46 @@
         <input type="search" id="archiveSearch" placeholder="Search: TRN, barrel, police record…" autocomplete="off">
       </div>
 
-      <div id="archiveCount" style="color:var(--gold); font-weight:700; font-size:0.9rem; margin-bottom:16px;">Showing All Guides</div>
+      <div id="archiveCount" style="color:var(--gold); font-weight:700; font-size:0.9rem; margin-bottom:24px;">Showing All Guides</div>
       
       <ul class="guide-grid" id="archiveList">
         <li data-category="pica-identity" data-keywords="citizenship descent heritage parent born abroad birth certificate rgd pica">
-          <article class="guide-card">
+          <article>
             <div class="media"><img src="assets/citizenship-descent-hero.webp" alt="Jamaican citizenship documents" loading="lazy"></div>
             <div class="meta">Passports &amp; Citizenship</div>
             <h3 class="card-title"><a href="/jamaican-citizenship-by-descent">How Do I Claim Jamaican Citizenship Through a Jamaican Parent? &rarr;</a></h3>
           </article>
         </li>
         <li data-category="pica-identity" data-keywords="passport renewal lost stolen damaged replacement affidavit minor pica">
-          <article class="guide-card">
+          <article>
             <div class="media"><img src="assets/lost-stolen-passport.webp" alt="Jamaican passport" loading="lazy"></div>
             <div class="meta">Passports &amp; Citizenship</div>
             <h3 class="card-title"><a href="/jamaica-passport-guide">The Complete Jamaican Passport Application &amp; Renewal Guide &rarr;</a></h3>
           </article>
         </li>
         <li data-category="jcf-clearances" data-keywords="police certificate police clearance criminal record certificate fingerprints cro character jcf">
-          <article class="guide-card">
+          <article>
             <div class="media"><img src="assets/police-record.webp" alt="Police record document" loading="lazy"></div>
             <div class="meta">Police Records</div>
             <h3 class="card-title"><a href="/jamaica-police-record-guide">How Do I Get a Jamaican Police Record Without Being Turned Away? &rarr;</a></h3>
           </article>
         </li>
         <li data-category="taj-services" data-keywords="drivers license licence renewal traffic ticket fines trn taj">
-          <article class="guide-card">
+          <article>
             <div class="media"><img src="assets/driver-license-renewal-hero.webp" alt="Driver's licence renewal" loading="lazy"></div>
             <div class="meta">TRN &amp; Licences</div>
             <h3 class="card-title"><a href="/jamaica-drivers-license-renewal-guide">Why Won't My Driver's Licence Renew? Clearing Ticket &amp; TRN Holds &rarr;</a></h3>
           </article>
         </li>
         <li data-category="taj-services" data-keywords="trn taxpayer registration number no id no photo id birth certificate expired id taj">
-          <article class="guide-card">
+          <article>
             <div class="media"><img src="assets/trn-application.webp" alt="TRN application document" loading="lazy"></div>
             <div class="meta">TRN &amp; Licences</div>
             <h3 class="card-title"><a href="/trn-without-photo-id">Can I Get a TRN Without a Passport or Driver's Licence? &rarr;</a></h3>
           </article>
         </li>
         <li data-category="customs-freight" data-keywords="c5 barrel barrels wharf customs declaration shipping returning resident jca">
-          <article class="guide-card">
+          <article>
             <div class="media"><img src="assets/wharf-barrel-clearance.webp" alt="Customs barrel shipping" loading="lazy"></div>
             <div class="meta">Customs &amp; Barrels</div>
             <h3 class="card-title"><a href="/jamaica-c5-travel-form">How Do I Fill Out the C5 Form So My Barrels Clear Customs? &rarr;</a></h3>
@@ -341,44 +287,66 @@
       </ul>
     </section>
 
-  </main>
+    <!-- HIGH-CONTRAST CREAM TEXT BANNER STRIP -->
+    <section class="banner-strip">
+      <h2>Unsure if your file will pass?</h2>
+      <p>Avoid wasted fees and counter turn-aways. Have your document package pre-audited before you queue or submit.</p>
 
-  <!-- FULL HOMEPAGE CONNECTED FOOTER -->
+      <div class="banner-cards">
+        <div class="banner-card">
+          <div>
+            <h3>WhatsApp Pre-Audit</h3>
+            <p>Fast review via direct message.</p>
+          </div>
+          <a class="banner-btn-wa" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20was%20browsing%20your%20Insights%20Vault%20and%20would%20like%20a%20pre-audit%20before%20I%20pay%20my%20fees." target="_blank" rel="noopener">Message Us &rarr;</a>
+        </div>
+
+        <div class="banner-card">
+          <div>
+            <h3>Email Consult</h3>
+            <p>Send non-urgent document queries.</p>
+          </div>
+          <a class="banner-btn-mail" href="mailto:hello@lauraclarkeservices.com">Email Laura &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- GROUNDED FOOTER -->
   <footer>
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">Laura Clarke</div>
-          <div class="footer-sub">Administrative Concierge &amp; Diaspora Consultancy</div>
-          <p class="footer-contact" style="margin:12px 0 0; line-height:1.4;">
-            <a href="https://wa.me/18765612614" target="_blank" rel="noopener">WhatsApp Laura</a><br>
-            <a href="mailto:hello@lauraclarkeservices.com">hello@lauraclarkeservices.com</a>
-          </p>
-        </div>
-        <div>
-          <p class="footer-heading">Popular Guides</p>
-          <ul class="footer-links">
-            <li><a href="/trn-without-photo-id">TRN without photo ID</a></li>
-            <li><a href="/jamaica-police-record-guide">Jamaican police record</a></li>
-            <li><a href="/jamaica-passport-guide">Master passport guide</a></li>
-            <li><a href="/jamaican-citizenship-by-descent">Citizenship by descent</a></li>
-            <li><a href="/jamaica-c5-travel-form">C5 form &amp; barrel clearance</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-heading">Site Navigation</p>
-          <ul class="footer-links">
-            <li><a href="/#services">Services</a></li>
-            <li><a href="/faq.html">FAQ</a></li>
-            <li><a href="/about">About Laura</a></li>
-            <li><a href="/blog">Insights Vault</a></li>
-          </ul>
-        </div>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Laura Clarke</div>
+        <div class="footer-sub">Administrative Concierge &amp; Diaspora Consultancy</div>
+        <p class="footer-contact" style="margin:12px 0 0; line-height:1.4;">
+          <a href="https://wa.me/18765612614" target="_blank" rel="noopener">WhatsApp Laura</a><br>
+          <a href="mailto:hello@lauraclarkeservices.com">hello@lauraclarkeservices.com</a>
+        </p>
       </div>
-      <div class="footer-disclaimer">
-        <p><strong>Disclaimer:</strong> Information provided is for educational and administrative guidance purposes only and does not constitute formal legal advice. Requirements and processing times are subject to official government changes.</p>
-        <p style="margin-top:12px; color:var(--text-faint);">&copy; <span id="year">2026</span> Laura Clarke Administrative Services. All rights reserved.</p>
+      <div>
+        <p class="footer-heading">Popular Guides</p>
+        <ul class="footer-links">
+          <li><a href="/trn-without-photo-id">TRN without photo ID</a></li>
+          <li><a href="/jamaica-police-record-guide">Jamaican police record</a></li>
+          <li><a href="/jamaica-passport-guide">Master passport guide</a></li>
+          <li><a href="/jamaican-citizenship-by-descent">Citizenship by descent</a></li>
+          <li><a href="/jamaica-c5-travel-form">C5 form &amp; barrel clearance</a></li>
+        </ul>
       </div>
+      <div>
+        <p class="footer-heading">Site Navigation</p>
+        <ul class="footer-links">
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/about">About Laura</a></li>
+          <li><a href="/blog">Insights Vault</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <p><strong>Disclaimer:</strong> Information provided is for educational and administrative guidance purposes only and does not constitute formal legal advice. Requirements and processing times are subject to official government changes.</p>
+      <p style="margin-top:12px; color:var(--text-faint);">&copy; <span id="year">2026</span> Laura Clarke Administrative Services. All rights reserved.</p>
     </div>
   </footer>
 
@@ -387,6 +355,26 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    /* MOBILE MENU TOGGLE */
+    function toggleMenu() {
+      var menu = document.getElementById('navMenu');
+      var btn = document.getElementById('menuBtn');
+      var open = menu.classList.toggle('active');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? '✕' : '☰';
+    }
+
+    function closeMenu() {
+      var menu = document.getElementById('navMenu');
+      var btn = document.getElementById('menuBtn');
+      if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = '☰';
+      }
+    }
+
+    /* FILTER ENGINE */
     var activeCategory = 'all';
 
     function applyFilters() {
