@@ -100,22 +100,44 @@
     .hero-btn { display: inline-block; padding: 10px 18px; border-radius: 6px; background: var(--gold-btn); color: var(--on-gold); font-weight: 700; font-size: 0.95rem; transition: background 0.2s; }
     .hero-btn:hover { background: #fff; }
 
-    /* CONSERVATIVE / MINIMAL PRE-AUDIT CONTACT CARDS */
-    .preaudit-container { margin-bottom: 32px; }
-    .preaudit-header { margin-bottom: 16px; }
-    .preaudit-header h2 { font-size: 1.35rem; font-weight: 700; color: #fff; margin: 0 0 6px; }
+   /* HIGHLIGHTED / CONTRASTING PRE-AUDIT CONTAINER */
+    .preaudit-container { 
+      margin-bottom: 44px; 
+      background: #1F1F1E; /* Distinct darker inset surface to break up page flow */
+      border: 1px solid var(--line); 
+      border-top: 3px solid var(--gold); /* Accent highlight bar */
+      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    }
+    .preaudit-header { margin-bottom: 20px; }
+    .preaudit-header h2 { font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 6px; }
     .preaudit-header p { font-size: 0.95rem; color: var(--text-muted); margin: 0; }
     
-    .preaudit-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .audit-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; transition: border-color 0.2s; }
-    .audit-card:hover { border-color: var(--gold); }
-    .audit-card-info h3 { font-size: 1rem; font-weight: 700; color: #fff; margin: 0 0 4px; }
-    .audit-card-info p { font-size: 0.88rem; color: var(--text-muted); margin: 0; }
-    .audit-btn { font-size: 0.88rem; font-weight: 700; padding: 8px 16px; border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
-    .audit-btn-wa { background: var(--inset); border: 1px solid var(--line); color: var(--text); }
-    .audit-btn-wa:hover { border-color: var(--gold); color: #fff; }
+    .preaudit-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .audit-card { 
+      background: #282826; /* Slightly lighter card inside darker container */
+      border: 1px solid #3A3A37; 
+      border-radius: 10px; 
+      padding: 18px 20px; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      transition: border-color 0.2s, transform 0.2s; 
+    }
+    .audit-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .audit-card-info h3 { font-size: 0.98rem; font-weight: 700; color: #fff; margin: 0 0 3px; }
+    .audit-card-info p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+    .audit-btn { font-size: 0.85rem; font-weight: 700; padding: 9px 15px; border-radius: 6px; transition: all 0.2s; white-space: nowrap; }
+    .audit-btn-wa { background: var(--gold-btn); color: var(--on-gold); border: none; }
+    .audit-btn-wa:hover { background: #fff; }
     .audit-btn-mail { background: transparent; border: 1px solid var(--line); color: var(--text-muted); }
     .audit-btn-mail:hover { border-color: var(--gold); color: #fff; }
+
+    /* INCREASED CONTAINER MARGINS FOR MOBILE BREATHING ROOM */
+    @media (max-width: 800px) {
+      .panel { margin-bottom: 32px; padding: 28px 20px; }
+      .quick-topics-wrapper { margin-bottom: 32px; }
+      .preaudit-container { margin-bottom: 36px; padding: 28px 20px; }
+    }
 
     /* GUIDE GRID & TEXT DIRECTORY LIST */
     .guide-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); row-gap: 48px; column-gap: 36px; }
