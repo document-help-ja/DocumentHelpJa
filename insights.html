@@ -266,17 +266,6 @@
     .archive-empty.show { display: block; }
     .archive-empty a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
 
-    /* NEWSLETTER */
-    .newsletter { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-    .newsletter h2 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; color: #fff; line-height: 1.25; margin: 0 0 12px; }
-    .newsletter p { margin: 0; color: var(--text-muted); }
-    .newsletter input { width: 100%; padding: 13px 14px; margin-bottom: 12px; border-radius: 6px; border: 1px solid var(--line); background: var(--page); color: var(--text); font: inherit; font-size: 1rem; }
-    .newsletter input:focus { border-color: var(--gold); }
-    .newsletter button { width: 100%; padding: 13px; border: none; border-radius: 6px; background: var(--gold-btn); color: var(--on-gold); font: inherit; font-size: 1.0625rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
-    .newsletter button:hover { background: #fff; }
-    .newsletter .form-note { font-size: 0.9375rem; margin-top: 8px; color: var(--text-faint); }
-    #newsletter-success { display: none; color: var(--text); font-weight: 600; }
-
     /* FOOTER */
     footer { background: #151514; border-top: 1px solid #2E2E2C; padding: 56px 0 48px; color: var(--text-muted); }
     .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; }
@@ -326,7 +315,7 @@
         padding: 32px 24px; 
       }
       
-      .audit-cta, .newsletter { grid-template-columns: 1fr; gap: 24px; }
+      .audit-cta { grid-template-columns: 1fr; gap: 24px; }
       
       /* SEPARATE THE CARDS ON MOBILE */
       .guide-grid { 
@@ -617,167 +606,128 @@
       </p>
     </section>
 
-  <section class="newsletter panel" aria-labelledby="newsletter-heading">
+    <!-- NEWSLETTER / LEAD CAPTURE PANEL -->
+    <section class="panel" aria-label="Passport Lead Magnet Signup">
       
       <!-- ========================================== -->
-      <!-- MAILERLITE FULL HTML EMBED CODE STARTS HERE -->
+      <!-- MAILERLITE FULL HTML EMBED CODE & STYLES   -->
       <!-- ========================================== -->
 
       <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1788452");</style>
       <style type="text/css">
         /* LOADER */
-        .ml-form-embedSubmitLoad {
-          display: inline-block;
-          width: 20px;
-          height: 20px;
-        }
-
-        .g-recaptcha {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-        transform-origin: 0 0;
-        -webkit-transform-origin: 0 0;
-        }
-
-        .sr-only {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0,0,0,0);
-          border: 0;
-        }
-
+        .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
         .ml-form-embedSubmitLoad:after {
-          content: " ";
+          content: " "; display: block; width: 11px; height: 11px; margin: 1px;
+          border-radius: 50%; border: 4px solid var(--on-gold);
+          border-color: var(--on-gold) var(--on-gold) var(--on-gold) transparent;
+          animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+        }
+        @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* RESET CONTAINER */
+        #mlb2-46183915.ml-form-embedContainer {
+          box-sizing: border-box;
           display: block;
-          width: 11px;
-          height: 11px;
-          margin: 1px;
-          border-radius: 50%;
-          border: 4px solid #fff;
-        border-color: #ffffff #ffffff #ffffff transparent;
-        animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+          margin: 0;
+          width: 100% !important;
         }
-        @keyframes ml-form-embedSubmitLoad {
-          0% {
-          transform: rotate(0deg);
-          }
-          100% {
-          transform: rotate(360deg);
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper {
+          background-color: transparent !important; 
+          border: none !important;
+          box-sizing: border-box;
+          display: block !important;
+          margin: 0; padding: 0; width: 100% !important; max-width: 100% !important;
+        }
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+          padding: 0 !important;
+        }
+
+        /* 2-COLUMN DESKTOP LAYOUT MATCHING WEBSITE THEME */
+        @media (min-width: 801px) {
+          #mlb2-46183915 .ml-form-embedBody {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 48px !important;
+            align-items: center !important;
           }
         }
-          #mlb2-46183915.ml-form-embedContainer {
-            box-sizing: border-box;
-            display: table;
-            margin: 0 auto;
-            position: static;
-            width: 100% !important;
-          }
-          #mlb2-46183915.ml-form-embedContainer h4,
-          #mlb2-46183915.ml-form-embedContainer p,
-          #mlb2-46183915.ml-form-embedContainer span,
-          #mlb2-46183915.ml-form-embedContainer button {
-            text-transform: none !important;
-            letter-spacing: normal !important;
-          }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper {
-            background-color: transparent; 
-            border-width: 0px;
-            border-color: transparent;
-            border-radius: 4px;
-            border-style: solid;
-            box-sizing: border-box;
-            display: inline-block !important;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            width: 100%;
-          }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper.embedPopup,
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 100%; }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 100%; width: 100%; }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-align-left { text-align: left; }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-align-center { text-align: center; }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-align-default { display: table-cell !important; vertical-align: middle !important; text-align: center !important; }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-align-right { text-align: right; }
-          
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
-            padding: 0;
-          }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent {
-            text-align: left;
-            margin: 0 0 20px 0;
-          }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
-            color: #0F2537; /* Adjusted for your Citadel Navy */
-            font-family: inherit;
-            font-size: 28px;
-            font-weight: 700;
-            margin: 0 0 10px 0;
-            text-align: left;
-            word-break: break-word;
-          }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
-            color: #555555;
-            font-family: inherit;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 1.5;
-            margin: 0 0 20px 0;
-            text-align: left;
-          }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
-            margin: 0;
-            width: 100%;
-          }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
-            background-color: #ffffff !important;
-            color: #333333 !important;
-            border-color: #cccccc;
-            border-radius: 4px !important;
-            border-style: solid !important;
-            border-width: 1px !important;
-            font-family: inherit;
-            font-size: 16px !important;
-            height: auto;
-            line-height: 21px !important;
-            margin-bottom: 0;
-            margin-top: 0;
-            margin-left: 0;
-            margin-right: 0;
-            padding: 12px !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-            max-width: 100% !important;
-          }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
-            background-color: #0F2537 !important; /* Adjusted for Citadel Navy */
-            border: none !important;
-            border-radius: 4px !important;
-            box-shadow: none !important;
-            color: #ffffff !important;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 16px !important;
-            font-weight: 700 !important;
-            line-height: 21px !important;
-            height: auto;
-            padding: 12px !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-            margin-top: 10px;
-          }
-          #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
-            background-color: #C89B3C !important; /* Adjusted for Warm Gold hover */
-            color: #111111 !important;
-          }
+
+        /* TYPOGRAPHY OVERRIDES FOR DARK MODE PANEL */
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
+          color: #ffffff !important;
+          font-family: var(--serif) !important;
+          font-size: 1.8rem !important;
+          font-weight: 700 !important;
+          line-height: 1.25 !important;
+          margin: 0 0 12px 0 !important;
+        }
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
+          color: var(--text-muted) !important;
+          font-family: var(--sans) !important;
+          font-size: 1rem !important;
+          line-height: 1.6 !important;
+          margin: 0 0 12px 0 !important;
+        }
+
+        /* SUCCESS MESSAGE STYLING */
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent strong {
+          color: #ffffff !important;
+        }
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent a {
+          color: var(--gold) !important;
+          text-decoration: underline !important;
+          text-underline-offset: 3px !important;
+        }
+
+        /* INPUT FIELD STYLING */
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
+          margin: 0 !important; width: 100% !important;
+        }
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+          background-color: var(--page) !important; /* Matches website charcoal background */
+          color: var(--text) !important;
+          border: 1px solid var(--line) !important;
+          border-radius: 6px !important;
+          font-family: var(--sans) !important;
+          font-size: 1rem !important;
+          padding: 13px 14px !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+          height: auto !important;
+        }
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus {
+          border-color: var(--gold) !important;
+          outline: none !important;
+        }
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::placeholder {
+          color: var(--text-faint) !important;
+          opacity: 1 !important;
+        }
+
+        /* SUBMIT BUTTON STYLING */
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+          background-color: var(--gold-btn) !important; /* Gold matching theme */
+          color: var(--on-gold) !important;
+          border: none !important;
+          border-radius: 6px !important;
+          font-family: var(--sans) !important;
+          font-size: 1.0625rem !important;
+          font-weight: 700 !important;
+          padding: 13px !important;
+          width: 100% !important;
+          cursor: pointer !important;
+          transition: background 0.2s !important;
+          margin-top: 10px !important;
+        }
+        #mlb2-46183915.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
+          background-color: #ffffff !important;
+          color: var(--on-gold) !important;
+        }
       </style>
 
       <div id="mlb2-46183915" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-46183915">
@@ -836,10 +786,6 @@
           fetch("https://assets.mailerlite.com/jsonp/2650626/forms/199240121633998056/takel")
       </script>
 
-      <!-- ========================================== -->
-      <!-- MAILERLITE FULL HTML EMBED CODE ENDS HERE  -->
-      <!-- ========================================== -->
-      
     </section>
 
   </main>
@@ -904,19 +850,6 @@
     }
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
     window.addEventListener('resize', function () { if (window.innerWidth > 800) closeMenu(); });
-
-    /* NEWSLETTER */
-    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      var form = this;
-      var btn = document.getElementById('sub-btn');
-      var successMsg = document.getElementById('newsletter-success');
-      btn.innerText = 'Sending...';
-      btn.disabled = true;
-      fetch(form.action, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
-        .then(function () { form.style.display = 'none'; successMsg.style.display = 'block'; })
-        .catch(function () { form.style.display = 'none'; successMsg.style.display = 'block'; });
-    });
 
     /* CATEGORY FILTER + SEARCH */
     var activeCategory = 'all';
