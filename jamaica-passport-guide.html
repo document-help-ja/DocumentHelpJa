@@ -779,6 +779,18 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 .template-text { margin: 0; padding: 1.1rem 1rem; max-height: 340px; overflow: auto; background: #fff; font: 400 .88rem/1.6 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; color: var(--ink); white-space: pre-wrap; word-break: break-word; }
 .template-note { padding: .8rem 1rem; border-top: 1px solid var(--line); background: #F8FAF9; font-size: .88rem; color: var(--muted); }
 
+/* Colour-coded Reference Desk sections (passport guide) */
+.ref-list > .ref-acc { --tone-bg: #F8FAF9; --tone-accent: var(--ink); border-left: 4px solid var(--tone-accent); }
+.ref-list > .ref-acc > summary { background: var(--tone-bg); }
+.ref-list > .ref-acc > summary:hover { background: var(--tone-bg); filter: brightness(.98); }
+.ref-list > .ref-acc[open] > summary { background: var(--tone-bg); border-bottom: 1px solid var(--line); }
+.ref-list > .ref-acc .ref-letter { background: var(--tone-accent); color: #fff; }
+.ref-list > .ref-acc > .acc-body { border-top: 0; }
+#lost-damaged { --tone-bg: #FBF3E4; --tone-accent: #9A5B0B; }  /* A: amber */
+#photo-rules  { --tone-bg: #EAF2F8; --tone-accent: #22578F; }  /* B: blue */
+#fees         { --tone-bg: #E7F3EC; --tone-accent: #0B5E40; }  /* C: green */
+#faq          { --tone-bg: #F1EDF7; --tone-accent: #5E4386; }  /* D: plum */
+
 /* FAQ (reuses the .acc accordion) */
 .tabs-grid { display: grid; grid-template-columns: 1fr 1fr; overflow: visible; }
 .tabs-grid .tab-btn { text-align: left; font-size: .9rem; padding: .75rem .6rem; }
@@ -786,6 +798,19 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 .faq-list { display: grid; gap: .75rem; margin-bottom: 1rem; }
 .faq-item > summary { font-size: 1.02rem; line-height: 1.45; text-align: left; }
 .faq-item .acc-body p { color: #3E4549; }
+
+/* ---------- Colour-coded passport streams (tabs + matching panels) ---------- */
+#tab-online, #panel-online   { --st-bar: #1F6B4A; --st-tint: #EAF3EE; }
+#tab-paper, #panel-paper     { --st-bar: #B7791F; --st-tint: #FBF3E2; }
+#tab-minor, #panel-minor     { --st-bar: #2F5D8A; --st-tint: #EAF0F7; }
+#tab-replace, #panel-replace { --st-bar: #9B3B3B; --st-tint: #F7ECEC; }
+.tabs-grid .tab-btn[id] { border-top: 3px solid var(--st-bar); background: #fff; color: var(--text); }
+.tabs-grid .tab-btn[id][aria-selected="true"] { background: var(--st-tint); color: var(--ink); border-bottom-color: var(--st-bar); }
+.tabs-grid { gap: .4rem; border-bottom: 0; }
+.tab-panel[id^="panel-"] { margin-top: .5rem; padding: .25rem 1rem .75rem; background: var(--st-tint); border-left: 5px solid var(--st-bar); border-radius: 4px; }
+.tab-panel[id^="panel-"] .check-list li + li { border-top-color: rgba(0,0,0,.08); }
+.tab-panel[id^="panel-"] .panel-note { background: #fff; }
+@media (min-width: 760px) { .tabs-grid { gap: .5rem; } }
 
 /* Trap callouts */
 .trap-callout { margin: 2.5rem 0; padding-left: 1.5rem; border-left: 2px solid #B91C1C; }
