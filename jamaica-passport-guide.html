@@ -308,7 +308,6 @@
     .guide-purpose h2 { font-family: var(--sans); font-size: 1rem; font-weight: 700; color: #FFFFFF; margin: 0 0 8px; }
     .guide-purpose p { margin: 0 0 10px; color: var(--text-muted); font-size: 1rem; }
     .guide-purpose p:last-child { margin-bottom: 0; }
-    .m-toc { display: none; }
 
     /* SOURCES, FAQ, PRE-AUDIT, PRINT */
     .source-note { font-size: 0.85rem; color: var(--text-faint); margin: 12px 0 0; }
@@ -406,21 +405,12 @@
       .scenario-banner { height: 130px; }
 
       /* ===== INTRO: video is the hero on mobile, then meta, title, summary, author ===== */
-      .intro-card > .hero-image-container { display: none; }
+      .intro-card > .hero-image-container { width: calc(100% + 40px); height: 180px; margin: -22px -20px 20px; border-radius: 11px 11px 0 0; }
       .guide-purpose { margin-top: 20px; padding: 16px; }
       .guide-purpose p { font-size: 0.95rem; }
 
-      /* Contents list (mobile only; desktop uses the sidebar) */
-      .m-toc { display: block; margin-top: 20px; }
       .pica-tool { flex-direction: column; align-items: stretch; gap: 14px; padding: 16px; }
       .pica-tool-link { justify-content: center; padding: 12px 16px; }
-      .m-toc h2 { font-family: var(--sans); font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin: 0 0 8px; }
-      .m-toc ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-      .m-toc li { margin: 0; border-bottom: 1px solid var(--line); }
-      .m-toc a { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 2px; color: var(--text); font-size: 0.95rem; }
-      .m-toc a span { margin-left: auto; color: var(--text-faint); font-size: 0.82rem; }
-      .m-toc a::after { content: ""; flex-shrink: 0; width: 7px; height: 7px; border: solid var(--gold); border-width: 2px 2px 0 0; transform: rotate(135deg); margin-right: 4px; }
-      .m-toc a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
       .mag-meta { font-size: 0.72rem; margin-bottom: 10px; }
       h1.mag-title { font-size: 1.85rem; margin-bottom: 14px; }
       .mag-summary { font-size: 1.05rem; padding-bottom: 20px; margin-bottom: 20px; }
@@ -565,18 +555,6 @@
           <p class="pica-contact">PICA customer care: <a href="tel:+18767547422">876-754-PICA (7422)</a> &middot; <a href="https://www.pica.gov.jm" target="_blank" rel="noopener">pica.gov.jm</a></p>
         </div>
 
-        <!-- CONTENTS (mobile only; desktop uses the sidebar) -->
-        <nav class="m-toc" aria-label="In this guide">
-          <h2>In this guide</h2>
-          <ol>
-            <li><a href="#scenarios">Find your situation <span>5 options</span></a></li>
-            <li><a href="#photos">Photo rules</a></li>
-            <li><a href="#fees">Fees &amp; delivery</a></li>
-            <li><a href="#timing">Processing times</a></li>
-            <li><a href="#faq">Common questions</a></li>
-            <li><a href="#pre-audit">Get your file checked</a></li>
-          </ol>
-        </nav>
 
       </div>
 
