@@ -22,12 +22,12 @@
 <meta property="og:image" content="https://documenthelpja.com/assets/office-hero.webp">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Fonts (same families as your guides, so the whole site matches) -->
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Structured data (helps Google understand the business) -->
+<!-- Structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -78,18 +78,19 @@
 
 <style>
 /* =========================================================
-   1. DESIGN TOKENS  (change colours or fonts here only)
+   1. DESIGN TOKENS
    ========================================================= */
 :root {
-  --ink: #181A1B;          /* headings, dark bands */
-  --text: #2F3538;         /* body copy */
-  --muted: #565E63;        /* secondary copy (passes contrast on white) */
+  --ink: #181A1B;
+  --text: #2F3538;
+  --muted: #565E63;
   --paper: #FFFFFF;
-  --tone: #F2F5F3;         /* subtle section background */
+  --tone: #F2F5F3;
   --line: #D6DDD9;
-  --gold: #C89B3C;         /* accent on dark backgrounds */
+  --gold: #C89B3C;
+  --gold-light: #FBF6EA;
   --gold-hover: #B08733;
-  --gold-text: #7E5B1C;    /* accent text on light backgrounds */
+  --gold-text: #7E5B1C;
   --emerald: #0B2E24;
 
   --serif: "Playfair Display", Georgia, "Times New Roman", serif;
@@ -293,45 +294,109 @@ a { color: inherit; }
 }
 
 /* =========================================================
-   6. SERVICES DIRECTORY (HUB & SPOKE)
+   6. SERVICES DIRECTORY (Scotiabank Clean Style)
    ========================================================= */
-.services { background: var(--tone); }
-.hub-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
-@media (min-width: 760px) { .hub-grid { grid-template-columns: 1fr 1fr; gap: 1.75rem; } }
+.services {
+  background: #F4F6F5; /* Soft, contrasting background so the white cards pop */
+  padding: 5rem 0;
+}
 
-.hub-card {
-  display: flex; flex-direction: column;
-  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
 }
-.hub-media { position: relative; aspect-ratio: 16 / 7; background: #D9E0DC; overflow: hidden; }
-.hub-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.hub-agency {
-  position: absolute; left: 1rem; bottom: 1rem;
-  background: var(--ink); color: var(--gold);
-  font-size: .8rem; font-weight: 700; letter-spacing: .06em; padding: .3rem .6rem; border-radius: 4px;
-}
-.hub-head { padding: 1.5rem 1.5rem 1rem; }
-.hub-head h3 { font-size: 1.5rem; }
-.hub-head p { margin-top: .5rem; color: var(--muted); font-size: 1rem; }
 
-.spokes { border-top: 1px solid var(--line); margin-top: auto; }
-.spokes li + li { border-top: 1px solid var(--line); }
-.spoke {
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  min-height: 64px; padding: .85rem 1.5rem;
-  text-decoration: none; color: var(--ink);
-  transition: background-color .15s ease;
+@media (min-width: 768px) {
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
 }
-.spoke:hover { background: #FAF6EC; }
-.spoke-text { display: flex; flex-direction: column; }
-.spoke-title { font-weight: 600; font-size: 1.02rem; line-height: 1.35; }
-.spoke-meta { font-size: .88rem; color: var(--gold-text); font-weight: 500; margin-top: .15rem; }
-.spoke .icon { color: var(--muted); width: 1rem; height: 1rem; transition: transform .15s ease; }
-.spoke:hover .icon { transform: translateX(3px); color: var(--ink); }
+
+@media (min-width: 1040px) {
+  .service-grid { grid-template-columns: repeat(3, 1fr); gap: 2.25rem; }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.service-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.service-kicker {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-text);
+  margin-bottom: 0.75rem;
+}
+
+.service-card h3 {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+}
+
+.service-card p.service-desc {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+/* Soft Hover Action Links */
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: auto;
+}
+.action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.action-link .icon { color: var(--gold); opacity: 0.8; transition: transform 0.2s ease; }
+
+.action-link:hover {
+  background: var(--gold-light, #FBF6EA);
+  padding: 0.75rem 1rem;
+  color: var(--gold-text);
+}
+.action-link:hover .icon {
+  transform: translateX(4px);
+  opacity: 1;
+}
+.action-wa:hover {
+  background: #E8F5F1; /* Soft WhatsApp green */
+  color: var(--emerald);
+}
 
 /* Unlisted services callout */
 .unlisted {
-  margin-top: 2rem; background: var(--ink); color: #D5D9DB;
+  margin-top: 3rem; background: var(--ink); color: #D5D9DB;
   border-radius: var(--radius); border-left: 4px solid var(--gold);
   padding: 2rem 1.5rem; display: grid; gap: 1.75rem;
 }
@@ -411,7 +476,44 @@ a { color: inherit; }
 }
 
 /* =========================================================
-   10. FOOTER
+   10. FLOATING BACK TO TOP BUTTON
+   ========================================================= */
+.floating-top-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--ink);
+  color: var(--gold);
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  text-decoration: none;
+}
+.floating-top-btn.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.floating-top-btn:hover {
+  background: var(--gold);
+  color: var(--ink);
+  transform: translateY(-3px);
+}
+@media (max-width: 639px) {
+  .floating-top-btn { bottom: 1rem; right: 1rem; width: 42px; height: 42px; }
+}
+
+/* =========================================================
+   11. FOOTER
    ========================================================= */
 .site-footer { background: var(--ink); color: #B9C0C4; font-size: .95rem; padding-bottom: env(safe-area-inset-bottom, 0px); }
 .footer-top { display: grid; gap: 2rem; padding: 3rem 0 2rem; border-bottom: 1px solid rgba(255,255,255,.12); }
@@ -436,7 +538,7 @@ a { color: inherit; }
 }
 
 /* =========================================================
-   11. SERVICE DETAIL WINDOWS (fees & requirements)
+   12. SERVICE DETAIL WINDOWS (Dialog Modals)
    ========================================================= */
 .svc-dialog {
   padding: 0; border: 0; border-radius: 12px; color: var(--text);
@@ -456,15 +558,35 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 .dlg-head p { margin-top: .4rem; font-size: .97rem; color: var(--muted); }
 .dlg-body { padding: 1.25rem 1.5rem 1.75rem; display: grid; gap: .75rem; }
 
-.acc { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+/* Distinct Interactive Service Rows */
+.acc { 
+  border: 1px solid var(--line); 
+  border-radius: 8px; 
+  overflow: hidden; 
+  margin-bottom: 0.75rem;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
 .acc > summary {
-  list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  min-height: 56px; padding: .9rem 1rem; background: #F8FAF9; font-weight: 600; color: var(--ink);
+  list-style: none; cursor: pointer; 
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  min-height: 60px; padding: 1rem 1.25rem; 
+  font-weight: 600; color: var(--ink);
+  transition: background-color 0.2s ease;
 }
 .acc > summary::-webkit-details-marker { display: none; }
-.acc > summary:hover { background: var(--tone); }
-.acc > summary .icon { width: 1rem; height: 1rem; color: var(--muted); transition: transform .2s ease; }
-.acc[open] > summary .icon { transform: rotate(90deg); }
+.acc > summary:hover { background: #F8FAF9; }
+.acc[open] > summary { border-bottom: 1px solid var(--line); background: #F4F6F5; }
+
+/* The new explicit call-to-action on the right side */
+.acc-cta {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.8rem; font-weight: 700; text-transform: uppercase; 
+  letter-spacing: 0.05em; color: var(--gold-text);
+}
+.acc-cta .icon { width: 1rem; height: 1rem; transition: transform 0.2s ease; }
+.acc[open] > summary .acc-cta .icon { transform: rotate(90deg); }
+
 .acc-body { padding: 1.1rem 1rem 1.2rem; border-top: 1px solid var(--line); font-size: .98rem; }
 .acc-lead { font-weight: 600; color: var(--ink); margin-bottom: .6rem; }
 .acc-body > p:not(.acc-lead) { margin-top: .75rem; color: var(--muted); }
@@ -484,7 +606,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 .dlg-body .btn { width: 100%; margin-top: .25rem; }
 .cal-frame { width: 100%; height: 620px; border: 0; }
 
-/* Delivery options + next-service link inside service windows */
 .delivery { border: 1px solid var(--line); background: #F8FAF9; border-radius: 8px; padding: 1rem; }
 .delivery-title { display: flex; align-items: center; gap: .5rem; font-weight: 700; color: var(--ink); margin-bottom: .6rem; }
 .delivery-title .icon { color: var(--emerald); }
@@ -492,62 +613,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 .dlg-body .next-service { font-size: .95rem; }
 .next-service .icon { width: 1rem; height: 1rem; }
 
-/* ---------- Homepage mobile refinements ---------- */
-@media (max-width: 959px) {
-  .hero { padding-top: 1.5rem; }
-  .hero-photo { order: -1; aspect-ratio: 16 / 10; }
-}
-@media (max-width: 759px) {
-  .hub-grid { gap: 2.25rem; }
-  .unlisted { margin-top: 2.5rem; }
-}
-
-/* Floating back-to-top button */
-.floating-top-btn {
-  position: fixed; right: 1.5rem; bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); z-index: 99;
-  display: flex; align-items: center; justify-content: center;
-  width: 48px; height: 48px; border-radius: 50%;
-  background: var(--ink); color: var(--gold); border: 2px solid transparent;
-  box-shadow: 0 4px 12px rgba(0,0,0,.15); text-decoration: none; cursor: pointer;
-  opacity: 0; pointer-events: none;
-  transition: opacity .3s ease, background-color .2s ease, transform .2s ease;
-}
-.floating-top-btn.is-visible { opacity: 1; pointer-events: auto; }
-.floating-top-btn:hover { background: var(--gold); color: var(--ink); transform: translateY(-3px); }
-.floating-top-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
-.floating-top-btn .icon { width: 1.25rem; height: 1.25rem; }
-@media (max-width: 639px) {
-  .floating-top-btn { right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); width: 44px; height: 44px; }
-}
-
-/* ---------- Service window options: a distinct colour for each option ---------- */
-.dlg-body .acc { border-left: 5px solid var(--acc-bar, var(--line)); }
-.dlg-body .acc:nth-of-type(4n+1) { --acc-bar: #1F6B4A; --acc-tint: #EAF3EE; --acc-tint-strong: #DCEBE2; }
-.dlg-body .acc:nth-of-type(4n+2) { --acc-bar: #B7791F; --acc-tint: #FBF3E2; --acc-tint-strong: #F5E6C6; }
-.dlg-body .acc:nth-of-type(4n+3) { --acc-bar: #2F5D8A; --acc-tint: #EAF0F7; --acc-tint-strong: #D9E4F0; }
-.dlg-body .acc:nth-of-type(4n+4) { --acc-bar: #9B3B3B; --acc-tint: #F7ECEC; --acc-tint-strong: #EFDADA; }
-.dlg-body .acc > summary { background: var(--acc-tint); }
-.dlg-body .acc > summary:hover,
-.dlg-body .acc[open] > summary { background: var(--acc-tint-strong); }
-.dlg-body .acc > summary .icon { color: var(--acc-bar); }
-.dlg-body .acc .acc-body { border-top-color: var(--acc-tint-strong); }
-.dlg-body .acc .specs div { background: var(--acc-tint); border-color: var(--acc-tint-strong); }
-.svc-dialog:focus, .svc-dialog:focus-visible { outline: none; }
-
-/* ---------- Guide links inside service cards (not a service option) ---------- */
-.spokes li:has(> .spoke-guide) { border-top: 1px dashed var(--line); }
-.spoke-guide { background: #FAF7EF; justify-content: flex-start; gap: .75rem; }
-.spoke-guide:hover { background: #F5EFDF; }
-.spoke-guide .guide-icon { width: 1.25rem; height: 1.25rem; color: var(--gold-text); flex-shrink: 0; transform: none; }
-.spoke-guide:hover .guide-icon { transform: none; color: var(--ink); }
-.spoke-guide .spoke-text { flex: 1; }
-.spoke-guide .spoke-title { font-weight: 500; font-size: .98rem; }
-.spoke-guide .spoke-meta { display: flex; align-items: center; gap: .45rem; color: var(--muted); }
-.guide-chip { display: inline-block; padding: .05rem .45rem; border-radius: 3px; background: var(--ink); color: var(--gold); font-size: .72rem; font-weight: 700; letter-spacing: .03em; }
-
-/* =========================================================
-   12. MOTION PREFERENCES
-   ========================================================= */
+/* Motion preferences */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
@@ -557,7 +623,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 
 <body id="top">
 
-<!-- ===================== ICON LIBRARY (used throughout the page) ===================== -->
+<!-- ===================== ICON LIBRARY ===================== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.37l-.36-.22-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41Z"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
@@ -569,7 +635,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.2L4 7.3V17h16V7.3l-8 4.9ZM5.2 7 12 11.1 18.8 7H5.2Z"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2Zm12 8H5v9h14v-9Z"/></symbol>
-  <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 3h11a3 3 0 0 1 3 3v15H7a2 2 0 0 1-2-2V3Zm2 14v2h10v-2H7Zm2-10v2h7V7H9Zm0 4v2h7v-2H9Z"/></symbol>
   <symbol id="i-up" viewBox="0 0 24 24"><path d="M11 20V7.8l-5.6 5.6L4 12l8-8 8 8-1.4 1.4L13 7.8V20z"/></symbol>
 </svg>
 
@@ -668,100 +733,104 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
     </div>
   </section>
 
-  <!-- ===================== SERVICES DIRECTORY (HUB & SPOKE) ===================== -->
+  <!-- ===================== SERVICES DIRECTORY ===================== -->
   <section class="section services" id="services" aria-labelledby="services-title">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="services-title">Our services</h2>
-        <p>Grouped by the government office that handles them. Tap any service to see exactly what we need from you, the government fee, our retainer and the usual turnaround.</p>
+        <h2 id="services-title">Document &amp; Administrative Services</h2>
+        <p>Professional pre-audits and local representation for Jamaican residents and the diaspora. Select a service to view requirements, fees, and retainers.</p>
       </div>
 
-      <div class="hub-grid">
+      <div class="service-grid">
 
-        <!-- CARD 1: PASSPORT & CITIZENSHIP -->
-        <article class="hub-card" aria-labelledby="hub-passport">
-          <div class="hub-media">
-            <img src="/assets/citizenship-descent-hero.webp" alt="" loading="lazy" decoding="async">
-            <span class="hub-agency">PICA</span>
+        <!-- CARD 1: PASSPORT -->
+        <article class="service-card">
+          <span class="service-kicker">PICA Jamaica</span>
+          <h3>Passport Renewal &amp; Replacement</h3>
+          <p class="service-desc">Adult renewals, name changes, minor applications, and lost passport replacements handled with zero counter rejections.</p>
+          <div class="card-actions">
+            <a class="action-link" href="#passport" data-dialog="passport">
+              See requirements &amp; fees <svg class="icon"><use href="#i-chev"/></svg>
+            </a>
+            <a class="action-link action-wa" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20Passport." target="_blank" rel="noopener">
+              Ask a quick question <svg class="icon"><use href="#i-wa"/></svg>
+            </a>
           </div>
-          <div class="hub-head">
-            <h3 id="hub-passport">Passport &amp; Citizenship</h3>
-            <p>Renewals, name changes, children's passports, lost or stolen replacements and claims to Jamaican citizenship by descent.</p>
-          </div>
-          <ul class="spokes">
-            <li><a class="spoke" href="#passport" data-dialog="passport">
-              <span class="spoke-text"><span class="spoke-title">Passport renewal &amp; replacement</span><span class="spoke-meta">Requirements and fees</span></span>
-              <svg class="icon"><use href="#i-chev"/></svg></a></li>
-            <li><a class="spoke spoke-guide" href="/jamaican-citizenship-by-descent.html">
-              <svg class="icon guide-icon" aria-hidden="true"><use href="#i-book"/></svg><span class="spoke-text"><span class="spoke-title">Citizenship by descent</span><span class="spoke-meta"><span class="guide-chip">Free guide</span> Read online</span></span>
-              <svg class="icon"><use href="#i-chev"/></svg></a></li>
-          </ul>
         </article>
 
-        <!-- CARD 2: TAX & MOTOR VEHICLE -->
-        <article class="hub-card" aria-labelledby="hub-tax">
-          <div class="hub-media">
-            <img src="/assets/driver-license-renewal-hero.webp" alt="" loading="lazy" decoding="async">
-            <span class="hub-agency">TAJ and ITA</span>
+        <!-- CARD 2: TRN -->
+        <article class="service-card">
+          <span class="service-kicker">Tax Administration Jamaica</span>
+          <h3>TRN Applications &amp; Retrievals</h3>
+          <p class="service-desc">Step-by-step assistance for first-time TRNs, missing photo ID declarations, and notarised diaspora filings.</p>
+          <div class="card-actions">
+            <a class="action-link" href="#trn" data-dialog="trn">
+              See requirements &amp; fees <svg class="icon"><use href="#i-chev"/></svg>
+            </a>
+            <a class="action-link action-wa" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20getting%20a%20TRN." target="_blank" rel="noopener">
+              Ask a quick question <svg class="icon"><use href="#i-wa"/></svg>
+            </a>
           </div>
-          <div class="hub-head">
-            <h3 id="hub-tax">Tax &amp; Motor Vehicle</h3>
-            <p>Your TRN, driver's licence, vehicle licensing and driving record, without the tax office lines.</p>
-          </div>
-          <ul class="spokes">
-            <li><a class="spoke" href="#trn" data-dialog="trn">
-              <span class="spoke-text"><span class="spoke-title">Taxpayer Registration Number (TRN)</span><span class="spoke-meta">Requirements and fees</span></span>
-              <svg class="icon"><use href="#i-chev"/></svg></a></li>
-            <li><a class="spoke" href="#drivers-licence" data-dialog="drivers-licence">
-              <span class="spoke-text"><span class="spoke-title">Driver's licence renewal &amp; replacement</span><span class="spoke-meta">Requirements and fees</span></span>
-              <svg class="icon"><use href="#i-chev"/></svg></a></li>
-            <li><a class="spoke" href="#vehicle-licence" data-dialog="vehicle-licence">
-              <span class="spoke-text"><span class="spoke-title">Motor vehicle licence renewal</span><span class="spoke-meta">Requirements and fees</span></span>
-              <svg class="icon"><use href="#i-chev"/></svg></a></li>
-            <li><a class="spoke" href="#driving-abstract" data-dialog="driving-abstract">
-              <span class="spoke-text"><span class="spoke-title">Driving abstracts &amp; record verification</span><span class="spoke-meta">Requirements and fees</span></span>
-              <svg class="icon"><use href="#i-chev"/></svg></a></li>
-          </ul>
         </article>
 
-        <!-- CARD 3: POLICE RECORDS -->
-        <article class="hub-card" aria-labelledby="hub-police">
-          <div class="hub-media">
-            <img src="/assets/police-record.webp" alt="" loading="lazy" decoding="async">
-            <span class="hub-agency">JCF</span>
+        <!-- CARD 3: POLICE RECORD -->
+        <article class="service-card">
+          <span class="service-kicker">Jamaica Constabulary Force</span>
+          <h3>Police Records &amp; Clearance</h3>
+          <p class="service-desc">Fingerprint scheduling, express counter processing, and overseas rolled-fingerprint submissions for local and diaspora applicants.</p>
+          <div class="card-actions">
+            <a class="action-link" href="#police-record" data-dialog="police-record">
+              See requirements &amp; fees <svg class="icon"><use href="#i-chev"/></svg>
+            </a>
+            <a class="action-link action-wa" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Police%20Record." target="_blank" rel="noopener">
+              Ask a quick question <svg class="icon"><use href="#i-wa"/></svg>
+            </a>
           </div>
-          <div class="hub-head">
-            <h3 id="hub-police">Police Records</h3>
-            <p>Police certificates for local and overseas applicants, from fingerprint scheduling to collecting the finished certificate.</p>
-          </div>
-          <ul class="spokes">
-            <li><a class="spoke" href="#police-record" data-dialog="police-record">
-              <span class="spoke-text"><span class="spoke-title">Police records &amp; clearance certificates</span><span class="spoke-meta">Requirements and fees</span></span>
-              <svg class="icon"><use href="#i-chev"/></svg></a></li>
-            <li><a class="spoke spoke-guide" href="/jamaica-police-record-guide.html">
-              <svg class="icon guide-icon" aria-hidden="true"><use href="#i-book"/></svg><span class="spoke-text"><span class="spoke-title">Why applications get turned away</span><span class="spoke-meta"><span class="guide-chip">Free guide</span> Read online</span></span>
-              <svg class="icon"><use href="#i-chev"/></svg></a></li>
-          </ul>
         </article>
 
-        <!-- CARD 4: CERTIFICATES & APOSTILLES -->
-        <article class="hub-card" aria-labelledby="hub-registry">
-          <div class="hub-media">
-            <img src="/assets/rgd.webp" alt="" loading="lazy" decoding="async">
-            <span class="hub-agency">RGD and MFAFT</span>
+        <!-- CARD 4: RGD CERTIFICATES -->
+        <article class="service-card">
+          <span class="service-kicker">Registrar General's Department</span>
+          <h3>Birth, Marriage &amp; Death Certificates</h3>
+          <p class="service-desc">Official certificate copies, registry entry searches, genealogical retrievals, and name correction guidance.</p>
+          <div class="card-actions">
+            <a class="action-link" href="#rgd-certificates" data-dialog="rgd-certificates">
+              See requirements &amp; fees <svg class="icon"><use href="#i-chev"/></svg>
+            </a>
+            <a class="action-link action-wa" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20an%20RGD%20Certificate." target="_blank" rel="noopener">
+              Ask a quick question <svg class="icon"><use href="#i-wa"/></svg>
+            </a>
           </div>
-          <div class="hub-head">
-            <h3 id="hub-registry">Certificates &amp; Apostilles</h3>
-            <p>Birth, marriage and death certificates from the registry, and getting Jamaican documents recognised abroad.</p>
+        </article>
+
+        <!-- CARD 5: DRIVER'S LICENCE & VEHICLE -->
+        <article class="service-card">
+          <span class="service-kicker">TAJ &amp; Island Traffic Authority</span>
+          <h3>Driver's Licence &amp; Vehicle Licensing</h3>
+          <p class="service-desc">Licence renewals, ticket hold checks, substitute lost cards, fitness renewals, and official driving abstracts.</p>
+          <div class="card-actions">
+            <a class="action-link" href="#drivers-licence" data-dialog="drivers-licence">
+              See requirements &amp; fees <svg class="icon"><use href="#i-chev"/></svg>
+            </a>
+            <a class="action-link action-wa" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Driver%27s%20Licence." target="_blank" rel="noopener">
+              Ask a quick question <svg class="icon"><use href="#i-wa"/></svg>
+            </a>
           </div>
-          <ul class="spokes">
-            <li><a class="spoke" href="#rgd-certificates" data-dialog="rgd-certificates">
-              <span class="spoke-text"><span class="spoke-title">Birth, marriage &amp; death certificates</span><span class="spoke-meta">Requirements and fees</span></span>
-              <svg class="icon"><use href="#i-chev"/></svg></a></li>
-            <li><a class="spoke" href="#apostille" data-dialog="apostille">
-              <span class="spoke-text"><span class="spoke-title">Apostille &amp; document authentication</span><span class="spoke-meta">Requirements and fees</span></span>
-              <svg class="icon"><use href="#i-chev"/></svg></a></li>
-          </ul>
+        </article>
+
+        <!-- CARD 6: APOSTILLE -->
+        <article class="service-card">
+          <span class="service-kicker">Ministry of Foreign Affairs</span>
+          <h3>Apostille &amp; Document Legalisation</h3>
+          <p class="service-desc">Official government authentication for birth certificates, police records, and affidavits to be legally recognised abroad.</p>
+          <div class="card-actions">
+            <a class="action-link" href="#apostille" data-dialog="apostille">
+              See requirements &amp; fees <svg class="icon"><use href="#i-chev"/></svg>
+            </a>
+            <a class="action-link action-wa" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20an%20Apostille%20on%20my%20Jamaican%20document." target="_blank" rel="noopener">
+              Ask a quick question <svg class="icon"><use href="#i-wa"/></svg>
+            </a>
+          </div>
         </article>
 
       </div>
@@ -773,10 +842,10 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           <p>These are only our most requested services. If it involves a Jamaican government office, send us a message and we'll confirm whether we can help and what it involves.</p>
           <p class="also">We also help with:</p>
           <ul class="checklist checklist-gold">
-            <li>Visa administrative readiness</li>
-            <li>Land title searches</li>
-            <li>Ministry filings</li>
-            <li>Other public bodies</li>
+            <li>Citizenship by descent applications</li>
+            <li>Self-employed S04 tax return guidance</li>
+            <li>NIS record audits &amp; pension recovery</li>
+            <li>Land title searches &amp; Ministry filings</li>
           </ul>
         </div>
         <a class="btn btn-gold" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20service%20that%20isn%27t%20listed." target="_blank" rel="noopener" data-wa="unlisted-ask">
@@ -871,6 +940,11 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 
 </main>
 
+<!-- Floating Back to Top Button -->
+<a href="#top" id="floating-top" class="floating-top-btn" aria-label="Back to top">
+  <svg class="icon"><use href="#i-up"/></svg>
+</a>
+
 <!-- ===================== FOOTER ===================== -->
 <footer class="site-footer">
   <div class="wrap">
@@ -905,16 +979,9 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   </div>
 </footer>
 
-<!-- Floating back-to-top button -->
-<a href="#top" id="floating-top" class="floating-top-btn" aria-label="Back to top">
-  <svg class="icon" aria-hidden="true"><use href="#i-up"/></svg>
-</a>
-
 
 <!-- =====================================================================
-     SERVICE DETAIL WINDOWS
-     Each window opens when a service in the directory is tapped.
-     To update a fee, find the service below and edit the number in <dd>.
+     SERVICE DETAIL WINDOWS (MODALS)
      ===================================================================== -->
 
 <!-- CONSULTATION -->
@@ -940,7 +1007,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   </div>
   <div class="dlg-body">
     <details class="acc">
-      <summary>Adult renewal (no name change)<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Adult renewal (no name change)</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -956,7 +1023,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       </div>
     </details>
     <details class="acc">
-      <summary>Adult renewal (with name change)<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Adult renewal (with name change)</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -973,7 +1040,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       </div>
     </details>
     <details class="acc">
-      <summary>Minor (under 18) renewal<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Minor (under 18) renewal</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -989,7 +1056,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       </div>
     </details>
     <details class="acc">
-      <summary>Lost or stolen replacement<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Lost or stolen replacement</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1011,7 +1078,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
         <li>International courier dispatch directly to your door</li>
       </ul>
     </div>
-    <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>. Lost or damaged passport? Read <a class="text-link" href="/jamaica-passport-guide#lost-damaged">the lost and damaged passport rules</a>.</p>
+    <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>. Lost or damaged passport? Read <a class="text-link" href="/replace-lost-jamaican-passport.html">why a standard renewal won't work</a>.</p>
     <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20a%20passport%20application." target="_blank" rel="noopener" data-wa="passport"><svg class="icon"><use href="#i-wa"/></svg> Ask about your passport</a>
     <a class="btn btn-outline-dark next-service" href="#trn" data-dialog="trn">Next service: TRN Applications &amp; Retrievals <svg class="icon"><use href="#i-chev"/></svg></a>
   </div>
@@ -1027,7 +1094,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   </div>
   <div class="dlg-body">
     <details class="acc">
-      <summary>Local resident application<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Local resident application</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1041,7 +1108,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       </div>
     </details>
     <details class="acc">
-      <summary>Diaspora or overseas application<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Diaspora or overseas application</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1078,7 +1145,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   </div>
   <div class="dlg-body">
     <details class="acc">
-      <summary>Local application (hybrid assist)<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Local application (hybrid assist)</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1094,7 +1161,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       </div>
     </details>
     <details class="acc">
-      <summary>Overseas or diaspora application<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Overseas or diaspora application</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1136,7 +1203,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   </div>
   <div class="dlg-body">
     <details class="acc">
-      <summary>Standalone apostille (a document you already have)<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Standalone apostille (a document you already have)</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1152,7 +1219,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       </div>
     </details>
     <details class="acc">
-      <summary>Bundled apostille (added to a new document order)<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Bundled apostille (added to a new document order)</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1188,7 +1255,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   </div>
   <div class="dlg-body">
     <details class="acc">
-      <summary>Certificate copy or replacement (Entry Number known)<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Certificate copy or replacement (Entry Number known)</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1204,7 +1271,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       </div>
     </details>
     <details class="acc">
-      <summary>Registry record search (Entry Number unknown or lost)<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Registry record search (Entry Number unknown or lost)</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1248,7 +1315,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   </div>
   <div class="dlg-body">
     <details class="acc">
-      <summary>Class B renewal (private motor car)<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Class B renewal (private motor car)</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1265,7 +1332,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       </div>
     </details>
     <details class="acc">
-      <summary>Class C renewal (commercial or general)<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Class C renewal (commercial or general)</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1281,7 +1348,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       </div>
     </details>
     <details class="acc">
-      <summary>Substitute licence (lost or stolen)<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Substitute licence (lost or stolen)</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1319,7 +1386,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   </div>
   <div class="dlg-body">
     <details class="acc">
-      <summary>Annual registration &amp; fitness renewal<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Annual registration &amp; fitness renewal</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1357,7 +1424,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   </div>
   <div class="dlg-body">
     <details class="acc">
-      <summary>Official driving history retrieval<svg class="icon"><use href="#i-chev"/></svg></summary>
+      <summary><span>Official driving history retrieval</span><span class="acc-cta">See requirements <svg class="icon"><use href="#i-chev"/></svg></span></summary>
       <div class="acc-body">
         <p class="acc-lead">What you need to provide:</p>
         <ul class="checklist">
@@ -1412,7 +1479,16 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
     if (nav.classList.contains('is-open') && !e.target.closest('.site-header')) setMenu(false);
   });
 
-  /* ---------- Back to top ---------- */
+  /* ---------- Back to top & Floating Button ---------- */
+  var floatBtn = document.getElementById('floating-top');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 350) {
+      if (floatBtn) floatBtn.classList.add('is-visible');
+    } else {
+      if (floatBtn) floatBtn.classList.remove('is-visible');
+    }
+  }, { passive: true });
+
   document.querySelectorAll('a[href="#top"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
       e.preventDefault();
@@ -1422,14 +1498,12 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
     });
   });
 
-  /* ---------- Service detail windows ---------- */
+  /* ---------- Service detail windows (Dialog Modals) ---------- */
   var dialogs = Array.prototype.slice.call(document.querySelectorAll('dialog.svc-dialog'));
   function byId(id) { return dialogs.filter(function (d) { return d.id === id; })[0]; }
   function closeAll() { dialogs.forEach(function (d) { if (d.open) { d.dataset.silent = '1'; d.close(); } }); }
   function prepare(d) {
-    /* first section opens automatically */
     d.querySelectorAll('details.acc').forEach(function (acc, i) { acc.open = i === 0; });
-    /* load the booking calendar only when needed */
     var frame = d.querySelector('iframe[data-src]');
     if (frame && !frame.src) frame.src = frame.dataset.src;
   }
@@ -1492,15 +1566,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       });
     });
   }
-
-  /* ---------- Floating back-to-top button ---------- */
-  var floatBtn = document.getElementById('floating-top');
-  if (floatBtn) {
-    var toggleFloat = function () { floatBtn.classList.toggle('is-visible', window.scrollY > 400); };
-    window.addEventListener('scroll', toggleFloat, { passive: true });
-    toggleFloat();
-  }
-
 })();
 </script>
 
