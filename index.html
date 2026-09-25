@@ -520,6 +520,31 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   .floating-top-btn { right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); width: 44px; height: 44px; }
 }
 
+/* ---------- Service window options: a distinct colour for each option ---------- */
+.dlg-body .acc { border-left: 5px solid var(--acc-bar, var(--line)); }
+.dlg-body .acc:nth-of-type(4n+1) { --acc-bar: #1F6B4A; --acc-tint: #EAF3EE; --acc-tint-strong: #DCEBE2; }
+.dlg-body .acc:nth-of-type(4n+2) { --acc-bar: #B7791F; --acc-tint: #FBF3E2; --acc-tint-strong: #F5E6C6; }
+.dlg-body .acc:nth-of-type(4n+3) { --acc-bar: #2F5D8A; --acc-tint: #EAF0F7; --acc-tint-strong: #D9E4F0; }
+.dlg-body .acc:nth-of-type(4n+4) { --acc-bar: #9B3B3B; --acc-tint: #F7ECEC; --acc-tint-strong: #EFDADA; }
+.dlg-body .acc > summary { background: var(--acc-tint); }
+.dlg-body .acc > summary:hover,
+.dlg-body .acc[open] > summary { background: var(--acc-tint-strong); }
+.dlg-body .acc > summary .icon { color: var(--acc-bar); }
+.dlg-body .acc .acc-body { border-top-color: var(--acc-tint-strong); }
+.dlg-body .acc .specs div { background: var(--acc-tint); border-color: var(--acc-tint-strong); }
+.svc-dialog:focus, .svc-dialog:focus-visible { outline: none; }
+
+/* ---------- Guide links inside service cards (not a service option) ---------- */
+.spokes li:has(> .spoke-guide) { border-top: 1px dashed var(--line); }
+.spoke-guide { background: #FAF7EF; justify-content: flex-start; gap: .75rem; }
+.spoke-guide:hover { background: #F5EFDF; }
+.spoke-guide .guide-icon { width: 1.25rem; height: 1.25rem; color: var(--gold-text); flex-shrink: 0; transform: none; }
+.spoke-guide:hover .guide-icon { transform: none; color: var(--ink); }
+.spoke-guide .spoke-text { flex: 1; }
+.spoke-guide .spoke-title { font-weight: 500; font-size: .98rem; }
+.spoke-guide .spoke-meta { display: flex; align-items: center; gap: .45rem; color: var(--muted); }
+.guide-chip { display: inline-block; padding: .05rem .45rem; border-radius: 3px; background: var(--ink); color: var(--gold); font-size: .72rem; font-weight: 700; letter-spacing: .03em; }
+
 /* =========================================================
    12. MOTION PREFERENCES
    ========================================================= */
@@ -544,6 +569,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.2L4 7.3V17h16V7.3l-8 4.9ZM5.2 7 12 11.1 18.8 7H5.2Z"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2Zm12 8H5v9h14v-9Z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 3h11a3 3 0 0 1 3 3v15H7a2 2 0 0 1-2-2V3Zm2 14v2h10v-2H7Zm2-10v2h7V7H9Zm0 4v2h7v-2H9Z"/></symbol>
   <symbol id="i-up" viewBox="0 0 24 24"><path d="M11 20V7.8l-5.6 5.6L4 12l8-8 8 8-1.4 1.4L13 7.8V20z"/></symbol>
 </svg>
 
@@ -666,8 +692,8 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
             <li><a class="spoke" href="#passport" data-dialog="passport">
               <span class="spoke-text"><span class="spoke-title">Passport renewal &amp; replacement</span><span class="spoke-meta">Requirements and fees</span></span>
               <svg class="icon"><use href="#i-chev"/></svg></a></li>
-            <li><a class="spoke" href="/jamaican-citizenship-by-descent.html">
-              <span class="spoke-text"><span class="spoke-title">Citizenship by descent</span><span class="spoke-meta">Read the guide</span></span>
+            <li><a class="spoke spoke-guide" href="/jamaican-citizenship-by-descent.html">
+              <svg class="icon guide-icon" aria-hidden="true"><use href="#i-book"/></svg><span class="spoke-text"><span class="spoke-title">Citizenship by descent</span><span class="spoke-meta"><span class="guide-chip">Free guide</span> Read online</span></span>
               <svg class="icon"><use href="#i-chev"/></svg></a></li>
           </ul>
         </article>
@@ -712,8 +738,8 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
             <li><a class="spoke" href="#police-record" data-dialog="police-record">
               <span class="spoke-text"><span class="spoke-title">Police records &amp; clearance certificates</span><span class="spoke-meta">Requirements and fees</span></span>
               <svg class="icon"><use href="#i-chev"/></svg></a></li>
-            <li><a class="spoke" href="/jamaica-police-record-guide.html">
-              <span class="spoke-text"><span class="spoke-title">Why applications get turned away</span><span class="spoke-meta">Read the guide</span></span>
+            <li><a class="spoke spoke-guide" href="/jamaica-police-record-guide.html">
+              <svg class="icon guide-icon" aria-hidden="true"><use href="#i-book"/></svg><span class="spoke-text"><span class="spoke-title">Why applications get turned away</span><span class="spoke-meta"><span class="guide-chip">Free guide</span> Read online</span></span>
               <svg class="icon"><use href="#i-chev"/></svg></a></li>
           </ul>
         </article>
