@@ -639,7 +639,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   border: 1px solid var(--line); 
   border-radius: 8px; 
   overflow: hidden; 
-  margin-bottom: 0.75rem;
   background: #FFFFFF;
   box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
@@ -671,7 +670,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 .specs div { background: #F8FAF9; border: 1px solid var(--line); border-radius: 6px; padding: .65rem .85rem; }
 .specs dt { font-size: .82rem; font-weight: 600; color: var(--muted); }
 .specs dd { margin: .15rem 0 0; font-weight: 700; color: var(--ink); font-size: .98rem; }
-@media (min-width: 560px) { .specs { grid-template-columns: repeat(3, 1fr); } }
+/* (spec layout now handled in section 12b) */
 .spec-note { margin-top: .75rem; font-size: .9rem; color: var(--muted); font-style: italic; }
 
 .addon { border: 1px solid rgba(200,155,60,.55); background: #FBF6EA; border-radius: 8px; padding: 1rem; }
@@ -688,6 +687,56 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 .delivery .checklist { font-size: .97rem; }
 .dlg-body .next-service { font-size: .95rem; }
 .next-service .icon { width: 1rem; height: 1rem; }
+
+/* =========================================================
+   12b. SERVICE WINDOWS: MOBILE LAYOUT UPGRADE
+   ========================================================= */
+
+/* Fee summary: one clean panel with divided rows (reads like a receipt) */
+.acc-body { container-type: inline-size; }
+.specs {
+  gap: 0; margin: 1.25rem 0 0;
+  border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff;
+}
+.specs div {
+  background: transparent; border: 0; border-radius: 0;
+  padding: .8rem 1rem;
+}
+.specs div + div { border-top: 1px solid var(--line); }
+.specs dt { font-size: .8rem; letter-spacing: .01em; }
+.specs dd { margin-top: .2rem; font-size: 1.02rem; line-height: 1.35; font-variant-numeric: tabular-nums; }
+.specs dd .tier { display: block; }
+.specs dd .tier + .tier { margin-top: .15rem; }
+/* Our retainer row gets a quiet highlight, since it's the price we set */
+.specs div:nth-child(2) { background: #FBF6EA; }
+
+/* Only go to three columns when the panel itself is wide enough */
+@container (min-width: 34rem) {
+  .specs { grid-template-columns: repeat(3, 1fr); }
+  .specs div + div { border-top: 0; border-left: 1px solid var(--line); }
+}
+
+@media (max-width: 599px) {
+  /* Open as a bottom sheet that uses the full screen width */
+  .svc-dialog {
+    width: 100%; max-width: 100%; max-height: 92dvh;
+    margin: auto 0 0; border-radius: 16px 16px 0 0;
+  }
+  .dlg-head { padding: 1.25rem 1.1rem 1rem; }
+  .dlg-head h2 { font-size: clamp(1.35rem, 6vw, 1.6rem); }
+  .dlg-close { top: .75rem; right: .75rem; }
+  .dlg-body { padding: 1rem 1rem calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
+
+  /* Option rows: title on its own line, action underneath (no squeezed columns) */
+  .acc > summary {
+    flex-direction: column; align-items: flex-start; justify-content: center;
+    gap: .3rem; padding: .95rem 1rem; line-height: 1.35;
+  }
+  .acc-body { padding: 1rem 1rem 1.1rem; }
+
+  /* Add-on: stack the label and price */
+  .addon-top { flex-direction: column; }
+}
 
 /* Motion preferences */
 @media (prefers-reduced-motion: reduce) {
@@ -1246,7 +1295,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
         </ul>
         <p>We pre-pay fees and schedule your fingerprint slot. You appear briefly for fingerprint capture, then we collect the finished certificate.</p>
         <dl class="specs">
-          <div><dt>JCF government fee</dt><dd>$3,000 (21-day) / $6,000 (5-day) / $8,000 (next day)</dd></div>
+          <div><dt>JCF government fee</dt><dd><span class="tier">$3,000 (21-day)</span><span class="tier">$6,000 (5-day)</span><span class="tier">$8,000 (next day)</span></dd></div>
           <div><dt>Concierge retainer</dt><dd>$5,000 – $6,000 JMD</dd></div>
           <div><dt>JCF turnaround</dt><dd>Based on the speed option chosen</dd></div>
         </dl>
@@ -1262,7 +1311,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           <li>Notarised authorisation letter</li>
         </ul>
         <dl class="specs">
-          <div><dt>JCF government fee</dt><dd>$3,000 (regular) / $6,000 (express)</dd></div>
+          <div><dt>JCF government fee</dt><dd><span class="tier">$3,000 (regular)</span><span class="tier">$6,000 (express)</span></dd></div>
           <div><dt>Concierge retainer</dt><dd>$7,000 – $10,000 JMD</dd></div>
           <div><dt>JCF turnaround</dt><dd>10 – 15 business days</dd></div>
         </dl>
@@ -1303,7 +1352,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           <li>Full names of subject and parents</li>
         </ul>
         <dl class="specs">
-          <div><dt>RGD government fee</dt><dd>$2,500 (regular) / $6,000 (express)</dd></div>
+          <div><dt>RGD government fee</dt><dd><span class="tier">$2,500 (regular)</span><span class="tier">$6,000 (express)</span></dd></div>
           <div><dt>Concierge retainer</dt><dd>$4,000 – $6,000 JMD</dd></div>
           <div><dt>RGD turnaround</dt><dd>7 – 14 business days</dd></div>
         </dl>
@@ -1509,7 +1558,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           <li>Destination country name</li>
         </ul>
         <dl class="specs">
-          <div><dt>Government fee</dt><dd>$3,500 JMD (regular) / $5,000 JMD (express)</dd></div>
+          <div><dt>Government fee</dt><dd><span class="tier">$3,500 JMD (regular)</span><span class="tier">$5,000 JMD (express)</span></dd></div>
           <div><dt>Concierge retainer</dt><dd>$5,000 – $9,000 JMD</dd></div>
           <div><dt>Ministry turnaround</dt><dd>5 – 7 business days</dd></div>
         </dl>
@@ -1523,7 +1572,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           <li>Ordered alongside a new Police Record, RGD Certificate or Driving Abstract</li>
         </ul>
         <dl class="specs">
-          <div><dt>Government fee</dt><dd>$3,500 JMD (regular) / $5,000 JMD (express)</dd></div>
+          <div><dt>Government fee</dt><dd><span class="tier">$3,500 JMD (regular)</span><span class="tier">$5,000 JMD (express)</span></dd></div>
           <div><dt>Concierge retainer</dt><dd>+$3,000 – $5,000 JMD (bundled rate)</dd></div>
           <div><dt>Ministry turnaround</dt><dd>+3 – 5 business days to the base order</dd></div>
         </dl>
