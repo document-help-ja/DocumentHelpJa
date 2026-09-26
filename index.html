@@ -48,7 +48,7 @@
         { "@type": "Country", "name": "Canada" },
         { "@type": "Country", "name": "United Kingdom" }
       ],
-      "knowsAbout": ["Jamaica Customs Agency", "Jamaican passport renewal", "Jamaican citizenship by descent", "PICA", "TRN application", "Tax Administration Jamaica", "Jamaica police record", "JCF police certificate", "RGD birth certificate", "Apostille Jamaica", "Jamaica driver's licence renewal", "Motor vehicle licence renewal Jamaica", "Driving abstract Jamaica", "Jamaican citizenship by descent", "Jamaica Customs barrel clearance", "C5 form Jamaica"],
+      "knowsAbout": ["Jamaican passport renewal", "Jamaican citizenship by descent", "PICA", "TRN application", "Tax Administration Jamaica", "Jamaica police record", "JCF police certificate", "RGD birth certificate", "Apostille Jamaica", "Jamaica driver's licence renewal", "Motor vehicle licence renewal Jamaica", "Driving abstract Jamaica"],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Administrative services",
@@ -61,8 +61,7 @@
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Driver's Licence Renewal & Replacement", "provider": { "@id": "https://documenthelpja.com/#business" } } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Motor Vehicle Licence Renewal", "provider": { "@id": "https://documenthelpja.com/#business" } } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Driving Abstracts & Record Verification", "provider": { "@id": "https://documenthelpja.com/#business" } } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Jamaican Citizenship by Descent", "provider": { "@id": "https://documenthelpja.com/#business" } } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Customs Barrel Clearance (C5)", "provider": { "@id": "https://documenthelpja.com/#business" } } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Jamaican Citizenship by Descent", "provider": { "@id": "https://documenthelpja.com/#business" } } }
         ]
       }
     },
@@ -751,7 +750,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 
       <figure class="hero-photo" style="margin:0">
         <img src="assets/office-hero.webp" width="800" height="576" fetchpriority="high" decoding="async" alt="Laura Clarke at her desk">
-        <figcaption><strong>Laura Clarke</strong>Executive Administrative Concierge, St. Catherine</figcaption>
       </figure>
     </div>
   </section>
@@ -831,16 +829,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
         <a class="service-card" href="#rgd-certificates" data-dialog="rgd-certificates">
           <img src="assets/rgd.webp" alt="" loading="lazy" decoding="async">
           <h3 class="service-card-title">Birth, Marriage &amp; Death Certificates</h3>
-        </a>
-
-        <a class="service-card" href="#apostille" data-dialog="apostille">
-          <img src="assets/official-documents.webp" alt="" loading="lazy" decoding="async">
-          <h3 class="service-card-title">Apostille &amp; Document Authentication</h3>
-        </a>
-
-        <a class="service-card" href="#customs" data-dialog="customs">
-          <img src="assets/wharf-barrel-clearance.webp" alt="" loading="lazy" decoding="async">
-          <h3 class="service-card-title">Customs Barrel Clearance (C5)</h3>
         </a>
 
       </div>
@@ -1177,58 +1165,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   </div>
 </dialog>
 
-<!-- APOSTILLE -->
-<dialog id="apostille" class="svc-dialog" aria-labelledby="apostille-title">
-  <div class="dlg-head">
-    <form method="dialog"><button class="dlg-close" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button></form>
-    <span class="dlg-tag">MFAFT</span>
-    <h2 id="apostille-title">Apostille &amp; Authentication</h2>
-    <p>Getting Jamaican public records recognised abroad, by apostille or by authentication and legalisation. Choose your filing type to see requirements and ministry fees.</p>
-  </div>
-  <div class="dlg-body">
-    <details class="acc">
-      <summary>Standalone apostille (a document you already have)<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you need to provide:</p>
-        <ul class="checklist">
-          <li>Original Jamaican public document (fresh copy from RGD or JCF)</li>
-          <li>Copy of valid government-issued ID</li>
-          <li>Destination country name</li>
-        </ul>
-        <dl class="specs">
-          <div><dt>Government fee</dt><dd>$3,500 JMD (regular) / $5,000 JMD (express)</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$5,000 – $9,000 JMD</dd></div>
-          <div><dt>Ministry turnaround</dt><dd>5 – 7 business days</dd></div>
-        </dl>
-      </div>
-    </details>
-    <details class="acc">
-      <summary>Bundled apostille (added to a new document order)<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you need to provide:</p>
-        <ul class="checklist">
-          <li>Ordered alongside a new Police Record, RGD Certificate or Driving Abstract</li>
-        </ul>
-        <dl class="specs">
-          <div><dt>Government fee</dt><dd>$3,500 JMD (regular) / $5,000 JMD (express)</dd></div>
-          <div><dt>Concierge retainer</dt><dd>+$3,000 – $5,000 JMD (bundled rate)</dd></div>
-          <div><dt>Ministry turnaround</dt><dd>+3 – 5 business days to the base order</dd></div>
-        </dl>
-      </div>
-    </details>
-    <div class="delivery">
-      <p class="delivery-title"><svg class="icon"><use href="#i-pin"/></svg> Secure delivery of your finished document</p>
-      <ul class="checklist">
-        <li>Local pickup in Kingston</li>
-        <li>International courier dispatch directly to your door</li>
-      </ul>
-    </div>
-    <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
-    <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20document%20authentication." target="_blank" rel="noopener" data-wa="apostille"><svg class="icon"><use href="#i-wa"/></svg> Ask about an apostille</a>
-    <a class="btn btn-outline-dark next-service" href="#customs" data-dialog="customs">Next service: Customs Barrel Clearance (C5) <svg class="icon"><use href="#i-chev"/></svg></a>
-  </div>
-</dialog>
-
 <!-- RGD CERTIFICATES -->
 <dialog id="rgd-certificates" class="svc-dialog" aria-labelledby="rgd-title">
   <div class="dlg-head">
@@ -1285,7 +1221,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
     </div>
     <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
     <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20a%20registry%20certificate." target="_blank" rel="noopener" data-wa="rgd-certificates"><svg class="icon"><use href="#i-wa"/></svg> Ask about a certificate</a>
-    <a class="btn btn-outline-dark next-service" href="#apostille" data-dialog="apostille">Next service: Apostille &amp; Authentication <svg class="icon"><use href="#i-chev"/></svg></a>
+    <a class="btn btn-outline-dark next-service" href="#passport" data-dialog="passport">Next service: Jamaican Passport Services <svg class="icon"><use href="#i-chev"/></svg></a>
   </div>
 </dialog>
 
@@ -1331,38 +1267,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
     <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
     <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20Jamaican%20citizenship%20by%20descent." target="_blank" rel="noopener" data-wa="citizenship"><svg class="icon"><use href="#i-wa"/></svg> Ask about citizenship</a>
     <a class="btn btn-outline-dark next-service" href="#trn" data-dialog="trn">Next service: TRN Applications &amp; Retrievals <svg class="icon"><use href="#i-chev"/></svg></a>
-  </div>
-</dialog>
-
-<!-- CUSTOMS C5 BARREL CLEARANCE -->
-<dialog id="customs" class="svc-dialog" aria-labelledby="customs-title">
-  <div class="dlg-head">
-    <form method="dialog"><button class="dlg-close" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button></form>
-    <span class="dlg-tag">JCA</span>
-    <h2 id="customs-title">Customs Barrel Clearance (C5)</h2>
-    <p>Barrels and packages cleared through the Jamaica Customs Agency. We prepare and check your C5 declaration, then handle the clearance on your behalf.</p>
-  </div>
-  <div class="dlg-body">
-    <details class="acc">
-      <summary>Barrel &amp; package clearance<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you'll typically need:</p>
-        <ul class="checklist">
-          <li>Bill of lading or shipping notice</li>
-          <li>Itemised list of the barrel's contents</li>
-          <li>Your TRN and valid photo ID</li>
-          <li>Notarised authorisation letter (if we're clearing for you)</li>
-        </ul>
-        <dl class="specs">
-          <div><dt>Customs duties</dt><dd>Assessed by JCA on contents</dd></div>
-          <div><dt>Concierge retainer</dt><dd>Quoted per shipment</dd></div>
-          <div><dt>Turnaround</dt><dd>Depends on arrival &amp; inspection</dd></div>
-        </dl>
-      </div>
-    </details>
-    <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
-    <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20help%20clearing%20a%20barrel%20through%20Customs." target="_blank" rel="noopener" data-wa="customs"><svg class="icon"><use href="#i-wa"/></svg> Ask about your barrel</a>
-    <a class="btn btn-outline-dark next-service" href="#passport" data-dialog="passport">Next service: Jamaican Passport Services <svg class="icon"><use href="#i-chev"/></svg></a>
   </div>
 </dialog>
 
