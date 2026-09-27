@@ -107,7 +107,11 @@
    ========================================================= */
 *, *::before, *::after { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
+html {
+  scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip;
+  overscroll-behavior-y: none;   /* stops the phone "bounce" that pulls the page past the footer */
+  background: var(--ink);        /* if an older phone still bounces, it shows footer colour, not blank white */
+}
 body {
   margin: 0;
   font-family: var(--sans);
@@ -674,6 +678,22 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* =========================================================
+   MOBILE OVERSCROLL & INVISIBLE ELEMENT FIXES
+   ========================================================= */
+/* 1. Older mobile browsers: keep closed service windows fully hidden */
+dialog:not([open]) { display: none !important; }
+
+/* 2. Collapse the hidden icon library only (the icons inside buttons stay visible) */
+body > svg[width="0"][height="0"] { display: none !important; }
+
+/* 3. Collapse invisible third-party tracking frames (e.g. MailerLite) */
+iframe[style*="display: none"],
+iframe[width="0"][height="0"] { display: none !important; }
+
+/* 4. Page ends at the footer; any iOS bounce shows footer colour */
+body { position: relative; width: 100%; min-height: 100vh; }
 </style>
 </head>
 
