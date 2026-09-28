@@ -49,8 +49,9 @@
       { "@type": "ListItem", "position": 5, "url": "https://documenthelpja.com/trn-without-photo-id", "name": "No Passport or Driver's Licence? How to Get a Jamaican TRN Using Only a Birth Certificate" },
       { "@type": "ListItem", "position": 6, "url": "https://documenthelpja.com/jamaica-c5-travel-form", "name": "Don't Let the C5 Travel Form Trap Your Barrels at the Wharf" },
       { "@type": "ListItem", "position": 7, "url": "https://documenthelpja.com/jamaica-motor-vehicle-licence-guide", "name": "The Simple Guide to Jamaican Motor Vehicle Licence Renewal (Fitness & Registration)" },
-      { "@type": "ListItem", "position": 8, "url": "https://documenthelpja.com/self-employed-s04-tax-guide", "name": "The Self-Employed Tax Trap: Why Ignoring Your S04 Return Wipes Out Your NIS Pension" },
-      { "@type": "ListItem", "position": 9, "url": "https://documenthelpja.com/gig-worker-tax-guide", "name": "Think You're Invisible to TAJ? Why Jamaican Freelancers and Seasonal Workers Still Owe Tax" }
+      { "@type": "ListItem", "position": 8, "url": "https://documenthelpja.com/jamaica-nis-guide", "name": "The Jamaican NIS Survival Guide: Closing Gaps, Voluntary Cards & Avoiding the Lump Sum Trap" },
+      { "@type": "ListItem", "position": 9, "url": "https://documenthelpja.com/self-employed-s04-tax-guide", "name": "The Self-Employed Tax Trap: Why Ignoring Your S04 Return Wipes Out Your NIS Pension" },
+      { "@type": "ListItem", "position": 10, "url": "https://documenthelpja.com/gig-worker-tax-guide", "name": "Think You're Invisible to TAJ? Why Jamaican Freelancers and Seasonal Workers Still Owe Tax" }
     ]
   }
 }
@@ -654,9 +655,9 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
         <button type="button" class="filter-btn" data-filter="taj" aria-pressed="false">TAJ / Taxes</button>
         <button type="button" class="filter-btn" data-filter="jcf" aria-pressed="false">JCF / Police Records</button>
         <button type="button" class="filter-btn" data-filter="customs" aria-pressed="false">Customs</button>
-        <!-- <button type="button" class="filter-btn" data-filter="nis" aria-pressed="false">NIS / Pensions</button> (restore with the NIS guide) -->
+        <button type="button" class="filter-btn" data-filter="nis" aria-pressed="false">NIS / Pensions</button>
       </div>
-      <p class="filter-status" id="filter-status" aria-live="polite">Showing all 9 guides</p>
+      <p class="filter-status" id="filter-status" aria-live="polite">Showing all 10 guides</p>
 
       <!-- Article grid
            To add a guide: copy one <article> block, then change data-cat
@@ -755,7 +756,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           </div>
         </article>
 
-        <!-- NIS GUIDE: hidden until /jamaica-nis-guide is live (it currently returns a 404). Remove these comment markers to show it.
         <article class="article-card" data-cat="nis">
           <div class="card-media"><img src="/assets/official-documents.png" alt="Official government documents" loading="lazy" decoding="async"></div>
           <div class="card-body">
@@ -765,7 +765,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
             <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
           </div>
         </article>
-        -->
 
       </div>
 
