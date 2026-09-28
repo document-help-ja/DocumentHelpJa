@@ -36,33 +36,231 @@
       "@type": "ProfessionalService",
       "@id": "https://documenthelpja.com/#business",
       "name": "Laura Clarke Administrative Services",
-      "description": "Private document concierge and administrative compliance pre-audit services in Jamaica, for local and overseas clients.",
+      "description": "Independent, private document concierge in Jamaica. Pre-audits paperwork against agency counter rules and represents local and overseas clients at PICA, TAJ, RGD, JCF and ITA. Not affiliated with the Government of Jamaica; government fees are paid to the agency and are separate from the concierge retainer.",
       "url": "https://documenthelpja.com/",
       "telephone": "+1-876-561-2614",
       "email": "info@documenthelpja.com",
       "image": "https://documenthelpja.com/assets/office-hero.webp",
-      "address": { "@type": "PostalAddress", "addressRegion": "St. Catherine", "addressCountry": "JM" },
+      "logo": "https://documenthelpja.com/apple-touch-icon.png",
+      "founder": {
+        "@id": "https://documenthelpja.com/#laura"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "St. Catherine",
+        "addressCountry": "JM"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+1-876-561-2614",
+        "email": "info@documenthelpja.com",
+        "url": "https://wa.me/18765612614",
+        "availableLanguage": [
+          "en"
+        ]
+      },
       "areaServed": [
-        { "@type": "Country", "name": "Jamaica" },
-        { "@type": "Country", "name": "United States" },
-        { "@type": "Country", "name": "Canada" },
-        { "@type": "Country", "name": "United Kingdom" }
+        {
+          "@type": "Country",
+          "name": "Jamaica"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        }
       ],
-      "knowsAbout": ["Jamaican passport renewal", "Jamaican citizenship by descent", "PICA", "TRN application", "Tax Administration Jamaica", "Jamaica police record", "JCF police certificate", "RGD birth certificate", "Apostille Jamaica", "Jamaica driver's licence renewal", "Motor vehicle licence renewal Jamaica", "Driving abstract Jamaica"],
+      "knowsAbout": [
+        "Jamaican passport renewal",
+        "Jamaican citizenship by descent",
+        "PICA",
+        "TRN application",
+        "Tax Administration Jamaica",
+        "Jamaica police record",
+        "JCF police certificate",
+        "RGD birth certificate",
+        "Apostille Jamaica",
+        "Jamaica driver's licence renewal",
+        "Motor vehicle licence renewal Jamaica",
+        "Driving abstract Jamaica",
+        "C5 customs declaration Jamaica",
+        "NIS Jamaica"
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Administrative services",
+        "name": "Concierge services (retainer only; government fees are separate)",
         "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Jamaican Passport Renewal & Replacement", "provider": { "@id": "https://documenthelpja.com/#business" } } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "TRN Application & Retrieval", "provider": { "@id": "https://documenthelpja.com/#business" } } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Police Records & Clearance Certificates", "provider": { "@id": "https://documenthelpja.com/#business" } } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Apostille & Document Authentication", "provider": { "@id": "https://documenthelpja.com/#business" } } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Birth, Marriage & Death Certificates (RGD)", "provider": { "@id": "https://documenthelpja.com/#business" } } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Driver's Licence Renewal & Replacement", "provider": { "@id": "https://documenthelpja.com/#business" } } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Motor Vehicle Licence Renewal", "provider": { "@id": "https://documenthelpja.com/#business" } } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Driving Abstracts & Record Verification", "provider": { "@id": "https://documenthelpja.com/#business" } } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Jamaican Citizenship by Descent", "provider": { "@id": "https://documenthelpja.com/#business" } } }
+          {
+            "@type": "Offer",
+            "priceCurrency": "JMD",
+            "price": 5000,
+            "description": "Concierge retainer for an adult online passport renewal. PICA fee is paid separately.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Jamaican Passport Renewal & Replacement",
+              "url": "https://documenthelpja.com/passport-renewal-no-name-change.html",
+              "provider": {
+                "@id": "https://documenthelpja.com/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 4000,
+              "maxPrice": 10000,
+              "priceCurrency": "JMD"
+            },
+            "description": "Concierge retainer. TAJ does not charge for a TRN.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "TRN Application & Retrieval",
+              "url": "https://documenthelpja.com/#trn",
+              "provider": {
+                "@id": "https://documenthelpja.com/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 5000,
+              "maxPrice": 10000,
+              "priceCurrency": "JMD"
+            },
+            "description": "Concierge retainer. JCF fee (JMD 3,000 to 8,000 by speed) is paid separately.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Police Records & Clearance Certificates",
+              "url": "https://documenthelpja.com/#police-record",
+              "provider": {
+                "@id": "https://documenthelpja.com/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 4000,
+              "maxPrice": 6000,
+              "priceCurrency": "JMD"
+            },
+            "description": "Concierge retainer. RGD fee is paid separately.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Birth, Marriage & Death Certificates (RGD)",
+              "url": "https://documenthelpja.com/#rgd-certificates",
+              "provider": {
+                "@id": "https://documenthelpja.com/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 4000,
+              "maxPrice": 6000,
+              "priceCurrency": "JMD"
+            },
+            "description": "Concierge retainer. TAJ licence fee is paid separately.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Driver's Licence Renewal & Replacement",
+              "url": "https://documenthelpja.com/#drivers-licence",
+              "provider": {
+                "@id": "https://documenthelpja.com/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 4000,
+              "maxPrice": 7000,
+              "priceCurrency": "JMD"
+            },
+            "description": "Concierge retainer. TAJ registration fee is paid separately.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Motor Vehicle Licence Renewal",
+              "url": "https://documenthelpja.com/#vehicle-licence",
+              "provider": {
+                "@id": "https://documenthelpja.com/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 5000,
+              "maxPrice": 8000,
+              "priceCurrency": "JMD"
+            },
+            "description": "Concierge retainer. ITA fee is paid separately.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Driving Abstracts & Record Verification",
+              "url": "https://documenthelpja.com/#driving-abstract",
+              "provider": {
+                "@id": "https://documenthelpja.com/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 3000,
+              "maxPrice": 5000,
+              "priceCurrency": "JMD"
+            },
+            "description": "Add-on retainer when ordered with another document.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Apostille & Document Authentication",
+              "provider": {
+                "@id": "https://documenthelpja.com/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "description": "Retainer quoted after a lineage document review.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Jamaican Citizenship by Descent",
+              "url": "https://documenthelpja.com/#citizenship",
+              "provider": {
+                "@id": "https://documenthelpja.com/#business"
+              }
+            }
+          }
         ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://documenthelpja.com/#laura",
+      "name": "Laura Clarke",
+      "jobTitle": "Lead Administrative Concierge",
+      "image": "https://documenthelpja.com/assets/profile.webp",
+      "url": "https://documenthelpja.com/about.html",
+      "worksFor": {
+        "@id": "https://documenthelpja.com/#business"
       }
     },
     {
@@ -70,7 +268,9 @@
       "@id": "https://documenthelpja.com/#website",
       "url": "https://documenthelpja.com/",
       "name": "Laura Clarke Administrative Services",
-      "publisher": { "@id": "https://documenthelpja.com/#business" },
+      "publisher": {
+        "@id": "https://documenthelpja.com/#business"
+      },
       "inLanguage": "en-JM"
     }
   ]
@@ -883,21 +1083,21 @@ body { position: relative; width: 100%; min-height: 100vh; }
       <div class="post-grid">
         <article class="post">
           <div class="post-meta"><span class="cat">PICA Lineage</span><time datetime="2026-09-21">Sep 21, 2026</time></div>
-          <h3><a href="/jamaican-citizenship-by-descent.html">How Do I Claim Jamaican Citizenship Through a Jamaican Parent?</a></h3>
+          <h3><a href="/jamaican-citizenship-by-descent">How Do I Claim Jamaican Citizenship Through a Jamaican Parent?</a></h3>
           <p class="excerpt">Claiming your Jamaican heritage is a constitutional right, but PICA requires line-for-line documentary alignment. Learn how to verify your lineage without getting stuck in bureaucratic limbo.</p>
           <p class="byline">By Laura Clarke</p>
         </article>
 
         <article class="post">
           <div class="post-meta"><span class="cat">TAJ Compliance</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
-          <h3><a href="/jamaica-drivers-license-renewal-guide.html">How Unpaid Traffic Tickets &amp; Unlinked TRNs Block Your Jamaican Driver's Licence Renewal</a></h3>
+          <h3><a href="/jamaica-drivers-license-renewal-guide">How Unpaid Traffic Tickets &amp; Unlinked TRNs Block Your Jamaican Driver's Licence Renewal</a></h3>
           <p class="excerpt">Automated system holds at Tax Administration Jamaica can halt your licence renewal instantly. Here is how to resolve ticket holds and legacy TRN disconnects before visiting the counter.</p>
           <p class="byline">By Laura Clarke</p>
         </article>
 
         <article class="post">
           <div class="post-meta"><span class="cat">JCF Clearances</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
-          <h3><a href="/jamaica-police-record-guide.html">Don't Get Turned Away: The Essential Guide to Getting a Jamaican Police Record</a></h3>
+          <h3><a href="/jamaica-police-record-guide">Don't Get Turned Away: The Essential Guide to Getting a Jamaican Police Record</a></h3>
           <p class="excerpt">Avoid the five most common application errors that cause immediate counter rejection at the Criminal Records Office.</p>
           <p class="byline">By Laura Clarke</p>
         </article>
@@ -1113,7 +1313,7 @@ body { position: relative; width: 100%; min-height: 100vh; }
         <li>International courier dispatch directly to your door</li>
       </ul>
     </div>
-    <a class="guide-box" href="/trn-without-photo-id.html">
+    <a class="guide-box" href="/trn-without-photo-id">
       <svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>
       <span>No photo ID? How to get a TRN with only a birth certificate<small>Free guide &middot; read online</small></span>
       <svg class="icon chev" aria-hidden="true"><use href="#i-chev"/></svg>
@@ -1176,7 +1376,7 @@ body { position: relative; width: 100%; min-height: 100vh; }
         <li>International courier dispatch directly to your door</li>
       </ul>
     </div>
-    <a class="guide-box" href="/jamaica-police-record-guide.html">
+    <a class="guide-box" href="/jamaica-police-record-guide">
       <svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>
       <span>Don't get turned away: the five errors that stop police record applications<small>Free guide &middot; read online</small></span>
       <svg class="icon chev" aria-hidden="true"><use href="#i-chev"/></svg>
@@ -1274,7 +1474,7 @@ body { position: relative; width: 100%; min-height: 100vh; }
         </dl>
       </div>
     </details>
-    <a class="guide-box" href="/jamaican-citizenship-by-descent.html">
+    <a class="guide-box" href="/jamaican-citizenship-by-descent">
       <svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>
       <span>How to claim Jamaican citizenship through a Jamaican parent<small>Free guide &middot; read online</small></span>
       <svg class="icon chev" aria-hidden="true"><use href="#i-chev"/></svg>
@@ -1357,7 +1557,7 @@ body { position: relative; width: 100%; min-height: 100vh; }
         <li>International courier dispatch directly to your door</li>
       </ul>
     </div>
-    <a class="guide-box" href="/jamaica-drivers-license-renewal-guide.html">
+    <a class="guide-box" href="/jamaica-drivers-license-renewal-guide">
       <svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>
       <span>How unpaid tickets and unlinked TRNs block your renewal<small>Free guide &middot; read online</small></span>
       <svg class="icon chev" aria-hidden="true"><use href="#i-chev"/></svg>
