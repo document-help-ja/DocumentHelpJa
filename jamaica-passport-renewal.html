@@ -18,6 +18,10 @@
   <meta property="og:image" content="https://documenthelpja.com/assets/office-hero.webp">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Google Calendar Appointment Scheduling (styles + loader) -->
+  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -237,6 +241,8 @@
     .btn-wa-cta .icon { width: 20px; height: 20px; }
     .cta-sub { text-align: center; font-size: 15px; color: var(--text-muted); margin: 18px 0 0; }
     .cta-sub a { color: var(--blue-highlight); font-weight: 600; }
+    .booking-cta { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 22px; }
+    .booking-cta .cta-sub { margin: 0; }
     .cta-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
 
     /* =========================================================
@@ -822,7 +828,24 @@
           <a href="https://forms.gle/baH9WjZvYCZC7ZE56" class="btn-cta" target="_blank" rel="noopener" aria-label="Start Package Preparation Request">Start Package Preparation</a>
           <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20passport%20package%20%28Lane%202%29.%20My%20situation%20is%3A%20" class="btn-wa-cta" target="_blank" rel="noopener" data-wa="lane2-cta" aria-label="Message us on WhatsApp about your passport package"><svg class="icon"><use href="#i-wa"/></svg>WhatsApp Us Your Situation</a>
         </div>
-        <p class="cta-sub">Prefer a scheduled call? <a href="/#contact">Book a consultation</a>.</p>
+        <!-- Google Calendar Appointment Scheduling begin -->
+        <div class="booking-cta">
+          <p class="cta-sub">Prefer a scheduled call?</p>
+          <script>
+          (function() {
+            var target = document.currentScript;
+            window.addEventListener('load', function() {
+              calendar.schedulingButton.load({
+                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ24v8vZefGbJfwB2cgwYn78G9vc4JRiKSj6ZKIOx327k-wxtCTaxo0t2x7Dngbw90pjytAjbpWA?gv=true',
+                color: '#039BE5',
+                label: 'Book an appointment',
+                target,
+              });
+            });
+          })();
+          </script>
+        </div>
+        <!-- end Google Calendar Appointment Scheduling -->
       </section>
 
       <!-- FAQS -->
