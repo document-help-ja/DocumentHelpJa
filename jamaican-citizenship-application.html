@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Jamaican Citizenship Applications | Laura Clarke Administrative Services</title>
-  <meta name="description" content="Claim your Jamaican citizenship by descent or marriage. We perform a line-for-line lineage document audit and handle PICA proxy lodgment in Kingston.">
+  <title>Jamaican Citizenship by Descent | Laura Clarke Administrative Services</title>
+  <meta name="description" content="Claim your Jamaican citizenship by descent through a Jamaican parent or grandparent. We perform a line-for-line lineage document audit and handle PICA proxy lodgment in Kingston.">
   <link rel="canonical" href="https://documenthelpja.com/jamaican-citizenship-application.html">
   <meta name="theme-color" content="#181A1B">
 
@@ -12,11 +12,15 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_JM">
   <meta property="og:site_name" content="Laura Clarke Administrative Services">
-  <meta property="og:title" content="Jamaican Citizenship Applications (Descent & Marriage)">
+  <meta property="og:title" content="Jamaican Citizenship by Descent Applications">
   <meta property="og:description" content="Claim your Jamaican citizenship. We perform generational document audits, reconcile name mismatches, and handle PICA lodgment in Kingston.">
   <meta property="og:url" content="https://documenthelpja.com/jamaican-citizenship-application.html">
   <meta property="og:image" content="https://documenthelpja.com/assets/office-hero.webp">
   <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Calendar Appointment Scheduling (styles + loader) -->
+  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
 
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,13 +32,13 @@
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Jamaican Citizenship Application Preparation & Proxy Lodgment",
+    "name": "Jamaican Citizenship by Descent Preparation & Proxy Lodgment",
     "provider": {
       "@type": "LocalBusiness",
       "name": "Laura Clarke Administrative Services",
       "url": "https://documenthelpja.com"
     },
-    "description": "Generational document audit, RGD reconciliation, application preparation, and PICA proxy lodgment for Jamaican Citizenship by Descent, Grandparent, or Marriage.",
+    "description": "Generational document audit, RGD reconciliation, application preparation, and PICA proxy lodgment for Jamaican Citizenship by Descent through a parent or grandparent.",
     "areaServed": {
       "@type": "Country",
       "name": "Jamaica"
@@ -51,7 +55,7 @@
         },
         {
           "@type": "Offer",
-          "itemOffered": { "@type": "Service", "name": "Complex Lineage (Grandparent/Marriage) Audit & Management" },
+          "itemOffered": { "@type": "Service", "name": "Complex Lineage (Grandparent Route / Name Reconciliation) Audit & Lodgment" },
           "priceCurrency": "USD",
           "price": "150.00"
         }
@@ -60,44 +64,76 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Why is the citizenship service locked if I am missing a birth certificate?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "PICA will immediately reject any citizenship application that does not include certified original Jamaican birth certificates for the ancestral line. You must first use our RGD Search service to locate and retrieve missing records before submitting a citizenship file."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I apply for a Jamaican passport at the same time as my citizenship?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Once PICA approves your citizenship and issues your certificate, we can seamlessly transition your file to our passport processing service so you receive both documents."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if my parent was born in Jamaica but passed away before I applied?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You can still claim citizenship by descent. You will need to provide their certified Death Certificate to complete the chain of custody alongside their Jamaican birth certificate."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if my father's name isn't listed on my foreign birth certificate?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "If you are claiming descent through your father, his name must be on your long-form birth certificate. If it is missing, you must formally amend your foreign birth certificate in your country of birth before applying in Jamaica."
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which lane am I in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Answer the four questions in Lane 1. If you are applying through a parent, have all original documents, and the names match perfectly, you qualify for Lane 1. If you are claiming through a Jamaican grandparent, or your names don't match, you belong in Lane 2. If your parent's Jamaican birth certificate is missing, we retrieve it through RGD first."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the citizenship service locked if I am missing a birth certificate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PICA will immediately reject any citizenship application that does not include certified original Jamaican birth certificates for the ancestral line. We first locate and retrieve the missing records through our RGD service, then prepare your citizenship file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I apply for a Jamaican passport at the same time as my citizenship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Once PICA approves your citizenship and issues your certificate, we can seamlessly transition your file to our passport processing service so you receive both documents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my parent was born in Jamaica but passed away before I applied?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can still claim citizenship by descent. You will need to provide their certified Death Certificate to complete the chain of custody alongside their Jamaican birth certificate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my father's name isn't listed on my foreign birth certificate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you are claiming descent through your father, his name must be on your long-form birth certificate. If it is missing, you must formally amend your foreign birth certificate in your country of birth before applying in Jamaica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to send original foreign birth certificates to Jamaica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. PICA requires original, certified long-form birth certificates from your country of birth. They will review them and we will return the originals to you along with your new Citizenship Certificate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Jamaican citizenship by descent cost, and how long does it take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PICA charges $10,000 JMD for regular processing (90 working days) or $15,000 JMD for expedited processing (45 working days). Our service fee is separate and shown in each lane above."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are government fees refundable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. PICA processing fees are non-refundable once the application is submitted. Our service fee is separate and covered in our Terms & Conditions."
+      }
+    }
+  ]
+}
   </script>
 
   <style>
@@ -196,6 +232,10 @@
     }
     .btn-wa-cta:hover { background: #0F5132; transform: translateY(-2px); }
     .btn-wa-cta .icon { width: 20px; height: 20px; }
+    .cta-sub { text-align: center; font-size: 15px; color: var(--text-muted); margin: 18px 0 0; }
+    .cta-sub a { color: var(--blue-highlight); font-weight: 600; }
+    .booking-cta { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 22px; }
+    .booking-cta .cta-sub { margin: 0; }
     .cta-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
 
     /* =========================================================
@@ -272,6 +312,7 @@
       border-radius: 16px; padding: 50px; margin-bottom: 80px;
       box-shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
     }
+    section[id^="lane-"] { scroll-margin-top: 96px; }
     .card h2 { color: var(--primary); font-size: 26px; border-bottom: 3px solid var(--bg); padding-bottom: 16px; margin-top: 0; margin-bottom: 30px; font-family: var(--sans); }
 
     /* ELIGIBILITY QUIZ */
@@ -324,6 +365,26 @@
     .addon-callout { display: flex; gap: 14px; align-items: flex-start; background: var(--warning-bg); border: 1px solid #FCD34D; border-radius: 8px; padding: 18px 20px; margin: 30px 0 0; font-size: 15px; }
     .addon-callout strong { color: var(--primary); }
     .addon-callout a { color: var(--blue-highlight); font-weight: 600; }
+
+    /* FEE CARDS (title header + badge) */
+    .fee-grid { display: grid; gap: 16px; }
+    .fee-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: #FFF; }
+    .fee-card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 16px 20px; background: #F8FAFC; border-bottom: 1px solid var(--border); }
+    .fee-card-head h4 { font-family: var(--sans); font-size: 17px; color: var(--primary); }
+    .fee-card-head .sub { display: block; font: 500 13px/1.4 var(--sans); color: var(--text-muted); margin-top: 3px; }
+    .badge { display: inline-flex; align-items: center; padding: 4px 11px; border-radius: 999px; font: 700 11px/1.4 var(--sans); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+    .badge-descent { background: #E0ECFF; color: var(--blue-highlight); }
+    .badge-addon { background: var(--warning-bg); color: #92400E; border: 1px solid #FCD34D; }
+    .fee-card-body { display: grid; grid-template-columns: 1fr 1fr; }
+    .fee-cell { padding: 16px 20px; }
+    .fee-cell + .fee-cell { border-left: 1px solid var(--border); }
+    .fee-label { display: block; font: 600 12px/1.4 var(--sans); letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+    .fee-amount { display: block; font: 700 20px/1.3 var(--sans); color: var(--blue-highlight); white-space: nowrap; }
+    .fee-amount small { font-size: .62em; font-weight: 600; letter-spacing: .04em; }
+    .fee-cell.gov .fee-amount { color: var(--primary); }
+    .fee-alt { display: block; font-size: 13px; color: var(--text-muted); }
+    .fee-note { font-size: 14px; color: var(--text-muted); margin: 18px 0 0; }
+    .fee-note a { color: var(--blue-highlight); font-weight: 700; text-decoration: none; }
 
     .value-prop-block {
       background: #F0F9FF; border-left: 6px solid #0EA5E9; border-right: 1px solid #BAE6FD;
@@ -390,6 +451,9 @@
       .cta-group { flex-direction: column; width: 100%; }
       .cta-group .btn-cta, .cta-group .btn-wa-cta { width: 100%; }
       .document-checklist-block { padding: 20px 15px; }
+      .fee-cell { padding: 14px; }
+      .fee-card-head { padding: 14px; }
+      .fee-amount { font-size: 17px; }
     }
   </style>
 </head>
@@ -450,7 +514,7 @@
       </header>
 
       <!-- LANE 1: DIRECT DESCENT (PARENT) -->
-      <section class="card">
+      <section class="card" id="lane-1">
         <h2>Lane 1: Direct Descent (Parent Route)</h2>
         <p style="margin-bottom: 25px; font-size: 17px;"><strong>We can fast-track your PICA application ONLY IF you currently hold 100% of all required ancestral records in hand. Please verify below:</strong></p>
         
@@ -487,18 +551,21 @@
 
         <!-- PREREQUISITE REDIRECT BOX (Reveals if missing RGD docs or mismatches) -->
         <div id="lane-a-failure" class="failure-box" role="status" aria-live="polite">
-          <p style="font-size: 18px; color: var(--error-text); font-weight: bold;">🛑 Citizenship Service Cannot Be Activated Yet</p>
+          <p style="font-size: 18px; color: var(--error-text); font-weight: bold; margin: 0;">🛑 Your file isn't ready for PICA lodgment yet</p>
           <p id="lane-a-reason" style="margin-top: 10px; color: var(--text); font-weight: 500;"></p>
-          
-          <div style="background: #FFF; border: 1px solid var(--border); padding: 20px; border-radius: 8px; margin-top: 15px;">
-            <p style="margin: 0; font-weight: 600; color: var(--primary);">Phase 1 Required: Obtain Your Missing RGD Certificates First</p>
-            <p style="margin-top: 5px; font-size: 14px; color: var(--text-muted);">PICA will immediately reject citizenship files with missing or mismatched Jamaican records. Before paying for citizenship submission, we must locate and retrieve your family's official records through the Registrar General's Department (RGD).</p>
-            
+
+          <!-- Shown when the parent's Jamaican record is missing or names don't match -->
+          <div id="panel-rgd" hidden style="background: #FFF; border: 1px solid var(--border); padding: 20px; border-radius: 8px; margin-top: 15px;">
+            <p style="margin: 0; font-weight: 600; color: var(--primary);">First step: fix the Jamaican record at RGD</p>
+            <p style="margin-top: 5px; font-size: 14px; color: var(--text-muted);">PICA will not accept a citizenship file with a missing or mismatched Jamaican birth certificate. We locate, retrieve or correct your parent's record through the Registrar General's Department first.</p>
             <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
-              <a href="/jamaican-rgd-certificates.html" class="btn-cta" style="font-size: 14px; padding: 10px 20px;" target="_blank">Start RGD Search & Retrieval</a>
-              <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20want%20to%20apply%20for%20Citizenship%20but%20I%20am%20missing%20my%20parent%27s%20Jamaican%20birth%20certificate." class="btn-wa-cta" style="font-size: 14px; padding: 10px 20px;" target="_blank" rel="noopener"><svg class="icon"><use href="#i-wa"/></svg>Check RGD Options on WhatsApp</a>
+              <a href="/jamaican-rgd-certificates.html" class="btn-cta" style="font-size: 14px; padding: 10px 20px;">See RGD Search &amp; Retrieval</a>
+              <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20want%20to%20apply%20for%20Jamaican%20citizenship%20but%20I%27m%20missing%20or%20need%20to%20correct%20my%20parent%27s%20Jamaican%20birth%20certificate." class="btn-wa-cta" style="font-size: 14px; padding: 10px 20px;" target="_blank" rel="noopener" data-wa="citizenship-rgd"><svg class="icon"><use href="#i-wa"/></svg>Check RGD Options on WhatsApp</a>
             </div>
           </div>
+
+          <!-- Shown for grandparent route and name mismatches -->
+          <p id="panel-lane2" hidden style="margin-top: 15px; color: var(--text); font-weight: 500;">Your case belongs in <a href="#lane-2" style="color: var(--blue-highlight); text-decoration: underline;">Lane 2: Grandparent Route &amp; Complex Lineage</a>, where we reconcile the documents before lodgment.</p>
         </div>
 
         <!-- COMPLETE SUITE DETAILS (Reveals ONLY upon 100% 'Yes' qualification) -->
@@ -510,25 +577,26 @@
 
           <!-- PROMINENT PHASED FEE BREAKDOWN -->
           <div class="prominent-section">
-            <h3>Fee Breakdown & Phased Retainer</h3>
+            <h3>Fees &amp; Processing Time</h3>
             <table class="data-table">
               <tr>
                 <th>Phase / Service Element</th>
                 <th>Fee Estimate</th>
               </tr>
               <tr>
-                <td><strong>Phase 1: Lineage Audit & PICA Package Prep</strong><br><span style="font-size:13px; color:var(--text-muted);">Form completion, photo verification, and PICA Kingston proxy submission</span></td>
+                <td><strong>Laura Clarke Lineage Audit &amp; Lodgment</strong><br><span style="font-size:13px; color:var(--text-muted);">Form completion, photo verification and PICA Kingston proxy submission</span></td>
                 <td class="amount">$150 USD <span style="font-size:12px; color:var(--text-muted);">(~$23,500 JMD)</span></td>
               </tr>
               <tr>
-                <td><strong>Phase 2: Official PICA Government Fee</strong><br><span style="font-size:13px; color:var(--text-muted);">Official statutory fee paid to PICA upon lodgment</span></td>
-                <td class="amount">~$10,000 to $15,000 JMD</td>
+                <td><strong>PICA Official Fee</strong><br><span style="font-size:13px; color:var(--text-muted);">Regular: 90 working days · Expedited: 45 working days</span></td>
+                <td class="amount">$10,000 JMD regular<br>$15,000 JMD expedited</td>
               </tr>
               <tr>
-                <td style="border-bottom: none;"><strong>Phase 3: International Courier Return</strong><br><span style="font-size:13px; color:var(--text-muted);">Secure DHL dispatch of original docs + new Citizenship Certificate</span></td>
+                <td style="border-bottom: none;"><strong>International Courier Return</strong><br><span style="font-size:13px; color:var(--text-muted);">Secure DHL dispatch of original docs + new Citizenship Certificate</span></td>
                 <td class="amount" style="border-bottom: none;">Calculated by Destination</td>
               </tr>
             </table>
+            <p class="fee-note"><a href="https://www.pica.gov.jm/citizenship/fees" target="_blank" rel="noopener">Verify current fees on PICA's official schedule</a> <em>(Last verified: September 2026.)</em></p>
           </div>
 
           <!-- PROMINENT TERMS BOX (LANE 1) -->
@@ -536,14 +604,15 @@
             <h4 style="margin-bottom: 20px;">Terms & Your Responsibilities</h4>
             <p style="margin-bottom: 15px; font-weight: 600; color: var(--primary);">Because citizenship alters legal records, you will need to:</p>
             <ul style="margin-bottom: 25px; padding-left: 20px; line-height: 1.8;">
-              <li>Mail your <strong>original, certified</strong> physical birth certificates to our Kingston office (PICA does not accept photocopies).</li>
-              <li>Provide passport photos physically certified by a Notary Public or JP.</li>
-              <li>Understand that PICA citizenship verification is a manual, government background process. <strong>Timelines cannot be guaranteed and standard processing takes 3 to 6 months.</strong></li>
+              <li>Mail your <strong>original, certified</strong> birth certificates to our Kingston office: yours and your Jamaican parent's (PICA does not accept photocopies). If you were born while your parents were married, include their original marriage certificate.</li>
+              <li>Provide a copy of your valid government-issued photo ID.</li>
+              <li>Provide two passport-sized photos taken within the last six months, each certified by a Notary Public or JP with the statement "I certify this to be a true photo of [your full name]", then stamped, signed and dated.</li>
+              <li>Understand that PICA citizenship verification is a manual government process. <strong>Regular processing takes 90 working days (45 working days expedited) and cannot be guaranteed.</strong></li>
             </ul>
             
             <p style="margin-bottom: 10px; font-weight: 600; color: var(--primary);">Next Steps:</p>
             <ol style="margin: 0; padding-left: 20px; line-height: 1.8;">
-              <li><strong>Digital Pre-Audit:</strong> Complete the intake form below and upload digital scans of your family certificates for our preliminary review.</li>
+              <li><strong>Digital Pre-Audit:</strong> Complete the intake form below, selecting <em>Citizenship by Descent</em> as your service, and upload scans of your family certificates for our preliminary review. The form records your service choice and your agreement to our terms.</li>
               <li><strong>Mail Package:</strong> Once we approve the digital scans, you will mail the physical originals to Jamaica.</li>
               <li><strong>Policies:</strong> By proceeding, you agree to our <a href="/terms.html" target="_blank" style="color: var(--blue-highlight); font-weight: 600;">Terms & Conditions</a> regarding non-refundable PICA fees.</li>
             </ol>
@@ -552,7 +621,7 @@
           <!-- ADD-ON CALLOUT -->
           <div class="addon-callout">
             <span aria-hidden="true">🛂</span>
-            <p style="margin:0;"><strong>Want your Jamaican Passport too?</strong> Once PICA approves your citizenship, we can seamlessly transition your file to our passport processing team so you receive both documents at once. <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20want%20to%20apply%20for%20both%20my%20Citizenship%20and%20Passport." target="_blank" rel="noopener" data-wa="passport-addon">Ask about the Passport Add-on</a></p>
+            <p style="margin:0;"><strong>Want your Jamaican Passport too?</strong> Once PICA approves your citizenship, we can move straight to your first Jamaican passport using our <a href="/jamaican-passport-renewal.html#lane-2" style="color: var(--blue-highlight); font-weight: 600;">passport package service</a>. <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20want%20to%20apply%20for%20both%20my%20Citizenship%20and%20Passport." target="_blank" rel="noopener" data-wa="passport-addon">Ask about the Passport Add-on</a></p>
           </div>
 
           <!-- CTA AREA -->
@@ -565,18 +634,17 @@
 
       <!-- LANE 2: COMPLEX LINEAGE & GRANDPARENTS -->
       <section class="card" id="lane-2">
-        <h2>Lane 2: Complex Lineage & Other Routes</h2>
-        <p style="margin-bottom: 25px; font-size: 17px;">If you failed the document alignment check above, or are applying through an extended family member, your file requires heavy reconciliation before PICA will accept it. <strong>We manage the process for you if you fall into these categories:</strong></p>
+        <h2>Lane 2: Grandparent Route &amp; Complex Lineage</h2>
+        <p style="margin-bottom: 25px; font-size: 17px;">If you failed the document alignment check above, or are claiming through a Jamaican grandparent, your file requires heavy reconciliation before PICA will accept it. <strong>We manage the process for you if you fall into these categories:</strong></p>
         
         <ul class="scenario-list" style="margin-bottom: 40px; font-size: 16px;">
-          <li><strong>Grandparent Route:</strong> Claiming descent through a grandparent (requires unbroken document chain across 3 generations).</li>
+          <li><strong>Grandparent Route:</strong> Your parent was born abroad to a Jamaican-born parent (your grandparent), so your parent was already a Jamaican citizen by descent when you were born. This needs an unbroken document chain across 3 generations.</li>
           <li><strong>Name Discrepancies:</strong> Your parent's name on your foreign birth certificate does not match their Jamaican birth certificate.</li>
           <li><strong>Missing Generational Records:</strong> A parent or grandparent's birth was never officially registered in Jamaica.</li>
-          <li><strong>Citizenship by Marriage:</strong> Applying through a Jamaican spouse (requires local police clearances and joint declarations).</li>
         </ul>
 
         <details class="learn-more-details">
-          <summary class="btn-outline" aria-label="Expand to view required documents">View Requirements by Route</summary>
+          <summary class="btn-outline" aria-label="Expand to view required documents">View Grandparent Route Requirements</summary>
           <div class="document-checklist-block">
             <h4>Citizenship by Descent (Grandparent Route)</h4>
             <ul>
@@ -585,14 +653,6 @@
               <li>The Jamaican Grandparent's original Jamaican Birth Certificate.</li>
               <li>Marriage certificates explaining any surname changes across the 3 generations.</li>
               <li>Valid Photo IDs (or Death Certificates) for the parents/grandparents.</li>
-            </ul>
-
-            <h4>Citizenship by Marriage</h4>
-            <ul>
-              <li>Applicant's original Birth Certificate & Passport.</li>
-              <li>Jamaican Spouse's original Jamaican Birth Certificate & Passport.</li>
-              <li>Official Marriage Certificate.</li>
-              <li>Joint spousal declarations and local police record clearances.</li>
             </ul>
           </div>
         </details>
@@ -618,26 +678,29 @@
         <!-- PROMINENT FEES BOX (Lane 2) -->
         <div class="prominent-section">
           <h3>Fees for Complex Proxy Representation</h3>
-          <table class="data-table">
-            <tr>
-              <th>Service Element</th>
-              <th>Laura Clarke Retainer</th>
-              <th>Official Gov Fees</th>
-            </tr>
-            <tr>
-              <td><strong>Complex Lineage Audit & Lodgment</strong><br><span style="font-size:13px; color:var(--text-muted);">Document reconciliation, RGD coordination & PICA proxy submission</span></td>
-              <td class="amount">$150 USD <span style="font-size:12px; color:var(--text-muted);">(Base retainer)</span></td>
-              <td class="amount">~$10,000 to $15,000 JMD</td>
-            </tr>
-            <tr>
-              <td style="border-bottom: none;"><strong>RGD Missing Document Fetches (If required)</strong></td>
-              <td class="amount" style="border-bottom: none;">$50 USD <span style="font-size:12px; color:var(--text-muted);">(Per RGD record)</span></td>
-              <td class="amount" style="border-bottom: none;">Varies by RGD search</td>
-            </tr>
-          </table>
-          <p style="font-size: 14px; color: var(--text-muted); margin-top: 15px; margin-bottom: 0;">
-            <em>Note: If your file requires extensive RGD late registrations or error corrections, we will provide a custom quote after auditing your initial documents.</em>
-          </p>
+          <div class="fee-grid">
+            <article class="fee-card">
+              <div class="fee-card-head">
+                <h4>Grandparent Route &amp; Lineage Reconciliation<span class="sub">Document audit, name reconciliation and PICA lodgment</span></h4>
+                <span class="badge badge-descent">Descent</span>
+              </div>
+              <div class="fee-card-body">
+                <div class="fee-cell"><span class="fee-label">Our Fee</span><span class="fee-amount">$150 <small>USD</small></span><span class="fee-alt">Base retainer</span></div>
+                <div class="fee-cell gov"><span class="fee-label">PICA Fee</span><span class="fee-amount">$10,000 <small>JMD</small></span><span class="fee-alt">Regular, 90 working days<br>$15,000 JMD expedited</span></div>
+              </div>
+            </article>
+            <article class="fee-card">
+              <div class="fee-card-head">
+                <h4>Missing RGD Record Retrieval<span class="sub">Per Jamaican record we locate and retrieve</span></h4>
+                <span class="badge badge-addon">Add-on</span>
+              </div>
+              <div class="fee-card-body">
+                <div class="fee-cell"><span class="fee-label">Our Fee</span><span class="fee-amount">$50 <small>USD</small></span><span class="fee-alt">Per RGD record</span></div>
+                <div class="fee-cell gov"><span class="fee-label">RGD Fee</span><span class="fee-amount">Varies</span><span class="fee-alt">By RGD search or copy</span></div>
+              </div>
+            </article>
+          </div>
+          <p class="fee-note">If your file needs RGD late registrations or error corrections, we'll give you a custom quote after auditing your documents. <a href="https://www.pica.gov.jm/citizenship/fees" target="_blank" rel="noopener">Verify PICA's current fees</a>.</p>
         </div>
 
         <!-- PROMINENT TERMS & RESPONSIBILITIES BOX (LANE 2) -->
@@ -647,12 +710,12 @@
             <ul style="margin-bottom: 25px; padding-left: 20px; line-height: 1.8;">
               <li>Procure original civil records from your country of birth.</li>
               <li>Provide truthful family history and be prepared to execute legal affidavits if names do not match.</li>
-              <li>Understand that Citizenship by Marriage or Grandparent descent routinely takes <strong>6 to 12 months</strong> for PICA to investigate and process.</li>
+              <li>Understand the timeline: once your file is reconciled, PICA processing takes 90 working days (45 expedited). <strong>Any RGD retrieval or correction beforehand adds time.</strong></li>
             </ul>
             
             <p style="margin-bottom: 10px; font-weight: 600; color: var(--primary);">Next Steps:</p>
             <ol style="margin: 0; padding-left: 20px; line-height: 1.8;">
-              <li><strong>Submit Scans:</strong> Upload digital scans of whatever family certificates you currently possess.</li>
+              <li><strong>Submit Scans:</strong> Complete the form below, selecting your citizenship route, and upload scans of whatever family certificates you have. The form records your service choice and your agreement to our terms.</li>
               <li><strong>Consultation:</strong> We will review the file and identify exactly what is missing or misaligned before you ship anything to Jamaica.</li>
               <li><strong>Policies:</strong> By proceeding, you agree to our <a href="/terms.html" target="_blank" style="color: var(--blue-highlight); font-weight: 600;">Terms & Conditions</a>.</li>
             </ol>
@@ -661,8 +724,26 @@
         <!-- DUAL CTA AREA -->
         <div class="cta-group">
           <a href="https://forms.gle/baH9WjZvYCZC7ZE56" class="btn-cta" target="_blank" rel="noopener" aria-label="Start Complex Lineage Audit">Start Lineage Audit</a>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20am%20applying%20for%20Citizenship%20but%20my%20lineage%20is%20complex%20%28Lane%202%29.%20My%20situation%20is%3A%20" class="btn-wa-cta" target="_blank" rel="noopener" data-wa="lane2-cta" aria-label="Message us on WhatsApp"><svg class="icon"><use href="#i-wa"/></svg>WhatsApp Us Your Details</a>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20am%20applying%20for%20Citizenship%20by%20Descent%20but%20my%20lineage%20is%20complex%20%28Lane%202%29.%20My%20situation%20is%3A%20" class="btn-wa-cta" target="_blank" rel="noopener" data-wa="lane2-cta" aria-label="Message us on WhatsApp"><svg class="icon"><use href="#i-wa"/></svg>WhatsApp Us Your Details</a>
         </div>
+        <!-- Google Calendar Appointment Scheduling begin -->
+        <div class="booking-cta">
+          <p class="cta-sub">Prefer a scheduled call?</p>
+          <script>
+          (function() {
+            var target = document.currentScript;
+            window.addEventListener('load', function() {
+              calendar.schedulingButton.load({
+                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ24v8vZefGbJfwB2cgwYn78G9vc4JRiKSj6ZKIOx327k-wxtCTaxo0t2x7Dngbw90pjytAjbpWA?gv=true',
+                color: '#039BE5',
+                label: 'Book an appointment',
+                target,
+              });
+            });
+          })();
+          </script>
+        </div>
+        <!-- end Google Calendar Appointment Scheduling -->
       </section>
 
       <!-- FAQS -->
@@ -672,11 +753,11 @@
         <div class="faq-list">
           <details class="faq-item">
             <summary>Which lane am I in?</summary>
-            <p>Answer the four questions in Lane 1. If you are applying through a parent, have all original documents, and the names match perfectly, you qualify for Lane 1. If you are applying via a grandparent, spouse, or have name misspellings, you belong in Lane 2.</p>
+            <p>Answer the four questions in Lane 1. If you are applying through a parent, have all original documents, and the names match perfectly, you qualify for Lane 1. If you are claiming through a Jamaican grandparent, or your names don't match, you belong in Lane 2. If your parent's Jamaican birth certificate is missing, we retrieve it through RGD first.</p>
           </details>
           <details class="faq-item">
             <summary>Why is the citizenship service locked if I am missing a birth certificate?</summary>
-            <p>PICA will immediately reject any citizenship application that does not include certified original Jamaican birth certificates for the ancestral line. You must first use our RGD Search service to locate and retrieve missing records before submitting a citizenship file.</p>
+            <p>PICA will immediately reject any citizenship application that does not include certified original Jamaican birth certificates for the ancestral line. We first locate and retrieve the missing records through our <a href="/jamaican-rgd-certificates.html" style="color: var(--blue-highlight); font-weight: 600;">RGD service</a>, then prepare your citizenship file.</p>
           </details>
           <details class="faq-item">
             <summary>Can I apply for a Jamaican passport at the same time as my citizenship?</summary>
@@ -693,6 +774,10 @@
           <details class="faq-item">
             <summary>Do I need to send original foreign birth certificates to Jamaica?</summary>
             <p>Yes. PICA requires original, certified long-form birth certificates from your country of birth. They will review them and we will return the originals to you along with your new Citizenship Certificate.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How much does Jamaican citizenship by descent cost, and how long does it take?</summary>
+            <p>PICA charges $10,000 JMD for regular processing (90 working days) or $15,000 JMD for expedited processing (45 working days). Our service fee is separate and shown in each lane above.</p>
           </details>
           <details class="faq-item">
             <summary>Are government fees refundable?</summary>
@@ -789,11 +874,15 @@
             failureBox.style.display = 'block';
             
             var reasons = {
-              q1: 'You are applying through a grandparent or spouse, which requires complex lineage tracking (Lane 2).',
-              q2: 'Without your long-form birth certificate, PICA cannot verify parental lineage.',
-              q3: 'Missing Jamaican Parent Birth Certificate: You MUST complete an RGD search to retrieve this document before applying for citizenship.',
-              q4: 'Name mismatches must be officially corrected via RGD or legal affidavits before PICA will accept the file.'
+              q1: 'You are claiming through a Jamaican grandparent, which needs our complex lineage service.',
+              q2: 'You need your original long-form birth certificate from your country of birth, showing your parents\' names. Order it from that country\'s vital records office first.',
+              q3: 'Your Jamaican parent\'s birth certificate is missing. We retrieve it through RGD before your citizenship file can go in.',
+              q4: 'Name mismatches must be corrected through RGD or legal affidavits before PICA will accept the file.'
             };
+            var noQ = {};
+            document.querySelectorAll('input[type="radio"][value="no"]:checked').forEach(function (r) { noQ[r.name] = true; });
+            document.getElementById('panel-rgd').hidden = !(noQ.q3 || noQ.q4);
+            document.getElementById('panel-lane2').hidden = !(noQ.q1 || noQ.q4);
             
             var list = [];
             document.querySelectorAll('input[type="radio"][value="no"]:checked').forEach(function (r) { 
