@@ -18,10 +18,6 @@
   <meta property="og:image" content="https://documenthelpja.com/assets/office-hero.webp">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Google Calendar Appointment Scheduling (styles + loader) -->
-  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -226,8 +222,12 @@
     .btn-wa-cta .icon { width: 20px; height: 20px; }
     .cta-sub { text-align: center; font-size: 15px; color: var(--text-muted); margin: 18px 0 0; }
     .cta-sub a { color: var(--blue-highlight); font-weight: 600; }
-    .booking-cta { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 22px; }
-    .booking-cta .cta-sub { margin: 0; }
+    .booking-embed { margin-top: 40px; padding-top: 30px; border-top: 2px solid var(--bg); text-align: center; }
+    .booking-embed h3 { font-family: var(--sans); font-size: 20px; color: var(--primary); margin-bottom: 6px; }
+    .booking-embed p { margin: 0 0 18px; font-size: 15px; color: var(--text-muted); }
+    .booking-frame { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: #FFF; }
+    .booking-frame iframe { display: block; width: 100%; height: 640px; border: 0; }
+    @media (max-width: 600px) { .booking-frame iframe { height: 880px; } }
     .cta-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
 
     /* =========================================================
@@ -713,21 +713,12 @@
           <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20am%20overseas%20and%20need%20a%20Jamaican%20Police%20Record%20%28Lane%202%29.%20My%20situation%20is%3A%20" class="btn-wa-cta" target="_blank" rel="noopener" data-wa="lane2-cta" aria-label="Message us on WhatsApp"><svg class="icon"><use href="#i-wa"/></svg>WhatsApp Us Your Details</a>
         </div>
         <!-- Google Calendar Appointment Scheduling begin -->
-        <div class="booking-cta">
-          <p class="cta-sub">Prefer a scheduled call?</p>
-          <script>
-          (function() {
-            var target = document.currentScript;
-            window.addEventListener('load', function() {
-              calendar.schedulingButton.load({
-                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ24v8vZefGbJfwB2cgwYn78G9vc4JRiKSj6ZKIOx327k-wxtCTaxo0t2x7Dngbw90pjytAjbpWA?gv=true',
-                color: '#039BE5',
-                label: 'Book an appointment',
-                target,
-              });
-            });
-          })();
-          </script>
+        <div class="booking-embed">
+          <h3>Prefer a scheduled call?</h3>
+          <p>Pick a time that suits you and we'll walk through your case together.</p>
+          <div class="booking-frame">
+            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ24v8vZefGbJfwB2cgwYn78G9vc4JRiKSj6ZKIOx327k-wxtCTaxo0t2x7Dngbw90pjytAjbpWA?gv=true" title="Book an appointment with Laura Clarke Administrative Services" loading="lazy"></iframe>
+          </div>
         </div>
         <!-- end Google Calendar Appointment Scheduling -->
       </section>
