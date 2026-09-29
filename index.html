@@ -106,7 +106,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Jamaican Passport Renewal & Replacement",
-              "url": "https://documenthelpja.com/passport-renewal-no-name-change.html",
+              "url": "https://documenthelpja.com/jamaican-passport-renewal.html",
               "provider": {
                 "@id": "https://documenthelpja.com/#business"
               }
@@ -152,15 +152,15 @@
             "@type": "Offer",
             "priceSpecification": {
               "@type": "PriceSpecification",
-              "minPrice": 4000,
-              "maxPrice": 6000,
+              "minPrice": 3000,
+              "maxPrice": 8000,
               "priceCurrency": "JMD"
             },
-            "description": "Concierge retainer. RGD fee is paid separately.",
+            "description": "Concierge retainer from JMD 3,000 for certificate retrieval up to JMD 8,000 for amendments and late registration. RGD fee is paid separately.",
             "itemOffered": {
               "@type": "Service",
               "name": "Birth, Marriage & Death Certificates (RGD)",
-              "url": "https://documenthelpja.com/#rgd-certificates",
+              "url": "https://documenthelpja.com/jamaican-rgd-certificates.html",
               "provider": {
                 "@id": "https://documenthelpja.com/#business"
               }
@@ -1013,7 +1013,7 @@ body { position: relative; width: 100%; min-height: 100vh; }
 
       <div class="service-grid">
 
-        <a class="service-card" href="#passport" data-dialog="passport">
+        <a class="service-card" href="/jamaican-passport-renewal.html">
           <img src="assets/passport-renewal.webp" alt="" loading="lazy" decoding="async">
           <h3 class="service-card-title">Jamaican Passport Services</h3>
         </a>
@@ -1048,7 +1048,7 @@ body { position: relative; width: 100%; min-height: 100vh; }
           <h3 class="service-card-title">Police Records &amp; Clearance Certificates</h3>
         </a>
 
-        <a class="service-card" href="#rgd-certificates" data-dialog="rgd-certificates">
+        <a class="service-card" href="/jamaican-rgd-certificates.html">
           <img src="assets/rgd.webp" alt="" loading="lazy" decoding="async">
           <h3 class="service-card-title">Birth, Marriage &amp; Death Certificates</h3>
         </a>
@@ -1226,30 +1226,37 @@ body { position: relative; width: 100%; min-height: 100vh; }
     
     <div class="path-list">
       <!-- Path 1: Standard Adult -->
-      <a href="/passport-renewal-no-name-change.html" class="path-card">
+      <a href="/jamaican-passport-renewal.html#lane-1" class="path-card">
         <span class="path-title">Adult Renewal (No Name Change)</span>
         <span class="path-desc">Standard 10-year passport renewal for applicants 18 and older keeping their current legal name.</span>
         <span class="path-cta">View Requirements <svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></span>
       </a>
 
       <!-- Path 2: Adult Name Change -->
-      <a href="/passport-renewal-name-change.html" class="path-card">
+      <a href="/jamaican-passport-renewal.html#lane-2" class="path-card">
         <span class="path-title">Adult Renewal (With Name Change)</span>
         <span class="path-desc">Updating your passport due to marriage, divorce, or a registered deed poll.</span>
         <span class="path-cta">View Requirements <svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></span>
       </a>
 
       <!-- Path 3: Minor -->
-      <a href="/passport-minor-renewal.html" class="path-card">
+      <a href="/jamaican-passport-renewal.html#lane-2" class="path-card">
         <span class="path-title">Minor (Under 18) Renewal</span>
         <span class="path-desc">5-year passport renewals for children, requiring parental consent and ID verification.</span>
         <span class="path-cta">View Requirements <svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></span>
       </a>
 
       <!-- Path 4: Lost/Stolen -->
-      <a href="/passport-lost-stolen-damaged.html" class="path-card">
+      <a href="/jamaican-passport-renewal.html#lane-2" class="path-card">
         <span class="path-title">Lost, Stolen or Damaged Replacement</span>
         <span class="path-desc">Replacements requiring a police report (lost or stolen) or a notarised affidavit (damaged), plus identity verification.</span>
+        <span class="path-cta">View Requirements <svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></span>
+      </a>
+
+      <!-- Path 5: First-Time Adult -->
+      <a href="/jamaican-passport-renewal.html#lane-2" class="path-card">
+        <span class="path-title">First-Time Adult Application</span>
+        <span class="path-desc">Your first Jamaican passport. We prepare and audit the complete package for you to lodge in person.</span>
         <span class="path-cta">View Requirements <svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></span>
       </a>
     </div>
@@ -1383,7 +1390,7 @@ body { position: relative; width: 100%; min-height: 100vh; }
     </a>
     <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
     <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20a%20police%20certificate." target="_blank" rel="noopener" data-wa="police-record"><svg class="icon"><use href="#i-wa"/></svg> Ask about your police record</a>
-    <a class="btn btn-outline-dark next-service" href="#rgd-certificates" data-dialog="rgd-certificates">Next service: Birth, Marriage &amp; Death Certificates <svg class="icon"><use href="#i-chev"/></svg></a>
+    <a class="btn btn-outline-dark next-service" href="/jamaican-rgd-certificates.html">Next service: Birth, Marriage &amp; Death Certificates <svg class="icon"><use href="#i-chev"/></svg></a>
   </div>
 </dialog>
 
@@ -1406,9 +1413,9 @@ body { position: relative; width: 100%; min-height: 100vh; }
           <li>Full names of subject and parents</li>
         </ul>
         <dl class="specs">
-          <div><dt>RGD government fee</dt><dd>$2,500 (regular) / $6,000 (express)</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$4,000 – $6,000 JMD</dd></div>
-          <div><dt>RGD turnaround</dt><dd>7 – 14 business days</dd></div>
+          <div><dt>RGD government fee</dt><dd>$4,000 (regular) / $6,000 (express)</dd></div>
+          <div><dt>Concierge retainer</dt><dd>Starting at $3,000 JMD</dd></div>
+          <div><dt>RGD turnaround</dt><dd>7 – 10 working days (regular) / 3 – 4 (express)</dd></div>
         </dl>
       </div>
     </details>
@@ -1423,13 +1430,20 @@ body { position: relative; width: 100%; min-height: 100vh; }
           <li>Copy of applicant's valid ID and TRN</li>
         </ul>
         <dl class="specs">
-          <div><dt>RGD search fee</dt><dd>$1,500 JMD</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$4,000 – $6,000 JMD</dd></div>
+          <div><dt>RGD search fee</dt><dd>$1,000 JMD per decade searched</dd></div>
+          <div><dt>Concierge retainer</dt><dd>$5,000 JMD</dd></div>
           <div><dt>RGD turnaround</dt><dd>3 – 6 weeks (archive search)</dd></div>
         </dl>
         <p class="spec-note">Once the Entry Number is found, standard certificate printing fees apply.</p>
       </div>
     </details>
+    <div class="path-list">
+      <a href="/jamaican-rgd-certificates.html" class="path-card">
+        <span class="path-title">All RGD Services, Fees &amp; Requirements</span>
+        <span class="path-desc">Concierge retrieval, corrections, adding a father's name, late registration and record searches.</span>
+        <span class="path-cta">View Full Details <svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></span>
+      </a>
+    </div>
     <div class="addon">
       <div class="addon-top"><span>Using it overseas? Add an apostille</span><span>+$3,000 – $5,000 JMD</span></div>
       <p>Presenting this certificate to a foreign government for immigration or legal filings? Ask for apostille authentication during your intake call.</p>
@@ -1443,7 +1457,7 @@ body { position: relative; width: 100%; min-height: 100vh; }
     </div>
     <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
     <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20a%20registry%20certificate." target="_blank" rel="noopener" data-wa="rgd-certificates"><svg class="icon"><use href="#i-wa"/></svg> Ask about a certificate</a>
-    <a class="btn btn-outline-dark next-service" href="#passport" data-dialog="passport">Next service: Jamaican Passport Services <svg class="icon"><use href="#i-chev"/></svg></a>
+    <a class="btn btn-outline-dark next-service" href="/jamaican-passport-renewal.html">Next service: Jamaican Passport Services <svg class="icon"><use href="#i-chev"/></svg></a>
   </div>
 </dialog>
 
