@@ -47,7 +47,7 @@
       { "@type": "ListItem", "position": 3, "url": "https://documenthelpja.com/jamaica-passport-guide", "name": "The Complete Jamaican Passport Application & Renewal Guide" },
       { "@type": "ListItem", "position": 4, "url": "https://documenthelpja.com/jamaica-police-record-guide", "name": "Don't Get Turned Away: The Essential Guide to Getting a Jamaican Police Record" },
       { "@type": "ListItem", "position": 5, "url": "https://documenthelpja.com/jamaica-drivers-license-renewal-guide", "name": "How Unpaid Traffic Tickets Block Your Jamaican Driver's Licence Renewal" },
-      { "@type": "ListItem", "position": 6, "url": "https://documenthelpja.com/trn-without-photo-id", "name": "No Passport or Driver's Licence? How to Get a Jamaican TRN Using Only a Birth Certificate" },
+      { "@type": "ListItem", "position": 6, "url": "https://documenthelpja.com/trn-without-photo-id", "name": "How to Get a TRN in Jamaica Without Photo ID: The Birth Certificate Route" },
       { "@type": "ListItem", "position": 7, "url": "https://documenthelpja.com/jamaica-c5-travel-form", "name": "Don't Let the C5 Travel Form Trap Your Barrels at the Wharf" },
       { "@type": "ListItem", "position": 8, "url": "https://documenthelpja.com/jamaica-motor-vehicle-licence-guide", "name": "The Simple Guide to Jamaican Motor Vehicle Licence Renewal (Fitness & Registration)" },
       { "@type": "ListItem", "position": 9, "url": "https://documenthelpja.com/jamaica-nis-guide", "name": "The Jamaican NIS Survival Guide: Closing Gaps, Voluntary Cards & Avoiding the Lump Sum Trap" },
@@ -550,6 +550,24 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   .article-card.featured .excerpt { -webkit-line-clamp: 3; }
 }
 
+
+/* =========================================================
+   14. GUIDE DIRECTORY (insights.html)
+   ========================================================= */
+.directory { background: var(--paper); padding: 1.5rem 0 1.75rem; border-bottom: 1px solid var(--line); }
+.contents { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.1rem .6rem; }
+.contents > h2 { font-family: var(--sans); font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: .75rem; }
+.dir-groups { display: grid; gap: .9rem; }
+.dir-group h3 { display: flex; align-items: baseline; gap: .45rem; font-family: var(--sans); font-size: .82rem; font-weight: 600; color: var(--muted); line-height: 1.3; padding-bottom: .35rem; border-bottom: 1px solid var(--tone); margin-bottom: .2rem; }
+.dir-agency { font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); background: var(--ink); padding: .12rem .45rem; border-radius: 4px; }
+.dir-group ul { list-style: none; margin: 0; padding: 0; }
+.dir-group li { padding: .28rem 0; font-size: .88rem; line-height: 1.4; }
+.contents a { color: var(--ink); font-weight: 500; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+.contents a:hover { color: var(--gold-text); text-decoration-color: var(--gold); }
+@media (min-width: 700px) { .dir-groups { grid-template-columns: 1fr 1fr; column-gap: 2.5rem; } }
+@media (min-width: 1040px) { .dir-groups { grid-template-columns: repeat(3, 1fr); } .contents { padding: 1.4rem 1.5rem .9rem; } }
+.show-all { border: 0; background: none; padding: 0 0 0 .4rem; font: 600 .92rem var(--sans); color: var(--gold-text); text-decoration: underline; cursor: pointer; }
+.article-card.is-target { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,155,60,.35); }
 /* =========================================================
    12. MOTION PREFERENCES
    ========================================================= */
@@ -624,6 +642,61 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
     </div>
   </section>
 
+
+
+  <!-- ===================== DIRECTORY ===================== -->
+  <section class="directory">
+    <div class="wrap">
+      <!-- Directory: guides grouped by government agency, each a jump link -->
+      <nav class="contents" id="guides" aria-labelledby="contents-title">
+        <h2 id="contents-title">Guide directory</h2>
+        <div class="dir-groups">
+          <div class="dir-group">
+            <h3><span class="dir-agency">PICA</span> Passports &amp; citizenship</h3>
+            <ul>
+              <li><a href="#g-jamaica-passport-guide">The Complete Jamaican Passport Application &amp; Renewal Guide</a></li>
+              <li><a href="#g-jamaican-citizenship-by-descent">How Do I Claim Jamaican Citizenship Through a Jamaican Parent?</a></li>
+            </ul>
+          </div>
+          <div class="dir-group">
+            <h3><span class="dir-agency">TAJ</span> Tax Administration Jamaica</h3>
+            <ul>
+              <li><a href="#g-trn-without-photo-id">How to Get a TRN in Jamaica Without Photo ID: The Birth Certificate Route</a></li>
+              <li><a href="#g-self-employed-s04-tax-guide">The Self-Employed Tax Trap: Why Freelancers and Gig Workers Still Owe TAJ, and How to File Your S04</a></li>
+            </ul>
+          </div>
+          <div class="dir-group">
+            <h3><span class="dir-agency">ITA</span> Driving &amp; licensing</h3>
+            <ul>
+              <li><a href="#g-jamaica-learners-permit-guide">How to Get Your Jamaican Learner’s Permit: The Complete Step-by-Step Guide</a></li>
+              <li><a href="#g-jamaica-drivers-license-renewal-guide">How Unpaid Traffic Tickets Block Your Jamaican Driver's Licence Renewal</a></li>
+              <li><a href="#g-jamaica-motor-vehicle-licence-guide">The Simple Guide to Jamaican Motor Vehicle Licence Renewal (Fitness &amp; Registration)</a></li>
+            </ul>
+          </div>
+          <div class="dir-group">
+            <h3><span class="dir-agency">JCF</span> Police records</h3>
+            <ul>
+              <li><a href="#g-jamaica-police-record-guide">Don't Get Turned Away: The Essential Guide to Getting a Jamaican Police Record</a></li>
+            </ul>
+          </div>
+          <div class="dir-group">
+            <h3><span class="dir-agency">Customs</span> Jamaica Customs Agency</h3>
+            <ul>
+              <li><a href="#g-jamaica-c5-travel-form">Don't Let the C5 Travel Form Trap Your Barrels at the Wharf</a></li>
+            </ul>
+          </div>
+          <div class="dir-group">
+            <h3><span class="dir-agency">NIS</span> National Insurance Scheme</h3>
+            <ul>
+              <li><a href="#g-jamaica-nis-guide">The Jamaican NIS Survival Guide: Closing Gaps, Voluntary Cards &amp; Avoiding the Lump Sum Trap</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+
   <!-- ===================== FEATURED VIDEO ===================== -->
   <section class="section featured-video" aria-labelledby="video-title">
     <div class="wrap video-grid">
@@ -648,17 +721,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
     <div class="wrap">
       <h2 id="library-title" class="sr-only">All guides</h2>
 
-      <!-- Category filter -->
-      <div class="filter-bar" role="group" aria-label="Filter guides by agency">
-        <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All Articles</button>
-        <button type="button" class="filter-btn" data-filter="pica" aria-pressed="false">PICA / Passports</button>
-        <button type="button" class="filter-btn" data-filter="taj" aria-pressed="false">TAJ / Taxes</button>
-        <button type="button" class="filter-btn" data-filter="driving" aria-pressed="false">ITA / Driving</button>
-        <button type="button" class="filter-btn" data-filter="jcf" aria-pressed="false">JCF / Police Records</button>
-        <button type="button" class="filter-btn" data-filter="customs" aria-pressed="false">Customs</button>
-        <button type="button" class="filter-btn" data-filter="nis" aria-pressed="false">NIS / Pensions</button>
-      </div>
-      <p class="filter-status" id="filter-status" aria-live="polite">Showing all 10 guides</p>
+      <p class="filter-status"><span id="filter-status" aria-live="polite">Showing all 10 guides</span> <button type="button" class="show-all" id="show-all" hidden>Show all guides</button></p>
 
       <!-- Article grid
            To add a guide: copy one <article> block, then change data-cat
@@ -667,7 +730,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       <div class="article-grid">
 
         <!-- FEATURED GUIDE -->
-        <article class="article-card featured" data-cat="driving taj">
+        <article id="g-jamaica-learners-permit-guide" class="article-card featured" data-cat="driving taj">
           <div class="card-media"><img src="/assets/learner-permit-hero.webp" alt="Learner driver behind the wheel with an L plate" loading="lazy" decoding="async"></div>
           <div class="card-body">
             <div class="post-meta"><span class="cat"><span class="featured-badge">Featured</span> ITA &amp; TAJ Licensing</span><time datetime="2026-09-29">Sep 29, 2026</time></div>
@@ -677,7 +740,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           </div>
         </article>
 
-        <article class="article-card" data-cat="taj">
+        <article id="g-self-employed-s04-tax-guide" class="article-card" data-cat="taj">
           <div class="card-media"><img src="/assets/trn-application.webp" alt="Tax Administration Jamaica forms" loading="lazy" decoding="async"></div>
           <div class="card-body">
             <div class="post-meta"><span class="cat">TAJ &amp; NIS</span><time datetime="2026-09-25">Sep 25, 2026</time></div>
@@ -687,7 +750,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           </div>
         </article>
 
-        <article class="article-card" data-cat="pica">
+        <article id="g-jamaican-citizenship-by-descent" class="article-card" data-cat="pica">
           <div class="card-media"><img src="/assets/citizenship-descent-hero.webp" alt="Jamaican citizenship documents" loading="lazy" decoding="async"></div>
           <div class="card-body">
             <div class="post-meta"><span class="cat">PICA Lineage</span><time datetime="2026-09-21">Sep 21, 2026</time></div>
@@ -698,7 +761,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
         </article>
 
         <!-- ADD DATE: the previous page had no date for this guide -->
-        <article class="article-card" data-cat="pica">
+        <article id="g-jamaica-passport-guide" class="article-card" data-cat="pica">
           <div class="card-media"><img src="/assets/lost-stolen-passport.webp" alt="Jamaican passport" loading="lazy" decoding="async"></div>
           <div class="card-body">
             <div class="post-meta"><span class="cat">PICA Passports</span><time datetime="2026-09">Sep 2026</time></div>
@@ -708,7 +771,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           </div>
         </article>
 
-        <article class="article-card" data-cat="jcf">
+        <article id="g-jamaica-police-record-guide" class="article-card" data-cat="jcf">
           <div class="card-media"><img src="/assets/police-record.webp" alt="Police record document" loading="lazy" decoding="async"></div>
           <div class="card-body">
             <div class="post-meta"><span class="cat">JCF Clearances</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
@@ -718,7 +781,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           </div>
         </article>
 
-        <article class="article-card" data-cat="driving taj">
+        <article id="g-jamaica-drivers-license-renewal-guide" class="article-card" data-cat="driving taj">
           <div class="card-media"><img src="/assets/driver-license-renewal-hero.webp" alt="Driver's licence renewal" loading="lazy" decoding="async"></div>
           <div class="card-body">
             <div class="post-meta"><span class="cat">TAJ Compliance</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
@@ -728,7 +791,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           </div>
         </article>
 
-        <article class="article-card" data-cat="driving taj">
+        <article id="g-jamaica-motor-vehicle-licence-guide" class="article-card" data-cat="driving taj">
           <div class="card-media"><img src="/assets/motor-vehicle.webp" alt="Motor vehicle registration documents" loading="lazy" decoding="async"></div>
           <div class="card-body">
             <div class="post-meta"><span class="cat">TAJ &amp; ITA Services</span><time datetime="2026-09">Sep 2026</time></div>
@@ -738,17 +801,17 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           </div>
         </article>
 
-        <article class="article-card" data-cat="taj">
+        <article id="g-trn-without-photo-id" class="article-card" data-cat="taj">
           <div class="card-media"><img src="/assets/trn-application.webp" alt="TRN application document" loading="lazy" decoding="async"></div>
           <div class="card-body">
             <div class="post-meta"><span class="cat">TAJ Registration</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
-            <h3><a href="/trn-without-photo-id">No Passport or Driver's Licence? How to Get a Jamaican TRN Using Only a Birth Certificate</a></h3>
+            <h3><a href="/trn-without-photo-id">How to Get a TRN in Jamaica Without Photo ID: The Birth Certificate Route</a></h3>
             <p class="excerpt">Expired or missing photo ID doesn't have to stop your TRN. Here is the birth certificate route TAJ accepts, plus how parents and guardians get a TRN for a child.</p>
             <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
           </div>
         </article>
 
-        <article class="article-card" data-cat="customs">
+        <article id="g-jamaica-c5-travel-form" class="article-card" data-cat="customs">
           <div class="card-media"><img src="/assets/wharf-barrel-clearance.webp" alt="Customs barrel shipping" loading="lazy" decoding="async"></div>
           <div class="card-body">
             <div class="post-meta"><span class="cat">Customs Clearance</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
@@ -758,7 +821,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           </div>
         </article>
 
-        <article class="article-card" data-cat="nis">
+        <article id="g-jamaica-nis-guide" class="article-card" data-cat="nis">
           <div class="card-media"><img src="/assets/official-documents.png" alt="Official government documents" loading="lazy" decoding="async"></div>
           <div class="card-body">
             <div class="post-meta"><span class="cat">NIS &amp; Pensions</span><time datetime="2026-09-25">Sep 25, 2026</time></div>
@@ -876,32 +939,40 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
     });
   });
 
-  /* ---------- Category filter ----------
+  /* ---------- Topic filter (from ?cat= links) + directory jump links ----------
      Also works from a link, e.g. /insights.html?cat=jcf */
-  var buttons = Array.prototype.slice.call(document.querySelectorAll('.filter-btn'));
   var cards = Array.prototype.slice.call(document.querySelectorAll('.article-card'));
   var status = document.getElementById('filter-status');
+  var showAll = document.getElementById('show-all');
   var empty = document.getElementById('empty-state');
+  var labels = { pica: 'PICA / Passports', taj: 'TAJ / Taxes', driving: 'ITA / Driving', jcf: 'JCF / Police Records', customs: 'Customs', nis: 'NIS / Pensions' };
+  function inCat(c, cat) { return cat === 'all' || (' ' + c.dataset.cat + ' ').indexOf(' ' + cat + ' ') > -1; }
   function applyFilter(cat, updateUrl) {
-    var btn = buttons.filter(function (b) { return b.dataset.filter === cat; })[0];
-    if (!btn) { cat = 'all'; btn = buttons[0]; }
-    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+    if (cat !== 'all' && !labels[cat]) cat = 'all';
     var shown = 0;
-    cards.forEach(function (c) {
-      c.hidden = !(cat === 'all' || (' ' + c.dataset.cat + ' ').indexOf(' ' + cat + ' ') > -1);
-      if (!c.hidden) shown++;
-    });
+    cards.forEach(function (c) { c.hidden = !inCat(c, cat); if (!c.hidden) shown++; });
     empty.hidden = shown > 0;
     status.textContent = cat === 'all'
       ? 'Showing all ' + shown + ' guides'
-      : 'Showing ' + shown + (shown === 1 ? ' guide' : ' guides') + ' in ' + btn.textContent;
-    if (updateUrl) {
-      var url = cat === 'all' ? location.pathname : location.pathname + '?cat=' + cat;
-      history.replaceState(null, '', url);
-    }
+      : 'Showing ' + shown + (shown === 1 ? ' guide' : ' guides') + ' in ' + labels[cat] + '.';
+    showAll.hidden = cat === 'all';
+    if (updateUrl) history.replaceState(null, '', cat === 'all' ? location.pathname : location.pathname + '?cat=' + cat);
   }
-  buttons.forEach(function (b) {
-    b.addEventListener('click', function () { applyFilter(b.dataset.filter, true); });
+  showAll.addEventListener('click', function () { applyFilter('all', true); });
+
+  /* Contents links: make sure the guide is visible, then jump to it and highlight it briefly */
+  document.querySelectorAll('.contents a').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var card = document.querySelector(a.getAttribute('href'));
+      if (!card) return;
+      e.preventDefault();
+      if (card.hidden) applyFilter('all', true);
+      card.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      card.classList.add('is-target');
+      setTimeout(function () { card.classList.remove('is-target'); }, 2000);
+      var link = card.querySelector('h3 a');
+      if (link) link.focus({ preventScroll: true });
+    });
   });
   applyFilter(new URLSearchParams(location.search).get('cat') || 'all', false);
 
