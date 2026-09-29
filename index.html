@@ -22,12 +22,12 @@
 <meta property="og:image" content="https://documenthelpja.com/assets/office-hero.webp">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Fonts (same families as your guides, so the whole site matches) -->
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Structured data (helps Google understand the business) -->
+<!-- Structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -114,17 +114,13 @@
           },
           {
             "@type": "Offer",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "minPrice": 4000,
-              "maxPrice": 10000,
-              "priceCurrency": "JMD"
-            },
-            "description": "Concierge retainer. TAJ does not charge for a TRN.",
+            "priceCurrency": "USD",
+            "price": 70,
+            "description": "Concierge retainer for overseas TRN proxy submission.",
             "itemOffered": {
               "@type": "Service",
               "name": "TRN Application & Retrieval",
-              "url": "https://documenthelpja.com/#trn",
+              "url": "https://documenthelpja.com/trn-application.html",
               "provider": {
                 "@id": "https://documenthelpja.com/#business"
               }
@@ -138,11 +134,11 @@
               "maxPrice": 10000,
               "priceCurrency": "JMD"
             },
-            "description": "Concierge retainer. JCF fee (JMD 3,000 to 8,000 by speed) is paid separately.",
+            "description": "Concierge retainer. JCF fee is paid separately.",
             "itemOffered": {
               "@type": "Service",
               "name": "Police Records & Clearance Certificates",
-              "url": "https://documenthelpja.com/#police-record",
+              "url": "https://documenthelpja.com/jamaica-police-record.html",
               "provider": {
                 "@id": "https://documenthelpja.com/#business"
               }
@@ -156,7 +152,7 @@
               "maxPrice": 8000,
               "priceCurrency": "JMD"
             },
-            "description": "Concierge retainer from JMD 3,000 for certificate retrieval up to JMD 8,000 for amendments and late registration. RGD fee is paid separately.",
+            "description": "Concierge retainer. RGD fee is paid separately.",
             "itemOffered": {
               "@type": "Service",
               "name": "Birth, Marriage & Death Certificates (RGD)",
@@ -168,17 +164,13 @@
           },
           {
             "@type": "Offer",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "minPrice": 4000,
-              "maxPrice": 6000,
-              "priceCurrency": "JMD"
-            },
-            "description": "Concierge retainer. TAJ licence fee is paid separately.",
+            "priceCurrency": "JMD",
+            "price": 5000,
+            "description": "Prep & Pre-Pay Concierge Retainer.",
             "itemOffered": {
               "@type": "Service",
-              "name": "Driver's Licence Renewal & Replacement",
-              "url": "https://documenthelpja.com/#drivers-licence",
+              "name": "Driver's Licence Renewal Prep & Pre-Pay",
+              "url": "https://documenthelpja.com/drivers-licence-renewal.html",
               "provider": {
                 "@id": "https://documenthelpja.com/#business"
               }
@@ -186,17 +178,13 @@
           },
           {
             "@type": "Offer",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "minPrice": 4000,
-              "maxPrice": 7000,
-              "priceCurrency": "JMD"
-            },
-            "description": "Concierge retainer. TAJ registration fee is paid separately.",
+            "priceCurrency": "JMD",
+            "price": 5000,
+            "description": "Motor Vehicle Licence Prep & Pre-Pay Retainer.",
             "itemOffered": {
               "@type": "Service",
               "name": "Motor Vehicle Licence Renewal",
-              "url": "https://documenthelpja.com/#vehicle-licence",
+              "url": "https://documenthelpja.com/motor-vehicle-licence.html",
               "provider": {
                 "@id": "https://documenthelpja.com/#business"
               }
@@ -204,46 +192,13 @@
           },
           {
             "@type": "Offer",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "minPrice": 5000,
-              "maxPrice": 8000,
-              "priceCurrency": "JMD"
-            },
-            "description": "Concierge retainer. ITA fee is paid separately.",
+            "priceCurrency": "USD",
+            "price": 100,
+            "description": "Proxy Retainer for Stamp Office & TAJ representation.",
             "itemOffered": {
               "@type": "Service",
               "name": "Driving Abstracts & Record Verification",
-              "url": "https://documenthelpja.com/#driving-abstract",
-              "provider": {
-                "@id": "https://documenthelpja.com/#business"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "priceSpecification": {
-              "@type": "PriceSpecification",
-              "minPrice": 3000,
-              "maxPrice": 5000,
-              "priceCurrency": "JMD"
-            },
-            "description": "Add-on retainer when ordered with another document.",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Apostille & Document Authentication",
-              "provider": {
-                "@id": "https://documenthelpja.com/#business"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "description": "Retainer quoted after a lineage document review.",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Jamaican Citizenship by Descent",
-              "url": "https://documenthelpja.com/#citizenship",
+              "url": "https://documenthelpja.com/jamaican-driving-abstract.html",
               "provider": {
                 "@id": "https://documenthelpja.com/#business"
               }
@@ -279,18 +234,18 @@
 
 <style>
 /* =========================================================
-   1. DESIGN TOKENS  (change colours or fonts here only)
+   1. DESIGN TOKENS
    ========================================================= */
 :root {
-  --ink: #181A1B;          /* headings, dark bands */
-  --text: #2F3538;         /* body copy */
-  --muted: #565E63;        /* secondary copy (passes contrast on white) */
+  --ink: #181A1B;          
+  --text: #2F3538;         
+  --muted: #565E63;        
   --paper: #FFFFFF;
-  --tone: #F2F5F3;         /* subtle section background */
+  --tone: #F2F5F3;         
   --line: #D6DDD9;
-  --gold: #C89B3C;         /* accent on dark backgrounds */
+  --gold: #C89B3C;         
   --gold-hover: #B08733;
-  --gold-text: #7E5B1C;    /* accent text on light backgrounds */
+  --gold-text: #7E5B1C;    
   --emerald: #0B2E24;
 
   --serif: "Playfair Display", Georgia, "Times New Roman", serif;
@@ -309,8 +264,8 @@
 [hidden] { display: none !important; }
 html {
   scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip;
-  overscroll-behavior-y: none;   /* stops the phone "bounce" that pulls the page past the footer */
-  background: var(--ink);        /* if an older phone still bounces, it shows footer colour, not blank white */
+  overscroll-behavior-y: none;   
+  background: var(--ink);        
 }
 body {
   margin: 0;
@@ -320,8 +275,8 @@ body {
   color: var(--text);
   background: var(--paper);
   -webkit-font-smoothing: antialiased;
-  overflow-x: clip;          /* stops sideways drift on phones without breaking the sticky header */
-  overflow-wrap: break-word;  /* long emails and links wrap instead of widening the page */
+  overflow-x: clip;          
+  overflow-wrap: break-word;  
 }
 img { max-width: 100%; height: auto; display: block; }
 h1, h2, h3 { font-family: var(--serif); color: var(--ink); line-height: 1.2; margin: 0; font-weight: 700; }
@@ -451,7 +406,6 @@ a { color: inherit; }
 .hero-grid { display: grid; gap: 2.5rem; align-items: center; }
 .hero h1 { color: #fff; font-size: clamp(2rem, 6.5vw, 3rem); line-height: 1.1; max-width: 20ch; }
 .hero-lead { margin-top: 1rem; font-size: 1.125rem; line-height: 1.7; max-width: 36rem; color: #D5D9DB; }
-.hero-audience { margin-top: 1rem; font-size: .98rem; color: #AEB5B9; max-width: 36rem; }
 .hero-actions { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .75rem; }
 .hero-actions .btn { width: 100%; }
 .hero-proof { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; font-size: .92rem; color: #D5D9DB; }
@@ -459,12 +413,6 @@ a { color: inherit; }
 .hero-proof .icon { color: var(--gold); }
 .hero-photo { position: relative; border-radius: var(--radius); overflow: hidden; background: #2A2E30; aspect-ratio: 4 / 3; }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
-.hero-photo figcaption {
-  position: absolute; left: 0; right: 0; bottom: 0; padding: 2.5rem 1rem .9rem;
-  background: linear-gradient(to top, rgba(24,26,27,.9), rgba(24,26,27,0));
-  color: #fff; font-size: .92rem;
-}
-.hero-photo figcaption strong { display: block; font: 700 1.05rem/1.3 var(--serif); }
 
 @media (min-width: 640px) {
   .hero-actions { flex-direction: row; flex-wrap: wrap; }
@@ -479,10 +427,6 @@ a { color: inherit; }
 /* =========================================================
    5. COMPACT TRUST BAR & HERO TWEAKS
    ========================================================= */
-.hero-actions-wrapper { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem; }
-.hero-actions-wrapper .text-link { color: #D5D9DB; font-size: 0.95rem; align-self: flex-start; }
-.hero-actions-wrapper .text-link:hover { color: #FFFFFF; }
-
 .trust-bar { background: var(--tone); border-bottom: 1px solid var(--line); padding: 1.5rem 0; }
 .trust-grid { display: flex; flex-direction: column; gap: 1rem; }
 .trust-items { display: grid; gap: 1.25rem; }
@@ -512,7 +456,7 @@ a { color: inherit; }
    6. SERVICES DIRECTORY (ULTRA-MINIMAL SERVICE CARDS)
    ========================================================= */
 .services { 
-  background: var(--paper); /* Crisp white background */
+  background: var(--paper); 
   padding: 4.5rem 0;
 }
 .services .section-head { margin-left: auto; margin-right: auto; max-width: 56rem; }
@@ -527,7 +471,6 @@ a { color: inherit; }
 @media (min-width: 700px) {
   .service-grid { grid-template-columns: 1fr 1fr; gap: 3rem 3rem; }
 }
-/* Desktop: fixed 375 x 300 cards, edges aligned with the section heading and callout */
 @media (min-width: 900px) {
   .service-grid { grid-template-columns: repeat(2, 375px); justify-content: space-between; gap: 4.5rem 0; }
   .service-card { width: 375px; height: 300px; aspect-ratio: auto; }
@@ -565,7 +508,6 @@ a { color: inherit; }
   transform: scale(1.04);
 }
 
-/* Dark gradient overlay for text legibility */
 .service-card::after {
   content: "";
   position: absolute;
@@ -590,7 +532,6 @@ a { color: inherit; }
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Unlisted services callout */
 .unlisted {
   max-width: 56rem; margin-left: auto; margin-right: auto;
   margin-top: 3.5rem; background: var(--ink); color: #D5D9DB;
@@ -599,10 +540,7 @@ a { color: inherit; }
 }
 .unlisted h3 { color: #fff; font-size: clamp(1.45rem, 4.5vw, 1.9rem); }
 .unlisted > div > p { margin-top: .6rem; max-width: 38rem; }
-.unlisted .also { margin-top: 1.25rem; color: var(--gold); font-weight: 600; font-size: .95rem; }
-.unlisted .checklist { margin-top: .6rem; gap: .4rem 2rem; color: #E6E8E9; font-size: .98rem; }
 .unlisted .btn { width: 100%; }
-@media (min-width: 640px) { .unlisted .checklist { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 960px) {
   .unlisted { grid-template-columns: 1fr auto; align-items: center; padding: 2.5rem; }
   .unlisted .btn { width: auto; }
@@ -629,8 +567,6 @@ a { color: inherit; }
 .post h3 { margin-top: .9rem; font-size: 1.22rem; line-height: 1.3; }
 .post h3 a { text-decoration: none; }
 .post h3 a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
-.post h3 a:focus-visible { outline: none; }
-.post h3 a:focus-visible::after { outline: 3px solid var(--gold); outline-offset: 2px; }
 .post p.excerpt { margin-top: .75rem; font-size: .98rem; color: var(--muted); flex: 1; }
 .post .byline { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .88rem; color: var(--muted); }
 
@@ -700,7 +636,7 @@ a { color: inherit; }
 }
 
 /* =========================================================
-   11. SERVICE DETAIL WINDOWS (fees & requirements)
+   11. MODALS & DIALOGS
    ========================================================= */
 .svc-dialog {
   padding: 0; border: 0; border-radius: 12px; color: var(--text);
@@ -719,63 +655,8 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 .dlg-head h2 { margin-top: .6rem; font-size: 1.6rem; padding-right: 3rem; }
 .dlg-head p { margin-top: .4rem; font-size: .97rem; color: var(--muted); }
 .dlg-body { padding: 1.25rem 1.5rem 1.75rem; display: grid; gap: .75rem; }
-
-.acc { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-.acc > summary {
-  list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  min-height: 56px; padding: .9rem 1rem; background: #F8FAF9; font-weight: 600; color: var(--ink);
-}
-.acc > summary::-webkit-details-marker { display: none; }
-.acc > summary:hover { background: var(--tone); }
-.acc > summary .icon { width: 1rem; height: 1rem; color: var(--muted); transition: transform .2s ease; }
-.acc[open] > summary .icon { transform: rotate(90deg); }
-.acc-body { padding: 1.1rem 1rem 1.2rem; border-top: 1px solid var(--line); font-size: .98rem; }
-.acc-lead { font-weight: 600; color: var(--ink); margin-bottom: .6rem; }
-.acc-body > p:not(.acc-lead) { margin-top: .75rem; color: var(--muted); }
-
-.specs { display: grid; gap: .6rem; margin: 1rem 0 0; }
-.specs div { background: #F8FAF9; border: 1px solid var(--line); border-radius: 6px; padding: .65rem .85rem; }
-.specs dt { font-size: .82rem; font-weight: 600; color: var(--muted); }
-.specs dd { margin: .15rem 0 0; font-weight: 700; color: var(--ink); font-size: .98rem; }
-@media (min-width: 560px) { .specs { grid-template-columns: repeat(3, 1fr); } }
-.spec-note { margin-top: .75rem; font-size: .9rem; color: var(--muted); font-style: italic; }
-
-.addon { border: 1px solid rgba(200,155,60,.55); background: #FBF6EA; border-radius: 8px; padding: 1rem; }
-.addon-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem 1rem; font-weight: 700; color: var(--ink); }
-.addon-top span:last-child { color: var(--gold-text); }
-.addon p { margin-top: .4rem; font-size: .95rem; }
-.checked { font-size: .88rem; color: var(--muted); }
-.guide-box {
-  display: flex; align-items: center; gap: .9rem; padding: 1rem;
-  border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 8px;
-  background: #FAF7EF; color: var(--ink); text-decoration: none;
-}
-.guide-box:hover { background: #F5EFDF; }
-.guide-box > .icon { width: 1.5rem; height: 1.5rem; color: var(--gold-text); }
-.guide-box span { flex: 1; display: flex; flex-direction: column; font-weight: 600; line-height: 1.35; }
-.guide-box small { font-weight: 500; font-size: .85rem; color: var(--muted); margin-top: .15rem; }
-.guide-box .chev { width: 1rem; height: 1rem; color: var(--muted); }
-.dlg-body .btn { width: 100%; margin-top: .25rem; }
 .cal-frame { width: 100%; height: 620px; border: 0; }
 
-/* Delivery options + next-service link inside service windows */
-.delivery { border: 1px solid var(--line); background: #F8FAF9; border-radius: 8px; padding: 1rem; }
-.delivery-title { display: flex; align-items: center; gap: .5rem; font-weight: 700; color: var(--ink); margin-bottom: .6rem; }
-.delivery-title .icon { color: var(--emerald); }
-.delivery .checklist { font-size: .97rem; }
-.dlg-body .next-service { font-size: .95rem; }
-.next-service .icon { width: 1rem; height: 1rem; }
-
-/* ---------- Homepage mobile refinements ---------- */
-@media (max-width: 959px) {
-  .hero { padding-top: 1.25rem; }
-  .hero-photo { order: -1; aspect-ratio: 4 / 3; }
-}
-@media (max-width: 759px) {
-  .unlisted { margin-top: 2.5rem; }
-}
-
-/* Floating back-to-top button */
 .floating-top-btn {
   position: fixed; right: 1.5rem; bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); z-index: 99;
   display: flex; align-items: center; justify-content: center;
@@ -787,119 +668,22 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 }
 .floating-top-btn.is-visible { opacity: 1; pointer-events: auto; }
 .floating-top-btn:hover { background: var(--gold); color: var(--ink); transform: translateY(-3px); }
-.floating-top-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .floating-top-btn .icon { width: 1.25rem; height: 1.25rem; }
-@media (max-width: 639px) {
-  .floating-top-btn { right: 1rem; bottom: calc(1rem + env(safe-area-inset-bottom, 0px)); width: 44px; height: 44px; }
-}
 
-/* ---------- Service window options: a distinct colour for each option ---------- */
-.dlg-body .acc { border-left: 5px solid var(--acc-bar, var(--line)); }
-.dlg-body .acc:nth-of-type(4n+1) { --acc-bar: #1F6B4A; --acc-tint: #EAF3EE; --acc-tint-strong: #DCEBE2; }
-.dlg-body .acc:nth-of-type(4n+2) { --acc-bar: #B7791F; --acc-tint: #FBF3E2; --acc-tint-strong: #F5E6C6; }
-.dlg-body .acc:nth-of-type(4n+3) { --acc-bar: #2F5D8A; --acc-tint: #EAF0F7; --acc-tint-strong: #D9E4F0; }
-.dlg-body .acc:nth-of-type(4n+4) { --acc-bar: #9B3B3B; --acc-tint: #F7ECEC; --acc-tint-strong: #EFDADA; }
-.dlg-body .acc > summary { background: var(--acc-tint); }
-.dlg-body .acc > summary:hover,
-.dlg-body .acc[open] > summary { background: var(--acc-tint-strong); }
-.dlg-body .acc > summary .icon { color: var(--acc-bar); }
-.dlg-body .acc .acc-body { border-top-color: var(--acc-tint-strong); }
-.dlg-body .acc .specs div { background: var(--acc-tint); border-color: var(--acc-tint-strong); }
-.svc-dialog:focus, .svc-dialog:focus-visible { outline: none; }
-
-/* ---------- Path Selection Cards (Modal Routers) ---------- */
-.path-list { 
-  display: grid; 
-  gap: 0.85rem; 
-  margin-bottom: 1.5rem; 
-}
-
-.path-card {
-  display: flex; 
-  flex-direction: column; 
-  gap: 0.35rem;
-  padding: 1.25rem; 
-  border: 1px solid var(--line); 
-  border-radius: 8px;
-  background: #F8FAF9; 
-  text-decoration: none; 
-  color: var(--text);
-  transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
-}
-
-.path-card:hover { 
-  border-color: var(--gold); 
-  background: var(--paper); 
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.path-title { 
-  font-weight: 700; 
-  color: var(--ink); 
-  font-size: 1.05rem; 
-}
-
-.path-desc { 
-  font-size: 0.92rem; 
-  color: var(--muted); 
-  line-height: 1.4;
-}
-
-.path-cta {
-  display: inline-flex; 
-  align-items: center; 
-  gap: 0.4rem;
-  margin-top: 0.5rem; 
-  font-weight: 600; 
-  color: var(--gold-text); 
-  font-size: 0.9rem;
-}
-
-.path-card:hover .path-cta { 
-  color: var(--ink); 
-}
-
-/* ---------- Guide links inside service cards (not a service option) ---------- */
-.spokes li:has(> .spoke-guide) { border-top: 1px dashed var(--line); }
-.spoke-guide { background: #FAF7EF; justify-content: flex-start; gap: .75rem; }
-.spoke-guide:hover { background: #F5EFDF; }
-.spoke-guide .guide-icon { width: 1.25rem; height: 1.25rem; color: var(--gold-text); flex-shrink: 0; transform: none; }
-.spoke-guide:hover .guide-icon { transform: none; color: var(--ink); }
-.spoke-guide .spoke-text { flex: 1; }
-.spoke-guide .spoke-title { font-weight: 500; font-size: .98rem; }
-.spoke-guide .spoke-meta { display: flex; align-items: center; gap: .45rem; color: var(--muted); }
-.guide-chip { display: inline-block; padding: .05rem .45rem; border-radius: 3px; background: var(--ink); color: var(--gold); font-size: .72rem; font-weight: 700; letter-spacing: .03em; }
-
-/* =========================================================
-   12. MOTION PREFERENCES
-   ========================================================= */
+/* Motion preferences */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
-
-/* =========================================================
-   MOBILE OVERSCROLL & INVISIBLE ELEMENT FIXES
-   ========================================================= */
-/* 1. Older mobile browsers: keep closed service windows fully hidden */
 dialog:not([open]) { display: none !important; }
-
-/* 2. Collapse the hidden icon library only (the icons inside buttons stay visible) */
 body > svg[width="0"][height="0"] { display: none !important; }
-
-/* 3. Collapse invisible third-party tracking frames (e.g. MailerLite) */
-iframe[style*="display: none"],
-iframe[width="0"][height="0"] { display: none !important; }
-
-/* 4. Page ends at the footer; any iOS bounce shows footer colour */
 body { position: relative; width: 100%; min-height: 100vh; }
 </style>
 </head>
 
 <body id="top">
 
-<!-- ===================== ICON LIBRARY (used throughout the page) ===================== -->
+<!-- ===================== ICON LIBRARY ===================== -->
 <svg width="0" height="0" style="display:none" aria-hidden="true">
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.37l-.36-.22-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41Z"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
@@ -907,11 +691,9 @@ body { position: relative; width: 100%; min-height: 100vh; }
   <symbol id="i-chev" viewBox="0 0 24 24"><path d="M8.6 5.4 10 4l8 8-8 8-1.4-1.4 6.6-6.6z"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1.2 14.2-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4z"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 4.6-4.6 1.4 1.4z"/></symbol>
-  <symbol id="i-lock" viewBox="0 0 24 24"><path d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2Zm-7-2a2 2 0 1 1 4 0v2h-4V7Z"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.2L4 7.3V17h16V7.3l-8 4.9ZM5.2 7 12 11.1 18.8 7H5.2Z"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2Zm12 8H5v9h14v-9Z"/></symbol>
-  <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 3h11a3 3 0 0 1 3 3v15H7a2 2 0 0 1-2-2V3Zm2 14v2h10v-2H7Zm2-10v2h7V7H9Zm0 4v2h7v-2H9Z"/></symbol>
   <symbol id="i-up" viewBox="0 0 24 24"><path d="M11 20V7.8l-5.6 5.6L4 12l8-8 8 8-1.4 1.4L13 7.8V20z"/></symbol>
 </svg>
 
@@ -1014,42 +796,42 @@ body { position: relative; width: 100%; min-height: 100vh; }
       <div class="service-grid">
 
         <a class="service-card" href="/jamaican-passport-renewal.html">
-          <img src="assets/passport-renewal.webp" alt="" loading="lazy" decoding="async">
+          <img src="assets/passport-renewal.webp" alt="Jamaican Passport Services" loading="lazy" decoding="async">
           <h3 class="service-card-title">Jamaican Passport Services</h3>
         </a>
 
         <a class="service-card" href="/jamaican-citizenship-application.html">
-          <img src="assets/citizenship-descent-hero.webp" alt="" loading="lazy" decoding="async">
+          <img src="assets/citizenship-descent-hero.webp" alt="Citizenship by Descent" loading="lazy" decoding="async">
           <h3 class="service-card-title">Citizenship by Descent</h3>
         </a>
 
-        <a class="service-card" href="#trn" data-dialog="trn">
-          <img src="assets/trn-application.webp" alt="" loading="lazy" decoding="async">
+        <a class="service-card" href="/jamaican_trn_application_overseas_disapora.html">
+          <img src="assets/trn-application.webp" alt="Taxpayer Registration Number TRN" loading="lazy" decoding="async">
           <h3 class="service-card-title">Taxpayer Registration Number (TRN)</h3>
         </a>
 
-        <a class="service-card" href="#drivers-licence" data-dialog="drivers-licence">
-          <img src="assets/driver-license-renewal-hero.webp" alt="" loading="lazy" decoding="async">
+        <a class="service-card" href="/drivers-licence-renewal.html">
+          <img src="assets/driver-license-renewal-hero.webp" alt="Driver's Licence Renewal & Replacement" loading="lazy" decoding="async">
           <h3 class="service-card-title">Driver's Licence Renewal &amp; Replacement</h3>
         </a>
 
-        <a class="service-card" href="#vehicle-licence" data-dialog="vehicle-licence">
-          <img src="assets/motor-vehicle.webp" alt="" loading="lazy" decoding="async">
+        <a class="service-card" href="/motor-vehicle-licence.html">
+          <img src="assets/motor-vehicle.webp" alt="Motor Vehicle Licence Renewal" loading="lazy" decoding="async">
           <h3 class="service-card-title">Motor Vehicle Licence Renewal</h3>
         </a>
 
-        <a class="service-card" href="#driving-abstract" data-dialog="driving-abstract">
-          <img src="assets/driving-abstract.jfif" alt="" loading="lazy" decoding="async">
+        <a class="service-card" href="/jamaican-driving-abstract.html">
+          <img src="assets/driving-abstract.jfif" alt="Driving Abstracts & Record Verification" loading="lazy" decoding="async">
           <h3 class="service-card-title">Driving Abstracts &amp; Verification</h3>
         </a>
 
         <a class="service-card" href="/jamaica-police-record.html">
-          <img src="assets/police-record.webp" alt="" loading="lazy" decoding="async">
+          <img src="assets/police-record.webp" alt="Police Records & Clearance Certificates" loading="lazy" decoding="async">
           <h3 class="service-card-title">Police Records &amp; Clearance Certificates</h3>
         </a>
 
         <a class="service-card" href="/jamaican-rgd-certificates.html">
-          <img src="assets/rgd.webp" alt="" loading="lazy" decoding="async">
+          <img src="assets/rgd.webp" alt="Birth, Marriage & Death Certificates" loading="lazy" decoding="async">
           <h3 class="service-card-title">Birth, Marriage &amp; Death Certificates</h3>
         </a>
 
@@ -1193,14 +975,7 @@ body { position: relative; width: 100%; min-height: 100vh; }
   <svg class="icon" aria-hidden="true"><use href="#i-up"/></svg>
 </a>
 
-
-<!-- =====================================================================
-     SERVICE DETAIL WINDOWS
-     Each window opens when a service in the directory is tapped.
-     To update a fee, find the service below and edit the number in <dd>.
-     ===================================================================== -->
-
-<!-- CONSULTATION -->
+<!-- CONSULTATION DIALOG -->
 <dialog id="consultation" class="svc-dialog" aria-labelledby="consultation-title">
   <div class="dlg-head">
     <form method="dialog"><button class="dlg-close" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button></form>
@@ -1213,459 +988,7 @@ body { position: relative; width: 100%; min-height: 100vh; }
   </div>
 </dialog>
 
-<!-- PASSPORT -->
-<dialog id="passport" class="svc-dialog" aria-labelledby="passport-title">
-  <div class="dlg-head">
-    <form method="dialog"><button class="dlg-close" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button></form>
-    <span class="dlg-tag">PICA</span>
-    <h2 id="passport-title">Jamaican Passport Services</h2>
-    <p>Select your specific application type below to view the exact requirements, PICA fees, and how we handle the filing.</p>
-  </div>
-  
-  <div class="dlg-body">
-    
-    <div class="path-list">
-      <!-- Path 1: Standard Adult -->
-      <a href="/jamaican-passport-renewal.html#lane-1" class="path-card">
-        <span class="path-title">Adult Renewal (No Name Change)</span>
-        <span class="path-desc">Standard 10-year passport renewal for applicants 18 and older keeping their current legal name.</span>
-        <span class="path-cta">View Requirements <svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></span>
-      </a>
-
-      <!-- Path 2: Adult Name Change -->
-      <a href="/jamaican-passport-renewal.html#lane-2" class="path-card">
-        <span class="path-title">Adult Renewal (With Name Change)</span>
-        <span class="path-desc">Updating your passport due to marriage, divorce, or a registered deed poll.</span>
-        <span class="path-cta">View Requirements <svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></span>
-      </a>
-
-      <!-- Path 3: Minor -->
-      <a href="/jamaican-passport-renewal.html#lane-2" class="path-card">
-        <span class="path-title">Minor (Under 18) Renewal</span>
-        <span class="path-desc">5-year passport renewals for children, requiring parental consent and ID verification.</span>
-        <span class="path-cta">View Requirements <svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></span>
-      </a>
-
-      <!-- Path 4: Lost/Stolen -->
-      <a href="/jamaican-passport-renewal.html#lane-2" class="path-card">
-        <span class="path-title">Lost, Stolen or Damaged Replacement</span>
-        <span class="path-desc">Replacements requiring a police report (lost or stolen) or a notarised affidavit (damaged), plus identity verification.</span>
-        <span class="path-cta">View Requirements <svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></span>
-      </a>
-
-      <!-- Path 5: First-Time Adult -->
-      <a href="/jamaican-passport-renewal.html#lane-2" class="path-card">
-        <span class="path-title">First-Time Adult Application</span>
-        <span class="path-desc">Your first Jamaican passport. We prepare and audit the complete package for you to lodge in person.</span>
-        <span class="path-cta">View Requirements <svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></span>
-      </a>
-    </div>
-
-    <div class="delivery">
-      <p class="delivery-title"><svg class="icon"><use href="#i-pin"/></svg> Secure delivery of your finished document</p>
-      <ul class="checklist">
-        <li>Local pickup in Kingston</li>
-        <li>International courier dispatch directly to your door</li>
-      </ul>
-    </div>
-    
-    <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
-    <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20a%20passport%20application." target="_blank" rel="noopener" data-wa="passport"><svg class="icon"><use href="#i-wa"/></svg> Ask about your passport</a>
-    <a class="btn btn-outline-dark next-service" href="/jamaican-citizenship-application.html">Next service: Citizenship by Descent <svg class="icon"><use href="#i-chev"/></svg></a>
-  </div>
-</dialog>
-
-<!-- TRN -->
-<dialog id="trn" class="svc-dialog" aria-labelledby="trn-title">
-  <div class="dlg-head">
-    <form method="dialog"><button class="dlg-close" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button></form>
-    <span class="dlg-tag">TAJ</span>
-    <h2 id="trn-title">TRN Applications &amp; Retrievals</h2>
-    <p>New TRN applications, notarised diaspora representation and official card retrievals. Choose where you're applying from to see the requirements and our retainer.</p>
-  </div>
-  <div class="dlg-body">
-    <details class="acc">
-      <summary>Local resident application<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you need to provide:</p>
-        <ul class="checklist">
-          <li>Valid government ID (passport, driver's licence or national ID)</li>
-        </ul>
-        <dl class="specs">
-          <div><dt>Government fee</dt><dd>Free ($0 JMD)</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$4,000 – $5,000 JMD</dd></div>
-          <div><dt>TAJ turnaround</dt><dd>1 – 3 business days</dd></div>
-        </dl>
-      </div>
-    </details>
-    <details class="acc">
-      <summary>Diaspora or overseas application<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you need to provide:</p>
-        <ul class="checklist">
-          <li>Notarised copy of your foreign passport or driver's licence</li>
-          <li>Notarised authorisation letter (template provided during intake)</li>
-        </ul>
-        <dl class="specs">
-          <div><dt>Government fee</dt><dd>Free ($0 JMD)</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$7,000 – $10,000 JMD</dd></div>
-          <div><dt>TAJ turnaround</dt><dd>5 – 7 business days</dd></div>
-        </dl>
-      </div>
-    </details>
-    <div class="delivery">
-      <p class="delivery-title"><svg class="icon"><use href="#i-pin"/></svg> Secure delivery of your finished document</p>
-      <ul class="checklist">
-        <li>Local pickup in Kingston</li>
-        <li>International courier dispatch directly to your door</li>
-      </ul>
-    </div>
-    <a class="guide-box" href="/trn-without-photo-id">
-      <svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>
-      <span>No photo ID? How to get a TRN with only a birth certificate<small>Free guide &middot; read online</small></span>
-      <svg class="icon chev" aria-hidden="true"><use href="#i-chev"/></svg>
-    </a>
-    <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
-    <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20a%20TRN." target="_blank" rel="noopener" data-wa="trn"><svg class="icon"><use href="#i-wa"/></svg> Ask about your TRN</a>
-    <a class="btn btn-outline-dark next-service" href="#drivers-licence" data-dialog="drivers-licence">Next service: Driver's Licence Renewal &amp; Replacement <svg class="icon"><use href="#i-chev"/></svg></a>
-  </div>
-</dialog>
-
-<!-- POLICE RECORD -->
-<dialog id="police-record" class="svc-dialog" aria-labelledby="police-title">
-  <div class="dlg-head">
-    <form method="dialog"><button class="dlg-close" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button></form>
-    <span class="dlg-tag">JCF</span>
-    <h2 id="police-title">Police Records &amp; Clearance Certificates</h2>
-    <p>Local fingerprint scheduling, overseas fingerprint submission and certificate pickup. Choose your filing method to see requirements and the government speed options.</p>
-  </div>
-  <div class="dlg-body">
-    <details class="acc">
-      <summary>Local application (hybrid assist)<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you need to provide:</p>
-        <ul class="checklist">
-          <li>Valid tax receipt and valid government ID</li>
-          <li>Two (2) recent passport-sized photographs, not signed, sealed or certified by a JP</li>
-        </ul>
-        <p>We pre-pay fees and schedule your fingerprint slot. You appear briefly for fingerprint capture, then we collect the finished certificate.</p>
-        <dl class="specs">
-          <div><dt>JCF government fee</dt><dd>$3,000 (21-day) / $6,000 (5-day) / $8,000 (next day)</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$5,000 – $6,000 JMD</dd></div>
-          <div><dt>JCF turnaround</dt><dd>21 working days (regular) / 5 (express) / next day, when JCF offers it</dd></div>
-        </dl>
-      </div>
-    </details>
-    <details class="acc">
-      <summary>Overseas or diaspora application<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you need to provide:</p>
-        <ul class="checklist">
-          <li>Rolled fingerprints taken by a police agency in your host country</li>
-          <li>Certified colour copy of valid passport bio page</li>
-          <li>Two (2) recent passport-sized photographs, not signed, sealed or certified</li>
-          <li>Notarised authorisation letter</li>
-        </ul>
-        <p>We lodge your file in Kingston, collect the certificate in person at the Criminal Records Office, have it apostilled, then courier it to you.</p>
-        <dl class="specs">
-          <div><dt>JCF government fee</dt><dd>$3,000 (regular) / $6,000 (express)</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$100 USD (~$16,000 JMD), apostille included</dd></div>
-          <div><dt>JCF turnaround</dt><dd>21 working days (regular) / 5 (express), plus apostille and courier time</dd></div>
-        </dl>
-      </div>
-    </details>
-    <div class="addon">
-      <div class="addon-top"><span>Using it overseas? Add an apostille</span><span>+$3,000 – $5,000 JMD</span></div>
-      <p>Need this police record officially recognised abroad? Ask for apostille authentication during your intake call.</p>
-    </div>
-    <div class="delivery">
-      <p class="delivery-title"><svg class="icon"><use href="#i-pin"/></svg> Secure delivery of your finished document</p>
-      <ul class="checklist">
-        <li>Local pickup in Kingston</li>
-        <li>International courier dispatch directly to your door</li>
-      </ul>
-    </div>
-    <a class="guide-box" href="/jamaica-police-record-guide">
-      <svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>
-      <span>Don't get turned away: the five errors that stop police record applications<small>Free guide &middot; read online</small></span>
-      <svg class="icon chev" aria-hidden="true"><use href="#i-chev"/></svg>
-    </a>
-    <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
-    <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20a%20police%20certificate." target="_blank" rel="noopener" data-wa="police-record"><svg class="icon"><use href="#i-wa"/></svg> Ask about your police record</a>
-    <a class="btn btn-outline-dark next-service" href="/jamaican-rgd-certificates.html">Next service: Birth, Marriage &amp; Death Certificates <svg class="icon"><use href="#i-chev"/></svg></a>
-  </div>
-</dialog>
-
-<!-- RGD CERTIFICATES -->
-<dialog id="rgd-certificates" class="svc-dialog" aria-labelledby="rgd-title">
-  <div class="dlg-head">
-    <form method="dialog"><button class="dlg-close" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button></form>
-    <span class="dlg-tag">RGD</span>
-    <h2 id="rgd-title">Birth, Marriage &amp; Death Certificates</h2>
-    <p>Certificate copies, registry searches and genealogical retrievals. A copy needs a known Entry Number; without one, an RGD search comes first.</p>
-  </div>
-  <div class="dlg-body">
-    <details class="acc">
-      <summary>Certificate copy or replacement (Entry Number known)<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you need to provide:</p>
-        <ul class="checklist">
-          <li>Official Entry Number (from old certificate or pink slip)</li>
-          <li>Copy of applicant's valid ID and TRN</li>
-          <li>Full names of subject and parents</li>
-        </ul>
-        <dl class="specs">
-          <div><dt>RGD government fee</dt><dd>$4,000 (regular) / $6,000 (express)</dd></div>
-          <div><dt>Concierge retainer</dt><dd>Starting at $3,000 JMD</dd></div>
-          <div><dt>RGD turnaround</dt><dd>7 – 10 working days (regular) / 3 – 4 (express)</dd></div>
-        </dl>
-      </div>
-    </details>
-    <details class="acc">
-      <summary>Registry record search (Entry Number unknown or lost)<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you need to provide:</p>
-        <ul class="checklist">
-          <li>Full name of subject at birth, marriage or death</li>
-          <li>Approximate date and parish or district of the event</li>
-          <li>Parents' full names (including mother's maiden name)</li>
-          <li>Copy of applicant's valid ID and TRN</li>
-        </ul>
-        <dl class="specs">
-          <div><dt>RGD search fee</dt><dd>$1,000 JMD per decade searched</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$5,000 JMD</dd></div>
-          <div><dt>RGD turnaround</dt><dd>3 – 6 weeks (archive search)</dd></div>
-        </dl>
-        <p class="spec-note">Once the Entry Number is found, standard certificate printing fees apply.</p>
-      </div>
-    </details>
-    <div class="path-list">
-      <a href="/jamaican-rgd-certificates.html" class="path-card">
-        <span class="path-title">All RGD Services, Fees &amp; Requirements</span>
-        <span class="path-desc">Concierge retrieval, corrections, adding a father's name, late registration and record searches.</span>
-        <span class="path-cta">View Full Details <svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></span>
-      </a>
-    </div>
-    <div class="addon">
-      <div class="addon-top"><span>Using it overseas? Add an apostille</span><span>+$3,000 – $5,000 JMD</span></div>
-      <p>Presenting this certificate to a foreign government for immigration or legal filings? Ask for apostille authentication during your intake call.</p>
-    </div>
-    <div class="delivery">
-      <p class="delivery-title"><svg class="icon"><use href="#i-pin"/></svg> Secure delivery of your finished document</p>
-      <ul class="checklist">
-        <li>Local pickup in Kingston</li>
-        <li>International courier dispatch directly to your door</li>
-      </ul>
-    </div>
-    <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
-    <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20a%20registry%20certificate." target="_blank" rel="noopener" data-wa="rgd-certificates"><svg class="icon"><use href="#i-wa"/></svg> Ask about a certificate</a>
-    <a class="btn btn-outline-dark next-service" href="/jamaican-passport-renewal.html">Next service: Jamaican Passport Services <svg class="icon"><use href="#i-chev"/></svg></a>
-  </div>
-</dialog>
-
-<!-- CITIZENSHIP BY DESCENT -->
-<dialog id="citizenship" class="svc-dialog" aria-labelledby="cit-title">
-  <div class="dlg-head">
-    <form method="dialog"><button class="dlg-close" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button></form>
-    <span class="dlg-tag">PICA</span>
-    <h2 id="cit-title">Citizenship by Descent</h2>
-    <p>For children and grandchildren of Jamaicans born overseas. We audit your lineage documents line by line before anything is filed with PICA.</p>
-  </div>
-  <div class="dlg-body">
-    <details class="acc">
-      <summary>Lineage document audit &amp; PICA filing<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you'll typically need:</p>
-        <ul class="checklist">
-          <li>Your full birth certificate naming your Jamaican parent</li>
-          <li>Your Jamaican parent's birth certificate</li>
-          <li>Your parents' marriage certificate, if you were born in wedlock</li>
-          <li>Linking documents where names differ (marriage certificate or deed poll)</li>
-          <li>Valid photo ID and two notarised passport photos</li>
-        </ul>
-        <p>Your exact list depends on your family line. We confirm it after reviewing what you have.</p>
-        <dl class="specs">
-          <div><dt>PICA government fee</dt><dd>$10,000 JMD (regular) / $15,000 JMD (expedited)</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$150 USD</dd></div>
-          <div><dt>PICA turnaround</dt><dd>90 working days (regular) / 45 (expedited)</dd></div>
-        </dl>
-      </div>
-    </details>
-    <a class="guide-box" href="/jamaican-citizenship-by-descent">
-      <svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>
-      <span>How to claim Jamaican citizenship through a Jamaican parent<small>Free guide &middot; read online</small></span>
-      <svg class="icon chev" aria-hidden="true"><use href="#i-chev"/></svg>
-    </a>
-    <div class="delivery">
-      <p class="delivery-title"><svg class="icon"><use href="#i-pin"/></svg> Secure delivery of your finished document</p>
-      <ul class="checklist">
-        <li>Local pickup in Kingston</li>
-        <li>International courier dispatch directly to your door</li>
-      </ul>
-    </div>
-    <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
-    <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20Jamaican%20citizenship%20by%20descent." target="_blank" rel="noopener" data-wa="citizenship"><svg class="icon"><use href="#i-wa"/></svg> Ask about citizenship</a>
-    <a class="btn btn-outline-dark next-service" href="#trn" data-dialog="trn">Next service: TRN Applications &amp; Retrievals <svg class="icon"><use href="#i-chev"/></svg></a>
-  </div>
-</dialog>
-
-<!-- DRIVER'S LICENCE -->
-<dialog id="drivers-licence" class="svc-dialog" aria-labelledby="dl-title">
-  <div class="dlg-head">
-    <form method="dialog"><button class="dlg-close" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button></form>
-    <span class="dlg-tag">TAJ and ITA</span>
-    <h2 id="dl-title">Driver's Licence Renewal &amp; Replacement</h2>
-    <p>Expired licence renewals, lost card replacements and medical report submissions. Choose your transaction to see TAJ fees and our retainer.</p>
-  </div>
-  <div class="dlg-body">
-    <details class="acc">
-      <summary>Class B renewal (private motor car)<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you need to provide:</p>
-        <ul class="checklist">
-          <li>Expired driver's licence card</li>
-          <li>Valid TRN and one (1) passport photo certified by a JP</li>
-          <li>Applicants aged 70 or older (Form MC1) must include a doctor's examination report</li>
-        </ul>
-        <dl class="specs">
-          <div><dt>TAJ government fee</dt><dd>$5,400 JMD (5-year)</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$4,000 – $6,000 JMD</dd></div>
-          <div><dt>TAJ turnaround</dt><dd>3 – 5 business days</dd></div>
-        </dl>
-        <p class="spec-note">A 60-day legal driving receipt is issued as soon as the renewal is filed at the counter.</p>
-      </div>
-    </details>
-    <details class="acc">
-      <summary>Class C renewal (commercial or general)<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you need to provide:</p>
-        <ul class="checklist">
-          <li>Expired driver's licence card</li>
-          <li>Valid TRN and one (1) passport photo certified by a JP</li>
-          <li>Completed doctor's medical examination report (Form F7/MC1)</li>
-        </ul>
-        <dl class="specs">
-          <div><dt>TAJ government fee</dt><dd>$7,200 JMD (5-year)</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$4,000 – $6,000 JMD</dd></div>
-          <div><dt>TAJ turnaround</dt><dd>3 – 5 business days</dd></div>
-        </dl>
-      </div>
-    </details>
-    <details class="acc">
-      <summary>Substitute licence (lost or stolen)<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you need to provide:</p>
-        <ul class="checklist">
-          <li>Valid passport (in place of the missing card)</li>
-          <li>Valid TRN and one (1) passport photo certified by a JP</li>
-        </ul>
-        <dl class="specs">
-          <div><dt>TAJ government fee</dt><dd>$4,140 JMD</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$4,000 – $6,000 JMD</dd></div>
-          <div><dt>TAJ turnaround</dt><dd>5 – 7 business days</dd></div>
-        </dl>
-        <p class="spec-note">TAJ checks your ITA record internally before issuing a substitute card.</p>
-      </div>
-    </details>
-    <div class="delivery">
-      <p class="delivery-title"><svg class="icon"><use href="#i-pin"/></svg> Secure delivery of your finished document</p>
-      <ul class="checklist">
-        <li>Local pickup in Kingston</li>
-        <li>International courier dispatch directly to your door</li>
-      </ul>
-    </div>
-    <a class="guide-box" href="/jamaica-drivers-license-renewal-guide">
-      <svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>
-      <span>How unpaid tickets and unlinked TRNs block your renewal<small>Free guide &middot; read online</small></span>
-      <svg class="icon chev" aria-hidden="true"><use href="#i-chev"/></svg>
-    </a>
-    <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
-    <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20a%20driver%27s%20licence%20renewal." target="_blank" rel="noopener" data-wa="drivers-licence"><svg class="icon"><use href="#i-wa"/></svg> Ask about your licence</a>
-    <a class="btn btn-outline-dark next-service" href="#vehicle-licence" data-dialog="vehicle-licence">Next service: Motor Vehicle Licensing <svg class="icon"><use href="#i-chev"/></svg></a>
-  </div>
-</dialog>
-
-<!-- MOTOR VEHICLE LICENCE -->
-<dialog id="vehicle-licence" class="svc-dialog" aria-labelledby="mv-title">
-  <div class="dlg-head">
-    <form method="dialog"><button class="dlg-close" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button></form>
-    <span class="dlg-tag">TAJ</span>
-    <h2 id="mv-title">Motor Vehicle Licensing</h2>
-    <p>Skip the tax office lines for annual vehicle registration and fitness renewal.</p>
-  </div>
-  <div class="dlg-body">
-    <details class="acc">
-      <summary>Annual registration &amp; fitness renewal<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you need to provide:</p>
-        <ul class="checklist">
-          <li>Current vehicle Certificate of Fitness</li>
-          <li>Valid insurance cover note or certificate</li>
-          <li>Registration certificate and vehicle TRN</li>
-        </ul>
-        <dl class="specs">
-          <div><dt>TAJ government fee</dt><dd>From $9,240 JMD</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$4,000 – $7,000 JMD</dd></div>
-          <div><dt>TAJ turnaround</dt><dd>1 – 2 business days</dd></div>
-        </dl>
-      </div>
-    </details>
-    <div class="delivery">
-      <p class="delivery-title"><svg class="icon"><use href="#i-pin"/></svg> Secure delivery of your finished document</p>
-      <ul class="checklist">
-        <li>Local pickup in Kingston</li>
-        <li>International courier dispatch directly to your door</li>
-      </ul>
-    </div>
-    <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
-    <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20a%20motor%20vehicle%20licence%20renewal." target="_blank" rel="noopener" data-wa="vehicle-licence"><svg class="icon"><use href="#i-wa"/></svg> Ask about your vehicle</a>
-    <a class="btn btn-outline-dark next-service" href="#driving-abstract" data-dialog="driving-abstract">Next service: Driving Abstracts <svg class="icon"><use href="#i-chev"/></svg></a>
-  </div>
-</dialog>
-
-<!-- DRIVING ABSTRACT -->
-<dialog id="driving-abstract" class="svc-dialog" aria-labelledby="abs-title">
-  <div class="dlg-head">
-    <form method="dialog"><button class="dlg-close" aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button></form>
-    <span class="dlg-tag">ITA</span>
-    <h2 id="abs-title">Driving Abstracts</h2>
-    <p>Official driving history records for foreign licensing or insurance validation overseas.</p>
-  </div>
-  <div class="dlg-body">
-    <details class="acc">
-      <summary>Official driving history retrieval<svg class="icon"><use href="#i-chev"/></svg></summary>
-      <div class="acc-body">
-        <p class="acc-lead">What you need to provide:</p>
-        <ul class="checklist">
-          <li>Copy of your Jamaican driver's licence and TRN</li>
-          <li>Notarised authorisation letter (if you're overseas)</li>
-        </ul>
-        <dl class="specs">
-          <div><dt>ITA government fee</dt><dd>$3,000 JMD</dd></div>
-          <div><dt>Concierge retainer</dt><dd>$5,000 – $8,000 JMD</dd></div>
-          <div><dt>ITA turnaround</dt><dd>5 – 7 business days</dd></div>
-        </dl>
-      </div>
-    </details>
-    <div class="addon">
-      <div class="addon-top"><span>Using it overseas? Add an apostille</span><span>+$3,000 – $5,000 JMD</span></div>
-      <p>Presenting your abstract to a foreign DMV or insurer? Ask for apostille authentication during your intake call.</p>
-    </div>
-    <div class="delivery">
-      <p class="delivery-title"><svg class="icon"><use href="#i-pin"/></svg> Secure delivery of your finished document</p>
-      <ul class="checklist">
-        <li>Local pickup in Kingston</li>
-        <li>International courier dispatch directly to your door</li>
-      </ul>
-    </div>
-    <p class="checked">Requirements last checked <time datetime="2026-09">September 2026</time>.</p>
-    <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20arrange%20a%20consultation%20about%20a%20driving%20abstract." target="_blank" rel="noopener" data-wa="driving-abstract"><svg class="icon"><use href="#i-wa"/></svg> Ask about a driving abstract</a>
-    <a class="btn btn-outline-dark next-service" href="/jamaica-police-record.html">Next service: Police Records &amp; Clearance Certificates <svg class="icon"><use href="#i-chev"/></svg></a>
-  </div>
-</dialog>
-
-
-<!-- ===================== PAGE BEHAVIOUR ===================== -->
+<!-- PAGE BEHAVIOUR SCRIPT -->
 <script>
 (function () {
   'use strict';
@@ -1698,44 +1021,30 @@ body { position: relative; width: 100%; min-height: 100vh; }
     });
   });
 
-  /* ---------- Service detail windows ---------- */
+  /* ---------- Consultation Window ---------- */
   var dialogs = Array.prototype.slice.call(document.querySelectorAll('dialog.svc-dialog'));
   function byId(id) { return dialogs.filter(function (d) { return d.id === id; })[0]; }
   function closeAll() { dialogs.forEach(function (d) { if (d.open) { d.dataset.silent = '1'; d.close(); } }); }
-  function prepare(d) {
-    /* first section opens automatically */
-    d.querySelectorAll('details.acc').forEach(function (acc, i) { acc.open = i === 0; });
-    /* load the booking calendar only when needed */
-    var frame = d.querySelector('iframe[data-src]');
-    if (frame && !frame.src) frame.src = frame.dataset.src;
-  }
+  
   dialogs.forEach(function (d) {
-    var accs = Array.prototype.slice.call(d.querySelectorAll('details.acc'));
-    accs.forEach(function (acc) {
-      acc.addEventListener('toggle', function () {
-        if (!acc.open) return;
-        accs.forEach(function (o) { if (o !== acc) o.open = false; });
-        requestAnimationFrame(function () {
-          var head = d.firstElementChild;
-          var top = acc.getBoundingClientRect().top - d.getBoundingClientRect().top + d.scrollTop - head.offsetHeight - 12;
-          if (d.open) d.scrollTo({ top: Math.max(0, top), behavior: reduceMotion ? 'auto' : 'smooth' });
-        });
-      });
-    });
     d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
-    d.addEventListener('close', function () {
-      if (d.dataset.silent) { delete d.dataset.silent; return; }
-      if (location.hash === '#' + d.id) {
-        if (history.state && history.state.lcDialog) history.back();
-        else history.replaceState(null, '', location.pathname + location.search);
-      }
-    });
   });
+
   function syncToHash() {
     var d = byId(decodeURIComponent(location.hash.slice(1)));
-    if (d) { if (!d.open) { closeAll(); prepare(d); d.showModal(); d.scrollTop = 0; } }
-    else { closeAll(); }
+    if (d) { 
+      if (!d.open) { 
+        closeAll(); 
+        var frame = d.querySelector('iframe[data-src]');
+        if (frame && !frame.src) frame.src = frame.dataset.src;
+        d.showModal(); 
+        d.scrollTop = 0; 
+      } 
+    } else { 
+      closeAll(); 
+    }
   }
+
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a[data-dialog]');
     if (!link || !byId(link.dataset.dialog)) return;
@@ -1780,7 +1089,6 @@ body { position: relative; width: 100%; min-height: 100vh; }
 })();
 </script>
 
-<!-- MailerLite tracking -->
 <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
 </body>
 </html>
