@@ -97,22 +97,22 @@
 
   <style>
     /* =========================================================
-       1. DESIGN TOKENS
+       1. DESIGN TOKENS & SPACING
        ========================================================= */
     :root {
       --ink: #181A1B;
       --text: #2F3538;
       --muted: #565E63;
       --paper: #FFFFFF;
-      --tone: #F2F5F3;
-      --line: #D6DDD9;
+      --tone: #F8FAFC;
+      --line: #E2E8F0;
       --gold: #C89B3C;
       --gold-soft: #FBF8F1;
       --gold-line: #EADFC6;
       --gold-text: #7E5B1C;
 
       --primary: #0F2537;
-      --bg: #EEF1F3;
+      --bg: #F4F6F8;
       --link: #084298;
 
       --info-bg: #F0F9FF;
@@ -129,24 +129,25 @@
 
       --wrap: 72rem;
       --gutter: 1.25rem;
-      --radius: 14px;
+      --radius: 16px;
       --header-h: 68px;
-      --chips-h: 56px;
-      --gap: 18px;
-      --card-pad: 24px 20px;
+      --card-pad: 32px 24px;
+      --card-gap: 32px;
     }
-    @media (min-width: 600px) { :root { --gutter: 1.5rem; --gap: 24px; --card-pad: 34px 36px; } }
-    @media (min-width: 960px) { :root { --header-h: 80px; --chips-h: 0px; --gap: 28px; --card-pad: 40px 44px; } }
+
+    @media (min-width: 600px) { :root { --gutter: 1.5rem; --card-pad: 40px 36px; --card-gap: 40px; } }
+    @media (min-width: 960px) { :root { --header-h: 80px; --card-pad: 48px 48px; --card-gap: 48px; } }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-padding-top: calc(var(--header-h) + var(--chips-h) + 20px); -webkit-text-size-adjust: 100%; }
+    html { scroll-padding-top: calc(var(--header-h) + 20px); -webkit-text-size-adjust: 100%; }
     body {
-      margin: 0; font-family: var(--sans); font-size: 1.0625rem; line-height: 1.7;
+      margin: 0; font-family: var(--sans); font-size: 1.0625rem; line-height: 1.75;
       background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased;
     }
     h1, h2, h3, h4 { font-family: var(--serif); color: var(--ink); line-height: 1.3; margin: 0; font-weight: 700; }
-    p { margin: 0 0 1.1rem; }
-    a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+    p { margin: 0 0 1.25rem; }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
     a:hover { color: var(--primary); }
     :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
     .icon { width: 1.15em; height: 1.15em; flex-shrink: 0; fill: currentColor; }
@@ -155,7 +156,7 @@
     .skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--paper); color: var(--ink); padding: 10px 16px; border-radius: 6px; font-weight: 600; }
     .skip:focus { top: 12px; }
 
-    /* Reading progress */
+    /* Progress Bar */
     .progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; z-index: 60; background: transparent; pointer-events: none; }
     .progress span { display: block; height: 100%; width: 100%; background: var(--gold); transform-origin: 0 50%; transform: scaleX(0); }
 
@@ -204,288 +205,179 @@
     /* =========================================================
        3. PAGE LAYOUT
        ========================================================= */
-    .breadcrumb { font-size: .85rem; color: var(--muted); padding: 20px 0 12px; }
+    .breadcrumb { font-size: .88rem; color: var(--muted); padding: 24px 0 16px; }
     .breadcrumb ol { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; padding: 0; margin: 0; }
     .breadcrumb li + li::before { content: "›"; margin-right: .4rem; color: #9AA3A8; }
-    .breadcrumb a { color: var(--muted); font-weight: 500; }
+    .breadcrumb a { color: var(--muted); font-weight: 500; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
 
-    .layout { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "hero" "nav" "content"; column-gap: 40px; padding-bottom: 60px; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "hero" "nav" "content"; column-gap: 40px; padding-bottom: 80px; }
     .hero { grid-area: hero; }
     .section-nav { grid-area: nav; }
-    .content { grid-area: content; display: flex; flex-direction: column; gap: var(--gap); min-width: 0; }
+    .content { grid-area: content; display: flex; flex-direction: column; gap: var(--card-gap); min-width: 0; }
 
-    .card { background: var(--paper); border: 1px solid #E1E6E3; border-radius: var(--radius); padding: var(--card-pad); box-shadow: 0 1px 2px rgba(15,37,55,.04), 0 8px 24px -12px rgba(15,37,55,.10); }
-    .card > :last-child { margin-bottom: 0; }
+    /* CARD CONTAINER STRUCTURE */
+    .card { 
+      background: var(--paper); 
+      border: 1px solid #E2E8F0; 
+      border-radius: var(--radius); 
+      padding: var(--card-pad); 
+      box-shadow: 0 4px 20px -2px rgba(15,37,55,.05); 
+      margin-bottom: 0;
+    }
 
-    /* Hero */
-    .hero { margin-bottom: var(--gap); background: linear-gradient(160deg, var(--primary) 0%, #173A55 100%); color: #E6EDF3; border: 0; }
-    .hero .category { display: inline-block; background: rgba(200,155,60,.18); color: #F3D594; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 6px 12px; border-radius: 999px; margin-bottom: 18px; }
-    .hero h1 { color: #fff; font-size: clamp(1.85rem, 6vw, 2.75rem); margin-bottom: 16px; }
-    .hero .dek { font-size: 1.1rem; color: #CBD5E1; max-width: 40rem; margin-bottom: 22px; }
-    .hero .meta { font-size: .85rem; color: #A9B8C6; display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; font-weight: 500; }
+    /* Hero Styling */
+    .hero { 
+      background: linear-gradient(160deg, var(--primary) 0%, #173A55 100%); 
+      color: #E6EDF3; 
+      border: 0; 
+      margin-bottom: var(--card-gap);
+    }
+    .hero .category { display: inline-block; background: rgba(200,155,60,.18); color: #F3D594; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 6px 14px; border-radius: 999px; margin-bottom: 20px; }
+    .hero h1 { color: #fff; font-size: clamp(2rem, 5vw, 2.85rem); margin-bottom: 20px; line-height: 1.25; }
+    .hero .dek { font-size: 1.15rem; color: #CBD5E1; max-width: 42rem; margin-bottom: 24px; line-height: 1.65; }
+    .hero .meta { font-size: .88rem; color: #A9B8C6; display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; font-weight: 500; }
 
-    /* Section navigation */
-    .section-nav { position: sticky; top: var(--header-h); z-index: 40; margin: 0 calc(var(--gutter) * -1) var(--gap); background: var(--bg); border-bottom: 1px solid var(--line); }
+    /* Sticky Section Nav */
+    .section-nav { position: sticky; top: var(--header-h); z-index: 40; margin-bottom: var(--card-gap); background: var(--bg); border-bottom: 1px solid var(--line); }
     .section-nav .nav-title { display: none; }
-    .section-nav ol { list-style: none; margin: 0; padding: 10px var(--gutter); display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .section-nav ol { list-style: none; margin: 0; padding: 12px var(--gutter); display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
     .section-nav ol::-webkit-scrollbar { display: none; }
     .section-nav li { flex: 0 0 auto; scroll-snap-align: start; }
-    .section-nav a { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 6px 14px; border-radius: 999px; background: var(--paper); border: 1px solid var(--line); color: var(--text); font-size: .88rem; font-weight: 600; text-decoration: none; white-space: nowrap; transition: background .2s, color .2s, border-color .2s; }
-    .section-nav a .num { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--tone); font-size: .72rem; color: var(--muted); }
+    .section-nav a { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 6px 16px; border-radius: 999px; background: var(--paper); border: 1px solid var(--line); color: var(--text); font-size: .9rem; font-weight: 600; text-decoration: none; white-space: nowrap; transition: all .2s; }
+    .section-nav a .num { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--tone); font-size: .75rem; color: var(--muted); }
     .section-nav a.is-active { background: var(--primary); border-color: var(--primary); color: #fff; }
     .section-nav a.is-active .num { background: var(--gold); color: var(--ink); }
 
-    .section-nav .nav-cta { display: none !important; align-items: center; justify-content: center; gap: 8px; min-height: 44px; border-radius: 8px; background: var(--primary); color: #fff !important; text-decoration: none; font-size: .9rem; font-weight: 700; }
-    .section-nav .nav-cta:hover { background: var(--ink); color: #fff; }
-
     @media (min-width: 960px) {
-      .layout { grid-template-columns: minmax(0, 1fr) 270px; grid-template-areas: "hero hero" "content nav"; }
-      .section-nav { position: sticky; top: calc(var(--header-h) + 24px); align-self: start; margin: 0; background: var(--paper); border: 1px solid #E1E6E3; border-radius: var(--radius); padding: 22px 12px 14px; box-shadow: 0 8px 24px -12px rgba(15,37,55,.10); }
-      .section-nav .nav-title { display: block; margin: 0 12px 10px; font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
-      .section-nav ol { flex-direction: column; gap: 2px; padding: 0; overflow: visible; }
-      .section-nav a { width: 100%; border: 0; border-radius: 8px; background: transparent; padding: 9px 12px; font-size: .92rem; white-space: normal; }
+      .layout { grid-template-columns: minmax(0, 1fr) 280px; grid-template-areas: "hero hero" "content nav"; }
+      .section-nav { position: sticky; top: calc(var(--header-h) + 24px); align-self: start; margin: 0; background: var(--paper); border: 1px solid #E2E8F0; border-radius: var(--radius); padding: 24px 16px 16px; box-shadow: 0 4px 20px -2px rgba(15,37,55,.05); }
+      .section-nav .nav-title { display: block; margin: 0 12px 14px; font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
+      .section-nav ol { flex-direction: column; gap: 4px; padding: 0; overflow: visible; }
+      .section-nav a { width: 100%; border: 0; border-radius: 8px; background: transparent; padding: 10px 12px; font-size: .95rem; white-space: normal; }
       .section-nav a:hover { background: var(--tone); color: var(--ink); }
-      .section-nav a.is-active { background: var(--tone); color: var(--ink); box-shadow: inset 3px 0 0 var(--gold); }
+      .section-nav a.is-active { background: var(--tone); color: var(--ink); box-shadow: inset 4px 0 0 var(--gold); }
       .section-nav a.is-active .num { background: var(--primary); color: #fff; }
-      .section-nav .nav-cta { display: flex !important; width: auto; margin: 14px 12px 4px; background: var(--primary); color: #fff !important; justify-content: center; font-weight: 700; }
     }
 
     /* =========================================================
-       4. CARD CONTENT
+       4. INSIDE THE CARDS: Typography & Visual Spacing
        ========================================================= */
-    .card-head { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
-    .step-badge { flex: 0 0 auto; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--primary); color: var(--gold); font: 700 1.15rem/1 var(--serif); }
-    .card-head .eyebrow { display: block; font-size: .74rem; text-transform: uppercase; letter-spacing: .1em; color: var(--gold-text); font-weight: 700; margin-bottom: 2px; }
-    .card h2 { font-family: var(--sans); font-size: clamp(1.3rem, 4.5vw, 1.55rem); color: var(--primary); letter-spacing: -.01em; }
-    .card h3 { font-family: var(--sans); font-size: 1.1rem; color: var(--primary); margin: 26px 0 10px; }
-    .card ul, .card ol { padding-left: 1.3rem; margin: 0 0 1.25rem; }
-    .card li { margin-bottom: .6rem; }
+    .card-head { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+    .step-badge { flex: 0 0 auto; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; background: var(--primary); color: var(--gold); font: 700 1.2rem/1 var(--serif); }
+    .card-head .eyebrow { display: block; font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--gold-text); font-weight: 700; margin-bottom: 4px; }
+    .card h2 { font-family: var(--sans); font-size: clamp(1.4rem, 4vw, 1.7rem); color: var(--primary); letter-spacing: -.01em; }
+    .card h3 { font-family: var(--sans); font-size: 1.15rem; color: var(--primary); margin: 32px 0 14px; }
+    .card ul, .card ol { padding-left: 1.4rem; margin: 0 0 1.5rem; }
+    .card li { margin-bottom: .8rem; }
     .card li::marker { color: var(--gold-text); font-weight: 700; }
-    .lead { font-size: 1.1rem; color: var(--ink); }
+    .lead { font-size: 1.125rem; color: var(--ink); line-height: 1.7; margin-bottom: 1.5rem; }
 
     /* Timeline steps */
-    .timeline { list-style: none; padding: 0 !important; margin: 8px 0 0 !important; counter-reset: tl; }
-    .timeline > li { position: relative; counter-increment: tl; padding: 0 0 26px 58px; margin: 0 !important; }
-    .timeline > li::before { content: counter(tl); position: absolute; left: 0; top: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--primary); color: var(--gold); display: grid; place-items: center; font: 700 1rem/1 var(--sans); }
-    .timeline > li::after { content: ""; position: absolute; left: 19px; top: 44px; bottom: 4px; width: 2px; background: var(--line); }
+    .timeline { list-style: none; padding: 0 !important; margin: 16px 0 0 !important; counter-reset: tl; }
+    .timeline > li { position: relative; counter-increment: tl; padding: 0 0 32px 64px; margin: 0 !important; }
+    .timeline > li::before { content: counter(tl); position: absolute; left: 0; top: 0; width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: var(--gold); display: grid; place-items: center; font: 700 1.05rem/1 var(--sans); }
+    .timeline > li::after { content: ""; position: absolute; left: 21px; top: 48px; bottom: 8px; width: 2px; background: var(--line); }
     .timeline > li:last-child { padding-bottom: 0; }
     .timeline > li:last-child::after { display: none; }
-    .timeline h3 { margin: 6px 0 6px !important; font-size: 1.08rem !important; }
-    .timeline p { margin-bottom: .6rem; }
-    .timeline > li > :last-child { margin-bottom: 0; }
-    .timeline ul { margin: .25rem 0 .75rem !important; }
-    .timeline ul li { margin-bottom: .35rem; }
-    @media (max-width: 599px) { .timeline > li { padding-left: 50px; } .timeline > li::before { width: 34px; height: 34px; font-size: .92rem; } .timeline > li::after { left: 16px; top: 38px; } }
+    .timeline h3 { margin: 8px 0 8px !important; font-size: 1.15rem !important; }
+    .timeline p { margin-bottom: .8rem; }
 
-    .next-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 28px; padding: 14px 16px; border-radius: 10px; background: var(--tone); color: var(--primary); text-decoration: none; font-size: .95rem; }
-    .next-link span { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); display: block; font-weight: 700; }
-    .next-link strong { display: block; }
-    .next-link .icon { width: 22px; height: 22px; color: var(--gold-text); }
-    .next-link:hover { background: #E7ECE9; color: var(--ink); }
-
-    /* At a glance */
-    .glance h2 { font-size: .8rem !important; text-transform: uppercase; letter-spacing: .12em; color: var(--muted) !important; margin-bottom: 14px; }
-    .glance dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .glance div { background: var(--tone); border-radius: 10px; padding: 14px; }
-    .glance dt { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
-    .glance dd { margin: 4px 0 0; font-weight: 700; color: var(--ink); font-size: 1rem; line-height: 1.35; }
+    /* At a glance grid */
+    .glance { margin-top: 24px; }
+    .glance h2 { font-size: .82rem !important; text-transform: uppercase; letter-spacing: .12em; color: var(--muted) !important; margin-bottom: 16px; border: 0; padding: 0; }
+    .glance dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .glance div { background: var(--tone); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+    .glance dt { font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+    .glance dd { margin: 6px 0 0; font-weight: 700; color: var(--ink); font-size: 1.05rem; line-height: 1.35; }
     .glance .wide { grid-column: 1 / -1; }
     @media (min-width: 600px) { .glance dl { grid-template-columns: repeat(3, 1fr); } .glance .wide { grid-column: auto; } }
 
     /* Interactive checklist */
-    .checklist { list-style: none; padding: 0 !important; margin: 0 0 12px !important; display: grid; gap: 10px; }
+    .checklist { list-style: none; padding: 0 !important; margin: 0 0 16px !important; display: grid; gap: 14px; }
     .checklist li { margin: 0 !important; }
-    .check { display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px; cursor: pointer; transition: background .2s, border-color .2s; }
-    .check input { appearance: none; -webkit-appearance: none; flex: 0 0 auto; width: 24px; height: 24px; margin: 1px 0 0; border: 2px solid var(--gold); border-radius: 6px; display: grid; place-items: center; cursor: pointer; background: #fff; }
+    .check { display: flex; gap: 16px; align-items: flex-start; padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; transition: all .2s; background: var(--paper); }
+    .check input { appearance: none; -webkit-appearance: none; flex: 0 0 auto; width: 24px; height: 24px; margin: 2px 0 0; border: 2px solid var(--gold); border-radius: 6px; display: grid; place-items: center; cursor: pointer; background: #fff; }
     .check input::after { content: ""; width: 7px; height: 12px; border: solid #fff; border-width: 0 3px 3px 0; transform: rotate(45deg) translate(-1px, -1px); opacity: 0; }
     .check input:checked { background: var(--wa); border-color: var(--wa); }
     .check input:checked::after { opacity: 1; }
     .check:has(input:checked) { background: #F1F8F4; border-color: #BFDCCB; }
-    .check-text { font-size: 1rem; line-height: 1.6; }
-    .check-meter { display: flex; align-items: center; gap: 12px; font-size: .9rem; color: var(--muted); font-weight: 600; margin-bottom: 14px; }
-    .check-meter .bar { flex: 1; height: 8px; background: var(--tone); border-radius: 999px; overflow: hidden; }
+    .check-text { font-size: 1rem; line-height: 1.65; }
+    .check-meter { display: flex; align-items: center; gap: 14px; font-size: .95rem; color: var(--muted); font-weight: 600; margin-bottom: 20px; }
+    .check-meter .bar { flex: 1; height: 10px; background: var(--tone); border-radius: 999px; overflow: hidden; border: 1px solid var(--line); }
     .check-meter .bar span { display: block; height: 100%; width: 0; background: var(--wa); border-radius: 999px; transition: width .3s ease; }
-    .check-hint { font-size: .85rem; color: var(--muted); margin: 0; }
+    .check-hint { font-size: .88rem; color: var(--muted); margin: 0; }
 
-    /* Callouts */
-    .callout-box { background: var(--info-bg); border-left: 5px solid var(--info-border); padding: 20px 22px; border-radius: 0 10px 10px 0; margin: 24px 0; color: var(--info-text); }
+    /* Callout & Warning Containers */
+    .callout-box { background: var(--info-bg); border-left: 5px solid var(--info-border); padding: 24px 26px; border-radius: 0 12px 12px 0; margin: 28px 0; color: var(--info-text); }
     .callout-box p, .callout-box li { color: var(--info-text); font-size: 1rem; }
-    .callout-box > :last-child { margin-bottom: 0; }
-    .warning-box { background: var(--error-bg); border-left: 5px solid var(--error-border); padding: 20px 22px; border-radius: 0 10px 10px 0; margin: 24px 0; }
-    .warning-box h3 { margin: 0 0 6px !important; color: var(--error-text) !important; font-size: 1.05rem !important; }
+    .warning-box { background: var(--error-bg); border-left: 5px solid var(--error-border); padding: 24px 26px; border-radius: 0 12px 12px 0; margin: 28px 0; }
+    .warning-box h3 { margin: 0 0 8px !important; color: var(--error-text) !important; font-size: 1.1rem !important; }
     .warning-box p { margin: 0; font-size: 1rem; color: var(--error-text); }
-    .card > .warning-box:last-child, .card > .callout-box:last-child { margin-bottom: 0; }
 
-    /* Study resources */
-    .study-box { background: var(--gold-soft); border: 1px solid var(--gold-line); border-radius: 12px; padding: 20px 22px; margin: 24px 0; }
-    .study-box h3 { margin: 0 0 8px !important; color: var(--ink) !important; font-size: 1.05rem !important; }
-    .study-box ul { list-style: none; padding: 0 !important; margin: 0 0 12px !important; }
-    .study-box li { padding: 12px 0; border-bottom: 1px dashed var(--gold-line); margin: 0 !important; font-size: .98rem; }
+    /* Study resources container */
+    .study-box { background: var(--gold-soft); border: 1px solid var(--gold-line); border-radius: 14px; padding: 24px 26px; margin: 28px 0; }
+    .study-box h3 { margin: 0 0 10px !important; color: var(--ink) !important; font-size: 1.1rem !important; }
+    .study-box ul { list-style: none; padding: 0 !important; margin: 0 0 16px !important; }
+    .study-box li { padding: 14px 0; border-bottom: 1px dashed var(--gold-line); margin: 0 !important; font-size: 1rem; }
     .study-box li:last-child { border-bottom: 0; }
-    .study-box .src { font-size: .8rem; color: var(--muted); font-weight: 500; white-space: nowrap; }
-    .study-note { margin: 0; font-size: .92rem; color: var(--gold-text); }
 
-    /* Sample email */
-    .email-sample { border: 1px solid var(--line); border-radius: 12px; margin: 24px 0; overflow: hidden; }
-    .email-head { background: var(--tone); padding: 16px 20px 12px; border-bottom: 1px solid var(--line); }
-    .email-head h3 { margin: 0 0 2px !important; font-size: 1.05rem !important; }
-    .email-head p { margin: 0; font-size: .92rem; color: var(--muted); }
-    .email-fields { margin: 0; padding: 12px 20px 0; }
-    .email-fields div { display: flex; flex-wrap: wrap; gap: .2rem .75rem; padding: 6px 0; border-bottom: 1px dashed var(--line); font-size: .95rem; }
-    .email-fields dt { font-weight: 700; color: var(--muted); min-width: 4.5rem; }
-    .email-fields dd { margin: 0; color: var(--ink); font-weight: 600; overflow-wrap: anywhere; }
-    .email-body { margin: 14px 20px 0; padding: 16px; background: #FAFBFA; border: 1px solid var(--tone); border-radius: 8px; font-family: var(--sans); font-size: .95rem; line-height: 1.65; color: var(--text); white-space: pre-wrap; overflow-wrap: anywhere; max-height: 320px; overflow-y: auto; }
-    .email-actions { display: flex; flex-wrap: wrap; gap: 10px; padding: 16px 20px 0; }
-    .email-tip { margin: 12px 20px 18px; font-size: .88rem; color: var(--muted); }
-    @media (max-width: 599px) {
-      .email-head, .email-fields, .email-actions { padding-left: 14px; padding-right: 14px; }
-      .email-body, .email-tip { margin-left: 14px; margin-right: 14px; }
-      .email-actions > * { flex: 1 1 100%; }
-    }
+    /* Sample email container */
+    .email-sample { border: 1px solid var(--line); border-radius: 14px; margin: 28px 0; overflow: hidden; background: #FFF; }
+    .email-head { background: var(--tone); padding: 20px 24px; border-bottom: 1px solid var(--line); }
+    .email-body { margin: 18px 24px 0; padding: 20px; background: #FAFBFA; border: 1px solid var(--line); border-radius: 10px; font-family: var(--sans); font-size: .98rem; line-height: 1.7; color: var(--text); white-space: pre-wrap; }
+    .email-actions { display: flex; flex-wrap: wrap; gap: 12px; padding: 20px 24px 0; }
 
     /* FAQ accordions */
-    .faq { display: grid; gap: 10px; }
-    .faq details { border: 1px solid var(--line); border-radius: 10px; background: #fff; overflow: hidden; }
-    .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 18px; min-height: 56px; font-weight: 700; color: var(--primary); font-size: 1rem; line-height: 1.4; }
+    .faq { display: grid; gap: 14px; margin-top: 16px; }
+    .faq details { border: 1px solid var(--line); border-radius: 12px; background: var(--paper); overflow: hidden; transition: border-color .2s; }
+    .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 22px; min-height: 60px; font-weight: 700; color: var(--primary); font-size: 1.05rem; line-height: 1.4; }
     .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after { content: "+"; flex: 0 0 auto; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--tone); color: var(--gold-text); font-size: 1.2rem; font-weight: 600; transition: transform .2s; }
+    .faq summary::after { content: "+"; flex: 0 0 auto; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--tone); color: var(--gold-text); font-size: 1.25rem; font-weight: 600; transition: transform .2s; }
     .faq details[open] summary::after { transform: rotate(45deg); }
-    .faq details[open] { border-color: #C9D2CD; }
-    .faq .answer { padding: 0 18px 16px; }
-    .faq .answer p { margin: 0; }
+    .faq details[open] { border-color: #CBD5E1; }
+    .faq .answer { padding: 0 22px 20px; color: var(--text); font-size: 1rem; }
+
+    /* Navigation link between cards */
+    .next-link { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 36px; padding: 18px 20px; border-radius: 12px; background: var(--tone); border: 1px solid var(--line); color: var(--primary); text-decoration: none; font-size: 1rem; transition: background .2s; }
+    .next-link span { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); display: block; font-weight: 700; margin-bottom: 2px; }
+    .next-link:hover { background: #E2E8F0; color: var(--ink); }
 
     /* Buttons */
-    .btn-copy { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 22px; border: 2px solid var(--primary); background: var(--primary); color: #fff; border-radius: 8px; font: 700 1rem var(--sans); cursor: pointer; }
+    .btn-copy { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; border: 2px solid var(--primary); background: var(--primary); color: #fff; border-radius: 8px; font: 700 1rem var(--sans); cursor: pointer; }
     .btn-copy:hover { background: var(--ink); border-color: var(--ink); }
     .btn-copy.is-done { background: var(--wa); border-color: var(--wa); }
-    .btn-outline { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 22px; border: 2px solid var(--ink); border-radius: 8px; color: var(--ink); text-decoration: none; font-weight: 700; background: #fff; }
+    .btn-outline { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; border: 2px solid var(--ink); border-radius: 8px; color: var(--ink); text-decoration: none; font-weight: 700; background: #fff; }
     .btn-outline:hover { background: var(--ink); color: #fff; }
 
-    /* Closing cards */
-    .reviewed { font-size: .88rem; color: var(--muted); padding: 4px 6px; margin: 0; }
+    /* Newsletter CTA */
     .cta-card { background: var(--primary); color: #fff; text-align: center; border: 0; }
-    .cta-card h2 { color: #fff !important; font-family: var(--serif) !important; font-size: clamp(1.4rem, 5vw, 1.75rem) !important; margin-bottom: 12px; }
+    .cta-card h2 { color: #fff !important; font-family: var(--serif) !important; font-size: clamp(1.5rem, 5vw, 1.85rem) !important; margin-bottom: 14px; }
     .cta-card p { color: #CBD5E1; }
-    .cta-card .kicker { display: inline-block; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: #F3D594; font-weight: 700; margin-bottom: 10px; }
-    .cta-card .fine { font-size: .85rem; color: #94A3B8; margin: 16px 0 0; }
-    .btn-sub { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 22rem; min-height: 52px; margin-top: 12px; padding: 14px 28px; border-radius: 8px; background: var(--gold); color: var(--ink); font-weight: 700; font-size: 1rem; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,.18); transition: background .2s, transform .2s; border: none; cursor: pointer; }
+    .cta-card .kicker { display: inline-block; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: #F3D594; font-weight: 700; margin-bottom: 12px; }
+    .btn-sub { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 22rem; min-height: 52px; margin-top: 14px; padding: 14px 28px; border-radius: 8px; background: var(--gold); color: var(--ink); font-weight: 700; font-size: 1rem; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,.18); transition: background .2s, transform .2s; border: none; cursor: pointer; }
     .btn-sub:hover { background: #D8AE55; color: var(--ink); transform: translateY(-2px); }
     
-    /* Inline Newsletter Form Styles */
-    .nl-form { margin: 1.5rem auto 0; max-width: 32rem; display: flex; flex-direction: column; gap: .75rem; }
-    .nl-form input[type="email"] { min-height: 52px; padding: 0 1rem; border: 0; border-radius: 8px; font: 400 1rem var(--sans); color: var(--ink); background: #fff; width: 100%; }
-    .nl-form input::placeholder { color: #6B7378; }
-    .nl-form .btn-sub[disabled] { opacity: .75; cursor: progress; }
-    .nl-success { margin: 1.5rem auto 0; max-width: 32rem; text-align: left; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.3); border-radius: 8px; padding: 1.25rem; }
-    .nl-success strong { display: block; color: var(--gold); font-size: 1.05rem; margin-bottom: .35rem; }
-    .nl-success p { color: #fff; margin: 0; font-size: .95rem; }
-    @media (min-width: 640px) { .nl-form { flex-direction: row; } .nl-form input[type="email"] { flex: 1; } }
-
-    /* Floating back-to-top */
-    .fab-top { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 45; width: 50px; height: 50px; border-radius: 50%; border: 0; background: var(--ink); color: var(--gold); display: grid; place-items: center; box-shadow: 0 8px 20px rgba(0,0,0,.25); cursor: pointer; opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .25s, transform .25s; }
-    .fab-top.is-visible { opacity: 1; transform: none; pointer-events: auto; }
-    .fab-top .icon { width: 22px; height: 22px; }
+    .nl-form { margin: 1.75rem auto 0; max-width: 32rem; display: flex; flex-direction: column; gap: .85rem; }
+    .nl-form input[type="email"] { min-height: 52px; padding: 0 1.25rem; border: 0; border-radius: 8px; font: 400 1rem var(--sans); color: var(--ink); background: #fff; width: 100%; }
 
     /* =========================================================
        5. FOOTER
        ========================================================= */
     .site-footer { background: var(--ink); color: #B9C0C4; font-size: .95rem; padding-bottom: env(safe-area-inset-bottom, 0px); }
-    .footer-top { display: grid; gap: 2rem; padding: 3rem 20px 2rem; border-bottom: 1px solid rgba(255,255,255,.12); max-width: var(--wrap); margin: 0 auto; }
+    .footer-top { display: grid; gap: 2rem; padding: 3.5rem 20px 2.5rem; border-bottom: 1px solid rgba(255,255,255,.12); max-width: var(--wrap); margin: 0 auto; }
     .footer-brand { font: 700 1.2rem/1.3 var(--serif); color: #fff; margin: 0; }
     .footer-brand + p { margin-top: .5rem; max-width: 26rem; margin-bottom: 0; }
     .footer-nav ul { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem 1.5rem; list-style: none; padding: 0; margin: 0; }
     .footer-nav a, .legal-links a, .to-top { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; color: #E6E8E9; text-decoration: none; font-weight: 500; }
     .footer-nav a:hover, .legal-links a:hover, .to-top:hover { color: var(--gold); }
-    .disclaimer { padding: 1.75rem 20px 0; font-size: .85rem; line-height: 1.6; color: #A2AAAF; max-width: var(--wrap); margin: 0 auto; }
-    .footer-bottom { display: flex; flex-direction: column; gap: .5rem; padding: 1.25rem 20px calc(2rem + 60px); font-size: .88rem; max-width: var(--wrap); margin: 0 auto; }
+    .disclaimer { padding: 2rem 20px 0; font-size: .85rem; line-height: 1.6; color: #A2AAAF; max-width: var(--wrap); margin: 0 auto; }
+    .footer-bottom { display: flex; flex-direction: column; gap: .5rem; padding: 1.5rem 20px 2rem; font-size: .88rem; max-width: var(--wrap); margin: 0 auto; }
     .footer-bottom p { margin: 0; }
     .legal-links { display: flex; flex-wrap: wrap; gap: 0 1.5rem; list-style: none; padding: 0; margin: 0; }
     @media (min-width: 860px) {
       .footer-top { grid-template-columns: 1.4fr 1fr auto; align-items: start; }
       .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
-    }
-
-    /* Collapsible resources */
-    .fold > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 14px; }
-    .fold > summary::-webkit-details-marker { display: none; }
-    .fold-title { display: block; color: var(--ink); font-size: 1.05rem; line-height: 1.35; }
-    .fold-sub { display: block; font-size: .9rem; color: var(--muted); margin-top: 2px; }
-    .fold-icon { flex: 0 0 auto; width: 32px; height: 32px; border-radius: 50%; background: #fff; border: 1px solid var(--line); position: relative; }
-    .fold-icon::before, .fold-icon::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 2px; background: var(--gold-text); transform: translate(-50%,-50%); transition: transform .2s; }
-    .fold-icon::after { transform: translate(-50%,-50%) rotate(90deg); }
-    .fold[open] .fold-icon::after { transform: translate(-50%,-50%) rotate(0deg); }
-    .email-sample > summary.email-head { border-bottom: 0; min-height: 64px; }
-    .email-sample[open] > summary.email-head { border-bottom: 1px solid var(--line); }
-    .study-box > summary { min-height: 48px; }
-    .study-box[open] > summary { margin-bottom: 8px; }
-
-    /* Mobile dock */
-    .dock, .sheet { display: none; }
-    @media (max-width: 959px) {
-      :root { --chips-h: 0px; }
-      .section-nav { display: none; }
-      .fab-top { display: none; }
-      body { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
-      .dock {
-        display: flex; align-items: stretch; gap: 8px; position: fixed; z-index: 55; left: 12px; right: 12px;
-        bottom: calc(12px + env(safe-area-inset-bottom, 0px)); padding: 6px; border-radius: 16px;
-        background: var(--primary); box-shadow: 0 12px 30px -8px rgba(15,37,55,.55);
-        transform: translateY(140%); transition: transform .3s ease;
-      }
-      .dock.is-visible { transform: none; }
-      .dock-btn { flex: 0 0 48px; min-height: 52px; border: 0; border-radius: 12px; background: rgba(255,255,255,.1); color: #fff; display: grid; place-items: center; cursor: pointer; }
-      .dock-btn .icon { width: 22px; height: 22px; }
-      .dock-btn:disabled { opacity: .35; cursor: default; }
-      .dock-main { flex: 1; min-width: 0; border: 0; border-radius: 12px; background: rgba(255,255,255,.06); color: #fff; cursor: pointer; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; padding: 6px 12px; text-align: left; font-family: var(--sans); }
-      .dock-count { font-size: .75rem; font-weight: 700; color: var(--ink); background: var(--gold); border-radius: 999px; padding: 3px 8px; white-space: nowrap; }
-      .dock-label { font-weight: 700; font-size: .98rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-      .dock-hint { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: #F3D594; font-weight: 700; }
-      .dock-hint::after { content: " ▴"; }
-      @media (max-width: 479px) {
-        .dock-main { grid-template-columns: auto 1fr; }
-        .dock-hint { display: none; }
-        .dock-label::after { content: " ▴"; color: #F3D594; font-size: .8em; }
-      }
-
-      .sheet { display: block; position: fixed; inset: 0; z-index: 70; }
-      .sheet[hidden] { display: none; }
-      .sheet-backdrop { position: absolute; inset: 0; background: rgba(15,37,55,.55); animation: fadeIn .2s ease; }
-      .sheet-panel {
-        position: absolute; left: 0; right: 0; bottom: 0; max-height: 82dvh; overflow-y: auto; overscroll-behavior: contain;
-        background: #fff; border-radius: 20px 20px 0 0; padding: 8px 16px calc(16px + env(safe-area-inset-bottom, 0px));
-        box-shadow: 0 -12px 40px rgba(0,0,0,.25); animation: slideUp .25s ease;
-      }
-      .sheet-grip { width: 44px; height: 5px; border-radius: 999px; background: var(--line); margin: 4px auto 10px; }
-      .sheet-head { display: flex; align-items: center; justify-content: space-between; padding: 0 4px 10px; border-bottom: 1px solid var(--tone); }
-      .sheet-head h2 { font-family: var(--sans); font-size: 1.05rem; color: var(--primary); }
-      .sheet-close { width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--tone); color: var(--ink); display: grid; place-items: center; cursor: pointer; }
-      .sheet-list { list-style: none; margin: 8px 0; padding: 0; display: grid; gap: 4px; }
-      .sheet-list a { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 8px 10px; border-radius: 12px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 1rem; }
-      .sheet-list a .num { flex: 0 0 auto; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--tone); color: var(--muted); font-size: .8rem; font-weight: 700; }
-      .sheet-list a .done { margin-left: auto; font-size: .75rem; color: var(--muted); font-weight: 600; }
-      .sheet-list a.is-read .num { background: #E3F1E8; color: var(--wa); }
-      .sheet-list a.is-active { background: var(--primary); color: #fff; }
-      .sheet-list a.is-active .num { background: var(--gold); color: var(--ink); }
-      .sheet-list a.is-active .done { color: #F3D594; }
-      .sheet-foot { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-top: 10px; border-top: 1px solid var(--tone); }
-      .sheet-top, .sheet-sub { min-height: 48px; border-radius: 10px; display: grid; place-items: center; font: 700 .95rem var(--sans); text-decoration: none; cursor: pointer; }
-      .sheet-top { border: 2px solid var(--primary); background: #fff; color: var(--primary); }
-      .sheet-sub { background: var(--gold); color: var(--ink); }
-      html.sheet-open { overflow: hidden; }
-    }
-    @keyframes slideUp { from { transform: translateY(100%); } to { transform: none; } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @media (prefers-reduced-motion: reduce) { .sheet-panel, .sheet-backdrop { animation: none; } .dock { transition: none; } }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { transition: none !important; }
-      .btn-sub:hover { transform: none; }
-    }
-    @media print {
-      .site-header, .section-nav, .dock, .sheet, .fab-top, .progress, .cta-card, .site-footer, .email-actions, .next-link { display: none !important; }
-      body { background: #fff; }
-      .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
-      .faq details { border: 0; } .faq .answer { display: block; }
     }
   </style>
 </head>
@@ -548,7 +440,7 @@
 
     <article class="layout">
 
-      <!-- HERO -->
+      <!-- HERO CONTAINER -->
       <header class="card hero">
         <span class="category">Driving &amp; Licensing</span>
         <h1>How to Get Your Jamaican Learner’s Permit: The Complete Step-by-Step Guide</h1>
@@ -575,12 +467,11 @@
           <li><a href="#faq"><span class="num">Q</span>FAQs</a></li>
           <li><a href="#subscribe"><span class="num">✓</span>Stay updated</a></li>
         </ol>
-        <a class="nav-cta" href="#subscribe">Subscribe for updates</a>
       </nav>
 
       <div class="content">
 
-        <!-- OVERVIEW -->
+        <!-- CONTAINER 1: OVERVIEW -->
         <section class="card" id="overview" aria-labelledby="overview-title">
           <h2 id="overview-title" class="sr-only">Overview</h2>
           <p class="lead">Your first step toward driving in Jamaica is a <strong>Provisional Driver’s Licence</strong>, better known as a learner’s permit. It used to be a simple payment at the tax office. Effective January 25, 2020, you must first visit an Examination Depot to do a Road Code Test <em>before</em> proceeding to any Tax Office.</p>
@@ -598,7 +489,7 @@
           </div>
         </section>
 
-        <!-- ELIGIBILITY -->
+        <!-- CONTAINER 2: ELIGIBILITY -->
         <section class="card" id="eligibility" aria-labelledby="eligibility-title">
           <div class="card-head">
             <span class="step-badge" aria-hidden="true">?</span>
@@ -613,7 +504,7 @@
           <a class="next-link" href="#step-1"><div><span>Next</span><strong>Step 1: Assemble your documents</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
 
-        <!-- STEP 1 -->
+        <!-- CONTAINER 3: STEP 1 (DOCUMENTS) -->
         <section class="card" id="step-1" aria-labelledby="step1-title">
           <div class="card-head">
             <span class="step-badge" aria-hidden="true">1</span>
@@ -632,7 +523,7 @@
           <a class="next-link" href="#step-2"><div><span>Next</span><strong>Step 2: Book and pass the Road Code Test</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
 
-        <!-- STEP 2 -->
+        <!-- CONTAINER 4: STEP 2 (TEST) -->
         <section class="card" id="step-2" aria-labelledby="step2-title">
           <div class="card-head">
             <span class="step-badge" aria-hidden="true">2</span>
@@ -671,40 +562,22 @@ Kind regards,
 [Your Full Name]</pre>
             <div class="email-actions">
               <button type="button" class="btn-copy" data-copy>Copy email text</button>
-              <a class="btn-outline" href="mailto:driverslicence@mtw.gov.jm?subject=Road%20Code%20Test%20Appointment%20Request&amp;body=Good%20day%2C%0A%0AI%20would%20like%20to%20schedule%20an%20appointment%20to%20sit%20the%20Road%20Code%20Test%20for%20my%20Provisional%20Driver's%20Licence%20(learner's%20permit).%20My%20details%20are%20below%3A%0A%0AFull%20name%3A%20%0AGender%3A%20%0ADate%20of%20birth%3A%20%0ATRN%3A%20%0ATelephone%3A%20%0AAddress%3A%20%0APreferred%20service%20hub%3A%20%0A%0AI%20am%20available%20.%20Please%20let%20me%20know%20the%20earliest%20available%20date%20and%20anything%20else%20I%20should%20bring.%0A%0AThank%20you.%0A%0AKind%20regards%2C%0A">Open in my email app</a>
             </div>
-            <p class="email-tip">Tip: send it from an email address you check daily, and keep an eye on your spam folder for the reply.</p>
-          </details>
-
-          <details class="study-box fold" data-open-desktop>
-            <summary><span><strong class="fold-title">Study for the test: official sources</strong><span class="fold-sub">3 official links, plus a note on the Road Code booklet</span></span><span class="fold-icon" aria-hidden="true"></span></summary>
-            <ul>
-              <li><a href="https://japarliament.gov.jm/attachments/article/339/Road-Traffic-Regulations-May-20--2022---complete.pdf" target="_blank" rel="noopener">Road Traffic Regulations, 2022</a> <span class="src">PDF &middot; Jamaica Parliament</span><br>The current rules of the road, including traffic signs and signals.</li>
-              <li><a href="https://jcf.gov.jm/wp-content/uploads/2023/02/The-Road-Traffic-Act-2018.pdf" target="_blank" rel="noopener">The Road Traffic Act, 2018</a> <span class="src">PDF &middot; Jamaica Constabulary Force</span><br>The law the regulations come from. Useful for reference.</li>
-              <li><a href="https://mtm.gov.jm/ita/" target="_blank" rel="noopener">Island Traffic Authority</a> <span class="src">Ministry website</span><br>Official notices and updates on testing and licensing.</li>
-            </ul>
-            <p class="study-note"><strong>About the Road Code booklet:</strong> it is not published on any government website. Copies circulating online are often old editions from before the 2022 rule changes, so if you study from a booklet, make sure it is a current edition.</p>
           </details>
 
           <div class="callout-box">
             <p><strong>What to expect on test day</strong></p>
             <ul>
-              <li><strong>Format:</strong> The Road Code Test is a multiple choice test designed to evaluate your knowledge of the general rules of the road, road signs, road markings, and road safety.</li>
-              <li><strong>Pass mark:</strong> A pass mark of 75% has been determined.</li>
-              <li><strong>Cost:</strong> The cost for the test is included in the fee for the Provisional Driver's Licence, which means the test itself is free. Re-sits are offered without charge until further notice.</li>
-              <li><strong>If you fail:</strong> You will be advised by the ITA when you should return to retake the test.</li>
+              <li><strong>Format:</strong> Multiple choice test assessing road rules, signs, markings, and safety.</li>
+              <li><strong>Pass mark:</strong> 75%.</li>
+              <li><strong>Cost:</strong> Free (included in the permit fee).</li>
             </ul>
-          </div>
-
-          <div class="warning-box" role="note">
-            <h3>Beware of fake tests and permits</h3>
-            <p>In September 2026 the ITA warned that people were being charged J$18,000 to J$25,000 for unofficial Road Code tests and bogus permits. Only the ITA administers the test, and the only fee in this process is the J$1,800 paid at TAJ. A permit obtained any other way is not valid.</p>
           </div>
 
           <a class="next-link" href="#step-3"><div><span>Next</span><strong>Step 3: Pay and collect at TAJ</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
 
-        <!-- STEP 3 -->
+        <!-- CONTAINER 5: STEP 3 (PAYMENT) -->
         <section class="card" id="step-3" aria-labelledby="step3-title">
           <div class="card-head">
             <span class="step-badge" aria-hidden="true">3</span>
@@ -715,7 +588,7 @@ Kind regards,
           <a class="next-link" href="#rules"><div><span>Next</span><strong>Rules for learner drivers</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
 
-        <!-- RULES -->
+        <!-- CONTAINER 6: LEARNER RULES -->
         <section class="card" id="rules" aria-labelledby="rules-title">
           <div class="card-head">
             <span class="step-badge" aria-hidden="true">!</span>
@@ -730,7 +603,7 @@ Kind regards,
           <a class="next-link" href="#full-licence"><div><span>Next</span><strong>After your permit: getting your full licence</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
 
-        <!-- NEXT STEPS: FULL LICENCE -->
+        <!-- CONTAINER 7: FULL LICENCE PATHWAY -->
         <section class="card" id="full-licence" aria-labelledby="full-title">
           <div class="card-head">
             <span class="step-badge" aria-hidden="true">→</span>
@@ -753,13 +626,7 @@ Kind regards,
             </li>
             <li>
               <h3>Pass the driving examination</h3>
-              <p>Attend your scheduled test at the depot. The examination has three parts:</p>
-              <ul>
-                <li><strong>Written test</strong> on the rules of the road.</li>
-                <li><strong>Yard test:</strong> vehicle control, reversing, and parallel and bay parking.</li>
-                <li><strong>Road test:</strong> driving on public roads so the examiner can assess your handling, observation and obedience to traffic laws.</li>
-              </ul>
-              <p>If you fail a part, you can re-sit just that part after paying the re-sit fee at TAJ. When you pass all parts, the Inspector of Motor Vehicles issues your <strong>Certificate of Competence</strong>.</p>
+              <p>Attend your scheduled test at the depot. The examination includes written, yard, and road tests. Upon passing, you receive your <strong>Certificate of Competence</strong>.</p>
             </li>
             <li>
               <h3>Collect your full driver’s licence</h3>
@@ -769,7 +636,7 @@ Kind regards,
           <a class="next-link" href="#lost-permit"><div><span>Next</span><strong>Lost your permit before your test?</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
 
-        <!-- LOST PERMIT -->
+        <!-- CONTAINER 8: LOST PERMIT REPLACEMENT -->
         <section class="card" id="lost-permit" aria-labelledby="lost-title">
           <div class="card-head">
             <span class="step-badge" aria-hidden="true">↺</span>
@@ -786,26 +653,16 @@ Kind regards,
             </li>
             <li>
               <h3>Apply for a replacement at TAJ</h3>
-              <p>Go to any Tax Office with:</p>
-              <ul>
-                <li>The official police report or receipt</li>
-                <li>Your TRN</li>
-                <li>A valid national photo ID</li>
-                <li>Two passport-size photos certified by a Justice of the Peace (JP)</li>
-              </ul>
+              <p>Go to any Tax Office with your police report, TRN, valid ID, and two JP-certified photos.</p>
             </li>
             <li>
               <h3>Pay the substitute fee</h3>
               <p>Pay the official replacement fee of <strong>J$4,140</strong> for a Substitute Provisional Driver’s Licence. TAJ issues the replacement card on the spot.</p>
             </li>
-            <li>
-              <h3>Carry on to your driving test</h3>
-              <p>Your substitute permit retains your original issuance date. Once your six months are up, use it to pay your examination fee and book your test at the ITA.</p>
-            </li>
           </ol>
         </section>
 
-        <!-- FAQ -->
+        <!-- CONTAINER 9: FAQs -->
         <section class="card" id="faq" aria-labelledby="faq-title">
           <div class="card-head">
             <span class="step-badge" aria-hidden="true">Q</span>
@@ -818,75 +675,38 @@ Kind regards,
             </details>
             <details>
               <summary>What if my permit expires before I take my driving test?</summary>
-              <div class="answer"><p>You do <strong>not</strong> re-sit the Road Code Test. Renew the permit at the tax office for J$1,800. (If it is lost rather than expired, see <a href="#lost-permit">Lost permit</a>.) A new medical is generally only needed if you are applying for a Class C licence or adding weight to that class.</p></div>
+              <div class="answer"><p>You do <strong>not</strong> re-sit the Road Code Test. Renew the permit at the tax office for J$1,800.</p></div>
             </details>
             <details>
               <summary>Can I sit the test in one parish and pay in another?</summary>
               <div class="answer"><p>Yes. You can take the Road Code Test at one ITA depot and pay for your permit at a tax office in any other parish.</p></div>
             </details>
-            <details>
-              <summary>I had a learner’s permit before the new procedure came into effect. Do I still need the test?</summary>
-              <div class="answer"><p>Yes. Any person seeking to obtain a Provisional Driver's Licence after January 24, 2020 will be required to pass the Road Code Test, even if the individual had been granted a Provisional Driver's Licence in the past.</p></div>
-            </details>
           </div>
         </section>
 
-        <p class="reviewed">Fees and test details checked against Tax Administration Jamaica, the Ministry of Transport and Mining, and the ITA’s September 2026 public notice. Government requirements change; confirm with the agency before you travel.</p>
-
-        <!-- NEWSLETTER CTA -->
+        <!-- CONTAINER 10: SUBSCRIBE -->
         <section class="card cta-card" id="subscribe" aria-labelledby="cta-title">
           <span class="kicker">Get It Right the First Time</span>
           <h2 id="cta-title">Stay ahead of the next rule change</h2>
-          <p>Fees, forms and counter requirements change without much notice. Subscribe for free and we’ll send you updates on the learner’s permit process and other Jamaican documents, so you never make a wasted trip.</p>
+          <p>Fees, forms and counter requirements change without much notice. Subscribe for free and we’ll send you updates on the learner’s permit process and other Jamaican documents.</p>
           
           <form id="mailerlite-form" class="nl-form" action="https://assets.mailerlite.com/jsonp/2650626/forms/199240121633998056/subscribe" method="post">
             <label for="nl-email" class="sr-only">Email address</label>
             <input id="nl-email" name="fields[email]" type="email" autocomplete="email" required placeholder="you@example.com">
             <input type="hidden" name="ml-submit" value="1">
             <input type="hidden" name="anticsrf" value="true">
-            <button type="submit" id="ml-submit-btn" class="btn-sub" style="margin-top:0; width:auto; flex-shrink:0;">Subscribe free</button>
+            <button type="submit" id="ml-submit-btn" class="btn-sub">Subscribe free</button>
           </form>
 
           <div id="ml-success-msg" class="nl-success" hidden role="status">
             <strong>Check your inbox to confirm</strong>
             <p>We've sent a confirmation email to your address. Click the link inside to activate your subscription.</p>
           </div>
-          
-          <p class="fine">No spam. Unsubscribe any time.</p>
         </section>
 
       </div>
     </article>
   </main>
-
-  <!-- Mobile section dock -->
-  <nav class="dock" aria-label="Guide navigation">
-    <button type="button" class="dock-btn" data-dock="prev" aria-label="Previous section"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></button>
-    <button type="button" class="dock-main" aria-haspopup="dialog" aria-controls="contents-sheet" aria-expanded="false">
-      <span class="dock-count">1 / 10</span>
-      <span class="dock-label">Overview</span>
-      <span class="dock-hint">Contents</span>
-    </button>
-    <button type="button" class="dock-btn" data-dock="next" aria-label="Next section"><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></button>
-  </nav>
-
-  <div class="sheet" id="contents-sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden>
-    <div class="sheet-backdrop" data-close></div>
-    <div class="sheet-panel">
-      <div class="sheet-grip" aria-hidden="true"></div>
-      <div class="sheet-head">
-        <h2 id="sheet-title">In this guide</h2>
-        <button type="button" class="sheet-close" data-close aria-label="Close contents"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
-      </div>
-      <ol class="sheet-list"></ol>
-      <div class="sheet-foot">
-        <button type="button" class="sheet-top">Back to top</button>
-        <a class="sheet-sub" href="#subscribe">Subscribe for updates</a>
-      </div>
-    </div>
-  </div>
-
-  <button class="fab-top" type="button" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></button>
 
   <!-- ===================== GLOBAL FOOTER ===================== -->
   <footer class="site-footer">
@@ -900,7 +720,6 @@ Kind regards,
           <li><a href="/">Home</a></li>
           <li><a href="/#services">Services</a></li>
           <li><a href="/insights.html">Insights &amp; Guides</a></li>
-          <li><a href="/faq.html">FAQ</a></li>
           <li><a href="/about.html">About Us</a></li>
           <li><a href="/#contact">Contact</a></li>
         </ul>
@@ -918,265 +737,53 @@ Kind regards,
     </div>
   </footer>
 
-  <!-- MailerLite Script -->
-  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
-  
   <script>
     (function () {
       'use strict';
       var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var behavior = reduceMotion ? 'auto' : 'smooth';
 
       /* Mobile menu */
       var toggle = document.querySelector('.menu-toggle');
       var nav = document.getElementById('main-nav');
-      function setMenu(open) {
-        nav.classList.toggle('is-open', open);
-        toggle.setAttribute('aria-expanded', String(open));
-        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if(toggle) {
+        toggle.addEventListener('click', function () { 
+          nav.classList.toggle('is-open'); 
+          toggle.setAttribute('aria-expanded', nav.classList.contains('is-open'));
+        });
       }
-      toggle.addEventListener('click', function () { setMenu(!nav.classList.contains('is-open')); });
-      nav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
-      });
-      document.addEventListener('click', function (e) {
-        if (nav.classList.contains('is-open') && !e.target.closest('.site-header')) setMenu(false);
-      });
 
-      /* Reading progress + back-to-top button */
+      /* Reading progress */
       var bar = document.querySelector('.progress span');
-      var fab = document.querySelector('.fab-top');
-      var ticking = false;
-      function onScroll() {
+      window.addEventListener('scroll', function () {
         var doc = document.documentElement;
         var max = doc.scrollHeight - doc.clientHeight;
         var ratio = max > 0 ? Math.min(1, window.scrollY / max) : 0;
         bar.style.transform = 'scaleX(' + ratio + ')';
-        fab.classList.toggle('is-visible', window.scrollY > 700);
-        if (typeof sections !== 'undefined' && sections.length && window.scrollY >= max - 4 && max > 0) {
-          setActive(sections[sections.length - 1].id);
-        }
-        ticking = false;
-      }
-      window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
-      onScroll();
-      function toTop(e) {
-        if (e) e.preventDefault();
-        window.scrollTo({ top: 0, behavior: behavior });
-        history.replaceState(null, '', location.pathname + location.search);
-      }
-      fab.addEventListener('click', toTop);
-      document.querySelectorAll('a[href="#top"]').forEach(function (a) { a.addEventListener('click', toTop); });
+      }, { passive: true });
 
-      /* Section navigation */
-      var navLinks = Array.prototype.slice.call(document.querySelectorAll('.section-nav ol a[href^="#"]'));
-      var navList = document.querySelector('.section-nav ol');
-      var sections = navLinks.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
-      function setActive(id) {
-        navLinks.forEach(function (a) {
-          var on = a.getAttribute('href') === '#' + id;
-          a.classList.toggle('is-active', on);
-          if (on) {
-            a.setAttribute('aria-current', 'true');
-            if (navList.scrollWidth > navList.clientWidth) {
-              var left = a.offsetLeft - (navList.clientWidth - a.offsetWidth) / 2;
-              navList.scrollTo({ left: left, behavior: behavior });
-            }
-          } else {
-            a.removeAttribute('aria-current');
-          }
-        });
-      }
-      if ('IntersectionObserver' in window) {
-        var visible = {};
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (en) { visible[en.target.id] = en.isIntersecting; });
-          for (var i = 0; i < sections.length; i++) {
-            if (visible[sections[i].id]) { setActive(sections[i].id); break; }
-          }
-        }, { rootMargin: '-35% 0px -55% 0px' });
-        sections.forEach(function (s) { io.observe(s); });
-      }
-      navLinks.forEach(function (a) { a.addEventListener('click', function () { setActive(a.getAttribute('href').slice(1)); }); });
-
-      /* Collapsible resources */
-      if (window.matchMedia('(min-width: 960px)').matches) {
-        document.querySelectorAll('details[data-open-desktop]').forEach(function (d) { d.open = true; });
-      }
-
-      /* Mobile dock + contents sheet */
-      var dock = document.querySelector('.dock');
-      var dockMain = dock.querySelector('.dock-main');
-      var dockLabel = dock.querySelector('.dock-label');
-      var dockCount = dock.querySelector('.dock-count');
-      var prevBtn = dock.querySelector('[data-dock="prev"]');
-      var nextBtn = dock.querySelector('[data-dock="next"]');
-      var sheet = document.getElementById('contents-sheet');
-      var sheetList = sheet.querySelector('.sheet-list');
-      var readSet = {};
-      var currentIndex = 0;
-      var sheetLinks = navLinks.map(function (a) {
-        var li = document.createElement('li');
-        var link = document.createElement('a');
-        link.href = a.getAttribute('href');
-        link.innerHTML = a.innerHTML + '<span class="done"></span>';
-        li.appendChild(link); sheetList.appendChild(li);
-        return link;
-      });
-      function labelOf(a) { return a.textContent.replace(a.querySelector('.num').textContent, '').trim(); }
-      function updateDock(id) {
-        var i = sections.map(function (s) { return s.id; }).indexOf(id);
-        if (i < 0) return;
-        currentIndex = i;
-        for (var k = 0; k <= i; k++) readSet[sections[k].id] = true;
-        dockLabel.textContent = labelOf(navLinks[i]);
-        dockCount.textContent = (i + 1) + ' / ' + sections.length;
-        prevBtn.disabled = i === 0;
-        nextBtn.disabled = i === sections.length - 1;
-        sheetLinks.forEach(function (l, k) {
-          l.classList.toggle('is-active', k === i);
-          l.classList.toggle('is-read', !!readSet[sections[k].id] && k !== i);
-          l.querySelector('.done').textContent = k === i ? 'You are here' : (readSet[sections[k].id] ? 'Read' : '');
-          if (k === i) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
-        });
-      }
-      var baseSetActive = setActive;
-      setActive = function (id) { baseSetActive(id); updateDock(id); };
-      function go(i) {
-        if (i < 0 || i >= sections.length) return;
-        sections[i].scrollIntoView({ behavior: behavior, block: 'start' });
-        setActive(sections[i].id);
-      }
-      prevBtn.addEventListener('click', function () { go(currentIndex - 1); });
-      nextBtn.addEventListener('click', function () { go(currentIndex + 1); });
-
-      var lastFocus = null;
-      function openSheet() {
-        lastFocus = document.activeElement;
-        sheet.hidden = false;
-        document.documentElement.classList.add('sheet-open');
-        dockMain.setAttribute('aria-expanded', 'true');
-        var active = sheetList.querySelector('.is-active') || sheetLinks[0];
-        active.focus({ preventScroll: true });
-        active.scrollIntoView({ block: 'nearest' });
-      }
-      function closeSheet(restore) {
-        sheet.hidden = true;
-        document.documentElement.classList.remove('sheet-open');
-        dockMain.setAttribute('aria-expanded', 'false');
-        if (restore !== false && lastFocus) lastFocus.focus({ preventScroll: true });
-      }
-      dockMain.addEventListener('click', openSheet);
-      sheet.addEventListener('click', function (e) {
-        if (e.target.closest('[data-close]')) { closeSheet(); return; }
-        var link = e.target.closest('.sheet-list a, .sheet-sub');
-        if (link) {
-          e.preventDefault();
-          var target = document.querySelector(link.getAttribute('href'));
-          closeSheet(false);
-          if (target) {
-            target.scrollIntoView({ behavior: behavior, block: 'start' });
-            if (target.id) setActive(target.id);
-          }
-        }
-      });
-      sheet.querySelector('.sheet-top').addEventListener('click', function () { closeSheet(false); toTop(); });
-      document.addEventListener('keydown', function (e) {
-        if (sheet.hidden) return;
-        if (e.key === 'Escape') { closeSheet(); return; }
-        if (e.key === 'Tab') {
-          var f = Array.prototype.slice.call(sheet.querySelectorAll('a, button'));
-          var first = f[0], last = f[f.length - 1];
-          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-        }
-      });
-
-      var hero = document.querySelector('.hero');
-      function toggleDock() {
-        var show = hero.getBoundingClientRect().bottom < 0;
-        dock.classList.toggle('is-visible', show);
-      }
-      window.addEventListener('scroll', toggleDock, { passive: true });
-      toggleDock();
-      updateDock(sections[0].id);
-
-      /* Document checklist */
+      /* Checklist meter */
       var boxes = Array.prototype.slice.call(document.querySelectorAll('.checklist input[type="checkbox"]'));
       var meterBar = document.querySelector('.check-meter .bar span');
       var meterCount = document.querySelector('.check-meter .count');
-      var KEY = 'lc-learner-checklist';
-      var saved = {};
-      try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { saved = {}; }
       function updateMeter() {
         var done = boxes.filter(function (b) { return b.checked; }).length;
         meterBar.style.width = (done / boxes.length * 100) + '%';
         meterCount.textContent = done === boxes.length ? 'All ' + done + ' ready ✓' : done + ' of ' + boxes.length + ' ready';
       }
-      boxes.forEach(function (b) {
-        b.checked = !!saved[b.dataset.item];
-        b.addEventListener('change', function () {
-          saved[b.dataset.item] = b.checked;
-          try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
-          updateMeter();
-        });
-      });
-      updateMeter();
+      boxes.forEach(function (b) { b.addEventListener('change', updateMeter); });
 
-      /* FAQ accordion */
-      var faqs = document.querySelectorAll('.faq details');
-      faqs.forEach(function (d) {
-        d.addEventListener('toggle', function () {
-          if (d.open && window.innerWidth < 600) {
-            faqs.forEach(function (o) { if (o !== d) o.open = false; });
-          }
-        });
-      });
-
-      /* Copy sample email */
+      /* Email Copy button */
       var copyBtn = document.querySelector('[data-copy]');
       if (copyBtn) {
         copyBtn.addEventListener('click', function () {
-          var text = 'Subject: ' + document.getElementById('email-subject').textContent + '\n\n' +
-                     document.getElementById('email-body').textContent;
-          function done(ok) {
-            copyBtn.textContent = ok ? 'Copied ✓' : 'Select the text above to copy';
-            copyBtn.classList.toggle('is-done', ok);
-            setTimeout(function () { copyBtn.textContent = 'Copy email text'; copyBtn.classList.remove('is-done'); }, 2500);
-          }
-          if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
-          } else {
-            var ta = document.createElement('textarea');
-            ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
-            document.body.appendChild(ta); ta.select();
-            var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
-            document.body.removeChild(ta); done(ok);
-          }
-        });
-      }
-
-      /* Newsletter Ajax Submission */
-      var form = document.getElementById('mailerlite-form');
-      var btn = document.getElementById('ml-submit-btn');
-      var success = document.getElementById('ml-success-msg');
-      if (form) {
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-          btn.textContent = 'Subscribing…';
-          btn.disabled = true;
-          fetch('https://assets.mailerlite.com/jsonp/2650626/forms/199240121633998056/subscribe', {
-            method: 'POST', body: new FormData(form), mode: 'no-cors'
-          }).catch(function () {}).then(function () {
-            form.reset();
-            form.hidden = true;
-            success.hidden = false;
+          var text = 'Subject: ' + document.getElementById('email-subject').textContent + '\n\n' + document.getElementById('email-body').textContent;
+          navigator.clipboard.writeText(text).then(function() {
+            copyBtn.textContent = 'Copied ✓';
+            setTimeout(function() { copyBtn.textContent = 'Copy email text'; }, 2000);
           });
         });
       }
 
-      /* Footer year */
       document.getElementById('year').textContent = new Date().getFullYear();
     })();
   </script>
