@@ -412,10 +412,23 @@
     ul.scenario-list li { margin-bottom: 15px; padding-left: 32px; position: relative; }
     ul.scenario-list li::before { content: "➔"; position: absolute; left: 0; top: 2px; color: var(--blue-highlight); font-weight: bold; }
 
-    /* FAQs */
-    .faq-item { margin-bottom: 30px; }
-    .faq-item h4 { margin: 0 0 10px 0; color: var(--primary); font-family: var(--sans); font-size: 18px; }
-    .faq-item p { margin: 0; font-size: 16px; color: var(--text-muted); }
+    /* FAQs (dropdowns) */
+    .faq-list { display: grid; gap: 12px; }
+    details.faq-item { border: 1px solid var(--border); border-radius: 10px; background: #FFF; margin: 0; }
+    details.faq-item > summary {
+      list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 18px 22px; font: 600 17px/1.4 var(--sans); color: var(--primary); min-height: 48px;
+    }
+    details.faq-item > summary::-webkit-details-marker { display: none; }
+    details.faq-item > summary::after {
+      content: ""; flex-shrink: 0; width: 10px; height: 10px; margin-top: -4px;
+      border-right: 2px solid var(--blue-highlight); border-bottom: 2px solid var(--blue-highlight);
+      transform: rotate(45deg); transition: transform .2s ease;
+    }
+    details.faq-item[open] > summary::after { transform: rotate(-135deg); margin-top: 4px; }
+    details.faq-item > summary:hover { background: #F8FAFC; border-radius: 10px; }
+    details.faq-item > summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 10px; }
+    details.faq-item > p { margin: 0; padding: 0 22px 20px; font-size: 16px; color: var(--text-muted); }
 
     /* =========================================================
        6. FOOTER & RESPONSIVENESS
@@ -809,44 +822,46 @@
           <a href="https://forms.gle/baH9WjZvYCZC7ZE56" class="btn-cta" target="_blank" rel="noopener" aria-label="Start Package Preparation Request">Start Package Preparation</a>
           <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20passport%20package%20%28Lane%202%29.%20My%20situation%20is%3A%20" class="btn-wa-cta" target="_blank" rel="noopener" data-wa="lane2-cta" aria-label="Message us on WhatsApp about your passport package"><svg class="icon"><use href="#i-wa"/></svg>WhatsApp Us Your Situation</a>
         </div>
-        <p class="cta-sub">Prefer a scheduled call? <a href="https://calendar.app.google/ZLUCwjXywB2mFuYC7">Book a consultation</a>.</p>
+        <p class="cta-sub">Prefer a scheduled call? <a href="/#contact">Book a consultation</a>.</p>
       </section>
 
       <!-- FAQS -->
       <section class="card" style="margin-bottom: 0;">
         <h2>Passport Questions</h2>
 
-        <div class="faq-item">
-          <h4>Which lane am I in?</h4>
-          <p>Answer the six eligibility questions in Lane 1. If every answer is Yes, you qualify for the 100% Concierge renewal. If any answer is No, PICA needs original documents or an in-person application, and our Lane 2 package preparation service applies.</p>
-        </div>
-        <div class="faq-item">
-          <h4>I live overseas. How will I get my new passport?</h4>
-          <p>Lane 1 concierge renewals are dispatched by PICA via DHL to the address on your application. For Lane 2, you lodge the package at your nearest Jamaican Embassy, High Commission or Consulate, and that office tells you how the passport is returned: collection in person, or return by courier or prepaid envelope where they offer it.</p>
-        </div>
-        <div class="faq-item">
-          <h4>I live in Jamaica. How do I collect my passport under Lane 2?</h4>
-          <p>You collect it in person at the PICA office where you submitted the package, bringing your receipt and valid photo ID.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Do I need to mail you my physical photos?</h4>
-          <p>If you qualify for Lane 1 (100% Concierge), no. We only need a digital JPEG photograph. For Lane 2, physical photos are required, but you keep them and take them with your package.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Do my photos need to be signed by a Justice of the Peace (JP)?</h4>
-          <p>For Lane 1 (adult renewal, no name change), a JP signature is no longer required on the photo. For all Lane 2 cases, one photo must be certified by a JP or Notary Public.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Can you guarantee my passport will arrive by a certain date?</h4>
-          <p>No. We submit or prepare your application swiftly, but PICA handles official processing and the courier or your submitting office handles delivery. Start your application well ahead of any travel date.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Are government fees refundable?</h4>
-          <p>No. PICA fees are paid to the agency and are non-refundable. Our service fee is separate and is covered in our Terms & Conditions.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Where can I read more about PICA's rules?</h4>
-          <p>For an in-depth breakdown of the whole process, read <a href="/jamaica-passport-guide.html" style="color: var(--blue-highlight); font-weight: 600; text-decoration: underline;">The Complete Jamaican Passport Application &amp; Renewal Guide</a>. For general questions about how we work, see our <a href="/faq.html" style="color: var(--blue-highlight); font-weight: 600; text-decoration: underline;">main FAQ</a>.</p>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Which lane am I in?</summary>
+            <p>Answer the six eligibility questions in Lane 1. If every answer is Yes, you qualify for the 100% Concierge renewal. If any answer is No, PICA needs original documents or an in-person application, and our Lane 2 package preparation service applies.</p>
+          </details>
+          <details class="faq-item">
+            <summary>I live overseas. How will I get my new passport?</summary>
+            <p>Lane 1 concierge renewals are dispatched by PICA via DHL to the address on your application. For Lane 2, you lodge the package at your nearest Jamaican Embassy, High Commission or Consulate, and that office tells you how the passport is returned: collection in person, or return by courier or prepaid envelope where they offer it. We confirm your office's return method before you submit.</p>
+          </details>
+          <details class="faq-item">
+            <summary>I live in Jamaica. How do I collect my passport under Lane 2?</summary>
+            <p>You collect it in person at the PICA office where you submitted the package, bringing your receipt and valid photo ID.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need to mail you my physical photos?</summary>
+            <p>If you qualify for Lane 1 (100% Concierge), no. We only need a digital JPEG photograph. For Lane 2, physical photos are required, but you keep them and take them with your package.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do my photos need to be signed by a Justice of the Peace (JP)?</summary>
+            <p>For Lane 1 (adult renewal, no name change), a JP signature is no longer required on the photo. For all Lane 2 cases, one photo must be certified by a JP or Notary Public.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can you guarantee my passport will arrive by a certain date?</summary>
+            <p>No. We submit or prepare your application swiftly, but PICA handles official processing and the courier or your submitting office handles delivery. Start your application well ahead of any travel date.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Are government fees refundable?</summary>
+            <p>No. PICA fees are paid to the agency and are non-refundable. Our service fee is separate and is covered in our Terms & Conditions.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Where can I read more about PICA's rules?</summary>
+            <p>For an in-depth breakdown of the whole process, read <a href="/jamaica-passport-guide.html" style="color: var(--blue-highlight); font-weight: 600; text-decoration: underline;">The Complete Jamaican Passport Application &amp; Renewal Guide</a>. For general questions about how we work, see our <a href="/faq.html" style="color: var(--blue-highlight); font-weight: 600; text-decoration: underline;">main FAQ</a>.</p>
+          </details>
         </div>
       </section>
 
