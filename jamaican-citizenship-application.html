@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en-JM">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Jamaican Citizenship Applications | Laura Clarke Administrative Services</title>
+  <meta name="description" content="Claim your Jamaican citizenship by descent or marriage. We perform a line-for-line lineage document audit and handle PICA proxy lodgment in Kingston.">
+  <link rel="canonical" href="https://documenthelpja.com/jamaican-citizenship-application.html">
+  <meta name="theme-color" content="#181A1B">
+
+  <!-- SOCIAL SHARING & AI GRAPH TAGS -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_JM">
+  <meta property="og:site_name" content="Laura Clarke Administrative Services">
+  <meta property="og:title" content="Jamaican Citizenship Applications (Descent & Marriage)">
+  <meta property="og:description" content="Claim your Jamaican citizenship. We perform generational document audits, reconcile name mismatches, and handle PICA lodgment in Kingston.">
+  <meta property="og:url" content="https://documenthelpja.com/jamaican-citizenship-application.html">
+  <meta property="og:image" content="https://documenthelpja.com/assets/office-hero.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- AI AGENT OPTIMIZATION: JSON-LD SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Jamaican Citizenship Application Preparation & Proxy Lodgment",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Laura Clarke Administrative Services",
+      "url": "https://documenthelpja.com"
+    },
+    "description": "Generational document audit, RGD reconciliation, application preparation, and PICA proxy lodgment for Jamaican Citizenship by Descent, Grandparent, or Marriage.",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Jamaica"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Citizenship Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Direct Descent (Parent Route) Audit & Proxy Lodgment" },
+          "priceCurrency": "USD",
+          "price": "150.00"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": { "@type": "Service", "name": "Complex Lineage (Grandparent/Marriage) Audit & Management" },
+          "priceCurrency": "USD",
+          "price": "150.00"
+        }
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is the citizenship service locked if I am missing a birth certificate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PICA will immediately reject any citizenship application that does not include certified original Jamaican birth certificates for the ancestral line. You must first use our RGD Search service to locate and retrieve missing records before submitting a citizenship file."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I apply for a Jamaican passport at the same time as my citizenship?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Once PICA approves your citizenship and issues your certificate, we can seamlessly transition your file to our passport processing service so you receive both documents."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my parent was born in Jamaica but passed away before I applied?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can still claim citizenship by descent. You will need to provide their certified Death Certificate to complete the chain of custody alongside their Jamaican birth certificate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my father's name isn't listed on my foreign birth certificate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you are claiming descent through your father, his name must be on your long-form birth certificate. If it is missing, you must formally amend your foreign birth certificate in your country of birth before applying in Jamaica."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* =========================================================
+       1. GLOBAL DESIGN TOKENS
+       ========================================================= */
+    :root {
+      --ink: #181A1B;          
+      --text: #2F3538;         
+      --muted: #565E63;        
+      --paper: #FFFFFF;
+      --tone: #F2F5F3;         
+      --line: #D6DDD9;
+      --gold: #C89B3C;         
+      --gold-hover: #B08733;
+      --gold-text: #7E5B1C;    
+      --emerald: #0B2E24;
+
+      --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+      --sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+      --wrap: 72rem;
+      --gutter: 1.25rem;
+      --radius: 10px;
+      --header-h: 68px;
+
+      /* Page Specific Tokens */
+      --primary: #0F2537; 
+      --accent: #D4AF37; 
+      --bg: #F4F6F8; 
+      --card-bg: #FFFFFF; 
+      --blue-highlight: #084298;
+      --success: #198754;
+      --warning-bg: #FFFBEB;
+      --warning-border: #F59E0B;
+      --error-bg: #FEF2F2;
+      --error-border: #EF4444;
+      --error-text: #B91C1C;
+      --border: #E2E8F0;
+      --text-muted: #64748B;
+    }
+    
+    body { 
+      margin: 0; font-family: var(--sans); font-size: 1.0625rem;
+      background-color: var(--bg); color: var(--text); line-height: 1.65; 
+      -webkit-font-smoothing: antialiased;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    img { max-width: 100%; height: auto; display: block; }
+    h1, h2, h3, h4 { font-family: var(--serif); color: var(--ink); line-height: 1.2; margin: 0; font-weight: 700; }
+    a { color: inherit; }
+    .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+    .icon { width: 1.15em; height: 1.15em; flex-shrink: 0; fill: currentColor; }
+    
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--paper); color: var(--ink); padding: 10px 16px; border-radius: 6px; font-weight: 600; }
+    .skip:focus { top: 12px; }
+
+    /* =========================================================
+       2. BUTTONS & CTAs
+       ========================================================= */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+      min-height: 48px; padding: .8rem 1.5rem; font: 600 1rem/1.2 var(--sans); 
+      text-decoration: none; border-radius: 6px; border: 2px solid transparent; cursor: pointer;
+      transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .btn-gold { background: var(--gold); color: var(--ink); }
+    .btn-gold:hover { background: var(--gold-hover); }
+    .btn-dark { background: var(--ink); color: #fff; }
+    .btn-dark:hover { background: #2B2F31; }
+    .btn-dark .icon { color: var(--gold); }
+    
+    .btn-outline {
+      background: transparent; color: var(--primary); border: 2px solid var(--primary);
+      font-weight: 600; padding: 12px 24px; border-radius: 6px; text-transform: uppercase;
+      letter-spacing: 0.5px; cursor: pointer; transition: all 0.2s ease; display: inline-flex;
+    }
+    .btn-outline:hover { background: var(--primary); color: #FFF; }
+
+    .btn-cta { 
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--accent); color: var(--primary); font-weight: 700; font-size: 16px; 
+      padding: 16px 35px; border-radius: 6px; text-decoration: none; text-transform: uppercase; 
+      letter-spacing: 0.5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.2s ease;
+      border: 2px solid transparent;
+    }
+    .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+    
+    .btn-wa-cta {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: #146C43; color: #FFF; font-weight: 700; font-size: 16px; padding: 16px 30px;
+      border-radius: 6px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.2s ease; border: 2px solid transparent;
+    }
+    .btn-wa-cta:hover { background: #0F5132; transform: translateY(-2px); }
+    .btn-wa-cta .icon { width: 20px; height: 20px; }
+    .cta-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+
+    /* =========================================================
+       3. HEADER & NAVIGATION
+       ========================================================= */
+    .site-header {
+      position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px);
+    }
+    .header-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: var(--header-h); }
+    .brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; min-height: 44px; }
+    .brand-mark { width: 42px; height: 42px; border-radius: 6px; background: var(--ink); color: var(--gold); display: grid; place-items: center; font: 700 1.1rem/1 var(--serif); }
+    .brand-name { display: block; font: 700 1.1rem/1.15 var(--serif); color: var(--ink); }
+    .brand-sub { display: block; white-space: nowrap; font-size: .74rem; color: var(--muted); font-weight: 500; letter-spacing: .02em; }
+
+    .header-actions { display: flex; align-items: center; gap: .5rem; }
+    .wa-chip { min-height: 44px; padding: .55rem .9rem; font-size: .9rem; }
+    .wa-chip .label-long { display: none; }
+    
+    @media (max-width: 389px) {
+      .header-bar { gap: .5rem; } .brand { gap: .55rem; }
+      .brand-mark { width: 38px; height: 38px; font-size: 1rem; }
+      .brand-name { font-size: 1rem; } .brand-sub { display: none; }
+      .header-actions { gap: .4rem; } .wa-chip { padding: .5rem .7rem; }
+    }
+
+    .menu-toggle {
+      width: 46px; height: 46px; display: grid; place-items: center;
+      background: transparent; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); cursor: pointer;
+    }
+    .menu-toggle .icon { width: 22px; height: 22px; }
+    .menu-toggle .icon-close { display: none; }
+    .menu-toggle[aria-expanded="true"] .icon-open { display: none; }
+    .menu-toggle[aria-expanded="true"] .icon-close { display: block; }
+
+    .main-nav {
+      display: none; position: absolute; left: 0; right: 0; top: 100%;
+      background: var(--paper); border-bottom: 1px solid var(--line);
+      box-shadow: 0 18px 30px -18px rgba(24,26,27,.35);
+    }
+    .main-nav.is-open { display: block; }
+    .main-nav ul { padding: .5rem var(--gutter) 1rem; list-style: none; margin: 0; }
+    .main-nav a { display: flex; align-items: center; min-height: 52px; font-weight: 600; font-size: 1.05rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--tone); }
+    .main-nav li:last-child a { border-bottom: 0; }
+
+    @media (min-width: 960px) {
+      :root { --header-h: 80px; }
+      .menu-toggle { display: none; }
+      .main-nav { display: block; position: static; background: none; border: 0; box-shadow: none; margin-left: auto; }
+      .main-nav ul { display: flex; gap: 2rem; padding: 0; }
+      .main-nav a { min-height: 44px; border: 0; font-size: .95rem; font-weight: 500; color: var(--text); border-bottom: 2px solid transparent; }
+      .main-nav a:hover { color: var(--ink); border-bottom-color: var(--gold); }
+      .main-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--gold); }
+      .header-actions { margin-left: 1.5rem; }
+      .wa-chip .label-long { display: inline; }
+      .wa-chip .label-short { display: none; }
+    }
+
+    /* =========================================================
+       4. SERVICE PAGE ARCHITECTURE
+       ========================================================= */
+    .service-container { max-width: 850px; margin: 60px auto; padding: 0 20px; }
+    
+    .page-hero { 
+      background: var(--primary); color: #FFF; padding: 60px 40px; 
+      border-radius: 12px; text-align: center; margin-bottom: 80px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15);
+    }
+    .page-hero h1 { margin: 0 0 20px; font-size: 32px; line-height: 1.3; color: #FFF; font-family: var(--sans); }
+    .page-hero p { margin: 0 auto 30px; color: #CBD5E1; font-size: 17px; max-width: 600px; }
+
+    .card { 
+      background: var(--card-bg); border: 1px solid var(--border); 
+      border-radius: 16px; padding: 50px; margin-bottom: 80px;
+      box-shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
+    }
+    .card h2 { color: var(--primary); font-size: 26px; border-bottom: 3px solid var(--bg); padding-bottom: 16px; margin-top: 0; margin-bottom: 30px; font-family: var(--sans); }
+
+    /* ELIGIBILITY QUIZ */
+    .quiz-question {
+      background: #F8FAFC; border: 1px solid var(--border); border-radius: 8px;
+      padding: 20px 25px; margin-bottom: 15px; display: flex; flex-direction: column; gap: 12px;
+      transition: background 0.2s ease;
+    }
+    .quiz-question:hover { background: #F1F5F9; }
+    .quiz-question p { margin: 0; font-weight: 600; font-size: 16px; color: var(--primary); }
+    .quiz-options { display: flex; gap: 25px; }
+    .radio-label { display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 16px; font-weight: 500; }
+    .radio-label input[type="radio"] { width: 20px; height: 20px; accent-color: var(--blue-highlight); cursor: pointer; }
+    
+    .failure-box { background: var(--error-bg); border-left: 6px solid var(--error-border); padding: 25px; border-radius: 8px; margin-top: 30px; display: none; }
+
+    /* =========================================================
+       5. PROMINENT SECTIONS (Fees & Terms)
+       ========================================================= */
+    .prominent-section {
+      background: #FFFFFF; border: 2px solid var(--border); border-radius: 12px;
+      padding: 35px; margin: 40px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .prominent-section h3 { margin-bottom: 25px; color: var(--primary); font-family: var(--sans); font-size: 22px; }
+
+    .data-table { width: 100%; border-collapse: collapse; background: #FAFAFA; border-radius: 8px; overflow: hidden; margin: 0; }
+    .data-table th { background: var(--primary); color: #FFF; padding: 15px 20px; text-align: left; font-size: 15px; font-family: var(--sans); font-weight: 600; }
+    .data-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); font-size: 15px; }
+    .data-table th:nth-child(2), .data-table td:nth-child(2), .data-table th:nth-child(3), .data-table td:nth-child(3) { text-align: right; }
+    .data-table td.amount { font-weight: 700; color: var(--blue-highlight); }
+    
+    .terms-box { 
+      background: #F4F6F8; border: 1px solid var(--border); border-left: 6px solid var(--primary); 
+      border-radius: 8px; padding: 35px; margin: 40px 0; font-size: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .terms-box h4 { margin-top: 0; margin-bottom: 15px; color: var(--primary); font-family: var(--sans); font-size: 20px; }
+    .terms-box ol, .terms-box ul { margin: 0; padding-left: 20px; line-height: 1.8; }
+    .terms-box li { margin-bottom: 12px; }
+
+    .document-checklist-block {
+      background: #FFFFFF; border: 1px solid var(--border); border-radius: 8px;
+      padding: 25px; margin-top: 20px; font-size: 15px;
+    }
+    .document-checklist-block h4 { color: var(--primary); margin-top: 25px; margin-bottom: 10px; font-size: 17px; }
+    .document-checklist-block h4:first-child { margin-top: 0; }
+    .document-checklist-block ul { padding-left: 20px; margin-bottom: 15px; line-height: 1.7; }
+    .document-checklist-block li { margin-bottom: 8px; }
+
+    .addon-callout { display: flex; gap: 14px; align-items: flex-start; background: var(--warning-bg); border: 1px solid #FCD34D; border-radius: 8px; padding: 18px 20px; margin: 30px 0 0; font-size: 15px; }
+    .addon-callout strong { color: var(--primary); }
+    .addon-callout a { color: var(--blue-highlight); font-weight: 600; }
+
+    .value-prop-block {
+      background: #F0F9FF; border-left: 6px solid #0EA5E9; border-right: 1px solid #BAE6FD;
+      border-top: 1px solid #BAE6FD; border-bottom: 1px solid #BAE6FD;
+      padding: 40px; border-radius: 0 12px 12px 0; margin: 40px 0; box-shadow: 0 6px 12px -2px rgba(14, 165, 233, 0.1);
+    }
+    .value-prop-block h3 { color: #0369A1; font-size: 22px; margin-top: 0; margin-bottom: 15px; font-family: var(--sans); }
+    
+    details.learn-more-details > summary { list-style: none; display: inline-flex; }
+    details.learn-more-details > summary::-webkit-details-marker { display: none; }
+    
+    ul.scenario-list { list-style: none; padding: 0; margin: 0; }
+    ul.scenario-list li { margin-bottom: 15px; padding-left: 32px; position: relative; }
+    ul.scenario-list li::before { content: "➔"; position: absolute; left: 0; top: 2px; color: var(--blue-highlight); font-weight: bold; }
+
+    .faq-list { display: grid; gap: 12px; }
+    details.faq-item { border: 1px solid var(--border); border-radius: 10px; background: #FFF; margin: 0; }
+    details.faq-item > summary {
+      list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 18px 22px; font: 600 17px/1.4 var(--sans); color: var(--primary); min-height: 48px;
+    }
+    details.faq-item > summary::-webkit-details-marker { display: none; }
+    details.faq-item > summary::after {
+      content: ""; flex-shrink: 0; width: 10px; height: 10px; margin-top: -4px;
+      border-right: 2px solid var(--blue-highlight); border-bottom: 2px solid var(--blue-highlight);
+      transform: rotate(45deg); transition: transform .2s ease;
+    }
+    details.faq-item[open] > summary::after { transform: rotate(-135deg); margin-top: 4px; }
+    details.faq-item > summary:hover { background: #F8FAFC; border-radius: 10px; }
+    details.faq-item > summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 10px; }
+    details.faq-item > p { margin: 0; padding: 0 22px 20px; font-size: 16px; color: var(--text-muted); }
+
+    .site-footer { background: var(--ink); color: #B9C0C4; font-size: .95rem; padding-bottom: env(safe-area-inset-bottom, 0px); margin-top: 60px; }
+    .footer-top { display: grid; gap: 2rem; padding: 3rem 0 2rem; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .footer-brand { font: 700 1.2rem/1.3 var(--serif); color: #fff; margin: 0; }
+    .footer-brand + p { margin-top: .5rem; max-width: 26rem; margin-bottom: 0; }
+    .footer-nav ul { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem 1.5rem; list-style: none; padding: 0; margin: 0; }
+    .footer-nav a, .legal-links a { display: inline-flex; align-items: center; min-height: 44px; color: #E6E8E9; text-decoration: none; }
+    .footer-nav a:hover, .legal-links a:hover { color: var(--gold); }
+    .to-top {
+      justify-self: start; display: inline-flex; align-items: center; gap: .5rem; min-height: 48px; padding: .7rem 1.2rem;
+      border: 1px solid rgba(255,255,255,.35); border-radius: 6px; color: #fff; text-decoration: none; font-weight: 600;
+    }
+    .to-top:hover { border-color: var(--gold); color: var(--gold); }
+    .disclaimer { padding: 1.75rem 0 0; font-size: .85rem; line-height: 1.6; color: #A2AAAF; max-width: 56rem; margin: 0; }
+    .footer-bottom { display: flex; flex-direction: column; gap: .5rem; padding: 1.25rem 0 2rem; font-size: .88rem; }
+    .legal-links { display: flex; flex-wrap: wrap; gap: 0 1.5rem; list-style: none; padding: 0; margin: 0; }
+    
+    @media (min-width: 860px) {
+      .footer-top { grid-template-columns: 1.4fr 1fr auto; align-items: start; }
+      .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
+    }
+
+    @media (max-width: 600px) {
+      .service-container { margin: 30px auto; }
+      .page-hero { padding: 40px 20px; margin-bottom: 40px; }
+      .card { padding: 30px 20px; margin-bottom: 40px; }
+      .prominent-section { padding: 25px 15px; margin: 30px 0; }
+      .data-table th, .data-table td { display: block; width: 100%; text-align: left !important; padding: 12px 15px; }
+      .data-table td.amount { padding-top: 0; border-top: none; padding-bottom: 15px; }
+      .data-table tr { border-bottom: 4px solid #FFF; display: block; }
+      .value-prop-block { padding: 25px 20px; margin: 30px 0; border-radius: 0 8px 8px 0; }
+      .terms-box { padding: 25px 20px; margin: 30px 0; }
+      .cta-group { flex-direction: column; width: 100%; }
+      .cta-group .btn-cta, .cta-group .btn-wa-cta { width: 100%; }
+      .document-checklist-block { padding: 20px 15px; }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- ===================== ICON LIBRARY ===================== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.37l-.36-.22-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.4 5 12 10.6 17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4 6.4 19 5 17.6 10.6 12 5 6.4z"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M11 20V7.8l-5.6 5.6L4 12l8-8 8 8-1.4 1.4L13 7.8V20z"/></symbol>
+  </svg>
+
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <!-- ===================== GLOBAL HEADER ===================== -->
+  <header class="site-header">
+    <div class="wrap header-bar">
+      <a href="/" class="brand" aria-label="Laura Clarke Administrative Services, home">
+        <span class="brand-mark" aria-hidden="true">LC</span>
+        <span>
+          <span class="brand-name">Laura Clarke</span>
+          <span class="brand-sub">Administrative Services</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/#services" aria-current="page">Services</a></li>
+          <li><a href="/insights.html">Insights &amp; Guides</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-dark wa-chip" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20document." target="_blank" rel="noopener" data-wa="nav">
+          <svg class="icon"><use href="#i-wa"/></svg>
+          <span class="label-long">WhatsApp Us</span><span class="label-short">Chat</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Open menu">
+          <svg class="icon icon-open"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main id="main">
+    <div class="service-container">
+      
+      <!-- HERO SECTION -->
+      <header class="page-hero">
+        <h1>Need to Claim Jamaican Citizenship?<br>Let's Find Your Lane.</h1>
+        <p style="margin-bottom:0;">Submitting an application with unaligned documents will trap your file in a "Hold for Query" status for months. Answer four quick questions below to see if your lineage documents are ready for PICA lodgment.</p>
+      </header>
+
+      <!-- LANE 1: DIRECT DESCENT (PARENT) -->
+      <section class="card">
+        <h2>Lane 1: Direct Descent (Parent Route)</h2>
+        <p style="margin-bottom: 25px; font-size: 17px;"><strong>We can fast-track your PICA application ONLY IF you currently hold 100% of all required ancestral records in hand. Please verify below:</strong></p>
+        
+        <div id="eligibility-quiz">
+          <div class="quiz-question">
+            <p>1. Were you born outside of Jamaica to at least one parent born in Jamaica?</p>
+            <div class="quiz-options">
+              <label class="radio-label"><input type="radio" name="q1" value="yes"> Yes</label>
+              <label class="radio-label"><input type="radio" name="q1" value="no"> No</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>2. Do you currently HAVE IN HAND your original long-form birth certificate showing your parents' names?</p>
+            <div class="quiz-options">
+              <label class="radio-label"><input type="radio" name="q2" value="yes"> Yes</label>
+              <label class="radio-label"><input type="radio" name="q2" value="no"> No</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>3. Do you currently HAVE IN HAND your parent's original Jamaican Birth Certificate?</p>
+            <div class="quiz-options">
+              <label class="radio-label"><input type="radio" name="q3" value="yes"> Yes</label>
+              <label class="radio-label"><input type="radio" name="q3" value="no"> No</label>
+            </div>
+          </div>
+          <div class="quiz-question">
+            <p>4. Do all names and spellings match EXACTLY across both birth certificates?</p>
+            <div class="quiz-options">
+              <label class="radio-label"><input type="radio" name="q4" value="yes"> Yes</label>
+              <label class="radio-label"><input type="radio" name="q4" value="no"> No</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- PREREQUISITE REDIRECT BOX (Reveals if missing RGD docs or mismatches) -->
+        <div id="lane-a-failure" class="failure-box" role="status" aria-live="polite">
+          <p style="font-size: 18px; color: var(--error-text); font-weight: bold;">🛑 Citizenship Service Cannot Be Activated Yet</p>
+          <p id="lane-a-reason" style="margin-top: 10px; color: var(--text); font-weight: 500;"></p>
+          
+          <div style="background: #FFF; border: 1px solid var(--border); padding: 20px; border-radius: 8px; margin-top: 15px;">
+            <p style="margin: 0; font-weight: 600; color: var(--primary);">Phase 1 Required: Obtain Your Missing RGD Certificates First</p>
+            <p style="margin-top: 5px; font-size: 14px; color: var(--text-muted);">PICA will immediately reject citizenship files with missing or mismatched Jamaican records. Before paying for citizenship submission, we must locate and retrieve your family's official records through the Registrar General's Department (RGD).</p>
+            
+            <div style="margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap;">
+              <a href="/jamaican-rgd-certificates.html" class="btn-cta" style="font-size: 14px; padding: 10px 20px;" target="_blank">Start RGD Search & Retrieval</a>
+              <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20want%20to%20apply%20for%20Citizenship%20but%20I%20am%20missing%20my%20parent%27s%20Jamaican%20birth%20certificate." class="btn-wa-cta" style="font-size: 14px; padding: 10px 20px;" target="_blank" rel="noopener"><svg class="icon"><use href="#i-wa"/></svg>Check RGD Options on WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMPLETE SUITE DETAILS (Reveals ONLY upon 100% 'Yes' qualification) -->
+        <div id="lane-a-cta-container" role="status" aria-live="polite" style="display: none; margin-top: 50px; padding-top: 30px; border-top: 2px solid var(--border);">
+          <div style="text-align: center; margin-bottom: 40px;">
+            <p style="color: var(--success); font-weight: bold; font-size: 24px; margin-bottom: 10px;">✅ Citizenship Service Activated!</p>
+            <p style="font-size: 16px; color: var(--text-muted);">You have all required documents in hand. Below is the fee breakdown to begin your PICA submission.</p>
+          </div>
+
+          <!-- PROMINENT PHASED FEE BREAKDOWN -->
+          <div class="prominent-section">
+            <h3>Fee Breakdown & Phased Retainer</h3>
+            <table class="data-table">
+              <tr>
+                <th>Phase / Service Element</th>
+                <th>Fee Estimate</th>
+              </tr>
+              <tr>
+                <td><strong>Phase 1: Lineage Audit & PICA Package Prep</strong><br><span style="font-size:13px; color:var(--text-muted);">Form completion, photo verification, and PICA Kingston proxy submission</span></td>
+                <td class="amount">$150 USD <span style="font-size:12px; color:var(--text-muted);">(~$23,500 JMD)</span></td>
+              </tr>
+              <tr>
+                <td><strong>Phase 2: Official PICA Government Fee</strong><br><span style="font-size:13px; color:var(--text-muted);">Official statutory fee paid to PICA upon lodgment</span></td>
+                <td class="amount">~$10,000 to $15,000 JMD</td>
+              </tr>
+              <tr>
+                <td style="border-bottom: none;"><strong>Phase 3: International Courier Return</strong><br><span style="font-size:13px; color:var(--text-muted);">Secure DHL dispatch of original docs + new Citizenship Certificate</span></td>
+                <td class="amount" style="border-bottom: none;">Calculated by Destination</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- PROMINENT TERMS BOX (LANE 1) -->
+          <div class="terms-box">
+            <h4 style="margin-bottom: 20px;">Terms & Your Responsibilities</h4>
+            <p style="margin-bottom: 15px; font-weight: 600; color: var(--primary);">Because citizenship alters legal records, you will need to:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; line-height: 1.8;">
+              <li>Mail your <strong>original, certified</strong> physical birth certificates to our Kingston office (PICA does not accept photocopies).</li>
+              <li>Provide passport photos physically certified by a Notary Public or JP.</li>
+              <li>Understand that PICA citizenship verification is a manual, government background process. <strong>Timelines cannot be guaranteed and standard processing takes 3 to 6 months.</strong></li>
+            </ul>
+            
+            <p style="margin-bottom: 10px; font-weight: 600; color: var(--primary);">Next Steps:</p>
+            <ol style="margin: 0; padding-left: 20px; line-height: 1.8;">
+              <li><strong>Digital Pre-Audit:</strong> Complete the intake form below and upload digital scans of your family certificates for our preliminary review.</li>
+              <li><strong>Mail Package:</strong> Once we approve the digital scans, you will mail the physical originals to Jamaica.</li>
+              <li><strong>Policies:</strong> By proceeding, you agree to our <a href="/terms.html" target="_blank" style="color: var(--blue-highlight); font-weight: 600;">Terms & Conditions</a> regarding non-refundable PICA fees.</li>
+            </ol>
+          </div>
+
+          <!-- ADD-ON CALLOUT -->
+          <div class="addon-callout">
+            <span aria-hidden="true">🛂</span>
+            <p style="margin:0;"><strong>Want your Jamaican Passport too?</strong> Once PICA approves your citizenship, we can seamlessly transition your file to our passport processing team so you receive both documents at once. <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20want%20to%20apply%20for%20both%20my%20Citizenship%20and%20Passport." target="_blank" rel="noopener" data-wa="passport-addon">Ask about the Passport Add-on</a></p>
+          </div>
+
+          <!-- CTA AREA -->
+          <div class="cta-group">
+            <a href="https://forms.gle/baH9WjZvYCZC7ZE56" class="btn-cta" target="_blank" rel="noopener" aria-label="Start Citizenship Audit">Submit Final Documents for Lodgment</a>
+            <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20qualify%20for%20Direct%20Descent%20Citizenship%20%28Lane%201%29%20and%20have%20a%20question." class="btn-wa-cta" target="_blank" rel="noopener" data-wa="lane1-cta" aria-label="Ask a question on WhatsApp"><svg class="icon"><use href="#i-wa"/></svg>Ask on WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- LANE 2: COMPLEX LINEAGE & GRANDPARENTS -->
+      <section class="card" id="lane-2">
+        <h2>Lane 2: Complex Lineage & Other Routes</h2>
+        <p style="margin-bottom: 25px; font-size: 17px;">If you failed the document alignment check above, or are applying through an extended family member, your file requires heavy reconciliation before PICA will accept it. <strong>We manage the process for you if you fall into these categories:</strong></p>
+        
+        <ul class="scenario-list" style="margin-bottom: 40px; font-size: 16px;">
+          <li><strong>Grandparent Route:</strong> Claiming descent through a grandparent (requires unbroken document chain across 3 generations).</li>
+          <li><strong>Name Discrepancies:</strong> Your parent's name on your foreign birth certificate does not match their Jamaican birth certificate.</li>
+          <li><strong>Missing Generational Records:</strong> A parent or grandparent's birth was never officially registered in Jamaica.</li>
+          <li><strong>Citizenship by Marriage:</strong> Applying through a Jamaican spouse (requires local police clearances and joint declarations).</li>
+        </ul>
+
+        <details class="learn-more-details">
+          <summary class="btn-outline" aria-label="Expand to view required documents">View Requirements by Route</summary>
+          <div class="document-checklist-block">
+            <h4>Citizenship by Descent (Grandparent Route)</h4>
+            <ul>
+              <li>Your original long-form Birth Certificate.</li>
+              <li>The intermediate parent's Birth Certificate.</li>
+              <li>The Jamaican Grandparent's original Jamaican Birth Certificate.</li>
+              <li>Marriage certificates explaining any surname changes across the 3 generations.</li>
+              <li>Valid Photo IDs (or Death Certificates) for the parents/grandparents.</li>
+            </ul>
+
+            <h4>Citizenship by Marriage</h4>
+            <ul>
+              <li>Applicant's original Birth Certificate & Passport.</li>
+              <li>Jamaican Spouse's original Jamaican Birth Certificate & Passport.</li>
+              <li>Official Marriage Certificate.</li>
+              <li>Joint spousal declarations and local police record clearances.</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- HOW WE HELP -->
+        <div class="value-prop-block">
+          <h3>⚡ How We Resolve Complex Lineage</h3>
+          <p style="margin-bottom: 25px; font-size: 16px; color: var(--primary);">PICA will freeze your application for months if a single date or spelling is off. We provide a <strong>Lineage Reconciliation Service</strong> to fix the chain of custody before you apply.</p>
+          
+          <details class="learn-more-details">
+            <summary class="btn-outline" aria-label="Learn more about our process">Learn More About Our Process</summary>
+            <div style="margin-top: 25px; padding-top: 25px; border-top: 1px solid rgba(14, 165, 233, 0.3);">
+              <ul class="scenario-list" style="margin-bottom: 0; font-size: 15px;">
+                <li><strong>RGD Fetching:</strong> We coordinate with the Registrar General's Department to find and retrieve missing ancestral Jamaican birth certificates.</li>
+                <li><strong>Error Correction:</strong> We guide you on the necessary affidavits or deed polls required to bridge name spelling mismatches.</li>
+                <li><strong>PICA Kingston Lodgment:</strong> Once the file is 100% reconciled, we complete the forms, pay the fees, and physically submit the audited file to PICA Headquarters.</li>
+                <li><strong>Collection & Worldwide Dispatch:</strong> We track the multi-month processing, collect the final Citizenship Certificate, and ship it to you securely.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <!-- PROMINENT FEES BOX (Lane 2) -->
+        <div class="prominent-section">
+          <h3>Fees for Complex Proxy Representation</h3>
+          <table class="data-table">
+            <tr>
+              <th>Service Element</th>
+              <th>Laura Clarke Retainer</th>
+              <th>Official Gov Fees</th>
+            </tr>
+            <tr>
+              <td><strong>Complex Lineage Audit & Lodgment</strong><br><span style="font-size:13px; color:var(--text-muted);">Document reconciliation, RGD coordination & PICA proxy submission</span></td>
+              <td class="amount">$150 USD <span style="font-size:12px; color:var(--text-muted);">(Base retainer)</span></td>
+              <td class="amount">~$10,000 to $15,000 JMD</td>
+            </tr>
+            <tr>
+              <td style="border-bottom: none;"><strong>RGD Missing Document Fetches (If required)</strong></td>
+              <td class="amount" style="border-bottom: none;">$50 USD <span style="font-size:12px; color:var(--text-muted);">(Per RGD record)</span></td>
+              <td class="amount" style="border-bottom: none;">Varies by RGD search</td>
+            </tr>
+          </table>
+          <p style="font-size: 14px; color: var(--text-muted); margin-top: 15px; margin-bottom: 0;">
+            <em>Note: If your file requires extensive RGD late registrations or error corrections, we will provide a custom quote after auditing your initial documents.</em>
+          </p>
+        </div>
+
+        <!-- PROMINENT TERMS & RESPONSIBILITIES BOX (LANE 2) -->
+        <div class="terms-box">
+            <h4 style="margin-bottom: 20px;">Terms & Your Responsibilities</h4>
+            <p style="margin-bottom: 15px; font-weight: 600; color: var(--primary);">Because complex lineage requires extensive documentation, you will need to:</p>
+            <ul style="margin-bottom: 25px; padding-left: 20px; line-height: 1.8;">
+              <li>Procure original civil records from your country of birth.</li>
+              <li>Provide truthful family history and be prepared to execute legal affidavits if names do not match.</li>
+              <li>Understand that Citizenship by Marriage or Grandparent descent routinely takes <strong>6 to 12 months</strong> for PICA to investigate and process.</li>
+            </ul>
+            
+            <p style="margin-bottom: 10px; font-weight: 600; color: var(--primary);">Next Steps:</p>
+            <ol style="margin: 0; padding-left: 20px; line-height: 1.8;">
+              <li><strong>Submit Scans:</strong> Upload digital scans of whatever family certificates you currently possess.</li>
+              <li><strong>Consultation:</strong> We will review the file and identify exactly what is missing or misaligned before you ship anything to Jamaica.</li>
+              <li><strong>Policies:</strong> By proceeding, you agree to our <a href="/terms.html" target="_blank" style="color: var(--blue-highlight); font-weight: 600;">Terms & Conditions</a>.</li>
+            </ol>
+        </div>
+        
+        <!-- DUAL CTA AREA -->
+        <div class="cta-group">
+          <a href="https://forms.gle/baH9WjZvYCZC7ZE56" class="btn-cta" target="_blank" rel="noopener" aria-label="Start Complex Lineage Audit">Start Lineage Audit</a>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20am%20applying%20for%20Citizenship%20but%20my%20lineage%20is%20complex%20%28Lane%202%29.%20My%20situation%20is%3A%20" class="btn-wa-cta" target="_blank" rel="noopener" data-wa="lane2-cta" aria-label="Message us on WhatsApp"><svg class="icon"><use href="#i-wa"/></svg>WhatsApp Us Your Details</a>
+        </div>
+      </section>
+
+      <!-- FAQS -->
+      <section class="card" style="margin-bottom: 0;">
+        <h2>Citizenship Questions</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Which lane am I in?</summary>
+            <p>Answer the four questions in Lane 1. If you are applying through a parent, have all original documents, and the names match perfectly, you qualify for Lane 1. If you are applying via a grandparent, spouse, or have name misspellings, you belong in Lane 2.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Why is the citizenship service locked if I am missing a birth certificate?</summary>
+            <p>PICA will immediately reject any citizenship application that does not include certified original Jamaican birth certificates for the ancestral line. You must first use our RGD Search service to locate and retrieve missing records before submitting a citizenship file.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I apply for a Jamaican passport at the same time as my citizenship?</summary>
+            <p>Yes. Once PICA approves your citizenship and issues your certificate, we can seamlessly transition your file to our passport processing service so you receive both documents.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What if my parent was born in Jamaica but passed away before I applied?</summary>
+            <p>You can still claim citizenship by descent. You will need to provide their certified Death Certificate to complete the chain of custody alongside their Jamaican birth certificate.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What if my father's name isn't listed on my foreign birth certificate?</summary>
+            <p>If you are claiming descent through your father, his name must be on your long-form birth certificate. If it is missing, you must formally amend your foreign birth certificate in your country of birth before applying in Jamaica.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need to send original foreign birth certificates to Jamaica?</summary>
+            <p>Yes. PICA requires original, certified long-form birth certificates from your country of birth. They will review them and we will return the originals to you along with your new Citizenship Certificate.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Are government fees refundable?</summary>
+            <p>No. PICA processing fees are non-refundable once the application is submitted. Our service fee is separate and covered in our Terms & Conditions.</p>
+          </details>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===================== GLOBAL FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <p class="footer-brand">Laura Clarke Administrative Services</p>
+          <p>Pre-audits and local representation for Jamaican government documents, for clients at home and abroad.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/insights.html">Insights &amp; Guides</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="to-top" href="#top"><svg class="icon"><use href="#i-up"/></svg> Back to top</a>
+      </div>
+
+      <p class="disclaimer">Laura Clarke Administrative Services is an independent, private representation and administrative agency. We are not affiliated with, endorsed by, or representing the Government of Jamaica, PICA, TAJ, RGD, JCF, ITA, MFAFT or any government ministry or agency. Government fees are paid to the relevant agency and are separate from our concierge retainer. You may always apply to any agency directly yourself.</p>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Laura Clarke Administrative Services</p>
+        <ul class="legal-links">
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== PAGE BEHAVIOUR SCRIPTS ===================== -->
+  <script>
+    (function () {
+      'use strict';
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ---------- Mobile menu ---------- */
+      var toggle = document.querySelector('.menu-toggle');
+      var nav = document.getElementById('main-nav');
+      function setMenu(open) {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      toggle.addEventListener('click', function () { setMenu(!nav.classList.contains('is-open')); });
+      nav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
+      });
+      document.addEventListener('click', function (e) {
+        if (nav.classList.contains('is-open') && !e.target.closest('.site-header')) setMenu(false);
+      });
+
+      /* ---------- Back to top ---------- */
+      document.querySelectorAll('a[href="#top"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+          history.replaceState(null, '', location.pathname + location.search);
+          document.querySelector('.brand').focus({ preventScroll: true });
+        });
+      });
+
+      /* ---------- Footer year ---------- */
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      /* ---------- Eligibility Quiz Logic (4 Questions with Prerequisite Hard-Lock) ---------- */
+      const allRadios = document.querySelectorAll('input[type="radio"]');
+      const ctaContainer = document.getElementById('lane-a-cta-container');
+      const failureBox = document.getElementById('lane-a-failure');
+      const totalQuestions = 4;
+
+      allRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+          const anyNo = document.querySelector('input[type="radio"][value="no"]:checked');
+          
+          if (anyNo) {
+            ctaContainer.style.display = 'none';
+            failureBox.style.display = 'block';
+            
+            var reasons = {
+              q1: 'You are applying through a grandparent or spouse, which requires complex lineage tracking (Lane 2).',
+              q2: 'Without your long-form birth certificate, PICA cannot verify parental lineage.',
+              q3: 'Missing Jamaican Parent Birth Certificate: You MUST complete an RGD search to retrieve this document before applying for citizenship.',
+              q4: 'Name mismatches must be officially corrected via RGD or legal affidavits before PICA will accept the file.'
+            };
+            
+            var list = [];
+            document.querySelectorAll('input[type="radio"][value="no"]:checked').forEach(function (r) { 
+              list.push(reasons[r.name]); 
+            });
+            document.getElementById('lane-a-reason').textContent = list.join(' ');
+          } else {
+            const allYes = document.querySelectorAll('input[type="radio"][value="yes"]:checked');
+            
+            if (allYes.length === totalQuestions) {
+              failureBox.style.display = 'none';
+              ctaContainer.style.display = 'block';
+              
+              ctaContainer.style.opacity = '0';
+              setTimeout(() => {
+                ctaContainer.style.transition = 'opacity 0.4s ease';
+                ctaContainer.style.opacity = '1';
+              }, 10);
+            }
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
