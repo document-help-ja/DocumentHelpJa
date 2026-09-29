@@ -278,14 +278,32 @@
     .next-link .icon { width: 22px; height: 22px; color: var(--gold-text); }
     .next-link:hover { background: #E7ECE9; color: var(--ink); }
 
-    /* At a glance */
-    .glance h2 { font-size: .8rem !important; text-transform: uppercase; letter-spacing: .12em; color: var(--muted) !important; margin-bottom: 14px; }
-    .glance dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .glance div { background: var(--tone); border-radius: 10px; padding: 14px; }
-    .glance dt { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
-    .glance dd { margin: 4px 0 0; font-weight: 700; color: var(--ink); font-size: 1rem; line-height: 1.35; }
-    .glance .wide { grid-column: 1 / -1; }
-    @media (min-width: 600px) { .glance dl { grid-template-columns: repeat(3, 1fr); } .glance .wide { grid-column: auto; } }
+    /* At a glance: one clean list on phones, a 2-column grid on wider screens */
+    .glance h2 { font-size: .8rem !important; text-transform: uppercase; letter-spacing: .12em; color: var(--muted) !important; margin-bottom: 12px; }
+    .glance-list { list-style: none; padding: 0 !important; margin: 0 !important; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+    .glance-list li { margin: 0 !important; }
+    .glance-list li + li { border-top: 1px solid var(--line); }
+    .glance-list a { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) 18px; align-items: center; gap: 12px; min-height: 56px; padding: 12px 14px; text-decoration: none; color: var(--ink); background: #fff; }
+    .glance-list a:hover { background: var(--tone); }
+    .g-label { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; line-height: 1.35; }
+    .g-value { font-weight: 700; font-size: .98rem; line-height: 1.35; }
+    .g-go { width: 16px; height: 16px; color: var(--gold-text); }
+    .glance-hint { font-size: .82rem; color: var(--muted); margin: 8px 2px 0; }
+    @media (max-width: 479px) {
+      .glance-list a { grid-template-columns: minmax(0, 1fr) 18px; grid-template-rows: auto auto; row-gap: 2px; }
+      .g-label { grid-column: 1; grid-row: 1; }
+      .g-value { grid-column: 1; grid-row: 2; }
+      .g-go { grid-column: 2; grid-row: 1 / span 2; }
+    }
+    @media (min-width: 700px) {
+      .glance-list { display: grid; grid-template-columns: 1fr 1fr; border: 0; gap: 10px; overflow: visible; border-radius: 0; }
+      .glance-list li + li { border-top: 0; }
+      .glance-list a { grid-template-columns: minmax(0, 1fr) 18px; grid-template-rows: auto auto; row-gap: 2px; border-radius: 10px; background: var(--tone); height: 100%; }
+      .glance-list a:hover { background: #E7ECE9; }
+      .g-label { grid-column: 1; grid-row: 1; }
+      .g-value { grid-column: 1; grid-row: 2; }
+      .g-go { grid-column: 2; grid-row: 1 / span 2; }
+    }
 
     /* Interactive checklist */
     .checklist { list-style: none; padding: 0 !important; margin: 0 0 12px !important; display: grid; gap: 10px; }
@@ -585,14 +603,17 @@
           <p class="lead">Your first step toward driving in Jamaica is a <strong>Provisional Driver’s Licence</strong>, better known as a learner’s permit. It used to be a simple payment at the tax office. Effective January 25, 2020, you must first visit an Examination Depot to do a Road Code Test <em>before</em> proceeding to any Tax Office.</p>
           <div class="glance">
             <h2>At a glance</h2>
-            <dl>
-              <div><dt>Minimum age</dt><dd>17 years</dd></div>
-              <div><dt>Form</dt><dd>H3A</dd></div>
-              <div><dt>Permit fee</dt><dd>J$1,800 at TAJ</dd></div>
-              <div class="wide"><dt>Road Code Test</dt><dd>Free &middot; Multiple Choice &middot; 75% pass mark</dd></div>
-              <div><dt>Valid for</dt><dd>1 year</dd></div>
-              <div><dt>Before driving test</dt><dd>Hold 6 months</dd></div>
-            </dl>
+            <ul class="glance-list">
+              <li><a href="#eligibility"><span class="g-label">Minimum age</span><span class="g-value">17 years</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#step-1"><span class="g-label">Application form</span><span class="g-value">Form H3A</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#step-2"><span class="g-label">Road Code Test</span><span class="g-value">Free &middot; 75% pass mark</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#step-3"><span class="g-label">Permit fee</span><span class="g-value">J$1,800 at TAJ</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#rules"><span class="g-label">Permit valid for</span><span class="g-value">1 year</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#rules"><span class="g-label">Before your driving test</span><span class="g-value">Hold the permit 6 months</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#full-licence"><span class="g-label">Driving exam</span><span class="g-value">Written, yard &amp; road test</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#lost-permit"><span class="g-label">Lost permit</span><span class="g-value">Your 6-month clock keeps running</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+            </ul>
+            <p class="glance-hint">Tap any fact to jump to the details.</p>
           </div>
         </section>
 
