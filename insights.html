@@ -78,7 +78,7 @@
 
   --wrap: 72rem;
   --gutter: 1.25rem;
-  --radius: 10px;
+  --radius: 12px;
   --header-h: 68px;
 }
 
@@ -112,7 +112,9 @@ a { color: inherit; }
 .skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--paper); color: var(--ink); padding: 10px 16px; border-radius: 6px; font-weight: 600; }
 .skip:focus { top: 12px; }
 
-.section { padding: 4rem 0; }
+.section { padding: 3rem 0; }
+@media (min-width: 960px) { .section { padding: 4rem 0; } }
+
 .section-head { max-width: 40rem; margin-bottom: 2.25rem; }
 .section-head h2 { font-size: clamp(1.75rem, 5vw, 2.4rem); }
 .section-head p { margin-top: .75rem; color: var(--muted); }
@@ -203,29 +205,43 @@ a { color: inherit; }
 /* =========================================================
    4. PAGE HERO & LIBRARY
    ========================================================= */
-.page-hero { background: var(--ink); color: #D5D9DB; padding: 3rem 0 3.25rem; }
-.page-hero h1 { color: #fff; font-size: clamp(2.1rem, 7vw, 3.2rem); line-height: 1.1; }
-.page-lead { margin-top: 1rem; font-size: 1.125rem; line-height: 1.7; max-width: 40rem; }
-.page-byline { margin-top: 1rem; font-size: .95rem; color: #AEB5B9; }
-@media (min-width: 960px) { .page-hero { padding: 4.5rem 0; } }
+.page-hero { background: var(--ink); color: #D5D9DB; padding: 2.5rem 0 2.75rem; }
+.page-hero h1 { color: #fff; font-size: clamp(2rem, 6.5vw, 3.2rem); line-height: 1.15; }
+.page-lead { margin-top: 1rem; font-size: 1.05rem; line-height: 1.65; max-width: 40rem; }
+.page-byline { margin-top: 1rem; font-size: .9rem; color: #AEB5B9; }
+@media (min-width: 960px) { .page-hero { padding: 4.5rem 0; .page-lead { font-size: 1.125rem; } } }
 
-.directory { background: var(--paper); padding: 1.5rem 0 1.75rem; border-bottom: 1px solid var(--line); }
-.contents { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem 1.1rem .6rem; }
-.contents > h2 { font-family: var(--sans); font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: .75rem; }
-.dir-groups { display: grid; gap: .9rem; }
-.dir-group h3 { display: flex; align-items: baseline; gap: .45rem; font-family: var(--sans); font-size: .82rem; font-weight: 600; color: var(--muted); line-height: 1.3; padding-bottom: .35rem; border-bottom: 1px solid var(--tone); margin-bottom: .2rem; }
-.dir-agency { font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); background: var(--ink); padding: .12rem .45rem; border-radius: 4px; }
-.dir-group ul { list-style: none; margin: 0; padding: 0; }
-.dir-group li { padding: .28rem 0; font-size: .88rem; line-height: 1.4; }
-.contents a { color: var(--ink); font-weight: 500; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
-.contents a:hover { color: var(--gold-text); text-decoration-color: var(--gold); }
-@media (min-width: 700px) { .dir-groups { grid-template-columns: 1fr 1fr; column-gap: 2.5rem; } }
-@media (min-width: 1040px) { .dir-groups { grid-template-columns: repeat(3, 1fr); } .contents { padding: 1.4rem 1.5rem .9rem; } }
+/* DIRECTORY / TABLE OF CONTENTS (MOBILE OPTIMIZED) */
+.directory { background: var(--paper); padding: 1.75rem 0 2rem; border-bottom: 1px solid var(--line); }
+.contents { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem 1rem 1rem; }
+.contents > h2 { font-family: var(--sans); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 1rem; }
 
+.dir-groups { display: grid; gap: 1.75rem; }
+.dir-group h3 { display: flex; align-items: center; gap: .5rem; font-family: var(--sans); font-size: .9rem; font-weight: 700; color: var(--ink); line-height: 1.3; padding-bottom: .5rem; border-bottom: 2px solid var(--line); margin-bottom: .5rem; }
+.dir-agency { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); background: var(--ink); padding: .2rem .5rem; border-radius: 4px; flex-shrink: 0; }
+
+.dir-group ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .25rem; }
+.dir-group li { padding: 0; }
+.contents a.dir-link {
+  display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+  min-height: 48px; padding: .6rem .5rem;
+  color: var(--ink); font-size: .98rem; font-weight: 600; line-height: 1.4;
+  text-decoration: none; border-bottom: 1px dashed var(--line);
+  transition: all .15s ease;
+}
+.dir-group li:last-child a.dir-link { border-bottom: 0; }
+.contents a.dir-link:hover { color: var(--gold-text); background: var(--tone); padding-left: .75rem; border-radius: 6px; }
+.dir-link .link-arrow { color: var(--gold); font-weight: 700; font-size: 1.1rem; flex-shrink: 0; transition: transform .15s ease; }
+.contents a.dir-link:hover .link-arrow { transform: translateX(3px); }
+
+@media (min-width: 700px) { .dir-groups { grid-template-columns: 1fr 1fr; column-gap: 2.5rem; gap: 2rem; } }
+@media (min-width: 1040px) { .dir-groups { grid-template-columns: repeat(3, 1fr); } .contents { padding: 1.5rem 1.5rem 1rem; } }
+
+/* LIBRARY & CARDS */
 .library { background: var(--tone); }
 .filter-status { margin: 1rem 0 1.5rem; font-size: .92rem; color: var(--muted); }
 
-.article-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+.article-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
 @media (min-width: 700px) { .article-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
 @media (min-width: 1040px) { .article-grid { grid-template-columns: repeat(3, 1fr); } }
 
@@ -237,8 +253,10 @@ a { color: inherit; }
 .article-card:hover, .article-card:focus-within { border-color: var(--gold); }
 .card-media { aspect-ratio: 16 / 9; background: #D9E0DC; overflow: hidden; }
 .card-media img { width: 100%; height: 100%; object-fit: cover; }
-.card-body { display: flex; flex-direction: column; flex: 1; padding: 1.25rem 1.5rem 1.5rem; }
-.card-body h3 { margin-top: .9rem; font-size: 1.25rem; line-height: 1.3; }
+.card-body { display: flex; flex-direction: column; flex: 1; padding: 1.25rem 1.25rem 1.5rem; }
+@media (min-width: 600px) { .card-body { padding: 1.5rem; } }
+
+.card-body h3 { margin-top: .9rem; font-size: 1.25rem; line-height: 1.35; }
 .card-body h3 a { text-decoration: none; }
 .card-body h3 a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
 .card-body .excerpt { margin-top: .75rem; margin-bottom: 1.25rem; font-size: .98rem; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -248,7 +266,7 @@ a { color: inherit; }
 
 /* Featured guide card */
 .article-card.featured { border: 1.5px solid var(--gold); }
-.featured-badge { display: inline-block; margin-right: .35rem; padding: .1rem .45rem; background: var(--gold); color: var(--ink); border-radius: 3px; font-size: .75rem; }
+.featured-badge { display: inline-block; margin-right: .35rem; padding: .15rem .5rem; background: var(--gold); color: var(--ink); border-radius: 4px; font-size: .75rem; font-weight: 700; }
 @media (min-width: 700px) {
   .article-card.featured { grid-column: 1 / -1; flex-direction: row; }
   .article-card.featured .card-media { flex: 0 0 45%; aspect-ratio: auto; min-height: 280px; }
@@ -258,49 +276,30 @@ a { color: inherit; }
 }
 
 /* Hidden state for extra guides */
-.article-card.is-extra {
-  display: none;
-}
-.article-card.is-extra.is-visible {
-  display: flex;
-  animation: fadeIn 0.3s ease-in;
-}
+.article-card.is-extra { display: none; }
+.article-card.is-extra.is-visible { display: flex; animation: fadeIn 0.3s ease-in; }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.toggle-container {
-  text-align: center;
-  margin-top: 2.5rem;
-}
+.toggle-container { text-align: center; margin-top: 2.5rem; }
 
 .btn-toggle-guides {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--ink);
-  color: #FFF;
-  border: none;
-  padding: 14px 28px;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--ink); color: #FFF; border: none;
+  padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 1rem;
+  cursor: pointer; transition: all 0.2s ease; width: 100%; max-width: 20rem; justify-content: center;
 }
-.btn-toggle-guides:hover {
-  background: #2B2F31;
-  color: var(--gold);
-}
+.btn-toggle-guides:hover { background: #2B2F31; color: var(--gold); }
 
 .unlisted {
   margin-top: 3rem; background: var(--ink); color: #D5D9DB;
   border-radius: var(--radius); border-left: 4px solid var(--gold);
-  padding: 2rem 1.5rem; display: grid; gap: 1.75rem;
+  padding: 1.75rem 1.25rem; display: grid; gap: 1.5rem;
 }
-.unlisted h3 { color: #fff; font-size: clamp(1.45rem, 4.5vw, 1.9rem); }
+.unlisted h3 { color: #fff; font-size: clamp(1.4rem, 4.5vw, 1.9rem); }
 .unlisted > div > p { margin-top: .6rem; max-width: 38rem; }
 .unlisted .btn { width: 100%; }
 @media (min-width: 960px) {
@@ -398,50 +397,50 @@ a { color: inherit; }
     </div>
   </section>
 
-  <!-- ===================== DIRECTORY ===================== -->
+  <!-- ===================== DIRECTORY (MOBILE OPTIMIZED) ===================== -->
   <section class="directory">
     <div class="wrap">
       <nav class="contents" id="guides" aria-labelledby="contents-title">
-        <h2 id="contents-title">Guide directory</h2>
+        <h2 id="contents-title">Guide Directory</h2>
         <div class="dir-groups">
           <div class="dir-group">
-            <h3><span class="dir-agency">ITA</span> Driving &amp; licensing</h3>
+            <h3><span class="dir-agency">ITA</span> Driving &amp; Licensing</h3>
             <ul>
-              <li><a href="/jamaica-learners-permit-guide.html">How to Get Your Jamaican Learner’s Permit: The Complete Step-by-Step Guide</a></li>
-              <li><a href="/drivers-licence-renewal.html">How Unpaid Traffic Tickets Block Your Jamaican Driver's Licence Renewal</a></li>
-              <li><a href="/motor-vehicle-licence.html">The Simple Guide to Jamaican Motor Vehicle Licence Renewal (Fitness &amp; Registration)</a></li>
+              <li><a href="/jamaica-learners-permit-guide.html" class="dir-link"><span>How to Get Your Jamaican Learner’s Permit</span> <span class="link-arrow">&rarr;</span></a></li>
+              <li><a href="/drivers-licence-renewal.html" class="dir-link"><span>Unpaid Traffic Tickets &amp; Licence Renewal</span> <span class="link-arrow">&rarr;</span></a></li>
+              <li><a href="/motor-vehicle-licence.html" class="dir-link"><span>Motor Vehicle Fitness &amp; Registration</span> <span class="link-arrow">&rarr;</span></a></li>
             </ul>
           </div>
           <div class="dir-group">
             <h3><span class="dir-agency">TAJ</span> Tax Administration Jamaica</h3>
             <ul>
-              <li><a href="/self-employed-s04-tax-guide">The Self-Employed Tax Trap: Why Freelancers and Gig Workers Still Owe TAJ, and How to File Your S04</a></li>
-              <li><a href="/trn-application.html">Jamaican TRN Application for Overseas Diaspora and Non-Nationals</a></li>
+              <li><a href="/self-employed-s04-tax-guide" class="dir-link"><span>Self-Employed S04 Tax Return Guide</span> <span class="link-arrow">&rarr;</span></a></li>
+              <li><a href="/trn-application.html" class="dir-link"><span>TRN Application for Diaspora &amp; Non-Nationals</span> <span class="link-arrow">&rarr;</span></a></li>
             </ul>
           </div>
           <div class="dir-group">
             <h3><span class="dir-agency">Customs</span> Jamaica Customs Agency</h3>
             <ul>
-              <li><a href="/jamaica-c5-travel-form">Don't Let the C5 Travel Form Trap Your Barrels at the Wharf</a></li>
+              <li><a href="/jamaica-c5-travel-form" class="dir-link"><span>C5 Travel Form &amp; Barrel Clearance</span> <span class="link-arrow">&rarr;</span></a></li>
             </ul>
           </div>
           <div class="dir-group">
             <h3><span class="dir-agency">NIS</span> National Insurance Scheme</h3>
             <ul>
-              <li><a href="/jamaica-nis-guide">The Jamaican NIS Survival Guide: Closing Gaps, Voluntary Cards &amp; Avoiding the Lump Sum Trap</a></li>
+              <li><a href="/jamaica-nis-guide" class="dir-link"><span>Jamaican NIS Pension &amp; Record Gap Guide</span> <span class="link-arrow">&rarr;</span></a></li>
             </ul>
           </div>
           <div class="dir-group">
-            <h3><span class="dir-agency">PICA</span> Passports &amp; citizenship</h3>
+            <h3><span class="dir-agency">PICA</span> Passports &amp; Citizenship</h3>
             <ul>
-              <li><a href="/jamaican-citizenship-application.html">How Do I Claim Jamaican Citizenship Through a Jamaican Parent?</a></li>
-              <li><a href="/jamaican-passport-renewal.html">The Complete Jamaican Passport Application &amp; Renewal Guide</a></li>
+              <li><a href="/jamaican-citizenship-application.html" class="dir-link"><span>Claiming Citizenship Through a Parent</span> <span class="link-arrow">&rarr;</span></a></li>
+              <li><a href="/jamaican-passport-renewal.html" class="dir-link"><span>Jamaican Passport Application &amp; Renewal</span> <span class="link-arrow">&rarr;</span></a></li>
             </ul>
           </div>
           <div class="dir-group">
-            <h3><span class="dir-agency">JCF</span> Police records</h3>
+            <h3><span class="dir-agency">JCF</span> Police Records</h3>
             <ul>
-              <li><a href="/jamaica-police-record.html">Don't Get Turned Away: The Essential Guide to Getting a Jamaican Police Record</a></li>
+              <li><a href="/jamaica-police-record.html" class="dir-link"><span>Essential Police Record Application Guide</span> <span class="link-arrow">&rarr;</span></a></li>
             </ul>
           </div>
         </div>
@@ -460,7 +459,7 @@ a { color: inherit; }
 
         <!-- 1. FEATURED TOP CARD: LEARNER'S PERMIT -->
         <article id="g-jamaica-learners-permit-guide" class="article-card featured" data-cat="driving taj">
-          <div class="card-media"><img src="/assets/motor-vehicle.webp" alt="Learner driver behind the wheel with an L plate" loading="lazy" decoding="async"></div>
+          <div class="card-media"><img src="/assets/learner-permit-hero.webp" alt="Learner driver behind the wheel with an L plate" loading="lazy" decoding="async"></div>
           <div class="card-body">
             <div class="post-meta"><span class="cat"><span class="featured-badge">Featured</span> ITA &amp; TAJ Licensing</span><time datetime="2026-09-29">Sep 29, 2026</time></div>
             <h3><a href="/jamaica-learners-permit-guide.html">How to Get Your Jamaican Learner’s Permit: The Complete Step-by-Step Guide</a></h3>
