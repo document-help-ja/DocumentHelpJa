@@ -270,14 +270,32 @@
     .next-link .icon { width: 22px; height: 22px; color: var(--gold-text); }
     .next-link:hover { background: #E7ECE9; color: var(--ink); }
 
-    /* At a glance */
-    .glance h2 { font-size: .8rem !important; text-transform: uppercase; letter-spacing: .12em; color: var(--muted) !important; margin-bottom: 14px; }
-    .glance dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .glance div { background: var(--tone); border-radius: 10px; padding: 14px; }
-    .glance dt { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
-    .glance dd { margin: 4px 0 0; font-weight: 700; color: var(--ink); font-size: 1rem; line-height: 1.35; }
-    .glance .wide { grid-column: 1 / -1; }
-    @media (min-width: 600px) { .glance dl { grid-template-columns: repeat(3, 1fr); } .glance .wide { grid-column: auto; } }
+    /* At a glance: one clean list on phones, a 2-column grid on wider screens */
+    .glance h2 { font-size: .8rem !important; text-transform: uppercase; letter-spacing: .12em; color: var(--muted) !important; margin-bottom: 12px; }
+    .glance-list { list-style: none; padding: 0 !important; margin: 0 !important; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+    .glance-list li { margin: 0 !important; }
+    .glance-list li + li { border-top: 1px solid var(--line); }
+    .glance-list a { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) 18px; align-items: center; gap: 12px; min-height: 56px; padding: 12px 14px; text-decoration: none; color: var(--ink); background: #fff; }
+    .glance-list a:hover { background: var(--tone); }
+    .g-label { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; line-height: 1.35; }
+    .g-value { font-weight: 700; font-size: .98rem; line-height: 1.35; }
+    .g-go { width: 16px; height: 16px; color: var(--gold-text); }
+    .glance-hint { font-size: .82rem; color: var(--muted); margin: 8px 2px 0; }
+    @media (max-width: 479px) {
+      .glance-list a { grid-template-columns: minmax(0, 1fr) 18px; grid-template-rows: auto auto; row-gap: 2px; }
+      .g-label { grid-column: 1; grid-row: 1; }
+      .g-value { grid-column: 1; grid-row: 2; }
+      .g-go { grid-column: 2; grid-row: 1 / span 2; }
+    }
+    @media (min-width: 700px) {
+      .glance-list { display: grid; grid-template-columns: 1fr 1fr; border: 0; gap: 10px; overflow: visible; border-radius: 0; }
+      .glance-list li + li { border-top: 0; }
+      .glance-list a { grid-template-columns: minmax(0, 1fr) 18px; grid-template-rows: auto auto; row-gap: 2px; border-radius: 10px; background: var(--tone); height: 100%; align-content: start; }
+      .glance-list a:hover { background: #E7ECE9; }
+      .g-label { grid-column: 1; grid-row: 1; }
+      .g-value { grid-column: 1; grid-row: 2; }
+      .g-go { grid-column: 2; grid-row: 1 / span 2; }
+    }
 
     /* Interactive checklist */
     .checklist { list-style: none; padding: 0 !important; margin: 0 0 12px !important; display: grid; gap: 10px; }
@@ -687,7 +705,7 @@
       <nav class="section-nav" aria-label="Jump to a section">
         <p class="nav-title">In this guide</p>
         <ol>
-          <li><a href="#takeaways"><span class="num">i</span>Key takeaways</a></li>
+          <li><a href="#takeaways"><span class="num">i</span>At a glance</a></li>
           <li><a href="#prerequisites"><span class="num">✓</span>What you need</a></li>
           <li><a href="#process"><span class="num">→</span>Step-by-step</a></li>
           <li><a href="#traps"><span class="num">!</span>Rejection traps</a></li>
@@ -709,15 +727,21 @@
         <section class="card" id="takeaways" aria-labelledby="takeaways-title">
           <div class="card-head">
             <span class="step-badge" aria-hidden="true">i</span>
-            <div><span class="eyebrow">The short version</span><h2 id="takeaways-title">Key takeaways</h2></div>
+            <div><span class="eyebrow">The short version</span><h2 id="takeaways-title">At a glance</h2></div>
           </div>
-          <ul class="takeaway-list">
-            <li><strong>Automated ticket holds:</strong> real-time Traffic Management System (TMS) checks at TAJ immediately block renewals for outstanding traffic citations.</li>
-            <li><strong>60-day temporary driving window:</strong> once payment is made, your official TAJ receipt together with your expired physical licence legally permits you to drive for up to 60 days while you wait for your new card.</li>
-            <li><strong>Location determines speed:</strong> same-day card printing is only available at designated Revenue Service Centres. Smaller drop-off tax offices take up to 20 business days.</li>
-            <li><strong>Diaspora proxy rule:</strong> authorisation letters for overseas renewals must be notarised and officially stamped at the Stamp Duty Office in Jamaica before TAJ will accept them.</li>
-            <li><strong>Medical clearances:</strong> Form MC1 is mandatory for drivers over 70 and for all commercial and public passenger vehicle (PPV) licence holders.</li>
-          </ul>
+          <div class="glance">
+            <ul class="glance-list">
+              <li><a href="#prerequisites"><span class="g-label">Application form</span><span class="g-value">Form F7</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#process"><span class="g-label">Where to pay</span><span class="g-value">Online at jamaicatax.gov.jm or a TAJ cashier</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#blockers"><span class="g-label">Unpaid tickets</span><span class="g-value">Block renewal until cleared at Traffic Court</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#sixty-day"><span class="g-label">Driving while you wait</span><span class="g-value">TAJ receipt + expired licence, up to 60 days</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#directory"><span class="g-label">Same-day card</span><span class="g-value">Designated RSCs &amp; tax offices only</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#directory"><span class="g-label">Drop-off offices</span><span class="g-value">Up to 20 business days</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#medical"><span class="g-label">Medical (Form MC1)</span><span class="g-value">Over 70 &amp; commercial/PPV, within 90 days</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#proxy"><span class="g-label">Renewing from overseas</span><span class="g-value">Notarised letter, stamped at Stamp Duty (J$500)</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+            </ul>
+            <p class="glance-hint">Tap any fact to jump to the details.</p>
+          </div>
           <a class="next-link" href="#prerequisites"><div><span>Next</span><strong>What you need</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
 
