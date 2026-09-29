@@ -237,6 +237,12 @@
     .btn-wa-cta .icon { width: 20px; height: 20px; }
     .cta-sub { text-align: center; font-size: 15px; color: var(--text-muted); margin: 18px 0 0; }
     .cta-sub a { color: var(--blue-highlight); font-weight: 600; }
+    .booking-embed { margin-top: 40px; padding-top: 30px; border-top: 2px solid var(--bg); text-align: center; }
+    .booking-embed h3 { font-family: var(--sans); font-size: 20px; color: var(--primary); margin-bottom: 6px; }
+    .booking-embed p { margin: 0 0 18px; font-size: 15px; color: var(--text-muted); }
+    .booking-frame { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: #FFF; }
+    .booking-frame iframe { display: block; width: 100%; height: 640px; border: 0; }
+    @media (max-width: 600px) { .booking-frame iframe { height: 880px; } }
     .cta-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
 
     /* =========================================================
@@ -320,6 +326,7 @@
       border-radius: 16px; padding: 50px; margin-bottom: 80px;
       box-shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
     }
+    section[id^="lane-"] { scroll-margin-top: 96px; }
     .card h2 { color: var(--primary); font-size: 26px; border-bottom: 3px solid var(--bg); padding-bottom: 16px; margin-top: 0; margin-bottom: 30px; font-family: var(--sans); }
 
     /* ELIGIBILITY QUIZ */
@@ -539,7 +546,7 @@
       </header>
 
       <!-- LANE 1: CONCIERGE -->
-      <section class="card">
+      <section class="card" id="lane-1">
         <h2>Lane 1: 100% Concierge (Adult Renewals)</h2>
         <p style="margin-bottom: 25px; font-size: 17px;"><strong>We can act as your proxy and handle the entire submission IF you meet all of these criteria. Please verify your eligibility below:</strong></p>
         
@@ -655,7 +662,7 @@
       </section>
 
       <!-- LANE 2: PREPARATION -->
-      <section class="card">
+      <section class="card" id="lane-2">
         <h2>Lane 2: Complex Cases & First-Time Applicants</h2>
         <p style="margin-bottom: 25px; font-size: 17px;">If you answered "No" to any questions in Lane 1, PICA requires physical original documents or an in-person appearance. <strong>We prepare the complete, error-free file for you if you fall into these categories:</strong></p>
         
@@ -822,7 +829,15 @@
           <a href="https://forms.gle/baH9WjZvYCZC7ZE56" class="btn-cta" target="_blank" rel="noopener" aria-label="Start Package Preparation Request">Start Package Preparation</a>
           <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20passport%20package%20%28Lane%202%29.%20My%20situation%20is%3A%20" class="btn-wa-cta" target="_blank" rel="noopener" data-wa="lane2-cta" aria-label="Message us on WhatsApp about your passport package"><svg class="icon"><use href="#i-wa"/></svg>WhatsApp Us Your Situation</a>
         </div>
-        <p class="cta-sub">Prefer a scheduled call? <a href="/#contact">Book a consultation</a>.</p>
+        <!-- Google Calendar Appointment Scheduling begin -->
+        <div class="booking-embed">
+          <h3>Prefer a scheduled call?</h3>
+          <p>Pick a time that suits you and we'll walk through your case together.</p>
+          <div class="booking-frame">
+            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ24v8vZefGbJfwB2cgwYn78G9vc4JRiKSj6ZKIOx327k-wxtCTaxo0t2x7Dngbw90pjytAjbpWA?gv=true" title="Book an appointment with Laura Clarke Administrative Services" loading="lazy"></iframe>
+          </div>
+        </div>
+        <!-- end Google Calendar Appointment Scheduling -->
       </section>
 
       <!-- FAQS -->
