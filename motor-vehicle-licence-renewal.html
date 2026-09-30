@@ -3,570 +3,215 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Motor Vehicle Licence & Fitness Renewal | Laura Clarke Administrative Services</title>
-  <meta name="description" content="Skip the lines at the TAJ Tax Office and ITA Fitness Depot. We process your Jamaican motor vehicle registration entirely online and email your new title.">
+  <title>Motor Vehicle Licence & Fitness Renewal | Laura Clarke</title>
+  <meta name="description" content="Skip the lines at the TAJ Tax Office. We pre-pay your fitness fees and process your Jamaican motor vehicle registration entirely online.">
   <link rel="canonical" href="https://documenthelpja.com/motor-vehicle-licence-renewal.html">
   <meta name="theme-color" content="#181A1B">
-
-  <!-- SOCIAL SHARING & AI GRAPH TAGS -->
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_JM">
-  <meta property="og:site_name" content="Laura Clarke Administrative Services">
-  <meta property="og:title" content="Jamaican Motor Vehicle Registration Renewal">
-  <meta property="og:description" content="100% online process. We eliminate the queues and process your motor vehicle registration renewal digitally, emailing the new certificate straight to your inbox.">
-  <meta property="og:url" content="https://documenthelpja.com/motor-vehicle-licence-renewal.html">
-  <meta property="og:image" content="https://documenthelpja.com/assets/office-hero.webp">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- FONTS -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================================================
-       1. GLOBAL DESIGN TOKENS
-       ========================================================= */
     :root {
-      --ink: #181A1B;          
-      --text: #2F3538;         
-      --muted: #565E63;        
-      --paper: #FFFFFF;
-      --tone: #F2F5F3;         
-      --line: #D6DDD9;
-      --gold: #C89B3C;         
-      --gold-hover: #B08733;
       --primary: #0F2537; 
       --accent: #D4AF37; 
       --bg: #F4F6F8; 
       --card-bg: #FFFFFF; 
       --blue-highlight: #084298;
-      --success: #198754;
-      --success-bg: #ECFDF5;
-      --warning-bg: #FFFBEB;
-      --error-bg: #FEF2F2;
-      --error-border: #EF4444;
-      --error-text: #B91C1C;
+      --text: #2F3538;
+      --text-muted: #565E63;
       --border: #E2E8F0;
-      --text-muted: #64748B;
-
-      --serif: "Playfair Display", Georgia, "Times New Roman", serif;
-      --sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      --wrap: 72rem;
-      --gutter: 1.25rem;
-      --header-h: 68px;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: Inter, system-ui, sans-serif;
+      --tone: #F2F5F3;         
+      --line: #D6DDD9;
     }
-    
     body { 
-      margin: 0; font-family: var(--sans); font-size: 1.0625rem;
+      margin: 0; font-family: var(--sans); font-size: 16px;
       background-color: var(--bg); color: var(--text); line-height: 1.65; 
       -webkit-font-smoothing: antialiased;
     }
-
     *, *::before, *::after { box-sizing: border-box; }
-    h1, h2, h3, h4 { font-family: var(--serif); color: var(--ink); line-height: 1.2; margin: 0; font-weight: 700; }
-    a { color: inherit; }
-    .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
-    .icon { width: 1.15em; height: 1.15em; flex-shrink: 0; fill: currentColor; }
-    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-
-    /* =========================================================
-       2. BUTTONS
-       ========================================================= */
-    .btn-cta { 
-      display: inline-flex; align-items: center; justify-content: center;
-      background: var(--accent); color: var(--primary); font-weight: 700; font-size: 16px; 
-      padding: 16px 35px; border-radius: 6px; text-decoration: none; text-transform: uppercase; 
-      letter-spacing: 0.5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.2s ease; border: none; cursor: pointer;
-    }
-    .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+    h1, h2, h3, h4 { font-family: var(--serif); color: var(--primary); margin: 0; line-height: 1.2; }
+    a { color: inherit; text-decoration: none; }
     
-    .btn-wa-cta {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      background: #146C43; color: #FFF; font-weight: 700; font-size: 16px; padding: 16px 30px;
-      border-radius: 6px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.2s ease; border: none; cursor: pointer;
-    }
-    .btn-wa-cta:hover { background: #0F5132; transform: translateY(-2px); color: #FFF; }
-    .btn-wa-cta .icon { width: 20px; height: 20px; }
-    .cta-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
-
-    /* =========================================================
-       3. HEADER
-       ========================================================= */
-    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); }
-    .header-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: var(--header-h); }
-    .brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; min-height: 44px; }
-    .brand-mark { width: 42px; height: 42px; border-radius: 6px; background: var(--ink); color: var(--gold); display: grid; place-items: center; font: 700 1.1rem/1 var(--serif); }
-    .brand-name { display: block; font: 700 1.1rem/1.15 var(--serif); color: var(--ink); }
-    .brand-sub { display: block; font-size: .74rem; color: var(--muted); font-weight: 500; }
-    .header-actions { display: flex; align-items: center; gap: .5rem; }
-    .wa-chip { padding: .55rem .9rem; font-size: .9rem; background: var(--ink); color: #fff; border-radius: 6px; text-decoration: none; display: flex; align-items: center; gap: .5rem; font-weight: 600;}
-    .wa-chip .icon { color: var(--gold); }
-
-    .menu-toggle { width: 46px; height: 46px; display: grid; place-items: center; background: transparent; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); cursor: pointer; }
-    .menu-toggle .icon-close { display: none; }
-    .menu-toggle[aria-expanded="true"] .icon-open { display: none; }
-    .menu-toggle[aria-expanded="true"] .icon-close { display: block; }
-    .main-nav { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 18px 30px -18px rgba(24,26,27,.35); }
-    .main-nav.is-open { display: block; }
-    .main-nav ul { padding: .5rem var(--gutter) 1rem; list-style: none; margin: 0; }
-    .main-nav a { display: flex; align-items: center; min-height: 52px; font-weight: 600; font-size: 1.05rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--tone); }
-    .main-nav li:last-child a { border-bottom: 0; }
-
-    @media (min-width: 960px) {
-      :root { --header-h: 80px; }
-      .menu-toggle { display: none; }
-      .main-nav { display: block; position: static; background: none; border: 0; box-shadow: none; margin-left: auto; }
-      .main-nav ul { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
-      .main-nav a { min-height: 44px; border: 0; font-size: .95rem; font-weight: 500; color: var(--text); border-bottom: 2px solid transparent; }
-      .main-nav a:hover { color: var(--ink); border-bottom-color: var(--gold); }
-    }
-
-    /* =========================================================
-       4. PAGE ARCHITECTURE
-       ========================================================= */
-    .service-container { max-width: 850px; margin: 60px auto; padding: 0 20px; }
+    /* Header */
+    .site-header { background: #fff; border-bottom: 1px solid var(--border); padding: 16px 20px; position: sticky; top: 0; z-index: 50; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-weight: 700; font-family: var(--serif); font-size: 20px; color: var(--primary); }
     
-    .page-hero { 
-      background: var(--primary); color: #FFF; padding: 60px 40px; 
-      border-radius: 12px; text-align: center; margin-bottom: 60px;
-      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15);
-    }
-    .page-hero h1 { margin: 0 0 20px; font-size: 32px; line-height: 1.3; color: #FFF; font-family: var(--sans); }
-    .page-hero p { margin: 0 auto; color: #CBD5E1; font-size: 17px; max-width: 650px; }
-
-    .card { 
-      background: var(--card-bg); border: 1px solid var(--border); 
-      border-radius: 16px; padding: 50px; margin-bottom: 60px;
-      box-shadow: 0 8px 20px -4px rgba(0,0,0,0.06);
-    }
-    .card h2 { color: var(--primary); font-size: 26px; border-bottom: 3px solid var(--bg); padding-bottom: 16px; margin-top: 0; margin-bottom: 30px; font-family: var(--sans); }
-
-    /* SERVICE ROUTER QUIZ */
-    .quiz-container { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 30px; margin-bottom: 40px; }
-    .quiz-title { margin-top: 0; margin-bottom: 20px; font-size: 20px; color: var(--primary); font-family: var(--sans); }
-    .quiz-question { margin-bottom: 25px; }
-    .quiz-question:last-child { margin-bottom: 0; }
-    .quiz-question p { margin: 0 0 10px; font-weight: 600; font-size: 16px; color: var(--primary); }
-    .quiz-options { display: flex; gap: 25px; flex-wrap: wrap; }
-    .radio-label { display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 16px; font-weight: 500; }
-    .radio-label input[type="radio"] { width: 20px; height: 20px; accent-color: var(--blue-highlight); cursor: pointer; }
+    /* Hero */
+    .hero { background: var(--primary); color: #fff; padding: 60px 20px; text-align: center; }
+    .hero h1 { color: #fff; font-size: clamp(28px, 5vw, 42px); margin-bottom: 16px; }
+    .hero p { color: #CBD5E1; font-size: 18px; max-width: 600px; margin: 0 auto 30px; }
     
-    .form-select { width: 100%; max-width: 450px; padding: 12px; border-radius: 6px; border: 1px solid var(--line); font-size: 16px; font-family: var(--sans); color: var(--text); cursor: pointer; background: #fff; }
-    .form-select:focus { outline: 2px solid var(--blue-highlight); border-color: transparent; }
-
-    .failure-box { background: var(--error-bg); border-left: 6px solid var(--error-border); padding: 25px; border-radius: 8px; display: none; margin-top: 20px; }
+    /* Main Container */
+    .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
     
-    /* Dynamic Lanes */
-    .lane-content { display: none; margin-top: 40px; animation: fadeIn 0.5s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* Tables & Callouts */
-    .prominent-section { background: #FFFFFF; border: 2px solid var(--border); border-radius: 12px; padding: 35px; margin: 30px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-    .prominent-section h3 { margin-bottom: 25px; color: var(--primary); font-family: var(--sans); font-size: 20px; }
+    /* Service Cards (The Core Pitch) */
+    .service-grid { display: grid; gap: 30px; margin-bottom: 50px; }
+    @media(min-width: 768px) { .service-grid { grid-template-columns: 1fr 1fr; } }
     
-    .data-table { width: 100%; border-collapse: collapse; background: #FAFAFA; border-radius: 8px; overflow: hidden; margin: 0; }
-    .data-table th { background: var(--primary); color: #FFF; padding: 15px 20px; text-align: left; font-size: 15px; font-family: var(--sans); }
-    .data-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); font-size: 15px; }
-    .data-table td.amount { font-weight: 700; color: var(--blue-highlight); text-align: right; }
-    .data-table th:last-child { text-align: right; }
-
-    .terms-box { background: #F4F6F8; border-left: 6px solid var(--primary); padding: 30px; border-radius: 8px; font-size: 15px; margin: 30px 0; }
-    .terms-box h4 { margin-top: 0; margin-bottom: 15px; color: var(--primary); font-family: var(--sans); font-size: 18px; }
-    .terms-box ul { padding-left: 20px; margin: 0; line-height: 1.7; }
-    .terms-box li { margin-bottom: 10px; }
-
-    .success-box { background: var(--success-bg); border-left: 6px solid var(--success); padding: 30px; border-radius: 8px; font-size: 15px; margin: 30px 0; }
-    .success-box h4 { margin-top: 0; margin-bottom: 15px; color: var(--success); font-family: var(--sans); font-size: 18px; }
-    .success-box ul { padding-left: 20px; margin: 0; line-height: 1.7; }
-    .success-box li { margin-bottom: 10px; }
-
-    .verify-note { font-size: 13px; color: var(--text-muted); margin-top: 15px; background: #FFFBEB; border: 1px solid #FCD34D; padding: 12px 15px; border-radius: 6px; }
-
-    /* FAQ section */
-    .faq-list { display: grid; gap: 12px; margin-top: 20px; }
-    details.faq-item { border: 1px solid var(--border); border-radius: 10px; background: #FFF; margin: 0; }
-    details.faq-item > summary {
-      list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      padding: 18px 22px; font: 600 16px/1.4 var(--sans); color: var(--primary); min-height: 48px;
-    }
-    details.faq-item > summary::-webkit-details-marker { display: none; }
-    details.faq-item > summary::after {
-      content: "+"; flex-shrink: 0; display: grid; place-items: center; width: 28px; height: 28px; 
-      border-radius: 50%; background: var(--tone); color: var(--gold-text); font-size: 1.2rem; font-weight: 600; transition: transform .2s;
-    }
-    details.faq-item[open] > summary::after { transform: rotate(45deg); }
-    details.faq-item > p { margin: 0; padding: 0 22px 20px; font-size: 15px; color: var(--text-muted); line-height: 1.6; }
-
-    /* =========================================================
-       5. FOOTER
-       ========================================================= */
-    .site-footer { background: var(--ink); color: #B9C0C4; font-size: .95rem; padding-bottom: env(safe-area-inset-bottom, 0px); }
-    .footer-top { display: grid; gap: 2rem; padding: 3rem 20px 2rem; border-bottom: 1px solid rgba(255,255,255,.12); max-width: var(--wrap); margin: 0 auto; }
-    .footer-brand { font: 700 1.2rem/1.3 var(--serif); color: #fff; margin: 0; }
-    .footer-brand + p { margin-top: .5rem; max-width: 26rem; margin-bottom: 0; }
-    .footer-nav ul { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem 1.5rem; list-style: none; padding: 0; margin: 0; }
-    .footer-nav a, .legal-links a { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; color: #E6E8E9; text-decoration: none; font-weight: 500; }
-    .footer-nav a:hover, .legal-links a:hover { color: var(--gold); }
-    .footer-bottom { display: flex; flex-direction: column; gap: .5rem; padding: 1.25rem 20px 2rem; font-size: .88rem; max-width: var(--wrap); margin: 0 auto; }
-    .legal-links { display: flex; flex-wrap: wrap; gap: 0 1.5rem; list-style: none; padding: 0; margin: 0; }
+    .service-card { background: var(--card-bg); border: 2px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .service-card.featured { border-color: var(--accent); }
+    .card-head { padding: 24px; border-bottom: 1px solid var(--border); }
+    .featured .card-head { background: #FAFAFA; }
+    .card-head h2 { font-size: 24px; margin-bottom: 8px; }
+    .badge { display: inline-block; background: #E0ECFF; color: var(--blue-highlight); font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; text-transform: uppercase; margin-bottom: 12px; }
+    .featured .badge { background: #FEF3C7; color: #92400E; }
     
-    @media (min-width: 860px) {
-      .footer-top { grid-template-columns: 1.4fr 1fr auto; align-items: start; }
-      .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
-    }
+    .card-body { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
+    .price-block { margin-bottom: 20px; }
+    .price { font-size: 28px; font-weight: 700; color: var(--primary); font-family: var(--sans); }
+    .price-note { display: block; font-size: 14px; color: var(--text-muted); }
+    
+    .feature-list { list-style: none; padding: 0; margin: 0 0 30px 0; flex-grow: 1; }
+    .feature-list li { position: relative; padding-left: 28px; margin-bottom: 12px; font-size: 15px; color: var(--text); }
+    .feature-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: #10B981; font-weight: bold; font-size: 18px; }
+    .feature-list li.warning::before { content: "!"; color: #EF4444; }
+    
+    /* Buttons */
+    .btn { display: block; text-align: center; padding: 14px 24px; border-radius: 8px; font-weight: 600; font-size: 16px; transition: all 0.2s; cursor: pointer; }
+    .btn-primary { background: var(--primary); color: #fff; border: none; }
+    .btn-primary:hover { background: #1a365d; }
+    .btn-accent { background: var(--accent); color: var(--primary); border: none; }
+    .btn-accent:hover { background: #b8972e; }
+    .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+    
+    /* Explanation Box */
+    .info-box { background: #F8FAFC; border: 1px solid var(--border); border-left: 4px solid var(--blue-highlight); padding: 24px; border-radius: 8px; margin-bottom: 40px; }
+    .info-box h3 { font-size: 20px; margin-bottom: 12px; }
+    .info-box p { margin: 0 0 12px 0; font-size: 15px; }
+    .info-box p:last-child { margin: 0; }
 
-    @media (max-width: 600px) {
-      .service-container { margin: 30px auto; }
-      .page-hero, .card { padding: 30px 20px; }
-      .quiz-container, .prominent-section, .terms-box, .success-box { padding: 20px; }
-      .data-table th, .data-table td { display: block; width: 100%; text-align: left !important; }
-      .data-table td.amount { padding-top: 0; border-top: none; padding-bottom: 15px; }
-      .data-table tr { border-bottom: 4px solid #FFF; display: block; }
-      .cta-group { flex-direction: column; width: 100%; }
-      .cta-group a { width: 100%; }
-    }
+    /* Dropdown Accordions (FAQ / Resources) */
+    .faq-section { margin-bottom: 50px; }
+    .faq-section h3 { margin-bottom: 20px; font-size: 22px; }
+    .faq { display: grid; gap: 16px; }
+    .faq details { border: 1px solid var(--border); border-radius: 12px; background: var(--card-bg); overflow: hidden; transition: border-color .2s; }
+    .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 24px; min-height: 60px; font-weight: 700; color: var(--primary); font-size: 1.05rem; line-height: 1.4; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex: 0 0 auto; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: #F1F5F9; color: var(--blue-highlight); font-size: 1.25rem; font-weight: 600; transition: transform .2s; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details[open] { border-color: var(--blue-highlight); }
+    .faq .answer { padding: 0 24px 24px; color: var(--text); font-size: 1rem; line-height: 1.6; }
+    
+    /* Inner Table Rows for Fees */
+    .fee-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .fee-row:last-child { border-bottom: none; }
+    .fee-row span { color: var(--text); font-size: 15px; }
+    .fee-row strong { color: var(--primary); font-size: 16px; }
   </style>
 </head>
 <body>
 
-  <!-- ===================== ICON LIBRARY ===================== -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.37l-.36-.22-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41Z"/></symbol>
-    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
-    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.4 5 12 10.6 17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4 6.4 19 5 17.6 10.6 12 5 6.4z"/></symbol>
-  </svg>
+<header class="site-header">
+  <div class="brand">Laura Clarke</div>
+  <a href="https://wa.me/18765612614" class="btn btn-outline" style="padding: 8px 16px; font-size: 14px;">WhatsApp Us</a>
+</header>
 
-  <!-- ===================== HEADER ===================== -->
-  <header class="site-header">
-    <div class="wrap header-bar">
-      <a href="/" class="brand" aria-label="Home">
-        <span class="brand-mark" aria-hidden="true">LC</span>
-        <span>
-          <span class="brand-name">Laura Clarke</span>
-          <span class="brand-sub">Administrative Services</span>
-        </span>
-      </a>
-      
-      <nav class="main-nav" id="main-nav" aria-label="Main">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/insights.html">Insights &amp; Guides</a></li>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/#contact">Contact</a></li>
+<section class="hero">
+  <h1>Motor Vehicle Licence Renewal</h1>
+  <p>Skip the lines at the TAJ Tax Office. We handle your fitness pre-payments and process your Jamaican motor vehicle registration entirely online.</p>
+</section>
+
+<main class="container">
+
+  <div class="service-grid">
+    <!-- OPTION 1: ONLINE RENEWAL -->
+    <div class="service-card featured">
+      <div class="card-head">
+        <span class="badge">Valid Fitness Only</span>
+        <h2>100% Online Registration</h2>
+        <p style="margin:0; font-size:15px; color:var(--text-muted);">If your fitness and insurance are up to date, we process your renewal digitally. No lines.</p>
+      </div>
+      <div class="card-body">
+        <div class="price-block">
+          <div class="price">$4,000 JMD</div>
+          <span class="price-note">+ TAJ Government Fee (Based on CC)</span>
+        </div>
+        <ul class="feature-list">
+          <li><strong>Who qualifies:</strong> Vehicles with an active insurance policy and unexpired ITA fitness.</li>
+          <li>We calculate your exact engine cc fee before you pay.</li>
+          <li>We lodge the application and handle the TAJ digital portal on your behalf.</li>
+          <li>We email the new Motor Vehicle Certificate (E-Title) straight to your inbox.</li>
         </ul>
-      </nav>
-
-      <div class="header-actions">
-        <a class="wa-chip" href="https://wa.me/18765612614" target="_blank" rel="noopener">
-          <svg class="icon"><use href="#i-wa"/></svg> WhatsApp Us
-        </a>
-        <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Open menu">
-          <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
-          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
-        </button>
+        <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20my%20fitness%20is%20valid%20and%20I%20want%20to%20do%20a%20100%25%20Online%20Registration%20Renewal." class="btn btn-accent">Start Online Renewal</a>
       </div>
     </div>
-  </header>
 
-  <!-- ===================== MAIN CONTENT ===================== -->
-  <main>
-    <div class="service-container">
-      
-      <!-- HERO -->
-      <header class="page-hero">
-        <h1>Motor Vehicle Licence Renewal</h1>
-        <p>Skip the lines at the Tax Office. Tell us what your vehicle needs below, and we will calculate your estimated TAJ fees, process the paperwork, and secure your new registration.</p>
-      </header>
-
-      <!-- SERVICE ROUTER -->
-      <section class="card">
-        <h2>Calculate Fees &amp; Find Your Renewal Service</h2>
-        <p style="margin-bottom: 25px; font-size: 16px;">Tax Administration Jamaica (TAJ) and the Island Traffic Authority (ITA) require strict prerequisites before a vehicle can be renewed. Answer the questions below to find your processing lane.</p>
-
-        <div class="quiz-container">
-          <h3 class="quiz-title">Vehicle Details &amp; Eligibility</h3>
-          
-          <div class="quiz-question">
-            <p>1. Is your Motor Vehicle Insurance currently ACTIVE and valid?</p>
-            <div class="quiz-options">
-              <label class="radio-label"><input type="radio" name="insurance" value="yes"> Yes</label>
-              <label class="radio-label"><input type="radio" name="insurance" value="no"> No</label>
-            </div>
-          </div>
-
-          <div class="quiz-question" id="fitness-q-block" style="display:none; border-top: 1px solid var(--line); padding-top: 20px; margin-top: 20px;">
-            <p>2. Is your Certificate of Fitness still valid (not expired)?</p>
-            <div class="quiz-options">
-              <label class="radio-label"><input type="radio" name="fitness" value="yes"> Yes</label>
-              <label class="radio-label"><input type="radio" name="fitness" value="no"> No, it is expired</label>
-            </div>
-          </div>
-
-          <div class="quiz-question" id="cc-q-block" style="display:none; border-top: 1px solid var(--line); padding-top: 20px; margin-top: 20px;">
-            <p>3. What is the engine size (cc rating) of your vehicle? <span style="font-size: 13px; color: var(--muted); font-weight: normal;">(Check your logbook)</span></p>
-            <select id="engine-cc" class="form-select" aria-label="Engine Size">
-              <option value="">-- Select Engine Size --</option>
-              <option value="7688">Up to 1199 cc (Base 1-Yr Rate: $7,688 JMD)</option>
-              <option value="12600">1200 cc to 2999 cc (Base 1-Yr Rate: $12,600 JMD)</option>
-              <option value="25200">3000 cc to 3999 cc (Base 1-Yr Rate: $25,200 JMD)</option>
-              <option value="43650">4000 cc and above (Base 1-Yr Rate: $43,650 JMD)</option>
-              <option value="custom">Motorcycle / Commercial Truck / Electric Vehicle</option>
-            </select>
-          </div>
-
-          <div class="quiz-question" id="period-q-block" style="display:none; border-top: 1px solid var(--line); padding-top: 20px; margin-top: 20px;">
-            <p>4. How long do you want to renew your registration for?</p>
-            <div class="quiz-options">
-              <label class="radio-label"><input type="radio" name="period" value="0.5"> 6 Months</label>
-              <label class="radio-label"><input type="radio" name="period" value="1"> 1 Year</label>
-              <label class="radio-label"><input type="radio" name="period" value="2"> 2 Years</label>
-            </div>
-          </div>
+    <!-- OPTION 2: PRE-PAY & REGISTRATION -->
+    <div class="service-card">
+      <div class="card-head">
+        <span class="badge" style="background:#F1F5F9; color:#475569;">Expired Fitness</span>
+        <h2>Fitness Pre-Pay & Registration</h2>
+        <p style="margin:0; font-size:15px; color:var(--text-muted);">We pay the tax office fees so you can head straight to the depot. Once passed, we finish the registration online.</p>
+      </div>
+      <div class="card-body">
+        <div class="price-block">
+          <div class="price">Consultation Basis</div>
+          <span class="price-note">Concierge Fee + TAJ & ITA Fees</span>
         </div>
-
-        <!-- HARD STOP (No Insurance) -->
-        <div id="stop-insurance" class="failure-box" role="status" aria-live="polite">
-          <p style="font-size: 18px; font-weight: 700; color: var(--error-text); margin: 0 0 10px;">🛑 Active Insurance Required</p>
-          <p style="margin: 0; color: var(--text);">Tax Administration Jamaica will <strong>not</strong> process a motor vehicle registration renewal or fitness examination without active insurance showing in their central database. Please renew your motor vehicle insurance policy first, then return to this page.</p>
-        </div>
-
-        <!-- ===================== LANE 1: 100% ONLINE RENEWAL ===================== -->
-        <div id="lane-1" class="lane-content" role="status" aria-live="polite">
-          <div style="text-align: center; margin-bottom: 30px;">
-            <span style="display: inline-block; background: var(--success); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 700; margin-bottom: 15px;">LANE 1 SELECTED</span>
-            <h3 style="font-size: 24px; color: var(--primary);">100% Online Registration Renewal</h3>
-            <p style="font-size: 16px; color: var(--text-muted);">Because your fitness and insurance are valid, this process is entirely online. We process your renewal digitally and email the new registration certificate (e-title) straight to your inbox.</p>
-          </div>
-
-          <div class="success-box">
-            <h4>What You Receive (Delivered via Email):</h4>
-            <ul>
-              <li><strong>1. Official TAJ Receipt:</strong> Digital proof of your registration payment.</li>
-              <li><strong>2. New Motor Vehicle Certificate (E-Title):</strong> Your updated vehicle registration document in PDF format.</li>
-              <li><em>Note: <strong>You will not receive a physical delivery in the mail.</strong> You simply print these two emailed documents and keep them in your vehicle to remain 100% compliant with Jamaican traffic laws.</em></li>
-            </ul>
-          </div>
-
-          <div class="prominent-section">
-            <h3>Fee Breakdown (Online Processing)</h3>
-            <table class="data-table">
-              <tr>
-                <th>Service Element</th>
-                <th>Fee</th>
-              </tr>
-              <tr>
-                <td><strong>Laura Clarke Online Processing Fee</strong><br><span style="font-size:13px; color:var(--text-muted);">Document prep, TAJ digital processing & PDF delivery</span></td>
-                <td class="amount">$4,000 JMD<br><span style="font-size:12px; color:var(--text-muted);">(~$35 USD)</span></td>
-              </tr>
-              <tr>
-                <td style="border-bottom:none;"><strong>Estimated TAJ Government Fee</strong><br><span style="font-size:13px; color:var(--text-muted);">Direct pass-through cost based on your selected CC and period.</span></td>
-                <td class="amount" style="border-bottom:none;" id="calc-fee-lane1">Calculated Fee</td>
-              </tr>
-            </table>
-            <div class="verify-note">
-              <strong>Fee Verification Notice:</strong> Government fees above reflect standard current schedule rates. Final statutory fees are verified live against Tax Administration Jamaica (TAJ) at processing time. If TAJ indicates an updated fee schedule or adjustments based on logbook particulars, we will inform you prior to finalizing your order.
-            </div>
-          </div>
-
-          <div class="terms-box">
-            <h4>What You Must Provide to Us:</h4>
-            <ul>
-              <li><strong>A photo/copy of your expired Title or Registration.</strong></li>
-              <li><strong>A photo/copy of your Driver's Licence</strong> (This provides your TRN).</li>
-              <li><strong>Agreement to Terms & Conditions</strong> (No proxy letter needed—you simply agree at checkout).</li>
-              <li><em>Note: You do NOT need to upload your fitness certificate. The TAJ system automatically verifies it once you confirm it is valid above.</em></li>
-            </ul>
-          </div>
-
-          <div class="cta-group">
-            <a href="https://forms.gle/baH9WjZvYCZC7ZE56" class="btn-cta" target="_blank" rel="noopener">Submit Documents Online Now</a>
-            <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20am%20ready%20for%20the%20100%25%20Online%20Registration%20Renewal." class="btn-wa-cta" target="_blank" rel="noopener"><svg class="icon"><use href="#i-wa"/></svg>WhatsApp Us</a>
-          </div>
-        </div>
-
-        <!-- ===================== LANE 2: FULL CONCIERGE (FITNESS + DISC) ===================== -->
-        <div id="lane-2" class="lane-content" role="status" aria-live="polite">
-          <div style="text-align: center; margin-bottom: 30px;">
-            <span style="display: inline-block; background: var(--primary); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 700; margin-bottom: 15px;">LANE 2 SELECTED</span>
-            <h3 style="font-size: 24px; color: var(--primary);">Full Concierge: Fitness Depot &amp; Registration</h3>
-            <p style="font-size: 16px; color: var(--text-muted);">Your fitness is expired. This requires physical vehicle inspection. We will coordinate taking your vehicle through the ITA Depot, and then secure your new registration.</p>
-          </div>
-
-          <div class="prominent-section">
-            <h3>Fee Breakdown (Physical Concierge)</h3>
-            <table class="data-table">
-              <tr>
-                <th>Service Element</th>
-                <th>Fee</th>
-              </tr>
-              <tr>
-                <td><strong>Laura Clarke Full Proxy Retainer</strong><br><span style="font-size:13px; color:var(--text-muted);">Vehicle collection/guidance, ITA Depot inspection queue handling, TAJ payment proxy & delivery</span></td>
-                <td class="amount">$10,000 JMD<br><span style="font-size:12px; color:var(--text-muted);">(~$80 USD)</span></td>
-              </tr>
-              <tr>
-                <td><strong>Official ITA Fitness Examination Fee</strong><br><span style="font-size:13px; color:var(--text-muted);">Paid to the depot for the physical inspection</span></td>
-                <td class="amount">~$4,500 JMD</td>
-              </tr>
-              <tr>
-                <td style="border-bottom:none;"><strong>Estimated TAJ Government Fee</strong><br><span style="font-size:13px; color:var(--text-muted);">Direct pass-through cost based on your selected CC and period.</span></td>
-                <td class="amount" style="border-bottom:none;" id="calc-fee-lane2">Calculated Fee</td>
-              </tr>
-            </table>
-            <div class="verify-note">
-              <strong>Fee Verification Notice:</strong> Government fees above reflect standard current schedule rates. Final statutory fees are verified live against Tax Administration Jamaica (TAJ) at processing time. If TAJ indicates an updated fee schedule or adjustments based on logbook particulars, we will inform you prior to finalizing your order.
-            </div>
-          </div>
-
-          <div class="terms-box">
-            <h4>Important Conditions for Fitness Inspection:</h4>
-            <ul>
-              <li><strong>Engine Size (cc) Dictates Fee:</strong> Motor vehicle registration is not a flat rate. Your exact TAJ government fee will be calculated based on the cc rating printed on your logbook and your selected renewal period.</li>
-              <li>The vehicle <strong>must be mechanically sound</strong>. We cannot guarantee a pass if the vehicle has heavy tint, broken lights, worn tires, or structural defects.</li>
-              <li>If the vehicle fails the inspection, the ITA will issue a refusal slip. You must repair the vehicle and pay for a re-inspection. Our proxy fee covers the initial queue and presentation.</li>
-              <li>You must provide the physical vehicle, your logbook, expired fitness, active insurance cover note, and your TRN.</li>
-            </ul>
-          </div>
-
-          <div class="cta-group">
-            <a href="https://forms.gle/baH9WjZvYCZC7ZE56" class="btn-cta" target="_blank" rel="noopener">Book Physical Concierge Service</a>
-            <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20Lane%202%20Full%20Fitness%20and%20Registration%20Renewal." class="btn-wa-cta" target="_blank" rel="noopener"><svg class="icon"><use href="#i-wa"/></svg>WhatsApp Us to Coordinate</a>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- FAQS -->
-      <section class="card" style="margin-bottom: 0;">
-        <h2>Renewal Questions &amp; Special Circumstances</h2>
-
-        <div class="faq-list">
-          <details class="faq-item">
-            <summary>Is the emailed PDF registration certificate legally compliant?</summary>
-            <p>Yes. Tax Administration Jamaica issues electronic Motor Vehicle Register copies (e-certificates). As long as you print it out and keep it in your vehicle, it is fully recognized by law enforcement.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Can I renew my motor vehicle registration for two years at once?</summary>
-            <p>Yes. Tax Administration Jamaica allows owners of private motor cars to pay their registration upfront for a two-year period, effectively doubling the standard 1-year rate without a penalty surcharge.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Does the engine size (cc) affect my insurance or just TAJ fees?</summary>
-            <p>Both. The cc rating printed on your logbook strictly determines your TAJ government registration category, and insurance companies also utilize your engine capacity to calculate your annual premium rates.</p>
-          </details>
-        </div>
-      </section>
-
+        <ul class="feature-list">
+          <li>We queue at the Tax Office to pre-pay your TAJ fitness fee and send the digital receipt directly to your phone.</li>
+          <li>You skip the Tax Office payment lines entirely.</li>
+          <li class="warning"><strong>Client action required:</strong> You must drive the vehicle to the ITA Depot and present the digital receipt for the physical inspection.</li>
+          <li>Once the vehicle passes, we immediately finalize your TAJ registration renewal online.</li>
+        </ul>
+        <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20my%20fitness%20is%20expired%20and%20I%20need%20the%20Fitness%20Pre-Pay%20%26%20Registration%20service." class="btn btn-primary">Book Processing Service</a>
+      </div>
     </div>
-  </main>
+  </div>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-top">
-        <div>
-          <p class="footer-brand">Laura Clarke Administrative Services</p>
-          <p>Pre-audits and local representation for Jamaican government documents, for clients at home and abroad.</p>
+  <div class="info-box">
+    <h3>Why must I take the vehicle to the depot myself?</h3>
+    <p>Unlike a simple online registration renewal, an expired fitness certificate requires a mechanical roadworthiness check. The Island Traffic Authority (ITA) must physically inspect the vehicle's lights, tires, and structural integrity, and verify that the chassis (VIN) and engine numbers match the C88 logbook.</p>
+    <p>Our <strong>Fitness Pre-Pay & Registration</strong> service saves you hours of waiting by completely eliminating the TAJ Tax Office payment line and handling the final registration portal. We get the fees paid while you wait, leaving you to simply drive through the depot inspection.</p>
+  </div>
+
+  <!-- DROPDOWN RESOURCES -->
+  <div class="faq-section">
+    <h3>Reference & Resources</h3>
+    <div class="faq">
+      <details>
+        <summary>Check Your Engine CC & Exact TAJ Fees</summary>
+        <div class="answer">
+          <p style="margin-top:0;">Your TAJ government registration fee is directly tied to the engine capacity (cc rating) printed on your <strong>C88 Logbook</strong>. Below are the official 12-month base rates:</p>
+          <div class="fee-row"><span>Motorcycles</span><strong>$4,200 JMD</strong></div>
+          <div class="fee-row"><span>Private car (Under 1,199 cc)</span><strong>$9,900 JMD</strong></div>
+          <div class="fee-row"><span>Private car (1,200 - 1,999 cc)</span><strong>$12,600 JMD</strong></div>
+          <div class="fee-row"><span>Private car (2,000 - 2,999 cc)</span><strong>$18,900 JMD</strong></div>
+          <div class="fee-row"><span>Private car (3,000+ cc)</span><strong>$27,600 JMD</strong></div>
+          <p style="margin: 16px 0 0; font-size: 14px; color: var(--text-muted);"><em>Note: If your fitness is expired, add the $4,500 JMD TAJ Fitness Fee to these totals.</em></p>
         </div>
-        <nav class="footer-nav" aria-label="Footer">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/#services">Services</a></li>
-            <li><a href="/insights.html">Insights &amp; Guides</a></li>
-            <li><a href="/about.html">About Us</a></li>
+      </details>
+      
+      <details>
+        <summary>6-Month vs. 12-Month Renewal Periods</summary>
+        <div class="answer">
+          <p style="margin-top:0; margin-bottom:16px;">You can choose how long to renew your motor vehicle registration:</p>
+          <ul style="padding-left: 20px; margin-bottom: 0;">
+            <li style="margin-bottom: 12px;"><strong>6 Months:</strong> Billed at exactly half the 12-month rate (e.g., $6,300 JMD for a standard 1.5L car).</li>
+            <li style="margin-bottom: 12px;"><strong>12 Months:</strong> The standard renewal period.</li>
+            <li><strong>24 Months:</strong> TAJ permits you to pay for two years upfront by doubling the 12-month fee. No surcharge applies, and it saves you from repeating the process next year.</li>
           </ul>
-        </nav>
-      </div>
-      <p style="margin-top: 30px; color: #A2AAAF; font-size: 14px; padding: 0 20px;">&copy; 2026 Laura Clarke Administrative Services. Independent private representation agency. Not affiliated with TAJ or ITA.</p>
+        </div>
+      </details>
     </div>
-  </footer>
+  </div>
 
-  <!-- ===================== SCRIPT: ROUTER & FEE CALCULATOR LOGIC ===================== -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Elements
-      const insRadios = document.querySelectorAll('input[name="insurance"]');
-      const fitRadios = document.querySelectorAll('input[name="fitness"]');
-      const ccSelect = document.getElementById('engine-cc');
-      const periodRadios = document.querySelectorAll('input[name="period"]');
-      
-      const fitBlock = document.getElementById('fitness-q-block');
-      const ccBlock = document.getElementById('cc-q-block');
-      const periodBlock = document.getElementById('period-q-block');
-      
-      const stopIns = document.getElementById('stop-insurance');
-      const lane1 = document.getElementById('lane-1');
-      const lane2 = document.getElementById('lane-2');
-      const calcFee1 = document.getElementById('calc-fee-lane1');
-      const calcFee2 = document.getElementById('calc-fee-lane2');
+  <div style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border);">
+    <h3 style="margin-bottom: 16px;">Need to check TAJ's official rules?</h3>
+    <p style="margin-bottom: 24px; color: var(--text-muted);">Read our deep-dive reference guide covering lost logbooks and Traffic Management System traps.</p>
+    <a href="/jamaica-motor-vehicle-licence-guide.html" class="btn btn-outline" style="display: inline-block; max-width: 320px; margin: 0 auto;">Read the Motor Vehicle Guide</a>
+  </div>
 
-      /* Mobile Menu Toggle */
-      var toggle = document.querySelector('.menu-toggle');
-      var nav = document.getElementById('main-nav');
-      if(toggle && nav) {
-        toggle.addEventListener('click', function () { 
-          nav.classList.toggle('is-open'); 
-          toggle.setAttribute('aria-expanded', nav.classList.contains('is-open'));
-        });
-      }
+</main>
 
-      /* Quiz Logic & Fee Calculation */
-      function evaluateQuiz() {
-        const ins = document.querySelector('input[name="insurance"]:checked')?.value;
-        const fit = document.querySelector('input[name="fitness"]:checked')?.value;
-        const cc = ccSelect.value;
-        const period = document.querySelector('input[name="period"]:checked')?.value;
+<footer style="background: var(--primary); color: #94A3B8; text-align: center; padding: 40px 20px; margin-top: 60px;">
+  <p>&copy; 2026 Laura Clarke Administrative Services</p>
+  <p style="font-size: 14px; max-width: 600px; margin: 10px auto 0;">We are an independent concierge service, not affiliated with the Government of Jamaica. You may apply directly to TAJ or ITA at any time.</p>
+</footer>
 
-        // Reveal logical next steps
-        fitBlock.style.display = ins === 'yes' ? 'block' : 'none';
-        ccBlock.style.display = (ins === 'yes' && fit) ? 'block' : 'none';
-        periodBlock.style.display = (ins === 'yes' && fit && cc) ? 'block' : 'none';
-
-        // Hard stop if no insurance
-        stopIns.style.display = ins === 'no' ? 'block' : 'none';
-        
-        // Hide lanes until fully answered
-        lane1.style.display = 'none';
-        lane2.style.display = 'none';
-
-        // If fully answered and eligible, calculate fee and route
-        if (ins === 'yes' && fit && cc && period) {
-           let feeText = "Custom Logbook Quote";
-           
-           if (cc !== 'custom') {
-              const base = parseFloat(cc);
-              const mult = parseFloat(period);
-              const total = base * mult;
-              // Format number with commas
-              feeText = "~$" + total.toLocaleString('en-JM') + " JMD";
-           }
-
-           calcFee1.textContent = feeText;
-           calcFee2.textContent = feeText;
-
-           // Route based on fitness status
-           if (fit === 'yes') {
-              lane1.style.display = 'block';
-           } else {
-              lane2.style.display = 'block';
-           }
-        }
-      }
-
-      // Attach event listeners to all quiz inputs
-      insRadios.forEach(r => r.addEventListener('change', function() {
-          // If they switch insurance, reset lower dependent answers visually
-          if(this.value === 'no') {
-            fitRadios.forEach(x => x.checked = false);
-            ccSelect.value = '';
-            periodRadios.forEach(x => x.checked = false);
-          }
-          evaluateQuiz();
-      }));
-      fitRadios.forEach(r => r.addEventListener('change', evaluateQuiz));
-      ccSelect.addEventListener('change', evaluateQuiz);
-      periodRadios.forEach(r => r.addEventListener('change', evaluateQuiz));
-    });
-  </script>
 </body>
 </html>
