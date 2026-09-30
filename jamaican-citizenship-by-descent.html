@@ -41,18 +41,41 @@
       "description": "Claiming Jamaican citizenship by descent: mother vs father document rules, the required documents, the 3-step PICA process and the traps that get files rejected.",
       "image": "https://documenthelpja.com/assets/citizenship-descent-hero.webp",
       "datePublished": "2026-09-21",
-      "dateModified": "2026-09-21",
+      "dateModified": "2026-09-30",
       "inLanguage": "en-JM",
       "mainEntityOfPage": "https://documenthelpja.com/jamaican-citizenship-by-descent",
-      "author": { "@type": "Person", "name": "Laura Clarke", "url": "https://documenthelpja.com/about.html" },
-      "publisher": { "@type": "ProfessionalService", "@id": "https://documenthelpja.com/#business", "name": "Laura Clarke Administrative Services" }
+      "author": {
+        "@type": "Person",
+        "name": "Laura Clarke",
+        "url": "https://documenthelpja.com/about.html"
+      },
+      "publisher": {
+        "@type": "ProfessionalService",
+        "@id": "https://documenthelpja.com/#business",
+        "name": "Laura Clarke Administrative Services"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://documenthelpja.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Insights & Guides", "item": "https://documenthelpja.com/insights.html" },
-        { "@type": "ListItem", "position": 3, "name": "Jamaican Citizenship by Descent", "item": "https://documenthelpja.com/jamaican-citizenship-by-descent" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://documenthelpja.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights & Guides",
+          "item": "https://documenthelpja.com/insights.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Jamaican Citizenship by Descent",
+          "item": "https://documenthelpja.com/jamaican-citizenship-by-descent"
+        }
       ]
     }
   ]
@@ -590,7 +613,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 .guide { font-size: 1.1rem; line-height: 1.8; }
 .guide > p { margin-bottom: 1.5rem; color: #3E4549; }
 .guide > h2 { font-size: clamp(1.4rem, 4vw, 1.6rem); font-weight: 600; margin: 2.5rem 0 1rem; }
-.guide > h3 { font-size: clamp(1.2rem, 3.5vw, 1.35rem); font-weight: 600; margin: 2rem 0 .75rem; }
 .guide > p a, .guide li a { color: var(--gold-text); font-weight: 600; text-underline-offset: 3px; }
 .guide strong { color: var(--ink); }
 
@@ -659,6 +681,99 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 .step-list h3 { font-size: 1.25rem; margin: .35rem 0 .4rem; }
 .step-list p { color: #3E4549; }
 
+/* Sub-headings, notes, rules list (reference sections) */
+.guide > h3 { font-size: clamp(1.2rem, 3.5vw, 1.35rem); font-weight: 600; margin: 2rem 0 .75rem; }
+.guide .grid-card h4 { font: 700 1.25rem/1.3 var(--serif); color: var(--ink); margin-bottom: .6rem; }
+.panel-note { margin-top: 1rem; padding: .85rem 1rem; background: var(--tone); border-radius: 4px; font-size: .98rem; line-height: 1.6; }
+.panel-note a { color: var(--gold-text); font-weight: 600; text-underline-offset: 3px; }
+.step-list a { display: inline-block; color: var(--gold-text); font-weight: 600; text-underline-offset: 3px; }
+.rule-list { list-style: disc; padding-left: 1.4rem; margin: 0 0 1.75rem; color: #3E4549; }
+.rule-list li + li { margin-top: .5rem; }
+
+/* Official tool resource box */
+.resource-box { display: block; margin: 0 0 2rem; padding: 1.1rem 1.25rem; border: 1px solid var(--line); border-left: 4px solid var(--emerald); border-radius: 6px; background: #F8FAF9; text-decoration: none; transition: border-color .2s ease; }
+.resource-box:hover { border-color: var(--emerald); }
+.resource-kicker { display: block; font-size: .8rem; font-weight: 600; color: var(--muted); }
+.resource-title { display: flex; align-items: center; gap: .45rem; margin-top: .15rem; font: 700 1.15rem/1.3 var(--serif); color: var(--ink); }
+.resource-title .icon { width: 1rem; height: 1rem; color: var(--emerald); }
+.resource-desc { display: block; margin-top: .3rem; font-size: .98rem; line-height: 1.55; color: var(--text); }
+
+/* Fee table */
+.table-scroll { overflow-x: auto; margin: 0 0 1.75rem; }
+.fee-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.fee-table th, .fee-table td { padding: .75rem .9rem; border-bottom: 1px solid var(--line); text-align: left; }
+.fee-table thead th { font-size: .82rem; font-weight: 700; color: var(--muted); border-bottom: 2px solid var(--ink); }
+.fee-table tbody th { font-weight: 500; color: var(--text); }
+.fee-table td { font-weight: 700; color: var(--ink); text-align: right; white-space: nowrap; }
+.fee-table thead th:last-child { text-align: right; }
+.fee-table tr.group th { padding-top: 1.25rem; font-weight: 700; color: var(--ink); background: none; }
+
+/* Reference Desk accordions (Resources A-D) */
+.ref-intro { font-size: .95rem !important; color: var(--muted) !important; margin-bottom: 1rem !important; }
+.ref-list { display: grid; gap: .75rem; margin-bottom: 2rem; }
+.ref-acc { border-color: var(--line); }
+.ref-acc > summary { min-height: 60px; padding: 1rem 1.1rem; background: #fff; }
+.ref-acc[open] > summary { background: #F8FAF9; }
+.ref-label { display: flex; align-items: center; gap: .8rem; font: 700 1.08rem/1.3 var(--serif); color: var(--ink); text-align: left; }
+.ref-letter { width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; background: var(--ink); color: var(--gold); display: grid; place-items: center; font: 700 .95rem/1 var(--sans); }
+.ref-body { padding: 1.25rem 1.1rem 1.5rem; font-size: 1.02rem; line-height: 1.7; }
+.ref-body > p { margin-bottom: 1.1rem; color: #3E4549; }
+.ref-body .grid-2-col { margin: 0 0 1.5rem; }
+.ref-body .grid-2-col .grid-card:first-child { border-top: 0; padding-top: 0; }
+@media (min-width: 700px) { .ref-body .grid-2-col .grid-card { border-top: 0; padding-top: 0; } }
+.ref-body .resource-box { margin-bottom: 0; }
+.ref-body .faq-list { margin: 0; }
+@media (min-width: 640px) { .ref-body { padding: 1.5rem 1.5rem 1.75rem; } }
+
+/* Replacement tab banner */
+.panel-alert { margin: 1.25rem 0 .5rem; }
+
+/* Police report checklist */
+.police-check { margin: .6rem 0 .8rem; gap: .45rem; }
+.police-check li::before { background: #B7791F; }
+.police-no { margin-top: .4rem; padding-top: .7rem; border-top: 1px solid #EBCB8B; }
+
+/* Copyable affidavit template */
+.template-box { margin-top: 1.5rem; border: 1.5px solid var(--ink); border-radius: 6px; overflow: hidden; }
+.template-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; padding: .9rem 1rem; background: var(--tone); border-bottom: 1px solid var(--line); }
+.template-title { font-weight: 700; color: var(--ink); font-size: .98rem; }
+.template-copy { min-height: 44px; padding: .5rem 1rem; font-size: .92rem; }
+.template-text { margin: 0; padding: 1.1rem 1rem; max-height: 340px; overflow: auto; background: #fff; font: 400 .88rem/1.6 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; color: var(--ink); white-space: pre-wrap; word-break: break-word; }
+.template-note { padding: .8rem 1rem; border-top: 1px solid var(--line); background: #F8FAF9; font-size: .88rem; color: var(--muted); }
+
+/* Colour-coded Reference Desk sections (passport guide) */
+.ref-list > .ref-acc { --tone-bg: #F8FAF9; --tone-accent: var(--ink); border-left: 4px solid var(--tone-accent); }
+.ref-list > .ref-acc > summary { background: var(--tone-bg); }
+.ref-list > .ref-acc > summary:hover { background: var(--tone-bg); filter: brightness(.98); }
+.ref-list > .ref-acc[open] > summary { background: var(--tone-bg); border-bottom: 1px solid var(--line); }
+.ref-list > .ref-acc .ref-letter { background: var(--tone-accent); color: #fff; }
+.ref-list > .ref-acc > .acc-body { border-top: 0; }
+#lost-damaged { --tone-bg: #FBF3E4; --tone-accent: #9A5B0B; }  /* A: amber */
+#photo-rules  { --tone-bg: #EAF2F8; --tone-accent: #22578F; }  /* B: blue */
+#fees         { --tone-bg: #E7F3EC; --tone-accent: #0B5E40; }  /* C: green */
+#faq          { --tone-bg: #F1EDF7; --tone-accent: #5E4386; }  /* D: plum */
+
+/* FAQ (reuses the .acc accordion) */
+.tabs-grid { display: grid; grid-template-columns: 1fr 1fr; overflow: visible; }
+.tabs-grid .tab-btn { text-align: left; font-size: .9rem; padding: .75rem .6rem; }
+@media (min-width: 760px) { .tabs-grid { display: flex; } .tabs-grid .tab-btn { padding: 1rem 1.25rem; font-size: .98rem; } }
+.faq-list { display: grid; gap: .75rem; margin-bottom: 1rem; }
+.faq-item > summary { font-size: 1.02rem; line-height: 1.45; text-align: left; }
+.faq-item .acc-body p { color: #3E4549; }
+
+/* ---------- Colour-coded passport streams (tabs + matching panels) ---------- */
+#tab-online, #panel-online   { --st-bar: #1F6B4A; --st-tint: #EAF3EE; }
+#tab-paper, #panel-paper     { --st-bar: #B7791F; --st-tint: #FBF3E2; }
+#tab-minor, #panel-minor     { --st-bar: #2F5D8A; --st-tint: #EAF0F7; }
+#tab-replace, #panel-replace { --st-bar: #9B3B3B; --st-tint: #F7ECEC; }
+.tabs-grid .tab-btn[id] { border-top: 3px solid var(--st-bar); background: #fff; color: var(--text); }
+.tabs-grid .tab-btn[id][aria-selected="true"] { background: var(--st-tint); color: var(--ink); border-bottom-color: var(--st-bar); }
+.tabs-grid { gap: .4rem; border-bottom: 0; }
+.tab-panel[id^="panel-"] { margin-top: .5rem; padding: .25rem 1rem .75rem; background: var(--st-tint); border-left: 5px solid var(--st-bar); border-radius: 4px; }
+.tab-panel[id^="panel-"] .check-list li + li { border-top-color: rgba(0,0,0,.08); }
+.tab-panel[id^="panel-"] .panel-note { background: #fff; }
+@media (min-width: 760px) { .tabs-grid { gap: .5rem; } }
+
 /* Trap callouts */
 .trap-callout { margin: 2.5rem 0; padding-left: 1.5rem; border-left: 2px solid #B91C1C; }
 .trap-title { font-size: .85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #B91C1C; margin-bottom: .6rem; }
@@ -714,6 +829,21 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 .newsletter-box .nl-success { margin: 1.25rem 0 0; max-width: none; background: var(--tone); border-color: var(--line); color: var(--text); }
 .newsletter-box .nl-success strong { color: var(--ink); }
 
+/* Compact end-of-article blocks on phones */
+@media (max-width: 639px) {
+  .resource-hub { margin-top: 3rem; padding-top: 2rem; }
+  .share-bar { margin-bottom: 2rem; }
+  .related-guides { margin-bottom: 2rem; }
+  .related-guides > h2 { margin-bottom: 1rem; }
+  .related-grid { gap: 1rem; }
+  .related-card { padding-top: .7rem; border-top-width: 1px; }
+  .related-card h3 { font-size: 1.02rem; margin-bottom: .25rem; }
+  .related-card p { font-size: .88rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .newsletter-box { padding: 1.4rem 1.1rem; }
+  .newsletter-box h2 { font-size: 1.25rem; }
+  .newsletter-box > p { font-size: .92rem; }
+}
+
 /* =========================================================
    12. MOTION PREFERENCES
    ========================================================= */
@@ -721,13 +851,30 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+
+/* =========================================================
+   CITIZENSHIP GUIDE ADDITIONS (same look as the other guides)
+   ========================================================= */
+.service-note { margin-top: 1rem; padding: 1rem 1.25rem; background: #FBF8F1; border-left: 4px solid var(--gold); border-radius: 0 8px 8px 0; font-size: .98rem; line-height: 1.55; color: var(--ink); }
+.service-note strong { color: var(--gold-text); }
+#panel-documents { border: 0; padding: 0; background: none; }
+
+/* =========================================================
+   MOBILE OVERSCROLL & INVISIBLE ELEMENT FIXES (same as homepage)
+   ========================================================= */
+html { overflow-x: clip; overscroll-behavior-y: none; background: var(--ink); }
+body { overflow-x: clip; overflow-wrap: break-word; position: relative; width: 100%; min-height: 100vh; }
+body > svg[width="0"][height="0"] { display: none !important; }
+dialog:not([open]) { display: none !important; }
+iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !important; }
 </style>
 </head>
 
 <body id="top">
 
 <!-- ===================== ICON LIBRARY (used throughout the page) ===================== -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<svg width="0" height="0" style="display:none" aria-hidden="true">
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.37l-.36-.22-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41Z"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
   <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.4 5 12 10.6 17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4 6.4 19 5 17.6 10.6 12 5 6.4z"/></symbol>
@@ -739,6 +886,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3V2Zm12 8H5v9h14v-9Z"/></symbol>
   <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 2 1 21h22L12 2Zm1 15h-2v-2h2v2Zm0-4h-2V9h2v4Z"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3ZM5 5h6v2H6v11h11v-5h2v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></symbol>
   <symbol id="i-up" viewBox="0 0 24 24"><path d="M11 20V7.8l-5.6 5.6L4 12l8-8 8 8-1.4 1.4L13 7.8V20z"/></symbol>
 </svg>
 
@@ -808,7 +956,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
         <div class="mag-meta">
           <a class="mag-tag" href="/insights.html?cat=pica">PICA Lineage</a>
           <span>6 Min Read</span>
-          <span>Updated <time datetime="2026-09-21">Sept 21, 2026</time></span>
+          <span>Updated <time datetime="2026-09-21">September 2026</time></span>
         </div>
         <h1 class="mag-title" id="article-title">How Do I Claim Jamaican Citizenship Through a Jamaican Parent?</h1>
         <p class="mag-summary">Claiming your Jamaican heritage is a constitutional right, but navigating the immigration agency requires absolute documentary perfection. Here is how to secure your passport without getting stuck in bureaucratic limbo.</p>
@@ -821,23 +969,12 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
         </div>
       </header>
 
-      <!-- FEATURED VIDEO (optional)
-           To use: remove the two comment lines around this block and replace VIDEO_ID with the YouTube video ID.
-      <figure class="guide-video">
-        <div class="guide-video-frame">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Video: Claiming Jamaican citizenship by descent" loading="lazy"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <figcaption>Watch: how citizenship by descent works, explained in under five minutes.</figcaption>
-      </figure>
-      -->
-
       <!-- KEY TAKEAWAYS -->
       <section class="takeaways" id="takeaways" aria-labelledby="takeaways-title">
         <h2 id="takeaways-title">Key Takeaways</h2>
         <ul>
           <li>Citizenship by descent is a constitutional birthright requiring zero naturalization waiting periods.</li>
-          <li>Applications take ~25 working days locally in Jamaica, or 3–12 months via overseas consulates.</li>
+          <li>Applications take ~45 to 90 working days to process after submission to PICA.</li>
           <li>Name mismatches across generations are the number one cause of application rejection.</li>
           <li>The agency strictly requires original, computerized RGD records (no old handwritten slips).</li>
         </ul>
@@ -865,7 +1002,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       <h2 id="documents">Required Documents</h2>
       <p>Tick off each document as you gather it. Your ticks are saved on this device.</p>
 
-      <!-- INTERACTIVE CHECKLIST (single list, so no tabs needed) -->
       <div class="tab-container">
         <div class="checklist-progress">
           <span class="checklist-count" id="checklist-count" aria-live="polite">0 of 5 gathered</span>
@@ -894,7 +1030,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       <!-- MID-ARTICLE CTA -->
       <aside class="mid-cta" aria-label="Pre-audit offer">
         <p><strong>Have the documents but unsure the names line up?</strong>We pre-audit your RGD records for name consistency before you file with PICA.</p>
-        <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20read%20your%20citizenship%20by%20descent%20guide%20and%20would%20like%20a%20pre-audit%20of%20my%20documents." target="_blank" rel="noopener" data-wa="article-mid"><svg class="icon"><use href="#i-wa"/></svg> Message on WhatsApp</a>
+        <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20was%20reading%20your%20citizenship%20guide%20and%20would%20like%20a%20pre-audit%20of%20my%20RGD%20records." target="_blank" rel="noopener" data-wa="article-mid"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Message on WhatsApp</a>
       </aside>
 
       <h2 id="process">The Step-by-Step Process</h2>
@@ -912,6 +1048,9 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           <div>
             <h3>Submit to PICA</h3>
             <p>Submit the application package, original supporting documents and processing fees to PICA headquarters in Kingston, or to your nearest overseas consulate.</p>
+            <div class="service-note">
+              <strong>How we help:</strong> We act as your physical proxy in Kingston. You mail your original documents to our secure office, and we manually lodge your file at PICA Headquarters, track its progress, and courier your final Certificate and originals back to you.
+            </div>
           </div>
         </li>
         <li>
@@ -941,32 +1080,31 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
         <p>If a grandparent's foreign passport says "John" but their Jamaican birth certificate says "Jonathan," the legal paper chain is broken. You must secure a formal Deed Poll or official RGD correction before applying.</p>
       </div>
 
-      <p class="updated-note">Requirements last checked <time datetime="2026-09">September 2026</time>. Agency rules, fees and processing times can change without notice, so confirm with us before you file.</p>
+      <p class="updated-note">Requirements last checked <time datetime="2026-09">September 2026</time>. Agency rules, fees and processing times can change without notice.</p>
 
       <!-- ===================== SERVICE BRIDGE CTA ===================== -->
       <aside class="bridge" aria-labelledby="bridge-title">
-        <h2 id="bridge-title">Don't want to deal with the lines yourself?</h2>
-        <p>We can handle this application for you from start to finish. Our concierge process is simple:</p>
+        <h2 id="bridge-title">Don't want to navigate the bureaucracy yourself?</h2>
+        <p>We offer two ways to ensure your citizenship file is accepted by PICA on the first try:</p>
 
         <ul class="checklist checklist-gold bridge-steps">
-          <li><strong>Step 1: Submit Details</strong> &mdash; We pre-audit your paperwork so nothing is rejected.</li>
-          <li><strong>Step 2: We Process It</strong> &mdash; We handle the government lines and agency payments in Jamaica.</li>
-          <li><strong>Step 3: Secure Delivery</strong> &mdash; Choose local pickup, or have your official documents dispatched worldwide via secure international courier (DHL/FedEx).</li>
+          <li><strong>Direct Descent Lodgment:</strong> If you have all your original family certificates ready, we pre-audit your paperwork and proxy lodge it securely in Kingston.</li>
+          <li><strong>Complex Lineage Audit:</strong> Claiming through a grandparent or missing an old Jamaican birth certificate? We search the RGD archives for missing records and reconcile broken name chains before lodgment.</li>
         </ul>
 
         <div class="bridge-actions">
-          <a class="btn btn-gold" href="/#contact">Contact Us</a>
-          <a class="btn btn-outline-light" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20help%20with%20my%20documents." target="_blank" rel="noopener" data-wa="article-bridge">
-            <svg class="icon"><use href="#i-wa"/></svg> WhatsApp Us
+          <a class="btn btn-gold" href="/jamaican-citizenship-application.html">View Citizenship Services</a>
+          <a class="btn btn-outline-light" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20read%20your%20citizenship%20guide%20and%20need%20help%20with%20my%20application." target="_blank" rel="noopener" data-wa="article-bridge">
+            <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp Us
           </a>
         </div>
       </aside>
 
       <!-- ===================== PREVIOUS / NEXT GUIDE ===================== -->
       <nav class="guide-nav" aria-label="Previous and next guide">
-        <a class="guide-link" href="/gig-worker-tax-guide" rel="prev">
+        <a class="guide-link" href="/jamaica-motor-vehicle-licence-guide" rel="prev">
           <span class="guide-dir"><svg class="icon flip" aria-hidden="true"><use href="#i-chev"/></svg> Previous guide</span>
-          <span class="guide-title">Think You're Invisible to TAJ? Why Jamaican Freelancers and Seasonal Workers Still Owe Tax</span>
+          <span class="guide-title">The Complete Guide to Jamaican Motor Vehicle Licence Renewal</span>
         </a>
         <a class="guide-link next" href="/jamaica-passport-guide" rel="next">
           <span class="guide-dir">Next guide <svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></span>
@@ -986,17 +1124,17 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
         <section class="related-guides" aria-labelledby="related-title">
           <h2 id="related-title">Keep Reading</h2>
           <div class="related-grid">
-            <a class="related-card" href="/jamaica-police-record-guide">
-              <h3>Don't Get Turned Away: The Essential Guide to Getting a Jamaican Police Record</h3>
-              <p>Clear the confusion around fingerprinting, processing times and overseas applications.</p>
-            </a>
             <a class="related-card" href="/jamaica-passport-guide">
               <h3>The Complete Jamaican Passport Application &amp; Renewal Guide</h3>
-              <p>Renewals, children's passports, name changes and lost or damaged passports: the exact PICA rules for each.</p>
+              <p>Once your citizenship certificate is issued, here is how to apply for your first Jamaican passport.</p>
             </a>
             <a class="related-card" href="/trn-without-photo-id">
               <h3>No Passport or Driver's Licence? How to Get a Jamaican TRN Using Only a Birth Certificate</h3>
-              <p>How to meet TAJ requirements and secure your taxpayer number when your primary photo ID has expired.</p>
+              <p>How to meet TAJ requirements and secure your taxpayer number when your primary photo ID is missing.</p>
+            </a>
+            <a class="related-card" href="/jamaica-police-record-guide">
+              <h3>Don't Get Turned Away: The Essential Guide to Getting a Jamaican Police Record</h3>
+              <p>Clear the confusion around fingerprinting, processing times and overseas applications.</p>
             </a>
           </div>
         </section>
@@ -1163,6 +1301,48 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
     refreshChecklist();
   });
   refreshChecklist();
+
+  /* ---------- Reference Desk accordions ----------
+     Closed on phones, open on desktop. Any jump link or contents link opens its section. */
+  var refAccs = Array.prototype.slice.call(document.querySelectorAll('details.ref-acc'));
+  if (window.matchMedia('(min-width: 1040px)').matches) refAccs.forEach(function (d) { d.open = true; });
+  function openFromHash(hash) {
+    if (!hash || hash.length < 2) return;
+    var el = document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (!el) return;
+    var d = el.closest('details');
+    while (d) { d.open = true; d = d.parentElement && d.parentElement.closest('details'); }
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (a) openFromHash(a.getAttribute('href'));
+  });
+  window.addEventListener('hashchange', function () { openFromHash(location.hash); });
+  openFromHash(location.hash);
+  if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) setTimeout(function () { t.scrollIntoView(); }, 0); }
+
+  /* ---------- Copy template button ---------- */
+  document.querySelectorAll('[data-copy-target]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = document.getElementById(btn.dataset.copyTarget).textContent;
+      var status = document.getElementById('copy-status');
+      var original = btn.textContent;
+      function done() {
+        btn.textContent = 'Copied';
+        if (status) status.textContent = 'Template copied. Paste it into a document, fill in every bracket, and sign only in front of the JP or Notary.';
+        setTimeout(function () { btn.textContent = original; }, 2500);
+      }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'absolute'; ta.style.left = '-9999px';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch (err) { window.prompt('Copy this template:', text); }
+        document.body.removeChild(ta);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
+      else fallback();
+    });
+  });
 
   /* ---------- Share buttons ---------- */
   var url = location.href.split('#')[0];
