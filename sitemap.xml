@@ -5,20 +5,21 @@
   <url><loc>https://documenthelpja.com/insights.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/about.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/faq.html</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/privacy.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/terms.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/card.html</loc><lastmod>2026-09-29</lastmod></url>
+  <!-- privacy.html: add this line back once the page is uploaded (it currently returns "not found")
+  <url><loc>https://documenthelpja.com/privacy.html</loc><lastmod>2026-10-01</lastmod></url>
+  -->
 
   <!-- Service Landing Pages -->
-  <url><loc>https://documenthelpja.com/trn-application.html</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/drivers-licence-renewal.html</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/motor-vehicle-licence.html</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaican-driving-abstract.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/jamaican-passport-renewal.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/jamaican-citizenship-application.html</loc><lastmod>2026-09-29</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaican-trn-application-overseas-diaspora.html</loc><lastmod>2026-09-29</lastmod></url>
+  <url><loc>https://documenthelpja.com/drivers-licence-renewal.html</loc><lastmod>2026-09-29</lastmod></url>
+  <url><loc>https://documenthelpja.com/motor-vehicle-licence-renewal.html</loc><lastmod>2026-09-29</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaica-driving-abstract.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/jamaica-police-record.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/jamaican-rgd-certificates.html</loc><lastmod>2026-09-29</lastmod></url>
-
 
   <!-- Guides & Advisory Articles -->
   <url><loc>https://documenthelpja.com/jamaica-learners-permit-guide.html</loc><lastmod>2026-09-29</lastmod></url>
@@ -31,5 +32,6 @@
   <url><loc>https://documenthelpja.com/jamaica-drivers-license-renewal-guide</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/trn-without-photo-id</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/jamaica-motor-vehicle-licence-guide</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/gig-worker-tax-guide</loc><lastmod>2026-09-29</lastmod></url>
+  <!-- Needs the file renamed from jamaica-rgd-guide.html to jamaica-rgd-certificates-guide.html -->
+  <url><loc>https://documenthelpja.com/jamaica-rgd-certificates-guide</loc><lastmod>2026-10-01</lastmod></url>
 </urlset>
