@@ -6,7 +6,7 @@
 
 <!-- ===================== SEO CORE ===================== -->
 <title>Jamaica Driver's Licence Renewal: Holds &amp; 60-Day Rule | Laura Clarke</title>
-<meta name="description" content="Renewing a Jamaican driver's licence: ticket and TRN holds, the 60-day receipt rule, same-day TAJ offices, Form MC1 medicals and stamped proxy letters.">
+<meta name="description" content="Renewing or replacing a Jamaican driver's licence: ticket and TRN holds, the 60-day receipt rule, same-day TAJ offices, Form MC1 medicals, proxy letters and lost licence steps.">
 <link rel="canonical" href="https://documenthelpja.com/jamaica-drivers-license-renewal-guide">
 <meta name="theme-color" content="#181A1B">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -38,10 +38,10 @@
       "@type": "Article",
       "@id": "https://documenthelpja.com/jamaica-drivers-license-renewal-guide#article",
       "headline": "How Unpaid Traffic Tickets Block Your Jamaican Driver's Licence Renewal",
-      "description": "Renewing a Jamaican driver's licence: ticket and TRN holds, the 60-day receipt rule, same-day TAJ offices, Form MC1 medicals and stamped proxy letters.",
+      "description": "Renewing or replacing a Jamaican driver's licence: ticket and TRN holds, the 60-day receipt rule, same-day TAJ offices, Form MC1 medicals, proxy letters and lost licence steps.",
       "image": "https://documenthelpja.com/assets/driver-license-renewal-hero.webp",
       "datePublished": "2026-09-18",
-      "dateModified": "2026-09-18",
+      "dateModified": "2026-09-30",
       "inLanguage": "en-JM",
       "mainEntityOfPage": "https://documenthelpja.com/jamaica-drivers-license-renewal-guide",
       "author": {
@@ -520,7 +520,7 @@
     .takeaway-list li::before { content: ""; position: absolute; left: 16px; top: 20px; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); }
 
     /* Tabs + stream checklist */
-    .tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; background: var(--tone); padding: 6px; border-radius: 12px; margin-bottom: 16px; }
+    .tabs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; background: var(--tone); padding: 6px; border-radius: 12px; margin-bottom: 16px; }
     .tab-btn { min-height: 48px; border: 0; border-radius: 9px; background: transparent; color: var(--text); font: 700 .9rem/1.25 var(--sans); cursor: pointer; padding: 8px 6px; }
     .tab-btn[aria-selected="true"] { background: var(--primary); color: #fff; box-shadow: 0 2px 6px rgba(15,37,55,.25); }
     .tab-btn:not([aria-selected="true"]):hover { background: #E4EAE7; }
@@ -528,7 +528,8 @@
       .check-meter { flex-wrap: wrap; row-gap: 6px; }
       .check-meter .bar { flex: 1 1 100%; }
     }
-    @media (max-width: 379px) {
+    @media (min-width: 700px) { .tabs { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 339px) {
       .tabs { grid-template-columns: 1fr; }
       .tab-btn { min-height: 44px; }
     }
@@ -614,6 +615,51 @@
     .nl-success p { color: #fff; margin: 0; font-size: .95rem; }
     @media (min-width: 640px) { .nl-form { flex-direction: row; } .nl-form input[type="email"] { flex: 1; } }
     button.btn-sub { border: 0; cursor: pointer; font-family: var(--sans); }
+    /* =========================================================
+       MOBILE-FRIENDLY LAYOUT
+       ========================================================= */
+    .ref-fold > summary.card-head { margin-bottom: 0; min-height: 48px; }
+    .ref-fold > summary > div { flex: 1; min-width: 0; }
+    .ref-fold[open] > summary.card-head { margin-bottom: 18px; }
+    .ref-fold .fold-icon { margin-top: 6px; }
+    .ref-fold > summary:hover h2 { text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 4px; }
+    .fold-body > :last-child { margin-bottom: 0; }
+    .ref-fold + .next-link { margin-top: 18px; }
+    .glance-more { display: none; }
+    @media (max-width: 599px) {
+      :root { --card-pad: 20px 16px; --gap: 14px; }
+      body { font-size: 1rem; line-height: 1.65; }
+      .breadcrumb { padding: 14px 0 8px; font-size: .8rem; }
+      .hero-media { aspect-ratio: 2 / 1; }
+      .hero h1 { font-size: 1.6rem; margin-bottom: 12px; }
+      .hero .dek { font-size: 1rem; margin-bottom: 16px; }
+      .author-bar { margin-top: 16px; padding-top: 14px; }
+      .author-bar img { width: 44px; height: 44px; }
+      .card-head { gap: 12px; margin-bottom: 14px; }
+      .step-badge { width: 38px; height: 38px; border-radius: 10px; font-size: 1rem; }
+      .card h2 { font-size: 1.2rem; }
+      .card-head .eyebrow { font-size: .68rem; }
+      .ref-fold .fold-icon { margin-top: 3px; }
+      .ref-fold[open] > summary.card-head { margin-bottom: 14px; }
+      .glance-list li:nth-child(n+5) { display: none; }
+      .glance-list.is-expanded li:nth-child(n+5) { display: block; }
+      .glance-more { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 44px; margin-top: 8px; border: 1px dashed var(--line); border-radius: 10px; background: #fff; color: var(--link); font: 600 .92rem var(--sans); cursor: pointer; }
+      .glance-hint { display: none; }
+      .check { padding: 12px 14px; gap: 12px; }
+      .check-text { font-size: .95rem; }
+      .tab-btn { font-size: .85rem; min-height: 44px; }
+      .callout-box, .warning-box { padding: 14px 16px; margin: 18px 0; }
+      .callout-box p, .callout-box li, .warning-box p { font-size: .95rem; }
+      .trap { padding: 14px 16px; }
+      .timeline > li { padding-bottom: 20px; }
+      .next-link { margin-top: 20px; padding: 12px 14px; }
+      .mid-cta strong { font-size: 1rem; }
+      .site-list li { padding: 10px 12px; }
+      .grid-2 > div { padding: 14px; }
+      .bridge-steps li { font-size: .92rem; padding: 10px 12px; }
+      .related-card { padding: 14px; }
+      .guide-link { padding: 14px 16px; }
+    }
 </style>
 </head>
 <body id="top">
@@ -686,10 +732,10 @@
         <div class="hero-body">
           <a class="category" href="/insights.html?cat=taj">TAJ Compliance</a>
           <h1>How Unpaid Traffic Tickets Block Your Jamaican Driver’s Licence Renewal</h1>
-          <p class="dek">Few things are more frustrating than waiting at Tax Administration Jamaica (TAJ) only to hear: “System showing a hold on your profile.” Whether you are renewing locally or applying from overseas through a proxy, here is how traffic court checks, legacy TRN gaps, collectorate choice and temporary driving rules affect your renewal, so you never get caught off guard.</p>
+          <p class="dek">Few things are more frustrating than waiting at Tax Administration Jamaica (TAJ) only to hear: “System showing a hold on your profile.” Whether you are renewing locally, applying from overseas through a proxy or replacing a lost licence, here is how traffic court checks, legacy TRN gaps, collectorate choice and temporary driving rules affect your renewal, so you never get caught off guard.</p>
           <div class="meta">
-            <span>9 min read</span>
-            <span>Updated <time datetime="2026-09-18">September 18, 2026</time></span>
+            <span>10 min read</span>
+            <span>Updated <time datetime="2026-09-30">September 30, 2026</time></span>
           </div>
           <div class="author-bar">
             <img src="/assets/profile.webp" width="112" height="112" alt="" loading="lazy" decoding="async">
@@ -714,6 +760,7 @@
           <li><a href="#blockers"><span class="num">C</span>System blockers</a></li>
           <li><a href="#medical"><span class="num">D</span>Medical rules</a></li>
           <li><a href="#proxy"><span class="num">E</span>Diaspora proxy</a></li>
+          <li><a href="#replacement"><span class="num">F</span>Lost or stolen licence</a></li>
           <li><a href="#help"><span class="num">★</span>Get help</a></li>
         </ol>
         <a class="nav-cta" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20was%20reading%20your%20driver%27s%20licence%20guide%20and%20would%20like%20a%20pre-audit%20before%20I%20renew." target="_blank" rel="noopener" data-wa="sidebar">
@@ -730,7 +777,7 @@
             <div><span class="eyebrow">The short version</span><h2 id="takeaways-title">At a glance</h2></div>
           </div>
           <div class="glance">
-            <ul class="glance-list">
+            <ul class="glance-list" id="glance-list">
               <li><a href="#prerequisites"><span class="g-label">Application form</span><span class="g-value">Form F7</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
               <li><a href="#process"><span class="g-label">Where to pay</span><span class="g-value">Online at jamaicatax.gov.jm or a TAJ cashier</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
               <li><a href="#blockers"><span class="g-label">Unpaid tickets</span><span class="g-value">Block renewal until cleared at Traffic Court</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
@@ -739,7 +786,9 @@
               <li><a href="#directory"><span class="g-label">Drop-off offices</span><span class="g-value">Up to 20 business days</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
               <li><a href="#medical"><span class="g-label">Medical (Form MC1)</span><span class="g-value">Over 70 &amp; commercial/PPV, within 90 days</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
               <li><a href="#proxy"><span class="g-label">Renewing from overseas</span><span class="g-value">Notarised letter, stamped at Stamp Duty (J$500)</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#replacement"><span class="g-label">Lost or stolen licence</span><span class="g-value">In person at TAJ, J$4,140, card in about 15 days</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
             </ul>
+            <button type="button" class="glance-more" id="glance-more" aria-controls="glance-list" aria-expanded="false">Show all facts</button>
             <p class="glance-hint">Tap any fact to jump to the details.</p>
           </div>
           <a class="next-link" href="#prerequisites"><div><span>Next</span><strong>What you need</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
@@ -751,12 +800,13 @@
             <span class="step-badge" aria-hidden="true">✓</span>
             <div><span class="eyebrow">Before you go</span><h2 id="prereq-title">The prerequisites: what you need</h2></div>
           </div>
-          <p>Choose your renewal stream below and tick off each document before you visit the collectorate.</p>
+          <p>Choose your situation below and tick off each document before you visit the tax office.</p>
 
-          <div class="tabs" role="tablist" aria-label="Renewal stream">
+          <div class="tabs" role="tablist" aria-label="Your situation">
             <button class="tab-btn" type="button" id="tab-local" role="tab" aria-selected="true" aria-controls="panel-local">Local drivers</button>
             <button class="tab-btn" type="button" id="tab-diaspora" role="tab" aria-selected="false" aria-controls="panel-diaspora" tabindex="-1">Diaspora (proxy)</button>
             <button class="tab-btn" type="button" id="tab-medical" role="tab" aria-selected="false" aria-controls="panel-medical" tabindex="-1">Over 70 / commercial</button>
+            <button class="tab-btn" type="button" id="tab-replace" role="tab" aria-selected="false" aria-controls="panel-replace" tabindex="-1">Lost or stolen</button>
           </div>
 
           <div class="check-meter" aria-live="polite"><span class="bar"><span id="checklist-fill"></span></span><span class="count" id="checklist-count">0 of 4 gathered</span><button type="button" class="reset" id="checklist-reset">Clear</button></div>
@@ -787,6 +837,16 @@
               <li><label class="check"><input type="checkbox" data-id="med-2"><span class="check-text"><strong>Medical certificate:</strong> a completed Form MC1 signed by a registered medical doctor, dated within the last 90 days.</span></label></li>
             </ul>
             <p class="panel-note">Applies to drivers over 70 and all commercial, truck, heavy equipment and PPV licence holders. <a href="#medical">See the medical rules</a></p>
+          </div>
+
+          <div class="tab-panel" id="panel-replace" role="tabpanel" aria-labelledby="tab-replace" hidden>
+            <ul class="checklist">
+              <li><label class="check"><input type="checkbox" data-id="rep-1"><span class="check-text"><strong>Substitute application form:</strong> completed at the tax office.</span></label></li>
+              <li><label class="check"><input type="checkbox" data-id="rep-2"><span class="check-text"><strong>Application form:</strong> a completed Form F7.</span></label></li>
+              <li><label class="check"><input type="checkbox" data-id="rep-3"><span class="check-text"><strong>Photographs:</strong> two passport-sized photos.</span></label></li>
+              <li><label class="check"><input type="checkbox" data-id="rep-4"><span class="check-text"><strong>Valid photo ID:</strong> you will need it with your temporary document to drive.</span></label></li>
+            </ul>
+            <p class="panel-note">Replacements are done in person by the licence holder. <a href="#replacement">See the replacement steps</a></p>
           </div>
 
           <p class="checklist-done" id="checklist-done" role="status" hidden>Everything’s gathered. Before you go, make sure there are no ticket holds on your profile.</p>
@@ -836,10 +896,13 @@
 
         <!-- TRAPS -->
         <section class="card" id="traps" aria-labelledby="traps-title">
-          <div class="card-head">
+          <details class="fold ref-fold" data-open-desktop>
+            <summary class="card-head">
             <span class="step-badge" aria-hidden="true">!</span>
             <div><span class="eyebrow">Avoid these</span><h2 id="traps-title">Major rejection traps</h2></div>
-          </div>
+              <span class="fold-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fold-body">
           <p>These two mistakes cost people the most time at the counter.</p>
           <div class="trap">
             <p class="trap-title"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>The unstamped proxy letter</p>
@@ -849,15 +912,20 @@
             <p class="trap-title"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>The historic ticket hold</p>
             <p>Assuming a traffic citation from years ago was forgotten is a costly mistake. The automated TMS cross-reference blocks the transaction until official court clearance receipts are produced.</p>
           </div>
+            </div>
+          </details>
           <a class="next-link" href="#sixty-day"><div><span>Next · Reference desk</span><strong>The 60-day legal driving rule</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
 
         <!-- REFERENCE A -->
         <section class="card" id="sixty-day" aria-labelledby="ref-a-title">
-          <div class="card-head">
+          <details class="fold ref-fold" data-open-desktop>
+            <summary class="card-head">
             <span class="step-badge" aria-hidden="true">A</span>
             <div><span class="eyebrow">Reference desk</span><h2 id="ref-a-title">The 60-day legal driving rule</h2></div>
-          </div>
+              <span class="fold-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fold-body">
           <p>Many drivers worry about being penalised while waiting for their new card to print. Under Tax Administration Jamaica regulations:</p>
           <ul class="rule-list">
             <li><strong>Temporary compliance:</strong> the official TAJ payment receipt, kept together with your expired physical driver’s licence, is a valid legal permit to drive on Jamaican roads for up to 60 days from the date of payment.</li>
@@ -868,14 +936,19 @@
             <span class="resource-title">jamaicatax.gov.jm <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg></span>
             <span class="resource-desc">Pay your renewal fee online and use the Driver’s Licence Status Check tool.</span>
           </a>
+            </div>
+          </details>
         </section>
 
         <!-- REFERENCE B -->
         <section class="card" id="directory" aria-labelledby="ref-b-title">
-          <div class="card-head">
+          <details class="fold ref-fold" data-open-desktop>
+            <summary class="card-head">
             <span class="step-badge" aria-hidden="true">B</span>
             <div><span class="eyebrow">Reference desk</span><h2 id="ref-b-title">Collectorate directory: same-day vs drop-off</h2></div>
-          </div>
+              <span class="fold-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fold-body">
           <p>Where you submit your application decides how fast you get your card.</p>
           <h3 class="sub-head">Same-day printing offices</h3>
           <p>You can receive your printed card the same day, often within a few hours, at these Revenue Service Centres (RSC) and tax offices:</p>
@@ -889,14 +962,19 @@
           </ul>
           <h3 class="sub-head">Non-printing drop-off offices</h3>
           <p>All other small tax offices accept renewal drop-offs. Applications are batched and sent to a regional printing hub, with a <strong>20-business-day turnaround</strong>.</p>
+            </div>
+          </details>
         </section>
 
         <!-- REFERENCE C -->
         <section class="card" id="blockers" aria-labelledby="ref-c-title">
-          <div class="card-head">
+          <details class="fold ref-fold" data-open-desktop>
+            <summary class="card-head">
             <span class="step-badge" aria-hidden="true">C</span>
             <div><span class="eyebrow">Reference desk</span><h2 id="ref-c-title">System blockers explained: TMS &amp; legacy TRNs</h2></div>
-          </div>
+              <span class="fold-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fold-body">
           <div class="grid-2">
             <div>
               <h3>Traffic Management System (TMS) holds</h3>
@@ -907,14 +985,19 @@
               <p>Older licences issued before central database integration often lack a direct digital link to your TRN. If the name spelling on your licence differs slightly from your TRN profile, the system will reject the transaction until a manual record pre-audit is done.</p>
             </div>
           </div>
+            </div>
+          </details>
         </section>
 
         <!-- REFERENCE D -->
         <section class="card" id="medical" aria-labelledby="ref-d-title">
-          <div class="card-head">
+          <details class="fold ref-fold" data-open-desktop>
+            <summary class="card-head">
             <span class="step-badge" aria-hidden="true">D</span>
             <div><span class="eyebrow">Reference desk</span><h2 id="ref-d-title">Medical assessment regulations (Form MC1)</h2></div>
-          </div>
+              <span class="fold-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fold-body">
           <p>To meet Island Traffic Authority (ITA) safety standards, some drivers must provide medical clearance:</p>
           <ul class="rule-list">
             <li><strong>Drivers over 70:</strong> must submit a completed Medical Certificate (Form MC1) signed by a registered physician confirming vision and physical fitness.</li>
@@ -928,14 +1011,19 @@
             <img src="/assets/driver-medical-check.png" width="1200" height="640" alt="Medical assessment form for a driver's licence renewal" loading="lazy" decoding="async">
             <figcaption>Book the doctor’s visit close to your renewal date so the form stays within 90 days.</figcaption>
           </figure>
+            </div>
+          </details>
         </section>
 
         <!-- REFERENCE E -->
         <section class="card" id="proxy" aria-labelledby="ref-e-title">
-          <div class="card-head">
+          <details class="fold ref-fold" data-open-desktop>
+            <summary class="card-head">
             <span class="step-badge" aria-hidden="true">E</span>
             <div><span class="eyebrow">Reference desk</span><h2 id="ref-e-title">Stamp duty &amp; proxy rules for diaspora drivers</h2></div>
-          </div>
+              <span class="fold-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fold-body">
           <p>If you live abroad and cannot travel to Jamaica to renew, a local representative can act for you. However, TAJ will not accept a plain notarised letter.</p>
           <ol class="timeline">
             <li>
@@ -947,23 +1035,57 @@
               <p>Once stamped, your representative presents the validated letter, your notarised Form F7, your original expired licence and the TAJ renewal fee at the Revenue Service Centre.</p>
             </li>
           </ol>
+            </div>
+          </details>
+        </section>
+
+        <!-- REFERENCE F -->
+        <section class="card" id="replacement" aria-labelledby="ref-f-title">
+          <details class="fold ref-fold" data-open-desktop>
+            <summary class="card-head">
+            <span class="step-badge" aria-hidden="true">F</span>
+            <div><span class="eyebrow">Reference desk</span><h2 id="ref-f-title">Lost, stolen or damaged licence: getting a replacement</h2></div>
+              <span class="fold-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fold-body">
+          <p>A replacement is called a <strong>substitute licence</strong>. Unlike a renewal, it cannot be paid for online, and the licence holder must apply in person at a tax office.</p>
+          <ol class="timeline">
+            <li>
+              <h3>Visit any tax office in person</h3>
+              <p>Bring two passport-sized photos and valid photo ID. You will complete two forms at the office: the substitute application form and Form F7.</p>
+            </li>
+            <li>
+              <h3>Receive a temporary document</h3>
+              <p>TAJ issues a document that you use together with your valid ID to drive while the substitute licence is prepared.</p>
+            </li>
+            <li>
+              <h3>Return in about 15 days to pay and collect</h3>
+              <p>Go back to the tax office when asked, usually in 15 days, to pay the substitute licence fee and collect your new card.</p>
+            </li>
+          </ol>
+          <div class="callout-box">
+            <p><strong>Substitute licence fee: J$4,140</strong>, paid in person when you return to collect the card.</p>
+          </div>
+            </div>
+          </details>
         </section>
 
         <p class="reviewed">Requirements, fees and office services last checked <time datetime="2026-09">September 2026</time>. TAJ and the ITA can change them without notice, so confirm with us before you pay.</p>
 
         <!-- SERVICE BRIDGE -->
         <section class="card cta-card" id="help" aria-labelledby="bridge-title">
-          <span class="kicker">Concierge renewal</span>
-          <h2 id="bridge-title">Don’t want to deal with the lines yourself?</h2>
-          <p>We can handle this application for you from start to finish. Our concierge process is simple:</p>
+          <span class="kicker">Renewal service</span>
+          <h2 id="bridge-title">Want your renewal done right the first time?</h2>
+          <p>We prepare and pay your renewal so you only visit TAJ to collect your card. Here is how it works:</p>
           <ul class="bridge-steps">
-            <li><strong>Step 1: Submit details.</strong> We pre-audit your paperwork so nothing is rejected.</li>
-            <li><strong>Step 2: We process it.</strong> We handle the government lines and agency payments in Jamaica.</li>
-            <li><strong>Step 3: Secure delivery.</strong> Choose local pickup, or have your official documents dispatched worldwide via secure international courier (DHL/FedEx).</li>
+            <li><strong>Step 1: Pre-audit.</strong> We check your record for ticket holds and TRN mismatches before anything is paid.</li>
+            <li><strong>Step 2: Forms and payment.</strong> We complete Form F7 for you to sign, pay your TAJ fee online and send you the receipt.</li>
+            <li><strong>Step 3: You collect.</strong> Take the signed F7, your photos and the receipt to TAJ in person. The receipt lets you drive for up to 60 days.</li>
           </ul>
+          <p class="fine" style="margin-top:14px">Our fee is J$4,000 plus the TAJ renewal fee. Replacements for lost or stolen licences are done in person by the holder, using the steps above.</p>
           <div class="bridge-actions">
-            <a class="btn-sub" href="/#contact">Contact us</a>
-            <a class="btn-wa-cta" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20help%20with%20my%20documents." target="_blank" rel="noopener" data-wa="article-bridge"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp us</a>
+            <a class="btn-sub" href="/drivers-licence-renewal.html">See the renewal service</a>
+            <a class="btn-wa-cta" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20to%20renew%20my%20driver%27s%20licence." target="_blank" rel="noopener" data-wa="article-bridge"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp us</a>
           </div>
         </section>
 
@@ -1032,7 +1154,7 @@
   <nav class="dock" aria-label="Guide navigation">
     <button type="button" class="dock-btn" data-dock="prev" aria-label="Previous section"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></button>
     <button type="button" class="dock-main" aria-haspopup="dialog" aria-controls="contents-sheet" aria-expanded="false">
-      <span class="dock-count">1 / 10</span>
+      <span class="dock-count">1 / 11</span>
       <span class="dock-label">Overview</span>
       <span class="dock-hint">Contents</span>
     </button>
@@ -1177,6 +1299,32 @@
         document.querySelectorAll('details[data-open-desktop]').forEach(function (d) { d.open = true; });
       }
 
+      /* Open a folded section whenever the reader jumps to it */
+      function reveal(el) {
+        if (!el || !el.querySelector) return;
+        var d = el.matches('details.ref-fold') ? el : el.querySelector('details.ref-fold');
+        if (d) d.open = true;
+      }
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest('a[href^="#"]');
+        if (!a || a.getAttribute('href').length < 2) return;
+        try { reveal(document.querySelector(a.getAttribute('href'))); } catch (err) {}
+      }, true);
+      if (location.hash.length > 1) { try { reveal(document.querySelector(location.hash)); } catch (e) {} }
+
+      /* At a glance: show all facts on phones */
+      var gMore = document.getElementById('glance-more');
+      var gList = document.getElementById('glance-list');
+      if (gMore && gList) {
+        var gLabel = 'Show all ' + gList.children.length + ' facts';
+        gMore.textContent = gLabel;
+        gMore.addEventListener('click', function () {
+          var open = gList.classList.toggle('is-expanded');
+          gMore.setAttribute('aria-expanded', String(open));
+          gMore.textContent = open ? 'Show fewer' : gLabel;
+        });
+      }
+
       /* Mobile dock + contents sheet */
       var dock = document.querySelector('.dock');
       var dockMain = dock.querySelector('.dock-main');
@@ -1217,6 +1365,7 @@
       setActive = function (id) { baseSetActive(id); updateDock(id); };
       function go(i) {
         if (i < 0 || i >= sections.length) return;
+        reveal(sections[i]);
         sections[i].scrollIntoView({ behavior: behavior, block: 'start' });
         setActive(sections[i].id);
       }
@@ -1248,6 +1397,7 @@
           var target = document.querySelector(link.getAttribute('href'));
           closeSheet(false);
           if (target) {
+            reveal(target);
             target.scrollIntoView({ behavior: behavior, block: 'start' });
             if (target.id) setActive(target.id);
           }
