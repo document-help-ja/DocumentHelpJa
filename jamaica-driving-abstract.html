@@ -283,17 +283,17 @@
 
         <div class="estimator" id="estimator">
           <h3 class="list-title">Estimate your total</h3>
-          <label class="opt"><input type="checkbox" id="opt-dhl" checked><span>DHL delivery overseas<small>Exact rate depends on your address</small></span><span class="add">from $20</span></label>
+          <label class="opt"><input type="checkbox" id="opt-dhl" checked><span>DHL delivery overseas<small>Quoted by your delivery address</small></span><span class="add">quoted</span></label>
           <label class="opt"><input type="checkbox" id="opt-apo"><span>Apostille<small>If a foreign office asks for it</small></span><span class="add">+$30</span></label>
           <label class="opt"><input type="checkbox" id="opt-tix"><span>I have unpaid tickets, or I'm not sure</span></label>
           <div class="totals" aria-live="polite">
             <div class="fee-row"><span>Our service fee</span><strong>$100</strong></div>
             <div class="fee-row"><span>Abstract fee &amp; stamp duty (government)</span><strong>$30</strong></div>
             <div class="fee-row" id="row-apo" hidden><span>Apostille</span><strong>$30</strong></div>
-            <div class="fee-row" id="row-dhl"><span>DHL delivery</span><strong>from $20</strong></div>
-            <div class="fee-row total"><span>Estimated total</span><strong id="est-total">$150+ USD</strong></div>
+            <div class="fee-row" id="row-dhl"><span>DHL delivery</span><strong>by address</strong></div>
+            <div class="fee-row total"><span>Estimated total</span><strong id="est-total">$130 USD + courier</strong></div>
           </div>
-          <p class="est-note">All amounts in USD. Your exact quote is confirmed before you pay.</p>
+          <p class="est-note">All amounts in USD. Courier is quoted by your delivery address, and your full quote is confirmed before you pay.</p>
         </div>
 
         <p class="ticket-alert" id="ticket-alert" hidden><strong>Unpaid tickets show on your abstract.</strong> If you need a clean record for an overseas licence or insurer, ask us to check your record first so you can deal with any tickets before the abstract is printed.</p>
@@ -435,10 +435,10 @@
   (function () {
     var dhl = document.getElementById('opt-dhl'), apo = document.getElementById('opt-apo'), tix = document.getElementById('opt-tix');
     function est() {
-      var t = 130 + (apo.checked ? 30 : 0) + (dhl.checked ? 20 : 0);
+      var t = 130 + (apo.checked ? 30 : 0) + 0;
       document.getElementById('row-apo').hidden = !apo.checked;
       document.getElementById('row-dhl').hidden = !dhl.checked;
-      document.getElementById('est-total').textContent = '$' + t + (dhl.checked ? '+' : '') + ' USD';
+      document.getElementById('est-total').textContent = '$' + t + ' USD' + (dhl.checked ? ' + courier' : '');
       document.getElementById('ticket-alert').hidden = !tix.checked;
     }
     [dhl, apo, tix].forEach(function (b) { b.addEventListener('change', est); });
