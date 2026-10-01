@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Jamaican Birth, Marriage &amp; Death Certificates | Laura Clarke</title>
-  <meta name="description" content="Certified copies of Jamaican birth, marriage and death certificates, plus RGD record searches, corrections and late registrations, for clients in Jamaica and overseas.">
+  <meta name="description" content="Certified copies of Jamaican birth, marriage and death certificates, plus RGD record searches and corrections, for clients in Jamaica and overseas.">
   <link rel="canonical" href="https://documenthelpja.com/jamaican-rgd-certificates.html">
   <meta name="theme-color" content="#181A1B">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_JM">
   <meta property="og:site_name" content="Laura Clarke Administrative Services">
   <meta property="og:title" content="Jamaican RGD Certificates: Copies, Searches &amp; Corrections">
-  <meta property="og:description" content="Certified copies, record searches, corrections and late registrations, handled at the RGD for you.">
+  <meta property="og:description" content="Certified copies, record searches and corrections, handled at the RGD for you.">
   <meta property="og:url" content="https://documenthelpja.com/jamaican-rgd-certificates.html">
   <meta property="og:image" content="https://documenthelpja.com/assets/office-hero.webp">
   <meta name="twitter:card" content="summary_large_image">
@@ -27,15 +27,17 @@
       {
         "@type": "Service",
         "name": "Jamaican RGD Certificate Services",
-        "serviceType": "Birth, marriage and death certificate retrieval, record searches, corrections and late registration",
+        "serviceType": "Birth, marriage and death certificate retrieval, record searches and corrections",
         "url": "https://documenthelpja.com/jamaican-rgd-certificates.html",
         "areaServed": "Worldwide",
         "provider": { "@type": "ProfessionalService", "@id": "https://documenthelpja.com/#business", "name": "Laura Clarke Administrative Services" },
         "offers": [
           { "@type": "Offer", "name": "Certified copy retrieval (local, from)", "price": "3000", "priceCurrency": "JMD" },
           { "@type": "Offer", "name": "Certified copy retrieval (overseas, from)", "price": "30", "priceCurrency": "USD", "description": "Plus RGD fee and courier, quoted by delivery address." },
-          { "@type": "Offer", "name": "Correction, father's name or late registration", "price": "8000", "priceCurrency": "JMD" },
-          { "@type": "Offer", "name": "Record search", "price": "5000", "priceCurrency": "JMD" }
+          { "@type": "Offer", "name": "Correction of error or adding father's name", "price": "8000", "priceCurrency": "JMD" },
+          { "@type": "Offer", "name": "Correction of error or adding father's name (overseas)", "price": "70", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Record search", "price": "5000", "priceCurrency": "JMD" },
+          { "@type": "Offer", "name": "Record search (overseas)", "price": "50", "priceCurrency": "USD" }
         ]
       },
       {
@@ -232,7 +234,9 @@
     .checked-note { font-size: 13px; color: var(--text-muted); margin: 16px 0 0; }
     @media (min-width: 700px) { .res-links { grid-template-columns: 1fr 1fr; } }
 
-    .service-grid.two { align-items: start; }
+    .service-grid.two, .service-grid.three { align-items: start; }
+    @media (min-width: 1000px) { .container:has(.service-grid.three) { max-width: 1140px; } .service-grid.three { grid-template-columns: repeat(3, 1fr); } .container:has(.service-grid.three) > :not(.service-grid) { max-width: 860px; margin-left: auto; margin-right: auto; } }
+    @media (min-width: 768px) and (max-width: 999px) { .service-grid.three #search { grid-column: 1 / -1; } }
     .who-note { font-size: 13px; color: var(--text-muted); margin: 8px 0 0; }
     .who-note a { color: var(--blue-highlight); font-weight: 600; text-decoration: underline; }
     .answer ul, .answer ol { margin: 0; padding-left: 20px; }
@@ -275,12 +279,12 @@
 
 <section class="hero">
   <h1>Birth, Marriage &amp; Death Certificates</h1>
-  <p>Certified copies from the RGD, plus record searches, corrections and late registrations. In Jamaica or overseas, we handle it for you.</p>
+  <p>Certified copies from the RGD, plus record searches and corrections. In Jamaica or overseas, we handle it for you.</p>
 </section>
 
 <main class="container">
 
-  <div class="service-grid two">
+  <div class="service-grid three">
     <div class="service-card featured" id="copies">
       <div class="card-head">
         <span class="badge">Certified copies</span>
@@ -310,7 +314,7 @@
           <label class="check"><input type="checkbox"><span>The record has no errors or missing details</span></label>
           <p class="ready-msg" hidden>You qualify. Start below and choose <em>RGD Certificate Retrieval</em> on the form.</p>
         </div>
-        <p class="who-note" style="margin:-8px 0 20px;">Can't tick them all? <a href="#complex">You need a search, correction or late registration</a>.</p>
+        <p class="who-note" style="margin:-8px 0 20px;">Can't tick them all? You may need a <a href="#complex">correction</a> or a <a href="#search">record search</a>.</p>
         <div class="btn-row">
           <a href="https://forms.gle/baH9WjZvYCZC7ZE56" class="btn btn-accent" target="_blank" rel="noopener">Start Retrieval Request</a>
           <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20a%20certified%20copy%20of%20an%20RGD%20certificate." class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
@@ -320,29 +324,55 @@
 
     <div class="service-card" id="complex">
       <div class="card-head">
-        <span class="badge">Complex records</span>
-        <h2>Searches, Corrections &amp; Late Registration</h2>
-        <p class="card-intro">When the date is unknown, the record has an error, or it was never registered.</p>
+        <span class="badge">Corrections</span>
+        <h2>Corrections</h2>
+        <p class="card-intro">When a record has an error, or the father's name is missing.</p>
       </div>
       <div class="card-body">
-        <h3 class="list-title">Our fees</h3>
-        <div class="mini-fees">
-          <div class="fee-row"><span>Correction of error<small>Misspelt names, wrong dates or sex marker</small></span><strong>$8,000 JMD<small>$70 USD overseas</small></strong></div>
-          <div class="fee-row"><span>Adding the father's name</span><strong>$8,000 JMD<small>$70 USD overseas</small></strong></div>
-          <div class="fee-row"><span>Late registration<small>A birth or death never registered</small></span><strong>$8,000 JMD<small>$70 USD overseas</small></strong></div>
-          <div class="fee-row"><span>Record search<small>Exact date or parish unknown</small></span><strong>$5,000 JMD<small>$50 USD overseas</small></strong></div>
+        <div class="price-block">
+          <div class="price">$8,000 JMD</div>
+          <span class="price-note">$70 USD overseas, + RGD fee and courier</span>
         </div>
-        <p class="who-note" style="margin:-8px 0 20px;">RGD fees and courier are extra. We quote them after reviewing your documents, with courier priced by your delivery address. <a href="/jamaica-rgd-certificates-guide#prerequisites">See what each case needs</a>.</p>
+        <h3 class="list-title">Covers</h3>
+        <ul class="feature-list">
+          <li>Correction of error: misspelt names, wrong dates or sex marker</li>
+          <li>Adding the father's name to a birth record</li>
+        </ul>
         <h3 class="list-title">What we handle</h3>
         <ul class="feature-list">
           <li>Review your evidence against RGD's requirements</li>
-          <li>Prepare the declarations and amendment forms</li>
-          <li>Lodge your file at the RGD head office</li>
-          <li>Follow up so your case doesn't stall</li>
+          <li>Prepare the declarations and forms</li>
+          <li>Lodge your file at the RGD and follow up</li>
         </ul>
+        <p class="who-note" style="margin:-8px 0 20px;">RGD fees depend on the case. We quote them after reviewing your documents. <a href="/jamaica-rgd-certificates-guide#prerequisites">See what each case needs</a>.</p>
         <div class="btn-row">
           <a href="https://forms.gle/baH9WjZvYCZC7ZE56" class="btn btn-accent" target="_blank" rel="noopener">Start Case Review</a>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20an%20RGD%20record.%20My%20situation%20is%3A%20" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Your Situation</a>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20an%20RGD%20correction.%20My%20situation%20is%3A%20" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Your Situation</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card" id="search">
+      <div class="card-head">
+        <span class="badge">Record search</span>
+        <h2>Record Search</h2>
+        <p class="card-intro">When you don't know the exact date or parish of the event.</p>
+      </div>
+      <div class="card-body">
+        <div class="price-block">
+          <div class="price">$5,000 JMD</div>
+          <span class="price-note">$50 USD overseas, + RGD J$1,000 per decade searched</span>
+        </div>
+        <h3 class="list-title">What we handle</h3>
+        <ul class="feature-list">
+          <li>Narrow the date range and parish with you</li>
+          <li>Request the official RGD search</li>
+          <li>Order your certified copy once the record is found</li>
+        </ul>
+        <p class="who-note" style="margin:-8px 0 20px;">The certified copy is charged separately, as in Certificate Retrieval.</p>
+        <div class="btn-row">
+          <a href="https://forms.gle/baH9WjZvYCZC7ZE56" class="btn btn-accent" target="_blank" rel="noopener">Start Record Search</a>
+          <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20an%20RGD%20record%20search." class="btn btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
         </div>
       </div>
     </div>
@@ -387,7 +417,7 @@
   <section class="faq-section resources" aria-labelledby="res-title">
     <h3 id="res-title">Reference &amp; Resources</h3>
     <div class="res-links">
-      <a class="res-link" href="/jamaica-rgd-certificates-guide"><strong>RGD Certificates Guide</strong><span>Entry numbers, record searches, corrections, late registration and ordering from overseas.</span></a>
+      <a class="res-link" href="/jamaica-rgd-certificates-guide"><strong>RGD Certificates Guide</strong><span>Entry numbers, record searches, corrections and ordering from overseas.</span></a>
       <a class="res-link" href="https://www.rgd.gov.jm/index.php/products-and-service/prices" target="_blank" rel="noopener"><strong>RGD Price List</strong><span>Official fees for certificates, searches and amendments.</span></a>
     </div>
     <p class="checked-note">More questions about how we work? See our <a href="/faq.html" style="color:var(--blue-highlight);font-weight:600;text-decoration:underline;">main FAQ</a>.</p>
