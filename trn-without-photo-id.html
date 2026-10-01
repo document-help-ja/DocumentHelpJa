@@ -42,7 +42,7 @@
       "description": "How to get a TRN in Jamaica without photo ID: the birth certificate route, TAJ's exact photo wording, who can certify, TRNs for children and applying from overseas. Free.",
       "image": "https://documenthelpja.com/assets/trn-application.webp",
       "datePublished": "2026-09-18",
-      "dateModified": "2026-09-29",
+      "dateModified": "2026-09-30",
       "inLanguage": "en-JM",
       "mainEntityOfPage": "https://documenthelpja.com/trn-without-photo-id",
       "author": { "@type": "Person", "name": "Laura Clarke", "url": "https://documenthelpja.com/about.html" },
@@ -620,6 +620,51 @@
     .nl-success p { color: #fff; margin: 0; font-size: .95rem; }
     @media (min-width: 640px) { .nl-form { flex-direction: row; } .nl-form input[type="email"] { flex: 1; } }
     button.btn-sub { border: 0; cursor: pointer; font-family: var(--sans); }
+    /* =========================================================
+       MOBILE-FRIENDLY LAYOUT
+       ========================================================= */
+    .ref-fold > summary.card-head { margin-bottom: 0; min-height: 48px; }
+    .ref-fold > summary > div { flex: 1; min-width: 0; }
+    .ref-fold[open] > summary.card-head { margin-bottom: 18px; }
+    .ref-fold .fold-icon { margin-top: 6px; }
+    .ref-fold > summary:hover h2 { text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 4px; }
+    .fold-body > :last-child { margin-bottom: 0; }
+    .ref-fold + .next-link { margin-top: 18px; }
+    .glance-more { display: none; }
+    @media (max-width: 599px) {
+      :root { --card-pad: 20px 16px; --gap: 14px; }
+      body { font-size: 1rem; line-height: 1.65; }
+      .breadcrumb { padding: 14px 0 8px; font-size: .8rem; }
+      .hero-media { aspect-ratio: 2 / 1; }
+      .hero h1 { font-size: 1.6rem; margin-bottom: 12px; }
+      .hero .dek { font-size: 1rem; margin-bottom: 16px; }
+      .author-bar { margin-top: 16px; padding-top: 14px; }
+      .author-bar img { width: 44px; height: 44px; }
+      .card-head { gap: 12px; margin-bottom: 14px; }
+      .step-badge { width: 38px; height: 38px; border-radius: 10px; font-size: 1rem; }
+      .card h2 { font-size: 1.2rem; }
+      .card-head .eyebrow { font-size: .68rem; }
+      .ref-fold .fold-icon { margin-top: 3px; }
+      .ref-fold[open] > summary.card-head { margin-bottom: 14px; }
+      .glance-list li:nth-child(n+5) { display: none; }
+      .glance-list.is-expanded li:nth-child(n+5) { display: block; }
+      .glance-more { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 44px; margin-top: 8px; border: 1px dashed var(--line); border-radius: 10px; background: #fff; color: var(--link); font: 600 .92rem var(--sans); cursor: pointer; }
+      .glance-hint { display: none; }
+      .check { padding: 12px 14px; gap: 12px; }
+      .check-text { font-size: .95rem; }
+      .tab-btn { font-size: .85rem; min-height: 44px; }
+      .callout-box, .warning-box { padding: 14px 16px; margin: 18px 0; }
+      .callout-box p, .callout-box li, .warning-box p { font-size: .95rem; }
+      .trap { padding: 14px 16px; }
+      .timeline > li { padding-bottom: 20px; }
+      .next-link { margin-top: 20px; padding: 12px 14px; }
+      .mid-cta strong { font-size: 1rem; }
+      .site-list li { padding: 10px 12px; }
+      .grid-2 > div { padding: 14px; }
+      .bridge-steps li { font-size: .92rem; padding: 10px 12px; }
+      .related-card { padding: 14px; }
+      .guide-link { padding: 14px 16px; }
+    }
 </style>
 </head>
 <body id="top">
@@ -695,7 +740,7 @@
           <p class="dek">Many people believe that without a passport, driver’s licence or voter’s ID, they can’t get a Taxpayer Registration Number (TRN). Tax Administration Jamaica (TAJ) actually provides an official alternative path using your birth certificate. Here is exactly how to prepare the paperwork, including the photo wording TAJ requires, so the counter clerk accepts it on the first try.</p>
           <div class="meta">
             <span>7 min read</span>
-            <span>Updated <time datetime="2026-09-29">September 29, 2026</time></span>
+            <span>Updated <time datetime="2026-09-30">September 30, 2026</time></span>
           </div>
           <div class="author-bar">
             <img src="/assets/profile.webp" width="112" height="112" alt="" loading="lazy" decoding="async">
@@ -735,7 +780,7 @@
             <div><span class="eyebrow">The short version</span><h2 id="takeaways-title">At a glance</h2></div>
           </div>
           <div class="glance">
-            <ul class="glance-list">
+            <ul class="glance-list" id="glance-list">
               <li><a href="#prerequisites"><span class="g-label">Cost</span><span class="g-value">Free: TAJ charges no fee for a TRN</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
               <li><a href="#prerequisites"><span class="g-label">No photo ID?</span><span class="g-value">Birth certificate + certified photo + declaration</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
               <li><a href="#photo"><span class="g-label">Photo wording</span><span class="g-value">“Certified to be a true photograph of…”</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
@@ -745,6 +790,7 @@
               <li><a href="#minors"><span class="g-label">Children</span><span class="g-value">Any age; a parent or guardian signs</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
               <li><a href="#overseas"><span class="g-label">Living overseas</span><span class="g-value">Apply online, then mail notarised ID</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
             </ul>
+            <button type="button" class="glance-more" id="glance-more" aria-controls="glance-list" aria-expanded="false">Show all facts</button>
             <p class="glance-hint">Tap any fact to jump to the details.</p>
           </div>
           <a class="next-link" href="#prerequisites"><div><span>Next</span><strong>What you need</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
@@ -877,10 +923,13 @@
 
         <!-- MINORS -->
         <section class="card" id="minors" aria-labelledby="minors-title">
-          <div class="card-head">
+          <details class="fold ref-fold" data-open-desktop>
+            <summary class="card-head">
             <span class="step-badge" aria-hidden="true">C</span>
             <div><span class="eyebrow">Under 18</span><h2 id="minors-title">Getting a TRN for a child</h2></div>
-          </div>
+              <span class="fold-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fold-body">
           <p>There is no minimum age for a TRN, and no fee. Children often need one for school, exams, health cards and savings accounts. The application must be completed and signed, or co-signed, by a <strong>parent or legal guardian</strong>.</p>
           <div class="grid-2">
             <div>
@@ -897,15 +946,20 @@
           <div class="callout-box">
             <p>If the child has no passport or school ID, use a professionally produced passport-size photo certified by an approved official, such as a JP, doctor, attorney, minister of religion or school principal, dated within the last six months.</p>
           </div>
+            </div>
+          </details>
           <a class="next-link" href="#overseas"><div><span>Next</span><strong>Applying from overseas</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
 
         <!-- OVERSEAS -->
         <section class="card" id="overseas" aria-labelledby="overseas-title">
-          <div class="card-head">
+          <details class="fold ref-fold" data-open-desktop>
+            <summary class="card-head">
             <span class="step-badge" aria-hidden="true">O</span>
             <div><span class="eyebrow">Diaspora</span><h2 id="overseas-title">Applying for a TRN from overseas</h2></div>
-          </div>
+              <span class="fold-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fold-body">
           <p>You don’t have to travel to Jamaica. TAJ offers two routes:</p>
           <ol class="timeline">
             <li><h3>Apply online</h3><p>Create a login on the TAJ website and select “Apply for TRN”. Complete the web application, then print and sign the application it generates.</p></li>
@@ -917,14 +971,19 @@
             <span class="resource-title">TRN requirements &amp; mailing address <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg></span>
             <span class="resource-desc">Check TAJ’s current mailing address and requirements before you post your application.</span>
           </a>
+            </div>
+          </details>
         </section>
 
         <!-- TRAPS -->
         <section class="card" id="traps" aria-labelledby="traps-title">
-          <div class="card-head">
+          <details class="fold ref-fold" data-open-desktop>
+            <summary class="card-head">
             <span class="step-badge" aria-hidden="true">!</span>
             <div><span class="eyebrow">Avoid these</span><h2 id="traps-title">Major rejection traps</h2></div>
-          </div>
+              <span class="fold-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="fold-body">
           <p>These mistakes send people home to start again.</p>
           <div class="trap">
             <p class="trap-title"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>The plain signature trap</p>
@@ -938,23 +997,25 @@
             <p class="trap-title"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>The missing parent name trap</p>
             <p>For a child’s TRN, the birth certificate must show the name of the parent who signs the application. If that parent’s name is missing, a legal guardian must apply instead, with a court order or the two voluntary declarations.</p>
           </div>
+            </div>
+          </details>
         </section>
 
         <p class="reviewed">Requirements checked against Tax Administration Jamaica’s TRN guidance in <time datetime="2026-09">September 2026</time>. TAJ can change them without notice, so confirm with us before you go.</p>
 
         <!-- SERVICE BRIDGE -->
         <section class="card cta-card" id="help" aria-labelledby="bridge-title">
-          <span class="kicker">Concierge service</span>
-          <h2 id="bridge-title">Don’t want to deal with the lines yourself?</h2>
-          <p>We can handle this application for you from start to finish. Our concierge process is simple:</p>
+          <span class="kicker">TRN service</span>
+          <h2 id="bridge-title">Living overseas? Skip the mailing hassle</h2>
+          <p>We get your TRN without you travelling to Jamaica:</p>
           <ul class="bridge-steps">
-            <li><strong>Step 1: Submit details.</strong> We pre-audit your paperwork so nothing is rejected.</li>
-            <li><strong>Step 2: We process it.</strong> We handle the government lines and agency payments in Jamaica.</li>
-            <li><strong>Step 3: Secure delivery.</strong> Choose local pickup, or have your official documents dispatched worldwide via secure international courier (DHL/FedEx).</li>
+            <li><strong>Step 1: Prepare.</strong> We fill in your TRN application for you to sign and check your notarised ID.</li>
+            <li><strong>Step 2: Submit.</strong> We submit your application in person at TAJ and collect your TRN letter.</li>
+            <li><strong>Step 3: Deliver.</strong> We email you a scan and courier the original to you. Courier is quoted by your address.</li>
           </ul>
           <div class="bridge-actions">
-            <a class="btn-sub" href="/#contact">Contact us</a>
-            <a class="btn-wa-cta" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20help%20with%20my%20documents." target="_blank" rel="noopener" data-wa="article-bridge"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp us</a>
+            <a class="btn-sub" href="/trn-application.html">See the TRN service</a>
+            <a class="btn-wa-cta" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20getting%20a%20Jamaican%20TRN." target="_blank" rel="noopener" data-wa="article-bridge"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp us</a>
           </div>
         </section>
 
@@ -1168,6 +1229,32 @@
         document.querySelectorAll('details[data-open-desktop]').forEach(function (d) { d.open = true; });
       }
 
+      /* Open a folded section whenever the reader jumps to it */
+      function reveal(el) {
+        if (!el || !el.querySelector) return;
+        var d = el.matches('details.ref-fold') ? el : el.querySelector('details.ref-fold');
+        if (d) d.open = true;
+      }
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest('a[href^="#"]');
+        if (!a || a.getAttribute('href').length < 2) return;
+        try { reveal(document.querySelector(a.getAttribute('href'))); } catch (err) {}
+      }, true);
+      if (location.hash.length > 1) { try { reveal(document.querySelector(location.hash)); } catch (e) {} }
+
+      /* At a glance: show all facts on phones */
+      var gMore = document.getElementById('glance-more');
+      var gList = document.getElementById('glance-list');
+      if (gMore && gList) {
+        var gLabel = 'Show all ' + gList.children.length + ' facts';
+        gMore.textContent = gLabel;
+        gMore.addEventListener('click', function () {
+          var open = gList.classList.toggle('is-expanded');
+          gMore.setAttribute('aria-expanded', String(open));
+          gMore.textContent = open ? 'Show fewer' : gLabel;
+        });
+      }
+
       /* Mobile dock + contents sheet */
       var dock = document.querySelector('.dock');
       var dockMain = dock.querySelector('.dock-main');
@@ -1208,6 +1295,7 @@
       setActive = function (id) { baseSetActive(id); updateDock(id); };
       function go(i) {
         if (i < 0 || i >= sections.length) return;
+        reveal(sections[i]);
         sections[i].scrollIntoView({ behavior: behavior, block: 'start' });
         setActive(sections[i].id);
       }
@@ -1239,6 +1327,7 @@
           var target = document.querySelector(link.getAttribute('href'));
           closeSheet(false);
           if (target) {
+            reveal(target);
             target.scrollIntoView({ behavior: behavior, block: 'start' });
             if (target.id) setActive(target.id);
           }
