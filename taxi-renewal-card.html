@@ -43,8 +43,8 @@
     body {
       margin: 0;
       font-family: var(--sans);
-      font-size: 15px;
-      line-height: 1.5;
+      font-size: 16px;
+      line-height: 1.6;
       background: var(--bg-dark);
       color: var(--text-light);
       min-height: 100vh;
@@ -87,7 +87,7 @@
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--glass-border);
       border-radius: 24px;
-      padding: 24px 22px 26px;
+      padding: 34px 26px 32px;
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 
@@ -96,8 +96,6 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--glass-border);
     }
     .avatar {
       position: relative;
@@ -138,7 +136,7 @@
     .from-company { font-size: 13px; color: var(--text-muted); }
 
     /* Headline */
-    .hero { padding: 24px 0 22px; }
+    .hero { padding: 40px 0 36px; }
     .hero h1 {
       font-family: var(--serif);
       font-weight: 700;
@@ -149,10 +147,10 @@
     }
     .hero h1 span { display: block; text-wrap: balance; }
     .hero p {
-      margin-top: 12px;
-      font-size: 16px;
-      color: var(--text-light);
-      max-width: 34ch;
+      margin-top: 18px;
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 30ch;
     }
 
     /* =========================================================
@@ -160,17 +158,14 @@
        ========================================================= */
     .plates {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 14px;
     }
     .plate-label {
       font-size: 13px;
       font-weight: 600;
       color: var(--text-muted);
-      margin-bottom: 7px;
-      min-height: 2.9em;
-      display: flex;
-      align-items: flex-end;
+      margin-bottom: 10px;
     }
     .plate {
       position: relative;
@@ -182,11 +177,11 @@
     .plate-face {
       border-radius: 6px;
       border: 1.5px solid var(--border-line);
-      padding: 13px 6px 11px;
+      padding: 18px 6px 16px;
       text-align: center;
     }
     .plate-fee {
-      font-size: clamp(25px, 7.6vw, 30px);
+      font-size: clamp(20px, 6.9vw, 30px);
       font-weight: 800;
       line-height: 1;
       letter-spacing: 0.02em;
@@ -194,7 +189,7 @@
       color: var(--gold-light);
     }
     .plate-unit {
-      margin-top: 6px;
+      margin-top: 8px;
       font-size: 12px;
       font-weight: 600;
       color: var(--text-muted);
@@ -204,8 +199,8 @@
     .plate--batch .plate-fee, .plate--batch .plate-unit { color: #0B1A28; }
 
     .fee-note {
-      margin-top: 12px;
-      font-size: 13px;
+      margin-top: 16px;
+      font-size: 14px;
       color: var(--text-muted);
     }
 
@@ -241,34 +236,34 @@
     .btn-outline:hover { background: rgba(200, 155, 60, 0.12); border-color: var(--gold); }
     .icon { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
 
-    .book { margin-top: 20px; }
+    .book { margin-top: 28px; }
 
     /* =========================================================
        5. SECTIONS
        ========================================================= */
-    .section { margin-top: 30px; }
+    .section { margin-top: 56px; }
     .section h2 {
       font-family: var(--serif);
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
       line-height: 1.25;
       color: #FFFFFF;
-      margin-bottom: 14px;
+      margin-bottom: 22px;
     }
 
     /* How it works: a real sequence, so it is numbered */
-    .steps { counter-reset: step; display: grid; gap: 14px; }
+    .steps { counter-reset: step; display: grid; gap: 22px; }
     .steps li {
       counter-increment: step;
       display: grid;
-      grid-template-columns: 30px 1fr;
-      gap: 12px;
-      align-items: start;
+      grid-template-columns: 34px 1fr;
+      gap: 16px;
+      align-items: center;
     }
     .steps li::before {
       content: counter(step);
-      width: 30px;
-      height: 30px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       border: 1.5px solid var(--gold);
       color: var(--gold-light);
@@ -278,50 +273,50 @@
       align-items: center;
       justify-content: center;
     }
-    .steps li span { padding-top: 3px; }
+    .steps li span { font-weight: 600; line-height: 1.4; }
 
     /* What to hand over */
-    .docs {
-      background: var(--panel);
-      border: 1px solid var(--glass-border);
-      border-radius: 14px;
-      padding: 6px 16px;
-    }
+    .docs { display: grid; gap: 18px; }
     .docs li {
       display: grid;
-      grid-template-columns: 18px 1fr;
-      gap: 12px;
+      grid-template-columns: 20px 1fr;
+      gap: 16px;
       align-items: start;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      font-weight: 600;
+      line-height: 1.4;
     }
-    .docs li:last-child { border-bottom: 0; }
-    .docs svg { width: 18px; height: 18px; margin-top: 2px; fill: none; stroke: var(--gold); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-    .docs-note { margin-top: 12px; font-size: 13px; color: var(--text-muted); }
+    .docs svg { width: 20px; height: 20px; margin-top: 1px; fill: none; stroke: var(--gold); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .docs-note { margin-top: 24px; font-size: 14px; color: var(--text-muted); }
 
     /* Free alerts */
     .alerts {
       border: 1px solid var(--border-line);
-      border-radius: 16px;
-      padding: 20px 18px 18px;
+      border-radius: 18px;
+      padding: 30px 24px 26px;
       background: linear-gradient(180deg, rgba(200, 155, 60, 0.1) 0%, rgba(200, 155, 60, 0.03) 100%);
     }
-    .alerts h2 { margin-bottom: 8px; }
-    .alerts p { margin-bottom: 16px; }
+    .alerts h2 { margin-bottom: 12px; }
+    .alerts p { margin-bottom: 24px; color: var(--text-muted); }
 
-    .more { margin-top: 22px; display: grid; gap: 12px; }
+    .more { margin-top: 40px; display: grid; gap: 14px; }
     .status { min-height: 20px; font-size: 13px; color: var(--gold-light); text-align: center; }
 
     .card-footer {
-      margin-top: 20px;
-      padding-top: 18px;
+      margin-top: 28px;
+      padding-top: 26px;
       border-top: 1px solid var(--glass-border);
-      font-size: 12px;
-      line-height: 1.55;
+      font-size: 12.5px;
+      line-height: 1.6;
       color: var(--text-muted);
     }
     .card-footer a { color: var(--gold-light); }
-    .card-footer p + p { margin-top: 8px; }
+    .card-footer p + p { margin-top: 12px; }
+
+    @media (max-width: 360px) {
+      .card { padding: 28px 20px 28px; }
+      .plates { gap: 10px; }
+      .alerts { padding: 26px 20px 22px; }
+    }
 
     @media (prefers-reduced-motion: reduce) {
       .btn { transition: none; }
@@ -348,7 +343,7 @@
     <!-- The offer -->
     <header class="hero">
       <h1><span>Your taxi stays on the road.</span> <span>I stand in the line.</span></h1>
-      <p>I renew your taxi registration at the Linstead Tax Office, so you don&rsquo;t lose a morning of fares.</p>
+      <p>Taxi registration renewed for you at the Linstead Tax Office.</p>
     </header>
 
     <div class="plates" role="group" aria-label="Service fees">
@@ -362,7 +357,7 @@
         </div>
       </div>
       <div>
-        <div class="plate-label">Two or more taxis on the same run</div>
+        <div class="plate-label">Two or more</div>
         <div class="plate plate--batch">
           <div class="plate-face">
             <div class="plate-fee">J$3,000</div>
@@ -371,7 +366,7 @@
         </div>
       </div>
     </div>
-    <p class="fee-note">Government fees are charged at cost for each vehicle and paid before the run.</p>
+    <p class="fee-note">Two or more means on the same run. Government fees are extra, paid before the run.</p>
 
     <div class="book">
       <a class="btn btn-wa" target="_blank" rel="noopener"
@@ -385,29 +380,29 @@
     <section class="section" aria-labelledby="how">
       <h2 id="how">How it works</h2>
       <ol class="steps">
-        <li><span>Send me your plate number on WhatsApp.</span></li>
-        <li><span>The registered owner signs my authorization letter and gives me copies of the documents.</span></li>
-        <li><span>I renew at the Tax Office and send your certificate and receipt on WhatsApp.</span></li>
+        <li><span>Send me your plate number</span></li>
+        <li><span>The owner signs my letter and gives me copies</span></li>
+        <li><span>Get your certificate on WhatsApp</span></li>
       </ol>
     </section>
 
     <!-- What to hand over -->
     <section class="section" aria-labelledby="docs">
-      <h2 id="docs">Copies I need for a renewal</h2>
+      <h2 id="docs">Copies I need to renew</h2>
       <ul class="docs">
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Owner&rsquo;s ID</li>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Last registration certificate</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Certificate of fitness</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Fitness certificate</li>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Insurance certificate or cover note</li>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Road licence</li>
       </ul>
-      <p class="docs-note">I also need an email address for the certificate. Fitness and insurance must be valid on the day of the run.</p>
+      <p class="docs-note">Plus an email address. Fitness and insurance must be valid on the day.</p>
     </section>
 
     <!-- Free alerts -->
     <section class="section alerts" aria-labelledby="alerts">
       <h2 id="alerts">Tax Office &amp; Depot Alerts</h2>
-      <p>Free WhatsApp reminders before your registration, fitness, insurance and road licence fall due. Send me your plate number and due dates. No documents needed.</p>
+      <p>Free WhatsApp reminders before each due date. No documents needed.</p>
       <a class="btn btn-gold" target="_blank" rel="noopener"
          href="https://wa.me/18765612614?text=Hi%20Laura%2C%20please%20add%20me%20to%20Tax%20Office%20%26%20Depot%20Alerts.%20Plate%20number%3A%20">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm7-6v-5a7 7 0 0 0-5.5-6.84V3.5a1.5 1.5 0 0 0-3 0v.66A7 7 0 0 0 5 11v5l-2 2v1h18v-1l-2-2z"/></svg>
@@ -429,7 +424,7 @@
     </div>
 
     <footer class="card-footer">
-      <p>Laura Clarke Administrative Services is an independent service. It is not part of Tax Administration Jamaica or the Island Traffic Authority.</p>
+      <p>Independent service. Not part of Tax Administration Jamaica or the Island Traffic Authority.</p>
       <p>&copy; 2026 Laura Clarke Administrative Services. <a href="https://documenthelpja.com">documenthelpja.com</a></p>
     </footer>
 
