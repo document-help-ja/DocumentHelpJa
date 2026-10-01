@@ -123,6 +123,48 @@
       .footer-top { grid-template-columns: 1.4fr 1fr auto; align-items: start; }
       .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
     }
+    /* Compact card + checklist */
+    .card-intro { margin: 0; font-size: 15px; color: var(--text-muted); }
+    .list-title { font-family: var(--sans); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); margin: 0 0 12px; }
+    .feature-list { flex-grow: 0; margin-bottom: 24px; }
+    .checklist { background: var(--tone); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-bottom: 20px; }
+    .checklist-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .checklist-head .list-title { margin-bottom: 4px; }
+    .progress { font-size: 13px; font-weight: 600; color: var(--blue-highlight); white-space: nowrap; }
+    .checklist-hint { font-size: 14px; color: var(--text-muted); margin: 0 0 8px; }
+    .check { display: flex; align-items: flex-start; gap: 12px; min-height: 48px; padding: 12px 0; border-top: 1px solid var(--line); cursor: pointer; font-size: 15px; font-weight: 500; -webkit-tap-highlight-color: transparent; }
+    .check input { appearance: none; -webkit-appearance: none; flex: 0 0 24px; width: 24px; height: 24px; margin: 0; border: 2px solid #94A3B8; border-radius: 6px; background: #fff; display: grid; place-items: center; cursor: pointer; transition: background .15s, border-color .15s; }
+    .check input::after { content: ""; width: 6px; height: 11px; border: solid #fff; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg) translate(-1px, -1px); opacity: 0; }
+    .check input:checked { background: #10B981; border-color: #10B981; }
+    .check input:checked::after { opacity: 1; }
+    .check input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .check span { padding-top: 1px; }
+    .check small { display: block; font-size: 13px; font-weight: 400; color: var(--text-muted); margin-top: 2px; }
+    .check input:checked + span { color: var(--text-muted); text-decoration: line-through; }
+    .check input:checked + span small { text-decoration: none; }
+    .ready-msg { margin: 8px 0 0; padding: 10px 12px; border-radius: 8px; background: #D1FAE5; color: #065F46; font-size: 14px; font-weight: 600; }
+    .sixty { font-size: 14px; color: var(--text); margin: 0 0 20px; }
+    .fee-foot { margin: 16px 0 0; font-size: 14px; color: var(--text-muted); font-style: italic; }
+    .guide-cta { text-align: center; margin-top: 50px; padding-top: 36px; border-top: 1px solid var(--border); }
+    .guide-cta h3 { margin-bottom: 10px; }
+    .guide-cta p { margin: 0 0 20px; color: var(--text-muted); }
+    .guide-cta .btn { display: inline-block; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 40px 20px; }
+      .hero p { font-size: 16px; margin-bottom: 0; }
+      .container { margin: 24px auto; padding: 0 16px; }
+      .card-head, .card-body { padding: 20px; }
+      .card-head h2 { font-size: 22px; }
+      .service-grid { margin-bottom: 40px; }
+      .replace-note { margin: -24px auto 36px; font-size: 14px; }
+      .faq { gap: 12px; }
+      .faq summary { padding: 16px 18px; font-size: 1rem; }
+      .faq .answer { padding: 0 18px 18px; font-size: 15px; }
+      .fee-row { gap: 12px; }
+      .fee-row strong { white-space: nowrap; }
+      .guide-cta .btn { display: block; }
+    }
   </style>
 </head>
 <body id="top">
@@ -134,77 +176,97 @@
 
 <section class="hero">
   <h1>Driver's Licence Renewal</h1>
-  <p>Get it right before you get to TAJ. We check your profile for ticket holds and TRN mismatches, pay eligible renewals online, and prepare your forms so your visit to the tax office goes smoothly.</p>
+  <p>We check your record, complete your form and pay your renewal online. You just collect your card at TAJ.</p>
 </section>
 
 <main class="container">
 
   <div class="service-grid single">
-    <!-- OPTION 1: RENEWAL -->
     <div class="service-card featured">
       <div class="card-head">
         <span class="badge">Hybrid: Online + Collection</span>
         <h2>Licence Renewal</h2>
-        <p style="margin:0; font-size:15px; color:var(--text-muted);">For private (Class B) and commercial or general (Class C) licences. We pre-audit your profile, pay your renewal online and prepare your collection package, so you only visit TAJ to pick up your card.</p>
+        <p class="card-intro">Class B (private) and Class C (commercial or general) licences.</p>
       </div>
       <div class="card-body">
         <div class="price-block">
           <div class="price">$4,000 JMD</div>
-          <span class="price-note">+ TAJ Government Fee (by licence class)</span>
+          <span class="price-note">+ TAJ government fee (by licence class)</span>
         </div>
+
+        <h3 class="list-title">What we handle</h3>
         <ul class="feature-list">
-          <li><strong>Who qualifies:</strong> Drivers renewing an expired Class B or Class C licence who can visit a TAJ office to collect the card.</li>
-          <li>We check for Traffic Management System (TMS) holds and unlinked legacy TRNs before you pay.</li>
-          <li>We complete Form F7 and send it to you to sign.</li>
-          <li>We pay your TAJ renewal fee online and send you the payment receipt.</li>
-          <li>Your receipt, kept with your expired licence, lets you drive legally for up to 60 days while you collect the new card.</li>
-          <li>You present the signed Form F7, your photos and the receipt in person at the TAJ office to collect your card.</li>
-          <li class="warning"><strong>Medical required:</strong> Drivers over 70 and all commercial, truck, heavy equipment and PPV licence holders must include a Form MC1 dated within the last 90 days.</li>
+          <li>Check your record for ticket holds and TRN mismatches</li>
+          <li>Complete Form F7 and send it to you to sign</li>
+          <li>Pay your TAJ fee online and send you the receipt</li>
         </ul>
+
+        <div class="checklist" id="collect">
+          <div class="checklist-head">
+            <h3 class="list-title">Your collection checklist</h3>
+            <span class="progress" aria-live="polite"><span id="done">0</span> of <span id="total">3</span> ready</span>
+          </div>
+          <p class="checklist-hint">Tick each item as you pack it, then take everything to TAJ in person.</p>
+          <label class="check"><input type="checkbox"><span>Signed Form F7</span></label>
+          <label class="check"><input type="checkbox"><span>Your photos</span></label>
+          <label class="check"><input type="checkbox"><span>TAJ payment receipt</span></label>
+          <label class="check optional"><input type="checkbox"><span>Form MC1 medical, dated within 90 days <small>Only if you are over 70, or hold a commercial, truck, heavy equipment or PPV licence</small></span></label>
+          <p class="ready-msg" id="readyMsg" hidden>All set. Add your MC1 if it applies, then you're ready to collect your card.</p>
+        </div>
+
+        <p class="sixty"><strong>60 days to collect.</strong> Your receipt and expired licence let you drive legally while you wait.</p>
+
         <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20to%20renew%20my%20driver%27s%20licence." class="btn btn-accent">Start Your Renewal</a>
       </div>
     </div>
-
   </div>
 
-  <p class="replace-note">Lost or stolen licence? Replacements must be applied for in person at TAJ. <a href="/jamaica-drivers-license-renewal-guide">See our guide</a> for the steps and what to bring.</p>
+  <p class="replace-note">Lost or stolen licence? Replacements are done in person at TAJ. <a href="/jamaica-drivers-license-renewal-guide">See our guide</a> for the steps.</p>
 
-  <div class="info-box">
-    <h3>Why do renewals get blocked at the counter?</h3>
-    <p>TAJ cross-references police and court databases in real time. If you have an unpaid ticket or a missed court date, the system locks your profile, and fines must be settled at the Traffic Court and cleared before TAJ can issue a new licence.</p>
-    <p>Older licences issued before central database integration often lack a direct digital link to your TRN. If the name spelling on your licence differs slightly from your TRN profile, the transaction is rejected until the record is checked. Our pre-audit catches both problems <strong>before</strong> you pay.</p>
-  </div>
-
-  <!-- DROPDOWN RESOURCES -->
   <div class="faq-section">
-    <h3>Reference &amp; Resources</h3>
+    <h3>Good to know</h3>
     <div class="faq">
       <details>
-        <summary>TAJ Licence Fees &amp; Turnaround</summary>
+        <summary>Who this service is for</summary>
         <div class="answer">
-          <p style="margin-top:0;">TAJ government fees are paid directly to the agency. Renewal fees can be paid online; substitute (replacement) fees are paid in person at the tax office.</p>
-          <div class="fee-row"><span>Class B renewal (private motor car, 5-year)</span><strong>$5,400 JMD</strong></div>
-          <div class="fee-row"><span>Class C renewal (commercial or general, 5-year)</span><strong>$7,200 JMD</strong></div>
-          <div class="fee-row"><span>Substitute licence (lost or stolen, paid in person)</span><strong>$4,140 JMD</strong></div>
-          <p style="margin: 16px 0 0; font-size: 14px; color: var(--text-muted);"><em>Note: Same-day printing is available at designated Revenue Service Centres and tax offices. Drop-off offices batch applications to a regional printing hub, with up to a 20-business-day turnaround.</em></p>
+          <p style="margin-top:0;">Drivers renewing an expired Class B or Class C licence who can visit a TAJ office in person to collect the new card.</p>
+          <p style="margin-bottom:0;">We do not offer proxy collection. If your licence is lost or stolen, the replacement process is in person only. Our guide walks you through it.</p>
         </div>
       </details>
 
       <details>
-        <summary>The 60-Day Legal Driving Rule</summary>
+        <summary>Why renewals get blocked at the counter</summary>
         <div class="answer">
-          <p style="margin-top:0;">Your official TAJ payment receipt, kept together with your expired physical driver's licence, is a valid legal permit to drive on Jamaican roads for up to 60 days from the date of payment. This applies to renewals paid online too.</p>
-          <p style="margin-bottom:0;">Keep the receipt in the vehicle, and collect your new card at TAJ within the 60 days.</p>
+          <p style="margin-top:0;">TAJ cross-references police and court databases in real time. An unpaid ticket or missed court date locks your profile, and fines must be settled at the Traffic Court and cleared before TAJ can issue a new licence.</p>
+          <p style="margin-bottom:0;">Older licences issued before central database integration often lack a direct link to your TRN. If the name spelling differs slightly from your TRN profile, the transaction is rejected until the record is checked. Our pre-audit catches both problems <strong>before</strong> you pay.</p>
         </div>
       </details>
 
+      <details>
+        <summary>TAJ licence fees &amp; turnaround</summary>
+        <div class="answer">
+          <p style="margin-top:0;">TAJ government fees are paid directly to the agency and are separate from our fee.</p>
+          <div class="fee-row"><span>Class B renewal (private, 5-year)</span><strong>$5,400</strong></div>
+          <div class="fee-row"><span>Class C renewal (commercial or general, 5-year)</span><strong>$7,200</strong></div>
+          <div class="fee-row"><span>Substitute licence (lost or stolen, paid in person)</span><strong>$4,140</strong></div>
+          <p class="fee-foot">All fees in JMD. Same-day printing is available at designated Revenue Service Centres and tax offices. Drop-off offices batch applications to a regional printing hub, with up to a 20-business-day turnaround.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>The 60-day legal driving rule</summary>
+        <div class="answer">
+          <p style="margin-top:0;">Your official TAJ payment receipt, kept with your expired licence, is a valid permit to drive on Jamaican roads for up to 60 days from the date of payment. This applies to renewals paid online.</p>
+          <p style="margin-bottom:0;">Keep the receipt in the vehicle and collect your new card within the 60 days.</p>
+        </div>
+      </details>
     </div>
   </div>
 
-  <div style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border);">
-    <h3 style="margin-bottom: 16px;">Need to check TAJ's official rules?</h3>
-    <p style="margin-bottom: 24px; color: var(--text-muted);">Read our deep-dive reference guide covering ticket holds, same-day offices, medical rules and the 60-day driving receipt.</p>
-    <a href="/jamaica-drivers-license-renewal-guide" class="btn btn-outline" style="display: inline-block; max-width: 320px; margin: 0 auto;">Read the Driver's Licence Guide</a>
+  <div class="guide-cta">
+    <h3>Prefer to do it yourself?</h3>
+    <p>Our guide covers ticket holds, same-day offices, medical rules and replacements.</p>
+    <a href="/jamaica-drivers-license-renewal-guide" class="btn btn-outline">Read the Driver's Licence Guide</a>
   </div>
 
 </main>
@@ -241,6 +303,16 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+  (function () {
+    var boxes = document.querySelectorAll('#collect .check:not(.optional) input');
+    var done = document.getElementById('done'), msg = document.getElementById('readyMsg');
+    document.getElementById('total').textContent = boxes.length;
+    function update() {
+      var n = 0; boxes.forEach(function (b) { if (b.checked) n++; });
+      done.textContent = n; msg.hidden = n < boxes.length;
+    }
+    boxes.forEach(function (b) { b.addEventListener('change', update); });
+  })();
 </script>
 
 </body>
