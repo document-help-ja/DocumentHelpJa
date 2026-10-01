@@ -51,8 +51,7 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 24px 16px 40px;
-      overflow-x: hidden;
+      padding: 14px 12px 28px;
       position: relative;
       -webkit-font-smoothing: antialiased;
     }
@@ -83,11 +82,9 @@
       width: 100%;
       max-width: 420px;
       background: var(--card-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--glass-border);
       border-radius: 24px;
-      padding: 34px 26px 32px;
+      padding: 26px 22px 24px;
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 
@@ -100,8 +97,8 @@
     .avatar {
       position: relative;
       flex: 0 0 auto;
-      width: 58px;
-      height: 58px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       padding: 3px;
       background: var(--gold-grad);
@@ -121,34 +118,34 @@
       justify-content: center;
       font-family: var(--serif);
       font-weight: 700;
-      font-size: 20px;
+      font-size: 16px;
       color: var(--gold-light);
     }
     .avatar.no-photo img { display: none; }
     .avatar.no-photo .monogram { display: flex; }
     .from-name {
       font-family: var(--serif);
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       line-height: 1.2;
       color: #FFFFFF;
     }
-    .from-company { font-size: 13px; color: var(--text-muted); }
+    .from-company { font-size: 12.5px; color: var(--text-muted); }
 
     /* Headline */
-    .hero { padding: 40px 0 36px; }
+    .hero { padding: 26px 0 24px; }
     .hero h1 {
       font-family: var(--serif);
       font-weight: 700;
-      font-size: clamp(30px, 9vw, 36px);
+      font-size: clamp(27px, 8.2vw, 34px);
       line-height: 1.12;
       letter-spacing: -0.015em;
       color: #FFFFFF;
     }
     .hero h1 span { display: block; text-wrap: balance; }
     .hero p {
-      margin-top: 18px;
-      font-size: 17px;
+      margin-top: 12px;
+      font-size: 16px;
       color: var(--text-muted);
       max-width: 30ch;
     }
@@ -165,7 +162,7 @@
       font-size: 13px;
       font-weight: 600;
       color: var(--text-muted);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .plate {
       position: relative;
@@ -177,7 +174,7 @@
     .plate-face {
       border-radius: 6px;
       border: 1.5px solid var(--border-line);
-      padding: 18px 6px 16px;
+      padding: 14px 6px 12px;
       text-align: center;
     }
     .plate-fee {
@@ -199,8 +196,9 @@
     .plate--batch .plate-fee, .plate--batch .plate-unit { color: #0B1A28; }
 
     .fee-note {
-      margin-top: 16px;
-      font-size: 14px;
+      margin-top: 12px;
+      font-size: 13.5px;
+      line-height: 1.5;
       color: var(--text-muted);
     }
 
@@ -236,42 +234,72 @@
     .btn-outline:hover { background: rgba(200, 155, 60, 0.12); border-color: var(--gold); }
     .icon { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
 
-    .book { margin-top: 28px; }
+    .book { margin-top: 20px; }
 
     /* =========================================================
        5. SECTIONS
        ========================================================= */
-    .section { margin-top: 56px; }
+    .section { margin-top: 12px; }
     .section h2 {
       font-family: var(--serif);
-      font-size: 22px;
+      font-size: 19px;
       font-weight: 700;
       line-height: 1.25;
       color: #FFFFFF;
-      margin-bottom: 22px;
+      margin-bottom: 8px;
     }
 
     /* Divider line that breaks up the long background */
     .rule {
       border: 0;
       height: 1px;
-      margin: 48px 0 0;
+      margin: 26px 0 22px;
       background: linear-gradient(90deg, rgba(200, 155, 60, 0) 0%, var(--border-line) 18%, var(--border-line) 82%, rgba(200, 155, 60, 0) 100%);
     }
-    .rule + .section { margin-top: 44px; }
 
-    /* Container for the copies list */
-    .panel {
+    /* Fold-away containers: tap the title to open */
+    .fold {
+      margin-top: 12px;
       background: rgba(255, 255, 255, 0.045);
       border: 1px solid var(--glass-border);
-      border-radius: 18px;
-      padding: 30px 24px 26px;
+      border-radius: 16px;
     }
-    .panel-lead { margin: -8px 0 24px; color: var(--text-muted); }
-    .panel + .alerts { margin-top: 24px; }
+    .rule + .fold { margin-top: 0; }
+    .fold summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      min-height: 58px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #FFFFFF;
+    }
+    .fold summary::-webkit-details-marker { display: none; }
+    .fold summary::after {
+      content: "";
+      flex: 0 0 auto;
+      width: 9px;
+      height: 9px;
+      margin: -4px 4px 0 0;
+      border-right: 2px solid var(--gold-light);
+      border-bottom: 2px solid var(--gold-light);
+      transform: rotate(45deg);
+      transition: transform 0.2s ease;
+    }
+    .fold[open] summary::after { transform: rotate(-135deg); margin-top: 5px; }
+    .fold summary:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 3px; }
+    .fold-body { padding: 6px 18px 22px; }
+    .panel-lead { margin: 0 0 18px; font-size: 15px; color: var(--text-muted); }
 
     /* How it works: a real sequence, so it is numbered */
-    .steps { counter-reset: step; display: grid; gap: 22px; }
+    .steps { counter-reset: step; display: grid; gap: 16px; }
     .steps li {
       counter-increment: step;
       display: grid;
@@ -295,7 +323,7 @@
     .steps li span { font-weight: 600; line-height: 1.4; }
 
     /* What to hand over */
-    .docs { display: grid; gap: 18px; }
+    .docs { display: grid; gap: 14px; }
     .docs li {
       display: grid;
       grid-template-columns: 20px 1fr;
@@ -305,40 +333,44 @@
       line-height: 1.4;
     }
     .docs svg { width: 20px; height: 20px; margin-top: 1px; fill: none; stroke: var(--gold); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-    .docs-note { margin-top: 24px; font-size: 14px; color: var(--text-muted); }
+    .docs-note { margin-top: 18px; font-size: 13.5px; line-height: 1.5; color: var(--text-muted); }
 
     /* Free alerts */
     .alerts {
       border: 1px solid var(--border-line);
-      border-radius: 18px;
-      padding: 30px 24px 26px;
+      border-radius: 16px;
+      padding: 20px 18px 18px;
       background: linear-gradient(180deg, rgba(200, 155, 60, 0.1) 0%, rgba(200, 155, 60, 0.03) 100%);
     }
-    .alerts h2 { margin-bottom: 12px; }
-    .alerts p { margin-bottom: 24px; color: var(--text-muted); }
+    .alerts p { margin-bottom: 16px; font-size: 15px; line-height: 1.5; color: var(--text-muted); }
 
-    .more { margin-top: 40px; display: grid; gap: 14px; }
-    .status { min-height: 20px; font-size: 13px; color: var(--gold-light); text-align: center; }
+    .more { margin-top: 12px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+    .more .btn { min-height: 52px; padding: 12px 8px; gap: 8px; font-size: 15px; }
+    .status { grid-column: 1 / -1; font-size: 13px; color: var(--gold-light); text-align: center; }
+    .status:empty { margin-top: -10px; }
 
     .card-footer {
-      margin-top: 28px;
-      padding-top: 26px;
+      margin-top: 20px;
+      padding-top: 16px;
       border-top: 1px solid var(--glass-border);
-      font-size: 12.5px;
-      line-height: 1.6;
+      font-size: 12px;
+      line-height: 1.55;
       color: var(--text-muted);
     }
     .card-footer a { color: var(--gold-light); }
-    .card-footer p + p { margin-top: 12px; }
+    .card-footer p + p { margin-top: 6px; }
 
     @media (max-width: 360px) {
-      .card { padding: 28px 20px 28px; }
+      .card { padding: 22px 18px 20px; }
       .plates { gap: 10px; }
-      .alerts, .panel { padding: 26px 20px 22px; }
+      .fold summary { padding: 14px 16px; font-size: 17px; }
+      .fold-body { padding: 6px 16px 20px; }
+      .alerts { padding: 18px 16px 16px; }
+      .more .icon { display: none; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .btn { transition: none; }
+      .btn, .fold summary::after { transition: none; }
       .btn:active { transform: none; }
     }
   </style>
@@ -397,19 +429,22 @@
 
     <hr class="rule">
 
-    <!-- How it works -->
-    <section class="section" aria-labelledby="how">
-      <h2 id="how">How it works</h2>
+    <!-- How it works (tap to open) -->
+    <details class="fold">
+      <summary>How it works</summary>
+      <div class="fold-body">
       <ol class="steps">
         <li><span>Send me your plate number</span></li>
         <li><span>The owner signs my letter and gives me copies</span></li>
         <li><span>Get your certificate on WhatsApp</span></li>
       </ol>
-    </section>
+      </div>
+    </details>
 
-    <!-- What to hand over -->
-    <section class="section panel" aria-labelledby="docs">
-      <h2 id="docs">Copies I need to do the renewal</h2>
+    <!-- Copies needed (tap to open) -->
+    <details class="fold">
+      <summary>Copies I need to do the renewal</summary>
+      <div class="fold-body">
       <p class="panel-lead">To renew your registration, I need a copy of each of these.</p>
       <ul class="docs">
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Owner&rsquo;s ID</li>
@@ -419,7 +454,8 @@
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Road licence</li>
       </ul>
       <p class="docs-note">Plus an email address. Fitness and insurance must be valid on the day.</p>
-    </section>
+      </div>
+    </details>
 
     <!-- Free alerts -->
     <section class="section alerts" aria-labelledby="alerts">
@@ -436,11 +472,11 @@
     <div class="more">
       <button type="button" class="btn btn-outline" onclick="saveContact()">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1z"/></svg>
-        Save my contact
+        Save contact
       </button>
       <button type="button" class="btn btn-outline" onclick="shareCard()">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.1c-.76 0-1.44.3-1.96.77L8.91 12.7a3.3 3.3 0 0 0 0-1.4l7.05-4.11A3 3 0 1 0 15 5c0 .24.04.47.09.7L8.04 9.81a3 3 0 1 0 0 4.38l7.12 4.16c-.05.21-.08.43-.08.65A2.92 2.92 0 1 0 18 16.1z"/></svg>
-        Send this card to an owner
+        Share card
       </button>
       <div class="status" id="status" role="status" aria-live="polite"></div>
     </div>
