@@ -80,6 +80,10 @@
       ],
       "knowsAbout": [
         "Jamaican passport renewal",
+        "First Jamaican passport application",
+        "Jamaican passport for a child",
+        "Lost, stolen or damaged Jamaican passport replacement",
+        "Jamaican passport renewal after a name change",
         "Jamaican citizenship by descent",
         "PICA",
         "TRN application",
@@ -99,13 +103,17 @@
         "itemListElement": [
           {
             "@type": "Offer",
-            "priceCurrency": "JMD",
-            "price": 5000,
-            "description": "Concierge retainer for an adult online passport renewal. PICA fee is paid separately.",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 4000,
+              "maxPrice": 10000,
+              "priceCurrency": "JMD"
+            },
+            "description": "Online adult renewals filed for you (J$5,000, or US$70 overseas). Audit and preparation packages for first adult passports, children, name changes and lost, stolen or damaged passports, with in-person submission available for name-change renewals. PICA fee is paid separately.",
             "itemOffered": {
               "@type": "Service",
-              "name": "Jamaican Passport Renewal & Replacement",
-              "url": "https://documenthelpja.com/jamaican-passport-renewal.html",
+              "name": "Jamaican Passport Services: Renew, Replace or Apply",
+              "url": "https://documenthelpja.com/jamaican-passport-services.html",
               "provider": {
                 "@id": "https://documenthelpja.com/#business"
               }
@@ -790,8 +798,8 @@ body { position: relative; width: 100%; min-height: 100vh; }
 
       <div class="service-grid">
 
-        <a class="service-card" href="/jamaican-passport-renewal.html">
-          <img src="assets/passport-renewal.webp" alt="Jamaican Passport Services" loading="lazy" decoding="async">
+        <a class="service-card" href="/jamaican-passport-services.html">
+          <img src="assets/passport-renewal.webp" alt="Jamaican passport services: renew, replace or apply" loading="lazy" decoding="async">
           <h3 class="service-card-title">Jamaican Passport Services</h3>
         </a>
 
