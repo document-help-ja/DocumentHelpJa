@@ -26,7 +26,9 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -1094,6 +1096,16 @@ body { position: relative; width: 100%; min-height: 100vh; }
 })();
 </script>
 
-<script defer src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+<script>
+/* Load the MailerLite script only after the page has finished loading */
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    var m = document.createElement('script');
+    m.src = 'https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519';
+    m.async = true;
+    document.body.appendChild(m);
+  }, 3000);
+});
+</script>
 </body>
 </html>
