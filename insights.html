@@ -339,6 +339,24 @@ a { color: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Category and date line on each card */
+.post-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .35rem .75rem; font-size: .85rem; color: var(--muted); }
+.post-meta .cat { font-weight: 700; color: var(--gold-text); }
+
+/* Featured guide: top of the page on phones, below the directory on wider screens */
+main { display: flex; flex-direction: column; }
+.page-hero { order: 1; }
+.featured-top { order: 2; background: var(--tone); padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+.directory { order: 3; }
+.library { order: 4; }
+.newsletter { order: 5; }
+@media (min-width: 700px) {
+  .featured-top { order: 4; padding: 3rem 0 0; border-bottom: 0; }
+  .library { order: 5; padding-top: 1.5rem; }
+  .newsletter { order: 6; }
+}
+@media (min-width: 960px) { .featured-top { padding-top: 4rem; } }
 </style>
 </head>
 
@@ -397,6 +415,24 @@ a { color: inherit; }
       <h1 id="page-title">Insights &amp; Advisory</h1>
       <p class="page-lead">Plain-language guides to Jamaican government bureaucracy. Each one sets out the exact counter rules at PICA, TAJ, RGD, JCF, ITA, Customs and NIS, so you arrive with the right documents and leave with what you came for.</p>
       <p class="page-byline">Written and checked by Laura Clarke, based on what the counters actually accept.</p>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED GUIDE =====================
+       Sits right under the page header on phones, and below the
+       Guide Directory on wider screens. To feature a different guide,
+       replace the <article> inside this section. -->
+  <section class="featured-top" aria-label="Featured guide">
+    <div class="wrap">
+    <article id="g-jamaica-h2b-work-visa-guide" class="article-card featured" data-cat="overseas-work">
+      <div class="card-media"><img src="/assets/office-hero-960.webp" alt="Desk with a laptop, notebook and documents" loading="lazy" decoding="async"></div>
+      <div class="card-body">
+        <div class="post-meta"><span class="cat"><span class="featured-badge">Featured</span> Overseas Work</span><time datetime="2026-10-04">Oct 4, 2026</time></div>
+        <h3><a href="/jamaica-h2b-work-visa-guide">How to Get an H-2B Work Placement from Jamaica (Without Getting Scammed)</a></h3>
+        <p class="excerpt">Seasonal work in the U.S.: the documents you need, how to check an agency is licensed, the questions to ask and the scam red flags. Includes a free printable toolkit.</p>
+        <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+      </div>
+    </article>
     </div>
   </section>
 
@@ -472,16 +508,6 @@ a { color: inherit; }
 
       <div class="article-grid">
 
-        <!-- 1. FEATURED TOP CARD: H-2B WORK PLACEMENT (NEWEST) -->
-        <article id="g-jamaica-h2b-work-visa-guide" class="article-card featured" data-cat="overseas-work">
-          <div class="card-media"><img src="/assets/office-hero-960.webp" alt="Desk with a laptop, notebook and documents" loading="lazy" decoding="async"></div>
-          <div class="card-body">
-            <div class="post-meta"><span class="cat"><span class="featured-badge">Featured</span> Overseas Work</span><time datetime="2026-10-04">Oct 4, 2026</time></div>
-            <h3><a href="/jamaica-h2b-work-visa-guide">How to Get an H-2B Work Placement from Jamaica (Without Getting Scammed)</a></h3>
-            <p class="excerpt">Seasonal work in the U.S.: the documents you need, how to check an agency is licensed, the questions to ask and the scam red flags. Includes a free printable toolkit.</p>
-            <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-          </div>
-        </article>
 
         <!-- 2. RGD CERTIFICATES -->
         <article id="g-jamaica-rgd-certificates-guide" class="article-card" data-cat="rgd">
