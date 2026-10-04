@@ -1,35 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core Site Pages -->
-  <url><loc>https://documenthelpja.com/</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/insights.html</loc><lastmod>2026-09-29</lastmod></url>
+  <url><loc>https://documenthelpja.com/</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://documenthelpja.com/insights.html</loc><lastmod>2026-10-03</lastmod></url>
   <url><loc>https://documenthelpja.com/about.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/faq.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/terms.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/card.html</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/privacy.html</loc><lastmod>2026-10-01</lastmod></url>
 
-  <!-- Service Landing Pages -->
-  <url><loc>https://documenthelpja.com/jamaican-passport-services.html</loc><lastmod>2026-09-29</lastmod></url>
+  <!-- Service Pages -->
+  <url><loc>https://documenthelpja.com/jamaican-passport-services.html</loc><lastmod>2026-10-03</lastmod></url>
   <url><loc>https://documenthelpja.com/jamaican-citizenship-application.html</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaican-trn-application-overseas-diaspora.html</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/drivers-licence-renewal.html</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/motor-vehicle-licence-renewal.html</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaica-driving-abstract.html</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaica-police-record.html</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaican-rgd-certificates.html</loc><lastmod>2026-09-29</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaican-trn-application-overseas-diaspora.html</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://documenthelpja.com/drivers-licence-renewal.html</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://documenthelpja.com/motor-vehicle-licence-renewal.html</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaica-driving-abstract.html</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaica-police-record.html</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaican-rgd-certificates.html</loc><lastmod>2026-10-03</lastmod></url>
 
-  <!-- Guides & Advisory Articles -->
+  <!-- Guides -->
+  <url><loc>https://documenthelpja.com/jamaica-rgd-certificates-guide</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaica-police-record-guide</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaica-drivers-license-renewal-guide</loc><lastmod>2026-10-03</lastmod></url>
+  <url><loc>https://documenthelpja.com/trn-without-photo-id</loc><lastmod>2026-09-30</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaica-passport-guide</loc><lastmod>2026-09-30</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaican-citizenship-by-descent</loc><lastmod>2026-09-30</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaica-motor-vehicle-licence-guide</loc><lastmod>2026-09-30</lastmod></url>
   <url><loc>https://documenthelpja.com/jamaica-learners-permit-guide.html</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/self-employed-s04-tax-guide</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://documenthelpja.com/jamaica-c5-travel-form</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaica-nis-guide</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaica-passport-guide</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaican-citizenship-by-descent</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaica-police-record-guide</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaica-drivers-license-renewal-guide</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/trn-without-photo-id</loc><lastmod>2026-09-29</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaica-motor-vehicle-licence-guide</loc><lastmod>2026-09-29</lastmod></url>
-  <!-- Needs the file renamed from jamaica-rgd-guide.html to jamaica-rgd-certificates-guide.html -->
-  <url><loc>https://documenthelpja.com/jamaica-rgd-certificates-guide</loc><lastmod>2026-10-01</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaica-nis-guide</loc><lastmod>2026-09-27</lastmod></url>
+  <url><loc>https://documenthelpja.com/self-employed-s04-tax-guide</loc><lastmod>2026-09-25</lastmod></url>
 </urlset>
