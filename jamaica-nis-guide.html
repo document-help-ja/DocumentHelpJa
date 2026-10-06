@@ -1151,18 +1151,16 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           <li><strong>Funeral &amp; Survivor Grant Checklist</strong> so claims aren't stalled</li>
         </ul>
 
-        <!-- KIT SIGNUP FORM
-             Replace KIT_FORM_URL below with the MailerLite form that delivers the kit (see page script). -->
-        <form class="nl-form kit-form" id="kit-form" data-success="kit-success" data-endpoint="kit">
+        <!-- KIT SIGNUP FORM: goes to the Kit Delivery script as kit "nis". The kit is emailed once a nis entry with its PDF is added to KITS in that script. -->
+        <form class="nl-form kit-form" id="kit-form" data-success="kit-success">
           <label for="kit-email" class="sr-only">Email address</label>
-          <input id="kit-email" name="fields[email]" type="email" autocomplete="email" required placeholder="you@example.com">
-          <input type="hidden" name="ml-submit" value="1">
-          <input type="hidden" name="anticsrf" value="true">
+          <input id="kit-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
           <button type="submit" class="btn btn-gold">Send Me the Free Kit</button>
         </form>
         <div id="kit-success" class="nl-success kit-success" hidden role="status">
-          <strong>Check your inbox to confirm</strong>
-          <p>Confirm your email and the NIS Gap Recovery Kit will be sent to you.</p>
+          <strong>Request received</strong>
+          <p>The NIS Gap Recovery Kit will be sent to this email address. If you do not see it, look in your spam folder or message Laura on WhatsApp.</p>
         </div>
 
         <p class="kit-alt">Changing your name on your NIS record? You'll need an original RGD marriage or birth certificate. <a href="/#rgd-certificates">We can get those for you</a>.</p>
@@ -1316,21 +1314,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           </div>
         </section>
 
-        <section class="newsletter-box" aria-labelledby="nl-title">
-          <h2 id="nl-title">Get It Right the First Time</h2>
-          <p>Join the mailing list for updates on policy changes, processing times and new diaspora guides, sent when something actually changes.</p>
-          <form id="mailerlite-form" class="nl-form" data-success="ml-success-msg" data-endpoint="newsletter">
-            <label for="nl-email" class="sr-only">Email address</label>
-            <input id="nl-email" name="fields[email]" type="email" autocomplete="email" required placeholder="you@example.com">
-            <input type="hidden" name="ml-submit" value="1">
-            <input type="hidden" name="anticsrf" value="true">
-            <button type="submit" id="ml-submit-btn" class="btn btn-dark">Subscribe</button>
-          </form>
-          <div id="ml-success-msg" class="nl-success" hidden role="status">
-            <strong>Check your inbox to confirm</strong>
-            <p>We've sent a confirmation email to your address. Click the link inside to activate your subscription.</p>
-          </div>
-        </section>
       </div>
 
     </article>
@@ -1537,35 +1520,34 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   /* ---------- Footer year ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  /* ---------- Email forms (MailerLite) ----------
-     newsletter = your existing "Get It Right the First Time" form.
-     kit        = the form that delivers the NIS Gap Recovery Kit.
-     Until a dedicated kit form exists, the kit form uses the newsletter form, so
-     signups are captured but the kit is NOT sent automatically. Replace KIT_FORM_URL
-     with the new MailerLite form's subscribe URL once it is set up. */
-  var NEWSLETTER_FORM_URL = 'https://assets.mailerlite.com/jsonp/2650626/forms/199240121633998056/subscribe';
-  var KIT_FORM_URL = NEWSLETTER_FORM_URL;
-  document.querySelectorAll('form.nl-form').forEach(function (form) {
-    form.addEventListener('submit', function (e) {
+  /* ---------- NIS kit request ----------
+     Goes to our own Kit Delivery script as kit "nis" and is written to the Kit Requests sheet. */
+  var KIT_URL = 'https://script.google.com/macros/s/AKfycbzrkEPs6xf6WhdJbZuYBUYCittkeJGW7d83mUh77jdVSrG7Jto_nl5PCik36JfBvimCDg/exec';
+  var kitForm = document.getElementById('kit-form');
+  if (kitForm) {
+    kitForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      var btn = form.querySelector('button[type="submit"]');
-      var success = document.getElementById(form.dataset.success);
-      var url = form.dataset.endpoint === 'kit' ? KIT_FORM_URL : NEWSLETTER_FORM_URL;
+      var btn = kitForm.querySelector('button[type="submit"]');
+      var label = btn.textContent;
+      var success = document.getElementById(kitForm.getAttribute('data-success'));
+      var data = new URLSearchParams();
+      data.set('kit', 'nis');
+      data.set('name', '');
+      data.set('email', kitForm.querySelector('input[type="email"]').value.trim());
+      data.set('website', (kitForm.querySelector('[name="website"]') || {}).value || '');
+      data.set('page', location.pathname);
       btn.textContent = 'Sending…';
       btn.disabled = true;
-      fetch(url, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
-        .catch(function () {})
+      fetch(KIT_URL, { method: 'POST', mode: 'no-cors', body: data })
         .then(function () {
-          form.reset();
-          form.hidden = true;
+          kitForm.reset(); kitForm.hidden = true; kitForm.style.display = 'none';
           if (success) success.hidden = false;
-        });
+        })
+        .catch(function () { btn.textContent = 'Not sent. Try again'; btn.disabled = false; });
     });
-  });
+  }
 })();
 </script>
 
-<!-- MailerLite tracking -->
-<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
 </body>
 </html>

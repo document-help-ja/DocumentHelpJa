@@ -1142,16 +1142,15 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
         <section class="newsletter-box" aria-labelledby="nl-title">
           <h2 id="nl-title">Get It Right the First Time</h2>
           <p>Join the mailing list for updates on policy changes, processing times and new diaspora guides, sent when something actually changes.</p>
-          <form id="mailerlite-form" class="nl-form">
+          <form id="newsletter-form" class="nl-form" data-newsletter data-success="newsletter-success">
             <label for="nl-email" class="sr-only">Email address</label>
-            <input id="nl-email" name="fields[email]" type="email" autocomplete="email" required placeholder="you@example.com">
-            <input type="hidden" name="ml-submit" value="1">
-            <input type="hidden" name="anticsrf" value="true">
-            <button type="submit" id="ml-submit-btn" class="btn btn-dark">Subscribe</button>
+            <input id="nl-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+            <button type="submit" class="btn btn-dark">Subscribe</button>
           </form>
-          <div id="ml-success-msg" class="nl-success" hidden role="status">
-            <strong>Check your inbox to confirm</strong>
-            <p>We've sent a confirmation email to your address. Click the link inside to activate your subscription.</p>
+          <div id="newsletter-success" class="nl-success" hidden role="status">
+            <strong>You're on the list</strong>
+            <p>A welcome email is on its way. If you do not see it in a few minutes, look in your spam folder.</p>
           </div>
         </section>
       </div>
@@ -1360,28 +1359,38 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
   /* ---------- Footer year ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  /* ---------- Newsletter (MailerLite) ---------- */
-  var form = document.getElementById('mailerlite-form');
-  var btn = document.getElementById('ml-submit-btn');
-  var success = document.getElementById('ml-success-msg');
-  if (form) {
+  /* ---------- Newsletter signup ----------
+     Goes to our own Kit Delivery script, which adds the address to the Subscribers sheet
+     and sends one welcome email. */
+  var NEWSLETTER_URL = 'https://script.google.com/macros/s/AKfycbzrkEPs6xf6WhdJbZuYBUYCittkeJGW7d83mUh77jdVSrG7Jto_nl5PCik36JfBvimCDg/exec';
+  document.querySelectorAll('form[data-newsletter]').forEach(function (form) {
+    var btn = form.querySelector('button[type="submit"]');
+    var label = btn.textContent;
+    var success = document.getElementById(form.getAttribute('data-success'));
+    var err = document.getElementById(form.getAttribute('data-error') || '');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      var data = new URLSearchParams();
+      data.set('kit', 'newsletter');
+      data.set('email', form.querySelector('input[type="email"]').value.trim());
+      data.set('website', (form.querySelector('[name="website"]') || {}).value || '');
+      data.set('page', location.pathname);
+      if (err) err.hidden = true;
       btn.textContent = 'Subscribing…';
       btn.disabled = true;
-      fetch('https://assets.mailerlite.com/jsonp/2650626/forms/199240121633998056/subscribe', {
-        method: 'POST', body: new FormData(form), mode: 'no-cors'
-      }).catch(function () {}).then(function () {
-        form.reset();
-        form.hidden = true;
-        success.hidden = false;
-      });
+      fetch(NEWSLETTER_URL, { method: 'POST', mode: 'no-cors', body: data })
+        .then(function () {
+          form.reset(); form.hidden = true; form.style.display = 'none';
+          if (success) success.hidden = false;
+        })
+        .catch(function () {
+          if (err) { err.hidden = false; btn.textContent = label; } else { btn.textContent = 'Not sent. Try again'; }
+          btn.disabled = false;
+        });
     });
-  }
+  });
 })();
 </script>
 
-<!-- MailerLite tracking -->
-<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
 </body>
 </html>

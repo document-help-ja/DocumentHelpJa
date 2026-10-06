@@ -1277,21 +1277,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           </div>
         </section>
 
-        <section class="newsletter-box" aria-labelledby="nl-title">
-          <h2 id="nl-title">Get It Right the First Time</h2>
-          <p>Join the mailing list for updates on policy changes, processing times and new diaspora guides, sent when something actually changes.</p>
-          <form id="mailerlite-form" class="nl-form" data-success="ml-success-msg" data-endpoint="newsletter">
-            <label for="nl-email" class="sr-only">Email address</label>
-            <input id="nl-email" name="fields[email]" type="email" autocomplete="email" required placeholder="you@example.com">
-            <input type="hidden" name="ml-submit" value="1">
-            <input type="hidden" name="anticsrf" value="true">
-            <button type="submit" id="ml-submit-btn" class="btn btn-dark">Subscribe</button>
-          </form>
-          <div id="ml-success-msg" class="nl-success" hidden role="status">
-            <strong>Check your inbox to confirm</strong>
-            <p>We've sent a confirmation email to your address. Click the link inside to activate your subscription.</p>
-          </div>
-        </section>
       </div>
 
     </article>
@@ -1498,25 +1483,6 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   /* ---------- Footer year ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  /* ---------- Newsletter form (MailerLite) ---------- */
-  var NEWSLETTER_FORM_URL = 'https://assets.mailerlite.com/jsonp/2650626/forms/199240121633998056/subscribe';
-  document.querySelectorAll('form.nl-form').forEach(function (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var btn = form.querySelector('button[type="submit"]');
-      var success = document.getElementById(form.dataset.success);
-      var url = NEWSLETTER_FORM_URL;
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-      fetch(url, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
-        .catch(function () {})
-        .then(function () {
-          form.reset();
-          form.hidden = true;
-          if (success) success.hidden = false;
-        });
-    });
-  });
 
   /* ---------- Toolkit signup blocks (works for every block on the page) ---------- */
   document.querySelectorAll('form[data-toolkit-form]').forEach(function (form) {
@@ -1550,7 +1516,5 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 })();
 </script>
 
-<!-- MailerLite tracking -->
-<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
 </body>
 </html>
