@@ -659,26 +659,41 @@
     .site-name { overflow-wrap: anywhere; }
     @media (min-width: 700px) { .site-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
-    .toolkit-card { background: var(--primary); color: #fff; border: 0; }
-    .toolkit-card .kicker { display: inline-block; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: #F3D594; font-weight: 700; margin-bottom: 10px; }
-    .toolkit-card h2 { color: #fff !important; font-family: var(--serif) !important; font-size: clamp(1.4rem, 5vw, 1.75rem) !important; margin-bottom: 10px; }
-    .toolkit-intro { color: #CBD5E1; margin-bottom: 16px; }
-    .toolkit-list { list-style: none; padding: 0 !important; margin: 0 0 22px !important; display: grid; gap: 8px; }
-    .toolkit-list li { position: relative; margin: 0 !important; padding-left: 28px; color: #E6EDF3; font-size: .98rem; }
-    .toolkit-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: 700; }
-    @media (min-width: 700px) { .toolkit-list { grid-template-columns: 1fr 1fr; } }
-    .toolkit-fields { display: grid; gap: 12px; margin-bottom: 12px; }
-    @media (min-width: 640px) { .toolkit-fields { grid-template-columns: 1fr 1.4fr; } }
-    .toolkit-form label { display: block; font-size: .8rem; font-weight: 600; color: #CBD5E1; margin-bottom: 6px; }
-    .toolkit-form input[type="text"], .toolkit-form input[type="email"] { width: 100%; min-height: 52px; padding: 0 1rem; border: 0; border-radius: 8px; font: 400 1rem var(--sans); color: var(--ink); background: #fff; }
-    .toolkit-form input::placeholder { color: #6B7378; }
-    .toolkit-form .btn-sub { margin-top: 4px; max-width: none; }
-    .toolkit-form .btn-sub[disabled] { opacity: .75; cursor: progress; }
+    .toolkit-card { container-type: inline-size; box-sizing: border-box; width: 100%; max-width: 880px; margin-left: auto; margin-right: auto; background: #0F2537; background: var(--primary, #0F2537); color: #fff; border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius, 16px); padding: var(--card-pad, 28px 22px); box-shadow: 0 24px 48px -28px rgba(15,37,55,.6); font-family: var(--sans, Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif); line-height: 1.6; }
+    .toolkit-grid { display: grid; gap: 26px; }
+    .toolkit-card .kicker { display: inline-block; font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: #F6DFA6; font-weight: 700; margin-bottom: 12px; }
+    .toolkit-card .kicker::before { content: ""; display: block; width: 40px; height: 3px; border-radius: 2px; background: #C89B3C; margin-bottom: 16px; }
+    .toolkit-card h2 { color: #fff !important; font-family: var(--serif, Georgia, "Times New Roman", serif) !important; font-size: clamp(1.45rem, 4.6cqi, 1.9rem) !important; line-height: 1.22; letter-spacing: -.005em; margin: 0 0 12px; }
+    .toolkit-intro { color: #F1F5F9; margin: 0 0 18px; font-size: 1.02rem; }
+    .toolkit-list { list-style: none; padding: 0 !important; margin: 0 !important; display: grid; gap: 10px; }
+    .toolkit-list li { position: relative; margin: 0 !important; padding-left: 30px; color: #fff; font-size: 1rem; line-height: 1.5; }
+    .toolkit-list li::before { content: ""; position: absolute; left: 0; top: .2em; width: 18px; height: 18px; border-radius: 50%; background: rgba(246,223,166,.16); }
+    .toolkit-list li::after { content: ""; position: absolute; left: 6px; top: calc(.2em + 4px); width: 4px; height: 8px; border: solid #F6DFA6; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+    .toolkit-panel { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 20px 18px; }
+    .toolkit-fields { display: grid; gap: 14px; margin-bottom: 14px; }
+    .toolkit-form label { display: block; font-size: .88rem; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .toolkit-form input[type="text"], .toolkit-form input[type="email"] { box-sizing: border-box; width: 100%; min-height: 50px; padding: 0 14px; border: 2px solid #fff; border-radius: 8px; font: 400 1rem var(--sans, Inter, system-ui, Arial, sans-serif); color: #181A1B; background: #fff; }
+    .toolkit-form input[type="text"]:focus, .toolkit-form input[type="email"]:focus { outline: 0; border-color: #C89B3C; box-shadow: 0 0 0 3px rgba(246,223,166,.55); }
+    .toolkit-form input::placeholder { color: #5A6268; }
+    .toolkit-card .btn-sub { box-sizing: border-box; display: flex; align-items: center; justify-content: center; width: 100%; max-width: none; min-height: 52px; margin: 0; padding: 14px 24px; border: 0; border-radius: 8px; background: #C89B3C; background: var(--gold, #C89B3C); color: #181A1B; font: 700 1rem var(--sans, Inter, system-ui, Arial, sans-serif); letter-spacing: .01em; cursor: pointer; box-shadow: 0 6px 14px -6px rgba(0,0,0,.5); transition: background .15s ease, transform .15s ease; }
+    .toolkit-card .btn-sub:hover { background: #D8AE55; color: #181A1B; transform: translateY(-1px); }
+    .toolkit-form .btn-sub[disabled] { opacity: .75; cursor: progress; transform: none; }
     .tk-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-    .toolkit-error { margin: 10px 0 0; color: #FECACA; font-size: .92rem; font-weight: 600; }
-    .toolkit-card .fine { font-size: .85rem; color: #94A3B8; margin: 14px 0 0; }
-    .toolkit-card .fine a { color: #E2E8F0; }
-    .toolkit-success { margin-top: 0; max-width: none; }
+    .toolkit-error { margin: 10px 0 0; color: #FFD9D9; font-size: .95rem; font-weight: 600; }
+    .toolkit-card .fine { font-size: .84rem; line-height: 1.55; color: #E2E8F0; margin: 14px 0 0; }
+    .toolkit-card .fine a { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    .toolkit-card .toolkit-success { margin: 0; max-width: none; text-align: left; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.4); border-radius: 8px; padding: 1.1rem 1.2rem; }
+    .toolkit-card .toolkit-success strong { display: block; color: #F6DFA6; font-size: 1.05rem; margin-bottom: .35rem; }
+    .toolkit-card .toolkit-success p { color: #fff; margin: 0; font-size: 1rem; }
+    /* Medium width: name and email side by side */
+    @container (min-width: 540px) { .toolkit-panel { padding: 24px; } .toolkit-fields { grid-template-columns: 1fr 1.3fr; } }
+    /* Wide: text on the left, form on the right */
+    @container (min-width: 700px) {
+      .toolkit-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+      .toolkit-fields { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 760px) { .toolkit-card { padding: var(--card-pad, 40px 44px); } }
+    @media (prefers-reduced-motion: reduce) { .toolkit-card .btn-sub { transition: none; } }
     .section-nav a.nav-cta { text-decoration: none; }
 </style>
 </head>
@@ -1056,35 +1071,41 @@
              The script at the bottom of the page handles every block automatically.
              ============================================================ -->
         <section class="card toolkit-card" id="toolkit" aria-labelledby="toolkit-title">
-          <span class="kicker">Free toolkit</span>
-          <h2 id="toolkit-title">Get the H-2B Application Toolkit</h2>
-          <p class="toolkit-intro">A printable starter kit, sent to your inbox as a PDF.</p>
-          <ul class="toolkit-list">
-            <li>Document checklist with tick boxes</li>
-            <li>Call script and the 8 questions to ask every agency</li>
-            <li>Printable call log</li>
-            <li>One-page scam red-flag card</li>
-          </ul>
-          <form class="toolkit-form" data-toolkit-form data-kit="h2b" data-kit-endpoint="PASTE_YOUR_WEB_APP_URL_HERE" novalidate>
-            <div class="toolkit-fields">
-              <div>
-                <label for="tk-name">First name</label>
-                <input id="tk-name" name="name" type="text" autocomplete="given-name" placeholder="Your first name">
-              </div>
-              <div>
-                <label for="tk-email">Email address</label>
-                <input id="tk-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
-              </div>
+          <div class="toolkit-grid">
+            <div class="toolkit-copy">
+              <span class="kicker">Free toolkit</span>
+              <h2 id="toolkit-title">Get the H-2B Application Toolkit</h2>
+              <p class="toolkit-intro">A printable starter kit, sent to your inbox as a PDF.</p>
+              <ul class="toolkit-list">
+                <li>Document checklist with tick boxes</li>
+                <li>Call script and the 8 questions to ask every agency</li>
+                <li>Printable call log</li>
+                <li>One-page scam red-flag card</li>
+              </ul>
             </div>
-            <div class="tk-hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-            <button type="submit" class="btn-sub">Send me the toolkit</button>
-            <p class="toolkit-error" role="alert" hidden>Please enter a valid email address.</p>
-          </form>
-          <div class="nl-success toolkit-success" hidden role="status">
-            <strong>Check your inbox</strong>
-            <p>Your toolkit is on its way as a PDF. If you do not see it in a few minutes, look in your spam folder.</p>
+            <div class="toolkit-panel">
+              <form class="toolkit-form" data-toolkit-form data-kit="h2b" data-kit-endpoint="PASTE_YOUR_WEB_APP_URL_HERE" novalidate>
+                <div class="toolkit-fields">
+                  <div>
+                    <label for="tk-name">First name</label>
+                    <input id="tk-name" name="name" type="text" autocomplete="given-name" placeholder="Your first name">
+                  </div>
+                  <div>
+                    <label for="tk-email">Email address</label>
+                    <input id="tk-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+                  </div>
+                </div>
+                <div class="tk-hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+                <button type="submit" class="btn-sub">Send me the toolkit</button>
+                <p class="toolkit-error" role="alert" hidden>Please enter a valid email address.</p>
+              </form>
+              <div class="nl-success toolkit-success" hidden role="status">
+                <strong>Check your inbox</strong>
+                <p>Your toolkit is on its way as a PDF. If you do not see it in a few minutes, look in your spam folder.</p>
+              </div>
+              <p class="fine">Free. We use your email to send this toolkit and the occasional update. Reply STOP to any email and we remove your details. <a href="/privacy.html">Privacy Policy</a></p>
+            </div>
           </div>
-          <p class="fine">Free. We use your email to send this toolkit and the occasional update. Reply STOP to any email and we remove your details. <a href="/privacy.html">Privacy Policy</a></p>
         </section>
 
         <!-- SERVICE BRIDGE -->
