@@ -944,6 +944,26 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
 }
 @media (min-width: 760px) { .toolkit-card { padding: var(--card-pad, 40px 44px); } }
 @media (prefers-reduced-motion: reduce) { .toolkit-card .btn-sub { transition: none; } }
+/* Light version of the toolkit block, for a second offer on the same page */
+.toolkit-card.toolkit-light { background: #FBF8F1; color: #1B2430; border: 1px solid #E0D6BF; box-shadow: 0 18px 40px -30px rgba(15,37,55,.45); }
+.toolkit-card.toolkit-light .kicker { color: #7A5C17; }
+.toolkit-card.toolkit-light h2 { color: #0F2537 !important; }
+.toolkit-light .toolkit-intro { color: #343D46; }
+.toolkit-light .toolkit-list li { color: #1B2430; }
+.toolkit-light .toolkit-list li::before { background: rgba(200,155,60,.22); }
+.toolkit-light .toolkit-list li::after { border-color: #7A5C17; }
+.toolkit-light .toolkit-panel { background: #FFFFFF; border: 1px solid #E0D6BF; }
+.toolkit-light .toolkit-form label { color: #1B2430; }
+.toolkit-light .toolkit-form input[type="text"], .toolkit-light .toolkit-form input[type="email"] { border-color: #B9C2C8; }
+.toolkit-card.toolkit-light .btn-sub { background: #0F2537; color: #FFFFFF; }
+.toolkit-card.toolkit-light .btn-sub:hover { background: #1B3A55; color: #FFFFFF; }
+.toolkit-light .toolkit-error { color: #8A2A2A; }
+.toolkit-card.toolkit-light .fine { color: #4A545C; }
+.toolkit-card.toolkit-light .fine a { color: #0F2537; }
+.toolkit-card.toolkit-light .toolkit-success { background: #F1F5F8; border-color: #C6D2DC; }
+.toolkit-card.toolkit-light .toolkit-success strong { color: #0F2537; }
+.toolkit-card.toolkit-light .toolkit-success p { color: #1B2430; }
+.toolkit-card + .toolkit-card { margin-top: 2rem; }
 </style>
 </head>
 
@@ -1017,7 +1037,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
         <a href="#calendar" class="toc-link">Payment Calendar</a>
         <a href="#traps" class="toc-link">The 3 Backlog Traps</a>
         <a href="#survival-kit" class="toc-link">Tax Survival Kit</a>
-        <a href="#backlog" class="toc-link">Filing Guidance</a>
+        <a href="#backlog" class="toc-link">Tax Backlog Guide</a>
       </nav>
     </aside>
 
@@ -1123,11 +1143,12 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           <div class="toolkit-copy">
             <span class="kicker">Free toolkit</span>
             <h2 id="kit-title">Get the Self-Employed Tax Survival Kit</h2>
-            <p class="toolkit-intro">Three printable resources, sent to your inbox as one PDF.</p>
+            <p class="toolkit-intro">A two-page printable kit, sent to your inbox as a PDF.</p>
             <ul class="toolkit-list">
-              <li>Allowable expense cheat sheet: what TAJ lets you deduct</li>
-              <li>S04a quarterly payment calendar, one page</li>
-              <li>Backlog recovery blueprint for past years</li>
+              <li>Checklist of documents to gather before you file</li>
+              <li>S04 and S04a calendar with the four payment dates</li>
+              <li>What you can and cannot deduct</li>
+              <li>How to prove expenses without paper receipts</li>
             </ul>
           </div>
           <div class="toolkit-panel">
@@ -1155,11 +1176,46 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
         </div>
       </section>
 
-      <!-- ===================== BACKLOG CONSULTATION ===================== -->
-      <aside class="mid-cta backlog-cta" id="backlog" aria-labelledby="backlog-title">
-        <p><strong id="backlog-title">Have a multi-year tax backlog? Don't guess on the TAJ portal.</strong>Filing past years without knowing what TAJ allows can trigger unnecessary penalties. If you're unsure how to organise past receipts or state your seasonal income, we'll guide you through a confidential pre-audit so you can submit your forms correctly.</p>
-        <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20guidance%20on%20organizing%20my%20S04%20records%20before%20I%20file." target="_blank" rel="noopener" data-wa="article-backlog"><svg class="icon"><use href="#i-wa"/></svg> Chat With Laura for Filing Guidance</a>
-      </aside>
+      <!-- ===================== FREE GUIDE: TAX BACKLOG RECOVERY =====================
+           Delivered by the Kit Delivery Apps Script. data-kit="backlog" must match the backlog entry in KITS. -->
+      <section class="card toolkit-card toolkit-light" id="backlog" aria-labelledby="backlog-title">
+        <div class="toolkit-grid">
+          <div class="toolkit-copy">
+            <span class="kicker">Free guide</span>
+            <h2 id="backlog-title">Have a multi-year tax backlog? Don't guess on the TAJ portal.</h2>
+            <p class="toolkit-intro">Filing past years without knowing what TAJ allows can trigger unnecessary penalties. Get the Tax Backlog Recovery Guide, sent to your inbox as a PDF.</p>
+            <ul class="toolkit-list">
+              <li>How to see which years are outstanding</li>
+              <li>What waiting costs: penalties and interest</li>
+              <li>How to rebuild each year's records and file in order</li>
+              <li>A year-by-year worksheet to fill in</li>
+            </ul>
+          </div>
+          <div class="toolkit-panel">
+            <form class="toolkit-form" data-toolkit-form data-kit="backlog" data-kit-endpoint="https://script.google.com/macros/s/AKfycbzrkEPs6xf6WhdJbZuYBUYCittkeJGW7d83mUh77jdVSrG7Jto_nl5PCik36JfBvimCDg/exec" novalidate>
+              <div class="toolkit-fields">
+                <div>
+                  <label for="tk-name-2">First name</label>
+                  <input id="tk-name-2" name="name" type="text" autocomplete="given-name" placeholder="Your first name">
+                </div>
+                <div>
+                  <label for="tk-email-2">Email address</label>
+                  <input id="tk-email-2" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+                </div>
+              </div>
+              <div class="tk-hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+              <button type="submit" class="btn-sub">Send me the guide</button>
+              <p class="toolkit-error" role="alert" hidden>Please enter a valid email address.</p>
+            </form>
+            <div class="nl-success toolkit-success" hidden role="status">
+              <strong>Check your inbox</strong>
+              <p>Your guide is on its way as a PDF. If you do not see it in a few minutes, look in your spam folder.</p>
+            </div>
+            <p class="fine">Free. We use your email to send this guide and the occasional update. Reply STOP to any email and we remove your details. <a href="/privacy.html">Privacy Policy</a></p>
+            <p class="fine">Prefer to talk it through? <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20guidance%20on%20organizing%20my%20S04%20records%20before%20I%20file." target="_blank" rel="noopener" data-wa="article-backlog">Message Laura on WhatsApp</a> about a confidential pre-audit.</p>
+          </div>
+        </div>
+      </section>
 
       <p class="updated-note">Deadlines, penalty and interest rates last checked <time datetime="2026-09">September 2026</time>. TAJ can change them without notice, so confirm with us before you file. This guide is general information, not tax advice.</p>
 
