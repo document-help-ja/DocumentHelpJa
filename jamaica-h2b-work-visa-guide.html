@@ -674,6 +674,7 @@
     .toolkit-form input::placeholder { color: #6B7378; }
     .toolkit-form .btn-sub { margin-top: 4px; max-width: none; }
     .toolkit-form .btn-sub[disabled] { opacity: .75; cursor: progress; }
+    .tk-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
     .toolkit-error { margin: 10px 0 0; color: #FECACA; font-size: .92rem; font-weight: 600; }
     .toolkit-card .fine { font-size: .85rem; color: #94A3B8; margin: 14px 0 0; }
     .toolkit-card .fine a { color: #E2E8F0; }
@@ -1050,41 +1051,40 @@
              TOOLKIT SIGNUP BLOCK (reusable on any guide)
              To reuse: copy this whole <section>, then change
                1. the heading, intro and the "What's inside" list
-               2. data-ml-form  = the ID of the MailerLite form for that toolkit
-               3. data-toolkit  = a short name for the toolkit (for your own reference)
+               2. data-kit          = the kit's short name, exactly as it is in KITS in the Apps Script
+               3. data-kit-endpoint = your Apps Script web app address (the same on every guide)
              The script at the bottom of the page handles every block automatically.
              ============================================================ -->
         <section class="card toolkit-card" id="toolkit" aria-labelledby="toolkit-title">
           <span class="kicker">Free toolkit</span>
           <h2 id="toolkit-title">Get the H-2B Application Toolkit</h2>
-          <p class="toolkit-intro">A printable starter kit, sent to your inbox, plus short emails that tell you what to do at each stage of the season.</p>
+          <p class="toolkit-intro">A printable starter kit, sent to your inbox as a PDF.</p>
           <ul class="toolkit-list">
             <li>Document checklist with tick boxes</li>
             <li>Call script and the 8 questions to ask every agency</li>
             <li>Printable call log</li>
             <li>One-page scam red-flag card</li>
           </ul>
-          <form class="toolkit-form" data-toolkit-form data-toolkit="h2b" data-ml-account="2650626" data-ml-form="200441341271869143" novalidate>
+          <form class="toolkit-form" data-toolkit-form data-kit="h2b" data-kit-endpoint="PASTE_YOUR_WEB_APP_URL_HERE" novalidate>
             <div class="toolkit-fields">
               <div>
                 <label for="tk-name">First name</label>
-                <input id="tk-name" name="fields[name]" type="text" autocomplete="given-name" placeholder="Your first name">
+                <input id="tk-name" name="name" type="text" autocomplete="given-name" placeholder="Your first name">
               </div>
               <div>
                 <label for="tk-email">Email address</label>
-                <input id="tk-email" name="fields[email]" type="email" autocomplete="email" required placeholder="you@example.com">
+                <input id="tk-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
               </div>
             </div>
-            <input type="hidden" name="ml-submit" value="1">
-            <input type="hidden" name="anticsrf" value="true">
+            <div class="tk-hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
             <button type="submit" class="btn-sub">Send me the toolkit</button>
             <p class="toolkit-error" role="alert" hidden>Please enter a valid email address.</p>
           </form>
           <div class="nl-success toolkit-success" hidden role="status">
             <strong>Check your inbox</strong>
-            <p>Your toolkit is on its way. If we ask you to confirm your email first, click the link inside.</p>
+            <p>Your toolkit is on its way as a PDF. If you do not see it in a few minutes, look in your spam folder.</p>
           </div>
-          <p class="fine">Free. No spam. Unsubscribe any time. We only use your email to send the toolkit and updates. <a href="/privacy.html">Privacy Policy</a></p>
+          <p class="fine">Free. We use your email to send this toolkit and the occasional update. Reply STOP to any email and we remove your details. <a href="/privacy.html">Privacy Policy</a></p>
         </section>
 
         <!-- SERVICE BRIDGE -->
@@ -1207,18 +1207,6 @@
   </footer>
 
 <!-- ===================== PAGE BEHAVIOUR ===================== -->
-  <!-- External MailerLite Script for Form Tracking -->
-  <script>
-    /* Load the MailerLite script only after the page has finished loading */
-    window.addEventListener('load', function () {
-      setTimeout(function () {
-        var m = document.createElement('script');
-        m.src = 'https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519';
-        m.async = true;
-        document.body.appendChild(m);
-      }, 3000);
-    });
-  </script>
   
   <script>
     (function () {
@@ -1531,21 +1519,27 @@
         var err = form.querySelector('.toolkit-error');
         var success = form.parentNode.querySelector('.toolkit-success');
         var label = btn.textContent;
-        var url = 'https://assets.mailerlite.com/jsonp/' + form.dataset.mlAccount + '/forms/' + form.dataset.mlForm + '/subscribe';
+        var errText = err.textContent;
+        var url = form.dataset.kitEndpoint || '';
+        function fail(msg) { err.textContent = msg; err.hidden = false; }
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           var email = form.querySelector('input[type="email"]');
-          if (!email.value || !email.checkValidity()) { err.hidden = false; email.focus(); return; }
+          if (!email.value || !email.checkValidity()) { fail(errText); email.focus(); return; }
+          if (url.indexOf('https://script.google.com/') !== 0) { fail('This form is not connected yet. Please message us on WhatsApp for the toolkit.'); return; }
           err.hidden = true;
           btn.textContent = 'Sending…';
           btn.disabled = true;
-          fetch(url, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
-            .catch(function () {})
-            .then(function () {
-              form.reset(); btn.textContent = label; btn.disabled = false;
-              form.hidden = true;
-              success.hidden = false;
-            });
+          var data = new URLSearchParams();
+          data.set('kit', form.dataset.kit || '');
+          data.set('name', (form.querySelector('[name="name"]') || {}).value || '');
+          data.set('email', email.value);
+          data.set('website', (form.querySelector('[name="website"]') || {}).value || '');
+          data.set('page', location.pathname);
+          fetch(url, { method: 'POST', mode: 'no-cors', body: data })
+            .then(function () { form.reset(); form.hidden = true; success.hidden = false; })
+            .catch(function () { fail('That did not go through. Please try again, or message us on WhatsApp.'); })
+            .then(function () { btn.textContent = label; btn.disabled = false; });
         });
       });
 
