@@ -141,6 +141,20 @@
     }
     .more:hover { text-decoration-thickness: 2px; }
 
+    /* ---------- Services: deep navy ---------- */
+    .card-navy { background: var(--navy); border-color: var(--navy); }
+    .card-navy h2 { color: #fff; }
+    .card-navy .rows strong { color: #F1F4F6; }
+    .card-navy .rows li + li a { border-top-color: rgba(255, 255, 255, .14); }
+    .card-navy .rows .icon { color: #E7C877; }
+    .card-navy .rows a:hover strong { color: #fff; text-decoration-color: #E7C877; }
+    .card-navy .more { color: #fff; text-decoration-color: #E7C877; }
+
+    /* ---------- Guides: warm sand, a tint of the brand gold ---------- */
+    .card-sand { background: #F3EBD8; border-color: #DDCFA9; }
+    .card-sand .rows li + li a { border-top-color: #DFD3B4; }
+    .card-sand .rows .icon { color: var(--gold-text); }
+
     /* ---------- Foot ---------- */
     .foot { padding: .75rem var(--pad) 0; font-size: .82rem; line-height: 1.6; color: #49524F; }
     .foot p + p { margin-top: .35rem; }
@@ -159,6 +173,7 @@
     @media print {
       body { background: #fff; padding: 0; }
       .card { box-shadow: none; break-inside: avoid; }
+      .card-navy, .card-sand { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
   </style>
 </head>
@@ -206,7 +221,7 @@
     </section>
 
     <!-- ===================== MOST REQUESTED SERVICES ===================== -->
-    <section class="card" aria-labelledby="services-title">
+    <section class="card card-navy" aria-labelledby="services-title">
       <h2 id="services-title">Most requested</h2>
       <ul class="rows">
         <li><a href="/jamaican-passport-services.html">
@@ -230,7 +245,7 @@
     </section>
 
     <!-- ===================== A TASTE OF THE GUIDES ===================== -->
-    <section class="card" aria-labelledby="guides-title">
+    <section class="card card-sand" aria-labelledby="guides-title">
       <h2 id="guides-title">From the guides</h2>
       <ul class="rows">
         <li><a href="/jamaica-drivers-license-renewal-guide">
