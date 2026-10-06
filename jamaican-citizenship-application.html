@@ -4,35 +4,82 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Jamaican Citizenship by Descent | Laura Clarke Administrative Services</title>
-  <meta name="description" content="Claim your Jamaican citizenship by descent. We perform generational document audits, fetch missing RGD records, and handle PICA proxy lodgment in Kingston.">
+  <meta name="description" content="Claiming Jamaican citizenship through a parent or grandparent? A paid consultation with a written guide and checklist: J$2,000 or US$20. You apply yourself.">
   <link rel="canonical" href="https://documenthelpja.com/jamaican-citizenship-application.html">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 
   <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "@id": "https://documenthelpja.com/jamaican-citizenship-application.html#service",
-        "name": "Jamaican Citizenship by Descent Application",
-        "serviceType": "Citizenship by descent document audit and proxy lodgment at PICA",
-        "description": "Generational document audits, retrieval of missing RGD records and proxy lodgment at PICA in Kingston for Jamaican citizenship by descent.",
-        "url": "https://documenthelpja.com/jamaican-citizenship-application.html",
-        "areaServed": "Worldwide",
-        "provider": { "@type": "ProfessionalService", "@id": "https://documenthelpja.com/#business", "name": "Laura Clarke Administrative Services", "url": "https://documenthelpja.com/" },
-        "offers": { "@type": "Offer", "price": "150.00", "priceCurrency": "USD", "description": "Service fee. PICA and RGD government fees are separate." }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://documenthelpja.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://documenthelpja.com/#services" },
-          { "@type": "ListItem", "position": 3, "name": "Citizenship by Descent", "item": "https://documenthelpja.com/jamaican-citizenship-application.html" }
-        ]
-      }
-    ]
+   "@type": "Service",
+   "@id": "https://documenthelpja.com/jamaican-citizenship-application.html#service",
+   "name": "Jamaican Citizenship by Descent: Consultation and Guide",
+   "serviceType": "Citizenship by descent consultation and written guide",
+   "description": "A paid WhatsApp consultation with a written guide and checklist for claiming Jamaican citizenship by descent through a parent or grandparent. The applicant gathers the documents, submits the application to PICA or a Jamaican mission and pays PICA's fee.",
+   "url": "https://documenthelpja.com/jamaican-citizenship-application.html",
+   "areaServed": "Worldwide",
+   "provider": {
+    "@type": "ProfessionalService",
+    "@id": "https://documenthelpja.com/#business",
+    "name": "Laura Clarke Administrative Services",
+    "url": "https://documenthelpja.com/"
+   },
+   "offers": {
+    "@type": "Offer",
+    "price": "2000",
+    "priceCurrency": "JMD",
+    "description": "Fee for the consultation and written guide. US$20 for overseas clients. PICA's government fee is separate and is paid by the applicant."
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://documenthelpja.com/jamaican-citizenship-application.html#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do I claim Jamaican citizenship through a parent or grandparent?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You apply to PICA in Kingston, or through the Jamaican mission that covers where you live. You show your family line with original birth certificates, add two certified photographs and your photo ID, and pay PICA's fee. Every name has to match, from the Jamaican birth certificate down to yours."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Who qualifies for Jamaican citizenship by descent?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You qualify if you were born outside Jamaica after 5 August 1962 and your mother or father was a Jamaican citizen by birth, descent or registration on the day you were born. If you were born before 6 August 1962, you qualify if your mother or father became a Jamaican citizen on that date, or would have but for their death."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://documenthelpja.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Services",
+     "item": "https://documenthelpja.com/#services"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Citizenship by Descent",
+     "item": "https://documenthelpja.com/jamaican-citizenship-application.html"
+    }
+   ]
   }
+ ]
+}
   </script>
   <meta name="theme-color" content="#181A1B">
   
@@ -124,6 +171,57 @@
     .faq details[open] { border-color: var(--blue-highlight); }
     .faq .answer { padding: 0 24px 24px; color: var(--text); font-size: 1rem; line-height: 1.6; }
     
+
+    /* Consultation card (same pattern as the passport page) */
+    .case-card { background: var(--card-bg); border: 1px solid #B9C2C8; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 2px rgba(15,30,45,.06), 0 10px 26px rgba(15,30,45,.09); margin-bottom: 36px; }
+    .tier { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 16px 22px; background: #F7F1E3; color: #654C1E; border-bottom: 1px solid #DDD0B2; }
+    .tier b { display: inline-flex; align-items: center; gap: 9px; font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+    .tier b::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+    .tier span { font-size: .92rem; color: var(--text); }
+    .case-in { padding: 30px 22px; }
+    .eyebrow { font: 600 .74rem/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #7A6030; margin: 0 0 12px; }
+    .case-in h2 { font-size: clamp(1.4rem, 4.4vw, 1.85rem); margin-bottom: 18px; }
+    .case-in p { margin: 0 0 16px; }
+    .strict { font-weight: 600; color: var(--primary); font-size: 1.05rem; line-height: 1.55; }
+    .scope { display: grid; margin: 28px 0; border: 1px solid #B9C2C8; border-radius: 14px; overflow: hidden; }
+    .scope > div { padding: 24px 22px; min-width: 0; }
+    .scope .not { background: #F9F5EC; border-top: 1px solid #DDD0B2; }
+    .scope h3, .part h3, .start h3 { font: 700 1rem/1.3 var(--sans); color: var(--primary); margin-bottom: 14px; }
+    .scope ul { margin: 0; padding: 0; list-style: none; }
+    .scope li { position: relative; padding-left: 28px; margin-bottom: .8rem; }
+    .scope li:last-child { margin-bottom: 0; }
+    .scope li::before { position: absolute; left: 0; top: 0; font-weight: 600; }
+    .scope .get li::before { content: "\2713"; color: #235C43; }
+    .scope .not li::before { content: "\2715"; color: #7A6030; }
+    .part { margin: 28px 0; padding: 24px 22px; border-radius: 14px; background: #F1F5F8; border: 1px solid #C6D2DC; }
+    .part ol { margin: 0; padding-left: 1.3rem; }
+    .part li { padding-left: 6px; margin-bottom: .8rem; }
+    .part li:last-child { margin-bottom: 0; }
+    .part li::marker { font-weight: 600; color: var(--primary); }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0 0; padding: 0; list-style: none; }
+    .facts li { padding: 16px 16px 18px; border-radius: 12px; background: #F0F3F4; min-width: 0; }
+    .facts .k { display: block; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 6px; }
+    .facts .v { display: block; font-weight: 600; color: var(--primary); line-height: 1.4; font-size: .96rem; }
+    .start { margin: 28px 0 0; padding: 26px 22px; border-radius: 14px; border: 1px solid #B9C2C8; background: #fff; }
+    .agree { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: start; margin: 0 0 20px; cursor: pointer; font-weight: 500; color: var(--primary); line-height: 1.5; }
+    .agree input { width: 22px; height: 22px; margin: 3px 0 0; accent-color: var(--primary); }
+    .agree-msg { font-size: .92rem; color: #8A2A2A; font-weight: 500; margin: 14px 0 0 !important; }
+    .btn-wa { background: #226B4B; color: #fff; min-height: 50px; display: flex; align-items: center; justify-content: center; }
+    .btn-wa:hover { background: #1A573C; }
+    .btn-wa[aria-disabled="true"] { background: #F0F3F4; color: var(--text-muted); border: 1px solid #D9DFE2; }
+    .note { font-size: .92rem; color: var(--text-muted); line-height: 1.65; }
+    .case-terms { margin: 18px 0 0 !important; }
+    .note a, .answer a { color: var(--blue-highlight); text-decoration: underline; text-underline-offset: 3px; }
+    .faq .answer ul { margin: 0 0 12px; padding-left: 1.2rem; }
+    .faq .answer li { margin-bottom: .5rem; }
+    @media (min-width: 700px) {
+      .tier { padding: 18px 44px; } .case-in { padding: 42px 44px; }
+      .scope { grid-template-columns: 1fr 1fr; } .scope > div, .part, .start { padding: 30px 32px; }
+      .scope .not { border-top: 0; border-left: 1px solid #DDD0B2; }
+      .facts { grid-template-columns: repeat(4, 1fr); }
+      .start .btn-wa { display: inline-flex; padding: 14px 28px; }
+    }
+
     /* Inner Table Rows for Fees */
     .fee-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--line); }
     .fee-row:last-child { border-bottom: none; }
@@ -159,91 +257,93 @@
 
 <section class="hero">
   <h1>Jamaican Citizenship by Descent</h1>
-  <p>Claim your Jamaican heritage. We perform a strict lineage document audit, correct name mismatches, and manage your PICA proxy lodgment in Kingston.</p>
+  <p>A paid consultation and a written guide for claiming citizenship through a Jamaican parent or grandparent. You gather your documents and apply yourself.</p>
 </section>
 
 <main class="container">
 
-  <div class="service-grid">
-    <!-- OPTION 1: DIRECT DESCENT -->
-    <div class="service-card featured">
-      <div class="card-head">
-        <span class="badge">Ready to File</span>
-        <h2>Parent Route Lodgment</h2>
-        <p style="margin:0; font-size:15px; color:var(--text-muted);">For applicants with a Jamaican parent and all original documents with perfectly matching names.</p>
-      </div>
-      <div class="card-body">
-        <div class="price-block">
-          <div class="price">$150 USD</div>
-          <span class="price-note">+ PICA Government Fees</span>
-        </div>
-        <ul class="feature-list">
-          <li><strong>Who qualifies:</strong> You currently hold your parent's original Jamaican birth certificate and your foreign birth certificate.</li>
-          <li>We pre-audit your physical documents to ensure name spellings match exactly.</li>
-          <li>We complete the forms and act as your proxy to lodge the file at PICA Headquarters in Kingston.</li>
-          <li>We collect the final certificate and dispatch it securely via DHL.</li>
-        </ul>
-        <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20have%20all%20my%20documents%20ready%20and%20want%20to%20start%20my%20Citizenship%20by%20Descent%20application." class="btn btn-accent">Book Lodgment</a>
-      </div>
-    </div>
+  <article class="case-card" id="consultation">
+    <div class="tier"><b>Paid consultation</b><span>Consultation and written guide. You gather your documents and apply yourself.</span></div>
+    <div class="case-in">
+      <p class="eyebrow">Citizenship by descent</p>
+      <h2>How do I claim Jamaican citizenship through a parent or grandparent?</h2>
+      <p class="answer">You apply to PICA in Kingston, or through the Jamaican mission that covers where you live. You show your family line with original birth certificates, add two certified photographs and your photo ID, and pay PICA's fee. Every name has to match, from the Jamaican birth certificate down to yours.</p>
+      <p class="strict">This is a paid consultation with a written guide and checklist. You gather your documents and submit the application yourself. You do not get a citizenship certificate from us.</p>
 
-    <!-- OPTION 2: COMPLEX LINEAGE -->
-    <div class="service-card">
-      <div class="card-head">
-        <span class="badge" style="background:#F1F5F9; color:#475569;">Complex Cases</span>
-        <h2>Grandparent & Name Corrections</h2>
-        <p style="margin:0; font-size:15px; color:var(--text-muted);">If you are missing a Jamaican birth certificate, claiming through a grandparent, or have spelling mismatches.</p>
+      <div class="scope">
+        <div class="get"><h3>What you get</h3><ul>
+          <li>A consultation on WhatsApp about your case</li>
+          <li>A written guide and checklist (PDF), for applying in Jamaica or overseas</li>
+          <li>Who qualifies, the documents to gather and the order to do them in</li>
+          <li>Follow-up on WhatsApp if a step is unclear</li>
+        </ul></div>
+        <div class="not"><h3>What is not included</h3><ul>
+          <li>Submitting the application at PICA or a mission</li>
+          <li>Paying PICA's fee for you</li>
+          <li>Issuing the certificate. PICA decides every application</li>
+        </ul></div>
       </div>
-      <div class="card-body">
-        <div class="price-block">
-          <div class="price">$150 USD Base</div>
-          <span class="price-note">+ RGD & PICA Fees</span>
-        </div>
-        <ul class="feature-list">
-          <li>We coordinate with the Registrar General's Department (RGD) to find and retrieve missing ancestral records.</li>
-          <li>We guide you through the affidavits or deed polls required to fix broken name chains.</li>
-          <li>Once reconciled, we complete the proxy lodgment at PICA.</li>
-          <li class="warning"><strong>Processing Timeline:</strong> RGD retrievals and legal corrections will extend your processing time significantly.</li>
-        </ul>
-        <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20want%20to%20claim%20Citizenship%20by%20Descent%20but%20I%20am%20missing%20documents%20or%20need%20a%20Lineage%20Audit." class="btn btn-primary">Book Lineage Audit</a>
-      </div>
-    </div>
-  </div>
 
-  <div class="info-box">
-    <h3>Why must I mail my original documents to Jamaica?</h3>
-    <p>PICA maintains strict zero-tolerance policies for documentary fraud. They absolutely do not accept photocopies, scans, or digital prints for Citizenship by Descent applications. You must submit the original, physical, long-form birth certificates and marriage certificates.</p>
-    <p>When you use our Proxy Lodgment service, you courier your precious family documents directly to our secure Kingston office. We hand-deliver them to the PICA agent, track the application throughout the multi-month processing period, and then securely courier all your originals back to you along with your new Citizenship Certificate.</p>
-  </div>
+      <div class="part"><h3>Your part</h3><ol>
+        <li>Gather your original certificates and your photo ID.</li>
+        <li>Check that every name matches, and get any change of name document.</li>
+        <li>Have your photographs taken and certified.</li>
+        <li>Complete PICA's form, submit it and pay PICA's fee yourself.</li>
+      </ol></div>
+
+      <ul class="facts">
+        <li><span class="k">Route</span><span class="v">Apply to PICA or your mission</span></li>
+        <li><span class="k">Our fee</span><span class="v">J$2,000 · US$20</span></li>
+        <li><span class="k">PICA fee, from</span><span class="v">J$10,000 · US$100</span></li>
+        <li><span class="k">We do</span><span class="v">Consultation and guide</span></li>
+      </ul>
+
+      <div class="start" data-start-box>
+        <h3>Paid consultation and guide</h3>
+        <label class="agree" for="agree-descent"><input type="checkbox" id="agree-descent"><span>I understand this is a paid consultation and written guide. I will gather my documents and submit the application myself.</span></label>
+        <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20the%20paid%20consultation%20and%20guide%20for%20Jamaican%20citizenship%20by%20descent%20%28J%242%2C000%20or%20US%2420%29.%20I%20understand%20that%20I%20gather%20my%20documents%20and%20submit%20the%20application%20myself.%20I%20am%20in%3A%20" class="btn btn-wa" data-start aria-disabled="true" target="_blank" rel="noopener">Get the consultation and guide</a>
+        <p class="agree-msg" role="alert" hidden>Tick the box above to confirm your part, then continue.</p>
+      </div>
+      <p class="note case-terms">PICA's fee is separate and is paid to PICA or your mission. We go over it with you in the consultation. By proceeding you agree to our <a href="/terms.html">Terms &amp; Conditions</a>.</p>
+    </div>
+  </article>
 
   <!-- DROPDOWN RESOURCES -->
   <div class="faq-section">
     <h3>Reference & Resources</h3>
     <div class="faq">
       <details>
-        <summary>PICA Processing Fees & Timelines</summary>
+        <summary>Who qualifies for Jamaican citizenship by descent?</summary>
         <div class="answer">
-          <p style="margin-top:0;">PICA charges a mandatory processing fee for Citizenship by Descent. This is paid directly to the agency when we lodge your file:</p>
-          <div class="fee-row"><span>Regular Processing (Approx. 90 Working Days)</span><strong>$10,000 JMD</strong></div>
-          <div class="fee-row"><span>Expedited Processing (Approx. 45 Working Days)</span><strong>$15,000 JMD</strong></div>
-          <p style="margin: 16px 0 0; font-size: 14px; color: var(--text-muted);"><em>Note: PICA processing times are estimates and start ONLY after the file is successfully lodged without query.</em></p>
+          <p style="margin-top:0;">You qualify if you were born outside Jamaica after 5 August 1962 and your mother or father was a Jamaican citizen by birth, descent or registration on the day you were born. If you were born before 6 August 1962, you qualify if your mother or father became a Jamaican citizen on that date, or would have but for their death.</p>
+          <p style="margin-bottom:0;">A claim through a grandparent is proved link by link, with a birth certificate for each person in the line.</p>
         </div>
       </details>
-      
+
       <details>
-        <summary>Missing Jamaican Birth Certificates (RGD Fetching)</summary>
+        <summary>PICA's Fees & Processing Times</summary>
         <div class="answer">
-          <p style="margin-top:0;">If you are claiming citizenship through a parent or grandparent but do not have their original Jamaican birth certificate, your PICA application will be instantly rejected.</p>
-          <p>We offer a dedicated <strong>RGD Search & Retrieval Add-on ($50 USD per record)</strong>. We physically go to the Registrar General's Department to search the national archives, print the modern computerized certificate, and attach it directly to your citizenship file.</p>
+          <p style="margin-top:0;">PICA charges a processing fee for citizenship by descent. You pay it yourself when you submit, and it is not refunded.</p>
+          <div class="fee-row"><span>Regular, in Jamaica (90 working days)</span><strong>J$10,000</strong></div>
+          <div class="fee-row"><span>Expedited, in Jamaica (45 working days)</span><strong>J$15,000</strong></div>
+          <div class="fee-row"><span>Through a mission overseas</span><strong>US$100</strong></div>
+          <p class="note" style="margin: 16px 0 0;">As published by PICA when checked on 6 October 2026, for applications with nothing missing. Missions overseas add their own charges and publish their own times. Confirm on <a href="https://www.pica.gov.jm/citizenship/fees" target="_blank" rel="noopener">PICA's official fee page</a>.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Missing a Jamaican Birth Certificate?</summary>
+        <div class="answer">
+          <p style="margin:0;">PICA asks for the original birth certificate of your Jamaican parent, and of your grandparent if your claim runs through them. If one is missing, we can retrieve it from the Registrar General's Department as a separate service: <a href="/jamaican-rgd-certificates.html">RGD certificates</a>.</p>
         </div>
       </details>
     </div>
   </div>
 
   <div style="text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border);">
-    <h3 style="margin-bottom: 16px;">Need to check PICA's official lineage rules?</h3>
-    <p style="margin-bottom: 24px; color: var(--text-muted);">Read our deep-dive reference guide covering Mother vs. Father document rules, photo requirements, and rejection traps.</p>
-    <a href="/jamaican-citizenship-by-descent.html" class="btn btn-outline" style="display: inline-block; max-width: 320px; margin: 0 auto;">Read the Citizenship Guide</a>
+    <h3 style="margin-bottom: 16px;">Prefer to read first?</h3>
+    <p style="margin-bottom: 24px; color: var(--text-muted);">Our free article covers the rules for a claim through your mother or your father, and the common mistakes.</p>
+    <a href="/jamaican-citizenship-by-descent" class="btn btn-outline" style="display: inline-block; max-width: 320px; margin: 0 auto;">Read the Citizenship Guide</a>
   </div>
 
 </main>
@@ -280,6 +380,12 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('[data-start-box]').forEach(function (box) {
+    var tick = box.querySelector('input[type="checkbox"]'), start = box.querySelector('[data-start]'), msg = box.querySelector('.agree-msg');
+    function sync() { start.setAttribute('aria-disabled', tick.checked ? 'false' : 'true'); if (tick.checked) msg.hidden = true; }
+    tick.addEventListener('change', sync); sync();
+    start.addEventListener('click', function (e) { if (!tick.checked) { e.preventDefault(); msg.hidden = false; tick.focus(); } });
+  });
 </script>
 
 </body>
