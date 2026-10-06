@@ -3,411 +3,287 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>About Laura Clarke &middot; Administrative Services Jamaica</title>
-  <meta name="description" content="Learn about Laura Clarke Administrative Services—your private, independent administrative proxy and document concierge in Jamaica.">
-  <link rel="canonical" href="https://documenthelpja.com/about.html">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-  <meta name="theme-color" content="#181A1B">
+  <title>Laura Clarke | Private Document Representative, Jamaica</title>
+  <meta name="description" content="Save Laura Clarke's contact, message her on WhatsApp, or go straight to help with a Jamaican passport, motor vehicle licence, driver's licence or police record.">
+  <link rel="canonical" href="https://documenthelpja.com/card.html">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#DDE4E0">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <meta property="og:type" content="profile">
   <meta property="og:locale" content="en_JM">
   <meta property="og:site_name" content="Laura Clarke Administrative Services">
-  <meta property="og:title" content="About Laura Clarke Administrative Services">
-  <meta property="og:description" content="A private, independent document concierge in Jamaica, for clients at home and abroad.">
-  <meta property="og:url" content="https://documenthelpja.com/about.html">
-  <meta property="og:image" content="https://documenthelpja.com/assets/office-hero.webp">
+  <meta property="og:title" content="Laura Clarke | Private Document Representative">
+  <meta property="og:description" content="Jamaican documents, without the running around. Save my contact or message me on WhatsApp.">
+  <meta property="og:url" content="https://documenthelpja.com/card.html">
+  <meta property="og:image" content="https://documenthelpja.com/assets/profile.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "AboutPage",
-        "@id": "https://documenthelpja.com/about.html#page",
-        "url": "https://documenthelpja.com/about.html",
-        "name": "About Laura Clarke Administrative Services",
-        "description": "About Laura Clarke Administrative Services, a private, independent document concierge in Jamaica.",
-        "inLanguage": "en-JM",
-        "dateModified": "2026-10-06",
-        "isPartOf": { "@type": "WebSite", "@id": "https://documenthelpja.com/#website", "name": "Laura Clarke Administrative Services", "url": "https://documenthelpja.com/" },
-        "about": { "@id": "https://documenthelpja.com/#business" },
-        "mainEntity": { "@id": "https://documenthelpja.com/#laura" }
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://documenthelpja.com/#business",
-        "name": "Laura Clarke Administrative Services",
-        "url": "https://documenthelpja.com/",
-        "telephone": "+1-876-561-2614",
-        "email": "info@documenthelpja.com",
-        "image": "https://documenthelpja.com/assets/office-hero.webp",
-        "address": { "@type": "PostalAddress", "addressRegion": "St. Catherine", "addressCountry": "JM" },
-        "founder": { "@id": "https://documenthelpja.com/#laura" }
-      },
-      {
-        "@type": "Person",
-        "@id": "https://documenthelpja.com/#laura",
-        "name": "Laura Clarke",
-        "jobTitle": "Private Document Representative",
-        "image": "https://documenthelpja.com/assets/profile.webp",
-        "url": "https://documenthelpja.com/about.html",
-        "worksFor": { "@id": "https://documenthelpja.com/#business" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://documenthelpja.com/" },
-          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://documenthelpja.com/about.html" }
-        ]
-      }
-    ]
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    /* Colours and type are the same ones the rest of the site uses. */
     :root {
-      --ink: #181A1B; --text: #2F3538; --muted: #5B6468;
-      --paper: #FFFFFF; --tone: #F2F5F3; --line: #D6DDD9; --bg: #F4F6F8;
-      --gold: #C89B3C; --gold-hover: #B08733; --gold-text: #7E5B1C;
-      --primary: #0F2537; --link: #084298;
+      --page: #DDE4E0;        /* behind the card: a quiet grey-green, deep enough for the card edge to show */
+      --card: #FFFFFF;
+      --tone: #F2F5F3;        /* the guides band */
+      --line: #D6DDD9;
+      --edge: #C3CDC7;        /* card outline */
+      --ink: #181A1B;
+      --text: #2F3538;
+      --muted: #5B6468;
+      --navy: #0F2537;
+      --navy-hover: #183650;
+      --gold: #C89B3C;
+      --gold-text: #7E5B1C;
       --serif: "Playfair Display", Georgia, "Times New Roman", serif;
       --sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      --wrap: 72rem; --gutter: 1.25rem; --radius: 10px; --header-h: 68px;
+      --pad: 1.5rem;
     }
+
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); -webkit-text-size-adjust: 100%; }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-    body { margin: 0; font-family: var(--sans); font-size: 1.0625rem; line-height: 1.65; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
-    h1, h2, h3 { font-family: var(--serif); color: var(--ink); line-height: 1.2; margin: 0; font-weight: 700; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1rem 1rem calc(2rem + env(safe-area-inset-bottom, 0px));
+      background: var(--page);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, p, ul { margin: 0; }
+    ul { padding: 0; list-style: none; }
     a { color: inherit; }
     :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-    .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
-    .icon { width: 1.15em; height: 1.15em; flex-shrink: 0; fill: currentColor; }
-    .skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--paper); color: var(--ink); padding: 10px 16px; border-radius: 6px; font-weight: 600; }
-    .skip:focus { top: 12px; }
+    .icon { width: 1.15rem; height: 1.15rem; flex-shrink: 0; fill: currentColor; }
 
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 48px; padding: .8rem 1.4rem; font: 600 1rem/1.2 var(--sans); text-decoration: none; border-radius: 6px; border: 2px solid transparent; cursor: pointer; transition: background-color .2s ease, border-color .2s ease, color .2s ease; }
-    .btn-gold { background: var(--gold); color: var(--ink); }
-    .btn-gold:hover { background: var(--gold-hover); }
-    .btn-dark { background: var(--ink); color: #fff; }
-    .btn-dark:hover { background: #2B2F31; }
-    .btn-dark .icon { color: var(--gold); }
-    .btn-line { background: var(--paper); color: var(--primary); border-color: var(--primary); }
-    .btn-line:hover { background: var(--primary); color: #fff; }
-
-    /* Header */
-    .site-header { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
-    .header-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: var(--header-h); }
-    .brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; min-height: 44px; }
-    .brand-mark { width: 42px; height: 42px; border-radius: 6px; background: var(--ink); color: var(--gold); display: grid; place-items: center; font: 700 1.1rem/1 var(--serif); }
-    .brand-name { display: block; font: 700 1.1rem/1.15 var(--serif); color: var(--ink); }
-    .brand-sub { display: block; white-space: nowrap; font-size: .74rem; color: var(--muted); font-weight: 500; letter-spacing: .02em; }
-    .header-actions { display: flex; align-items: center; gap: .5rem; }
-    .wa-chip { min-height: 44px; padding: .55rem .9rem; font-size: .9rem; }
-    .wa-chip .label-long { display: none; }
-    @media (max-width: 389px) {
-      .header-bar { gap: .5rem; } .brand { gap: .55rem; }
-      .brand-mark { width: 38px; height: 38px; font-size: 1rem; }
-      .brand-name { font-size: 1rem; } .brand-sub { display: none; }
-      .header-actions { gap: .4rem; } .wa-chip { padding: .5rem .7rem; }
+    /* ---------- Three containers ---------- */
+    .stack { width: 100%; max-width: 26rem; display: grid; gap: 1rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--edge);
+      border-radius: 14px;
+      padding: 2rem var(--pad);
+      box-shadow: 0 1px 2px rgba(15, 37, 55, .05), 0 14px 30px -20px rgba(15, 37, 55, .3);
     }
-    .menu-toggle { width: 46px; height: 46px; display: grid; place-items: center; background: transparent; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); cursor: pointer; }
-    .menu-toggle .icon { width: 22px; height: 22px; }
-    .menu-toggle .icon-close { display: none; }
-    .menu-toggle[aria-expanded="true"] .icon-open { display: none; }
-    .menu-toggle[aria-expanded="true"] .icon-close { display: block; }
-    .main-nav { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 18px 30px -18px rgba(24,26,27,.35); }
-    .main-nav.is-open { display: block; }
-    .main-nav ul { padding: .5rem var(--gutter) 1rem; list-style: none; margin: 0; }
-    .main-nav a { display: flex; align-items: center; min-height: 52px; font-weight: 600; font-size: 1.05rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--tone); }
-    .main-nav li:last-child a { border-bottom: 0; }
-    @media (min-width: 960px) {
-      :root { --header-h: 80px; }
-      .menu-toggle { display: none; }
-      .main-nav { display: block; position: static; background: none; border: 0; box-shadow: none; margin-left: auto; }
-      .main-nav ul { display: flex; gap: 2rem; padding: 0; }
-      .main-nav a { min-height: 44px; border: 0; font-size: .95rem; font-weight: 500; color: var(--text); border-bottom: 2px solid transparent; }
-      .main-nav a:hover { color: var(--ink); border-bottom-color: var(--gold); }
-      .header-actions { margin-left: 1.5rem; }
-      .wa-chip .label-long { display: inline; }
-      .wa-chip .label-short { display: none; }
+    .card-first { border-top: 3px solid var(--gold); padding-top: 2.25rem; }
+
+    /* ---------- Who ---------- */
+    .who { display: block; }
+    .photo {
+      display: block; width: 4.75rem; height: 4.75rem; margin-bottom: 1.25rem;
+      border-radius: 50%;
+      object-fit: cover; object-position: 50% 20%;
+      background: var(--tone);
+      box-shadow: 0 0 0 1px var(--edge);
     }
+    .name { font: 700 1.875rem/1.1 var(--serif); color: var(--ink); letter-spacing: -.005em; }
+    .role { margin-top: .45rem; font-size: .95rem; font-weight: 500; color: var(--gold-text); }
+    .line { margin-top: 1.25rem; font-size: 1.0625rem; line-height: 1.5; color: var(--text); text-wrap: pretty; }
 
-    @media (min-width: 960px) { .main-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--gold); } }
-    @media (max-width: 959px) { .main-nav a[aria-current="page"] { color: var(--gold-text); } }
-
-    /* Page */
-    main { max-width: 62rem; margin: 0 auto; padding: 1.25rem var(--gutter) 0; }
-    .crumbs { font-size: .9rem; color: var(--muted); margin: 0 0 1rem; }
-    .crumbs ol { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin: 0; padding: 0; }
-    .crumbs li + li::before { content: "\203A"; margin-right: .4rem; color: var(--muted); }
-    .crumbs a { display: inline-flex; align-items: center; gap: .35rem; min-height: 44px; color: var(--link); font-weight: 600; text-decoration: none; }
-    .crumbs a:hover { text-decoration: underline; }
-
-    .about-hero { text-align: center; padding: 1.5rem 0 .75rem; }
-    .about-hero .tag { display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-text); }
-    .about-hero h1 { font-size: clamp(1.9rem, 5.4vw, 2.75rem); margin: .7rem 0 .85rem; }
-    .about-hero p { margin: 0 auto; max-width: 42rem; font-size: 1.125rem; color: var(--muted); }
-
-    .card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem 1.25rem; margin-top: 1.25rem; }
-    @media (min-width: 620px) { .card { padding: 2rem 2.25rem; } }
-
-    .story { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.75rem; border-top: 4px solid var(--gold); margin-top: 1.75rem; }
-    .story-image { width: 100%; max-width: 320px; margin: 0 auto; border-radius: 8px; overflow: hidden; background: var(--tone); }
-    .story-image img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
-    .story h2 { font-size: 1.6rem; margin-bottom: 1rem; }
-    .story p { margin: 0 0 1rem; }
-    .story p:last-child { margin-bottom: 0; }
-    .story strong { color: var(--ink); }
-    .story a { color: var(--link); font-weight: 600; }
-    @media (min-width: 800px) { .story { grid-template-columns: 300px minmax(0, 1fr); gap: 2.5rem; align-items: start; } .story-image { margin: 0; } }
-
-    .approach-head { text-align: center; max-width: 44rem; margin: 3rem auto 1.5rem; }
-    .approach-head h2 { font-size: 1.6rem; }
-    .approach-head p { margin: .6rem 0 0; color: var(--muted); }
-    .tiers { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
-    @media (min-width: 860px) { .tiers { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-    .tier { margin-top: 0; display: flex; flex-direction: column; padding: 1.75rem 1.5rem; }
-    .tier .num { font-size: .76rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-text); }
-    .tier h3 { font-size: 1.25rem; margin: .4rem 0 .75rem; }
-    .tier .badge { align-self: flex-start; background: var(--tone); color: var(--ink); font-size: .82rem; font-weight: 600; padding: .3rem .65rem; border-radius: 4px; margin-bottom: 1rem; }
-    .tier p { margin: 0; font-size: .98rem; }
-    .tier .eg { margin-top: auto; padding-top: 1rem; font-size: .92rem; color: var(--muted); }
-    .tier .eg::before { content: ""; display: block; border-top: 1px solid var(--line); margin-bottom: .9rem; }
-    .tier .eg strong { color: var(--ink); font-weight: 600; }
-
-    .cta { background: var(--primary); color: #E6EAEE; border-radius: var(--radius); border-bottom: 4px solid var(--gold); padding: 2.25rem 1.5rem; text-align: center; margin-top: 2.5rem; }
-    .cta h2 { color: #fff; font-size: 1.45rem; }
-    .cta p { margin: .6rem auto 0; max-width: 34rem; }
-    .cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 1.4rem; }
-    .btn-ghost { color: #fff; border-color: rgba(255,255,255,.5); }
-    .btn-ghost:hover { border-color: var(--gold); color: #F0D48A; }
-    @media (max-width: 479px) { .cta-actions .btn { width: 100%; } }
-
-    /* Footer */
-    .site-footer { background: var(--ink); color: #B9C0C4; font-size: .95rem; padding-bottom: env(safe-area-inset-bottom, 0px); margin-top: 60px; }
-    .footer-top { display: grid; gap: 2rem; padding: 3rem 0 2rem; border-bottom: 1px solid rgba(255,255,255,.12); }
-    .footer-brand { font: 700 1.2rem/1.3 var(--serif); color: #fff; margin: 0; }
-    .footer-brand + p { margin-top: .5rem; max-width: 26rem; margin-bottom: 0; }
-    .footer-nav ul { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem 1.5rem; list-style: none; padding: 0; margin: 0; }
-    .footer-nav a, .legal-links a { display: inline-flex; align-items: center; min-height: 44px; color: #E6E8E9; text-decoration: none; }
-    .footer-nav a:hover, .legal-links a:hover { color: var(--gold); }
-    .legal-links a[aria-current="page"] { color: var(--gold); }
-    .to-top { justify-self: start; display: inline-flex; align-items: center; gap: .5rem; min-height: 48px; padding: .7rem 1.2rem; border: 1px solid rgba(255,255,255,.35); border-radius: 6px; color: #fff; text-decoration: none; font-weight: 600; }
-    .to-top:hover { border-color: var(--gold); color: var(--gold); }
-    .disclaimer { padding: 1.75rem 0 0; font-size: .85rem; line-height: 1.6; color: #A2AAAF; max-width: 56rem; margin: 0; }
-    .footer-bottom { display: flex; flex-direction: column; gap: .5rem; padding: 1.25rem 0 2rem; font-size: .88rem; }
-    .footer-bottom p { margin: 0; }
-    .legal-links { display: flex; flex-wrap: wrap; gap: 0 1.5rem; list-style: none; padding: 0; margin: 0; }
-    @media (min-width: 860px) {
-      .footer-top { grid-template-columns: 1.4fr 1fr auto; align-items: start; }
-      .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
+    /* ---------- Actions ---------- */
+    .actions { display: grid; gap: .75rem; margin-top: 1.75rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+      width: 100%; min-height: 3.125rem; padding: .75rem 1rem;
+      font: 600 1rem/1.2 var(--sans);
+      text-decoration: none;
+      border-radius: 8px; border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: background-color .15s ease, border-color .15s ease, color .15s ease;
     }
+    .btn-solid { background: var(--navy); color: #fff; }
+    .btn-solid:hover { background: var(--navy-hover); }
+    .btn-solid .icon { color: #E7C877; }
+    .btn-line { background: var(--card); color: var(--navy); border-color: var(--navy); }
+    .btn-line:hover { background: var(--tone); }
 
+    .quick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; margin-top: .75rem; }
+    .quick a {
+      display: flex; align-items: center; justify-content: center; gap: .45rem;
+      min-height: 2.75rem; padding: .5rem .25rem;
+      font-size: .9rem; font-weight: 500; color: var(--text);
+      text-decoration: none;
+      background: var(--tone); border-radius: 8px;
+      transition: background-color .15s ease, color .15s ease;
+    }
+    .quick a:hover { background: #E6EBE8; color: var(--ink); }
+    .quick .icon { width: 1rem; height: 1rem; color: var(--gold-text); }
+
+    /* ---------- Lists ---------- */
+    .card h2 { font: 600 1.25rem/1.25 var(--serif); color: var(--ink); }
+
+    .rows { margin: 1rem calc(var(--pad) * -1) 0; }
+    .rows li + li a { border-top: 1px solid var(--line); }
+    .rows a {
+      display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: .75rem;
+      min-height: 3.75rem; margin: 0 var(--pad); padding: 1.05rem 0;
+      text-decoration: none;
+    }
+    .rows strong { display: block; font-weight: 500; font-size: 1.0625rem; line-height: 1.4; color: var(--ink); text-wrap: balance; }
+    .rows .icon { grid-column: 2; width: 1rem; height: 1rem; color: var(--gold-text); transition: transform .15s ease; }
+    .rows a:hover strong { color: var(--navy); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+    .rows a:hover .icon { transform: translateX(3px); }
+
+    .more {
+      display: inline-flex; align-items: center; min-height: 2.75rem; margin-top: .75rem;
+      font-size: .95rem; font-weight: 600; color: var(--navy);
+      text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 4px;
+    }
+    .more:hover { text-decoration-thickness: 2px; }
+
+    /* ---------- Foot ---------- */
+    .foot { padding: .75rem var(--pad) 0; font-size: .82rem; line-height: 1.6; color: #49524F; }
+    .foot p + p { margin-top: .35rem; }
+    .foot a { color: var(--ink); text-underline-offset: 3px; }
+
+    @media (min-width: 30rem) {
+      :root { --pad: 2rem; }
+      body { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+      .stack { gap: 1.25rem; }
+      .card { padding-top: 2.25rem; padding-bottom: 2.25rem; }
+    }
+    @media (max-width: 21.5rem) {
+      .name { font-size: 1.7rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
     @media print {
-      .site-header, .site-footer, .cta, .crumbs, .skip { display: none !important; }
-      body { background: #fff; font-size: 11pt; }
-      .card { border: 0; padding: 0; }
+      body { background: #fff; padding: 0; }
+      .card { box-shadow: none; break-inside: avoid; }
     }
   </style>
 </head>
-<body id="top">
-  <a class="skip" href="#main">Skip to main content</a>
+<body>
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-person" viewBox="0 0 24 24"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-4.4 0-8 2.2-8 5v2h16v-2c0-2.8-3.6-5-8-5z"/></symbol>
     <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.37l-.36-.22-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41Z"/></symbol>
-    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></symbol>
-    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.4 5 12 10.6 17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4 6.4 19 5 17.6 10.6 12 5 6.4z"/></symbol>
-    <symbol id="i-up" viewBox="0 0 24 24"><path d="M11 20V7.8l-5.6 5.6L4 12l8-8 8 8-1.4 1.4L13 7.8V20z"/></symbol>
-    <symbol id="i-left" viewBox="0 0 24 24"><path d="M20 11H7.8l5.6-5.6L12 4l-8 8 8 8 1.4-1.4L7.8 13H20z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 3.2V17h16V8.2l-8 5.3-8-5.3zM5.3 7l6.7 4.4L18.7 7H5.3z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-2.95a15.6 15.6 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.9 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a8.2 8.2 0 0 1 0-4h3.38a16.5 16.5 0 0 0 0 4H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.99 7.99 0 0 1 5.08 16zm2.95-8H5.08a7.99 7.99 0 0 1 4.33-3.56A15.6 15.6 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66a14.7 14.7 0 0 1 0-4h4.68a14.7 14.7 0 0 1 0 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14a16.5 16.5 0 0 0 0-4h3.38a8.2 8.2 0 0 1 0 4h-3.38z"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="M9.3 5.3 7.9 6.7l5.3 5.3-5.3 5.3 1.4 1.4 6.7-6.7z"/></symbol>
   </svg>
 
-  <!-- ===================== HEADER ===================== -->
-  <header class="site-header">
-    <div class="wrap header-bar">
-      <a href="/" class="brand" aria-label="Laura Clarke Administrative Services, home">
-        <span class="brand-mark" aria-hidden="true">LC</span>
-        <span>
-          <span class="brand-name">Laura Clarke</span>
-          <span class="brand-sub">Administrative Services</span>
-        </span>
-      </a>
+  <main class="stack">
 
-      <nav class="main-nav" id="main-nav" aria-label="Main">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/#services">Services</a></li>
-          <li><a href="/insights.html">Insights &amp; Guides</a></li>
-          <li><a href="/about.html" aria-current="page">About Us</a></li>
-          <li><a href="/#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <!-- ===================== WHO, AND HOW TO REACH HER ===================== -->
+    <section class="card card-first" aria-labelledby="name">
+      <div class="who">
+        <img class="photo" src="/assets/profile.webp" alt="" width="510" height="507">
+        <div>
+          <h1 class="name" id="name">Laura Clarke</h1>
+          <p class="role">Private document representative</p>
+        </div>
+      </div>
 
-      <div class="header-actions">
-        <a class="btn btn-dark wa-chip" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20document." target="_blank" rel="noopener">
-          <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
-          <span class="label-long">WhatsApp Us</span><span class="label-short">Chat</span>
-        </a>
-        <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Open menu">
-          <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
-          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+      <p class="line">Jamaican documents, without the running around. For Jamaicans at home and abroad.</p>
+
+      <div class="actions">
+        <button type="button" class="btn btn-solid" id="save-contact">
+          <svg class="icon" aria-hidden="true"><use href="#i-person"/></svg>
+          Save my contact
         </button>
+        <a class="btn btn-line" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20have%20your%20contact%20card%20and%20would%20like%20help%20with%20a%20Jamaican%20document." target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
+          WhatsApp me
+        </a>
       </div>
-    </div>
-  </header>
 
-  <!-- ===================== MAIN ===================== -->
-  <main id="main">
-
-    <nav class="crumbs" aria-label="Breadcrumb">
-      <ol>
-        <li><a href="/"><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg> Home</a></li>
-        <li aria-current="page">About</li>
-      </ol>
-    </nav>
-
-    <header class="about-hero">
-      <span class="tag">On the ground in Jamaica</span>
-      <h1>About Laura Clarke Administrative Services</h1>
-      <p>We believe that securing your essential Jamaican documents should be a transparent, efficient, and stress-free experience.</p>
-    </header>
-
-    <!-- MAIN COPY CARD WITH PROFILE IMAGE -->
-    <section class="card story" aria-labelledby="story-title">
-      <div class="story-image">
-        <img src="/assets/profile.webp" alt="Laura Clarke" width="510" height="507" decoding="async">
-      </div>
-      <div class="story-content">
-        <h2 id="story-title">Why I Built This Service</h2>
-        <p>I have personally experienced the frustration of navigating government portals, waiting in endless queues, and hitting unexpected roadblocks at the agency counter. I founded Laura Clarke Administrative Services to provide immediate relief from that exact pain point—serving as the bridge between you and the bureaucracy.</p>
-
-        <p>My professional foundation is built on deep expertise in logistics and rigorous document verification. I don't just read you the rules from a website; I audit your paperwork line-by-line against the hidden, on-the-ground realities that cause applications to be rejected.</p>
-
-        <p>Trust and security are at the core of everything I do. With <strong>14 years of experience working within the financial system</strong>, I bring the same discipline with confidential records to your most sensitive civil documents. Your information is used only for the service you asked for, and your supporting documents are deleted within 30 days of completion. The details are in my <a href="/privacy.html">Privacy Policy</a>.</p>
-
-        <p>Whether you are a local professional navigating a busy schedule or a member of the diaspora managing affairs from afar, I handle the heavy lifting and physical legwork so you don't have to.</p>
+      <div class="quick">
+        <a href="tel:+18765612614"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Call</a>
+        <a href="mailto:info@documenthelpja.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Email</a>
+        <a href="/"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg> Website</a>
       </div>
     </section>
 
-    <!-- APPROACH GRID -->
-    <div class="approach-head">
-      <h2>How We Work: Our Three-Tiered Approach</h2>
-      <p>Because government regulations dictate how certain documents must be processed, we offer three distinct levels of support tailored to your specific needs.</p>
-    </div>
-
-    <div class="tiers">
-
-      <!-- TIER 1 -->
-      <section class="card tier" aria-labelledby="tier-1">
-        <span class="num">Level 1</span>
-        <h3 id="tier-1">Full Proxy &amp; Concierge</h3>
-        <span class="badge">Start-to-Finish Representation</span>
-        <p>For applications that legally permit full third-party processing. We handle the entire lifecycle of your request, from organizing paperwork and submitting applications to tracking and collecting the finished document. You provide the required information and documents securely, and we see the request through.</p>
-        <p class="eg"><strong>For example:</strong> TRN from overseas, birth, marriage and death certificates, driving abstracts.</p>
-      </section>
-
-      <!-- TIER 2 -->
-      <section class="card tier" aria-labelledby="tier-2">
-        <span class="num">Level 2</span>
-        <h3 id="tier-2">Hybrid Assistance</h3>
-        <span class="badge">Prepared by Us, Completed by You</span>
-        <p>For applications requiring mandatory physical presence or biometrics. We handle complex portal applications and fee payments on your behalf. You step in only where the agency requires you in person, such as fingerprinting, an inspection or collecting your card.</p>
-        <p class="eg"><strong>For example:</strong> police records, driver's licence renewals, motor vehicle licence renewals.</p>
-      </section>
-
-      <!-- TIER 3 -->
-      <section class="card tier" aria-labelledby="tier-3">
-        <span class="num">Level 3</span>
-        <h3 id="tier-3">Advisory &amp; Document Auditing</h3>
-        <span class="badge">Pre-Audit &amp; Counter Guidance</span>
-        <p>For restricted processes where you must appear in person. We serve as your guide, auditing your paperwork before you go. We check authorization letters, ID signatures, and forms against the counter's standards, so avoidable errors are caught before you join the line. Some cases come as a paid consultation with a written step-by-step guide.</p>
-        <p class="eg"><strong>For example:</strong> first-time and children's passports, lost or damaged passports, citizenship by descent.</p>
-      </section>
-
-    </div>
-
-    <!-- CTA BANNER -->
-    <section class="cta" aria-labelledby="cta-title">
-      <h2 id="cta-title">Ready to get your paperwork sorted?</h2>
-      <p>Let's discuss your specific document requirements and map out the exact steps forward.</p>
-      <div class="cta-actions">
-        <a class="btn btn-gold" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20document." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Message Me on WhatsApp</a>
-        <a class="btn btn-ghost" href="/#services">See the services</a>
-      </div>
+    <!-- ===================== MOST REQUESTED SERVICES ===================== -->
+    <section class="card" aria-labelledby="services-title">
+      <h2 id="services-title">Most requested</h2>
+      <ul class="rows">
+        <li><a href="/jamaican-passport-services.html">
+          <strong>Passport</strong>
+          <svg class="icon" aria-hidden="true"><use href="#i-next"/></svg>
+        </a></li>
+        <li><a href="/motor-vehicle-licence-renewal.html">
+          <strong>Motor vehicle licence</strong>
+          <svg class="icon" aria-hidden="true"><use href="#i-next"/></svg>
+        </a></li>
+        <li><a href="/drivers-licence-renewal.html">
+          <strong>Driver's licence</strong>
+          <svg class="icon" aria-hidden="true"><use href="#i-next"/></svg>
+        </a></li>
+        <li><a href="/jamaica-police-record.html">
+          <strong>Police record</strong>
+          <svg class="icon" aria-hidden="true"><use href="#i-next"/></svg>
+        </a></li>
+      </ul>
+      <a class="more" href="/#services">See all services</a>
     </section>
+
+    <!-- ===================== A TASTE OF THE GUIDES ===================== -->
+    <section class="card" aria-labelledby="guides-title">
+      <h2 id="guides-title">From the guides</h2>
+      <ul class="rows">
+        <li><a href="/jamaica-drivers-license-renewal-guide">
+          <strong>Why is there a hold on my licence renewal?</strong>
+          <svg class="icon" aria-hidden="true"><use href="#i-next"/></svg>
+        </a></li>
+        <li><a href="/jamaica-police-record-guide">
+          <strong>Why do police record applications get turned away?</strong>
+          <svg class="icon" aria-hidden="true"><use href="#i-next"/></svg>
+        </a></li>
+        <li><a href="/jamaica-motor-vehicle-licence-guide">
+          <strong>Lost logbook, or fitness expired?</strong>
+          <svg class="icon" aria-hidden="true"><use href="#i-next"/></svg>
+        </a></li>
+      </ul>
+      <a class="more" href="/insights.html">Browse all the guides</a>
+    </section>
+
+    <!-- ===================== FOOT ===================== -->
+    <footer class="foot">
+      <p>An independent, private business. Not a government agency.</p>
+      <p>&copy; <span id="year">2026</span> Laura Clarke Administrative Services. <a href="/privacy.html">Privacy</a></p>
+    </footer>
 
   </main>
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-top">
-        <div>
-          <p class="footer-brand">Laura Clarke Administrative Services</p>
-          <p>Pre-audits and local representation for Jamaican government documents, for clients at home and abroad.</p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/#services">Services</a></li>
-            <li><a href="/insights.html">Insights &amp; Guides</a></li>
-            <li><a href="/faq.html">FAQ</a></li>
-            <li><a href="/about.html">About Us</a></li>
-            <li><a href="/#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <a class="to-top" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg> Back to top</a>
-      </div>
-
-      <p class="disclaimer">Laura Clarke Administrative Services is an independent, private representation and administrative agency. We are not affiliated with, endorsed by, or representing the Government of Jamaica, PICA, TAJ, RGD, JCF, ITA, MFAFT or any government ministry or agency. Government fees are paid to the relevant agency and are separate from our concierge retainer. You may always apply to any agency directly yourself.</p>
-
-      <div class="footer-bottom">
-        <p>&copy; <span id="year">2026</span> Laura Clarke Administrative Services</p>
-        <ul class="legal-links">
-          <li><a href="/privacy.html">Privacy</a></li>
-          <li><a href="/terms.html">Terms</a></li>
-          <li><a href="/#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
 
   <script>
     (function () {
       'use strict';
-      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      var toggle = document.querySelector('.menu-toggle');
-      var nav = document.getElementById('main-nav');
-      function setMenu(open) {
-        nav.classList.toggle('is-open', open);
-        toggle.setAttribute('aria-expanded', String(open));
-        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      }
-      toggle.addEventListener('click', function () { setMenu(!nav.classList.contains('is-open')); });
-      nav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
-      });
-      document.addEventListener('click', function (e) {
-        if (nav.classList.contains('is-open') && !e.target.closest('.site-header')) setMenu(false);
-      });
-
-      document.querySelectorAll('a[href="#top"]').forEach(function (a) {
-        a.addEventListener('click', function (e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
-          history.replaceState(null, '', location.pathname + location.search);
-          document.querySelector('.brand').focus({ preventScroll: true });
-        });
+      /* Save my contact: builds a contact file the phone can add to its address book. */
+      document.getElementById('save-contact').addEventListener('click', function () {
+        var vcard = [
+          'BEGIN:VCARD',
+          'VERSION:3.0',
+          'N:Clarke;Laura;;;',
+          'FN:Laura Clarke',
+          'ORG:Laura Clarke Administrative Services',
+          'TITLE:Private Document Representative',
+          'TEL;TYPE=CELL,VOICE:+18765612614',
+          'EMAIL;TYPE=WORK:info@documenthelpja.com',
+          'URL:https://documenthelpja.com',
+          'NOTE:Help with Jamaican documents: passports\\, motor vehicle and driver\'s licences\\, police records and more. Independent\\, private business. WhatsApp +1 876 561 2614.',
+          'END:VCARD'
+        ].join('\r\n');
+        var link = document.createElement('a');
+        link.href = URL.createObjectURL(new Blob([vcard], { type: 'text/vcard;charset=utf-8' }));
+        link.download = 'Laura-Clarke.vcf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(function () { URL.revokeObjectURL(link.href); }, 1000);
       });
     })();
   </script>
