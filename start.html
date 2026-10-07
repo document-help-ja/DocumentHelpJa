@@ -120,6 +120,7 @@
       -webkit-appearance: none; appearance: none;
     }
     .field textarea { min-height: 6rem; resize: vertical; }
+    .field select[disabled] { opacity: 1; color: var(--ink); background-color: var(--tone); border-color: var(--line); background-image: none; }
     .field select {
       padding-right: 2.5rem;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23181A1B' d='M6.7 8.3 12 13.6l5.3-5.3 1.4 1.4L12 16.4 5.3 9.7z'/%3E%3C/svg%3E");
@@ -129,6 +130,12 @@
     .field input:focus, .field select:focus, .field textarea:focus { outline: 3px solid var(--gold); outline-offset: 1px; border-color: var(--primary); }
     .field [aria-invalid="true"] { border-color: #A3271F; }
     .oops { margin: .4rem 0 0; font-size: .92rem; font-weight: 600; color: #A3271F; }
+
+    /* Accept-only links: a short summary in place of the questions */
+    .summary { margin: 0; display: grid; gap: .9rem; }
+    .summary dt { font-size: .85rem; color: var(--muted); }
+    .summary dd { margin: .1rem 0 0; font-weight: 600; font-size: 1.0625rem; color: var(--ink); overflow-wrap: anywhere; }
+    .accepting .terms { margin-top: 1.5rem; }
 
     /* Terms */
     .terms { margin-top: 2rem; padding: 1.25rem; background: var(--tone); border: 1px solid var(--line); border-radius: 8px; }
@@ -231,23 +238,32 @@
     <nav class="crumbs" aria-label="Breadcrumb">
       <ol>
         <li><a href="/"><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg> Home</a></li>
-        <li aria-current="page">Start a request</li>
+        <li aria-current="page" id="crumb">Start a request</li>
       </ol>
     </nav>
 
     <header class="intro">
-      <h1>Start a request</h1>
-      <p>Tell me what you need. I reply with exactly what is required and your fee, and you decide whether to go ahead. Sending this is free.</p>
+      <h1 id="page-title">Start a request</h1>
+      <p id="page-intro">Tell me what you need. I reply with exactly what is required and your fee, and you decide whether to go ahead. Sending this is free.</p>
     </header>
 
     <!-- ===================== THE FORM =====================
          Sends to the Kit Delivery script as kit "request". The service values, the "where" list and the
          acceptance sentence must match REQUESTS in that script.
-         Share a link that opens on one service like this:  /start?service=police-record  -->
+         Share a link that opens on one service like this:  /start?service=police-record
+         A personal link made from the spreadsheet looks like this:  /start?code=...  It works once.
+         A link made in the Citadel intake app looks like this:      /start?accept=...  The client only accepts the terms. -->
     <form class="card" id="request-form" novalidate>
 
+      <!-- Shown instead of the questions when the link comes from Laura's intake app (/start?accept=...) -->
+      <dl class="summary" id="accept-summary" hidden>
+        <div><dt>Service</dt><dd id="sum-service"></dd></div>
+        <div><dt>Name</dt><dd id="sum-name"></dd></div>
+      </dl>
+
+      <div id="questions">
       <div class="field">
-        <label for="service">What do you need?</label>
+        <label for="service" id="service-label">What do you need?</label>
         <select id="service" name="service" required>
           <option value="">Choose a service</option>
             <option value="passport">Passport</option>
@@ -260,6 +276,7 @@
             <option value="certificates">Birth, marriage or death certificate</option>
             <option value="other">Something else</option>
         </select>
+        <p class="help" id="service-help" hidden>Chosen for you. Message Laura if it should be different.</p>
         <p class="oops" id="service-oops" hidden>Choose the service you need.</p>
       </div>
 
@@ -302,11 +319,12 @@
         <p class="help" id="notes-help">Please do not type ID numbers here. Documents come later, only when I ask.</p>
         <textarea id="notes" name="notes" rows="3" maxlength="600" aria-describedby="notes-help"></textarea>
       </div>
+      </div>
 
       <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
 
       <div class="terms">
-        <h2>Before you send</h2>
+        <h2 id="terms-title">Before you send</h2>
         <ul>
           <li>Your fee is confirmed and invoiced before any work starts, and is paid in full before anything is processed or submitted.</li>
           <li>Our service fee is not refunded once work has started or government fees have been paid for you.</li>
@@ -334,6 +352,16 @@
         <li>I look at your request and tell you exactly what is needed.</li>
         <li>I confirm your fee before any work starts.</li>
         <li>You decide whether to go ahead.</li>
+      </ol>
+      <ol id="done-steps-accept" hidden>
+        <li>I open your file and email your welcome guide with the document checklist.</li>
+        <li>Once your documents are checked, I send one invoice.</li>
+        <li>When your payment is received, I file your application.</li>
+      </ol>
+      <ol id="done-steps-link" hidden>
+        <li>I send your invoice, quoting this reference.</li>
+        <li>Work starts once your payment is confirmed.</li>
+        <li>I keep you updated on WhatsApp or by email.</li>
       </ol>
       <div class="done-actions">
         <a class="btn btn-dark" id="done-wa" href="https://wa.me/18765612614" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Message me on WhatsApp</a>
@@ -422,10 +450,18 @@
       if (SERVICES[wanted]) el('service').value = wanted;
       var source = (query.get('source') || (document.referrer.indexOf(location.origin) === 0 ? document.referrer.slice(location.origin.length) : 'direct')).slice(0, 60);
       /* One ID per visit: if the phone sends the same request twice, the script keeps one record. */
+      /* A personal link from Laura: /start?code=...  The script checks the code; it works once. */
+      /* A link from Laura's intake app: /start?accept=...  She already has the details, so the client only accepts the terms. */
+      var accepting = !!query.get('accept');
+      var code = (query.get('accept') || query.get('code') || '').replace(/[^A-Za-z0-9]/g, '').slice(0, 40);
+      var personal = !!code;
+      accepting = accepting && personal;
+      var sendLabel = accepting ? 'I accept' : personal ? 'Confirm my request' : 'Send my request';
+      var acceptService = '';
       var cid = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : 'r' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
 
       var checks = {
-        service: function (v) { return !!SERVICES[v]; },
+        service: function (v) { return personal || !!SERVICES[v]; },      /* a personal link carries its own service */
         name: function (v) { return /^[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F .'\u2019\-]{1,79}$/.test(v); },
         email: function (v) { return /^[^\s@<>,;]+@[^\s@<>,;]+\.[^\s@<>,;]{2,}$/.test(v); },
         phone: function (v) { var d = v.replace(/\D/g, ''); return d.length >= 7 && d.length <= 15; },
@@ -443,29 +479,92 @@
       });
       el('accepted').addEventListener('change', function () { if (this.checked) mark('accepted', false); });
 
-      function fail(text) { sendOops.textContent = text; sendOops.hidden = false; btn.disabled = false; btn.textContent = 'Send my request'; }
+      function fail(text) { sendOops.textContent = text; sendOops.hidden = false; btn.disabled = false; btn.textContent = sendLabel; }
+
+      function closedLink(state) {
+        var text = state === 'Used' && accepting ? 'The terms have already been accepted with this link. If that was you, there is nothing more to do. If not, message me on WhatsApp.'
+                 : state === 'Used' ? 'This link has already been used. If that was you, your reference is in your confirmation email. If not, message me on WhatsApp and I will send a new link.'
+                 : state === 'Expired' ? 'This link has expired. Message me on WhatsApp and I will send a new one.'
+                 : 'This link was not recognised. Check that you opened the whole link, or message me on WhatsApp and I will send a new one.';
+        el('done-title').textContent = 'This link is no longer open';
+        el('done-text').textContent = text;
+        el('done-steps').hidden = true; el('done-steps-link').hidden = true; el('done-steps-accept').hidden = true; el('done-ref').hidden = true;
+        el('done-wa').href = 'https://wa.me/18765612614?text=' + encodeURIComponent(accepting ? 'Hi Laura, my terms link is no longer working. Could you send me a new one?' : 'Hi Laura, my request link is no longer working. Could you send me a new one?');
+        form.hidden = true; el('done').hidden = false;
+      }
+
+      if (personal) {
+        document.title = (accepting ? 'Accept our terms' : 'Confirm your request') + ' | Laura Clarke Administrative Services';
+        el('page-title').textContent = accepting ? 'Accept our terms' : 'Confirm your request';
+        el('crumb').textContent = accepting ? 'Accept our terms' : 'Confirm your request';
+        el('page-intro').textContent = accepting
+          ? 'This is your personal link from Laura. She has your details already. Please read the points below and accept, so that she can open your file.'
+          : 'This is your personal link from Laura. Confirm your details and accept the terms so that work on your request can begin.';
+        btn.textContent = sendLabel;
+        el('service-label').textContent = 'Your service';
+        el('terms-title').textContent = accepting ? 'Before you accept' : 'Before you confirm';
+        if (accepting) { el('questions').hidden = true; form.classList.add('accepting'); }
+        var serviceField = el('service').parentNode;
+        serviceField.hidden = true;                                   /* shown once we know which service the link is for */
+        var ask = new URLSearchParams();
+        ask.set('kit', 'link'); ask.set('code', code);
+        fetch(REQUEST_URL, { method: 'POST', body: ask })
+          .then(function (r) { return r.json(); })
+          .then(function (reply) {
+            if (reply.result === 'Open' && accepting) {
+              acceptService = reply.service || '';
+              el('sum-service').textContent = reply.service || '';
+              el('sum-name').textContent = reply.name || '';
+              if (reply.service || reply.name) el('accept-summary').hidden = false;
+              if (reply.name) el('page-intro').textContent = 'Hi ' + String(reply.name).split(' ')[0] + '. Laura has your details already. Please read the points below and accept, so that she can open your file.';
+            } else if (reply.result === 'Open') {
+              Object.keys(SERVICES).forEach(function (k) { if (SERVICES[k] === reply.service) el('service').value = k; });
+              if (el('service').value) { el('service').disabled = true; el('service-help').hidden = false; serviceField.hidden = false; }
+              if (reply.name && !el('name').value) el('name').value = reply.name;
+              if (reply.phone && !el('phone').value) el('phone').value = reply.phone;
+              if (reply.email && !el('email').value) el('email').value = reply.email;
+              if (reply.where) {                                        /* Laura already knows where this client is: no need to ask */
+                el('where').value = reply.where;
+                if (el('where').value === reply.where) el('where').parentNode.hidden = true;
+              }
+            } else if (reply.result === 'Used' || reply.result === 'Expired' || reply.result === 'Unknown') {
+              closedLink(reply.result);
+            }
+          }, function () { /* could not ask: carry on, the script checks the code again when the form is sent */ });
+      }
 
       function finish(kind, ref) {
-        var service = SERVICES[value('service')] || 'a service';
+        var service = acceptService || SERVICES[value('service')] || 'a service';
         var email = value('email');
-        var title = 'Request received', text = '', showSteps = true;
-        var wa = 'Hi Laura, I sent a request on your website for: ' + service + '.';
-        if (kind === 'saved') {
-          text = 'A confirmation has been sent to ' + email + '. I will reply on WhatsApp or by email.';
+        var title = personal ? 'Request confirmed' : 'Request received', text = '', showSteps = true;
+        var wa = personal ? 'Hi Laura, I have confirmed my request' + (SERVICES[value('service')] ? ' for: ' + service : '') + '.'
+                          : 'Hi Laura, I sent a request on your website for: ' + service + '.';
+        if (accepting && (kind === 'saved' || kind === 'saved-no-email' || kind === 'saved-none' || kind === 'sent')) {
+          title = kind === 'sent' ? 'Sent' : 'Thank you';
+          text = kind === 'saved' ? 'Your acceptance is recorded, and a copy has been sent to your email.'
+               : kind === 'sent' ? 'Your acceptance has been sent. If you do not hear from me shortly, message me on WhatsApp so I can check that it came through.'
+               : 'Your acceptance is recorded.';
+          wa = 'Hi Laura, I have accepted the terms' + (acceptService ? ' for my ' + acceptService : '') + '.';
+          ref = '';
+        } else if (kind === 'saved') {
+          text = 'A confirmation has been sent to ' + email + (personal ? '. Your invoice comes next, quoting this reference.' : '. I will reply on WhatsApp or by email.');
         } else if (kind === 'saved-no-email') {
-          text = 'Your request is saved, but the confirmation email could not be sent. Please note your reference. I will reply on WhatsApp or by email.';
+          text = 'Your request is saved, but the confirmation email could not be sent. Please note your reference. ' + (personal ? 'Your invoice comes next.' : 'I will reply on WhatsApp or by email.');
         } else if (kind === 'sent') {
           title = 'Request sent';
           text = 'A confirmation with your reference number should reach ' + email + ' within a few minutes. If it does not arrive, message me on WhatsApp so I can check that your request came through.';
         } else {
           title = 'Please message me instead'; showSteps = false;
           text = 'The online form could not take your request just now. Nothing was lost on your side: message me on WhatsApp and I will start it with you there.';
-          wa = 'Hi Laura, the request form did not go through. I need help with: ' + service + '. My name is ' + value('name') + '.';
+          wa = accepting ? 'Hi Laura, the terms link did not go through. Could you check it for me?'
+             : 'Hi Laura, the request form did not go through' + (SERVICES[value('service')] ? '. I need help with: ' + service : '') + '. My name is ' + value('name') + '.';
         }
         if (ref) { wa += ' My reference is ' + ref + '.'; el('ref-code').textContent = ref; el('done-ref').hidden = false; }
         el('done-title').textContent = title;
         el('done-text').textContent = text;
-        el('done-steps').hidden = !showSteps;
+        el('done-steps').hidden = !showSteps || personal;
+        el('done-steps-link').hidden = !showSteps || !personal || accepting;
+        el('done-steps-accept').hidden = !showSteps || !accepting;
         el('done-wa').href = 'https://wa.me/18765612614?text=' + encodeURIComponent(wa);
         form.hidden = true;
         el('done').hidden = false;
@@ -477,7 +576,7 @@
         e.preventDefault();
         sendOops.hidden = true;
         var firstBad = null;
-        Object.keys(checks).forEach(function (id) { if (mark(id, !checks[id](value(id))) && !firstBad) firstBad = id; });
+        if (!accepting) Object.keys(checks).forEach(function (id) { if (mark(id, !checks[id](value(id))) && !firstBad) firstBad = id; });
         if (mark('accepted', !el('accepted').checked) && !firstBad) firstBad = 'accepted';
         if (firstBad) { el(firstBad).focus(); return; }
 
@@ -488,6 +587,7 @@
         data.set('accepted', 'yes');
         data.set('source', source);
         data.set('cid', cid);
+        if (personal) data.set('code', code);
 
         btn.disabled = true;
         btn.textContent = 'Sending…';
@@ -498,7 +598,8 @@
           .then(function (out) {
             if (out.read) {
               var reply = out.reply || {};
-              if (reply.result === 'Saved') return finish(reply.email === 'sent' ? 'saved' : 'saved-no-email', reply.ref);
+              if (reply.result === 'Saved') return finish(reply.email === 'sent' ? 'saved' : reply.email === 'none' ? 'saved-none' : 'saved-no-email', reply.ref);
+              if (reply.result === 'Link') return closedLink(reply.state);
               if (reply.result === 'Invalid') {
                 var id = reply.field === 'terms' ? 'accepted' : reply.field;
                 if (el(id + '-oops')) { mark(id, true); el(id).focus(); }
