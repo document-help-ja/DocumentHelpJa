@@ -668,6 +668,40 @@
       .related-card { padding: 14px; }
       .guide-link { padding: 14px 16px; }
     }
+
+    /* =========================================================
+       ROOMIER LAYOUT: more space between cards and inside them,
+       each step in its own tile (tuned first for phones)
+       ========================================================= */
+    .timeline > li { background: #F7F9F8; border: 1px solid #E1E7E3; border-radius: 14px; padding: 20px 20px 20px 70px; margin: 0 0 14px !important; }
+    .timeline > li:last-child { padding-bottom: 20px; margin-bottom: 0 !important; }
+    .timeline > li::before { left: 18px; top: 18px; }
+    .timeline > li::after { display: none; }
+    .timeline h3 { margin: 4px 0 8px !important; }
+    .timeline p { line-height: 1.7; }
+    .fee-cards { gap: 12px; }
+    .site-list { gap: 12px; }
+    .checklist { gap: 12px; }
+    .trap { margin-top: 16px; padding: 20px 22px; }
+    @media (max-width: 599px) {
+      :root { --card-pad: 28px 20px 30px; --gap: 22px; }
+      body { line-height: 1.7; }
+      .card-head { margin-bottom: 20px; }
+      .ref-fold[open] > summary.card-head { margin-bottom: 20px; }
+      .card > p, .fold-body > p { margin-bottom: 1.15rem; }
+      .timeline > li { padding: 18px 16px 20px 60px; margin-bottom: 16px !important; }
+      .timeline > li::before { left: 14px; top: 18px; }
+      .fee-cards li, .site-list li { padding: 16px 18px; }
+      .check { padding: 16px; gap: 14px; }
+      .trap { padding: 18px 18px; margin-top: 16px; }
+      .warning-box, .callout-box { padding: 18px 18px; margin: 24px 0; }
+      .glance-list a { min-height: 60px; padding: 14px 16px; }
+      .next-link { margin-top: 28px; padding: 16px 18px; }
+      .resource-box { margin-top: 20px; padding: 18px 18px; }
+      .mid-cta { padding: 24px 20px; gap: 16px; }
+      .bridge-steps { gap: 12px; }
+      .bridge-steps li { padding: 14px 16px; }
+    }
 </style>
 </head>
 <body id="top">
