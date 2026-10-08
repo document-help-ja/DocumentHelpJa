@@ -907,6 +907,61 @@ body { overflow-x: clip; overflow-wrap: break-word; position: relative; width: 1
 body > svg[width="0"][height="0"] { display: none !important; }
 dialog:not([open]) { display: none !important; }
 iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !important; }
+
+/* =========================================================
+   CARD LAYOUT (motor vehicle guide): every section in its own card,
+   with inner cards for each fee, step and trap. Lots of white space.
+   ========================================================= */
+#main { background: var(--tone); }
+.guide-hero { border-radius: 16px; }
+.mv-card { background: #fff; border: 1px solid #D9E1DC; border-radius: 18px; padding: 1.75rem 1.25rem 1.9rem; margin: 0 0 1.75rem; box-shadow: 0 1px 3px rgba(24,26,27,.05); }
+@media (min-width: 640px) { .mv-card { padding: 2.25rem 2.25rem 2.4rem; margin-bottom: 2.25rem; } }
+.mv-eyebrow { display: block; font: 700 .74rem/1.2 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--gold-text); margin-bottom: .65rem; }
+.mv-card > h2 { font-size: clamp(1.35rem, 4.2vw, 1.6rem); font-weight: 600; line-height: 1.3; margin: 0 0 1rem; }
+.mv-card > p { color: #3E4549; margin: 0 0 1.25rem; }
+.mv-card > p:last-child { margin-bottom: 0; }
+.mv-card a { color: var(--gold-text); font-weight: 600; text-underline-offset: 3px; }
+.mv-tile { background: #F7F9F8; border: 1px solid #E1E7E3; border-radius: 14px; padding: 1.15rem 1.2rem; }
+.mv-stack, .mv-fees, .mv-facts, .mv-summary, .mv-steps { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; gap: 1rem; }
+.mv-stack .mv-tile { display: grid; gap: .3rem; font-size: 1.02rem; line-height: 1.6; color: #3E4549; }
+.mv-label { display: block; font: 700 .78rem/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
+/* fees */
+.mv-fees .mv-tile { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1rem; padding: 1rem 1.2rem; }
+.mv-fee-name { font-size: 1rem; line-height: 1.45; color: var(--text); }
+.mv-fee-price { font: 700 1.15rem/1.2 var(--sans); color: var(--ink); white-space: nowrap; }
+.mv-fees { gap: .75rem; }
+.mv-aside { margin-top: 1.5rem; padding: 1.15rem 1.25rem; background: #FBF8F1; border: 1px solid #EFE4CC; border-radius: 14px; }
+.mv-aside p { margin: 0; font-size: 1rem; line-height: 1.6; color: #3E4549; }
+.mv-aside p + p { margin-top: .75rem; }
+/* C88 facts */
+.mv-facts { grid-template-columns: repeat(3, 1fr); gap: .6rem; }
+.mv-facts .mv-tile { padding: .9rem .6rem; text-align: center; font: 600 .92rem/1.35 var(--sans); color: var(--ink); }
+/* lost title summary */
+.mv-summary { grid-template-columns: 1fr 1fr; gap: .75rem; }
+.mv-summary .mv-tile { display: grid; gap: .25rem; background: var(--ink); border-color: var(--ink); }
+.mv-summary .mv-label { color: var(--gold); }
+.mv-big { font: 700 1.3rem/1.25 var(--sans); color: #fff; }
+.mv-small { font-size: .86rem; line-height: 1.4; color: #C9CED1; }
+/* numbered steps */
+.mv-steps { gap: 1.25rem; }
+.mv-steps .mv-tile { display: grid; grid-template-columns: 38px 1fr; gap: 1rem; align-items: start; padding: 1.35rem 1.25rem 1.4rem; }
+.mv-num { width: 38px; height: 38px; border-radius: 50%; background: var(--ink); color: var(--gold); display: grid; place-items: center; font: 700 1.05rem/1 var(--serif); }
+.mv-steps h3 { font-size: 1.18rem; font-weight: 600; margin: .3rem 0 .45rem; }
+.mv-steps p { margin: 0; font-size: 1.02rem; line-height: 1.7; color: #3E4549; }
+.mv-steps .service-note { margin-top: 1.1rem; background: #fff; border: 1px solid #EFE4CC; border-left: 4px solid var(--gold); border-radius: 0 10px 10px 0; }
+@media (max-width: 400px) { .mv-steps .mv-tile { grid-template-columns: 1fr; gap: .6rem; } }
+/* traps */
+.mv-trap { border-left: 4px solid #B91C1C; border-radius: 0 14px 14px 0; background: #FDF7F6; border-color: #F1D9D6; border-left-color: #B91C1C; }
+.mv-trap-title { display: block; font: 700 .8rem/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: #B91C1C; margin-bottom: .2rem; }
+.mv-note { font-size: .9rem !important; color: var(--muted) !important; margin-top: 1.25rem !important; }
+/* reference desk inside its card */
+.mv-card .ref-intro { margin-bottom: 1.25rem !important; }
+.mv-card .ref-list { margin-bottom: 0; gap: 1rem; }
+/* mid-article prompt and closing band as cards */
+.guide .mid-cta { margin: 0 0 1.75rem; background: #fff; border: 1px solid #D9E1DC; border-left: 5px solid var(--gold); border-radius: 18px; padding: 1.6rem 1.35rem; }
+@media (min-width: 640px) { .guide .mid-cta { margin-bottom: 2.25rem; padding: 1.9rem 2.25rem; } }
+.guide .updated-note { margin: .5rem .25rem 0; }
+.guide .bridge { border-radius: 18px; }
 </style>
 </head>
 
@@ -976,8 +1031,9 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
       <p class="toc-heading" id="toc-heading">In This Article</p>
       <nav aria-label="In this article">
         <a href="#overview" class="toc-link">Key Takeaways</a>
+        <a href="#cost" class="toc-link">What It Costs</a>
         <a href="#c88-title" class="toc-link">The C88 Title</a>
-        <a href="#lost-logbook" class="toc-link">Lost Logbook?</a>
+        <a href="#lost-logbook" class="toc-link">Lost Title?</a>
         <a href="#renewal-flow" class="toc-link">The 3-Step Flow</a>
         <a href="#traps" class="toc-link">System Traps</a>
         <a href="#ref-depots" class="toc-link">ITA Depots</a>
@@ -1012,93 +1068,101 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
       </header>
 
       <!-- KEY TAKEAWAYS -->
-      <section class="takeaways" id="overview" aria-labelledby="takeaways-title">
-        <h2 id="takeaways-title">Key Takeaways</h2>
-        <ul>
-          <li><strong>The Three Pillars:</strong> Renewal requires your C88 Title, an active Insurance Cover Note, and an active ITA Fitness Pass.</li>
-          <li><strong>Sequence Matters:</strong> You must update Insurance first, then Fitness, and finally Registration.</li>
-          <li><strong>The Cost:</strong> TAJ charges J$4,200 a year for a motorcycle and J$9,900 to J$27,600 a year for a private car, depending on engine size. <a href="#cost">See the costs</a></li>
-          <li><strong>E-Titles are Legal:</strong> The Electronic Motor Vehicle Registration Certificate (eMVRC) emailed to you is legally valid to drive with while you await the physical disc.</li>
+      <section class="mv-card" id="overview" aria-labelledby="takeaways-title">
+        <span class="mv-eyebrow">The short version</span>
+        <h2 id="takeaways-title">Key takeaways</h2>
+        <ul class="mv-stack">
+          <li class="mv-tile"><strong class="mv-label">You need three things</strong><span>Your C88 title, an active insurance cover note and an active ITA fitness pass.</span></li>
+          <li class="mv-tile"><strong class="mv-label">Order matters</strong><span>Insurance first, then fitness, then registration.</span></li>
+          <li class="mv-tile"><strong class="mv-label">What it costs</strong><span>J$4,200 a year for a motorcycle, or J$9,900 to J$27,600 a year for a private car, depending on engine size. <a href="#cost">See the costs</a></span></li>
+          <li class="mv-tile"><strong class="mv-label">Your e-title is legal</strong><span>The Electronic Motor Vehicle Registration Certificate (eMVRC) emailed to you is legally valid to drive with while you wait for the physical disc.</span></li>
         </ul>
       </section>
 
-      <h2 id="cost">How much does it cost to renew vehicle registration in Jamaica?</h2>
-      <p>TAJ sets the registration fee by vehicle type and engine size (cc). For 12 months, it costs:</p>
-      <ul class="rule-list">
-        <li><strong>Motorcycle:</strong> J$4,200</li>
-        <li><strong>Private car under 1,199 cc:</strong> J$9,900</li>
-        <li><strong>Private car, 1,200 to 1,999 cc:</strong> J$12,600</li>
-        <li><strong>Private car, 2,000 to 2,999 cc:</strong> J$18,900</li>
-        <li><strong>Private car, 3,000 cc and over:</strong> J$27,600</li>
-      </ul>
-      <p>Six months costs half, and 24 months costs double, with no surcharge. If your fitness has expired, you also pay the fitness inspection fee (J$4,500 for a private car) before you can renew. <a href="#ref-fees">See the full fee schedule</a></p>
+      <!-- COST -->
+      <section class="mv-card" aria-labelledby="cost">
+        <span class="mv-eyebrow">What it costs</span>
+        <h2 id="cost">How much does it cost to renew vehicle registration in Jamaica?</h2>
+        <p>TAJ sets the registration fee by vehicle type and engine size (cc). For 12 months:</p>
+        <ul class="mv-fees">
+          <li class="mv-tile"><span class="mv-fee-name">Motorcycle</span><span class="mv-fee-price">J$4,200</span></li>
+          <li class="mv-tile"><span class="mv-fee-name">Private car, under 1,199 cc</span><span class="mv-fee-price">J$9,900</span></li>
+          <li class="mv-tile"><span class="mv-fee-name">Private car, 1,200 to 1,999 cc</span><span class="mv-fee-price">J$12,600</span></li>
+          <li class="mv-tile"><span class="mv-fee-name">Private car, 2,000 to 2,999 cc</span><span class="mv-fee-price">J$18,900</span></li>
+          <li class="mv-tile"><span class="mv-fee-name">Private car, 3,000 cc and over</span><span class="mv-fee-price">J$27,600</span></li>
+        </ul>
+        <div class="mv-aside">
+          <p><strong>Other periods:</strong> 6 months costs half, and 24 months costs double, with no surcharge.</p>
+          <p><strong>Fitness expired?</strong> You also pay the fitness inspection fee first: J$4,500 for a private vehicle, J$5,400 for a commercial vehicle.</p>
+          <p><a href="#ref-fees">See the full fee schedule</a></p>
+        </div>
+      </section>
 
-      <h2 id="c88-title">Understanding the C88 Title (The Logbook)</h2>
-      <p>Most vehicle owners refer to this document as the <em>logbook</em>, but its official government name is the <strong>C88 Motor Vehicle Title Certificate</strong>. It is the physical paper document issued by TAJ that proves vehicle ownership and records the vehicle's technical specifications.</p>
-      <p>The C88 Title Certificate is the anchor of the renewal because it contains your TRN, licence plate number, and engine capacity (cc). TAJ uses these three factors to calculate exactly how much your registration fee will be.</p>
+      <!-- C88 TITLE -->
+      <section class="mv-card" aria-labelledby="c88-title">
+        <span class="mv-eyebrow">The key document</span>
+        <h2 id="c88-title">Understanding the C88 Title (The Logbook)</h2>
+        <p>Most vehicle owners call it the <em>logbook</em>, but its official name is the <strong>C88 Motor Vehicle Title Certificate</strong>. It is the paper document issued by TAJ that proves you own the vehicle and records its technical details.</p>
+        <p>It is the anchor of the renewal. TAJ uses three details on it to work out your registration fee:</p>
+        <ul class="mv-facts">
+          <li class="mv-tile">Your TRN</li>
+          <li class="mv-tile">Plate number</li>
+          <li class="mv-tile">Engine size (cc)</li>
+        </ul>
+      </section>
 
-      <h2 id="lost-logbook">How to Replace a Lost Car Title (C88 Logbook)</h2>
-      <p>If the C88 Title Certificate is missing, replacing it becomes step zero. Vehicle registration cannot be renewed without it.</p>
-      <p>The replacement process involves three steps:</p>
-      <ul class="rule-list">
-        <li><strong>Police Report:</strong> A stamped police report stating the logbook is lost.</li>
-        <li><strong>TAJ Application:</strong> A formal TAJ application for a duplicate certificate.</li>
-        <li><strong>Submission &amp; Fee:</strong> The duplicate title replacement fee (currently J$2,500) must be paid at a tax office.</li>
-      </ul>
+      <!-- LOST TITLE -->
+      <section class="mv-card" aria-labelledby="lost-logbook">
+        <span class="mv-eyebrow">If it’s lost</span>
+        <h2 id="lost-logbook">How to Replace a Lost Car Title (C88 Logbook)</h2>
+        <p>Vehicle registration cannot be renewed without the title, so replacing it comes first. Start early.</p>
+        <ul class="mv-summary">
+          <li class="mv-tile"><span class="mv-label">Total cost</span><span class="mv-big">J$4,300</span><span class="mv-small">J$2,500 police report + J$1,800 replacement</span></li>
+          <li class="mv-tile"><span class="mv-label">Time</span><span class="mv-big">About 3 months</span><span class="mv-small">for the new title to arrive</span></li>
+        </ul>
+        <ol class="mv-steps">
+          <li class="mv-tile"><span class="mv-num" aria-hidden="true">1</span><div><h3>Pay for the police report</h3><p>Pay the J$2,500 police report fee at a tax office and keep the receipt.</p></div></li>
+          <li class="mv-tile"><span class="mv-num" aria-hidden="true">2</span><div><h3>Get the police report</h3><p>Take the receipt and your photo ID to a police station, where the report stating the title is lost is made.</p></div></li>
+          <li class="mv-tile"><span class="mv-num" aria-hidden="true">3</span><div><h3>Apply at the tax office</h3><p>Take the police report, your fitness certificate, insurance, TRN, photo ID and your eMVRC back to the tax office. Complete the replacement form and pay the J$1,800 replacement fee.</p></div></li>
+          <li class="mv-tile"><span class="mv-num" aria-hidden="true">4</span><div><h3>Wait for the new title</h3><p>The replacement takes about three months.</p></div></li>
+        </ol>
+        <p class="mv-note">Confirmed with a tax office in October 2026.</p>
+      </section>
 
       <!-- MID-ARTICLE CTA -->
-      <aside class="mid-cta" aria-label="Pre-audit offer">
-        <p><strong>Not sure your vehicle is ready to renew?</strong>We check your title, insurance and fitness status before you pay any fees.</p>
+      <aside class="mid-cta" aria-label="Renewal service">
+        <p><strong>Short on time?</strong>We pay your fitness fee, check for unpaid tickets and renew your registration online for you.</p>
         <a class="btn btn-dark" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20was%20reading%20your%20motor%20vehicle%20guide%20and%20need%20help%20renewing%20my%20vehicle%20licence." target="_blank" rel="noopener" data-wa="article-mid"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Message on WhatsApp</a>
       </aside>
 
-      <h2 id="renewal-flow">The Three Pillars of Renewal</h2>
-      <p>To avoid a system lockout, the renewal must be completed in a very specific sequence. Registration cannot be paid if the other two pillars are missing.</p>
+      <!-- RENEWAL FLOW -->
+      <section class="mv-card" aria-labelledby="renewal-flow">
+        <span class="mv-eyebrow">How renewal works</span>
+        <h2 id="renewal-flow">The Three Pillars of Renewal</h2>
+        <p>To avoid a system lockout, renew in this order. Registration cannot be paid until the first two are in place.</p>
+        <ol class="mv-steps">
+          <li class="mv-tile"><span class="mv-num" aria-hidden="true">1</span><div><h3>Insurance</h3><p>Before any government fees can be paid, the vehicle's insurance cover note must be renewed and transmitted to the central government portal. Insurers batch-upload these notes, meaning it typically takes 2 to 24 hours for the system to sync.</p></div></li>
+          <li class="mv-tile"><span class="mv-num" aria-hidden="true">2</span><div><h3>Fitness: two stops</h3><p>If a vehicle's fitness has expired, you must first pay the TAJ fitness inspection fee at a tax office: J$4,500 for a private vehicle or J$5,400 for a commercial vehicle. Second, you must drive the vehicle to an Island Traffic Authority (ITA) Depot with that receipt for physical inspection. <a href="#ref-depots">See the ITA depot list</a></p>
+            <div class="service-note"><strong>How we help:</strong> We offer a <em>Fitness Pre-Pay</em> proxy service. We queue at the Tax Office to pay your fee and send the digital receipt directly to your phone, allowing you to skip the payment line and drive straight to the ITA Depot for inspection.</div></div></li>
+          <li class="mv-tile"><span class="mv-num" aria-hidden="true">3</span><div><h3>Online registration</h3><p>With active insurance and a logged fitness pass, you can pay your final registration fee through the TAJ system. TAJ will generate an Electronic Motor Vehicle Registration Certificate (eMVRC). Printing this immediately legally permits the vehicle to be driven while awaiting the physical disc. <a href="#ref-fees">See the fee schedule</a></p>
+            <div class="service-note"><strong>How we help:</strong> We manage the TAJ digital portal for you. Once your insurance and fitness are valid, we calculate your CC fees, finalize the registration online, and email your new E-Title directly to your inbox.</div></div></li>
+        </ol>
+      </section>
 
-      <ol class="step-list">
-        <li>
-          <span class="step-num" aria-hidden="true">1</span>
-          <div>
-            <h3>Phase 1: Insurance Synchronization</h3>
-            <p>Before any government fees can be paid, the vehicle's insurance cover note must be renewed and transmitted to the central government portal. Insurers batch-upload these notes, meaning it typically takes 2 to 24 hours for the system to sync.</p>
-          </div>
-        </li>
-        <li>
-          <span class="step-num" aria-hidden="true">2</span>
-          <div>
-            <h3>Phase 2: The Two-Stop Fitness Process</h3>
-            <p>If a vehicle's fitness has expired, you must first pay the J$4,500 TAJ fitness inspection fee at a tax office. Second, you must drive the vehicle to an Island Traffic Authority (ITA) Depot with that receipt for physical inspection. <a href="#ref-depots">See the ITA depot list</a></p>
-            <div class="service-note">
-              <strong>How we help:</strong> We offer a <em>Fitness Pre-Pay</em> proxy service. We queue at the Tax Office to pay your fee and send the digital receipt directly to your phone, allowing you to skip the payment line and drive straight to the ITA Depot for inspection.
-            </div>
-          </div>
-        </li>
-        <li>
-          <span class="step-num" aria-hidden="true">3</span>
-          <div>
-            <h3>Phase 3: Online Registration &amp; Legal Compliance</h3>
-            <p>With active insurance and a logged fitness pass, you can pay your final registration fee through the TAJ system. TAJ will generate an Electronic Motor Vehicle Registration Certificate (eMVRC). Printing this immediately legally permits the vehicle to be driven while awaiting the physical disc. <a href="#ref-fees">See the fee schedule</a></p>
-            <div class="service-note">
-              <strong>How we help:</strong> We manage the TAJ digital portal for you. Once your insurance and fitness are valid, we calculate your CC fees, finalize the registration online, and email your new E-Title directly to your inbox.
-            </div>
-          </div>
-        </li>
-      </ol>
-
-      <h2 id="traps">Major Rejection Traps</h2>
-      <p>These two issues block more renewals than any others.</p>
-
-      <div class="trap-callout">
-        <p class="trap-title">Traffic Management System (TMS) Holds</p>
-        <p>TAJ cross-references police and court databases. Unpaid traffic tickets or missed court dates tied to the registered owner's TRN or plate number will automatically block online registration until cleared.</p>
-      </div>
-
-      <div class="trap-callout">
-        <p class="trap-title">C88 Title &amp; Insurance Mismatch</p>
-        <p>If the logbook classifies the vehicle as commercial or PPV but the insurance cover note lists it as a private vehicle, the TAJ system will detect the mismatch and deny registration.</p>
-      </div>
+      <!-- TRAPS -->
+      <section class="mv-card" aria-labelledby="traps">
+        <span class="mv-eyebrow">Avoid these</span>
+        <h2 id="traps">Major Rejection Traps</h2>
+        <p>These two issues block more renewals than any others.</p>
+        <ul class="mv-stack">
+          <li class="mv-tile mv-trap"><strong class="mv-trap-title">Traffic Management System (TMS) Holds</strong><span>TAJ cross-references police and court databases. Unpaid traffic tickets or missed court dates tied to the registered owner's TRN or plate number will automatically block online registration until cleared.</span></li>
+          <li class="mv-tile mv-trap"><strong class="mv-trap-title">C88 Title &amp; Insurance Mismatch</strong><span>If the logbook classifies the vehicle as commercial or PPV but the insurance cover note lists it as a private vehicle, the TAJ system will detect the mismatch and deny registration.</span></li>
+        </ul>
+      </section>
 
       <!-- ===================== REFERENCE DESK ===================== -->
+      <section class="mv-card" aria-labelledby="reference">
+      <span class="mv-eyebrow">Look things up</span>
       <h2 id="reference">Reference Desk</h2>
       <p class="ref-intro">Essential background reference tables for engine capacities and inspection depots. Tap a resource to open it.</p>
 
@@ -1133,7 +1197,8 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
                   <tr><th scope="row">Private car, 1,200 to 1,999 cc</th><td>$6,300</td><td>$12,600</td></tr>
                   <tr><th scope="row">Private car, 2,000 to 2,999 cc</th><td>$9,450</td><td>$18,900</td></tr>
                   <tr><th scope="row">Private car, 3,000 cc and over</th><td>$13,800</td><td>$27,600</td></tr>
-                  <tr class="group"><th scope="row">Fitness inspection fee (all motor vehicles)</th><td colspan="2">$4,500</td></tr>
+                  <tr class="group"><th scope="row">Fitness inspection fee, private vehicles (flat rate)</th><td colspan="2">$4,500</td></tr>
+                  <tr class="group"><th scope="row">Fitness inspection fee, commercial vehicles</th><td colspan="2">$5,400</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1159,6 +1224,7 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
         </details>
 
       </div>
+      </section>
 
       <p class="updated-note">Requirements, fees and processing times last checked <time datetime="2026-09-30">September 2026</time>. TAJ and the ITA can change them without notice, so confirm with us before you pay.</p>
 
