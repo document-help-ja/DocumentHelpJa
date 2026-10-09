@@ -540,6 +540,55 @@ main { display: flex; flex-direction: column; }
   .group-card { padding: 4rem 4rem 4.5rem; }
   .group-card + .group-card { margin-top: 4.5rem; }
 }
+
+/* =========================================================
+   SEARCH INSIDE THE GUIDES
+   ========================================================= */
+.guide-search { margin-top: 1.75rem; max-width: 40rem; }
+.gs-label { display: block; margin-bottom: .6rem; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: #AEB5B9; }
+.gs-field { position: relative; }
+.gs-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); width: 1.3rem; height: 1.3rem; color: var(--muted); pointer-events: none; }
+.guide-search input[type="search"] { width: 100%; min-height: 56px; padding: 0 3.25rem 0 3rem; border: 2px solid transparent; border-radius: 12px; background: #fff; color: var(--ink); font: 500 1.05rem var(--sans); -webkit-appearance: none; appearance: none; }
+.guide-search input[type="search"]::-webkit-search-cancel-button { display: none; }
+.guide-search input[type="search"]::placeholder { color: #6B7378; font-weight: 400; }
+.guide-search input[type="search"]:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(200,155,60,.3); }
+.gs-clear { position: absolute; right: .5rem; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; display: grid; place-items: center; border: 0; border-radius: 8px; background: transparent; color: var(--muted); cursor: pointer; }
+.gs-clear:hover { background: var(--tone); color: var(--ink); }
+.gs-try { margin-top: .9rem; display: flex; flex-wrap: wrap; align-items: center; gap: .45rem .5rem; font-size: .88rem; color: #AEB5B9; }
+.gs-try button { min-height: 36px; padding: .25rem .85rem; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; background: transparent; color: #E6E8E9; font: 500 .88rem var(--sans); cursor: pointer; transition: border-color .2s ease, color .2s ease; }
+.gs-try button:hover { border-color: var(--gold); color: var(--gold); }
+
+.search-results { order: 2; background: var(--tone); padding: 2rem 0 3.5rem; }
+.sr-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem 1.5rem; margin-bottom: 1.5rem; padding: 0 .25rem; }
+.sr-head h2 { font-size: clamp(1.5rem, 5vw, 2.1rem); }
+.sr-status { margin-top: .4rem; color: var(--muted); }
+.sr-clear { min-height: 44px; padding: .5rem 1rem; border: 1px solid #C9D2CD; border-radius: 8px; background: var(--paper); color: var(--ink); font: 600 .92rem var(--sans); cursor: pointer; }
+.sr-clear:hover { border-color: var(--gold); }
+.sr-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+.sr-guide { border: 1px solid #C9D2CD; border-radius: 14px; padding: 1.1rem 1.1rem .5rem; box-shadow: 0 2px 6px -2px rgba(24,26,27,.12); }
+.sr-group { display: block; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--gold-text); }
+.sr-title { display: inline-block; margin-top: .3rem; font: 700 1.25rem/1.3 var(--serif); color: var(--ink); text-decoration: none; }
+.sr-title:hover { color: var(--gold-text); }
+.sr-excerpt { margin: .5rem 0 .7rem; color: var(--muted); font-size: .98rem; }
+.sr-sections { margin-top: .8rem; border-top: 1px solid var(--line); }
+.sr-sections a { display: block; padding: .8rem .35rem; border-bottom: 1px solid var(--tone); border-radius: 8px; text-decoration: none; color: var(--text); }
+.sr-sections li:last-child a { border-bottom: 0; }
+.sr-sections a:hover { background: var(--tone); }
+.sr-sections strong { display: block; color: var(--ink); font-size: 1rem; }
+.sr-sections strong::after { content: " \2192"; color: var(--gold); }
+.sr-snip { display: block; margin-top: .2rem; font-size: .94rem; line-height: 1.55; color: var(--muted); }
+.sr-snip mark { background: #F6E7C1; color: var(--ink); padding: 0 .12em; border-radius: 3px; }
+.sr-more { padding: .55rem .35rem .6rem; font-size: .88rem; color: var(--muted); }
+.sr-empty { display: grid; gap: 1.1rem; justify-items: start; padding: .5rem .25rem 1rem; }
+.sr-empty p { max-width: 34rem; }
+@media (min-width: 700px) {
+  .guide-search { margin-top: 2.25rem; }
+  .search-results { padding: 3rem 0 5rem; }
+  .sr-head { margin-bottom: 2.25rem; padding: 0; }
+  .sr-list { gap: 1.5rem; }
+  .sr-guide { padding: 1.5rem 1.75rem .75rem; }
+  .sr-title { font-size: 1.4rem; }
+}
 </style>
 </head>
 
@@ -552,6 +601,7 @@ main { display: flex; flex-direction: column; }
   <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.4 5 12 10.6 17.6 5 19 6.4 13.4 12 19 17.6 17.6 19 12 13.4 6.4 19 5 17.6 10.6 12 5 6.4z"/></symbol>
   <symbol id="i-chev" viewBox="0 0 24 24"><path d="M8.6 5.4 10 4l8 8-8 8-1.4-1.4 6.6-6.6z"/></symbol>
   <symbol id="i-up" viewBox="0 0 24 24"><path d="M11 20V7.8l-5.6 5.6L4 12l8-8 8 8-1.4 1.4L13 7.8V20z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><path d="M10.5 3a7.5 7.5 0 0 1 5.96 12.05l4.25 4.24-1.42 1.42-4.24-4.25A7.5 7.5 0 1 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></symbol>
 </svg>
 
 <a class="skip" href="#main">Skip to main content</a>
@@ -598,6 +648,42 @@ main { display: flex; flex-direction: column; }
       <h1 id="page-title">Insights &amp; Advisory</h1>
       <p class="page-lead">Plain-language guides to Jamaican government bureaucracy. Each one sets out the exact counter rules at PICA, TAJ, RGD, JCF, ITA, Customs and NIS, so you arrive with the right documents and leave with what you came for.</p>
       <p class="page-byline">Written and checked by Laura Clarke, based on what the counters actually accept.</p>
+
+      <!-- Search box. It is switched on by the page script, so it never shows as a dead box. -->
+      <form class="guide-search" id="guide-search" role="search" hidden>
+        <label class="gs-label" for="gs-input">Search inside all 13 guides</label>
+        <div class="gs-field">
+          <svg class="icon gs-icon" aria-hidden="true"><use href="#i-search"/></svg>
+          <input id="gs-input" type="search" name="q" autocomplete="off" enterkeyhint="search" placeholder="Type a word, such as passport photo">
+          <button type="button" class="gs-clear" aria-label="Clear search" hidden><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+        </div>
+        <p class="gs-try"><span>Try:</span>
+          <button type="button" data-q="lost passport">lost passport</button>
+          <button type="button" data-q="traffic ticket">traffic ticket</button>
+          <button type="button" data-q="birth certificate">birth certificate</button>
+          <button type="button" data-q="DS-160">DS-160</button>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== SEARCH RESULTS (shown only while someone is searching) ===================== -->
+  <section class="search-results" id="search-results" aria-labelledby="sr-title" hidden>
+    <div class="wrap">
+      <div class="group-card">
+        <div class="sr-head">
+          <div>
+            <h2 id="sr-title">Search results</h2>
+            <p class="sr-status" id="sr-status" role="status" aria-live="polite"></p>
+          </div>
+          <button type="button" class="sr-clear">Clear search and show all guides</button>
+        </div>
+        <ol class="sr-list" id="sr-list"></ol>
+        <div class="sr-empty" id="sr-empty" hidden>
+          <p><strong>No guide mentions that yet.</strong> Try a different word, or tell us what you need and we will point you to the right guide.</p>
+          <a class="btn btn-gold" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20searched%20your%20guides%20and%20could%20not%20find%20what%20I%20need." target="_blank" rel="noopener" data-wa="insights-search"><svg class="icon"><use href="#i-wa"/></svg> WhatsApp us</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -966,6 +1052,203 @@ main { display: flex; flex-direction: column; }
     catTarget.scrollIntoView({ block: 'start' });
     window.addEventListener('load', function () { catTarget.scrollIntoView({ block: 'start' }); });
   }
+
+  /* ---------- Search inside the guides ----------
+     The list of guides comes from the cards on this page. The first time someone uses the
+     search box, each guide page is fetched and read section by section, so results always
+     match the live guides and there is no separate index file to keep up to date. */
+  var gsForm = document.getElementById('guide-search');
+  var gsInput = document.getElementById('gs-input');
+  var gsClear = gsForm.querySelector('.gs-clear');
+  var srSection = document.getElementById('search-results');
+  var srList = document.getElementById('sr-list');
+  var srStatus = document.getElementById('sr-status');
+  var srEmpty = document.getElementById('sr-empty');
+  var groupsWrap = document.querySelector('.groups-wrap');
+  gsForm.hidden = false;
+
+  /* Lower case, no accents, no hyphens or apostrophes, one spelling of "licence" */
+  function norm(s) {
+    return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/[‘’'`]/g, '').replace(/[-‐-―]/g, '')
+      .replace(/license/g, 'licence').replace(/[^a-z0-9$]+/g, ' ').trim();
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
+  }
+
+  var guides = Array.prototype.map.call(document.querySelectorAll('.group-card .article-card'), function (card) {
+    var link = card.querySelector('h3 a');
+    var title = link.textContent.trim();
+    var group = card.closest('.group-card').querySelector('h2').textContent.trim();
+    var label = card.querySelector('.cat').textContent.replace(/^\s*New\s+/, '').trim();
+    var excerpt = ((card.querySelector('.excerpt') || {}).textContent || '').trim();
+    return {
+      href: link.getAttribute('href'), title: title, group: group, label: label, excerpt: excerpt,
+      tn: ' ' + norm(title + ' ' + label) + ' ',
+      n: ' ' + norm(title + ' ' + label + ' ' + excerpt + ' ' + group) + ' ',
+      sections: null
+    };
+  });
+
+  /* Parts of a guide page that are not guide content */
+  var NOISE = 'script,style,noscript,svg,nav,form,button,.share-bar,.related-grid,.related-guides,.guide-nav,' +
+              '.newsletter-box,.toolkit-card,.cta-card,.mid-cta,.next-link,.check-meter,.checklist-done,' +
+              '.check-hint,.glance-hint,.author-bar,.meta,.breadcrumb,.category,.eyebrow,.kicker,.step-badge';
+  var SKIP = /bridge|related|newsletter|subscribe|toolkit|^nl-|share/i;
+
+  function readGuide(html) {
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var root = doc.querySelector('main') || doc.body;
+    Array.prototype.forEach.call(root.querySelectorAll(NOISE), function (el) { el.remove(); });
+    var found = [];
+    var cur = { h: 'Overview', a: '', parts: [], skip: false };
+    var walker = doc.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+    var node;
+    while ((node = walker.nextNode())) {
+      if (node.nodeType === 1) {
+        if (node.tagName === 'H2') {
+          found.push(cur);
+          var sec = node.closest('section[id]');
+          var anchor = (sec && sec.querySelector('h2') === node) ? sec.id : (node.id || (sec ? sec.id : ''));
+          cur = { h: node.textContent.replace(/\s+/g, ' ').trim(), a: anchor, parts: [], skip: SKIP.test(anchor) };
+        }
+      } else if (!node.parentElement.closest('h2')) {
+        cur.parts.push(node.nodeValue);
+      }
+    }
+    found.push(cur);
+    return found.filter(function (s) { return !s.skip; }).map(function (s) {
+      var text = s.parts.join(' ').replace(/\s+/g, ' ').trim();
+      return { h: s.h, a: s.a, t: text, n: ' ' + norm(text) + ' ', hn: ' ' + norm(s.h) + ' ' };
+    }).filter(function (s) { return s.t.length > 40; });
+  }
+
+  var indexState = 'idle';
+  function loadIndex() {
+    if (indexState !== 'idle') return;
+    indexState = 'loading';
+    var left = guides.length;
+    guides.forEach(function (g) {
+      fetch(g.href, { credentials: 'same-origin' })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+        .then(function (html) { g.sections = readGuide(html); })
+        .catch(function () { g.sections = []; })
+        .then(function () { left--; if (!left) indexState = 'ready'; if (gsInput.value.trim()) runSearch(); });
+    });
+  }
+
+  /* A word matches at the start of a word ("ticket" finds "tickets"); anything with a digit matches anywhere ("160" finds "DS-160") */
+  function needle(w) { return /\d/.test(w) ? w : ' ' + w; }
+  function count(hay, w) {
+    var n = needle(w), c = 0, i = hay.indexOf(n);
+    while (i > -1 && c < 6) { c++; i = hay.indexOf(n, i + n.length); }
+    return c;
+  }
+  function termPattern(w) {
+    var sep = "[-\\u2010-\\u2015'\\u2019]?";
+    var accents = { a: '[a\u00e0-\u00e4]', e: '[e\u00e8-\u00eb]', i: '[i\u00ec-\u00ef]', o: '[o\u00f2-\u00f6]', u: '[u\u00f9-\u00fc]' };
+    function pat(x) { return x.split('').map(function (ch) { return accents[ch] || ch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join(sep); }
+    var p = pat(w);
+    if (w.indexOf('licence') > -1) p = '(?:' + p + '|' + pat(w.replace('licence', 'license')) + ')';
+    return (/\d/.test(w) ? '' : '\\b') + p;
+  }
+  function snippet(text, re) {
+    re.lastIndex = 0;
+    var m = re.exec(text), at = m ? m.index : 0;
+    var start = Math.max(0, at - 70), end = Math.min(text.length, at + 140);
+    if (start > 0) { var sp = text.indexOf(' ', start); if (sp > -1 && sp < at) start = sp + 1; }
+    if (end < text.length) { var ep = text.lastIndexOf(' ', end); if (ep > at) end = ep; }
+    var slice = text.slice(start, end), out = '', last = 0;
+    re.lastIndex = 0;
+    while ((m = re.exec(slice))) {
+      if (!m[0]) { re.lastIndex++; continue; }
+      out += esc(slice.slice(last, m.index)) + '<mark>' + esc(m[0]) + '</mark>';
+      last = m.index + m[0].length;
+    }
+    return (start > 0 ? '… ' : '') + out + esc(slice.slice(last)) + (end < text.length ? ' …' : '');
+  }
+
+  function find(terms) {
+    return guides.map(function (g) {
+      var allInCard = terms.every(function (w) { return g.n.indexOf(needle(w)) > -1; });
+      var secs = [];
+      (g.sections || []).forEach(function (s) {
+        var hits = 0, score = 0, ok = true;
+        terms.forEach(function (w) {
+          var inHeading = s.hn.indexOf(needle(w)) > -1, c = count(s.n, w);
+          if (inHeading || c) { hits++; score += (inHeading ? 6 : 0) + Math.min(c, 5); }
+          else if (g.tn.indexOf(needle(w)) === -1) ok = false;
+        });
+        if (ok && hits) secs.push({ s: s, score: score + hits * 3 });
+      });
+      if (!allInCard && !secs.length) return null;
+      secs.sort(function (a, b) { return b.score - a.score; });
+      var titleHits = terms.filter(function (w) { return g.tn.indexOf(needle(w)) > -1; }).length;
+      return { g: g, secs: secs, score: titleHits * 12 + (allInCard ? 6 : 0) + (secs[0] ? secs[0].score : 0) + Math.min(secs.length, 6) };
+    }).filter(Boolean).sort(function (a, b) { return b.score - a.score; });
+  }
+
+  var wasActive = false;
+  function runSearch() {
+    var q = gsInput.value.trim();
+    var terms = norm(q).split(' ').filter(function (w) { return w.length > 1; }).slice(0, 6);
+    var active = terms.length > 0;
+    gsClear.hidden = !gsInput.value;
+    srSection.hidden = !active;
+    groupsWrap.hidden = active;
+    history.replaceState(null, '', location.pathname + (active ? '?q=' + encodeURIComponent(q) : ''));
+    if (!active) { wasActive = false; return; }
+    loadIndex();
+
+    var results = find(terms);
+    var re = new RegExp(terms.map(termPattern).join('|'), 'gi');
+    var reading = indexState !== 'ready';
+    srList.innerHTML = results.map(function (r) {
+      var g = r.g, rows = r.secs.slice(0, 3).map(function (x) {
+        return '<li><a href="' + esc(g.href + (x.s.a ? '#' + x.s.a : '')) + '"><strong>' + esc(x.s.h) + '</strong>' +
+               '<span class="sr-snip">' + snippet(x.s.t, re) + '</span></a></li>';
+      }).join('');
+      var more = r.secs.length - 3;
+      return '<li class="sr-guide"><span class="sr-group">' + esc(g.group) + '</span>' +
+             '<a class="sr-title" href="' + esc(g.href) + '">' + esc(g.title) + '</a>' +
+             (rows ? '<ul class="sr-sections">' + rows + '</ul>' +
+                     (more > 0 ? '<p class="sr-more">' + more + ' more ' + (more === 1 ? 'section' : 'sections') + ' in this guide ' + (more === 1 ? 'mentions' : 'mention') + ' it.</p>' : '')
+                   : '<p class="sr-excerpt">' + esc(g.excerpt) + '</p>') +
+             '</li>';
+    }).join('');
+    srEmpty.hidden = !!results.length || reading;
+    srStatus.textContent = results.length
+      ? results.length + (results.length === 1 ? ' guide mentions ' : ' guides mention ') + '“' + q + '”.' + (reading ? ' Still reading the guides…' : '')
+      : (reading ? 'Reading the guides…' : 'Nothing found for “' + q + '”.');
+
+    /* On small screens, bring the search box to the top so the results are in view */
+    if (!wasActive && srSection.getBoundingClientRect().top > window.innerHeight * 0.6) {
+      gsForm.scrollIntoView({ block: 'start', behavior: reduceMotion ? 'auto' : 'smooth' });
+    }
+    wasActive = true;
+  }
+
+  var searchTimer;
+  gsInput.addEventListener('focus', loadIndex);
+  gsInput.addEventListener('input', function () { clearTimeout(searchTimer); searchTimer = setTimeout(runSearch, 140); });
+  gsInput.addEventListener('keydown', function (e) { if (e.key === 'Escape' && gsInput.value) { gsInput.value = ''; runSearch(); } });
+  gsForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearTimeout(searchTimer);
+    runSearch();
+    if (window.matchMedia('(max-width: 699px)').matches) gsInput.blur();
+  });
+  gsClear.addEventListener('click', function () { gsInput.value = ''; runSearch(); gsInput.focus(); });
+  srSection.querySelector('.sr-clear').addEventListener('click', function () {
+    gsInput.value = ''; runSearch();
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+  Array.prototype.forEach.call(gsForm.querySelectorAll('[data-q]'), function (b) {
+    b.addEventListener('click', function () { gsInput.value = b.getAttribute('data-q'); runSearch(); });
+  });
+  var firstQuery = new URLSearchParams(location.search).get('q');
+  if (firstQuery) { gsInput.value = firstQuery; runSearch(); }
 
   /* ---------- Footer year ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
