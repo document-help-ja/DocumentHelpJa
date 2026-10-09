@@ -495,9 +495,19 @@ main { display: flex; flex-direction: column; }
 .group-card .read-link { border-top: 0; padding-top: 0; }
 .group-card .article-card.featured h3 { font-size: 1.5rem; }
 
+/* Phones: each guide is its own bordered card, so it is clear where one guide ends and the next begins */
 @media (max-width: 699px) {
+  .group-card { padding: 1.75rem 1rem 1.25rem; }
+  .group-head { margin-bottom: 1.5rem; padding: 0 .25rem; }
+  .group-card .article-grid { gap: 1.1rem; }
+  .group-card .article-card { border: 1px solid #C9D2CD; border-radius: 14px; background: var(--paper); overflow: hidden; box-shadow: 0 2px 6px -2px rgba(24,26,27,.12); }
+  .group-card .article-card.featured { border: 1.5px solid var(--gold); }
+  .group-card .card-media { border-radius: 0; aspect-ratio: 16 / 9; }
+  .group-card .card-body { padding: 1rem 1.1rem 0; }
+  .group-card .card-body h3 { font-size: 1.2rem; }
   .group-card .article-card:not(.featured) .excerpt { display: none; }
-  .group-card .article-card:not(.featured) .read-link { margin-top: .75rem; }
+  .group-card .excerpt { margin-bottom: 0; }
+  .group-card .read-link { margin-top: 1rem; padding: .85rem 0; border-top: 1px solid var(--line); }
 }
 @media (min-width: 700px) {
   .jump-intro { padding: 3rem 0 .5rem; }
