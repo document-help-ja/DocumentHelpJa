@@ -158,7 +158,7 @@
               "maxPrice": 8000,
               "priceCurrency": "JMD"
             },
-            "description": "Certified copies, record searches and corrections. RGD fee and courier are paid separately.",
+            "description": "Certified copies, record searches and adding a father's name. Agency fee and courier are paid separately.",
             "itemOffered": {
               "@type": "Service",
               "name": "Birth, Marriage & Death Certificates (RGD)",
@@ -185,8 +185,8 @@
           {
             "@type": "Offer",
             "priceCurrency": "JMD",
-            "price": 5000,
-            "description": "Motor Vehicle Licence Prep & Pre-Pay Retainer.",
+            "price": 4000,
+            "description": "Registration and fitness renewal prepared and paid for you. TAJ fees are paid separately.",
             "itemOffered": {
               "@type": "Service",
               "name": "Motor Vehicle Licence Renewal",
@@ -538,6 +538,34 @@ a { color: inherit; }
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Service groups: what we lead with, then the rest */
+.svc-group { max-width: 56rem; margin: 0 auto; }
+.svc-group + .svc-group { margin-top: 3.5rem; }
+.group-label {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  margin: 0 0 1.25rem; padding-bottom: .75rem; border-bottom: 1px solid var(--line);
+}
+.group-label h3 { font-size: clamp(1.3rem, 4vw, 1.6rem); }
+.group-label p { font-size: .95rem; color: var(--muted); }
+.service-card.wide { grid-column: 1 / -1; aspect-ratio: 16 / 8; }
+@media (min-width: 900px) { .svc-group .service-grid { row-gap: 3rem; } }
+@media (min-width: 900px) {
+  .service-card.wide { width: 100%; height: 320px; }
+}
+.also-list { display: grid; gap: .75rem; }
+@media (min-width: 700px) { .also-list { grid-template-columns: repeat(3, 1fr); gap: 1rem; } }
+.also-list a {
+  display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+  min-height: 64px; padding: .9rem 1.1rem;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper);
+  text-decoration: none; color: var(--ink);
+  transition: border-color .2s ease, background-color .2s ease;
+}
+.also-list a:hover { border-color: var(--ink); background: var(--tone); }
+.also-list strong { display: block; font-weight: 600; line-height: 1.3; }
+.also-list span.sub { display: block; font-size: .88rem; color: var(--muted); margin-top: .15rem; }
+.also-list .icon { color: var(--gold-text); }
+
 .unlisted {
   max-width: 56rem; margin-left: auto; margin-right: auto;
   margin-top: 3.5rem; background: var(--ink); color: #D5D9DB;
@@ -796,51 +824,56 @@ body { position: relative; width: 100%; min-height: 100vh; }
     <div class="wrap">
       <div class="section-head">
         <h2 id="services-title">Our Services</h2>
-        <p>Select a service to view requirements, government fees, and concierge processing details.</p>
+        <p>Choose a service to see the requirements, government fees and how I handle it for you.</p>
       </div>
 
-      <div class="service-grid">
-
-        <a class="service-card" href="/jamaican-passport-services.html">
-          <img src="assets/passport-renewal.webp" srcset="assets/passport-renewal-800.webp 800w, assets/passport-renewal.webp 1600w" sizes="(min-width: 900px) 375px, (min-width: 700px) 45vw, 92vw" width="1600" height="1195" alt="Jamaican passport services: renew, replace or apply" loading="lazy" decoding="async">
+      <div class="svc-group">
+        <div class="group-label">
+          <h3>Most requested</h3>
+          <p>Passports and TAJ renewals</p>
+        </div>
+        <div class="service-grid">
+        <a class="service-card wide" href="/jamaican-passport-services.html">
+          <img src="assets/passport-renewal.webp" srcset="assets/passport-renewal-800.webp 800w, assets/passport-renewal.webp 1600w" sizes="(min-width: 900px) 56rem, 92vw" width="1600" height="1195" alt="Jamaican passport services: renew, replace or apply" loading="lazy" decoding="async">
           <h3 class="service-card-title">Jamaican Passport Services</h3>
         </a>
-
-        <a class="service-card" href="/jamaican-citizenship-application.html">
-          <img src="assets/citizenship-descent-hero.webp" srcset="assets/citizenship-descent-hero-800.webp 800w, assets/citizenship-descent-hero.webp 1600w" sizes="(min-width: 900px) 375px, (min-width: 700px) 45vw, 92vw" width="1600" height="873" alt="Citizenship by Descent" loading="lazy" decoding="async">
-          <h3 class="service-card-title">Citizenship by Descent</h3>
-        </a>
-
-        <a class="service-card" href="/jamaican-trn-application-overseas-diaspora.html">
-          <img src="assets/trn-application.webp" srcset="assets/trn-application-800.webp 800w, assets/trn-application.webp 1600w" sizes="(min-width: 900px) 375px, (min-width: 700px) 45vw, 92vw" width="1600" height="529" alt="TRN from overseas" loading="lazy" decoding="async">
-          <h3 class="service-card-title">TRN from Overseas</h3>
-        </a>
-
         <a class="service-card" href="/drivers-licence-renewal.html">
           <img src="assets/driver-license-renewal-hero.webp" srcset="assets/driver-license-renewal-hero-800.webp 800w, assets/driver-license-renewal-hero.webp 1600w" sizes="(min-width: 900px) 375px, (min-width: 700px) 45vw, 92vw" width="1600" height="893" alt="Driver's Licence Renewal" loading="lazy" decoding="async">
           <h3 class="service-card-title">Driver's Licence Renewal</h3>
         </a>
-
         <a class="service-card" href="/motor-vehicle-licence-renewal.html">
           <img src="assets/motor-vehicle.webp" srcset="assets/motor-vehicle-800.webp 800w, assets/motor-vehicle.webp 1600w" sizes="(min-width: 900px) 375px, (min-width: 700px) 45vw, 92vw" width="1600" height="893" alt="Motor Vehicle Licence Renewal" loading="lazy" decoding="async">
           <h3 class="service-card-title">Motor Vehicle Licence Renewal</h3>
         </a>
+        </div>
+      </div>
 
-        <a class="service-card" href="/jamaica-driving-abstract.html">
-          <img src="assets/driving-abstract.webp" srcset="assets/driving-abstract-800.webp 800w, assets/driving-abstract.webp 1600w" sizes="(min-width: 900px) 375px, (min-width: 700px) 45vw, 92vw" width="1600" height="1073" alt="Jamaican Driving Abstract" loading="lazy" decoding="async">
-          <h3 class="service-card-title">Driving Abstract</h3>
-        </a>
-
+      <div class="svc-group">
+        <div class="group-label">
+          <h3>Living overseas?</h3>
+          <p>Documents from Jamaica, without flying home</p>
+        </div>
+        <div class="service-grid">
         <a class="service-card" href="/jamaica-police-record.html">
           <img src="assets/police-record.webp" srcset="assets/police-record-800.webp 800w, assets/police-record.webp 1600w" sizes="(min-width: 900px) 375px, (min-width: 700px) 45vw, 92vw" width="1600" height="529" alt="Police Record" loading="lazy" decoding="async">
           <h3 class="service-card-title">Police Record</h3>
         </a>
-
         <a class="service-card" href="/jamaican-rgd-certificates.html">
-          <img src="assets/rgd.webp" srcset="assets/rgd-800.webp 800w, assets/rgd.webp 1200w" sizes="(min-width: 900px) 375px, (min-width: 700px) 45vw, 92vw" width="1200" height="1812" alt="Birth, Marriage & Death Certificates" loading="lazy" decoding="async">
+          <img src="assets/rgd.webp" srcset="assets/rgd-800.webp 800w, assets/rgd.webp 1200w" sizes="(min-width: 900px) 375px, (min-width: 700px) 45vw, 92vw" width="1200" height="1812" alt="Birth, Marriage &amp; Death Certificates" loading="lazy" decoding="async">
           <h3 class="service-card-title">Birth, Marriage &amp; Death Certificates</h3>
         </a>
+        </div>
+      </div>
 
+      <div class="svc-group">
+        <div class="group-label">
+          <h3>Also available</h3>
+        </div>
+        <ul class="also-list">
+          <li><a href="/jamaican-trn-application-overseas-diaspora.html"><span><strong>TRN from Overseas</strong><span class="sub">Apply without coming home</span></span><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></a></li>
+          <li><a href="/jamaican-citizenship-application.html"><span><strong>Citizenship by Descent</strong><span class="sub">Born to a Jamaican parent</span></span><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></a></li>
+          <li><a href="/jamaica-driving-abstract.html"><span><strong>Driving Abstract</strong><span class="sub">Your Jamaican driving record</span></span><svg class="icon" aria-hidden="true"><use href="#i-chev"/></svg></a></li>
+        </ul>
       </div>
 
       <!-- Unlisted services callout -->
