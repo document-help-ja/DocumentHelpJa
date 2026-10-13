@@ -342,7 +342,10 @@ h1,h2,h3{color:var(--ink)}
 .steps p{margin:0;color:var(--muted)}
 
 /* Services */
-.grp-label{margin:48px 0 22px}
+.grp-head{margin:80px 0 28px;padding-top:56px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:6px}
+.grp-head.first{margin-top:48px;padding-top:0;border-top:0}
+.grp-title{font-family:var(--sans);font-size:1.4rem;font-weight:700;color:var(--navy);margin:0;padding-left:16px;border-left:4px solid var(--gold);line-height:1.3}
+.grp-sub{margin:0;padding-left:20px;color:var(--muted);font-size:16px}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:32px}
 .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);text-decoration:none;color:var(--text);transition:transform .15s,box-shadow .15s}
 .card:hover{transform:translateY(-2px);box-shadow:0 2px 4px rgba(15,37,55,.08),0 14px 32px rgba(15,37,55,.12);color:var(--text)}
@@ -437,6 +440,8 @@ h1,h2,h3{color:var(--ink)}
 .cal-frame{width:100%;height:70vh;border:0;display:block}
 
 @media (max-width:820px){
+  .grp-head{margin-top:64px;padding-top:48px}
+  .cards{gap:24px}
   .nav{display:none}
   .menu-btn{display:inline-flex}
   .float{display:flex}
@@ -624,7 +629,10 @@ h1,h2,h3{color:var(--ink)}
       <h2 class="h2" id="services-title">What do you need help with?</h2>
       <p class="lead">Tap a service to see what you'll need, the fees, and how to start.</p>
 
-      <p class="kicker grp-label">Most requested</p>
+      <div class="grp-head first">
+        <h3 class="grp-title">Most requested</h3>
+        <p class="grp-sub">Our fastest-moving services: passports and TAJ renewals.</p>
+      </div>
       <div class="cards">
         <a class="card" href="/jamaican-passport-services.html">
           <img src="assets/passport-renewal-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
@@ -640,7 +648,10 @@ h1,h2,h3{color:var(--ink)}
         </a>
       </div>
 
-      <p class="kicker grp-label">From overseas or at home</p>
+      <div class="grp-head">
+        <h3 class="grp-title">From overseas or at home</h3>
+        <p class="grp-sub">Certificates and records from Jamaica, without flying home.</p>
+      </div>
       <div class="cards">
         <a class="card" href="/jamaica-police-record.html">
           <img src="assets/police-record-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
@@ -706,11 +717,11 @@ h1,h2,h3{color:var(--ink)}
         <figure class="review">
           <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
           <blockquote>“Excellent. Your service is beyond expectation. It's worth every cent that I spent.”</blockquote>
-          <figcaption><strong>Vincent</strong><span>Passport renewal</span></figcaption>
+          <figcaption><strong>Vincent W.</strong><span>Passport renewal</span></figcaption>
         </figure>
         <figure class="review">
           <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>“I had no problem dealing with my passport. She told me everything I need to do, so it was a breeze. Then in space of no time I was collecting something people told would take forever.”</blockquote>
+          <blockquote>“I had no problem dealing with my passport. She told me everything I need to do, so it was a breeze. Then in space of no time I was collecting something people told me would take forever.”</blockquote>
           <figcaption><strong>Kentish</strong><span>Passport · Google review</span></figcaption>
         </figure>
       </div>
