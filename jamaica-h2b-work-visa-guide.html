@@ -695,6 +695,9 @@
     @media (min-width: 760px) { .toolkit-card { padding: var(--card-pad, 40px 44px); } }
     @media (prefers-reduced-motion: reduce) { .toolkit-card .btn-sub { transition: none; } }
     .section-nav a.nav-cta { text-decoration: none; }
+.toolkit-card a.btn-sub { text-decoration: none; }
+.dl-free { font-weight: 600; color: #F6DFA6; margin: 0 0 12px; }
+.toolkit-light .dl-free { color: #7A5C17; }
 </style>
 </head>
 <body id="top">
@@ -798,7 +801,7 @@
           <li><a href="#toolkit"><span class="num">↓</span>Free toolkit</a></li>
           <li><a href="#help"><span class="num">★</span>Document help</a></li>
         </ol>
-        <a class="nav-cta" href="#toolkit">Get the free toolkit</a>
+        <a class="nav-cta" href="#toolkit">Download the free toolkit</a>
       </nav>
 
       <div class="content">
@@ -1075,7 +1078,7 @@
             <div class="toolkit-copy">
               <span class="kicker">Free toolkit</span>
               <h2 id="toolkit-title">Get the H-2B Application Toolkit</h2>
-              <p class="toolkit-intro">A printable starter kit, sent to your inbox as a PDF.</p>
+              <p class="toolkit-intro">A printable starter kit. Download the PDF and keep it with your documents.</p>
               <ul class="toolkit-list">
                 <li>Document checklist with tick boxes</li>
                 <li>Call script and the 8 questions to ask every agency</li>
@@ -1084,26 +1087,9 @@
               </ul>
             </div>
             <div class="toolkit-panel">
-              <form class="toolkit-form" data-toolkit-form data-kit="h2b" data-kit-endpoint="https://script.google.com/macros/s/AKfycbzrkEPs6xf6WhdJbZuYBUYCittkeJGW7d83mUh77jdVSrG7Jto_nl5PCik36JfBvimCDg/exec" novalidate>
-                <div class="toolkit-fields">
-                  <div>
-                    <label for="tk-name">First name</label>
-                    <input id="tk-name" name="name" type="text" autocomplete="given-name" placeholder="Your first name">
-                  </div>
-                  <div>
-                    <label for="tk-email">Email address</label>
-                    <input id="tk-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
-                  </div>
-                </div>
-                <div class="tk-hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-                <button type="submit" class="btn-sub">Send me the toolkit</button>
-                <p class="toolkit-error" role="alert" hidden>Please enter a valid email address.</p>
-              </form>
-              <div class="nl-success toolkit-success" hidden role="status">
-                <strong>Check your inbox</strong>
-                <p>Your toolkit is on its way as a PDF. If you do not see it in a few minutes, look in your spam folder.</p>
-              </div>
-              <p class="fine">Free. We use your email to send this toolkit and the occasional update. Reply STOP to any email and we remove your details. <a href="/privacy.html">Privacy Policy</a></p>
+              <p class="dl-free">Free. No sign-up needed.</p>
+              <a class="btn-sub" href="/assets/h2b-application-toolkit.pdf" download>Download the toolkit (PDF)</a>
+              <p class="fine">Looking for more? <a href="/free-kits">See all our free kits</a>.</p>
             </div>
           </div>
         </section>
@@ -1190,7 +1176,7 @@
       <ol class="sheet-list"></ol>
       <div class="sheet-foot">
         <button type="button" class="sheet-top">Back to top</button>
-        <a class="sheet-sub" href="#toolkit">Get the free toolkit</a>
+        <a class="sheet-sub" href="#toolkit">Download the free toolkit</a>
       </div>
     </div>
   </div>
@@ -1209,6 +1195,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="/#services">Services</a></li>
           <li><a href="/insights.html">Insights &amp; Guides</a></li>
+          <li><a href="/free-kits">Free Kits</a></li>
           <li><a href="/faq.html">FAQ</a></li>
           <li><a href="/about.html">About Us</a></li>
           <li><a href="/#contact">Contact</a></li>

@@ -1052,6 +1052,9 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
   .alert { padding: 1.35rem 1.25rem; }
   .who-files { padding: 1.6rem 1.15rem; }
 }
+.toolkit-card a.btn-sub { text-decoration: none; }
+.dl-free { font-weight: 600; color: #F6DFA6; margin: 0 0 12px; }
+.toolkit-light .dl-free { color: #7A5C17; }
 </style>
 </head>
 
@@ -1256,42 +1259,25 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
       </aside>
 
       <!-- ===================== FREE TOOLKIT: SELF-EMPLOYED TAX SURVIVAL KIT =====================
-           Delivered by the Kit Delivery Apps Script. data-kit="s04" must match the s04 entry in KITS. -->
+           Direct download. The PDF lives in /assets/kits/ and is also listed on /free-kits. -->
       <section class="card toolkit-card" id="survival-kit" aria-labelledby="kit-title">
         <div class="toolkit-grid">
           <div class="toolkit-copy">
             <span class="kicker">Free toolkit</span>
             <h2 id="kit-title">Get the Self-Employed Tax Survival Kit</h2>
-            <p class="toolkit-intro">A two-page printable kit, sent to your inbox as a PDF.</p>
+            <p class="toolkit-intro">A two-page printable kit. Download the PDF, print it, and tick items off as you go.</p>
             <ul class="toolkit-list">
               <li>Checklist of documents to gather before you file</li>
               <li>S04 and S04a calendar with the four payment dates</li>
-              <li>What you can and cannot deduct</li>
+              <li>What you can usually claim, and what you can't</li>
               <li>How to prove expenses without paper receipts</li>
             </ul>
           </div>
           <div class="toolkit-panel">
-            <form class="toolkit-form" data-toolkit-form data-kit="s04" data-kit-endpoint="https://script.google.com/macros/s/AKfycbzrkEPs6xf6WhdJbZuYBUYCittkeJGW7d83mUh77jdVSrG7Jto_nl5PCik36JfBvimCDg/exec" novalidate>
-              <div class="toolkit-fields">
-                <div>
-                  <label for="tk-name">First name</label>
-                  <input id="tk-name" name="name" type="text" autocomplete="given-name" placeholder="Your first name">
-                </div>
-                <div>
-                  <label for="tk-email">Email address</label>
-                  <input id="tk-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
-                </div>
-              </div>
-              <div class="tk-hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-              <button type="submit" class="btn-sub">Send me the kit</button>
-              <p class="toolkit-error" role="alert" hidden>Please enter a valid email address.</p>
-            </form>
-            <div class="nl-success toolkit-success" hidden role="status">
-              <strong>Check your inbox</strong>
-              <p>Your kit is on its way as a PDF. If you do not see it in a few minutes, look in your spam folder.</p>
+              <p class="dl-free">Free. No sign-up needed.</p>
+              <a class="btn-sub" href="/assets/kits/self-employed-tax-survival-kit.pdf" download>Download the kit (PDF)</a>
+              <p class="fine">Looking for more? <a href="/free-kits">See all our free kits</a>.</p>
             </div>
-            <p class="fine">Free. We use your email to send this kit and the occasional update. Reply STOP to any email and we remove your details. <a href="/privacy.html">Privacy Policy</a></p>
-          </div>
         </div>
       </section>
 
@@ -1384,6 +1370,7 @@ html:has(.svc-dialog[open]) { overflow: hidden; }
           <li><a href="/">Home</a></li>
           <li><a href="/#services">Services</a></li>
           <li><a href="/insights.html">Insights &amp; Guides</a></li>
+          <li><a href="/free-kits">Free Kits</a></li>
           <li><a href="/faq.html">FAQ</a></li>
           <li><a href="/about.html">About Us</a></li>
           <li><a href="/#contact">Contact</a></li>
