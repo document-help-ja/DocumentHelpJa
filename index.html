@@ -399,6 +399,9 @@ h1,h2,h3{color:var(--ink)}
 .band h2{font-family:var(--serif);font-size:2.2rem;line-height:1.2;color:#fff;margin:0}
 .band p{color:var(--on-dark);max-width:34rem;margin:20px 0 0}
 .band .btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.band p.band-note{font-size:15px;margin-top:20px}
+.band-note a{color:var(--gold-light);font-weight:600}
+.band-note a:hover{color:#fff}
 
 /* Footer */
 .site-footer{background:var(--cream);border-top:4px solid var(--gold);color:var(--text)}
@@ -475,7 +478,7 @@ h1,h2,h3{color:var(--ink)}
       <button class="nav-btn" type="button" aria-expanded="false" aria-controls="dd-guides">Guides
         <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F6DFA6" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
       <a class="nav-link" href="/about.html">About</a>
-      <a class="btn btn-gold btn-sm" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20document." target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn btn-gold btn-sm" href="#services">Choose your service</a>
     </nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav">
       <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path class="mi" d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -594,7 +597,7 @@ h1,h2,h3{color:var(--ink)}
     <a href="/about.html">About Laura</a>
     <a href="/faq.html">FAQ</a>
     <a href="#contact">Contact</a>
-    <a class="btn btn-navy" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20document." target="_blank" rel="noopener">WhatsApp us</a>
+    <a class="btn btn-navy" href="#services">Choose your service</a>
   </nav>
 </header>
 
@@ -607,8 +610,8 @@ h1,h2,h3{color:var(--ink)}
         <h1 id="hero-title">Jamaican documents, without the running around.</h1>
         <p class="sub">Tell me what you need. I check your paperwork, deal with the agency, and keep you updated, whether you're in Jamaica or overseas.</p>
         <div class="btns">
-          <a class="btn btn-gold" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20a%20quick%20document%20check." target="_blank" rel="noopener">Start on WhatsApp</a>
-          <a class="btn btn-outline" href="#services">See all services</a>
+          <a class="btn btn-gold" href="#services">Choose your service</a>
+          <a class="btn btn-outline" href="#how">See how it works</a>
         </div>
         <p class="note">Independent private service · Not a government agency</p>
       </div>
@@ -618,13 +621,13 @@ h1,h2,h3{color:var(--ink)}
     </div>
   </section>
 
-  <section class="section" aria-labelledby="how-title">
+  <section class="section" id="how" aria-labelledby="how-title">
     <div class="wrap">
       <h2 class="h2" id="how-title">How it works</h2>
       <ol class="steps">
-        <li><span class="num" aria-hidden="true">1</span><h3>Message me on WhatsApp</h3><p>Tell me the document you need and where you are.</p></li>
-        <li><span class="num" aria-hidden="true">2</span><h3>I check before you pay</h3><p>I confirm exactly what's needed and the fees before any money goes to the agency.</p></li>
-        <li><span class="num" aria-hidden="true">3</span><h3>I handle it and keep you updated</h3><p>Filing, follow-up and delivery by pickup or courier.</p></li>
+        <li><span class="num" aria-hidden="true">1</span><h3>Choose your service</h3><p>Answer a few quick questions about your situation. It takes about two minutes.</p></li>
+        <li><span class="num" aria-hidden="true">2</span><h3>I confirm everything before you pay</h3><p>What's needed and the full cost, agency fees included, before any money goes to the agency.</p></li>
+        <li><span class="num" aria-hidden="true">3</span><h3>Accept my terms, then I take it from there</h3><p>Filing, follow-up and delivery by pickup or courier, with updates along the way.</p></li>
       </ol>
     </div>
   </section>
@@ -681,8 +684,8 @@ h1,h2,h3{color:var(--ink)}
       </div>
 
       <div class="ask">
-        <div><strong>Don't see your document?</strong><span>If it involves a Jamaican government office, ask and I'll tell you if I can help.</span></div>
-        <a class="btn btn-navy btn-sm" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20service%20that%20isn%27t%20listed." target="_blank" rel="noopener">Ask on WhatsApp</a>
+        <div><strong>Don't see your document?</strong><span>If it involves a Jamaican government office, book a consultation and I'll review your situation with you.</span></div>
+        <a class="btn btn-navy btn-sm" href="#consultation" data-dialog="consultation">Book a consultation</a>
       </div>
     </div>
   </section>
@@ -765,11 +768,12 @@ h1,h2,h3{color:var(--ink)}
   <section class="band" id="contact" aria-labelledby="contact-title">
     <div class="wrap">
       <h2 id="contact-title">Ready when you are.</h2>
-      <p>Tell me which document you need and where you are. I'll confirm the requirements before you spend anything on government fees.</p>
+      <p>Choose your service to see what you'll need and the full cost. I confirm the requirements before you spend anything on government fees.</p>
       <div class="btns">
-        <a class="btn btn-gold" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20a%20quick%20document%20check." target="_blank" rel="noopener">Start on WhatsApp</a>
+        <a class="btn btn-gold" href="#services">Choose your service</a>
         <a class="btn btn-ghost-light" href="#consultation" data-dialog="consultation">Book a consultation</a>
       </div>
+      <p class="band-note">Already working with me, or referred by a client? WhatsApp <a href="https://wa.me/18765612614" target="_blank" rel="noopener">+1 (876) 561-2614</a></p>
     </div>
   </section>
 
@@ -821,7 +825,7 @@ h1,h2,h3{color:var(--ink)}
 </footer>
 
 <div class="float" id="float-bar">
-  <a class="btn btn-navy wa" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20document." target="_blank" rel="noopener">WhatsApp us</a>
+  <a class="btn btn-navy wa" href="#services">Choose your service</a>
   <a class="up" href="#top" aria-label="Back to top"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F2537" stroke-width="2.2" stroke-linecap="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
 </div>
 
@@ -898,7 +902,7 @@ h1,h2,h3{color:var(--ink)}
     });
   });
 
-  /* ---------- Floating WhatsApp + back-to-top (phones) ---------- */
+  /* ---------- Floating "Choose your service" + back-to-top (phones) ---------- */
   var floatBar = document.getElementById('float-bar');
   function toggleFloat() { floatBar.classList.toggle('is-visible', window.scrollY > 500); }
   window.addEventListener('scroll', toggleFloat, { passive: true });
