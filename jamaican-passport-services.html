@@ -626,6 +626,19 @@
   .lch-nav a[aria-current="page"] { color: #0F2537; border-bottom-color: #C89B3C; }
 }
 </style>
+<style id="lcs-p">
+.hero .choose { margin: 26px 0 0; font-size: 1.02rem; font-weight: 600; color: #F6DFA6; }
+.hero .choose a { color: inherit; text-decoration: none; }
+.lcs-checked { font-size: .86rem; color: var(--muted, #565E63); }
+.gtk { margin-top: 40px !important; }
+.service-door .door-price { margin-bottom: 22px !important; }
+.service-door h3 { margin-bottom: 10px; }
+.gtk-list { gap: 12px !important; margin-bottom: 28px !important; }
+.consult-box .cincl li { margin-bottom: 8px !important; }
+.case .facts { margin-top: 28px; }
+.case .part { margin-top: 28px; }
+.consult-box { margin-top: 32px !important; }
+</style>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -668,9 +681,8 @@
     <div class="casebar"><a class="back" href="#find"><span aria-hidden="true">←</span> All passport services</a><span class="casebar-name" id="casebar-name"></span></div>
     <nav class="crumbs home-only" aria-label="Breadcrumb"><a href="/index.html">Home</a> › <a href="/index.html#services">Services</a> › Jamaican passport</nav>
     <h1 class="home-only">Jamaican Passport: Renew, Replace or Apply</h1>
-    <p class="byline home-only">By <a href="/about.html">Laura Clarke</a> · PICA's requirements last checked <time datetime="2026-10-02">2 October 2026</time></p>
-    <p class="lead home-only">Choose what you need. Each option shows what we do for you and what you do yourself.</p>
-    <p class="indep home-only">A private, independent service. We are not PICA or any government agency. <a href="#disclaimer">Read the full notice</a></p>
+    <p class="lead home-only">We renew adult passports online for you. For other passports, the steps are here.</p>
+    <p class="choose home-only"><a href="#find">Choose your option below&nbsp;<span aria-hidden="true">↓</span></a></p>
 
   </div>
 </section>
@@ -681,6 +693,7 @@
     <!-- THE PORCH: three doors -->
     <section class="home-only" id="find" aria-labelledby="find-title">
       <h2 class="sr-only" id="find-title">Choose what you need</h2>
+      <p class="lcs-checked" style="margin:0 0 22px">Fees checked October 2026. Government fees are separate.</p>
       <p class="find-label">Our service</p>
       <div class="doors">
         <a class="door service-door" href="#renew">

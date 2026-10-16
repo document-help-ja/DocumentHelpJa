@@ -450,6 +450,24 @@
   .lch-nav a[aria-current="page"] { color: #0F2537; border-bottom-color: #C89B3C; }
 }
 </style>
+<style id="lcs-a">
+/* Clean service page top + more breathing room (Oct 2026) */
+.hero .choose { margin: 26px 0 0; font-size: 1.02rem; font-weight: 600; color: #F6DFA6; }
+.hero .choose a { color: inherit; text-decoration: none; }
+.lcs-checked { margin: 14px 0 0; font-size: .86rem; color: var(--muted, #565E63); }
+.jump { margin-bottom: 18px !important; }
+.lcs-checked + .svc-grid, .jump + .lcs-checked { }
+.svc-grid { margin-top: 36px; gap: 48px !important; }
+.svc-in h2 { margin-bottom: 10px; }
+.svc-in .svc-sub { margin-bottom: 0; }
+.svc-in .price { margin-top: 30px !important; }
+.svc-in .bill, .svc-in .taj-fees { margin-top: 20px !important; }
+.svc-in > .btn, .svc-in > a.btn { margin-top: 30px !important; }
+.svc-in .form-tip { margin-top: 12px !important; }
+.duo { margin-top: 44px !important; gap: 24px !important; }
+.duo li { margin-bottom: 1.25rem !important; }
+.trn-note { margin-top: 18px !important; }
+</style>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -491,19 +509,18 @@
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/index.html">Home</a> › <a href="/index.html#services">Services</a> › Motor vehicle licence</nav>
     <h1>Motor Vehicle Licence Renewal</h1>
-    <p class="byline">By <a href="/about.html">Laura Clarke</a> · Updated <time datetime="2026-10-03">3 October 2026</time></p>
-    <p class="lead">Skip the Tax Office line. We renew your motor vehicle registration online.</p>
-    <p class="indep">A private, independent service. Not TAJ. <a href="#disclaimer">Full notice</a></p>
+    <p class="lead">We renew your motor vehicle registration online, so you skip the Tax Office line.</p>
+    <p class="choose"><a href="#main">Is your fitness certificate still valid? Choose below&nbsp;<span aria-hidden="true">↓</span></a></p>
   </div>
 </section>
 
 <main id="main">
   <div class="wrap">
-    <p class="pick" id="pick"><b>Is your fitness certificate still valid?</b> Pick the option that matches.</p>
-    <nav class="jump" aria-labelledby="pick">
+    <nav class="jump" aria-label="Choose your option">
       <a href="#valid-fitness">Fitness valid<small>Online renewal</small></a>
       <a href="#expired-fitness">Fitness expired<small>Pre-pay and depot</small></a>
     </nav>
+    <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
     <div class="svc-grid two">
       <section class="svc" id="valid-fitness" aria-labelledby="valid-title">
         <div class="tier done"><b>Done for you</b><span>Fitness and insurance valid</span></div>
