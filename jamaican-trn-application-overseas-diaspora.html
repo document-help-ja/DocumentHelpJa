@@ -356,6 +356,8 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 .band-cta .btn-band:hover { background: #1B3A55; }
 @media (max-width: 599px) { .band { padding: 36px 0 40px; } .band-in { padding: 0 16px; } .band-cta .btn-band { width: 100%; } }
 </style>
+<link rel="stylesheet" href="/assets/price-steps.css">
+<style>.band .ps { margin-top: 0; } .band .ps-head { display: none; } .ps-start { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; margin-top: 20px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; } @media (max-width: 599px) { .ps-start { width: 100%; } }</style>
 </head>
 <body id="top">
 
@@ -404,7 +406,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 <main id="main" class="banded">
   <section class="band band-white ">
     <div class="band-in">
-      <p class="band-label">1 · Your service and price</p>
+      <p class="band-label">1 · What we do</p>
       <div class="service-card featured">
       <div class="card-head">
         <span class="badge">Overseas &middot; No travel needed</span>
@@ -412,10 +414,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <p class="card-intro">You need a TRN to buy land, open a bank account, inherit assets or do any financial business in Jamaica.</p>
       </div>
       <div class="card-body">
-        <div class="price-block">
-          <div class="price">$100 USD</div>
-          <span class="price-note">TAJ charges no government fee for a TRN</span>
-        </div>
+        
 
         <h3 class="list-title">What we handle</h3>
         <ul class="feature-list">
@@ -438,16 +437,6 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
             <label><input type="radio" name="cert" value="notary" checked>Notary Public</label>
             <label><input type="radio" name="cert" value="consulate">Jamaican embassy or consulate</label>
           </div>
-          <label class="opt"><input type="checkbox" id="opt-dhl" checked><span>DHL delivery overseas<small>Quoted by your delivery address</small></span><span class="add">quoted</span></label>
-          <label class="opt"><input type="checkbox" id="opt-apo"><span>Apostille<small>If a foreign office asks for it</small></span><span class="add">+$100</span></label>
-          <div class="totals" aria-live="polite">
-            <div class="fee-row"><span>Our service fee</span><strong>$100</strong></div>
-            <div class="fee-row"><span>TAJ government fee</span><strong class="free">Free</strong></div>
-            <div class="fee-row" id="row-apo" hidden><span>Apostille (plus the Ministry's fee)</span><strong>$100</strong></div>
-            <div class="fee-row" id="row-dhl"><span>DHL delivery</span><strong>by address</strong></div>
-            <div class="fee-row total"><span>Estimated total</span><strong id="est-total">$100 USD + courier</strong></div>
-          </div>
-          <p class="est-note">All amounts in USD. Courier is quoted by your delivery address, and your full quote is confirmed before you pay.</p>
         </div>
 
         <div class="checklist" id="collect">
@@ -465,17 +454,24 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         </div>
 
         <div class="btn-row">
-          <a href="/start?service=trn&amp;source=trn-page" class="btn btn-accent">Start my TRN application</a>
         </div>
       </div>
     </div>
       <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
     </div>
   </section>
-
   <section class="band band-tint ">
     <div class="band-in">
-      <p class="band-label">2 · Good to know</p>
+      <p class="band-label">2 · Your price, step by step</p>
+      <div class="ps" data-price-steps><script type="application/json">{"dhl": true, "groups": [{"title": "Your TRN", "rows": [{"label": "Our service fee", "note": "We prepare, submit and collect it", "usd": 100}, {"label": "TAJ government fee", "note": "TAJ does not charge for a TRN", "usd": 0, "text": "Free"}]}, {"title": "Apostille, if you need it", "toggle": true, "rows": [{"label": "Our apostille service", "note": "We take it to the Ministry of Foreign Affairs", "usd": 100}, {"label": "Ministry's apostille fee", "choose": [{"label": "Regular, about 5 working days", "jmd": 3500}, {"label": "24-hour", "jmd": 5000}]}]}, {"title": "Delivery to you", "rows": [{"label": "DHL", "note": "Quoted by your delivery address", "text": "quoted"}]}]}</script></div>
+      <a class="ps-start" href="/start.html?service=trn">Start my TRN application</a>
+    </div>
+  </section>
+
+
+  <section class="band band-white ">
+    <div class="band-in">
+      <p class="band-label">3 · Good to know</p>
       <div class="faq-section">
     <h3>Good to know</h3>
     <div class="faq">
@@ -515,9 +511,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     </div>
   </section>
 
-  <section class="band band-white ">
+  <section class="band band-tint ">
     <div class="band-in">
-      <p class="band-label">3 · More reading</p>
+      <p class="band-label">4 · More reading</p>
       <section class="faq-section resources" aria-labelledby="res-title">
     <h3 id="res-title">Reference &amp; Resources</h3>
     <div class="res-links">
@@ -570,8 +566,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
   (function () {
-    var dhl = document.getElementById('opt-dhl'), apo = document.getElementById('opt-apo');
-    var checks = document.querySelectorAll('#collect .check');
+        var checks = document.querySelectorAll('#collect .check');
     var done = document.getElementById('done'), total = document.getElementById('total'), msg = document.getElementById('readyMsg');
     function val(n) { return document.querySelector('input[name="' + n + '"]:checked').value; }
     function count() {
@@ -580,10 +575,6 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
       done.textContent = n; total.textContent = vis.length; msg.hidden = n < vis.length;
     }
     function update() {
-      var t = 100 + (apo.checked ? 100 : 0) + 0;
-      document.getElementById('row-apo').hidden = !apo.checked;
-      document.getElementById('row-dhl').hidden = !dhl.checked;
-      document.getElementById('est-total').textContent = '$' + t + ' USD' + (dhl.checked ? ' + courier' : '');
       var who = val('who');
       checks.forEach(function (c) { var f = c.getAttribute('data-for'); if (f) { c.hidden = f !== who; if (c.hidden) c.querySelector('input').checked = false; } });
       var by = val('cert') === 'consulate' ? 'a Jamaican embassy or consulate' : 'a Notary Public';
@@ -591,11 +582,12 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
       count();
     }
     document.querySelectorAll('input[name="who"], input[name="cert"]').forEach(function (r) { r.addEventListener('change', update); });
-    [dhl, apo].forEach(function (b) { b.addEventListener('change', update); });
     checks.forEach(function (c) { c.querySelector('input').addEventListener('change', count); });
     update();
   })();
 </script>
 
+<script src="/assets/rates.js"></script>
+<script src="/assets/price-steps.js"></script>
 </body>
 </html>

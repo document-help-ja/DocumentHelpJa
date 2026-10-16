@@ -559,6 +559,8 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 .band-cta .btn-band:hover { background: #1B3A55; }
 @media (max-width: 599px) { .band { padding: 36px 0 40px; } .band-in { padding: 0 16px; } .band-cta .btn-band { width: 100%; } }
 </style>
+<link rel="stylesheet" href="/assets/price-steps.css">
+<style>.band .ps { margin-top: 0; } .band .ps-head { display: none; } .ps-start { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; margin-top: 20px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; } @media (max-width: 599px) { .ps-start { width: 100%; } }</style>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -674,16 +676,6 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
           <h2 id="overseas-title">Overseas proxy</h2>
           <p class="svc-sub">Get fingerprinted where you live and send us the card. No need to fly back.</p>
           <p class="trn-note"><strong>You need a Jamaican TRN</strong> for this service.</p>
-          <p class="price"><span class="lbl">Our fee</span><b>US$100</b><span>Apostille US$100 extra, if you need it</span></p>
-          <div class="taj-fees">
-            <p class="lbl">Plus</p>
-            <div class="fee-line"><span>JCF fee, regular (21 working days)</span><strong>J$3,000</strong></div>
-            <div class="fee-line"><span>JCF fee, express (5 working days)</span><strong>J$6,000</strong></div>
-            <div class="fee-line"><span>Apostille, if needed (plus the Ministry's fee)</span><strong>US$100</strong></div>
-            <div class="fee-line"><span>Return delivery</span><strong class="wrap">Your prepaid DHL envelope</strong></div>
-          </div>
-          <a href="/start?service=police-record&amp;source=police-record-overseas" class="btn btn-dark">Start my overseas case</a>
-          <p class="form-tip">Opens our short request form with Police record already chosen.</p>
           <details class="duo-drop"><summary>What we do, and what you do</summary><div class="duo">
             <div class="we"><h3>We do</h3><ul>
               <li>Check a scan of your fingerprint card before you send it</li>
@@ -709,10 +701,18 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
       </section>
     </div>
   </section>
-
   <section class="band band-tint ">
     <div class="band-in">
-      <p class="band-label">4 · Overseas checklist</p>
+      <p class="band-label">4 · Overseas price, step by step</p>
+      <div class="ps" data-price-steps><script type="application/json">{"dhl": false, "groups": [{"title": "Your police record", "rows": [{"label": "Our service fee", "note": "We apply, pay, submit and collect it", "usd": 100}, {"label": "JCF fee", "choose": [{"label": "Regular, 21 working days", "jmd": 3000}, {"label": "Express, 5 working days", "jmd": 6000}]}]}, {"title": "Apostille, if you need it", "toggle": true, "rows": [{"label": "Our apostille service", "note": "We take it to the Ministry of Foreign Affairs", "usd": 100}, {"label": "Ministry's apostille fee", "choose": [{"label": "Regular, about 5 working days", "jmd": 3500}, {"label": "24-hour", "jmd": 5000}]}]}, {"title": "Return delivery", "rows": [{"label": "Your prepaid DHL envelope", "note": "You include it with your documents", "text": "you send it"}]}]}</script></div>
+      <a class="ps-start" href="/start.html?service=police-record&amp;source=police-record-overseas">Start my overseas case</a>
+    </div>
+  </section>
+
+
+  <section class="band band-white ">
+    <div class="band-in">
+      <p class="band-label">5 · Overseas checklist</p>
       <details class="acc" id="send">
       <summary><h2>What do I send from overseas?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
       <div class="acc-body">
@@ -731,9 +731,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     </div>
   </section>
 
-  <section class="band band-white ">
+  <section class="band band-tint ">
     <div class="band-in">
-      <p class="band-label">5 · Good to know</p>
+      <p class="band-label">6 · Good to know</p>
       <details class="acc" id="fees">
         <summary><h2>How much does a Jamaican police record cost?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
         <div class="acc-body">
@@ -886,5 +886,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
   boxes.forEach(function (b) { b.addEventListener('change', count); });
 })();
 </script>
+<script src="/assets/rates.js"></script>
+<script src="/assets/price-steps.js"></script>
 </body>
 </html>

@@ -370,6 +370,8 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 .band-cta .btn-band:hover { background: #1B3A55; }
 @media (max-width: 599px) { .band { padding: 36px 0 40px; } .band-in { padding: 0 16px; } .band-cta .btn-band { width: 100%; } }
 </style>
+<link rel="stylesheet" href="/assets/price-steps.css">
+<style>.band .ps { margin-top: 0; } .band .ps-head { display: none; } .ps-start { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; margin-top: 20px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; } @media (max-width: 599px) { .ps-start { width: 100%; } }</style>
 </head>
 <body id="top">
 
@@ -434,10 +436,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <p class="card-intro">For birth, marriage and death records that are registered and correct.</p>
       </div>
       <div class="card-body">
-        <div class="price-block">
-          <div class="price">From $3,000 JMD</div>
-          <span class="price-note">From $30 USD overseas, + RGD fee and courier</span>
-        </div>
+        
         <h3 class="list-title">What we handle</h3>
         <ul class="feature-list">
           <li>Apply to the RGD for you as your proxy</li>
@@ -458,7 +457,6 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         </div>
         <p class="who-note" style="margin:-8px 0 20px;">Can't tick them all? You may need a <a href="#search">record search</a>. If your record has an error or something else is unusual, <a href="/start.html?service=certificates">start a request</a> and we will confirm what is possible.</p>
         <div class="btn-row">
-          <a href="/start?service=certificates&amp;source=rgd-certificate-copy" class="btn btn-accent">Start my certificate request</a>
         </div>
       </div>
     </div>
@@ -467,7 +465,16 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 
   <section class="band band-white ">
     <div class="band-in">
-      <p class="band-label">3 · Record search</p>
+      <p class="band-label">3 · Certified copy price, step by step</p>
+      <div class="ps" data-price-steps><script type="application/json">{"dhl": true, "groups": [{"title": "Your certified copy", "rows": [{"label": "Our service fee", "note": "We apply, pay the RGD and collect it", "usd": 30}, {"label": "RGD fee for an overseas order", "note": "Set by the RGD", "usd": 45, "text": "about US$45"}]}, {"title": "Apostille, if you need it", "toggle": true, "rows": [{"label": "Our apostille service", "note": "We take it to the Ministry of Foreign Affairs", "usd": 100}, {"label": "Ministry's apostille fee", "choose": [{"label": "Regular, about 5 working days", "jmd": 3500}, {"label": "24-hour", "jmd": 5000}]}]}, {"title": "Delivery to you", "rows": [{"label": "DHL", "note": "Quoted by your delivery address", "text": "quoted"}]}]}</script></div>
+      <p class="ps-note" style="margin-top:14px">In Jamaica? Our fee is J$3,000, plus the RGD fee: J$4,000 regular or J$6,000 express. Collect in person or have it couriered.</p>
+      <a class="ps-start" href="/start.html?service=certificates&amp;source=rgd-certificate-copy">Start my certificate request</a>
+    </div>
+  </section>
+
+  <section class="band band-tint ">
+    <div class="band-in">
+      <p class="band-label">4 · Record search</p>
       <div class="service-card" id="search">
       <div class="card-head">
         <span class="badge">Record search</span>
@@ -498,9 +505,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     </div>
   </section>
 
-  <section class="band band-tint ">
+  <section class="band band-white ">
     <div class="band-in">
-      <p class="band-label">4 · Good to know</p>
+      <p class="band-label">5 · Good to know</p>
       <div class="faq-section">
     <h3>Good to know</h3>
     <div class="faq">
@@ -542,9 +549,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     </div>
   </section>
 
-  <section class="band band-white ">
+  <section class="band band-tint ">
     <div class="band-in">
-      <p class="band-label">5 · More reading</p>
+      <p class="band-label">6 · More reading</p>
       <section class="faq-section resources" aria-labelledby="res-title">
     <h3 id="res-title">Reference &amp; Resources</h3>
     <div class="res-links">
@@ -606,5 +613,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
   });
 </script>
 
+<script src="/assets/rates.js"></script>
+<script src="/assets/price-steps.js"></script>
 </body>
 </html>

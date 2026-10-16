@@ -1,0 +1,23 @@
+.ps { margin: 28px 0 0; padding: 20px 18px; border: 1px solid #D5DCE3; border-radius: 12px; background: #fff; font-family: Inter, system-ui, sans-serif; }
+.ps-head { margin: 0 0 18px; font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #7A5C17; }
+.ps-head::after { content: ""; display: block; width: 32px; height: 3px; border-radius: 2px; background: #C89B3C; margin-top: 8px; }
+.ps-group { padding: 0 0 16px; margin: 0 0 16px; border-bottom: 1px solid #E3E8ED; }
+.ps-gt { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 0 0 8px; font-weight: 600; color: #0F2537; }
+.ps-add { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 12px; border: 1px solid #C9D1D8; border-radius: 999px; font-size: .88rem; font-weight: 500; color: #0F2537; cursor: pointer; white-space: nowrap; }
+.ps-add input { width: 18px; height: 18px; accent-color: #0F2537; margin: 0; }
+.ps-row, .ps-opt { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; padding: 8px 0; font-size: .98rem; color: #2F3538; }
+.ps-row + .ps-row { border-top: 1px dashed #E3E8ED; }
+.ps-row small, .ps-opt small { display: block; font-size: .82rem; color: #5B6670; margin-top: 2px; }
+.ps-row b, .ps-opt b { flex-shrink: 0; color: #0F2537; font-weight: 600; text-align: right; white-space: nowrap; }
+.ps-group.off .ps-row, .ps-group.off .ps-choose { opacity: .4; }
+.ps-choose { border: 0; margin: 0; padding: 0; }
+.ps-choose legend { padding: 8px 0 4px; font-size: .92rem; color: #2F3538; }
+.ps-opt { align-items: center; min-height: 48px; padding: 8px 12px; margin: 6px 0 0; border: 1px solid #D5DCE3; border-radius: 10px; cursor: pointer; }
+.ps-opt input { width: 18px; height: 18px; margin: 0; accent-color: #0F2537; flex-shrink: 0; }
+.ps-opt span { flex: 1; }
+.ps-opt:has(input:checked) { border-color: #0F2537; box-shadow: inset 0 0 0 1px #0F2537; }
+.ps-total { margin: 4px 0 0; padding: 14px 16px; border-radius: 10px; background: #0F2537; color: #fff; }
+.ps-tl { margin: 0; font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #F6DFA6; }
+.ps-tv { margin: 4px 0 2px; font-size: 1.5rem; font-weight: 600; }
+.ps-ts { margin: 0; font-size: .82rem; color: #C9D1D8; }
+.ps-note { margin: 12px 0 0; font-size: .82rem; line-height: 1.5; color: #5B6670; }
