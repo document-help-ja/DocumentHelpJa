@@ -33,7 +33,7 @@
         "url": "https://documenthelpja.com/jamaican-trn-application-overseas-diaspora.html",
         "areaServed": "Worldwide",
         "provider": { "@type": "ProfessionalService", "@id": "https://documenthelpja.com/#business", "name": "Laura Clarke Administrative Services" },
-        "offers": { "@type": "Offer", "price": "70.00", "priceCurrency": "USD", "description": "Service fee. TAJ does not charge for a TRN. Apostille and courier are extra; courier is quoted by address." }
+        "offers": { "@type": "Offer", "price": "100.00", "priceCurrency": "USD", "description": "Service fee. TAJ does not charge for a TRN. Apostille and courier are extra; courier is quoted by address." }
       },
       {
         "@type": "BreadcrumbList",
@@ -279,7 +279,7 @@
       </div>
       <div class="card-body">
         <div class="price-block">
-          <div class="price">$70 USD</div>
+          <div class="price">$100 USD</div>
           <span class="price-note">TAJ charges no government fee for a TRN</span>
         </div>
 
@@ -307,11 +307,11 @@
           <label class="opt"><input type="checkbox" id="opt-dhl" checked><span>DHL delivery overseas<small>Quoted by your delivery address</small></span><span class="add">quoted</span></label>
           <label class="opt"><input type="checkbox" id="opt-apo"><span>Apostille<small>If a foreign office asks for it</small></span><span class="add">+$30</span></label>
           <div class="totals" aria-live="polite">
-            <div class="fee-row"><span>Our service fee</span><strong>$70</strong></div>
+            <div class="fee-row"><span>Our service fee</span><strong>$100</strong></div>
             <div class="fee-row"><span>TAJ government fee</span><strong class="free">Free</strong></div>
             <div class="fee-row" id="row-apo" hidden><span>Apostille</span><strong>$30</strong></div>
             <div class="fee-row" id="row-dhl"><span>DHL delivery</span><strong>by address</strong></div>
-            <div class="fee-row total"><span>Estimated total</span><strong id="est-total">$70 USD + courier</strong></div>
+            <div class="fee-row total"><span>Estimated total</span><strong id="est-total">$100 USD + courier</strong></div>
           </div>
           <p class="est-note">All amounts in USD. Courier is quoted by your delivery address, and your full quote is confirmed before you pay.</p>
         </div>
@@ -430,7 +430,7 @@
       done.textContent = n; total.textContent = vis.length; msg.hidden = n < vis.length;
     }
     function update() {
-      var t = 70 + (apo.checked ? 30 : 0) + 0;
+      var t = 100 + (apo.checked ? 30 : 0) + 0;
       document.getElementById('row-apo').hidden = !apo.checked;
       document.getElementById('row-dhl').hidden = !dhl.checked;
       document.getElementById('est-total').textContent = '$' + t + ' USD' + (dhl.checked ? ' + courier' : '');
