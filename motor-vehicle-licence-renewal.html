@@ -547,7 +547,7 @@
             <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total>J$4,000 + TAJ's fee</b><small data-sum>Choose above to see your full total.</small></div>
             <p class="bill-note">Renewing for 6 or 24 months? <a href="#periods">See the periods</a>. We confirm your exact figure before you pay.</p>
           </div>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20my%20fitness%20and%20insurance%20are%20valid%20and%20I%27d%20like%20you%20to%20renew%20my%20motor%20vehicle%20registration%20online.%0AEngine%20size%20%28cc%29%3A%20%0AFitness%20expires%3A%20" class="btn btn-wa" target="_blank" rel="noopener">Start my online renewal</a>
+          <a href="/start.html?service=motor-vehicle&amp;source=mv-online" class="btn btn-dark">Start my online renewal</a>
           <div class="duo">
             <div class="we"><h3>We do</h3><ul>
               <li>Calculate your exact TAJ fee before you pay</li>
@@ -598,7 +598,7 @@
             <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total>J$4,000 + TAJ's fees</b><small data-sum>Choose above to see your full total.</small></div>
             <p class="bill-note">Renewing for 6 or 24 months? <a href="#periods">See the periods</a>. We confirm your exact figure before you pay.</p>
           </div>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20my%20fitness%20has%20expired%20and%20I%20need%20the%20Fitness%20Pre-Pay%20and%20Registration%20service.%0ATRN%3A%20%0AVehicle%20class%20%28private%20car%20or%20truck%2C%20commercial%2C%20motorcycle%2C%20trailer%20or%20tractor%29%3A%20%0AEngine%20size%20%28cc%29%3A%20" class="btn btn-wa" target="_blank" rel="noopener">Start my fitness pre-pay</a>
+          <a href="/start.html?service=motor-vehicle&amp;source=mv-fitness-prepay" class="btn btn-dark">Start my fitness pre-pay</a>
           <div class="duo">
             <div class="we"><h3>We do</h3><ul>
               <li>Pre-pay your TAJ fitness fee</li>
@@ -724,8 +724,8 @@
     var box = bill.querySelector('.bill-total'), total = bill.querySelector('[data-total]'), sum = bill.querySelector('[data-sum]');
     var doors = Array.prototype.slice.call(bill.querySelectorAll('.door'));
     var btn = bill.parentNode.querySelector('.btn-wa');
-    var href0 = btn.getAttribute('href'), cut = href0.indexOf('text=') + 5;
-    var msg0 = decodeURIComponent(href0.slice(cut));
+    var href0 = btn ? btn.getAttribute('href') : '', cut = href0.indexOf('text=') + 5;
+    var msg0 = btn ? decodeURIComponent(href0.slice(cut)) : '';
     function update() {
       var known = base, missing = [], parts = [money(base) + ' our fee'], msg = msg0;
       doors.forEach(function (door) {
@@ -741,9 +741,9 @@
       if (!picked) return;
       box.classList.toggle('todo', missing.length > 0);
       total.textContent = money(known) + (missing.length ? ' + ' + missing.join(' and ') + (missing.length > 1 ? ' fees' : ' fee') : '');
-      sum.textContent = missing.length ? (picked < doors.length ? 'Choose the rest above to see your full total.' : 'We confirm the rest on WhatsApp.') : parts.join(' + ');
+      sum.textContent = missing.length ? (picked < doors.length ? 'Choose the rest above to see your full total.' : 'We confirm the rest with you.') : parts.join(' + ');
       if (!missing.length) msg += '\nTotal shown on the page: ' + money(known) + ' (12 months)';
-      btn.setAttribute('href', href0.slice(0, cut) + encodeURIComponent(msg));
+      if (btn) btn.setAttribute('href', href0.slice(0, cut) + encodeURIComponent(msg));
     }
     doors.forEach(function (door) {
       door.addEventListener('change', update);

@@ -569,7 +569,6 @@
             <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total>J$5,000 + JCF fee</b><small data-sum>Choose above to see your full total.</small></div>
           </div>
           <a href="/start?service=police-record&amp;source=police-record-local" class="btn btn-dark">Start my application prep</a>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20am%20in%20Jamaica%20and%20need%20a%20police%20record%20%28local%20application%20prep%29.%0AProcessing%20speed%20%28regular%2C%20express%20or%20next%20day%29%3A%20%0AI%20have%20valid%20photo%20ID%2C%20a%20TRN%20and%20two%20passport%20photos%3A%20" class="btn btn-wa" target="_blank" rel="noopener">Ask on WhatsApp</a>
           <p class="form-tip">Opens our short request form with Police record already chosen.</p>
           <div class="duo">
             <div class="we"><h3>We do</h3><ul>
@@ -609,7 +608,6 @@
             <div class="fee-line"><span>Return delivery</span><strong class="wrap">Your prepaid DHL envelope</strong></div>
           </div>
           <a href="/start?service=police-record&amp;source=police-record-overseas" class="btn btn-dark">Start my overseas case</a>
-          <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20am%20overseas%20and%20need%20a%20Jamaican%20police%20record%20%28overseas%20proxy%29.%0ACountry%20I%20live%20in%3A%20%0AProcessing%20speed%20%28regular%20or%20express%29%3A%20%0AI%20have%20a%20Jamaican%20TRN%20%28yes%20or%20no%29%3A%20" class="btn btn-wa" target="_blank" rel="noopener">Ask on WhatsApp</a>
           <p class="form-tip">Opens our short request form with Police record already chosen.</p>
           <div class="duo">
             <div class="we"><h3>We do</h3><ul>
@@ -764,8 +762,8 @@
     var box = bill.querySelector('.bill-total'), total = bill.querySelector('[data-total]'), sum = bill.querySelector('[data-sum]');
     var doors = Array.prototype.slice.call(bill.querySelectorAll('.door'));
     var btn = bill.parentNode.querySelector('.btn-wa');
-    var href0 = btn.getAttribute('href'), cut = href0.indexOf('text=') + 5;
-    var msg0 = decodeURIComponent(href0.slice(cut));
+    var href0 = btn ? btn.getAttribute('href') : '', cut = href0.indexOf('text=') + 5;
+    var msg0 = btn ? decodeURIComponent(href0.slice(cut)) : '';
     function update() {
       var known = base, missing = [], parts = [money(base) + ' our fee'], msg = msg0;
       doors.forEach(function (door) {
@@ -781,9 +779,9 @@
       if (!picked) return;
       box.classList.toggle('todo', missing.length > 0);
       total.textContent = money(known) + (missing.length ? ' + ' + missing.join(' and ') + (missing.length > 1 ? ' fees' : ' fee') : '');
-      sum.textContent = missing.length ? (picked < doors.length ? 'Choose the rest above to see your full total.' : 'We confirm the rest on WhatsApp.') : parts.join(' + ');
+      sum.textContent = missing.length ? (picked < doors.length ? 'Choose the rest above to see your full total.' : 'We confirm the rest with you.') : parts.join(' + ');
       if (!missing.length) msg += '\nTotal shown on the page: ' + money(known) + '';
-      btn.setAttribute('href', href0.slice(0, cut) + encodeURIComponent(msg));
+      if (btn) btn.setAttribute('href', href0.slice(0, cut) + encodeURIComponent(msg));
     }
     doors.forEach(function (door) {
       door.addEventListener('change', update);
