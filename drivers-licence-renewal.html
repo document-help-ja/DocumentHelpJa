@@ -472,6 +472,33 @@
 .duo-drop[open] > summary::after { content: "\2212"; background: #0F2537; color: #C89B3C; }
 .duo-drop .duo { margin: 0 !important; padding: 0 16px 18px; }
 </style>
+<style id="bands">
+/* One band per idea: sections alternate white and tint (Oct 2026) */
+main.banded ~ footer, main.banded + footer { margin-top: 0 !important; }
+main.banded { background: none !important; padding: 0 !important; margin: 0 !important; max-width: none !important; }
+.band { padding: 44px 0 48px; }
+.band-white { background: #FFFFFF; }
+.band-tint { background: #EEF1F4; border-top: 1px solid #D5DCE3; border-bottom: 1px solid #D5DCE3; }
+.band-cream { background: #F7F4EC; border-top: 2px solid #C89B3C; }
+.band + .band-white { border-top: 1px solid #E3E8ED; }
+.band-in { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
+.band-label { margin: 0 !important; font: 600 .78rem/1.2 Inter, system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #7A5C17; }
+.band-label::after { content: ""; display: block; width: 36px; height: 3px; border-radius: 2px; background: #C89B3C; margin: 10px 0 22px; }
+.band-title { margin: 0 0 6px !important; font: 600 1.35rem/1.3 Inter, system-ui, sans-serif; color: #0F2537; }
+.band-text { margin: 0 0 20px !important; color: #3E4549; }
+.band .svc-grid, .band .service-grid { margin: 0 !important; display: block !important; max-width: none !important; }
+.band .svc, .band .service-card { margin: 0 !important; }
+.band .jump { display: grid !important; margin-bottom: 0 !important; }
+.band .lcs-options { margin-bottom: 0 !important; }
+.band .lcs-checked { margin: 16px 0 0 !important; }
+.band .more-title, .band .faq-section > h3, .band .group-title { display: none !important; }
+.band .faq-section { margin: 0 !important; padding: 0 !important; border: 0 !important; }
+.band .acc + .acc, .band details + details { margin-top: 12px; }
+.band .links { margin-top: 24px; }
+.band-cta .btn-band { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; }
+.band-cta .btn-band:hover { background: #1B3A55; }
+@media (max-width: 599px) { .band { padding: 36px 0 40px; } .band-in { padding: 0 16px; } .band-cta .btn-band { width: 100%; } }
+</style>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -518,14 +545,21 @@
   </div>
 </section>
 
-<main id="main">
-  <div class="wrap narrow">
-    <nav class="jump always" aria-label="Choose your service">
+<main id="main" class="banded">
+  <section class="band band-white ">
+    <div class="band-in">
+      <p class="band-label">1 · Choose</p>
+      <nav class="jump always" aria-label="Choose your service">
       <a href="#renewal">Licence renewal<small>J$4,000 + TAJ fee</small></a>
       <a href="#ticket-lookup">Ticket lookup<small>J$1,500</small></a>
     </nav>
-    <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
-    <div class="svc-grid">
+      <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
+    </div>
+  </section>
+
+  <section class="band band-tint ">
+    <div class="band-in">
+      <p class="band-label">2 · Licence renewal</p>
       <section class="svc" id="renewal" aria-labelledby="renewal-title">
         <div class="tier done"><b>Done for you</b><span>You collect your card at TAJ</span></div>
         <div class="svc-in">
@@ -558,7 +592,12 @@
           </div>
         </div>
       </section>
+    </div>
+  </section>
 
+  <section class="band band-white ">
+    <div class="band-in">
+      <p class="band-label">3 · Ticket lookup</p>
       <section class="svc" id="ticket-lookup" aria-labelledby="lookup-title">
         <div class="tier done"><b>Done for you</b><span>On its own, without a renewal</span></div>
         <div class="svc-in">
@@ -582,9 +621,13 @@
         </div>
       </section>
     </div>
-    <p class="aside">Lost or stolen licence? Replacements are done in person at TAJ. <a href="/jamaica-drivers-license-renewal-guide">See our guide</a> for the steps.</p>
+  </section>
 
-    <details class="acc" id="collect">
+  <section class="band band-tint ">
+    <div class="band-in">
+      <p class="band-label">4 · Collecting your licence</p>
+      <p class="aside">Lost or stolen licence? Replacements are done in person at TAJ. <a href="/jamaica-drivers-license-renewal-guide">See our guide</a> for the steps.</p>
+      <details class="acc" id="collect">
       <summary><h2>Your collection checklist</h2><span class="acc-btn" aria-hidden="true"></span></summary>
       <div class="acc-body">
         <p class="progress" aria-live="polite"><span id="done">0</span> of <span id="total">3</span> ready</p>
@@ -596,9 +639,12 @@
         <p class="ready" id="readyMsg" hidden>All set. Private licence holders are ready to collect. Add your medical certificate if it applies to you.</p>
       </div>
     </details>
+    </div>
+  </section>
 
-    <p class="more-title">Good to know</p>
-
+  <section class="band band-white ">
+    <div class="band-in">
+      <p class="band-label">5 · Good to know</p>
       <details class="acc" id="who">
         <summary><h2>Who is this service for?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
         <div class="acc-body">
@@ -627,12 +673,18 @@
           <p>Yes, for up to 60 days. Your official TAJ payment receipt, kept with your expired licence, is a valid permit to drive on Jamaican roads for up to 60 days from the date of payment. This applies to renewals paid online.</p>
           <p>Keep the receipt in the vehicle and collect your new card within the 60 days.</p></div>
       </details>
-
-    <div class="links">
+      <div class="links">
       <a class="guide-link" href="/jamaica-drivers-license-renewal-guide"><span><strong>Driver's licence renewal guide</strong><small>Ticket holds, same-day offices, medical rules and replacements</small></span><span class="go" aria-hidden="true">→</span></a>
       <a class="guide-link" href="/motor-vehicle-licence-renewal.html"><span><strong>Motor vehicle licence renewal</strong><small>Renew your registration without the Tax Office line</small></span><span class="go" aria-hidden="true">→</span></a>
     </div>
-  </div>
+    </div>
+  </section>
+
+  <section class="band band-cream ">
+    <div class="band-in">
+      <div class="band-cta"><h2 class="band-title">Ready to start?</h2><p class="band-text">Choose your service, agree to our terms, and we take it from there.</p><a class="btn-band" href="/start.html?service=drivers-licence">Start a request</a></div>
+    </div>
+  </section>
 </main>
 
 <footer class="lcf">

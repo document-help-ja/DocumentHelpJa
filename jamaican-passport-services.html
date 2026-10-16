@@ -671,6 +671,40 @@
 #find .doors { grid-template-columns: 1fr !important; }
 .fee-grid { grid-template-columns: 1fr !important; }
 </style>
+<style id="bands">
+/* One band per idea: sections alternate white and tint (Oct 2026) */
+main.banded ~ footer, main.banded + footer { margin-top: 0 !important; }
+main.banded { background: none !important; padding: 0 !important; margin: 0 !important; max-width: none !important; }
+.band { padding: 44px 0 48px; }
+.band-white { background: #FFFFFF; }
+.band-tint { background: #EEF1F4; border-top: 1px solid #D5DCE3; border-bottom: 1px solid #D5DCE3; }
+.band-cream { background: #F7F4EC; border-top: 2px solid #C89B3C; }
+.band + .band-white { border-top: 1px solid #E3E8ED; }
+.band-in { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
+.band-label { margin: 0 !important; font: 600 .78rem/1.2 Inter, system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #7A5C17; }
+.band-label::after { content: ""; display: block; width: 36px; height: 3px; border-radius: 2px; background: #C89B3C; margin: 10px 0 22px; }
+.band-title { margin: 0 0 6px !important; font: 600 1.35rem/1.3 Inter, system-ui, sans-serif; color: #0F2537; }
+.band-text { margin: 0 0 20px !important; color: #3E4549; }
+.band .svc-grid, .band .service-grid { margin: 0 !important; display: block !important; max-width: none !important; }
+.band .svc, .band .service-card { margin: 0 !important; }
+.band .jump { display: grid !important; margin-bottom: 0 !important; }
+.band .lcs-options { margin-bottom: 0 !important; }
+.band .lcs-checked { margin: 16px 0 0 !important; }
+.band .more-title, .band .faq-section > h3, .band .group-title { display: none !important; }
+.band .faq-section { margin: 0 !important; padding: 0 !important; border: 0 !important; }
+.band .acc + .acc, .band details + details { margin-top: 12px; }
+.band .links { margin-top: 24px; }
+.band-cta .btn-band { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; }
+.band-cta .btn-band:hover { background: #1B3A55; }
+@media (max-width: 599px) { .band { padding: 36px 0 40px; } .band-in { padding: 0 16px; } .band-cta .btn-band { width: 100%; } }
+
+.js:not(.in-case):not(.show-rules) .room-band { display: none; }
+.band .gtk { margin: 0 !important; padding: 0 !important; background: none !important; border: 0 !important; }
+.band #find, #find.band { }
+.band .doors { margin: 0 0 0 !important; }
+.band .guide-link { margin: 0 0 20px !important; }
+.room-band { padding-top: 28px; }
+</style>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -719,14 +753,11 @@
   </div>
 </section>
 
-<main id="main">
-  <div class="wrap">
-
-    <!-- THE PORCH: three doors -->
-    <section class="home-only" id="find" aria-labelledby="find-title">
-      <h2 class="sr-only" id="find-title">Choose what you need</h2>
-      <p class="lcs-checked" style="margin:0 0 22px">Fees checked October 2026. Government fees are separate.</p>
-      <p class="find-label">Our service</p>
+<main id="main" class="banded">
+  <section class="band band-white home-only" id="find">
+    <div class="band-in">
+      <p class="band-label">1 · Our service</p>
+      <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
       <div class="doors">
         <a class="door service-door" href="#renew">
           <h3>Digital adult renewal</h3>
@@ -735,19 +766,31 @@
           <span class="door-cta">Check if you qualify <span aria-hidden="true">→</span></span>
         </a>
       </div>
+    </div>
+  </section>
 
+  <section class="band band-tint home-only">
+    <div class="band-in">
+      <p class="band-label">2 · Good to know</p>
       <div class="gtk" id="good-to-know">
-        <p class="find-label">Good to know</p>
-        <h3>Not a digital renewal?</h3>
+        <h2 class="band-title">Not a digital renewal?</h2>
         <p>These are done on paper, in person, by you. Tap yours to see the steps.</p>
         <ul class="gtk-list">
           <li><a href="#first-passport">First adult passport <span class="go" aria-hidden="true">→</span></a></li>
           <li><a href="#child">Child's passport, new or renewal <span class="go" aria-hidden="true">→</span></a></li>
           <li><a href="#name-change">Renewal with a name change <span class="go" aria-hidden="true">→</span></a></li>
           <li><a href="#replace">Lost, stolen or damaged <span class="go" aria-hidden="true">→</span></a></li>
-          <li><a href="/jamaican-citizenship-application.html">Citizenship by descent <small style="font-weight:400;color:#565E63">US$50, overseas</small> <span class="go" aria-hidden="true">→</span></a></li>
+          <li><a href="/jamaican-citizenship-application.html"><span>Citizenship by descent<small style="display:block;font-weight:400;color:#565E63;margin-top:2px">US$50, for applicants overseas</small></span> <span class="go" aria-hidden="true">→</span></a></li>
         </ul>
-        <div id="consult">
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-white home-only">
+    <div class="band-in">
+      <p class="band-label">3 · Book a consultation</p>
+      <div id="consult">
           <div class="start consult-box">
             <h3>Want to talk it through? Book a consultation</h3>
             <p class="cfee"><b>J$5,000</b> · US$50 overseas</p>
@@ -762,15 +805,137 @@
             <a class="btn btn-dark btn-block" href="/start.html?service=consultation">Book a consultation</a>
           </div>
         </div>
-      </div>
+    </div>
+  </section>
+
+  <section class="band band-tint home-only">
+    <div class="band-in">
+      <p class="band-label">4 · More about our service</p>
       <a class="guide-link" href="/jamaica-passport-guide">
         <span><strong>How to Apply for or Renew a Jamaican Passport: Step by Step</strong><small>Prefer to read first? Our guide to the whole process</small></span>
         <span class="go" aria-hidden="true">→</span>
       </a>
-    </section>
+      <details class="acc home-only" id="how-it-works">
+      <summary><h2>How our passport service works</h2><span class="acc-btn" aria-hidden="true"></span></summary>
+      <div class="acc-body">
+        <ol class="steps">
+          <li><strong>Check your route</strong>Answer a few questions to see if you qualify for a digital renewal. Paper cases: the steps are on this page, and a consultation is available.</li>
+          <li><strong>Agree your part</strong>We confirm our fee and PICA's fee before you pay.</li>
+          <li><strong>We check your documents</strong>Send photos or scans. We check names, dates and your photo against PICA's rules and tell you what to fix.</li>
+          <li><strong>We apply and track</strong>We make the digital application and keep you updated until the passport is delivered.</li>
+        </ol>
+        <div class="delivery"><strong>Getting your documents back:</strong><span>Local pickup</span><span>International courier, DHL or FedEx</span></div>
+        <h3 class="sub" id="on-your-behalf">Can someone submit my passport application for me?</h3>
+        <p>For an adult renewal by digital application, yes: we make it for you from start to finish.</p>
+        <p>For paper applications, including a renewal with a name change, you complete and submit the application yourself; a consultation can help you get it right. PICA does accept a paper application lodged by someone you authorise with a notarised letter, but it is strict on signatures: the signature on the letter must match the one on your ID, or the application is turned down. We do not offer this in-person submission service. PICA needs the parent and child present for a child's passport. A lost, stolen or damaged passport starts with your own reports, which you make yourself.</p>
+      </div>
+    </details>
+      <details class="acc home-only" id="fees">
+      <summary><h2>Jamaican passport fees: ours and PICA's</h2><span class="acc-btn" aria-hidden="true"></span></summary>
+      <div class="acc-body">
+        <p>You pay two separate amounts: our service fee, and PICA's government fee. US dollar prices apply to clients overseas. Paper applications (first adult passport, child's passport, name change, lost, stolen or damaged) you make yourself. If you want guidance, our consultation is J$5,000, or US$50 overseas.</p>
+        <p>The PICA amounts shown are its standard fees. PICA sets the final amount, and it depends on the country you apply from. We confirm your PICA fee with you before you start, and you can check it yourself with <a href="https://passport.pica-online.com/PICA_ONLINE/" target="_blank" rel="noopener">PICA's cost checker</a>.</p>
+        <p class="fee-sep">Done for you</p>
+        <div class="fee-grid">
+          <article class="fee-card"><h3>Adult renewal: digital application</h3><div class="fee-row">
+            <div class="fee-cell"><span class="fee-label">Our fee</span><span class="fee-amount">J$5,000</span><span class="fee-alt">US$70 overseas</span></div>
+            <div class="fee-cell"><span class="fee-label">PICA fee, from</span><span class="fee-amount">J$6,500</span><span class="fee-alt">US$80 overseas, plus courier</span></div></div></article>
+        </div>
+        <p class="fee-sep">Paper applications: you apply, consultation optional</p>
+        <div class="fee-grid">
+          <article class="fee-card"><h3>Name change</h3><div class="fee-row">
+            <div class="fee-cell"><span class="fee-label">Consultation, optional</span><span class="fee-amount">J$5,000</span><span class="fee-alt">US$50 overseas</span></div>
+            <div class="fee-cell"><span class="fee-label">PICA fee, from</span><span class="fee-amount">J$6,500</span><span class="fee-alt">US$80 overseas</span></div></div></article>
+          <article class="fee-card"><h3>Child's passport, new or renewal</h3><div class="fee-row">
+            <div class="fee-cell"><span class="fee-label">Consultation, optional</span><span class="fee-amount">J$5,000</span><span class="fee-alt">US$50 overseas</span></div>
+            <div class="fee-cell"><span class="fee-label">PICA fee, from</span><span class="fee-amount">J$4,000</span><span class="fee-alt">US$50 overseas</span></div></div></article>
+          <article class="fee-card"><h3>First adult passport</h3><div class="fee-row">
+            <div class="fee-cell"><span class="fee-label">Consultation, optional</span><span class="fee-amount">J$5,000</span><span class="fee-alt">US$50 overseas</span></div>
+            <div class="fee-cell"><span class="fee-label">PICA fee, from</span><span class="fee-amount">J$6,500</span><span class="fee-alt">US$80 overseas</span></div></div></article>
+          <article class="fee-card"><h3>Lost, stolen or damaged: adult</h3><div class="fee-row">
+            <div class="fee-cell"><span class="fee-label">Consultation, optional</span><span class="fee-amount">J$5,000</span><span class="fee-alt">US$50 overseas</span></div>
+            <div class="fee-cell"><span class="fee-label">PICA fee, from</span><span class="fee-amount">J$11,500</span><span class="fee-alt">US$160 overseas</span></div></div></article>
+          <article class="fee-card"><h3>Lost, stolen or damaged: child</h3><div class="fee-row">
+            <div class="fee-cell"><span class="fee-label">Consultation, optional</span><span class="fee-amount">J$5,000</span><span class="fee-alt">US$50 overseas</span></div>
+            <div class="fee-cell"><span class="fee-label">PICA fee, from</span><span class="fee-amount">J$7,000</span><span class="fee-alt">US$100 overseas</span></div></div></article>
+        </div>
+        <p class="fee-sep">PICA's expedited service</p>
+        <div class="fee-grid">
+          <article class="fee-card"><h3>Adult</h3><div class="fee-row">
+            <div class="fee-cell"><span class="fee-label">Kingston head office</span><span class="fee-alt">Three days J$9,500<br>Next day J$11,500<br>Same day J$16,500</span></div>
+            <div class="fee-cell"><span class="fee-label">Regional and outposts</span><span class="fee-alt">Seven days J$9,500<br>Five days J$11,500</span></div></div></article>
+          <article class="fee-card"><h3>Child</h3><div class="fee-row">
+            <div class="fee-cell"><span class="fee-label">Kingston head office</span><span class="fee-alt">Three days J$6,000<br>Next day J$7,000<br>Same day J$9,000</span></div>
+            <div class="fee-cell"><span class="fee-label">Regional and outposts</span><span class="fee-alt">Seven days J$6,000<br>Five days J$7,000</span></div></div></article>
+        </div>
+        <p class="note" style="margin-top:14px">PICA's fees are taken from its published schedule and can change; overseas missions may add a processing fee. Always confirm on <a href="https://www.pica.gov.jm/passport/fees" target="_blank" rel="noopener">PICA's official fee page</a>. Apostille for use abroad is available as an add-on to documents we handle.</p>
+      </div>
+    </details>
+      <details class="acc home-only" id="terms">
+      <summary><h2>Service terms</h2><span class="acc-btn" aria-hidden="true"></span></summary>
+      <div class="acc-body">
+        <ul>
+          <li><strong>We are a private, independent service.</strong> We are not a government agency, and we are not affiliated with, endorsed by or acting on behalf of PICA or the Government of Jamaica. We do not replace or compete with any public agency. You can apply to PICA directly at any time.</li>
+          <li><strong>A consultation is guidance, not a submission.</strong> We do not fill in or submit your application; you do that yourself. Consultations are paid in advance by bank transfer, after you agree to our terms.</li>
+          <li><strong>PICA decides.</strong> We check and prepare your application to PICA's published rules. PICA makes the final decision on every application and may ask for more documents.</li>
+          <li><strong>Government fees are separate and non-refundable.</strong> PICA's fees are paid to the agency and are non-refundable.</li>
+          <li><strong>Timelines are estimates.</strong> Processing is done by PICA and delivery by the courier. We cannot guarantee an arrival date.</li>
+          <li><strong>Your information must be accurate.</strong> You are responsible for the truth of the details and documents you give us.</li>
+        </ul>
+        <p>By proceeding you agree to our full <a href="/terms.html">Terms &amp; Conditions</a>, which also cover our service fee.</p>
+      </div>
+    </details>
+      <details class="acc home-only" id="faq">
+      <summary><h2>More passport questions</h2><span class="acc-btn" aria-hidden="true"></span></summary>
+      <div class="acc-body">
+        <h3 class="sub" style="margin-top:0">Can I renew my Jamaican passport before it expires?</h3>
+        <p>Yes. PICA accepts digital applications once the passport has expired or has less than one year left. With more than a year left a digital application is not open to you, and you would apply on paper at a PICA office or Jamaican mission.</p>
+        <h3 class="sub">Can I renew my Jamaican passport from overseas?</h3>
+        <p>Yes. Adults who meet PICA's online conditions renew through the online portal from anywhere and have the passport couriered to them. Everyone else applies on paper through the nearest Jamaican embassy, high commission or consulate. PICA offers no expedited service to overseas applicants.</p>
+        <h3 class="sub">Do I need a Justice of the Peace to sign my renewal?</h3>
+        <p>Not for a straightforward adult renewal. If your name has not changed, PICA no longer requires the form or photo to be certified. Name changes, children, first passports and replacements all need a certifying official.</p>
+        <h3 class="sub">How will I receive my new passport?</h3>
+        <p>For digital applications, PICA couriers the passport to your address or you collect it at a PICA office. For paper applications you submit yourself, you collect or receive it as the office or mission where you submitted directs.</p>
+        <h3 class="sub">Can you guarantee my passport will arrive by a certain date?</h3>
+        <p>No. We make or prepare your application promptly, but PICA handles processing and the courier handles delivery. Start well ahead of any travel date.</p>
+        <h3 class="sub">Are PICA's fees refundable?</h3>
+        <p>No. PICA's fees are paid to the agency and are non-refundable. Our service fee is separate and is covered in our Terms &amp; Conditions.</p>
+        <p class="note" style="margin:18px 0 0">Something else? See <a href="/jamaica-passport-guide">How to Apply for or Renew a Jamaican Passport: Step by Step</a>, our <a href="/faq.html">general FAQ</a> or the <a href="/insights.html">Insights guides</a>.</p>
+      </div>
+    </details>
+    </div>
+  </section>
 
-    <!-- DOOR 1: NEW -->
-    <section class="case route" id="new" data-name="New passport" aria-labelledby="new-title">
+  <section class="band band-white home-only">
+    <div class="band-in">
+      <p class="band-label">5 · Stay up to date</p>
+      <section class="card nl home-only" id="newsletter" aria-labelledby="nl-title">
+      <h2 id="nl-title">Get It Right the First Time</h2>
+      <p style="margin:0">Free updates when PICA and other Jamaican agencies change their rules, fees or processing times.</p>
+      <form id="nl-form" class="nl-form" data-newsletter data-success="nl-ok" data-error="nl-err">
+        <label for="nl-email" class="sr-only">Email address</label>
+        <input id="nl-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+        <button type="submit" class="btn" id="nl-btn">Send me the updates</button>
+      </form>
+      <p class="nl-err" id="nl-err" role="alert" hidden>That didn't go through. Please try again, or message Laura on WhatsApp.</p>
+      <div class="nl-ok" id="nl-ok" role="status" hidden><strong>You're on the list.</strong> A welcome email is on its way. If you do not see it in a few minutes, look in your spam folder.</div>
+      <p class="fine">No spam. Unsubscribe any time.</p>
+    </section>
+      <section class="card home-only" aria-labelledby="related-title" style="margin-bottom:0">
+      <h2 id="related-title">Related services</h2>
+      <div class="related">
+        <a href="/jamaican-citizenship-application.html"><strong>Citizenship by descent</strong><small>Needed before a first passport through a parent or grandparent</small></a>
+        <a href="/jamaican-rgd-certificates.html"><strong>RGD birth, marriage and death certificates</strong><small>Replace a missing birth or marriage certificate</small></a>
+        <a href="/jamaica-police-record.html"><strong>JCF police records</strong><small>For visas, work permits and residency abroad</small></a>
+      </div>
+    </section>
+    </div>
+  </section>
+
+  <section class="band band-tint room-band">
+    <div class="band-in">
+      <section class="case route" id="new" data-name="New passport" aria-labelledby="new-title">
       <div class="card case-main">
         <div class="tier prep"><b>You apply in person</b><span>The steps are below. A consultation is available.</span></div>
         <div class="case-in">
@@ -786,9 +951,7 @@
       </div>
       <div class="case-end"><a class="back-link" href="#find">← All passport services</a></div>
     </section>
-
-    <!-- DOOR 2: RENEW (the eligibility check does the routing) -->
-    <section class="case route" id="renew" data-name="Renew" aria-labelledby="renewdoor-title">
+      <section class="case route" id="renew" data-name="Renew" aria-labelledby="renewdoor-title">
       <div class="card case-main">
         <div class="case-in">
           <h2 id="renewdoor-title" tabindex="-1">Renew a Jamaican passport</h2>
@@ -901,9 +1064,7 @@
       </div>
       <div class="case-end"><a class="back-link" href="#find">← All passport services</a></div>
     </section>
-
-    <!-- DOOR 3: REPLACEMENT -->
-    <section class="case route" id="replace" data-name="Replacement" aria-labelledby="replace-title">
+      <section class="case route" id="replace" data-name="Replacement" aria-labelledby="replace-title">
       <div class="card case-main">
         <div class="tier prep"><b>You apply in person</b><span>The steps are below. A consultation is available.</span></div>
         <div class="case-in">
@@ -919,9 +1080,7 @@
       </div>
       <div class="case-end"><a class="back-link" href="#find">← All passport services</a></div>
     </section>
-
-    <!-- ROOM: ADULT RENEWAL BY DIGITAL APPLICATION (Done for you) -->
-    <section class="case" id="digital-application" data-name="Digital application" aria-labelledby="renew-title">
+      <section class="case" id="digital-application" data-name="Digital application" aria-labelledby="renew-title">
       <div class="card case-main">
         <div class="tier done"><b>Done for you</b><span>We apply for you and track it to delivery</span></div>
         <div class="case-in">
@@ -972,9 +1131,7 @@
       </details>
       <div class="case-end"><a class="back-link" href="#find">← All passport services</a></div>
     </section>
-
-    <!-- 2. NAME CHANGE (client applies; consultation available) -->
-    <section class="case" id="name-change" data-name="Name change" aria-labelledby="name-title">
+      <section class="case" id="name-change" data-name="Name change" aria-labelledby="name-title">
       <div class="card case-main">
         <div class="tier prep"><b>You apply in person</b><span>The steps are below. A consultation is available.</span></div>
         <div class="case-in">
@@ -1020,9 +1177,7 @@
       </details>
       <div class="case-end"><a class="back-link" href="#find">← All passport services</a></div>
     </section>
-
-    <!-- 3. CHILD -->
-    <section class="case" id="child" data-name="Child's passport" aria-labelledby="child-title">
+      <section class="case" id="child" data-name="Child's passport" aria-labelledby="child-title">
       <div class="card case-main">
         <div class="tier prep"><b>You apply in person</b><span>The steps are below. A consultation is available.</span></div>
         <div class="case-in">
@@ -1079,9 +1234,7 @@
       </details>
       <div class="case-end"><a class="back-link" href="#find">← All passport services</a></div>
     </section>
-
-    <!-- 4. LOST -->
-    <section class="case" id="lost" data-name="Lost or stolen" aria-labelledby="lost-title">
+      <section class="case" id="lost" data-name="Lost or stolen" aria-labelledby="lost-title">
       <div class="card case-main">
         <div class="tier prep"><b>You apply in person</b><span>The steps are below. A consultation is available.</span></div>
         <div class="case-in">
@@ -1139,9 +1292,7 @@
       </details>
       <div class="case-end"><a class="back-link" href="#find">← All passport services</a></div>
     </section>
-
-    <!-- 5. DAMAGED -->
-    <section class="case" id="damaged" data-name="Damaged passport" aria-labelledby="damaged-title">
+      <section class="case" id="damaged" data-name="Damaged passport" aria-labelledby="damaged-title">
       <div class="card case-main">
         <div class="tier prep"><b>You apply in person</b><span>The steps are below. A consultation is available.</span></div>
         <div class="case-in">
@@ -1197,9 +1348,7 @@
       </details>
       <div class="case-end"><a class="back-link" href="#find">← All passport services</a></div>
     </section>
-
-    <!-- 6. FIRST ADULT -->
-    <section class="case" id="first-passport" data-name="First passport" aria-labelledby="first-title">
+      <section class="case" id="first-passport" data-name="First passport" aria-labelledby="first-title">
       <div class="card case-main">
         <div class="tier prep"><b>You apply in person</b><span>The steps are below. A consultation is available.</span></div>
         <div class="case-in">
@@ -1253,10 +1402,8 @@
       </details>
       <div class="case-end"><a class="back-link" href="#find">← All passport services</a></div>
     </section>
-
-    <p class="group-title room-only" id="rules">Also applies to your application</p>
-
-    <details class="acc room-only" id="photo">
+      <p class="group-title room-only" id="rules">Also applies to your application</p>
+      <details class="acc room-only" id="photo">
       <summary><h2>What are the Jamaican passport photo requirements?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
       <div class="acc-body">
         <p class="answer">PICA asks for two identical colour photos with a matte finish, taken within the last six months against a plain background, showing a full frontal view of the head, neck and top of the shoulders.</p>
@@ -1274,8 +1421,7 @@
         <p class="note">Source: <a href="https://www.pica.gov.jm/passport/photo-requirements" target="_blank" rel="noopener">PICA, Passport Photo Requirements</a>.</p>
       </div>
     </details>
-
-    <details class="acc room-only" id="certify">
+      <details class="acc room-only" id="certify">
       <summary><h2>Who can certify a Jamaican passport application?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
       <div class="acc-body">
         <p class="answer">In Jamaica, the certifier must be a Jamaican citizen who is not a family member and has known you personally for at least 12 months, such as a Justice of the Peace, attorney-at-law, medical practitioner or school principal. Certifying is free in Jamaica.</p>
@@ -1287,8 +1433,7 @@
         <p class="note">Source: <a href="https://www.pica.gov.jm/passport/countersigning-passport-applications-and-photos" target="_blank" rel="noopener">PICA, Who can certify the passport application</a>.</p>
       </div>
     </details>
-
-    <details class="acc room-only" id="times">
+      <details class="acc room-only" id="times">
       <summary><h2>How long does a Jamaican passport take?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
       <div class="acc-body">
         <p class="answer">PICA's regular service is 7 working days for applications submitted at its Kingston head office, 11 at Portmore and 14 at regional offices. The digital applications we make usually arrive in 7 to 14 business days, courier included.</p>
@@ -1303,125 +1448,14 @@
         <p class="note">Source: <a href="https://www.pica.gov.jm/passport/fees" target="_blank" rel="noopener">PICA, Passport Fees</a> and <a href="https://www.pica.gov.jm/passport/apply" target="_blank" rel="noopener">Applying for a Passport</a>.</p>
       </div>
     </details>
+    </div>
+  </section>
 
-    <p class="group-title home-only">Good to know</p>
-
-    <details class="acc home-only" id="how-it-works">
-      <summary><h2>How our passport service works</h2><span class="acc-btn" aria-hidden="true"></span></summary>
-      <div class="acc-body">
-        <ol class="steps">
-          <li><strong>Check your route</strong>Answer a few questions to see if you qualify for a digital renewal. Paper cases: the steps are on this page, and a consultation is available.</li>
-          <li><strong>Agree your part</strong>We confirm our fee and PICA's fee before you pay.</li>
-          <li><strong>We check your documents</strong>Send photos or scans. We check names, dates and your photo against PICA's rules and tell you what to fix.</li>
-          <li><strong>We apply and track</strong>We make the digital application and keep you updated until the passport is delivered.</li>
-        </ol>
-        <div class="delivery"><strong>Getting your documents back:</strong><span>Local pickup</span><span>International courier, DHL or FedEx</span></div>
-        <h3 class="sub" id="on-your-behalf">Can someone submit my passport application for me?</h3>
-        <p>For an adult renewal by digital application, yes: we make it for you from start to finish.</p>
-        <p>For paper applications, including a renewal with a name change, you complete and submit the application yourself; a consultation can help you get it right. PICA does accept a paper application lodged by someone you authorise with a notarised letter, but it is strict on signatures: the signature on the letter must match the one on your ID, or the application is turned down. We do not offer this in-person submission service. PICA needs the parent and child present for a child's passport. A lost, stolen or damaged passport starts with your own reports, which you make yourself.</p>
-      </div>
-    </details>
-
-    <details class="acc home-only" id="fees">
-      <summary><h2>Jamaican passport fees: ours and PICA's</h2><span class="acc-btn" aria-hidden="true"></span></summary>
-      <div class="acc-body">
-        <p>You pay two separate amounts: our service fee, and PICA's government fee. US dollar prices apply to clients overseas. Paper applications (first adult passport, child's passport, name change, lost, stolen or damaged) you make yourself. If you want guidance, our consultation is J$5,000, or US$50 overseas.</p>
-        <p>The PICA amounts shown are its standard fees. PICA sets the final amount, and it depends on the country you apply from. We confirm your PICA fee with you before you start, and you can check it yourself with <a href="https://passport.pica-online.com/PICA_ONLINE/" target="_blank" rel="noopener">PICA's cost checker</a>.</p>
-        <p class="fee-sep">Done for you</p>
-        <div class="fee-grid">
-          <article class="fee-card"><h3>Adult renewal: digital application</h3><div class="fee-row">
-            <div class="fee-cell"><span class="fee-label">Our fee</span><span class="fee-amount">J$5,000</span><span class="fee-alt">US$70 overseas</span></div>
-            <div class="fee-cell"><span class="fee-label">PICA fee, from</span><span class="fee-amount">J$6,500</span><span class="fee-alt">US$80 overseas, plus courier</span></div></div></article>
-        </div>
-        <p class="fee-sep">Paper applications: you apply, consultation optional</p>
-        <div class="fee-grid">
-          <article class="fee-card"><h3>Name change</h3><div class="fee-row">
-            <div class="fee-cell"><span class="fee-label">Consultation, optional</span><span class="fee-amount">J$5,000</span><span class="fee-alt">US$50 overseas</span></div>
-            <div class="fee-cell"><span class="fee-label">PICA fee, from</span><span class="fee-amount">J$6,500</span><span class="fee-alt">US$80 overseas</span></div></div></article>
-          <article class="fee-card"><h3>Child's passport, new or renewal</h3><div class="fee-row">
-            <div class="fee-cell"><span class="fee-label">Consultation, optional</span><span class="fee-amount">J$5,000</span><span class="fee-alt">US$50 overseas</span></div>
-            <div class="fee-cell"><span class="fee-label">PICA fee, from</span><span class="fee-amount">J$4,000</span><span class="fee-alt">US$50 overseas</span></div></div></article>
-          <article class="fee-card"><h3>First adult passport</h3><div class="fee-row">
-            <div class="fee-cell"><span class="fee-label">Consultation, optional</span><span class="fee-amount">J$5,000</span><span class="fee-alt">US$50 overseas</span></div>
-            <div class="fee-cell"><span class="fee-label">PICA fee, from</span><span class="fee-amount">J$6,500</span><span class="fee-alt">US$80 overseas</span></div></div></article>
-          <article class="fee-card"><h3>Lost, stolen or damaged: adult</h3><div class="fee-row">
-            <div class="fee-cell"><span class="fee-label">Consultation, optional</span><span class="fee-amount">J$5,000</span><span class="fee-alt">US$50 overseas</span></div>
-            <div class="fee-cell"><span class="fee-label">PICA fee, from</span><span class="fee-amount">J$11,500</span><span class="fee-alt">US$160 overseas</span></div></div></article>
-          <article class="fee-card"><h3>Lost, stolen or damaged: child</h3><div class="fee-row">
-            <div class="fee-cell"><span class="fee-label">Consultation, optional</span><span class="fee-amount">J$5,000</span><span class="fee-alt">US$50 overseas</span></div>
-            <div class="fee-cell"><span class="fee-label">PICA fee, from</span><span class="fee-amount">J$7,000</span><span class="fee-alt">US$100 overseas</span></div></div></article>
-        </div>
-        <p class="fee-sep">PICA's expedited service</p>
-        <div class="fee-grid">
-          <article class="fee-card"><h3>Adult</h3><div class="fee-row">
-            <div class="fee-cell"><span class="fee-label">Kingston head office</span><span class="fee-alt">Three days J$9,500<br>Next day J$11,500<br>Same day J$16,500</span></div>
-            <div class="fee-cell"><span class="fee-label">Regional and outposts</span><span class="fee-alt">Seven days J$9,500<br>Five days J$11,500</span></div></div></article>
-          <article class="fee-card"><h3>Child</h3><div class="fee-row">
-            <div class="fee-cell"><span class="fee-label">Kingston head office</span><span class="fee-alt">Three days J$6,000<br>Next day J$7,000<br>Same day J$9,000</span></div>
-            <div class="fee-cell"><span class="fee-label">Regional and outposts</span><span class="fee-alt">Seven days J$6,000<br>Five days J$7,000</span></div></div></article>
-        </div>
-        <p class="note" style="margin-top:14px">PICA's fees are taken from its published schedule and can change; overseas missions may add a processing fee. Always confirm on <a href="https://www.pica.gov.jm/passport/fees" target="_blank" rel="noopener">PICA's official fee page</a>. Apostille for use abroad is available as an add-on to documents we handle.</p>
-      </div>
-    </details>
-
-    <details class="acc home-only" id="terms">
-      <summary><h2>Service terms</h2><span class="acc-btn" aria-hidden="true"></span></summary>
-      <div class="acc-body">
-        <ul>
-          <li><strong>We are a private, independent service.</strong> We are not a government agency, and we are not affiliated with, endorsed by or acting on behalf of PICA or the Government of Jamaica. We do not replace or compete with any public agency. You can apply to PICA directly at any time.</li>
-          <li><strong>A consultation is guidance, not a submission.</strong> We do not fill in or submit your application; you do that yourself. Consultations are paid in advance by bank transfer, after you agree to our terms.</li>
-          <li><strong>PICA decides.</strong> We check and prepare your application to PICA's published rules. PICA makes the final decision on every application and may ask for more documents.</li>
-          <li><strong>Government fees are separate and non-refundable.</strong> PICA's fees are paid to the agency and are non-refundable.</li>
-          <li><strong>Timelines are estimates.</strong> Processing is done by PICA and delivery by the courier. We cannot guarantee an arrival date.</li>
-          <li><strong>Your information must be accurate.</strong> You are responsible for the truth of the details and documents you give us.</li>
-        </ul>
-        <p>By proceeding you agree to our full <a href="/terms.html">Terms &amp; Conditions</a>, which also cover our service fee.</p>
-      </div>
-    </details>
-
-    <details class="acc home-only" id="faq">
-      <summary><h2>More passport questions</h2><span class="acc-btn" aria-hidden="true"></span></summary>
-      <div class="acc-body">
-        <h3 class="sub" style="margin-top:0">Can I renew my Jamaican passport before it expires?</h3>
-        <p>Yes. PICA accepts digital applications once the passport has expired or has less than one year left. With more than a year left a digital application is not open to you, and you would apply on paper at a PICA office or Jamaican mission.</p>
-        <h3 class="sub">Can I renew my Jamaican passport from overseas?</h3>
-        <p>Yes. Adults who meet PICA's online conditions renew through the online portal from anywhere and have the passport couriered to them. Everyone else applies on paper through the nearest Jamaican embassy, high commission or consulate. PICA offers no expedited service to overseas applicants.</p>
-        <h3 class="sub">Do I need a Justice of the Peace to sign my renewal?</h3>
-        <p>Not for a straightforward adult renewal. If your name has not changed, PICA no longer requires the form or photo to be certified. Name changes, children, first passports and replacements all need a certifying official.</p>
-        <h3 class="sub">How will I receive my new passport?</h3>
-        <p>For digital applications, PICA couriers the passport to your address or you collect it at a PICA office. For paper applications you submit yourself, you collect or receive it as the office or mission where you submitted directs.</p>
-        <h3 class="sub">Can you guarantee my passport will arrive by a certain date?</h3>
-        <p>No. We make or prepare your application promptly, but PICA handles processing and the courier handles delivery. Start well ahead of any travel date.</p>
-        <h3 class="sub">Are PICA's fees refundable?</h3>
-        <p>No. PICA's fees are paid to the agency and are non-refundable. Our service fee is separate and is covered in our Terms &amp; Conditions.</p>
-        <p class="note" style="margin:18px 0 0">Something else? See <a href="/jamaica-passport-guide">How to Apply for or Renew a Jamaican Passport: Step by Step</a>, our <a href="/faq.html">general FAQ</a> or the <a href="/insights.html">Insights guides</a>.</p>
-      </div>
-    </details>
-
-    <section class="card nl home-only" id="newsletter" aria-labelledby="nl-title">
-      <h2 id="nl-title">Get It Right the First Time</h2>
-      <p style="margin:0">Free updates when PICA and other Jamaican agencies change their rules, fees or processing times.</p>
-      <form id="nl-form" class="nl-form" data-newsletter data-success="nl-ok" data-error="nl-err">
-        <label for="nl-email" class="sr-only">Email address</label>
-        <input id="nl-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
-        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
-        <button type="submit" class="btn" id="nl-btn">Send me the updates</button>
-      </form>
-      <p class="nl-err" id="nl-err" role="alert" hidden>That didn't go through. Please try again, or message Laura on WhatsApp.</p>
-      <div class="nl-ok" id="nl-ok" role="status" hidden><strong>You're on the list.</strong> A welcome email is on its way. If you do not see it in a few minutes, look in your spam folder.</div>
-      <p class="fine">No spam. Unsubscribe any time.</p>
-    </section>
-
-    <section class="card home-only" aria-labelledby="related-title" style="margin-bottom:0">
-      <h2 id="related-title">Related services</h2>
-      <div class="related">
-        <a href="/jamaican-citizenship-application.html"><strong>Citizenship by descent</strong><small>Needed before a first passport through a parent or grandparent</small></a>
-        <a href="/jamaican-rgd-certificates.html"><strong>RGD birth, marriage and death certificates</strong><small>Replace a missing birth or marriage certificate</small></a>
-        <a href="/jamaica-police-record.html"><strong>JCF police records</strong><small>For visas, work permits and residency abroad</small></a>
-      </div>
-    </section>
-
-  </div>
+  <section class="band band-cream home-only">
+    <div class="band-in">
+      <div class="band-cta"><h2 class="band-title">Ready to start?</h2><p class="band-text">For a digital renewal, choose Passport. For anything else, choose Consultation.</p><a class="btn-band" href="/start.html?service=passport">Start a request</a></div>
+    </div>
+  </section>
 </main>
 
 <footer class="lcf">
