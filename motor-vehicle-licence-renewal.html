@@ -468,6 +468,42 @@
 .duo li { margin-bottom: 1.25rem !important; }
 .trn-note { margin-top: 18px !important; }
 </style>
+<style id="lcf-style">
+/* Standard footer (same on every page) */
+.lcf { background: #0F2537; color: #AEB5B9; font: 400 .95rem/1.6 Inter, system-ui, sans-serif; margin-top: 64px; padding-bottom: env(safe-area-inset-bottom, 0px); }
+.lcf a { color: #E2E8F0; text-decoration: none; font-weight: 500; }
+.lcf a:hover { color: #C89B3C; }
+.lcf-top, .lcf-disclaimer, .lcf-bottom { max-width: 72rem; margin: 0 auto; }
+.lcf-top { display: grid; gap: 2rem; padding: 3rem 20px 2rem; border-bottom: 1px solid rgba(255,255,255,.12); }
+.lcf-brand { font: 700 1.2rem/1.3 "Playfair Display", Georgia, serif; color: #fff; margin: 0; }
+.lcf-sub { margin: .5rem 0 0; max-width: 26rem; }
+.lcf-nav ul { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem 1.5rem; list-style: none; padding: 0; margin: 0; }
+.lcf-nav a, .lcf-bottom a, .lcf-top-link { display: inline-flex; align-items: center; min-height: 44px; }
+.lcf-top-link { justify-self: start; }
+.lcf-disclaimer { padding: 1.75rem 20px 0; font-size: 14px; color: #AEB5B9; }
+.lcf-bottom { display: flex; flex-direction: column; gap: .5rem; padding: 1.25rem 20px 2rem; font-size: 14px; }
+.lcf-bottom p { margin: 0; }
+.lcf-bottom ul { display: flex; flex-wrap: wrap; gap: 0 1.5rem; list-style: none; padding: 0; margin: 0; }
+@media (min-width: 760px) { .lcf-top { grid-template-columns: 1.4fr 1fr auto; align-items: start; } .lcf-bottom { flex-direction: row; justify-content: space-between; align-items: center; } }
+
+/* Phone layout: no uneven rows, one idea per block (Oct 2026) */
+@media (max-width: 599px) {
+  .facts { grid-template-columns: 1fr !important; }
+  .facts li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .facts .k { flex-shrink: 0; }
+  .facts .v { text-align: right; }
+  .duo, .scope, .fee-grid, .doors, .kit-grid { grid-template-columns: 1fr !important; }
+  .svc-in > * + *, .case-in > * + * { margin-top: 24px; }
+}
+</style>
+<style id="duo-drop">
+.duo-drop { margin-top: 32px; border: 1px solid var(--line, #D5DCE3); border-radius: 12px; background: #fff; }
+.duo-drop > summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 54px; padding: 12px 18px; font-weight: 600; color: #0F2537; }
+.duo-drop > summary::-webkit-details-marker { display: none; }
+.duo-drop > summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: #EEF1F4; color: #7A5C17; font-size: 1.2rem; }
+.duo-drop[open] > summary::after { content: "\2212"; background: #0F2537; color: #C89B3C; }
+.duo-drop .duo { margin: 0 !important; padding: 0 16px 18px; }
+</style>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -548,7 +584,7 @@
             <p class="bill-note">Renewing for 6 or 24 months? <a href="#periods">See the periods</a>. We confirm your exact figure before you pay.</p>
           </div>
           <a href="/start.html?service=motor-vehicle&amp;source=mv-online" class="btn btn-dark">Start my online renewal</a>
-          <div class="duo">
+          <details class="duo-drop"><summary>What we do, and what you do</summary><div class="duo">
             <div class="we"><h3>We do</h3><ul>
               <li>Calculate your exact TAJ fee before you pay</li>
               <li>Make the online application on TAJ's portal</li>
@@ -558,7 +594,7 @@
               <li>Active insurance and an unexpired fitness certificate</li>
               <li>No unpaid traffic tickets. <a href="#tickets">We can check</a></li>
             </ul></div>
-          </div>
+          </div></details>
           <div class="fine">
             <p class="note">TAJ's fee is separate and is paid to TAJ.</p>
             <p class="note">By proceeding you agree to our <a href="/terms.html">Terms &amp; Conditions</a>.</p>
@@ -599,7 +635,7 @@
             <p class="bill-note">Renewing for 6 or 24 months? <a href="#periods">See the periods</a>. We confirm your exact figure before you pay.</p>
           </div>
           <a href="/start.html?service=motor-vehicle&amp;source=mv-fitness-prepay" class="btn btn-dark">Start my fitness pre-pay</a>
-          <div class="duo">
+          <details class="duo-drop"><summary>What we do, and what you do</summary><div class="duo">
             <div class="we"><h3>We do</h3><ul>
               <li>Pre-pay your TAJ fitness fee</li>
               <li>Send the receipt to your phone</li>
@@ -609,7 +645,7 @@
               <li>Send us your TRN and vehicle class</li>
               <li>Drive the vehicle to the ITA depot with the receipt for inspection</li>
             </ul></div>
-          </div>
+          </div></details>
           <div class="fine">
             <p class="note">TAJ's and the ITA's fees are separate.</p>
             <p class="note">By proceeding you agree to our <a href="/terms.html">Terms &amp; Conditions</a>.</p>
@@ -669,32 +705,32 @@
   </div>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <p class="foot-brand">Laura Clarke</p>
-        <p>Administrative Concierge &amp; Diaspora Consultancy</p>
-        <p><a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20renewing%20a%20motor%20vehicle%20licence." target="_blank" rel="noopener">WhatsApp +1 876 561 2614</a></p>
-      </div>
-      <div>
-        <h2>Site</h2>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/index.html#services">Services</a></li>
-          <li><a href="/insights.html">Insights</a></li>
-          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
-          <li><a href="/privacy.html">Privacy</a></li>
-        </ul>
-      </div>
+<footer class="lcf">
+  <div class="lcf-top">
+    <div>
+      <p class="lcf-brand">Laura Clarke Administrative Services</p>
+      <p class="lcf-sub">Pre-audits and local representation for Jamaican government documents, for clients at home and abroad.</p>
     </div>
-    <div class="disclaimer" id="disclaimer">
-      <h2>Independent service notice</h2>
-      <p>Laura Clarke Administrative Services is a private, independent administrative service. We are not a government agency, and we are not affiliated with, endorsed by or acting on behalf of Tax Administration Jamaica (TAJ), the Island Traffic Authority (ITA) or the Government of Jamaica.</p>
-      <p>We do not replace or compete with any public agency. Every application is made to TAJ, and TAJ alone decides it, sets the government fees and issues the licence. We act only for you, the applicant, and only with your authorisation. Our fee is for our own help in preparing or making your application, and is separate from any government fee.</p>
-      <p>You may deal with TAJ directly at any time without using us. Information on this page is administrative guidance, not legal advice; fees, processing times and requirements are set by TAJ and can change.</p>
-      <p>&copy; <span id="year">2026</span> Laura Clarke Administrative Services.</p>
-    </div>
+    <nav class="lcf-nav" aria-label="Footer">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/insights.html">Insights &amp; Guides</a></li>
+        <li><a href="/free-kits">Free Kits</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="lcf-top-link" href="#top">↑ Back to top</a>
+  </div>
+  <p class="lcf-disclaimer" id="disclaimer">Laura Clarke Administrative Services is an independent, private representation and administrative agency. We are not affiliated with, endorsed by, or representing the Government of Jamaica, PICA, TAJ, RGD, JCF, ITA, MFAFT or any government ministry or agency. Government fees are paid to the relevant agency and are separate from our fee. You may always apply to any agency directly yourself.</p>
+  <div class="lcf-bottom">
+    <p>&copy; <span id="year">2026</span> Laura Clarke Administrative Services</p>
+    <ul>
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="/terms.html">Terms</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
   </div>
 </footer>
 

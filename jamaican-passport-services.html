@@ -639,6 +639,38 @@
 .case .part { margin-top: 28px; }
 .consult-box { margin-top: 32px !important; }
 </style>
+<style id="lcf-style">
+/* Standard footer (same on every page) */
+.lcf { background: #0F2537; color: #AEB5B9; font: 400 .95rem/1.6 Inter, system-ui, sans-serif; margin-top: 64px; padding-bottom: env(safe-area-inset-bottom, 0px); }
+.lcf a { color: #E2E8F0; text-decoration: none; font-weight: 500; }
+.lcf a:hover { color: #C89B3C; }
+.lcf-top, .lcf-disclaimer, .lcf-bottom { max-width: 72rem; margin: 0 auto; }
+.lcf-top { display: grid; gap: 2rem; padding: 3rem 20px 2rem; border-bottom: 1px solid rgba(255,255,255,.12); }
+.lcf-brand { font: 700 1.2rem/1.3 "Playfair Display", Georgia, serif; color: #fff; margin: 0; }
+.lcf-sub { margin: .5rem 0 0; max-width: 26rem; }
+.lcf-nav ul { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem 1.5rem; list-style: none; padding: 0; margin: 0; }
+.lcf-nav a, .lcf-bottom a, .lcf-top-link { display: inline-flex; align-items: center; min-height: 44px; }
+.lcf-top-link { justify-self: start; }
+.lcf-disclaimer { padding: 1.75rem 20px 0; font-size: 14px; color: #AEB5B9; }
+.lcf-bottom { display: flex; flex-direction: column; gap: .5rem; padding: 1.25rem 20px 2rem; font-size: 14px; }
+.lcf-bottom p { margin: 0; }
+.lcf-bottom ul { display: flex; flex-wrap: wrap; gap: 0 1.5rem; list-style: none; padding: 0; margin: 0; }
+@media (min-width: 760px) { .lcf-top { grid-template-columns: 1.4fr 1fr auto; align-items: start; } .lcf-bottom { flex-direction: row; justify-content: space-between; align-items: center; } }
+
+/* Phone layout: no uneven rows, one idea per block (Oct 2026) */
+@media (max-width: 599px) {
+  .facts { grid-template-columns: 1fr !important; }
+  .facts li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .facts .k { flex-shrink: 0; }
+  .facts .v { text-align: right; }
+  .duo, .scope, .fee-grid, .doors, .kit-grid { grid-template-columns: 1fr !important; }
+  .svc-in > * + *, .case-in > * + * { margin-top: 24px; }
+}
+</style>
+<style id="even-rows">
+#find .doors { grid-template-columns: 1fr !important; }
+.fee-grid { grid-template-columns: 1fr !important; }
+</style>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -1392,41 +1424,32 @@
   </div>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <p class="foot-brand">Laura Clarke</p>
-        <p>Administrative Concierge &amp; Diaspora Consultancy</p>
-        <p><a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20help%20with%20a%20Jamaican%20passport." target="_blank" rel="noopener">WhatsApp +1 876 561 2614</a></p>
-      </div>
-      <div>
-        <h2>Site</h2>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/index.html#services">Services</a></li>
-          <li><a href="/insights.html">Insights</a></li>
-          <li><a href="/jamaica-passport-guide">How to Apply for or Renew a Jamaican Passport: Step by Step</a></li>
-          <li><a href="/terms.html">Terms &amp; Conditions</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Official PICA links</h2>
-        <ul>
-          <li><a href="https://passport.pica-online.com/PICA_ONLINE/" target="_blank" rel="noopener">Online renewal portal, photo checker and cost checker</a></li>
-          <li><a href="https://www.pica.gov.jm/passport/fees" target="_blank" rel="noopener">Official fee schedule</a></li>
-          <li><a href="https://www.pica.gov.jm/passport/application-forms" target="_blank" rel="noopener">Application forms</a></li>
-          <li><a href="https://www.pica.gov.jm/appointments/" target="_blank" rel="noopener">PICA appointment system</a></li>
-        </ul>
-      </div>
+<footer class="lcf">
+  <div class="lcf-top">
+    <div>
+      <p class="lcf-brand">Laura Clarke Administrative Services</p>
+      <p class="lcf-sub">Pre-audits and local representation for Jamaican government documents, for clients at home and abroad.</p>
     </div>
-    <div class="disclaimer" id="disclaimer">
-      <h2>Independent service notice</h2>
-      <p>Laura Clarke Administrative Services is a private, independent administrative service. We are not a government agency, and we are not affiliated with, endorsed by or acting on behalf of PICA or the Government of Jamaica.</p>
-      <p>We do not replace or compete with any public agency. Every application is made to PICA, and PICA alone decides it, sets the government fees and issues the passport. We act only for you, the applicant, and only with your authorisation. Our fee is for our own help in preparing or submitting your application, and is separate from any government fee.</p>
-      <p>You may apply to PICA directly at any time without using us. Information on this page is administrative guidance, not legal advice; fees, processing times and requirements are set by PICA and can change.</p>
-      <p>&copy; <span id="year">2026</span> Laura Clarke Administrative Services.</p>
-    </div>
+    <nav class="lcf-nav" aria-label="Footer">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/insights.html">Insights &amp; Guides</a></li>
+        <li><a href="/free-kits">Free Kits</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="lcf-top-link" href="#top">↑ Back to top</a>
+  </div>
+  <p class="lcf-disclaimer" id="disclaimer">Laura Clarke Administrative Services is an independent, private representation and administrative agency. We are not affiliated with, endorsed by, or representing the Government of Jamaica, PICA, TAJ, RGD, JCF, ITA, MFAFT or any government ministry or agency. Government fees are paid to the relevant agency and are separate from our fee. You may always apply to any agency directly yourself.</p>
+  <div class="lcf-bottom">
+    <p>&copy; <span id="year">2026</span> Laura Clarke Administrative Services</p>
+    <ul>
+      <li><a href="/privacy.html">Privacy</a></li>
+      <li><a href="/terms.html">Terms</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
   </div>
 </footer>
 

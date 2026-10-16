@@ -306,6 +306,20 @@
 @media (max-width: 600px) { .card-head { padding: 22px 20px !important; } .card-body { padding: 22px 20px 26px !important; } }
 .card-head h2 { font-family: Inter, system-ui, sans-serif !important; font-weight: 600 !important; letter-spacing: -0.01em; }
 </style>
+<style id="lcs-b2">
+a.btn-accent, .btn-accent { background: #0F2537 !important; color: #fff !important; border-color: #0F2537 !important; }
+.btn-accent:hover { background: #1B3A55 !important; }
+
+/* Phone layout: no uneven rows, one idea per block (Oct 2026) */
+@media (max-width: 599px) {
+  .facts { grid-template-columns: 1fr !important; }
+  .facts li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .facts .k { flex-shrink: 0; }
+  .facts .v { text-align: right; }
+  .duo, .scope, .fee-grid, .doors, .kit-grid { grid-template-columns: 1fr !important; }
+  .svc-in > * + *, .case-in > * + * { margin-top: 24px; }
+}
+</style>
 </head>
 <body id="top">
 
@@ -407,7 +421,7 @@
         </div>
 
         <div class="btn-row">
-          <a href="/start?service=driving-abstract&amp;source=driving-abstract-page" class="btn btn-accent">Start Abstract Request</a>
+          <a href="/start?service=driving-abstract&amp;source=driving-abstract-page" class="btn btn-accent">Start my abstract request</a>
         </div>
       </div>
     </div>
