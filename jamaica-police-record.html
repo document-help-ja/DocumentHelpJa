@@ -562,6 +562,8 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 <link rel="stylesheet" href="/assets/price-steps.css">
 <style>.band .ps { margin-top: 0; } .band .ps-head { display: none; } .ps-start { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; margin-top: 20px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; } @media (max-width: 599px) { .ps-start { width: 100%; } }/* Oct 2026: choose one route, only that one opens */
 [data-panel][hidden] { display: none !important; }
+.svc-in .ps { margin-top: 24px; }
+.svc-in .ps-start { margin-top: 20px; }
 .pick3 { display: grid; gap: 16px; }
 .opt3 { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 14px; min-height: 84px; padding: 18px 18px 18px 22px; border: 1px solid #C89B3C; border-radius: 14px; background: #fff; color: #0F2537; text-decoration: none; box-shadow: var(--lift); }
 .opt3 strong { display: block; font-weight: 600; font-size: 1.05rem; line-height: 1.35; }
@@ -704,6 +706,8 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
           <h2 id="overseas-title">Overseas proxy</h2>
           <p class="svc-sub">Fingerprinted where you live. No need to fly home.</p>
           <p class="trn-note"><strong>You need a Jamaican TRN</strong> for this service.</p>
+          <div class="ps" data-price-steps><script type="application/json">{"dhl": false, "groups": [{"title": "Your police record", "rows": [{"label": "Our service fee", "note": "We apply, pay, submit and collect it", "usd": 100}, {"label": "JCF fee", "choose": [{"label": "Regular, 21 working days", "jmd": 3000}, {"label": "Express, 5 working days", "jmd": 6000}]}]}, {"title": "Apostille, if you need it", "toggle": true, "rows": [{"label": "Our apostille service", "note": "We take it to the Ministry of Foreign Affairs", "usd": 100}, {"label": "Ministry's apostille fee", "choose": [{"label": "Regular, about 5 working days", "jmd": 3500}, {"label": "24-hour", "jmd": 5000}]}]}, {"title": "Return delivery", "rows": [{"label": "Your prepaid DHL envelope", "note": "You include it with your documents", "text": "you send it"}]}]}</script></div>
+          <a class="ps-start" href="/start.html?service=police-record&amp;source=police-record-overseas">Start my overseas case</a>
           <details class="duo-drop"><summary>What we do, and what you do</summary><div class="duo">
             <div class="we"><h3>We do</h3><ul>
               <li>Check a scan of your fingerprint card before you send it</li>
@@ -729,18 +733,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
       </section>
     </div>
   </section>
-  <section class="band band-white " data-panel="overseas">
-    <div class="band-in">
-      <p class="band-label">3 · Your price, step by step</p>
-      <div class="ps" data-price-steps><script type="application/json">{"dhl": false, "groups": [{"title": "Your police record", "rows": [{"label": "Our service fee", "note": "We apply, pay, submit and collect it", "usd": 100}, {"label": "JCF fee", "choose": [{"label": "Regular, 21 working days", "jmd": 3000}, {"label": "Express, 5 working days", "jmd": 6000}]}]}, {"title": "Apostille, if you need it", "toggle": true, "rows": [{"label": "Our apostille service", "note": "We take it to the Ministry of Foreign Affairs", "usd": 100}, {"label": "Ministry's apostille fee", "choose": [{"label": "Regular, about 5 working days", "jmd": 3500}, {"label": "24-hour", "jmd": 5000}]}]}, {"title": "Return delivery", "rows": [{"label": "Your prepaid DHL envelope", "note": "You include it with your documents", "text": "you send it"}]}]}</script></div>
-      <a class="ps-start" href="/start.html?service=police-record&amp;source=police-record-overseas">Start my overseas case</a>
-    </div>
-  </section>
-
-
   <section class="band band-tint " data-panel="overseas">
     <div class="band-in">
-      <p class="band-label">4 · What to send</p>
+      <p class="band-label">3 · What to send</p>
       <details class="acc" id="send">
       <summary><h2>What do I send from overseas?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
       <div class="acc-body">
