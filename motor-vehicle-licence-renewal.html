@@ -598,6 +598,27 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 .panel + .panel { margin-top: 48px; }
 .panel .svc { margin-top: 32px !important; }
 .verdict h3 { margin-bottom: 4px; }
+/* Oct 17b: bigger colour-coded service cards; quiet Good to know */
+.pick3 { gap: 28px !important; }
+.opt3 { grid-template-columns: auto minmax(0, 1fr) auto !important; min-height: 116px !important; padding: 24px 20px 24px 22px !important; gap: 16px !important; border-width: 1.5px !important; border-radius: 16px !important; }
+.opt3 strong { font-size: 1.15rem !important; }
+.opt3 .ic { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; }
+.opt3 .ic svg { width: 26px; height: 26px; }
+.opt3.c-renew { border-color: #1D4E89 !important; } .c-renew .ic { background: #EAF0F6; color: #1D4E89; }
+.opt3.c-fit { border-color: #B8862B !important; } .c-fit .ic { background: #F7F1E3; color: #8A6420; }
+.opt3.c-tik { border-color: #A23B3B !important; } .c-tik .ic { background: #FBF1F1; color: #A23B3B; }
+.opt3.c-renew[aria-current="true"] { box-shadow: 0 0 0 2px #1D4E89 !important; }
+.opt3.c-fit[aria-current="true"] { box-shadow: 0 0 0 2px #B8862B !important; }
+.opt3.c-tik[aria-current="true"] { box-shadow: 0 0 0 2px #A23B3B !important; }
+#panel-renew .svc { border-color: #1D4E89 !important; }
+#panel-fitness .svc { border-color: #B8862B !important; }
+#panel-tickets .svc { border-color: #A23B3B !important; }
+.quiet .band-label { color: #59636B; }
+.quiet .acc { box-shadow: none !important; border: 1px solid #E1E5E8 !important; background: #FAFBFC; margin-bottom: 10px !important; }
+.quiet .acc > summary { min-height: 60px !important; padding-top: 14px !important; padding-bottom: 14px !important; }
+.quiet .acc > summary h2 { font-size: .98rem !important; font-weight: 500 !important; color: #343D43; }
+.quiet .acc-btn { width: 28px; height: 28px; }
+.more-read { margin: 22px 0 0; font-size: .95rem; color: #59636B; }
 </style>
 </head>
 <body>
@@ -650,9 +671,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     <div class="band-in">
       <p class="band-label">1 · Choose a service</p>
       <div class="pick3" role="list">
-        <a role="listitem" class="opt3" href="#renew" data-open="renew"><span><strong>Motor vehicle licence renewal</strong><small>From J$4,000 + TAJ's fee</small></span><span class="go" aria-hidden="true">→</span></a>
-        <a role="listitem" class="opt3" href="#fitness-only" data-open="fitness"><span><strong>Fitness fee payment</strong><small>J$1,500 + TAJ's fee</small></span><span class="go" aria-hidden="true">→</span></a>
-        <a role="listitem" class="opt3" href="#ticket-lookup" data-open="tickets"><span><strong>Traffic ticket lookup</strong><small>J$1,500 per session</small></span><span class="go" aria-hidden="true">→</span></a>
+        <a role="listitem" class="opt3 c-renew" href="#renew" data-open="renew"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M5 17a2 2 0 1 0 4 0M15 17a2 2 0 1 0 4 0M3 17v-4l2-5h14l2 5v4"/><path d="M3 13h18"/></svg></span><span><strong>Motor vehicle licence renewal</strong><small>From J$4,000 + TAJ's fee</small></span><span class="go" aria-hidden="true">→</span></a>
+        <a role="listitem" class="opt3 c-fit" href="#fitness-only" data-open="fitness"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l2 2 4-4"/><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg></span><span><strong>Fitness fee payment</strong><small>J$1,500 + TAJ's fee</small></span><span class="go" aria-hidden="true">→</span></a>
+        <a role="listitem" class="opt3 c-tik" href="#ticket-lookup" data-open="tickets"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span><span><strong>Traffic ticket lookup</strong><small>J$1,500 per session</small></span><span class="go" aria-hidden="true">→</span></a>
       </div>
       <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
     </div>
@@ -859,7 +880,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     </div>
   </section>
 
-  <section class="band band-white ">
+  <section class="band band-white quiet">
     <div class="band-in">
       <p class="band-label">Good to know</p>
       <details class="acc" id="fees">
@@ -903,10 +924,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
           <p>An expired fitness certificate requires a mechanical roadworthiness check. The Island Traffic Authority (ITA) must physically inspect the vehicle's lights, tyres and structure, and verify that the chassis (VIN) and engine numbers match the C88 logbook.</p>
           <p>Our fitness pre-pay removes the Tax Office payment line and handles the final registration portal. TAJ needs your TRN and your vehicle class to take the fitness fee, so we ask for both. We get the fee paid, leaving you to drive through the depot inspection.</p></div>
       </details>
-      <div class="links">
-      <a class="guide-link" href="/jamaica-motor-vehicle-licence-guide"><span><strong>Motor vehicle licence guide</strong><small>TAJ's rules, lost logbooks and Traffic Management System traps</small></span><span class="go" aria-hidden="true">→</span></a>
-      <a class="guide-link" href="/drivers-licence-renewal.html"><span><strong>Driver's licence renewal</strong><small>We check your record and pay TAJ online; you collect your card</small></span><span class="go" aria-hidden="true">→</span></a>
-    </div>
+      <p class="more-read">Want to read more? See our <a href="/jamaica-motor-vehicle-licence-guide">motor vehicle licence guide</a>.</p>
     </div>
   </section>
 
