@@ -498,6 +498,46 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 .band-cta .btn-band { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; }
 .band-cta .btn-band:hover { background: #1B3A55; }
 @media (max-width: 599px) { .band { padding: 36px 0 40px; } .band-in { padding: 0 16px; } .band-cta .btn-band { width: 100%; } }
+/* Fee picker (same as motor vehicle page) */
+  .bill { margin: 26px 0 0; }
+  .bill > .lbl { margin-bottom: 12px; }
+  .door { border: 1px solid var(--edge); border-radius: 14px; background: var(--paper); margin-bottom: 12px; overflow: hidden; }
+  .door > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 72px; padding: 16px 18px; }
+  .door > summary::-webkit-details-marker { display: none; }
+  .door > summary:hover { background: var(--tone); }
+  .door .what { min-width: 0; }
+  .door .what b { display: block; color: var(--ink); font-weight: 600; line-height: 1.4; }
+  .door .what small { display: block; margin-top: 4px; font-size: .88rem; line-height: 1.5; color: var(--muted); }
+  .door .amt { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 9px; font-weight: 600; color: var(--link); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .door .amt::after { content: ""; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); }
+  .door[open] .amt::after { transform: translateY(2px) rotate(-135deg); }
+  .door .amt.set { color: var(--ink); font-size: 1.08rem; }
+  .bill-opts { border: 0; margin: 0; padding: 6px 14px 16px; display: grid; gap: 10px; background: var(--tone); border-top: 1px solid var(--line); }
+  .bill-opts legend { padding: 0; }
+  .bill-opt { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 12px 14px; border: 1px solid var(--edge); border-radius: 10px; background: var(--paper); cursor: pointer; line-height: 1.45; }
+  .bill-opt:first-of-type { margin-top: 10px; }
+  .bill-opt input { flex: 0 0 auto; width: 20px; height: 20px; margin: 0; accent-color: var(--primary); }
+  .bill-opt span { flex: 1 1 auto; min-width: 0; }
+  .bill-opt strong { flex: 0 0 auto; color: var(--ink); font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .bill-opt:has(input:checked) { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); }
+  .bill-total { margin-top: 16px; padding: 20px 20px 22px; border-radius: 14px; background: var(--primary); color: #fff; }
+  .bill-total .lbl { color: rgba(255,255,255,.72); margin-bottom: 6px; }
+  .bill-total b { display: block; font-size: 1.55rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.3; font-variant-numeric: tabular-nums; }
+  .bill-total.todo b { font-size: 1.2rem; letter-spacing: -0.01em; }
+  .bill-total small { display: block; margin-top: 8px; font-size: .9rem; line-height: 1.55; color: rgba(255,255,255,.8); }
+  .bill-note { margin: 14px 0 0; font-size: .9rem; line-height: 1.6; color: var(--muted); }
+  .bill + .btn { margin-top: 26px; }
+.fee-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; margin: 28px 0 0; }
+.fee-pair > div { padding: 16px 16px 18px; border-radius: 12px; min-width: 0; }
+.fee-pair .mine { background: #EAF0F6; border: 1px solid #C6D2DC; }
+.fee-pair .agency { background: #F5F6F7; border: 1px solid #E1E5E8; }
+.fee-pair .lbl { margin-bottom: 6px; }
+.fee-pair .mine .lbl { color: #1D4E89; }
+.fee-pair b { display: block; font-size: 1.5rem; font-weight: 700; color: #0F2537; letter-spacing: -0.02em; line-height: 1.25; font-variant-numeric: tabular-nums; }
+.fee-pair .agency b { font-size: 1.15rem; }
+.fee-pair small { display: block; margin-top: 6px; font-size: .88rem; line-height: 1.5; color: var(--muted); }
+.svc-in .fee-pair + .bill { margin-top: 18px !important; }
+.fee-pair .mine { background: #EAF0F6; border: 1px solid #C6D2DC; }
 </style>
 </head>
 <body>
@@ -565,11 +605,20 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <div class="svc-in">
           <h2 id="renewal-title">Licence renewal</h2>
           <p class="svc-sub">Road-ready today. Skip the cashier line.</p>
-          <p class="price"><span class="lbl">Our fee</span><b>J$4,000</b></p>
-          <div class="taj-fees">
-            <p class="lbl">Plus TAJ's fee</p>
-            <div class="fee-line"><span>Class B</span><strong>J$5,400</strong></div>
-            <div class="fee-line"><span>Class C</span><strong>J$7,200</strong></div>
+          <div class="fee-pair">
+            <div class="mine"><span class="lbl">Our fee</span><b>J$4,000</b></div>
+            <div class="agency"><span class="lbl">Agency fee (TAJ)</span><b>By licence class</b><small>Choose below</small></div>
+          </div>
+          <div class="bill" data-bill data-base="4000">
+            <p class="lbl">Work out your total</p>
+            <details class="door" data-name="TAJ" data-line="Licence class">
+              <summary><span class="what"><b>Licence class</b><small data-pick>Tap to choose your class</small></span><span class="amt" data-amt>Choose</span></summary>
+              <fieldset class="bill-opts"><legend class="sr-only">Choose your licence class</legend>
+                <label class="bill-opt"><input type="radio" name="dl-class" value="5400" data-label="Class B, private"><span>Class B, private</span><strong>J$5,400</strong></label>
+                <label class="bill-opt"><input type="radio" name="dl-class" value="7200" data-label="Class C, commercial or general"><span>Class C, commercial or general</span><strong>J$7,200</strong></label>
+              </fieldset>
+            </details>
+            <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total>J$4,000 + TAJ's fee</b><small data-sum>Choose your class to see your full total.</small></div>
           </div>
           <a href="/start.html?service=drivers-licence" class="btn btn-dark">Start my renewal</a>
           <details class="duo-drop"><summary>What we do, and what you do</summary><div class="duo">
@@ -739,6 +788,43 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
   $('#total').textContent = boxes.length;
   function update() { var n = 0; boxes.forEach(function (b) { if (b.checked) n++; }); done.textContent = n; msg.hidden = n < boxes.length; }
   boxes.forEach(function (b) { b.addEventListener('change', update); });
+  /* Bill: pick the licence class and engine size, see the total, carry the picks into WhatsApp */
+  function money(n) { return 'J$' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  document.querySelectorAll('[data-bill]').forEach(function (bill) {
+    var base = Number(bill.getAttribute('data-base'));
+    var box = bill.querySelector('.bill-total'), total = bill.querySelector('[data-total]'), sum = bill.querySelector('[data-sum]');
+    var doors = Array.prototype.slice.call(bill.querySelectorAll('.door'));
+    var btn = bill.parentNode.querySelector('.btn-wa');
+    var href0 = btn ? btn.getAttribute('href') : '', cut = href0.indexOf('text=') + 5;
+    var msg0 = btn ? decodeURIComponent(href0.slice(cut)) : '';
+    function update() {
+      var known = base, missing = [], parts = [money(base) + ' our fee'], msg = msg0;
+      doors.forEach(function (door) {
+        var r = door.querySelector('input:checked'), name = door.getAttribute('data-name');
+        if (!r) { missing.push(name); return; }
+        var v = Number(r.value), amt = door.querySelector('[data-amt]'), line = door.getAttribute('data-line');
+        door.querySelector('[data-pick]').textContent = r.getAttribute('data-label');
+        amt.textContent = v ? money(v) : 'We confirm'; amt.classList.add('set');
+        if (v) { known += v; parts.push(money(v) + ' ' + name); } else { missing.push(name); }
+        msg = msg.replace(new RegExp('^' + line + '[^\\n]*$', 'm'), line + ': ' + r.getAttribute('data-label'));
+      });
+      var picked = bill.querySelectorAll('input:checked').length;
+      if (!picked) return;
+      box.classList.toggle('todo', missing.length > 0);
+      total.textContent = money(known) + (missing.length ? ' + ' + missing.join(' and ') + (missing.length > 1 ? ' fees' : ' fee') : '');
+      sum.textContent = missing.length ? (picked < doors.length ? 'Choose the rest above to see your full total.' : 'We confirm the rest with you.') : parts.join(' + ');
+      if (!missing.length) msg += '\nTotal shown on the page: ' + money(known) + ' (12 months)';
+      if (btn) btn.setAttribute('href', href0.slice(0, cut) + encodeURIComponent(msg));
+    }
+    doors.forEach(function (door) {
+      door.addEventListener('change', update);
+      door.addEventListener('click', function (e) {
+        /* A tap or mouse click on an option closes the door; keyboard arrows leave it open */
+        if (e.detail > 0 && e.target.closest('.bill-opt')) { setTimeout(function () { door.open = false; }, 140); }
+      });
+    });
+    update();
+  });
 })();
 </script>
 </body>
