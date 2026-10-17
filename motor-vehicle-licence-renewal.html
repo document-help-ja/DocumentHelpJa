@@ -618,6 +618,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 .quiet .acc > summary { min-height: 60px !important; padding-top: 14px !important; padding-bottom: 14px !important; }
 .quiet .acc > summary h2 { font-size: .98rem !important; font-weight: 500 !important; color: #343D43; }
 .quiet .acc-btn { width: 28px; height: 28px; }
+.opt3 em { display: block; margin-top: 8px; font-style: normal; font-weight: 600; font-size: .92rem; color: #0F2537; }
 .more-read { margin: 22px 0 0; font-size: .95rem; color: #59636B; }
 </style>
 </head>
@@ -671,9 +672,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     <div class="band-in">
       <p class="band-label">1 · Choose a service</p>
       <div class="pick3" role="list">
-        <a role="listitem" class="opt3 c-renew" href="#renew" data-open="renew"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M5 17a2 2 0 1 0 4 0M15 17a2 2 0 1 0 4 0M3 17v-4l2-5h14l2 5v4"/><path d="M3 13h18"/></svg></span><span><strong>Motor vehicle licence renewal</strong><small>From J$4,000 + TAJ's fee</small></span><span class="go" aria-hidden="true">→</span></a>
-        <a role="listitem" class="opt3 c-fit" href="#fitness-only" data-open="fitness"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l2 2 4-4"/><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg></span><span><strong>Fitness fee payment</strong><small>J$1,500 + TAJ's fee</small></span><span class="go" aria-hidden="true">→</span></a>
-        <a role="listitem" class="opt3 c-tik" href="#ticket-lookup" data-open="tickets"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span><span><strong>Traffic ticket lookup</strong><small>J$1,500 per session</small></span><span class="go" aria-hidden="true">→</span></a>
+        <a role="listitem" class="opt3 c-renew" href="#renew" data-open="renew"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M5 17a2 2 0 1 0 4 0M15 17a2 2 0 1 0 4 0M3 17v-4l2-5h14l2 5v4"/><path d="M3 13h18"/></svg></span><span><strong>Motor vehicle licence renewal</strong><small>We renew your registration from start to finish.</small><em>From J$4,000 + TAJ's fee</em></span><span class="go" aria-hidden="true">→</span></a>
+        <a role="listitem" class="opt3 c-fit" href="#fitness-only" data-open="fitness"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l2 2 4-4"/><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg></span><span><strong>Fitness fee payment</strong><small>We pay your fitness fee so you go straight to the depot.</small><em>J$1,500 + TAJ's fee</em></span><span class="go" aria-hidden="true">→</span></a>
+        <a role="listitem" class="opt3 c-tik" href="#ticket-lookup" data-open="tickets"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span><span><strong>Traffic ticket lookup</strong><small>We find your outstanding tickets and pay them.</small><em>J$1,500 per session</em></span><span class="go" aria-hidden="true">→</span></a>
       </div>
       <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
     </div>
@@ -718,7 +719,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <div class="tier done"><b>Done for you</b><span>Fitness and insurance valid</span></div>
         <div class="svc-in">
           <h2 id="valid-title">Online registration renewal</h2>
-          <p class="svc-sub">No Tax Office visit. Your certificate arrives by email.</p>
+          <p class="svc-sub">We renew it online and email your new certificate.</p>
           <div class="fee-pair">
             <div class="mine"><span class="lbl">Our fee</span><b>J$4,000</b></div>
             <div class="agency"><span class="lbl">Agency fee (TAJ)</span><b>By engine size</b><small>Work it out below</small></div>
@@ -766,7 +767,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <div class="tier prep"><b>You attend the depot</b><span>Fitness expired</span></div>
         <div class="svc-in">
           <h2 id="expired-title">Fitness and renewal package</h2>
-          <p class="svc-sub">We pre-pay your fitness fee, you take the vehicle to the depot, then we finish the renewal online.</p>
+          <p class="svc-sub">We pay your fitness fee, then complete your renewal.</p>
           <div class="fee-pair">
             <div class="mine"><span class="lbl">Our fee</span><b>J$5,000</b><small>Fitness pre-pay and renewal</small></div>
             <div class="agency"><span class="lbl">Agency fees (TAJ)</span><b>Fitness + registration</b><small>Work them out below</small></div>
@@ -824,7 +825,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <div class="tier prep"><b>You attend the depot</b><span>Fitness only, no renewal</span></div>
         <div class="svc-in">
           <h2 id="fitness-only-title">Fitness fee pre-pay</h2>
-          <p class="svc-sub">We pay your fitness fee at the Tax Office and send the receipt to your phone. You take the vehicle to the ITA depot.</p>
+          <p class="svc-sub">We pay your fitness fee so you go straight to the depot.</p>
           <div class="fee-pair">
             <div class="mine"><span class="lbl">Our fee</span><b>J$1,500</b></div>
             <div class="agency"><span class="lbl">Agency fee (TAJ)</span><b>J$4,500</b><small>J$5,400 commercial, trailer or tractor</small></div>
@@ -854,7 +855,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <div class="tier done"><b>Done for you</b><span>Separate from a renewal</span></div>
         <div class="svc-in">
           <h2 id="ticket-title">Traffic ticket lookup</h2>
-          <p class="svc-sub">We find every outstanding ticket on your record, then pay them for you. Tickets must be cleared before your vehicle can be renewed.</p>
+          <p class="svc-sub">We find your outstanding tickets and pay them.</p>
           <div class="fee-pair">
             <div class="mine"><span class="lbl">Our fee</span><b>J$1,500</b><small>Per session, covers all tickets found</small></div>
             <div class="agency"><span class="lbl">Ticket amounts</span><b>As on your record</b><small>Paid to the court</small></div>
@@ -864,7 +865,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
             <div class="we"><h3>We do</h3><ul>
               <li>Look up every outstanding ticket on your record</li>
               <li>Tell you what we find and the amounts</li>
-              <li>Pay the tickets that can be paid online</li>
+              <li>Pay the tickets that can be paid online, so they don't block your renewal</li>
             </ul></div>
             <div class="you"><h3>You do</h3><ul>
               <li>Send photos of the front and back of your driver's licence</li>
