@@ -348,7 +348,10 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 @media (max-width: 599px) { .band { padding: 36px 0 40px; } .band-in { padding: 0 16px; } .band-cta .btn-band { width: 100%; } }
 </style>
 <link rel="stylesheet" href="/assets/price-steps.css">
-<style>.band .ps { margin-top: 0; } .band .ps-head { display: none; } .ps-start { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; margin-top: 20px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; } @media (max-width: 599px) { .ps-start { width: 100%; } }</style>
+<style>.band .ps { margin-top: 0; } .band .ps-head { display: none; } .ps-start { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; margin-top: 20px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; } @media (max-width: 599px) { .ps-start { width: 100%; } }.quiet .band-label { color: #59636B; }
+.quiet details { box-shadow: none !important; }
+.card-body .ps { margin-top: 24px; }
+</style>
 </head>
 <body id="top">
 
@@ -390,14 +393,14 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     <nav class="lcs-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/#services">Services</a> › Driving abstract</nav>
     <h1>Jamaican Driving Abstract</h1>
     <p class="lcs-lead">Your Jamaican driving record, shipped to you.</p>
-    <p class="lcs-choose"><a href="#main">See what's included below&nbsp;<span aria-hidden="true">↓</span></a></p>
+    <p class="lcs-choose"><a href="#main">See what you need below&nbsp;<span aria-hidden="true">↓</span></a></p>
   </div>
 </section>
 
 <main id="main" class="banded">
   <section class="band band-white ">
     <div class="band-in">
-      <p class="band-label">1 · What we do</p>
+      <p class="band-label">1 · Your driving abstract</p>
       <div class="service-card featured">
       <div class="card-head">
         <span class="badge">Full proxy &middot; Ships worldwide</span>
@@ -406,15 +409,6 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
       </div>
       <div class="card-body">
         
-
-        <h3 class="list-title">What we handle</h3>
-        <ul class="feature-list">
-          <li>Check your authorisation letter and licence scans</li>
-          <li>Get your notarised letter stamped at the Stamp Office</li>
-          <li>Pay the abstract fee and lodge your request</li>
-          <li>Collect the official abstract and email you a scan</li>
-          <li>Ship the original to you by DHL</li>
-        </ul>
 
         <div class="estimator" id="estimator">
           <h3 class="list-title">Before you start</h3>
@@ -438,28 +432,41 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
           <p class="ready-msg" id="readyMsg" hidden>All set. Send these over and we'll take it from here.</p>
         </div>
 
-        <div class="btn-row">
-        </div>
+        <div class="ps" data-price-steps><script type="application/json">{"dhl": true, "groups": [{"title": "Your driving abstract", "rows": [{"label": "Our service fee", "note": "We collect it and send it to you", "usd": 100}, {"label": "Government fees", "note": "TAJ abstract fee J$3,000 + stamp duty J$500", "jmd": 3500}]}, {"title": "Apostille, if you need it", "toggle": true, "rows": [{"label": "Our apostille service", "note": "We take it to the Ministry of Foreign Affairs", "usd": 100}, {"label": "Ministry's apostille fee", "choose": [{"label": "Regular, about 5 working days", "jmd": 3500}, {"label": "24-hour", "jmd": 5000}]}]}, {"title": "Delivery to you", "rows": [{"label": "DHL", "note": "Quoted by your delivery address", "text": "quoted"}]}]}</script></div>
+        <a class="ps-start" href="/start.html?service=driving-abstract">Start my abstract request</a>
+        <h3 class="list-title" style="margin-top:28px">What we handle</h3>
+        <ul class="feature-list">
+          <li>Check your authorisation letter and licence scans</li>
+          <li>Get your notarised letter stamped at the Stamp Office</li>
+          <li>Pay the abstract fee and lodge your request</li>
+          <li>Collect the official abstract and email you a scan</li>
+          <li>Ship the original to you by DHL</li>
+        </ul>
       </div>
     </div>
       <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
     </div>
   </section>
-  <section class="band band-tint ">
+  <section class="band band-white quiet">
     <div class="band-in">
-      <p class="band-label">2 · Your price, step by step</p>
-      <div class="ps" data-price-steps><script type="application/json">{"dhl": true, "groups": [{"title": "Your driving abstract", "rows": [{"label": "Our service fee", "note": "We collect it and send it to you", "usd": 100}, {"label": "Government fees", "note": "TAJ abstract fee J$3,000 + stamp duty J$500", "jmd": 3500}]}, {"title": "Apostille, if you need it", "toggle": true, "rows": [{"label": "Our apostille service", "note": "We take it to the Ministry of Foreign Affairs", "usd": 100}, {"label": "Ministry's apostille fee", "choose": [{"label": "Regular, about 5 working days", "jmd": 3500}, {"label": "24-hour", "jmd": 5000}]}]}, {"title": "Delivery to you", "rows": [{"label": "DHL", "note": "Quoted by your delivery address", "text": "quoted"}]}]}</script></div>
-      <a class="ps-start" href="/start.html?service=driving-abstract">Start my abstract request</a>
-    </div>
-  </section>
-
-
-  <section class="band band-white ">
-    <div class="band-in">
-      <p class="band-label">3 · Good to know</p>
+      <p class="band-label">Good to know</p>
       <div class="faq-section">
     <h3>Good to know</h3>
     <div class="faq">
+      <details>
+        <summary>What a driving abstract shows</summary>
+        <div class="answer">
+          <p style="margin-top:0;">An abstract is your official driving history. It lists your licence issue dates and class, traffic violations, demerit points and any suspensions.</p>
+          <p style="margin-bottom:0;">It is commonly requested by overseas licensing offices when you exchange your licence, by insurers who give discounts for driving experience, and by employers hiring drivers.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Unpaid tickets and your record</summary>
+        <div class="answer">
+          <p style="margin-top:0;">Unpaid tickets and demerit points appear on your abstract. If you need a clean record, settle outstanding tickets before you request it.</p>
+          <p style="margin-bottom:0;">Older tickets may need to be cleared at the Traffic Court.</p>
+        </div>
+      </details>
       <details>
         <summary>How we process your request</summary>
         <div class="answer">
@@ -490,55 +497,6 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
       </details>
     </div>
   </div>
-    </div>
-  </section>
-
-  <section class="band band-tint ">
-    <div class="band-in">
-      <p class="band-label">4 · More reading</p>
-      <section class="faq-section resources" aria-labelledby="res-title">
-    <h3 id="res-title">Reference &amp; Resources</h3>
-    <p class="lede">In Jamaica and want to do it yourself? Here's what you need to know.</p>
-    <div class="faq">
-      <details>
-        <summary>What a driving abstract shows</summary>
-        <div class="answer">
-          <p style="margin-top:0;">An abstract is your official driving history. It lists your licence issue dates and class, traffic violations, demerit points and any suspensions.</p>
-          <p style="margin-bottom:0;">It is commonly requested by overseas licensing offices when you exchange your licence, by insurers who give discounts for driving experience, and by employers hiring drivers.</p>
-        </div>
-      </details>
-      <details>
-        <summary>Getting your abstract yourself</summary>
-        <div class="answer">
-          <ol class="steps">
-            <li><strong>Pay the fee at TAJ.</strong> Pay the driving abstract fee at any tax office and keep your receipt.</li>
-            <li><strong>Go to the Island Traffic Authority.</strong> Take the TAJ receipt and your valid driver's licence to the ITA office at 145 Maxfield Avenue, Kingston 10.</li>
-            <li><strong>Collect your abstract.</strong> The ITA prepares the abstract and tells you when to collect it.</li>
-          </ol>
-          <p style="margin:16px 0 0;">The abstract fee reported by the ITA is J$3,000. Fees can change, so confirm the current amount at the tax office before you pay.</p>
-        </div>
-      </details>
-      <details>
-        <summary>Sending someone to collect it for you</summary>
-        <div class="answer">
-          <p style="margin-top:0;">Someone else can handle the request for you, but only with an authorisation letter from you. A plain signed letter is not enough: the ITA has said the letter must be signed and stamped by a Justice of the Peace. If you are overseas, the letter is notarised where you live and then stamped at the Stamp Office in Jamaica, where the stamp duty is currently J$500.</p>
-          <p style="margin-bottom:0;">Check the current requirements with the ITA before your representative goes, as a letter in the wrong form is turned away.</p>
-        </div>
-      </details>
-      <details>
-        <summary>Unpaid tickets and your record</summary>
-        <div class="answer">
-          <p style="margin-top:0;">Unpaid tickets and demerit points appear on your abstract. If you need a clean record, settle outstanding tickets before you request it.</p>
-          <p style="margin-bottom:0;">Older tickets may need to be cleared at the Traffic Court.</p>
-        </div>
-      </details>
-    </div>
-
-    <div class="res-links">
-      <a class="res-link" href="/drivers-licence-renewal.html"><strong>Driver's Licence Renewal</strong><span>Renewing too? We check your record, prepare Form F7 and pay online.</span></a>
-    </div>
-    <p class="checked-note">Information last checked October 2026. Government requirements and fees can change without notice.</p>
-  </section>
     </div>
   </section>
 
