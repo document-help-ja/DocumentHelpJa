@@ -351,6 +351,42 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 <style>.band .ps { margin-top: 0; } .band .ps-head { display: none; } .ps-start { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; margin-top: 20px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; } @media (max-width: 599px) { .ps-start { width: 100%; } }.quiet .band-label { color: #59636B; }
 .quiet details { box-shadow: none !important; }
 .card-body .ps { margin-top: 24px; }
+/* Oct 2026: tickets decision first */
+.fee-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; margin: 28px 0 0; }
+.fee-pair > div { padding: 16px 16px 18px; border-radius: 12px; min-width: 0; }
+.fee-pair .mine { background: #EAF0F6; border: 1px solid #C6D2DC; }
+.fee-pair .agency { background: #F5F6F7; border: 1px solid #E1E5E8; }
+.fee-pair .lbl { margin-bottom: 6px; }
+.fee-pair .mine .lbl { color: #1D4E89; }
+.fee-pair b { display: block; font-size: 1.5rem; font-weight: 700; color: #0F2537; letter-spacing: -0.02em; line-height: 1.25; font-variant-numeric: tabular-nums; }
+.fee-pair .agency b { font-size: 1.15rem; }
+.fee-pair small { display: block; margin-top: 6px; font-size: .88rem; line-height: 1.5; color: var(--muted); }
+.pick3 { display: grid; gap: 16px; }
+.opt3 { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 14px; min-height: 84px; padding: 18px 18px 18px 22px; border: 1px solid #C89B3C; border-radius: 14px; background: #fff; color: #0F2537; text-decoration: none; box-shadow: var(--lift); }
+.opt3 strong { display: block; font-weight: 600; font-size: 1.05rem; line-height: 1.35; }
+.opt3 small { display: block; margin-top: 4px; color: var(--muted); font-size: .92rem; font-weight: 400; }
+.opt3 .go { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: var(--tone); color: var(--muted); }
+.opt3:hover, .opt3[aria-current="true"] { background: #F9F5EC; color: #0F2537; }
+.opt3[aria-current="true"] { box-shadow: 0 0 0 2px #C89B3C; }
+.opt3[aria-current="true"] .go { background: #0F2537; color: #C89B3C; border-color: #0F2537; }
+.pick3 { gap: 36px !important; }
+.opt3 { min-height: 128px !important; padding-top: 28px !important; padding-bottom: 28px !important; }
+.opt3 { grid-template-columns: auto minmax(0, 1fr) auto !important; min-height: 116px !important; padding: 24px 20px 24px 22px !important; gap: 16px !important; border-width: 1.5px !important; border-radius: 16px !important; }
+.opt3 strong { font-size: 1.15rem !important; }
+.opt3 .ic { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; }
+.opt3 .ic svg { width: 26px; height: 26px; }
+.opt3.c-tik { border-color: #A23B3B !important; } .c-tik .ic { background: #FBF1F1; color: #A23B3B; }
+.opt3.c-tik[aria-current="true"] { box-shadow: 0 0 0 2px #A23B3B !important; }
+.opt3 em { display: block; margin-top: 8px; font-style: normal; font-weight: 600; font-size: .92rem; color: #0F2537; }
+.opt3.c-abs { border-color: #1D4E89 !important; } .c-abs .ic { background: #EAF0F6; color: #1D4E89; }
+.opt3.c-abs[aria-current="true"] { box-shadow: 0 0 0 2px #1D4E89 !important; }
+[data-panel][hidden], [data-after][hidden] { display: none !important; }
+.tix-note { margin: 0 0 28px; padding: 16px 18px; border-radius: 12px; background: #FDF3DC; border: 1px solid #E8C97A; color: #5C4310; font-size: 1rem; line-height: 1.6; }
+.tix-note b { color: #3F2E08; }
+[data-panel="tickets"] .service-card { border: 1px solid #A23B3B !important; }
+[data-panel="abstract"] .service-card { border: 1px solid #1D4E89 !important; }
+.lbl { display: block; font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #59636B; margin-bottom: 6px; }
+.fee-pair .mine .lbl { color: #1D4E89; }
 </style>
 </head>
 <body id="top">
@@ -393,14 +429,52 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     <nav class="lcs-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/#services">Services</a> › Driving abstract</nav>
     <h1>Jamaican Driving Abstract</h1>
     <p class="lcs-lead">Your Jamaican driving record, shipped to you.</p>
-    <p class="lcs-choose"><a href="#main">See what you need below&nbsp;<span aria-hidden="true">↓</span></a></p>
+    <p class="lcs-choose"><a href="#main">Choose below&nbsp;<span aria-hidden="true">↓</span></a></p>
   </div>
 </section>
 
 <main id="main" class="banded">
   <section class="band band-white ">
     <div class="band-in">
-      <p class="band-label">1 · Your driving abstract</p>
+      <p class="band-label">1 · Before you start</p>
+      <p class="tix-note"><b>Unpaid tickets show on your abstract.</b> Want a clean record? Clear them first, then order your abstract. If not, go ahead now.</p>
+      <div class="pick3" role="list">
+        <a role="listitem" class="opt3 c-abs" href="#abstract" data-open="abstract"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg></span><span><strong>Get my abstract now</strong><small>Your record, as it stands today.</small><em>US$100 + government fees</em></span><span class="go" aria-hidden="true">→</span></a>
+        <a role="listitem" class="opt3 c-tik" href="#clear-tickets" data-open="tickets"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span><span><strong>Clear my tickets first</strong><small>We find and pay them, then get your abstract.</small><em>J$1,500 per lookup</em></span><span class="go" aria-hidden="true">→</span></a>
+      </div>
+      <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
+    </div>
+  </section>
+
+  <section class="band band-tint " id="clear-tickets" data-panel="tickets">
+    <div class="band-in">
+      <p class="band-label">2 · Clear your tickets first</p>
+      <div class="service-card tix-card">
+        <div class="card-head">
+          <h2>Traffic ticket lookup</h2>
+          <p class="card-intro">We find your outstanding tickets and pay them.</p>
+        </div>
+        <div class="card-body">
+          <div class="fee-pair">
+            <div class="mine"><span class="lbl">Our fee</span><b>J$1,500</b><small>Per lookup, covers all tickets found</small></div>
+            <div class="agency"><span class="lbl">Ticket amounts</span><b>As on your record</b><small>Paid to the court</small></div>
+          </div>
+          <a class="ps-start" href="/start.html?service=drivers-licence&amp;source=ticket-lookup-abstract">Book a ticket lookup</a>
+          <h3 class="list-title" style="margin-top:28px">What happens next</h3>
+          <ul class="feature-list">
+            <li>Send us photos of the front and back of your licence</li>
+            <li>We tell you what we find and pay the tickets that can be paid online</li>
+            <li>Once they are cleared, we order your abstract</li>
+          </ul>
+          <p class="who-note">Tickets past their court date can't be paid online. We give you the details so you can sort them out with the court. The lookup fee is not refunded.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-tint " id="abstract" data-panel="abstract">
+    <div class="band-in">
+      <p class="band-label">2 · Your driving abstract</p>
       <div class="service-card featured">
       <div class="card-head">
         <span class="badge">Full proxy &middot; Ships worldwide</span>
@@ -409,15 +483,6 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
       </div>
       <div class="card-body">
         
-
-        <div class="estimator" id="estimator">
-          <h3 class="list-title">Before you start</h3>
-          
-          
-          <label class="opt"><input type="checkbox" id="opt-tix"><span>I have unpaid tickets, or I'm not sure</span></label>
-        </div>
-
-        <p class="ticket-alert" id="ticket-alert" hidden><strong>Unpaid tickets show on your abstract.</strong> If you need a clean record for an overseas licence or insurer, ask us to check your record first so you can deal with any tickets before the abstract is printed.</p>
 
         <div class="checklist" id="collect">
           <div class="checklist-head">
@@ -444,10 +509,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         </ul>
       </div>
     </div>
-      <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
     </div>
   </section>
-  <section class="band band-white quiet">
+  <section class="band band-white quiet" data-after hidden>
     <div class="band-in">
       <p class="band-label">Good to know</p>
       <div class="faq-section">
@@ -541,10 +605,6 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
   (function () {
-    var tix = document.getElementById('opt-tix');
-    function est() { document.getElementById('ticket-alert').hidden = !tix.checked; }
-    tix.addEventListener('change', est);
-    est();
     var boxes = document.querySelectorAll('#collect .check input');
     var done = document.getElementById('done'), msg = document.getElementById('readyMsg');
     document.getElementById('total').textContent = boxes.length;
@@ -557,5 +617,27 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 
 <script src="/assets/rates.js"></script>
 <script src="/assets/price-steps.js"></script>
+<script>
+/* Tickets decision: only the chosen option opens */
+(function () {
+  var bands = Array.prototype.slice.call(document.querySelectorAll('[data-panel]'));
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.opt3'));
+  var after = document.querySelector('[data-after]');
+  function open(key, scroll) {
+    var first = null;
+    bands.forEach(function (b) { var on = b.getAttribute('data-panel') === key; b.hidden = !on; if (on && !first) first = b; });
+    cards.forEach(function (c) { c.setAttribute('aria-current', c.getAttribute('data-open') === key ? 'true' : 'false'); });
+    if (after) after.hidden = !key;
+    if (scroll && first) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  open(null, false);
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-open]'); if (!a) return;
+    e.preventDefault(); open(a.getAttribute('data-open'), true);
+    history.replaceState(null, '', a.getAttribute('href'));
+  });
+  var h = location.hash.slice(1); if (h === 'abstract') open('abstract', false); if (h === 'clear-tickets') open('tickets', false);
+})();
+</script>
 </body>
 </html>
