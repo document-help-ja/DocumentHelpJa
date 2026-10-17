@@ -560,7 +560,34 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 @media (max-width: 599px) { .band { padding: 36px 0 40px; } .band-in { padding: 0 16px; } .band-cta .btn-band { width: 100%; } }
 </style>
 <link rel="stylesheet" href="/assets/price-steps.css">
-<style>.band .ps { margin-top: 0; } .band .ps-head { display: none; } .ps-start { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; margin-top: 20px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; } @media (max-width: 599px) { .ps-start { width: 100%; } }</style>
+<style>.band .ps { margin-top: 0; } .band .ps-head { display: none; } .ps-start { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; margin-top: 20px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; } @media (max-width: 599px) { .ps-start { width: 100%; } }/* Oct 2026: choose one route, only that one opens */
+[data-panel][hidden] { display: none !important; }
+.pick3 { display: grid; gap: 16px; }
+.opt3 { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 14px; min-height: 84px; padding: 18px 18px 18px 22px; border: 1px solid #C89B3C; border-radius: 14px; background: #fff; color: #0F2537; text-decoration: none; box-shadow: var(--lift); }
+.opt3 strong { display: block; font-weight: 600; font-size: 1.05rem; line-height: 1.35; }
+.opt3 small { display: block; margin-top: 4px; color: var(--muted); font-size: .92rem; font-weight: 400; }
+.opt3 .go { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: var(--tone); color: var(--muted); }
+.opt3:hover, .opt3[aria-current="true"] { background: #F9F5EC; color: #0F2537; }
+.opt3[aria-current="true"] { box-shadow: 0 0 0 2px #C89B3C; }
+.opt3[aria-current="true"] .go { background: #0F2537; color: #C89B3C; border-color: #0F2537; }
+.pick3 { gap: 28px !important; }
+.opt3 { grid-template-columns: auto minmax(0, 1fr) auto !important; min-height: 116px !important; padding: 24px 20px 24px 22px !important; gap: 16px !important; border-width: 1.5px !important; border-radius: 16px !important; }
+.opt3 strong { font-size: 1.15rem !important; }
+.opt3 .ic { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; }
+.opt3 .ic svg { width: 26px; height: 26px; }
+.quiet .band-label { color: #59636B; }
+.quiet .acc { box-shadow: none !important; border: 1px solid #E1E5E8 !important; background: #FAFBFC; margin-bottom: 10px !important; }
+.quiet .acc > summary { min-height: 60px !important; padding-top: 14px !important; padding-bottom: 14px !important; }
+.quiet .acc > summary h2 { font-size: .98rem !important; font-weight: 500 !important; color: #343D43; }
+.quiet .acc-btn { width: 28px; height: 28px; }
+.opt3 em { display: block; margin-top: 8px; font-style: normal; font-weight: 600; font-size: .92rem; color: #0F2537; }
+.more-read { margin: 22px 0 0; font-size: .95rem; color: #59636B; }
+.opt3.c-local { border-color: #2F7A57 !important; } .c-local .ic { background: #EFF6F2; color: #2F7A57; }
+.opt3.c-over { border-color: #1D4E89 !important; } .c-over .ic { background: #EAF0F6; color: #1D4E89; }
+.opt3.c-local[aria-current="true"] { box-shadow: 0 0 0 2px #2F7A57 !important; }
+.opt3.c-over[aria-current="true"] { box-shadow: 0 0 0 2px #1D4E89 !important; }
+[data-panel="local"] .svc { border: 1px solid #2F7A57 !important; } [data-panel="overseas"] .svc { border: 1px solid #1D4E89 !important; }
+</style>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -610,16 +637,16 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 <main id="main" class="banded">
   <section class="band band-white ">
     <div class="band-in">
-      <p class="band-label">1 · Choose</p>
-      <nav class="jump" aria-label="Choose your option">
-      <a href="#local">In Jamaica<small>J$5,000 + JCF fee</small></a>
-      <a href="#overseas">Overseas<small>US$100 + JCF fee</small></a>
-    </nav>
+      <p class="band-label">1 · Where are you applying from?</p>
+      <div class="pick3" role="list">
+        <a role="listitem" class="opt3 c-local" href="#local" data-open="local"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><strong>In Jamaica</strong><small>We prepare it all. You just attend fingerprinting.</small><em>J$5,000 + JCF fee</em></span><span class="go" aria-hidden="true">→</span></a>
+        <a role="listitem" class="opt3 c-over" href="#overseas" data-open="overseas"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></span><span><strong>Overseas</strong><small>Fingerprinted where you live. No need to fly home.</small><em>US$100 + JCF fee</em></span><span class="go" aria-hidden="true">→</span></a>
+      </div>
       <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
     </div>
   </section>
 
-  <section class="band band-tint ">
+  <section class="band band-tint " data-panel="local">
     <div class="band-in">
       <p class="band-label">2 · In Jamaica</p>
       <section class="svc" id="local" aria-labelledby="local-title">
@@ -658,7 +685,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
             </ul></div>
           </div></details>
           <div class="fine">
-            <p class="note">Missing one of these? <a href="#overseas">Overseas applicants use the proxy service</a>, or <a href="/start.html?service=police-record">start a request</a> and we will confirm what you need.</p>
+            <p class="note">Missing one of these? <a href="#overseas" data-open="overseas">Overseas applicants use the proxy service</a>, or <a href="/start.html?service=police-record">start a request</a> and we will confirm what you need.</p>
             <p class="note">The JCF's fee is separate and is paid to the government.</p>
             <p class="note">By proceeding you agree to our <a href="/terms.html">Terms &amp; Conditions</a>.</p>
           </div>
@@ -667,9 +694,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     </div>
   </section>
 
-  <section class="band band-white ">
+  <section class="band band-tint " data-panel="overseas">
     <div class="band-in">
-      <p class="band-label">3 · Overseas</p>
+      <p class="band-label">2 · Overseas</p>
       <section class="svc" id="overseas" aria-labelledby="overseas-title">
         <div class="tier done"><b>Done for you</b><span>Overseas</span></div>
         <div class="svc-in">
@@ -701,18 +728,18 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
       </section>
     </div>
   </section>
-  <section class="band band-tint ">
+  <section class="band band-white " data-panel="overseas">
     <div class="band-in">
-      <p class="band-label">4 · Overseas price, step by step</p>
+      <p class="band-label">3 · Your price, step by step</p>
       <div class="ps" data-price-steps><script type="application/json">{"dhl": false, "groups": [{"title": "Your police record", "rows": [{"label": "Our service fee", "note": "We apply, pay, submit and collect it", "usd": 100}, {"label": "JCF fee", "choose": [{"label": "Regular, 21 working days", "jmd": 3000}, {"label": "Express, 5 working days", "jmd": 6000}]}]}, {"title": "Apostille, if you need it", "toggle": true, "rows": [{"label": "Our apostille service", "note": "We take it to the Ministry of Foreign Affairs", "usd": 100}, {"label": "Ministry's apostille fee", "choose": [{"label": "Regular, about 5 working days", "jmd": 3500}, {"label": "24-hour", "jmd": 5000}]}]}, {"title": "Return delivery", "rows": [{"label": "Your prepaid DHL envelope", "note": "You include it with your documents", "text": "you send it"}]}]}</script></div>
       <a class="ps-start" href="/start.html?service=police-record&amp;source=police-record-overseas">Start my overseas case</a>
     </div>
   </section>
 
 
-  <section class="band band-white ">
+  <section class="band band-tint " data-panel="overseas">
     <div class="band-in">
-      <p class="band-label">5 · Overseas checklist</p>
+      <p class="band-label">4 · What to send</p>
       <details class="acc" id="send">
       <summary><h2>What do I send from overseas?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
       <div class="acc-body">
@@ -731,9 +758,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     </div>
   </section>
 
-  <section class="band band-tint ">
+  <section class="band band-white quiet">
     <div class="band-in">
-      <p class="band-label">6 · Good to know</p>
+      <p class="band-label">Good to know</p>
       <details class="acc" id="fees">
         <summary><h2>How much does a Jamaican police record cost?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
         <div class="acc-body">
@@ -780,9 +807,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <div class="acc-body">
           <p>No. JCF and TAJ fees are non-refundable once processed. Our service fee is covered in our <a href="/terms.html">Terms &amp; Conditions</a>.</p></div>
       </details>
-      <div class="links">
-      <a class="guide-link" href="https://cro.jcfcorporatespecialservices.org/track-application/" target="_blank" rel="noopener"><span><strong>JCF Police Certificate Tracker</strong><small>Check your application on the JCF's own system</small></span><span class="go" aria-hidden="true">→</span></a>
-    </div>
+      <p class="more-read">Already applied? <a href="https://cro.jcfcorporatespecialservices.org/track-application/" target="_blank" rel="noopener">Track your application on the JCF website</a>.</p>
     </div>
   </section>
 
@@ -886,6 +911,29 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 })();
 </script>
 <script src="/assets/rates.js"></script>
-<script src="/assets/price-steps.js"></script>
+<script src="/assets/price-steps.js">
+</script>
+<script>
+/* Choose a route: only the chosen one opens */
+(function () {
+  var bands = Array.prototype.slice.call(document.querySelectorAll('[data-panel]'));
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.opt3'));
+  if (!bands.length) return;
+  var HASH = { local: 'local', overseas: 'overseas', send: 'overseas' };
+  function open(key, scroll) {
+    var first = null;
+    bands.forEach(function (b) { var on = b.getAttribute('data-panel') === key; b.hidden = !on; if (on && !first) first = b; });
+    cards.forEach(function (c) { c.setAttribute('aria-current', c.getAttribute('data-open') === key ? 'true' : 'false'); });
+    if (scroll && first) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  bands.forEach(function (b) { b.hidden = true; });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-open]'); if (!a) return;
+    e.preventDefault(); open(a.getAttribute('data-open'), true);
+    history.replaceState(null, '', a.getAttribute('href'));
+  });
+  var k = HASH[location.hash.slice(1)]; if (k) open(k, false);
+})();
+</script>
 </body>
 </html>
