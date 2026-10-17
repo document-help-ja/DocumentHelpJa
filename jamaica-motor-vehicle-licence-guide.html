@@ -880,6 +880,9 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
 .ov-glance dl { margin: 0; display: flex; flex-direction: column; gap: .9rem; }
 .ov-glance dt { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #7A6030; }
 .ov-glance dd { margin: 0; }
+.ov-mini { margin: .2rem 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: .3rem; }
+.ov-mini li { position: relative; padding-left: 1.1rem; }
+.ov-mini li::before { content: ""; position: absolute; left: 0; top: .7em; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
 .ov-cards { display: flex; flex-direction: column; gap: 1rem; }
 .ov-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.25rem; }
 .ov-card h3 { font: 700 1.1rem/1.3 var(--sans); color: var(--ink); margin-bottom: .35rem; }
@@ -987,7 +990,7 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
         <dl>
           <div><dt>Who it’s for</dt><dd>Owners renewing the registration on a private car, motorcycle or commercial vehicle</dd></div>
           <div><dt>How long</dt><dd>Same day online, once insurance and fitness are current. There’s no sticker anymore: your proof is an electronic certificate (eMVRC).</dd></div>
-          <div><dt>What it costs</dt><dd>TAJ’s fee depends on engine size: J$9,240 to J$43,650 a year for a private car, or J$3,690 to J$8,550 for a motorcycle. If fitness has expired, the fitness fee is extra.</dd></div>
+          <div><dt>What it costs</dt><dd><ul class="ov-mini"><li>Private car: from J$9,240 a year</li><li>Motorcycle: from J$3,690 a year</li><li>Fitness fee extra, if expired</li></ul></dd></div>
         </dl>
         <a class="ov-btn ov-btn-dark" href="#help">Have us handle it →</a>
       </div>
