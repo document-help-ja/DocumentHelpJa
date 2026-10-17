@@ -6,7 +6,7 @@
   <title>Motor Vehicle Licence Renewal in Jamaica | Laura Clarke</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="description" content="Renew your Jamaican motor vehicle registration without the Tax Office line. One J$4,000 fee, with fitness pre-pay included if your fitness has expired.">
+  <meta name="description" content="Renew your Jamaican motor vehicle registration without the Tax Office line. J$4,000 online renewal, or J$5,000 with fitness pre-pay. Fitness pre-pay and traffic ticket lookup also available on their own.">
   <meta name="author" content="Laura Clarke">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <link rel="canonical" href="https://documenthelpja.com/motor-vehicle-licence-renewal.html">
@@ -58,9 +58,9 @@
    "@id": "https://documenthelpja.com/motor-vehicle-licence-renewal.html",
    "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html",
    "name": "Motor Vehicle Licence Renewal",
-   "description": "Renew your Jamaican motor vehicle registration without the Tax Office line. One J$4,000 fee, with fitness pre-pay included if your fitness has expired.",
+   "description": "Renew your Jamaican motor vehicle registration without the Tax Office line. J$4,000 online renewal, or J$5,000 with fitness pre-pay. Fitness pre-pay and traffic ticket lookup also available on their own.",
    "inLanguage": "en-JM",
-   "dateModified": "2026-10-03",
+   "dateModified": "2026-10-17",
    "author": {
     "@type": "Person",
     "name": "Laura Clarke",
@@ -124,11 +124,27 @@
      },
      {
       "@type": "Offer",
-      "name": "Fitness pre-pay and registration renewal (fitness expired)",
-      "price": "4000",
+      "name": "Fitness and renewal package (fitness expired)",
+      "price": "5000",
       "priceCurrency": "JMD",
       "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#expired-fitness",
-      "description": "Service fee. Fitness pre-pay is included at no extra charge. TAJ's fitness and registration fees are separate. The owner takes the vehicle to the ITA depot for inspection."
+      "description": "Service fee covering the fitness pre-pay and the registration renewal. TAJ's fitness and registration fees are separate. The owner takes the vehicle to the ITA depot for inspection."
+     },
+     {
+      "@type": "Offer",
+      "name": "Fitness fee pre-pay only",
+      "price": "1500",
+      "priceCurrency": "JMD",
+      "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#fitness-only",
+      "description": "Service fee. TAJ's fitness fee is separate. The owner takes the vehicle to the ITA depot for inspection."
+     },
+     {
+      "@type": "Offer",
+      "name": "Traffic ticket lookup and payment",
+      "price": "1500",
+      "priceCurrency": "JMD",
+      "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#ticket-lookup",
+      "description": "Service fee per session, for the lookup. Covers every outstanding ticket found. Ticket amounts are separate. Not part of a renewal."
      }
     ]
    }
@@ -150,7 +166,7 @@
      "name": "Can unpaid traffic tickets block my renewal?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. TAJ cross-references police and court databases. Unpaid traffic tickets or missed court dates tied to the registered owner's TRN or the plate number automatically block online registration until they are cleared. Fines are settled at the Traffic Court, and the hold must be cleared in the system before the renewal can go through. Our motor vehicle guide covers this and the other rejection traps. Not sure what is on your record? We can look up your traffic tickets from photos of the front and back of your driver's licence. The lookup is included in our service fee, or J$1,500 on its own ."
+      "text": "Yes. TAJ cross-references police and court databases. Unpaid traffic tickets or missed court dates tied to the registered owner's TRN or the plate number automatically block online registration until they are cleared. Fines are settled at the Traffic Court, and the hold must be cleared in the system before the renewal can go through. Our motor vehicle guide covers this and the other rejection traps. Not sure what is on your record? We can look up your traffic tickets from photos of the front and back of your driver's licence, then pay them for you. The lookup is J$1,500 per session and is separate from a renewal."
      }
     },
     {
@@ -166,7 +182,7 @@
      "name": "Why must I take the vehicle to the depot myself?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "An expired fitness certificate requires a mechanical roadworthiness check. The Island Traffic Authority (ITA) must physically inspect the vehicle's lights, tyres and structure, and verify that the chassis (VIN) and engine numbers match the C88 logbook. Our Fitness Pre-Pay and Registration service removes the Tax Office payment line and handles the final registration portal. TAJ needs your TRN and your vehicle class to take the fitness fee, so we ask for both. We get the fee paid, leaving you to drive through the depot inspection."
+      "text": "An expired fitness certificate requires a mechanical roadworthiness check. The Island Traffic Authority (ITA) must physically inspect the vehicle's lights, tyres and structure, and verify that the chassis (VIN) and engine numbers match the C88 logbook. Our fitness pre-pay removes the Tax Office payment line and handles the final registration portal. TAJ needs your TRN and your vehicle class to take the fitness fee, so we ask for both. We get the fee paid, leaving you to drive through the depot inspection."
      }
     }
    ]
@@ -531,6 +547,46 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 .band-cta .btn-band:hover { background: #1B3A55; }
 @media (max-width: 599px) { .band { padding: 36px 0 40px; } .band-in { padding: 0 16px; } .band-cta .btn-band { width: 100%; } }
 </style>
+<style id="mv-oct17">
+/* Motor vehicle page update (Oct 2026): thin coloured card borders, side-by-side fees, route check */
+.svc { border: 1px solid #C89B3C !important; }
+.fee-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; margin: 28px 0 0; }
+.fee-pair > div { padding: 16px 16px 18px; border-radius: 12px; min-width: 0; }
+.fee-pair .mine { background: #EAF0F6; border: 1px solid #C6D2DC; }
+.fee-pair .agency { background: #F5F6F7; border: 1px solid #E1E5E8; }
+.fee-pair .lbl { margin-bottom: 6px; }
+.fee-pair .mine .lbl { color: #1D4E89; }
+.fee-pair b { display: block; font-size: 1.5rem; font-weight: 700; color: #0F2537; letter-spacing: -0.02em; line-height: 1.25; font-variant-numeric: tabular-nums; }
+.fee-pair .agency b { font-size: 1.15rem; }
+.fee-pair small { display: block; margin-top: 6px; font-size: .88rem; line-height: 1.5; color: var(--muted); }
+.save { display: inline-block; margin-top: 12px; padding: 3px 10px; border-radius: 6px; background: var(--ok-bg); border: 1px solid var(--ok-line); color: var(--ok-text); font-size: .85rem; font-weight: 600; }
+.svc-in .fee-pair + .bill { margin-top: 18px !important; }
+.need { margin: 26px 0 0; padding: 18px 20px 6px; border-radius: 12px; background: var(--prep-bg); border: 1px solid var(--prep-line); }
+.need .lbl { color: var(--prep-fg); }
+.need ul { margin: 0 0 12px; }
+.need li { color: var(--ink); }
+.warn { margin: 22px 0 0; padding: 16px 18px; border-radius: 12px; background: #FBF1F1; border: 1px solid #E6C3C3; color: #6E2323; font-size: .95rem; line-height: 1.65; }
+.chk { background: #F1F5F8; border: 1px solid #C89B3C; border-radius: 16px; padding: 26px 22px 24px; }
+.chk h2 { font-size: 1.15rem; }
+.chk-sub { margin: 8px 0 0; color: var(--muted); font-size: .96rem; }
+.chk-step { margin-top: 22px; }
+.chk-count { font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+.chk-q { font-size: 1.08rem; font-weight: 600; color: var(--ink); line-height: 1.4; margin: 0; }
+.chk-q:focus, .verdict:focus { outline: none; }
+.yn { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+.yn button { min-height: 56px; border-radius: 12px; border: 1px solid var(--edge); background: var(--paper); font: inherit; font-weight: 600; font-size: 1.02rem; color: var(--ink); cursor: pointer; }
+.yn button:hover, .yn button:focus-visible { border-color: var(--primary); background: #fff; }
+.linkbtn { background: none; border: 0; padding: 0; min-height: 44px; font: inherit; font-weight: 500; color: var(--link); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.verdict h3 { font-size: 1.1rem; margin: 0 0 12px; }
+.verdict ul { margin-bottom: 1rem; }
+.verdict .fee { margin: 4px 0 18px; padding: 14px 16px; border-radius: 12px; background: #fff; color: var(--ink); font-size: .98rem; }
+.verdict-cta { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
+.verdict-cta .btn { min-height: 52px; }
+.single-title { margin: 40px 0 12px; font: 600 1.15rem/1.3 Inter, system-ui, sans-serif; color: #0F2537; }
+.jump.single { margin-top: 0; }
+.band .svc + .svc { margin-top: 48px !important; }
+@media (max-width: 599px) { .verdict-cta .btn { width: 100%; } .fee-pair b { font-size: 1.3rem; } }
+</style>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -573,18 +629,66 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/index.html">Home</a> › <a href="/index.html#services">Services</a> › Motor vehicle licence</nav>
     <h1>Motor Vehicle Licence Renewal</h1>
     <p class="lead">We renew your motor vehicle registration online, so you skip the Tax Office line.</p>
-    <p class="choose"><a href="#main">Is your fitness certificate still valid? Choose below&nbsp;<span aria-hidden="true">↓</span></a></p>
+    <p class="choose"><a href="#main">Check if you qualify for an online renewal&nbsp;<span aria-hidden="true">↓</span></a></p>
   </div>
 </section>
 
 <main id="main" class="banded">
   <section class="band band-white ">
     <div class="band-in">
-      <p class="band-label">1 · Choose</p>
-      <nav class="jump" aria-label="Choose your option">
-      <a href="#valid-fitness">Fitness valid<small>Online renewal</small></a>
-      <a href="#expired-fitness">Fitness expired<small>Pre-pay and depot</small></a>
-    </nav>
+      <p class="band-label">1 · Check your route</p>
+      <div class="chk" id="check">
+        <div id="chk-quiz">
+          <h2>Can we renew it online?</h2>
+          <p class="chk-sub">Two quick questions. TAJ sets these conditions.</p>
+          <div class="chk-step" data-step="insurance">
+            <p class="chk-count">Question 1 of 2</p>
+            <p class="chk-q" tabindex="-1">Is your vehicle insurance current?</p>
+            <div class="yn"><button type="button" data-next="fitness">Yes</button><button type="button" data-result="insure">No</button></div>
+          </div>
+          <div class="chk-step" data-step="fitness" hidden>
+            <p class="chk-count">Question 2 of 2</p>
+            <p class="chk-q" tabindex="-1">Is your fitness certificate still valid?</p>
+            <div class="yn"><button type="button" data-result="valid">Yes</button><button type="button" data-result="package">No</button></div>
+          </div>
+          <p><button type="button" class="linkbtn" id="chk-back" hidden>← Previous question</button></p>
+        </div>
+
+        <div class="verdict" data-verdict="valid" role="status" tabindex="-1" hidden>
+          <h3>You qualify for an online renewal</h3>
+          <p>Here is what to send us:</p>
+          <ul>
+            <li>A photo of the front and back of your driver's licence</li>
+            <li>Your last registration certificate (the expired one is fine)</li>
+          </ul>
+          <p class="fee"><b>Our fee: J$4,000.</b> TAJ's registration fee is separate and depends on engine size.</p>
+          <div class="verdict-cta"><a href="#valid-fitness" class="btn btn-dark">See the online renewal</a><button type="button" class="linkbtn" data-chk-reset>Change my answers</button></div>
+        </div>
+
+        <div class="verdict" data-verdict="package" role="status" tabindex="-1" hidden>
+          <h3>You need the fitness and renewal package</h3>
+          <p>We pre-pay your fitness, you take the vehicle to the depot, then we finish the renewal. Here is what to send us:</p>
+          <ul>
+            <li>A photo of the front and back of your driver's licence</li>
+            <li>Your last registration certificate (the expired one is fine)</li>
+          </ul>
+          <p class="fee"><b>Our fee: J$5,000.</b> TAJ's fitness and registration fees are separate.</p>
+          <div class="verdict-cta"><a href="#expired-fitness" class="btn btn-dark">See the package</a><button type="button" class="linkbtn" data-chk-reset>Change my answers</button></div>
+        </div>
+
+        <div class="verdict" data-verdict="insure" role="status" tabindex="-1" hidden>
+          <h3>Renew your insurance first</h3>
+          <p>TAJ will not renew a vehicle without current insurance. Once your insurance is renewed, come back and we can take it from there.</p>
+          <div class="verdict-cta"><button type="button" class="linkbtn" data-chk-reset>Change my answers</button></div>
+        </div>
+      </div>
+      <p class="warn"><b>Outstanding traffic tickets block renewal.</b> They must be cleared first. Not sure? <a href="#ticket-lookup">Book a ticket lookup</a>.</p>
+
+      <p class="single-title">Just need one thing?</p>
+      <nav class="jump single always" aria-label="Single services">
+        <a href="#fitness-only">Fitness fee pre-pay<small>J$1,500</small></a>
+        <a href="#ticket-lookup">Traffic ticket lookup<small>J$1,500</small></a>
+      </nav>
       <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
     </div>
   </section>
@@ -597,9 +701,12 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <div class="svc-in">
           <h2 id="valid-title">Online registration renewal</h2>
           <p class="svc-sub">No Tax Office visit. Your certificate arrives by email.</p>
-          <p class="price"><span class="lbl">Our fee</span><b>J$4,000</b></p>
+          <div class="fee-pair">
+            <div class="mine"><span class="lbl">Our fee</span><b>J$4,000</b></div>
+            <div class="agency"><span class="lbl">Agency fee (TAJ)</span><b>By engine size</b><small>Work it out below</small></div>
+          </div>
           <div class="bill" data-bill data-base="4000">
-            <p class="lbl">Plus TAJ's fee</p>
+            <p class="lbl">Work out TAJ's fee</p>
             <details class="door" data-name="registration" data-line="Engine size">
               <summary><span class="what"><b>Registration fee</b><small data-pick>12 months. Tap to choose engine size</small></span><span class="amt" data-amt>Choose</span></summary>
               <fieldset class="bill-opts"><legend class="sr-only">Choose your engine size</legend>
@@ -626,7 +733,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
             </ul></div>
             <div class="you"><h3>You need</h3><ul>
               <li>Active insurance and an unexpired fitness certificate</li>
-              <li>No unpaid traffic tickets. <a href="#tickets">We can check</a></li>
+              <li>Photos of the front and back of your driver's licence</li>
+              <li>Your last registration certificate (the expired one is fine)</li>
+              <li>No unpaid traffic tickets. <a href="#ticket-lookup">Book a lookup</a> if unsure</li>
             </ul></div>
           </div></details>
           <div class="fine">
@@ -644,11 +753,15 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
       <section class="svc" id="expired-fitness" aria-labelledby="expired-title">
         <div class="tier prep"><b>You attend the depot</b><span>Fitness expired</span></div>
         <div class="svc-in">
-          <h2 id="expired-title">Fitness pre-pay and registration</h2>
-          <p class="svc-sub">We pre-pay your fitness fee so you go straight to the depot.</p>
-          <p class="price"><span class="lbl">Our fee</span><b>J$4,000</b><span>Fitness pre-pay included at no extra charge</span></p>
-          <div class="bill" data-bill data-base="4000">
-            <p class="lbl">Plus TAJ's fees</p>
+          <h2 id="expired-title">Fitness and renewal package</h2>
+          <p class="svc-sub">We pre-pay your fitness fee, you take the vehicle to the depot, then we finish the renewal online.</p>
+          <div class="fee-pair">
+            <div class="mine"><span class="lbl">Our fee</span><b>J$5,000</b><small>Fitness pre-pay and renewal</small></div>
+            <div class="agency"><span class="lbl">Agency fees (TAJ)</span><b>Fitness + registration</b><small>Work them out below</small></div>
+          </div>
+          <span class="save">Save J$500 on booking them separately</span>
+          <div class="bill" data-bill data-base="5000">
+            <p class="lbl">Work out TAJ's fees</p>
             <details class="door" data-name="fitness" data-line="Vehicle class">
               <summary><span class="what"><b>Fitness fee</b><small data-pick>Tap to choose your vehicle</small></span><span class="amt" data-amt>Choose</span></summary>
               <fieldset class="bill-opts"><legend class="sr-only">Choose your vehicle class</legend>
@@ -670,10 +783,10 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
                 <label class="bill-opt"><input type="radio" name="reg-expired" value="0" data-label="Commercial, truck, trailer or other"><span>Commercial, truck, trailer or other</span><strong>We confirm</strong></label>
               </fieldset>
             </details>
-            <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total>J$4,000 + TAJ's fees</b><small data-sum>Choose above to see your full total.</small></div>
+            <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total>J$5,000 + TAJ's fees</b><small data-sum>Choose above to see your full total.</small></div>
             <p class="bill-note">Renewing for 6 or 24 months? <a href="#periods">See the periods</a>. We confirm your exact figure before you pay.</p>
           </div>
-          <a href="/start.html?service=motor-vehicle&amp;source=mv-fitness-prepay" class="btn btn-dark">Start my fitness pre-pay</a>
+          <a href="/start.html?service=motor-vehicle&amp;source=mv-fitness-prepay" class="btn btn-dark">Start my package</a>
           <details class="duo-drop"><summary>What we do, and what you do</summary><div class="duo">
             <div class="we"><h3>We do</h3><ul>
               <li>Pre-pay your TAJ fitness fee</li>
@@ -681,7 +794,8 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
               <li>Complete your registration online once the vehicle passes</li>
             </ul></div>
             <div class="you"><h3>You do</h3><ul>
-              <li>Send us your TRN and vehicle class</li>
+              <li>Send photos of the front and back of your driver's licence, and your last registration certificate</li>
+              <li>Tell us your vehicle class</li>
               <li>Drive the vehicle to the ITA depot with the receipt for inspection</li>
             </ul></div>
           </div></details>
@@ -696,7 +810,67 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 
   <section class="band band-tint ">
     <div class="band-in">
-      <p class="band-label">4 · Good to know</p>
+      <p class="band-label">4 · Just need one thing?</p>
+      <section class="svc" id="fitness-only" aria-labelledby="fitness-only-title">
+        <div class="tier prep"><b>You attend the depot</b><span>Fitness only, no renewal</span></div>
+        <div class="svc-in">
+          <h2 id="fitness-only-title">Fitness fee pre-pay</h2>
+          <p class="svc-sub">We pay your fitness fee at the Tax Office and send the receipt to your phone. You take the vehicle to the ITA depot.</p>
+          <div class="fee-pair">
+            <div class="mine"><span class="lbl">Our fee</span><b>J$1,500</b></div>
+            <div class="agency"><span class="lbl">Agency fee (TAJ)</span><b>J$4,500</b><small>J$5,400 commercial, trailer or tractor</small></div>
+          </div>
+          <a href="/start.html?service=motor-vehicle&amp;source=mv-fitness-only" class="btn btn-dark">Book fitness pre-pay</a>
+          <details class="duo-drop"><summary>What we do, and what you do</summary><div class="duo">
+            <div class="we"><h3>We do</h3><ul>
+              <li>Pay your TAJ fitness fee</li>
+              <li>Send the receipt to your phone</li>
+            </ul></div>
+            <div class="you"><h3>You do</h3><ul>
+              <li>Send photos of the front and back of your driver's licence</li>
+              <li>Tell us your vehicle class</li>
+              <li>Drive the vehicle to the ITA depot with the receipt for inspection</li>
+            </ul></div>
+          </div></details>
+          <div class="fine">
+            <p class="note">Renewing too? The <a href="#expired-fitness">fitness and renewal package</a> is J$5,000 for both.</p>
+            <p class="note">By proceeding you agree to our <a href="/terms.html">Terms &amp; Conditions</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="svc" id="ticket-lookup" aria-labelledby="ticket-title">
+        <div class="tier done"><b>Done for you</b><span>Separate from a renewal</span></div>
+        <div class="svc-in">
+          <h2 id="ticket-title">Traffic ticket lookup</h2>
+          <p class="svc-sub">We find every outstanding ticket on your record, then pay them for you. Tickets must be cleared before your vehicle can be renewed.</p>
+          <div class="fee-pair">
+            <div class="mine"><span class="lbl">Our fee</span><b>J$1,500</b><small>Per session, covers all tickets found</small></div>
+            <div class="agency"><span class="lbl">Ticket amounts</span><b>As on your record</b><small>Paid to the court</small></div>
+          </div>
+          <a href="/start.html?service=motor-vehicle&amp;source=mv-ticket-lookup" class="btn btn-dark">Book a ticket lookup</a>
+          <details class="duo-drop"><summary>What we do, and what you do</summary><div class="duo">
+            <div class="we"><h3>We do</h3><ul>
+              <li>Look up every outstanding ticket on your record</li>
+              <li>Tell you what we find and the amounts</li>
+              <li>Pay the tickets that can be paid online</li>
+            </ul></div>
+            <div class="you"><h3>You do</h3><ul>
+              <li>Send photos of the front and back of your driver's licence</li>
+            </ul></div>
+          </div></details>
+          <div class="fine">
+            <p class="note"><b>Please note:</b> the J$1,500 fee is for the lookup. If a ticket has passed its court date, it can't be paid online. We give you the details so you can sort it out with the court, and the lookup fee is not refunded.</p>
+            <p class="note">We use your photos only for this service. See our <a href="/privacy.html">Privacy</a> page.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="band band-white ">
+    <div class="band-in">
+      <p class="band-label">5 · Good to know</p>
       <details class="acc" id="fees">
         <summary><h2>What are TAJ's registration fees by engine size?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
         <div class="acc-body">
@@ -720,7 +894,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <div class="acc-body">
           <p>Yes. TAJ cross-references police and court databases. Unpaid traffic tickets or missed court dates tied to the registered owner's TRN or the plate number automatically block online registration until they are cleared.</p>
           <p>Fines are settled at the Traffic Court, and the hold must be cleared in the system before the renewal can go through. Our <a href="/jamaica-motor-vehicle-licence-guide#traps">motor vehicle guide</a> covers this and the other rejection traps.</p>
-          <p>Not sure what is on your record? We can look up your traffic tickets from photos of the front and back of your driver's licence. The lookup is included in our service fee, or <a href="/drivers-licence-renewal.html#ticket-lookup">J$1,500 on its own</a>.</p></div>
+          <p>Not sure what is on your record? We can look up your traffic tickets from photos of the front and back of your driver's licence, then pay them for you. <a href="#ticket-lookup">The lookup is J$1,500 per session</a>, separate from a renewal.</p></div>
       </details>
       <details class="acc" id="periods">
         <summary><h2>Can I renew for 6, 12 or 24 months?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
@@ -736,7 +910,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <summary><h2>Why must I take the vehicle to the depot myself?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
         <div class="acc-body">
           <p>An expired fitness certificate requires a mechanical roadworthiness check. The Island Traffic Authority (ITA) must physically inspect the vehicle's lights, tyres and structure, and verify that the chassis (VIN) and engine numbers match the C88 logbook.</p>
-          <p>Our Fitness Pre-Pay and Registration service removes the Tax Office payment line and handles the final registration portal. TAJ needs your TRN and your vehicle class to take the fitness fee, so we ask for both. We get the fee paid, leaving you to drive through the depot inspection.</p></div>
+          <p>Our fitness pre-pay removes the Tax Office payment line and handles the final registration portal. TAJ needs your TRN and your vehicle class to take the fitness fee, so we ask for both. We get the fee paid, leaving you to drive through the depot inspection.</p></div>
       </details>
       <div class="links">
       <a class="guide-link" href="/jamaica-motor-vehicle-licence-guide"><span><strong>Motor vehicle licence guide</strong><small>TAJ's rules, lost logbooks and Traffic Management System traps</small></span><span class="go" aria-hidden="true">→</span></a>
@@ -799,6 +973,35 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     var d = document.getElementById(a.getAttribute('href').slice(1));
     if (d && d.tagName === 'DETAILS') d.open = true;
   });
+
+  /* Route check: two questions, then the right option */
+  var quiz = $('#chk-quiz');
+  if (quiz) {
+    var steps = Array.prototype.slice.call(quiz.querySelectorAll('.chk-step'));
+    var verdicts = Array.prototype.slice.call(document.querySelectorAll('.verdict'));
+    var backBtn = $('#chk-back'), trail = ['insurance'];
+    var showStep = function (name, push) {
+      if (push) trail.push(name);
+      steps.forEach(function (s) { s.hidden = s.getAttribute('data-step') !== name; });
+      backBtn.hidden = trail.length < 2;
+      var q = quiz.querySelector('.chk-step[data-step="' + name + '"] .chk-q');
+      if (q && push) q.focus({ preventScroll: true });
+    };
+    quiz.addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-next], button[data-result]'); if (!b) return;
+      if (b.hasAttribute('data-next')) { showStep(b.getAttribute('data-next'), true); return; }
+      var key = b.getAttribute('data-result');
+      quiz.hidden = true;
+      verdicts.forEach(function (v) { v.hidden = v.getAttribute('data-verdict') !== key; if (!v.hidden) v.focus({ preventScroll: true }); });
+    });
+    backBtn.addEventListener('click', function () { trail.pop(); showStep(trail[trail.length - 1], false); });
+    document.querySelectorAll('[data-chk-reset]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        trail = ['insurance']; verdicts.forEach(function (v) { v.hidden = true; });
+        quiz.hidden = false; showStep('insurance', false);
+      });
+    });
+  }
 
   /* Bill: pick vehicle and engine size, see the total, carry the picks into WhatsApp */
   function money(n) { return 'J$' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
