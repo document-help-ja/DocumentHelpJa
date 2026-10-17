@@ -738,6 +738,10 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 .ptotal small { display: block; margin-top: 6px; color: rgba(255,255,255,.8); font-size: .9rem; }
 .start-btn { margin-top: 22px; width: 100%; }
 .dcard .note { margin-top: 14px; }
+.deliv-note { margin: 8px 0 0; font-size: .9rem; color: #59636B; }
+.where label[hidden] { display: none !important; }
+.ptotal .ps-dn { margin: 10px 0 0; padding: 8px 10px; border-radius: 8px; background: rgba(200,155,60,.2); color: #F6DFA6; font-size: .88rem; line-height: 1.5; }
+.ptotal .ps-dn[hidden] { display: none; }
 .howto { margin-top: 24px; border: 1px solid #D5DCE3; border-radius: 12px; }
 .howto > summary { cursor: pointer; min-height: 54px; display: flex; align-items: center; padding: 0 18px; font-weight: 600; color: #0F2537; }
 .howto .steps { padding: 0 18px 18px 38px; margin: 0; }
@@ -976,7 +980,13 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
             <div class="mine"><span class="lbl2">Our fee</span><b data-our>J$5,000</b></div>
             <div class="agency"><span class="lbl2">PICA's fee, from</span><b data-pica>J$6,500</b><small data-pica-note>Regular service</small></div>
           </div>
-          <div class="ptotal" aria-live="polite"><span class="lbl2">Your total, from</span><b data-total>J$11,500</b><small data-total-note>J$5,000 our fee + J$6,500 PICA</small></div>
+          <p class="lbl2">How do you want to receive it?</p>
+          <div class="where deliv" role="radiogroup" aria-label="How do you want to receive it?">
+            <label><input type="radio" name="deliv" value="courier" checked><span>Courier to my door</span></label>
+            <label data-ja-only><input type="radio" name="deliv" value="collect"><span>Collect at PICA</span></label>
+          </div>
+          <p class="deliv-note">PICA needs to know from the start, so choose now.</p>
+          <div class="ptotal" aria-live="polite"><span class="lbl2">Your total, from</span><b data-total>J$11,500</b><small data-total-note>J$5,000 our fee + J$6,500 PICA</small><p class="ps-dn" data-courier-note>The courier fee is added by PICA and confirmed before you pay.</p></div>
           <a href="/start.html?service=passport&amp;source=passport-digital" class="btn btn-dark btn-block start-btn">Start my digital renewal</a>
           <p class="note">PICA sets the final fee, which depends on the country you apply from. We confirm it with you before you pay. By proceeding you agree to our <a href="/terms.html">Terms &amp; Conditions</a>.</p>
           <details class="howto"><summary>How it works</summary>
@@ -1088,14 +1098,22 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     digital.hidden = true; after.hidden = true;
   }); });
 
-  /* Digital renewal total: Jamaica or overseas */
+  /* Digital renewal total: Jamaica (J$) or overseas (US$), and how they receive it */
   var P = { ja: { our: 'J$5,000', pica: 'J$6,500', note: 'Regular service', total: 'J$11,500', tnote: 'J$5,000 our fee + J$6,500 PICA' },
-            os: { our: 'US$70', pica: 'US$80', note: 'Plus courier', total: 'US$150 + courier', tnote: 'US$70 our fee + US$80 PICA' } };
-  $$('input[name="where"]').forEach(function (r) { r.addEventListener('change', function () {
-    var x = P[r.value];
+            os: { our: 'US$70', pica: 'US$80', note: 'Regular service', total: 'US$150', tnote: 'US$70 our fee + US$80 PICA' } };
+  function price() {
+    var w = ($('input[name="where"]:checked') || {}).value || 'ja', x = P[w];
+    var collectLbl = $('[data-ja-only]'), collect = collectLbl.querySelector('input');
+    collectLbl.hidden = w !== 'ja';
+    if (w !== 'ja' && collect.checked) { collect.checked = false; $('input[name="deliv"][value="courier"]').checked = true; }
+    var courier = $('input[name="deliv"][value="courier"]').checked;
     $('[data-our]').textContent = x.our; $('[data-pica]').textContent = x.pica; $('[data-pica-note]').textContent = x.note;
-    $('[data-total]').textContent = x.total; $('[data-total-note]').textContent = x.tnote;
-  }); });
+    $('[data-total]').textContent = x.total + (courier ? ' + courier' : '');
+    $('[data-total-note]').textContent = x.tnote;
+    $('[data-courier-note]').hidden = !courier;
+  }
+  $$('input[name="where"], input[name="deliv"]').forEach(function (r) { r.addEventListener('change', price); });
+  price();
 
   /* ---------- Newsletter signup ----------
      Goes to our own Kit Delivery script, which adds the address to the Subscribers sheet
