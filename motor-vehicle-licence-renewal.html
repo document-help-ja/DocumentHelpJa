@@ -586,6 +586,18 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 .jump.single { margin-top: 0; }
 .band .svc + .svc { margin-top: 48px !important; }
 @media (max-width: 599px) { .verdict-cta .btn { width: 100%; } .fee-pair b { font-size: 1.3rem; } }
+.pick3 { display: grid; gap: 16px; }
+.opt3 { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 14px; min-height: 84px; padding: 18px 18px 18px 22px; border: 1px solid #C89B3C; border-radius: 14px; background: #fff; color: #0F2537; text-decoration: none; box-shadow: var(--lift); }
+.opt3 strong { display: block; font-weight: 600; font-size: 1.05rem; line-height: 1.35; }
+.opt3 small { display: block; margin-top: 4px; color: var(--muted); font-size: .92rem; font-weight: 400; }
+.opt3 .go { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: var(--tone); color: var(--muted); }
+.opt3:hover, .opt3[aria-current="true"] { background: #F9F5EC; color: #0F2537; }
+.opt3[aria-current="true"] { box-shadow: 0 0 0 2px #C89B3C; }
+.opt3[aria-current="true"] .go { background: #0F2537; color: #C89B3C; border-color: #0F2537; }
+.js-panels .panels:not(.has-open) { display: none; }
+.panel + .panel { margin-top: 48px; }
+.panel .svc { margin-top: 32px !important; }
+.verdict h3 { margin-bottom: 4px; }
 </style>
 </head>
 <body>
@@ -629,73 +641,58 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/index.html">Home</a> › <a href="/index.html#services">Services</a> › Motor vehicle licence</nav>
     <h1>Motor Vehicle Licence Renewal</h1>
     <p class="lead">We renew your motor vehicle registration online, so you skip the Tax Office line.</p>
-    <p class="choose"><a href="#main">Check if you qualify for an online renewal&nbsp;<span aria-hidden="true">↓</span></a></p>
+    <p class="choose"><a href="#main">Choose your service below&nbsp;<span aria-hidden="true">↓</span></a></p>
   </div>
 </section>
 
 <main id="main" class="banded">
   <section class="band band-white ">
     <div class="band-in">
-      <p class="band-label">1 · Check your route</p>
-      <div class="chk" id="check">
-        <div id="chk-quiz">
-          <h2>Can we renew it online?</h2>
-          <p class="chk-sub">Two quick questions. TAJ sets these conditions.</p>
-          <div class="chk-step" data-step="insurance">
-            <p class="chk-count">Question 1 of 2</p>
-            <p class="chk-q" tabindex="-1">Is your vehicle insurance current?</p>
-            <div class="yn"><button type="button" data-next="fitness">Yes</button><button type="button" data-result="insure">No</button></div>
-          </div>
-          <div class="chk-step" data-step="fitness" hidden>
-            <p class="chk-count">Question 2 of 2</p>
-            <p class="chk-q" tabindex="-1">Is your fitness certificate still valid?</p>
-            <div class="yn"><button type="button" data-result="valid">Yes</button><button type="button" data-result="package">No</button></div>
-          </div>
-          <p><button type="button" class="linkbtn" id="chk-back" hidden>← Previous question</button></p>
-        </div>
-
-        <div class="verdict" data-verdict="valid" role="status" tabindex="-1" hidden>
-          <h3>You qualify for an online renewal</h3>
-          <p>Here is what to send us:</p>
-          <ul>
-            <li>A photo of the front and back of your driver's licence</li>
-            <li>Your last registration certificate (the expired one is fine)</li>
-          </ul>
-          <p class="fee"><b>Our fee: J$4,000.</b> TAJ's registration fee is separate and depends on engine size.</p>
-          <div class="verdict-cta"><a href="#valid-fitness" class="btn btn-dark">See the online renewal</a><button type="button" class="linkbtn" data-chk-reset>Change my answers</button></div>
-        </div>
-
-        <div class="verdict" data-verdict="package" role="status" tabindex="-1" hidden>
-          <h3>You need the fitness and renewal package</h3>
-          <p>We pre-pay your fitness, you take the vehicle to the depot, then we finish the renewal. Here is what to send us:</p>
-          <ul>
-            <li>A photo of the front and back of your driver's licence</li>
-            <li>Your last registration certificate (the expired one is fine)</li>
-          </ul>
-          <p class="fee"><b>Our fee: J$5,000.</b> TAJ's fitness and registration fees are separate.</p>
-          <div class="verdict-cta"><a href="#expired-fitness" class="btn btn-dark">See the package</a><button type="button" class="linkbtn" data-chk-reset>Change my answers</button></div>
-        </div>
-
-        <div class="verdict" data-verdict="insure" role="status" tabindex="-1" hidden>
-          <h3>Renew your insurance first</h3>
-          <p>TAJ will not renew a vehicle without current insurance. Once your insurance is renewed, come back and we can take it from there.</p>
-          <div class="verdict-cta"><button type="button" class="linkbtn" data-chk-reset>Change my answers</button></div>
-        </div>
+      <p class="band-label">1 · Choose a service</p>
+      <div class="pick3" role="list">
+        <a role="listitem" class="opt3" href="#renew" data-open="renew"><span><strong>Motor vehicle licence renewal</strong><small>From J$4,000 + TAJ's fee</small></span><span class="go" aria-hidden="true">→</span></a>
+        <a role="listitem" class="opt3" href="#fitness-only" data-open="fitness"><span><strong>Fitness fee payment</strong><small>J$1,500 + TAJ's fee</small></span><span class="go" aria-hidden="true">→</span></a>
+        <a role="listitem" class="opt3" href="#ticket-lookup" data-open="tickets"><span><strong>Traffic ticket lookup</strong><small>J$1,500 per session</small></span><span class="go" aria-hidden="true">→</span></a>
       </div>
-      <p class="warn"><b>Outstanding traffic tickets block renewal.</b> They must be cleared first. Not sure? <a href="#ticket-lookup">Book a ticket lookup</a>.</p>
-
-      <p class="single-title">Just need one thing?</p>
-      <nav class="jump single always" aria-label="Single services">
-        <a href="#fitness-only">Fitness fee pre-pay<small>J$1,500</small></a>
-        <a href="#ticket-lookup">Traffic ticket lookup<small>J$1,500</small></a>
-      </nav>
       <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
     </div>
   </section>
 
-  <section class="band band-tint ">
+  <section class="band band-tint panels" id="panels">
     <div class="band-in">
-      <p class="band-label">2 · Fitness valid</p>
+      <div class="panel" id="panel-renew" data-panel="renew">
+        <p class="band-label" id="renew">Motor vehicle licence renewal</p>
+        <div class="chk" id="check">
+          <div id="chk-quiz">
+            <h2>Can we renew it online?</h2>
+            <p class="chk-sub">Two quick questions. TAJ sets these conditions.</p>
+            <div class="chk-step" data-step="insurance">
+              <p class="chk-count">Question 1 of 2</p>
+              <p class="chk-q" tabindex="-1">Is your vehicle insurance current?</p>
+              <div class="yn"><button type="button" data-next="fitness">Yes</button><button type="button" data-result="insure">No</button></div>
+            </div>
+            <div class="chk-step" data-step="fitness" hidden>
+              <p class="chk-count">Question 2 of 2</p>
+              <p class="chk-q" tabindex="-1">Is your fitness certificate still valid?</p>
+              <div class="yn"><button type="button" data-result="valid">Yes</button><button type="button" data-result="package">No</button></div>
+            </div>
+            <p><button type="button" class="linkbtn" id="chk-back" hidden>← Previous question</button></p>
+          </div>
+          <div class="verdict" data-verdict="insure" role="status" tabindex="-1" hidden>
+            <h3>Renew your insurance first</h3>
+            <p>TAJ will not renew a vehicle without current insurance. Once your insurance is renewed, come back and we can take it from there.</p>
+            <button type="button" class="linkbtn" data-chk-reset>Change my answers</button>
+          </div>
+          <div class="verdict" data-verdict="valid" role="status" tabindex="-1" hidden>
+            <h3>You qualify for an online renewal</h3>
+            <button type="button" class="linkbtn" data-chk-reset>Change my answers</button>
+          </div>
+          <div class="verdict" data-verdict="package" role="status" tabindex="-1" hidden>
+            <h3>Your fitness has expired, so you need the fitness and renewal package</h3>
+            <button type="button" class="linkbtn" data-chk-reset>Change my answers</button>
+          </div>
+        </div>
+        <p class="warn"><b>Outstanding traffic tickets block renewal.</b> They must be cleared first. Not sure? <a href="#ticket-lookup" data-open="tickets">Book a ticket lookup</a>.</p>
       <section class="svc" id="valid-fitness" aria-labelledby="valid-title">
         <div class="tier done"><b>Done for you</b><span>Fitness and insurance valid</span></div>
         <div class="svc-in">
@@ -735,7 +732,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
               <li>Active insurance and an unexpired fitness certificate</li>
               <li>Photos of the front and back of your driver's licence</li>
               <li>Your last registration certificate (the expired one is fine)</li>
-              <li>No unpaid traffic tickets. <a href="#ticket-lookup">Book a lookup</a> if unsure</li>
+              <li>No unpaid traffic tickets. <a href="#ticket-lookup" data-open="tickets">Book a lookup</a> if unsure</li>
             </ul></div>
           </div></details>
           <div class="fine">
@@ -744,12 +741,6 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
           </div>
         </div>
       </section>
-    </div>
-  </section>
-
-  <section class="band band-white ">
-    <div class="band-in">
-      <p class="band-label">3 · Fitness expired</p>
       <section class="svc" id="expired-fitness" aria-labelledby="expired-title">
         <div class="tier prep"><b>You attend the depot</b><span>Fitness expired</span></div>
         <div class="svc-in">
@@ -805,12 +796,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
           </div>
         </div>
       </section>
-    </div>
-  </section>
+      </div>
 
-  <section class="band band-tint ">
-    <div class="band-in">
-      <p class="band-label">4 · Just need one thing?</p>
+      <div class="panel" id="panel-fitness" data-panel="fitness">
       <section class="svc" id="fitness-only" aria-labelledby="fitness-only-title">
         <div class="tier prep"><b>You attend the depot</b><span>Fitness only, no renewal</span></div>
         <div class="svc-in">
@@ -833,12 +821,14 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
             </ul></div>
           </div></details>
           <div class="fine">
-            <p class="note">Renewing too? The <a href="#expired-fitness">fitness and renewal package</a> is J$5,000 for both.</p>
+            <p class="note">Renewing too? The <a href="#renew" data-open="renew">fitness and renewal package</a> is J$5,000 for both.</p>
             <p class="note">By proceeding you agree to our <a href="/terms.html">Terms &amp; Conditions</a>.</p>
           </div>
         </div>
       </section>
+      </div>
 
+      <div class="panel" id="panel-tickets" data-panel="tickets">
       <section class="svc" id="ticket-lookup" aria-labelledby="ticket-title">
         <div class="tier done"><b>Done for you</b><span>Separate from a renewal</span></div>
         <div class="svc-in">
@@ -865,12 +855,13 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
           </div>
         </div>
       </section>
+      </div>
     </div>
   </section>
 
   <section class="band band-white ">
     <div class="band-in">
-      <p class="band-label">5 · Good to know</p>
+      <p class="band-label">Good to know</p>
       <details class="acc" id="fees">
         <summary><h2>What are TAJ's registration fees by engine size?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
         <div class="acc-body">
@@ -894,7 +885,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <div class="acc-body">
           <p>Yes. TAJ cross-references police and court databases. Unpaid traffic tickets or missed court dates tied to the registered owner's TRN or the plate number automatically block online registration until they are cleared.</p>
           <p>Fines are settled at the Traffic Court, and the hold must be cleared in the system before the renewal can go through. Our <a href="/jamaica-motor-vehicle-licence-guide#traps">motor vehicle guide</a> covers this and the other rejection traps.</p>
-          <p>Not sure what is on your record? We can look up your traffic tickets from photos of the front and back of your driver's licence, then pay them for you. <a href="#ticket-lookup">The lookup is J$1,500 per session</a>, separate from a renewal.</p></div>
+          <p>Not sure what is on your record? We can look up your traffic tickets from photos of the front and back of your driver's licence, then pay them for you. <a href="#ticket-lookup" data-open="tickets">The lookup is J$1,500 per session</a>, separate from a renewal.</p></div>
       </details>
       <details class="acc" id="periods">
         <summary><h2>Can I renew for 6, 12 or 24 months?</h2><span class="acc-btn" aria-hidden="true"></span></summary>
@@ -974,6 +965,35 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     if (d && d.tagName === 'DETAILS') d.open = true;
   });
 
+  /* Three service cards: only the tapped one opens */
+  var panelsBand = $('#panels'), panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.opt3'));
+  var svcValid = $('#valid-fitness'), svcExpired = $('#expired-fitness');
+  var HASH = { 'renew': 'renew', 'check': 'renew', 'valid-fitness': 'renew', 'expired-fitness': 'renew', 'fitness-only': 'fitness', 'ticket-lookup': 'tickets' };
+  document.documentElement.classList.add('js-panels');
+  function openPanel(key, scroll) {
+    panels.forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== key; });
+    cards.forEach(function (c) { c.setAttribute('aria-current', c.getAttribute('data-open') === key ? 'true' : 'false'); });
+    panelsBand.classList.add('has-open');
+    if (scroll) panelsBand.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  function showCard(which) {
+    if (svcValid) svcValid.hidden = which !== 'valid';
+    if (svcExpired) svcExpired.hidden = which !== 'package';
+  }
+  showCard(null);
+  panels.forEach(function (p) { p.hidden = true; });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-open]'); if (!a) return;
+    e.preventDefault(); openPanel(a.getAttribute('data-open'), true);
+    history.replaceState(null, '', a.getAttribute('href'));
+  });
+  (function fromHash() {
+    var h = location.hash.slice(1), key = HASH[h]; if (!key) return;
+    openPanel(key, false);
+    if (h === 'valid-fitness') showCard('valid'); if (h === 'expired-fitness') showCard('package');
+  })();
+
   /* Route check: two questions, then the right option */
   var quiz = $('#chk-quiz');
   if (quiz) {
@@ -993,12 +1013,13 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
       var key = b.getAttribute('data-result');
       quiz.hidden = true;
       verdicts.forEach(function (v) { v.hidden = v.getAttribute('data-verdict') !== key; if (!v.hidden) v.focus({ preventScroll: true }); });
+      showCard(key);
     });
     backBtn.addEventListener('click', function () { trail.pop(); showStep(trail[trail.length - 1], false); });
     document.querySelectorAll('[data-chk-reset]').forEach(function (b) {
       b.addEventListener('click', function () {
         trail = ['insurance']; verdicts.forEach(function (v) { v.hidden = true; });
-        quiz.hidden = false; showStep('insurance', false);
+        quiz.hidden = false; showStep('insurance', false); showCard(null);
       });
     });
   }
