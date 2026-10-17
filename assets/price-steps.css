@@ -21,3 +21,10 @@
 .ps-tv { margin: 4px 0 2px; font-size: 1.5rem; font-weight: 600; }
 .ps-ts { margin: 0; font-size: .82rem; color: #C9D1D8; }
 .ps-note { margin: 12px 0 0; font-size: .82rem; line-height: 1.5; color: #5B6670; }
+
+/* Where are you applying from? One currency at a time (Oct 2026) */
+.ps-where { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 18px; }
+.ps-where .ps-wl { grid-column: 1 / -1; margin: 0; font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #59636B; }
+.ps-where label { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 14px; border: 1px solid #B9C2C8; border-radius: 12px; background: #fff; cursor: pointer; font-weight: 600; color: #0F2537; }
+.ps-where label:has(input:checked) { border-color: #0F2537; box-shadow: inset 0 0 0 1px #0F2537; }
+.ps-where input { width: 20px; height: 20px; margin: 0; accent-color: #0F2537; }
