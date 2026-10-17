@@ -372,7 +372,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 </style>
 <link rel="stylesheet" href="/assets/price-steps.css">
 <style>.band .ps { margin-top: 0; } .band .ps-head { display: none; } .ps-start { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; margin-top: 20px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; } @media (max-width: 599px) { .ps-start { width: 100%; } }/* Oct 2026: route check, only the matching option opens */
-[data-panel][hidden] { display: none !important; }
+[data-panel][hidden], [data-after][hidden] { display: none !important; }
 .chk { background: #F1F5F8; border: 1px solid #C89B3C; border-radius: 16px; padding: 26px 22px 24px; }
 .chk h2 { font: 600 1.2rem/1.3 Inter, system-ui, sans-serif; margin: 0; color: #0F2537; }
 .chk-sub { margin: 8px 0 0; color: #59636B; font-size: .96rem; }
@@ -526,7 +526,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     </div>
   </section>
 
-  <section class="band band-white quiet">
+  <section class="band band-white quiet" data-after>
     <div class="band-in">
       <p class="band-label">Good to know</p>
       <div class="faq-section">
@@ -633,6 +633,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
   function panel(key, scroll) {
     var first = null;
     bands.forEach(function (b) { var on = b.getAttribute('data-panel') === key; b.hidden = !on; if (on && !first) first = b; });
+    var after = document.querySelector('[data-after]'); if (after) after.hidden = !(key === 'copy' || key === 'search');
     if (scroll && first) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   function step(name, push) {
