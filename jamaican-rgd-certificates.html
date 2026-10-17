@@ -371,7 +371,28 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 @media (max-width: 599px) { .band { padding: 36px 0 40px; } .band-in { padding: 0 16px; } .band-cta .btn-band { width: 100%; } }
 </style>
 <link rel="stylesheet" href="/assets/price-steps.css">
-<style>.band .ps { margin-top: 0; } .band .ps-head { display: none; } .ps-start { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; margin-top: 20px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; } @media (max-width: 599px) { .ps-start { width: 100%; } }</style>
+<style>.band .ps { margin-top: 0; } .band .ps-head { display: none; } .ps-start { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; margin-top: 20px; padding: 0 28px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; } @media (max-width: 599px) { .ps-start { width: 100%; } }/* Oct 2026: route check, only the matching option opens */
+[data-panel][hidden] { display: none !important; }
+.chk { background: #F1F5F8; border: 1px solid #C89B3C; border-radius: 16px; padding: 26px 22px 24px; }
+.chk h2 { font: 600 1.2rem/1.3 Inter, system-ui, sans-serif; margin: 0; color: #0F2537; }
+.chk-sub { margin: 8px 0 0; color: #59636B; font-size: .96rem; }
+.chk-step { margin-top: 22px; }
+.chk-count { font-size: .74rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #59636B; margin: 0 0 10px; }
+.chk-q { font-size: 1.08rem; font-weight: 600; color: #0F2537; line-height: 1.4; margin: 0; }
+.chk-q small { display: block; font-weight: 400; color: #59636B; font-size: .9rem; margin-top: 6px; }
+.chk-q:focus, .verdict:focus { outline: none; }
+.yn { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+.yn button { min-height: 56px; border-radius: 12px; border: 1px solid #B9C2C8; background: #fff; font: inherit; font-weight: 600; font-size: 1.02rem; color: #0F2537; cursor: pointer; }
+.yn button:hover, .yn button:focus-visible { border-color: #0F2537; }
+.linkbtn { background: none; border: 0; padding: 0; min-height: 44px; font: inherit; font-weight: 500; color: #1D4E89; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.verdict h3 { font-size: 1.15rem; margin: 0 0 8px; color: #0F2537; }
+.verdict .btn-band { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; padding: 0 24px; border-radius: 8px; background: #0F2537; color: #fff !important; font-weight: 600; text-decoration: none; margin-top: 6px; }
+[data-panel="copy"] .service-card { border: 1px solid #2F7A57 !important; }
+[data-panel="search"] .service-card { border: 1px solid #1D4E89 !important; }
+.card-body .ps { margin-top: 8px; }
+.quiet .band-label { color: #59636B; }
+.quiet details { box-shadow: none !important; }
+</style>
 </head>
 <body id="top">
 
@@ -413,20 +434,51 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     <nav class="lcs-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/#services">Services</a> › Birth, marriage and death certificates</nav>
     <h1>Birth, Marriage &amp; Death Certificates</h1>
     <p class="lcs-lead">Your certificate, collected and couriered to you.</p>
-    <p class="lcs-choose"><a href="#main">Choose your option below&nbsp;<span aria-hidden="true">↓</span></a></p>
+    <p class="lcs-choose"><a href="#main">Find your route below&nbsp;<span aria-hidden="true">↓</span></a></p>
   </div>
 </section>
 
 <main id="main" class="banded">
   <section class="band band-white ">
     <div class="band-in">
-      <p class="band-label">1 · Choose</p>
-      <nav class="lcs-options" aria-label="Choose your option"><a href="#copies">Certified copy<small>From J$3,000 · US$30</small></a><a href="#search">Record search<small>From J$5,000 · US$50</small></a></nav>
+      <p class="band-label">1 · Find your route</p>
+      <div class="chk" id="check">
+        <div id="chk-quiz">
+          <h2>Which service do you need?</h2>
+          <p class="chk-sub">Two quick questions.</p>
+          <div class="chk-step" data-step="have">
+            <p class="chk-count">Question 1 of 2</p>
+            <p class="chk-q" tabindex="-1">Do you have the certificate or its entry number?<small>An old or damaged copy is fine.</small></p>
+            <div class="yn"><button type="button" data-next="correct">Yes</button><button type="button" data-result="search">No</button></div>
+          </div>
+          <div class="chk-step" data-step="correct" hidden>
+            <p class="chk-count">Question 2 of 2</p>
+            <p class="chk-q" tabindex="-1">Are all the details on it correct?<small>Names, dates and parish.</small></p>
+            <div class="yn"><button type="button" data-result="copy">Yes</button><button type="button" data-result="fix">No</button></div>
+          </div>
+          <p><button type="button" class="linkbtn" id="chk-back" hidden>← Previous question</button></p>
+        </div>
+        <div class="verdict" data-verdict="copy" tabindex="-1" hidden>
+          <h3>You can order a certified copy</h3>
+          <button type="button" class="linkbtn" data-chk-reset>Change my answers</button>
+        </div>
+        <div class="verdict" data-verdict="search" tabindex="-1" hidden>
+          <h3>You need a record search first</h3>
+          <p>Without the certificate or entry number, the RGD has to find your record before a copy can be issued.</p>
+          <button type="button" class="linkbtn" data-chk-reset>Change my answers</button>
+        </div>
+        <div class="verdict" data-verdict="fix" tabindex="-1" hidden>
+          <h3>Your record needs correcting first</h3>
+          <p>A copy of a record with errors will carry the same errors. Tell us what is wrong and we will advise you.</p>
+          <a class="btn-band" href="/start.html?service=certificates&amp;source=rgd-correction">Tell us about it</a>
+          <p><button type="button" class="linkbtn" data-chk-reset>Change my answers</button></p>
+        </div>
+      </div>
       <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
     </div>
   </section>
 
-  <section class="band band-tint ">
+  <section class="band band-tint " data-panel="copy">
     <div class="band-in">
       <p class="band-label">2 · Certified copy</p>
       <div class="service-card featured" id="copies">
@@ -436,50 +488,28 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <p class="card-intro">Your certificate, collected and couriered to you.</p>
       </div>
       <div class="card-body">
-        
-        <h3 class="list-title">What we handle</h3>
+        <div class="ps" data-price-steps><script type="application/json">{"dhl": true, "groups": [{"title": "Your certified copy", "rows": [{"label": "Our service fee", "note": "We apply, pay the RGD and collect it", "usd": 30}, {"label": "RGD fee", "note": "Regular, 7 to 10 working days. Paid to the RGD in Jamaican dollars", "jmd": 4000}]}, {"title": "Apostille, if you need it", "toggle": true, "rows": [{"label": "Our apostille service", "note": "We take it to the Ministry of Foreign Affairs", "usd": 100}, {"label": "Ministry's apostille fee", "choose": [{"label": "Regular, about 5 working days", "jmd": 3500}, {"label": "24-hour", "jmd": 5000}]}]}, {"title": "Delivery to you", "rows": [{"label": "DHL", "note": "Quoted by your delivery address", "text": "quoted"}]}]}</script></div>
+        <p class="ps-note" style="margin-top:14px">The RGD charges in Jamaican dollars. We convert it at the day's rate on your invoice. In Jamaica? Our fee is J$3,000, plus the RGD fee: J$4,000 regular or J$6,000 express. Collect in person or have it couriered.</p>
+        <a class="ps-start" href="/start.html?service=certificates&amp;source=rgd-certificate-copy">Start my certificate request</a>
+        <h3 class="list-title" style="margin-top:28px">What we handle</h3>
         <ul class="feature-list">
           <li>Apply to the RGD for you as your proxy</li>
           <li>Pay the RGD fee and collect the certificate</li>
           <li>Send it to you by DHL courier, or you collect it in person: you choose</li>
         </ul>
-        <div class="checklist" data-checklist>
-          <div class="checklist-head">
-            <h3 class="list-title">Check you qualify</h3>
-            <span class="progress" aria-live="polite"><span class="done">0</span> of <span class="total">4</span> ready</span>
-          </div>
-          <p class="checklist-hint">Tick each one that applies.</p>
-          <label class="check"><input type="checkbox"><span>I need a standard certified copy<small>Birth, marriage or death</small></span></label>
-          <label class="check"><input type="checkbox"><span>The event is registered in Jamaica</span></label>
-          <label class="check"><input type="checkbox"><span>I have an old copy, or know the name, date and parish</span></label>
-          <label class="check"><input type="checkbox"><span>The record has no errors or missing details</span></label>
-          <p class="ready-msg" hidden>You qualify. Start your request below.</p>
-        </div>
-        <p class="who-note" style="margin:-8px 0 20px;">Can't tick them all? You may need a <a href="#search">record search</a>. If your record has an error or something else is unusual, <a href="/start.html?service=certificates">start a request</a> and we will confirm what is possible.</p>
-        <div class="btn-row">
-        </div>
       </div>
     </div>
     </div>
   </section>
 
-  <section class="band band-white ">
+  <section class="band band-tint " data-panel="search">
     <div class="band-in">
-      <p class="band-label">3 · Certified copy price, step by step</p>
-      <div class="ps" data-price-steps><script type="application/json">{"dhl": true, "groups": [{"title": "Your certified copy", "rows": [{"label": "Our service fee", "note": "We apply, pay the RGD and collect it", "usd": 30}, {"label": "RGD fee", "note": "Regular, 7 to 10 working days. Paid to the RGD in Jamaican dollars", "jmd": 4000}]}, {"title": "Apostille, if you need it", "toggle": true, "rows": [{"label": "Our apostille service", "note": "We take it to the Ministry of Foreign Affairs", "usd": 100}, {"label": "Ministry's apostille fee", "choose": [{"label": "Regular, about 5 working days", "jmd": 3500}, {"label": "24-hour", "jmd": 5000}]}]}, {"title": "Delivery to you", "rows": [{"label": "DHL", "note": "Quoted by your delivery address", "text": "quoted"}]}]}</script></div>
-      <p class="ps-note" style="margin-top:14px">The RGD charges in Jamaican dollars. We convert it at the day's rate on your invoice. In Jamaica? Our fee is J$3,000, plus the RGD fee: J$4,000 regular or J$6,000 express. Collect in person or have it couriered.</p>
-      <a class="ps-start" href="/start.html?service=certificates&amp;source=rgd-certificate-copy">Start my certificate request</a>
-    </div>
-  </section>
-
-  <section class="band band-tint ">
-    <div class="band-in">
-      <p class="band-label">4 · Record search</p>
+      <p class="band-label">2 · Record search</p>
       <div class="service-card" id="search">
       <div class="card-head">
         <span class="badge">Record search</span>
         <h2>Record Search</h2>
-        <p class="card-intro">When you don't know the exact date or parish of the event.</p>
+        <p class="card-intro">We find your record, then get your copy.</p>
       </div>
       <div class="card-body">
         <div class="price-block">
@@ -505,9 +535,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     </div>
   </section>
 
-  <section class="band band-white ">
+  <section class="band band-white quiet">
     <div class="band-in">
-      <p class="band-label">5 · Good to know</p>
+      <p class="band-label">Good to know</p>
       <div class="faq-section">
     <h3>Good to know</h3>
     <div class="faq">
@@ -548,18 +578,6 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     </div>
   </section>
 
-  <section class="band band-tint ">
-    <div class="band-in">
-      <p class="band-label">6 · More reading</p>
-      <section class="faq-section resources" aria-labelledby="res-title">
-    <h3 id="res-title">Reference &amp; Resources</h3>
-    <div class="res-links">
-      <a class="res-link" href="https://www.rgd.gov.jm/index.php/products-and-service/prices" target="_blank" rel="noopener"><strong>RGD Price List</strong><span>Official fees for certificates, searches and amendments.</span></a>
-    </div>
-    <p class="checked-note">More questions about how we work? See our <a href="/faq.html" style="color:var(--blue-highlight);font-weight:600;text-decoration:underline;">main FAQ</a>.</p>
-  </section>
-    </div>
-  </section>
 
   <section class="band band-cream ">
     <div class="band-in">
@@ -613,5 +631,41 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 
 <script src="/assets/rates.js"></script>
 <script src="/assets/price-steps.js"></script>
+<script>
+/* Route check: two questions, then only the matching option opens */
+(function () {
+  var quiz = document.getElementById('chk-quiz'); if (!quiz) return;
+  var steps = Array.prototype.slice.call(quiz.querySelectorAll('.chk-step'));
+  var verdicts = Array.prototype.slice.call(document.querySelectorAll('.verdict'));
+  var bands = Array.prototype.slice.call(document.querySelectorAll('[data-panel]'));
+  var back = document.getElementById('chk-back'), trail = ['have'];
+  function panel(key, scroll) {
+    var first = null;
+    bands.forEach(function (b) { var on = b.getAttribute('data-panel') === key; b.hidden = !on; if (on && !first) first = b; });
+    if (scroll && first) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  function step(name, push) {
+    if (push) trail.push(name);
+    steps.forEach(function (s) { s.hidden = s.getAttribute('data-step') !== name; });
+    back.hidden = trail.length < 2;
+  }
+  function verdict(key) {
+    quiz.hidden = true;
+    verdicts.forEach(function (v) { v.hidden = v.getAttribute('data-verdict') !== key; if (!v.hidden) v.focus({ preventScroll: true }); });
+    panel(key, true);
+  }
+  panel(null, false);
+  quiz.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-next], button[data-result]'); if (!b) return;
+    if (b.hasAttribute('data-next')) step(b.getAttribute('data-next'), true); else verdict(b.getAttribute('data-result'));
+  });
+  back.addEventListener('click', function () { trail.pop(); step(trail[trail.length - 1], false); });
+  document.querySelectorAll('[data-chk-reset]').forEach(function (b) { b.addEventListener('click', function () {
+    trail = ['have']; verdicts.forEach(function (v) { v.hidden = true; }); quiz.hidden = false; step('have', false); panel(null, false);
+  }); });
+  var h = location.hash.slice(1);
+  if (h === 'copies') verdict('copy'); else if (h === 'search') verdict('search');
+})();
+</script>
 </body>
 </html>
