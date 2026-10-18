@@ -607,6 +607,23 @@ main { display: flex; flex-direction: column; }
   .sr-guide { padding: 1.5rem 1.75rem .75rem; }
   .sr-title { font-size: 1.4rem; }
 }
+
+/* ===== Oct 2026 tidy-up: one list, newest first, square cards, more space ===== */
+:root { --radius: 0px; }
+.btn { border-radius: 0; }
+.library { padding: 3rem 0 4rem; }
+.all-title { font-size: clamp(1.6rem, 5vw, 2.2rem); text-align: center; margin: 0 0 2rem; }
+.article-grid { gap: 2.75rem; }
+@media (min-width: 700px) { .article-grid { gap: 2rem; } }
+.article-card { border-radius: 0; box-shadow: 0 1px 2px rgba(15,37,55,.06); }
+.article-card[hidden] { display: none; }
+.card-body h3 a::after { border-radius: 0; }
+.featured-badge { border-radius: 0; }
+.btn-line { background: var(--paper); color: var(--ink); border: 1.5px solid var(--ink); }
+.btn-line:hover { background: var(--ink); color: #fff; }
+.more-wrap { text-align: center; margin: 2.5rem 0 0; }
+.more-btn { min-width: 14rem; }
+.unlisted { border-radius: 0; margin-top: 3rem; }
 </style>
 </head>
 
@@ -664,234 +681,15 @@ main { display: flex; flex-direction: column; }
       <p class="page-byline">Written and checked by Laura Clarke, based on what the counters actually accept.</p>
       <p class="page-byline"><a href="/free-kits" style="color:#F6DFA6;font-weight:600;text-underline-offset:3px">Free printable kits: download them all in one place →</a></p>
 
-      <!-- Search box. It is switched on by the page script, so it never shows as a dead box. -->
-      <form class="guide-search" id="guide-search" role="search" hidden>
-        <label class="gs-label" for="gs-input">Search inside all 16 guides</label>
-        <div class="gs-field">
-          <svg class="icon gs-icon" aria-hidden="true"><use href="#i-search"/></svg>
-          <input id="gs-input" type="search" name="q" autocomplete="off" enterkeyhint="search" placeholder="Type a word, such as passport photo">
-          <button type="button" class="gs-clear" aria-label="Clear search" hidden><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
-        </div>
-        <p class="gs-try"><span>Try:</span>
-          <button type="button" data-q="lost passport">lost passport</button>
-          <button type="button" data-q="traffic ticket">traffic ticket</button>
-          <button type="button" data-q="birth certificate">birth certificate</button>
-          <button type="button" data-q="DS-160">DS-160</button>
-        </p>
-      </form>
     </div>
   </section>
 
-  <!-- ===================== SEARCH RESULTS (shown only while someone is searching) ===================== -->
-  <section class="search-results" id="search-results" aria-labelledby="sr-title" hidden>
-    <div class="wrap">
-      <div class="group-card">
-        <div class="sr-head">
-          <div>
-            <h2 id="sr-title">Search results</h2>
-            <p class="sr-status" id="sr-status" role="status" aria-live="polite"></p>
-          </div>
-          <button type="button" class="sr-clear">Clear search and show all guides</button>
-        </div>
-        <ol class="sr-list" id="sr-list"></ol>
-        <div class="sr-empty" id="sr-empty" hidden>
-          <p><strong>No guide mentions that yet.</strong> Try a different word, or tell us what you need and we will point you to the right guide.</p>
-          <a class="btn btn-gold" href="/start.html">Start a request</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===================== GROUP BAR + GROUP CARDS =====================
-       The group bar sticks under the site header while the reader scrolls
-       through the four group cards, and highlights the group in view. -->
   <div class="groups-wrap">
-    <div class="jump-intro">
-      <div class="wrap"><p class="jump-title">16 guides in four groups</p></div>
-    </div>
-    <nav class="jump" id="guides" aria-label="Guide groups">
-      <div class="wrap">
-        <ul class="jump-list">
-          <li><a href="#group-travel"><span class="group-num" aria-hidden="true">1</span><span class="jump-name">Travel &amp; Passports</span></a></li>
-          <li><a href="#group-records"><span class="group-num" aria-hidden="true">2</span><span class="jump-name">Identity &amp; Family Records</span></a></li>
-          <li><a href="#group-driving"><span class="group-num" aria-hidden="true">3</span><span class="jump-name">Driving &amp; Vehicles</span></a></li>
-          <li><a href="#group-tax"><span class="group-num" aria-hidden="true">4</span><span class="jump-name">Tax, TRN &amp; Pension</span></a></li>
-        </ul>
-      </div>
-    </nav>
-
-  <!-- ===================== GUIDES, ONE LARGE CARD PER GROUP =====================
-       To move a guide, cut its <article> and paste it into another group's card.
-       The first guide in the first group is shown as the large featured one. -->
-  <section class="section library" aria-label="Guides by group">
+  <section class="section library" aria-labelledby="all-title">
     <div class="wrap">
-
-      <section class="group-card" id="group-travel" aria-labelledby="group-travel-title">
-        <header class="group-head">
-          <span class="group-num" aria-hidden="true">1</span>
-          <div>
-            <p class="group-kicker"><span class="featured-badge">Featured</span> 5 guides</p>
-            <h2 id="group-travel-title">Travel &amp; Passports</h2>
-            <p class="group-desc">U.S. visas, Jamaican passports, overseas work and what to declare when you land.</p>
-          </div>
-        </header>
-        <div class="article-grid">
-          <article id="g-jamaica-us-visitor-visa-guide" class="article-card featured" data-cat="travel">
-            <div class="card-media"><img src="/assets/c5-customs-hero.webp" alt="Jamaican passport, boarding pass and phone on an airport counter" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat"><span class="featured-badge">New</span> US visa</span><time datetime="2026-10-08">Oct 8, 2026</time></div>
-              <h3><a href="/jamaica-us-visitor-visa-guide">How to Apply for a US Visitor Visa from Jamaica (B1/B2)</a></h3>
-              <p class="excerpt">The official steps in plain language: what the DS-160 form asks, the US$185 fee, interview day in Kingston, and the red flags to watch for if you pay an agency.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-
-          <article id="g-jamaica-passport-guide" class="article-card" data-cat="travel">
-            <div class="card-media"><img src="/assets/passport-renewal-800.webp" alt="Jamaican passport on a desk" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">Passport</span><time datetime="2026-10">Oct 2026</time></div>
-              <h3><a href="/jamaica-passport-guide">Getting a Jamaican Passport: What to Know Before You Apply</a></h3>
-              <p class="excerpt">Which passport lane fits you, what PICA checks, and the common mistakes that get applications sent back.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-
-          <article id="g-pica-card-payment-failed" class="article-card" data-cat="travel">
-            <div class="card-media"><img src="/assets/pica-passport-800.webp" alt="Jamaican passport and pen on a desk" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat"><span class="featured-badge">New</span> Passport</span><time datetime="2026-10-09">Oct 9, 2026</time></div>
-              <h3><a href="/pica-card-payment-failed">PICA Portal “Transaction Failed”? Why Your Card Keeps Getting Declined and How to Fix It</a></h3>
-              <p class="excerpt">Why overseas cards often fail at PICA’s payment step, why your draft locks, and the 4-step fix that gets your online passport renewal paid. Includes a short video walkthrough.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-
-          <article id="g-jamaica-h2b-work-visa-guide" class="article-card" data-cat="travel">
-            <div class="card-media"><img src="/assets/office-hero-960.webp" alt="Desk with a laptop, notebook and documents" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">Overseas work</span><time datetime="2026-10-04">Oct 4, 2026</time></div>
-              <h3><a href="/jamaica-h2b-work-visa-guide">How to Get an H-2B Work Placement from Jamaica (Without Getting Scammed)</a></h3>
-              <p class="excerpt">Seasonal work in the U.S.: the documents you need, how to check an agency is licensed, the questions to ask and the scam red flags. Includes a free printable toolkit.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-
-          <article id="g-jamaica-c5-travel-form" class="article-card" data-cat="travel">
-            <div class="card-media"><img src="/assets/wharf-barrel-clearance.webp" alt="Customs barrel shipping" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">Customs</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
-              <h3><a href="/jamaica-c5-travel-form">Don't Let the C5 Travel Form Trap Your Barrels at the Wharf</a></h3>
-              <p class="excerpt">A step-by-step walk through the C5 declaration, what counts as a personal effect, and the listing mistakes that leave barrels sitting at the wharf racking up storage fees.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="group-card" id="group-records" aria-labelledby="group-records-title">
-        <header class="group-head">
-          <span class="group-num" aria-hidden="true">2</span>
-          <div>
-            <p class="group-kicker">3 guides</p>
-            <h2 id="group-records-title">Identity &amp; Family Records</h2>
-            <p class="group-desc">Birth, marriage and death certificates, citizenship and police records.</p>
-          </div>
-        </header>
-        <div class="article-grid">
-          <article id="g-jamaica-rgd-certificates-guide" class="article-card" data-cat="records">
-            <div class="card-media"><img src="/assets/rgd-800.webp" alt="Jamaican birth certificate and RGD application" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">Birth, marriage &amp; death</span><time datetime="2026-09-30">Sep 30, 2026</time></div>
-              <h3><a href="/jamaica-rgd-certificates-guide">How to Get a Jamaican Birth, Marriage or Death Certificate (and Fix One That's Wrong)</a></h3>
-              <p class="excerpt">Entry numbers, record searches, corrections, adding a father's name and ordering from overseas, so you know what to expect before you order.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-
-          <article id="g-jamaican-citizenship-by-descent" class="article-card" data-cat="records">
-            <div class="card-media"><img src="/assets/citizenship-descent-hero-800.webp" alt="Jamaican citizenship documents" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">Citizenship</span><time datetime="2026-09-21">Sep 21, 2026</time></div>
-              <h3><a href="/jamaican-citizenship-by-descent">How Do I Claim Jamaican Citizenship Through a Jamaican Parent?</a></h3>
-              <p class="excerpt">Claiming your Jamaican heritage is a constitutional right, but PICA requires line-for-line documentary alignment. Learn how to verify your lineage without getting stuck in bureaucratic limbo.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-
-          <article id="g-jamaica-police-record-guide" class="article-card" data-cat="records">
-            <div class="card-media"><img src="/assets/police-record-800.webp" alt="Police record document" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">Police record</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
-              <h3><a href="/jamaica-police-record-guide">Getting a Jamaican Police Record: What to Know Before You Apply</a></h3>
-              <p class="excerpt">Avoid the five most common application errors that cause immediate counter rejection at the Criminal Records Office, for applicants at home and overseas.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="group-card" id="group-driving" aria-labelledby="group-driving-title">
-        <header class="group-head">
-          <span class="group-num" aria-hidden="true">3</span>
-          <div>
-            <p class="group-kicker">3 guides</p>
-            <h2 id="group-driving-title">Driving &amp; Vehicles</h2>
-            <p class="group-desc">Learner’s permits, licence renewals, fitness and registration.</p>
-          </div>
-        </header>
-        <div class="article-grid">
-          <article id="g-jamaica-learners-permit-guide" class="article-card" data-cat="driving">
-            <div class="card-media"><img src="/assets/motor-vehicle-800.webp" alt="Learner driver behind the wheel with an L plate" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">Learner’s permit</span><time datetime="2026-09-29">Sep 29, 2026</time></div>
-              <h3><a href="/jamaica-learners-permit-guide">How to Get Your Jamaican Learner’s Permit: The Complete Step-by-Step Guide</a></h3>
-              <p class="excerpt">The Road Code Test now comes before the tax office. Who qualifies, the Form H3A document checklist, a ready-to-send booking email, official study sources and the J$1,800 fee, step by step.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-
-          <article id="g-jamaica-drivers-license-renewal-guide" class="article-card" data-cat="driving">
-            <div class="card-media"><img src="/assets/driver-license-renewal-hero-800.webp" alt="Driver's licence renewal" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">Driver’s licence</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
-              <h3><a href="/jamaica-drivers-license-renewal-guide">Renewing a Jamaican Driver’s Licence: What to Know Before You Go</a></h3>
-              <p class="excerpt">Which licence lane fits you, what TAJ checks, and where the day goes at the tax office.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-
-          <article id="g-jamaica-motor-vehicle-licence-guide" class="article-card" data-cat="driving">
-            <div class="card-media"><img src="/assets/motor-vehicle-800.webp" alt="Motor vehicle registration documents" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">Vehicle licence</span><time datetime="2026-09">Sep 2026</time></div>
-              <h3><a href="/jamaica-motor-vehicle-licence-guide">Renewing Your Motor Vehicle Licence in Jamaica: What to Know</a></h3>
-              <p class="excerpt">Insurance first, fitness second, registration third. Here is how the two-stop fitness process works and how to renew online without a system lockout.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="group-card" id="group-tax" aria-labelledby="group-tax-title">
-        <header class="group-head">
-          <span class="group-num" aria-hidden="true">4</span>
-          <div>
-            <p class="group-kicker">5 guides</p>
-            <h2 id="group-tax-title">Tax, TRN &amp; Pension</h2>
-            <p class="group-desc">Your TRN, self-employed tax returns and NIS contributions.</p>
-          </div>
-        </header>
-        <div class="article-grid">
-          <article id="g-trn-without-photo-id" class="article-card" data-cat="tax">
-            <div class="card-media"><img src="/assets/trn-application-800.webp" alt="TRN application document" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">TRN</span><time datetime="2026-09-30">Sep 30, 2026</time></div>
-              <h3><a href="/trn-without-photo-id">How to Get a TRN in Jamaica Without Photo ID: The Birth Certificate Route</a></h3>
-              <p class="excerpt">Expired or missing photo ID doesn't have to stop your TRN. The birth certificate route TAJ accepts, how parents and guardians get a TRN for a child, and how to apply from overseas.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-
+      <h2 class="all-title" id="all-title">Latest guides</h2>
+      <div class="article-grid" id="guide-list">
           <article id="g-self-employed-s04-tax-guide" class="article-card" data-cat="tax">
             <div class="card-media"><img src="/assets/tax-office-jamaica.webp" alt="Customer service counter at a tax office" loading="lazy" decoding="async"></div>
             <div class="card-body">
@@ -901,7 +699,6 @@ main { display: flex; flex-direction: column; }
               <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
             </div>
           </article>
-
           <article id="g-self-employed-nis-minimum-jamaica" class="article-card" data-cat="tax">
             <div class="card-media"><img src="/assets/self-employed-nis-minimum-800.webp" alt="Self-employed woman reviewing her figures on a laptop" loading="lazy" decoding="async"></div>
             <div class="card-body">
@@ -920,8 +717,70 @@ main { display: flex; flex-direction: column; }
               <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
             </div>
           </article>
-
-          <article id="g-jamaica-nis-guide" class="article-card" data-cat="tax">
+          <article id="g-pica-card-payment-failed" class="article-card" data-cat="travel">
+            <div class="card-media"><img src="/assets/pica-passport-800.webp" alt="Jamaican passport and pen on a desk" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat"><span class="featured-badge">New</span> Passport</span><time datetime="2026-10-09">Oct 9, 2026</time></div>
+              <h3><a href="/pica-card-payment-failed">PICA Portal “Transaction Failed”? Why Your Card Keeps Getting Declined and How to Fix It</a></h3>
+              <p class="excerpt">Why overseas cards often fail at PICA’s payment step, why your draft locks, and the 4-step fix that gets your online passport renewal paid. Includes a short video walkthrough.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-jamaica-us-visitor-visa-guide" class="article-card" data-cat="travel">
+            <div class="card-media"><img src="/assets/c5-customs-hero.webp" alt="Jamaican passport, boarding pass and phone on an airport counter" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat"><span class="featured-badge">New</span> US visa</span><time datetime="2026-10-08">Oct 8, 2026</time></div>
+              <h3><a href="/jamaica-us-visitor-visa-guide">How to Apply for a US Visitor Visa from Jamaica (B1/B2)</a></h3>
+              <p class="excerpt">The official steps in plain language: what the DS-160 form asks, the US$185 fee, interview day in Kingston, and the red flags to watch for if you pay an agency.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-jamaica-h2b-work-visa-guide" class="article-card" data-cat="travel">
+            <div class="card-media"><img src="/assets/office-hero-960.webp" alt="Desk with a laptop, notebook and documents" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">Overseas work</span><time datetime="2026-10-04">Oct 4, 2026</time></div>
+              <h3><a href="/jamaica-h2b-work-visa-guide">How to Get an H-2B Work Placement from Jamaica (Without Getting Scammed)</a></h3>
+              <p class="excerpt">Seasonal work in the U.S.: the documents you need, how to check an agency is licensed, the questions to ask and the scam red flags. Includes a free printable toolkit.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-jamaica-passport-guide" class="article-card" data-cat="travel">
+            <div class="card-media"><img src="/assets/passport-renewal-800.webp" alt="Jamaican passport on a desk" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">Passport</span><time datetime="2026-10">Oct 2026</time></div>
+              <h3><a href="/jamaica-passport-guide">Getting a Jamaican Passport: What to Know Before You Apply</a></h3>
+              <p class="excerpt">Which passport lane fits you, what PICA checks, and the common mistakes that get applications sent back.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-jamaica-rgd-certificates-guide" class="article-card" data-cat="records">
+            <div class="card-media"><img src="/assets/rgd-800.webp" alt="Jamaican birth certificate and RGD application" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">Birth, marriage &amp; death</span><time datetime="2026-09-30">Sep 30, 2026</time></div>
+              <h3><a href="/jamaica-rgd-certificates-guide">How to Get a Jamaican Birth, Marriage or Death Certificate (and Fix One That's Wrong)</a></h3>
+              <p class="excerpt">Entry numbers, record searches, corrections, adding a father's name and ordering from overseas, so you know what to expect before you order.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-trn-without-photo-id" class="article-card" data-cat="tax">
+            <div class="card-media"><img src="/assets/trn-application-800.webp" alt="TRN application document" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">TRN</span><time datetime="2026-09-30">Sep 30, 2026</time></div>
+              <h3><a href="/trn-without-photo-id">How to Get a TRN in Jamaica Without Photo ID: The Birth Certificate Route</a></h3>
+              <p class="excerpt">Expired or missing photo ID doesn't have to stop your TRN. The birth certificate route TAJ accepts, how parents and guardians get a TRN for a child, and how to apply from overseas.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-jamaica-learners-permit-guide" class="article-card" data-cat="driving">
+            <div class="card-media"><img src="/assets/motor-vehicle-800.webp" alt="Learner driver behind the wheel with an L plate" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">Learner’s permit</span><time datetime="2026-09-29">Sep 29, 2026</time></div>
+              <h3><a href="/jamaica-learners-permit-guide">How to Get Your Jamaican Learner’s Permit: The Complete Step-by-Step Guide</a></h3>
+              <p class="excerpt">The Road Code Test now comes before the tax office. Who qualifies, the Form H3A document checklist, a ready-to-send booking email, official study sources and the J$1,800 fee, step by step.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-jamaica-nis-guide" class="article-card more-guide" hidden data-cat="tax">
             <div class="card-media"><img src="/assets/nis-pension-800.webp" alt="Retired Jamaican man reading his papers on a veranda" loading="lazy" decoding="async"></div>
             <div class="card-body">
               <div class="post-meta"><span class="cat">NIS pension</span><time datetime="2026-09-25">Sep 25, 2026</time></div>
@@ -930,8 +789,53 @@ main { display: flex; flex-direction: column; }
               <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
             </div>
           </article>
-        </div>
-      </section>
+          <article id="g-jamaican-citizenship-by-descent" class="article-card more-guide" hidden data-cat="records">
+            <div class="card-media"><img src="/assets/citizenship-descent-hero-800.webp" alt="Jamaican citizenship documents" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">Citizenship</span><time datetime="2026-09-21">Sep 21, 2026</time></div>
+              <h3><a href="/jamaican-citizenship-by-descent">How Do I Claim Jamaican Citizenship Through a Jamaican Parent?</a></h3>
+              <p class="excerpt">Claiming your Jamaican heritage is a constitutional right, but PICA requires line-for-line documentary alignment. Learn how to verify your lineage without getting stuck in bureaucratic limbo.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-jamaica-c5-travel-form" class="article-card more-guide" hidden data-cat="travel">
+            <div class="card-media"><img src="/assets/wharf-barrel-clearance.webp" alt="Customs barrel shipping" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">Customs</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
+              <h3><a href="/jamaica-c5-travel-form">Don't Let the C5 Travel Form Trap Your Barrels at the Wharf</a></h3>
+              <p class="excerpt">A step-by-step walk through the C5 declaration, what counts as a personal effect, and the listing mistakes that leave barrels sitting at the wharf racking up storage fees.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-jamaica-police-record-guide" class="article-card more-guide" hidden data-cat="records">
+            <div class="card-media"><img src="/assets/police-record-800.webp" alt="Police record document" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">Police record</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
+              <h3><a href="/jamaica-police-record-guide">Getting a Jamaican Police Record: What to Know Before You Apply</a></h3>
+              <p class="excerpt">Avoid the five most common application errors that cause immediate counter rejection at the Criminal Records Office, for applicants at home and overseas.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-jamaica-drivers-license-renewal-guide" class="article-card more-guide" hidden data-cat="driving">
+            <div class="card-media"><img src="/assets/driver-license-renewal-hero-800.webp" alt="Driver's licence renewal" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">Driver’s licence</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
+              <h3><a href="/jamaica-drivers-license-renewal-guide">Renewing a Jamaican Driver’s Licence: What to Know Before You Go</a></h3>
+              <p class="excerpt">Which licence lane fits you, what TAJ checks, and where the day goes at the tax office.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-jamaica-motor-vehicle-licence-guide" class="article-card more-guide" hidden data-cat="driving">
+            <div class="card-media"><img src="/assets/motor-vehicle-800.webp" alt="Motor vehicle registration documents" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">Vehicle licence</span><time datetime="2026-09">Sep 2026</time></div>
+              <h3><a href="/jamaica-motor-vehicle-licence-guide">Renewing Your Motor Vehicle Licence in Jamaica: What to Know</a></h3>
+              <p class="excerpt">Insurance first, fitness second, registration third. Here is how the two-stop fitness process works and how to renew online without a system lockout.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+      </div>
+      <p class="more-wrap"><button type="button" class="btn btn-line more-btn" id="more-guides" aria-controls="guide-list" aria-expanded="false">Show more guides</button></p>
 
       <!-- Help callout -->
       <aside class="unlisted" aria-labelledby="help-title">
@@ -939,12 +843,11 @@ main { display: flex; flex-direction: column; }
           <h3 id="help-title">Can't find your situation in a guide?</h3>
           <p>Every file is different. Send us a message with what you're applying for and where you are, and we'll tell you exactly what the counter will ask for before you pay any government fee.</p>
         </div>
-        <a class="btn btn-gold" href="/start.html">Start a request</a>
+        <a class="btn btn-gold" href="/contact.html">Tell us how we can help</a>
       </aside>
     </div>
   </section>
-
-  </div><!-- /groups-wrap -->
+  </div>
 
   <!-- ===================== NEWSLETTER ===================== -->
   <section class="section newsletter" id="newsletter" aria-labelledby="nl-title">
@@ -1036,262 +939,19 @@ main { display: flex; flex-direction: column; }
     });
   });
 
-  /* ---------- Category links on guide pages (?cat=...) jump to the matching group ---------- */
-  var CAT_GROUPS = {
-    travel: 'group-travel', 'overseas-work': 'group-travel', customs: 'group-travel', pica: 'group-travel',
-    records: 'group-records', rgd: 'group-records', jcf: 'group-records',
-    driving: 'group-driving',
-    tax: 'group-tax', taj: 'group-tax', nis: 'group-tax'
-  };
-  /* ---------- Group bar: highlight the group in view and keep its button visible ---------- */
-  var jumpList = document.querySelector('.jump-list');
-  var jumpLinks = Array.prototype.slice.call(document.querySelectorAll('.jump-list a'));
-  var groupCards = jumpLinks.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
-  function setGroup(id) {
-    jumpLinks.forEach(function (a) {
-      var on = a.getAttribute('href') === '#' + id;
-      a.classList.toggle('is-active', on);
-      if (on) {
-        a.setAttribute('aria-current', 'true');
-        if (jumpList.scrollWidth > jumpList.clientWidth) {
-          jumpList.scrollTo({ left: a.offsetLeft - (jumpList.clientWidth - a.offsetWidth) / 2, behavior: reduceMotion ? 'auto' : 'smooth' });
-        }
-      } else {
-        a.removeAttribute('aria-current');
-      }
+  /* ---------- Show more guides ---------- */
+  var moreBtn = document.getElementById('more-guides');
+  var extra = document.querySelectorAll('.more-guide');
+  if (moreBtn) {
+    if (!extra.length) moreBtn.parentNode.hidden = true;
+    moreBtn.addEventListener('click', function () {
+      var open = moreBtn.getAttribute('aria-expanded') === 'true';
+      extra.forEach(function (c) { c.hidden = open; });
+      moreBtn.setAttribute('aria-expanded', String(!open));
+      moreBtn.textContent = open ? 'Show more guides' : 'Show fewer guides';
+      if (!open && extra[0]) { var l = extra[0].querySelector('h3 a'); if (l) l.focus({ preventScroll: true }); }
     });
   }
-  if ('IntersectionObserver' in window && groupCards.length) {
-    var inView = {};
-    var groupWatcher = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { inView[en.target.id] = en.isIntersecting; });
-      for (var i = 0; i < groupCards.length; i++) {
-        if (inView[groupCards[i].id]) { setGroup(groupCards[i].id); return; }
-      }
-      if (groupCards[0].getBoundingClientRect().top > window.innerHeight * 0.35) setGroup('');
-    }, { rootMargin: '-35% 0px -55% 0px' });
-    groupCards.forEach(function (g) { groupWatcher.observe(g); });
-  }
-  jumpLinks.forEach(function (a) {
-    a.addEventListener('click', function () { setGroup(a.getAttribute('href').slice(1)); });
-  });
-  /* Back above the first group: no group is highlighted and the bar returns to its start */
-  var clearQueued = false;
-  window.addEventListener('scroll', function () {
-    if (clearQueued || !groupCards.length) return;
-    clearQueued = true;
-    requestAnimationFrame(function () {
-      clearQueued = false;
-      if (document.querySelector('.jump-list a.is-active') && groupCards[0].getBoundingClientRect().top > window.innerHeight * 0.45) {
-        setGroup('');
-        jumpList.scrollTo({ left: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
-      }
-    });
-  }, { passive: true });
-
-  var cat = new URLSearchParams(location.search).get('cat');
-  var catTarget = cat && CAT_GROUPS[cat] ? document.getElementById(CAT_GROUPS[cat]) : null;
-  if (catTarget) {
-    catTarget.scrollIntoView({ block: 'start' });
-    window.addEventListener('load', function () { catTarget.scrollIntoView({ block: 'start' }); });
-  }
-
-  /* ---------- Search inside the guides ----------
-     The list of guides comes from the cards on this page. The first time someone uses the
-     search box, each guide page is fetched and read section by section, so results always
-     match the live guides and there is no separate index file to keep up to date. */
-  var gsForm = document.getElementById('guide-search');
-  var gsInput = document.getElementById('gs-input');
-  var gsClear = gsForm.querySelector('.gs-clear');
-  var srSection = document.getElementById('search-results');
-  var srList = document.getElementById('sr-list');
-  var srStatus = document.getElementById('sr-status');
-  var srEmpty = document.getElementById('sr-empty');
-  var groupsWrap = document.querySelector('.groups-wrap');
-  gsForm.hidden = false;
-
-  /* Lower case, no accents, no hyphens or apostrophes, one spelling of "licence" */
-  function norm(s) {
-    return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
-      .replace(/[‘’'`]/g, '').replace(/[-‐-―]/g, '')
-      .replace(/license/g, 'licence').replace(/[^a-z0-9$]+/g, ' ').trim();
-  }
-  function esc(s) {
-    return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
-  }
-
-  var guides = Array.prototype.map.call(document.querySelectorAll('.group-card .article-card'), function (card) {
-    var link = card.querySelector('h3 a');
-    var title = link.textContent.trim();
-    var group = card.closest('.group-card').querySelector('h2').textContent.trim();
-    var label = card.querySelector('.cat').textContent.replace(/^\s*New\s+/, '').trim();
-    var excerpt = ((card.querySelector('.excerpt') || {}).textContent || '').trim();
-    return {
-      href: link.getAttribute('href'), title: title, group: group, label: label, excerpt: excerpt,
-      tn: ' ' + norm(title + ' ' + label) + ' ',
-      n: ' ' + norm(title + ' ' + label + ' ' + excerpt + ' ' + group) + ' ',
-      sections: null
-    };
-  });
-
-  /* Parts of a guide page that are not guide content */
-  var NOISE = 'script,style,noscript,svg,nav,form,button,.share-bar,.related-grid,.related-guides,.guide-nav,' +
-              '.newsletter-box,.toolkit-card,.cta-card,.mid-cta,.next-link,.check-meter,.checklist-done,' +
-              '.check-hint,.glance-hint,.author-bar,.meta,.breadcrumb,.category,.eyebrow,.kicker,.step-badge';
-  var SKIP = /bridge|related|newsletter|subscribe|toolkit|^nl-|share/i;
-
-  function readGuide(html) {
-    var doc = new DOMParser().parseFromString(html, 'text/html');
-    var root = doc.querySelector('main') || doc.body;
-    Array.prototype.forEach.call(root.querySelectorAll(NOISE), function (el) { el.remove(); });
-    var found = [];
-    var cur = { h: 'Overview', a: '', parts: [], skip: false };
-    var walker = doc.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
-    var node;
-    while ((node = walker.nextNode())) {
-      if (node.nodeType === 1) {
-        if (node.tagName === 'H2') {
-          found.push(cur);
-          var sec = node.closest('section[id]');
-          var anchor = (sec && sec.querySelector('h2') === node) ? sec.id : (node.id || (sec ? sec.id : ''));
-          cur = { h: node.textContent.replace(/\s+/g, ' ').trim(), a: anchor, parts: [], skip: SKIP.test(anchor) };
-        }
-      } else if (!node.parentElement.closest('h2')) {
-        cur.parts.push(node.nodeValue);
-      }
-    }
-    found.push(cur);
-    return found.filter(function (s) { return !s.skip; }).map(function (s) {
-      var text = s.parts.join(' ').replace(/\s+/g, ' ').trim();
-      return { h: s.h, a: s.a, t: text, n: ' ' + norm(text) + ' ', hn: ' ' + norm(s.h) + ' ' };
-    }).filter(function (s) { return s.t.length > 40; });
-  }
-
-  var indexState = 'idle';
-  function loadIndex() {
-    if (indexState !== 'idle') return;
-    indexState = 'loading';
-    var left = guides.length;
-    guides.forEach(function (g) {
-      fetch(g.href, { credentials: 'same-origin' })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
-        .then(function (html) { g.sections = readGuide(html); })
-        .catch(function () { g.sections = []; })
-        .then(function () { left--; if (!left) indexState = 'ready'; if (gsInput.value.trim()) runSearch(); });
-    });
-  }
-
-  /* A word matches at the start of a word ("ticket" finds "tickets"); anything with a digit matches anywhere ("160" finds "DS-160") */
-  function needle(w) { return /\d/.test(w) ? w : ' ' + w; }
-  function count(hay, w) {
-    var n = needle(w), c = 0, i = hay.indexOf(n);
-    while (i > -1 && c < 6) { c++; i = hay.indexOf(n, i + n.length); }
-    return c;
-  }
-  function termPattern(w) {
-    var sep = "[-\\u2010-\\u2015'\\u2019]?";
-    var accents = { a: '[a\u00e0-\u00e4]', e: '[e\u00e8-\u00eb]', i: '[i\u00ec-\u00ef]', o: '[o\u00f2-\u00f6]', u: '[u\u00f9-\u00fc]' };
-    function pat(x) { return x.split('').map(function (ch) { return accents[ch] || ch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join(sep); }
-    var p = pat(w);
-    if (w.indexOf('licence') > -1) p = '(?:' + p + '|' + pat(w.replace('licence', 'license')) + ')';
-    return (/\d/.test(w) ? '' : '\\b') + p;
-  }
-  function snippet(text, re) {
-    re.lastIndex = 0;
-    var m = re.exec(text), at = m ? m.index : 0;
-    var start = Math.max(0, at - 70), end = Math.min(text.length, at + 140);
-    if (start > 0) { var sp = text.indexOf(' ', start); if (sp > -1 && sp < at) start = sp + 1; }
-    if (end < text.length) { var ep = text.lastIndexOf(' ', end); if (ep > at) end = ep; }
-    var slice = text.slice(start, end), out = '', last = 0;
-    re.lastIndex = 0;
-    while ((m = re.exec(slice))) {
-      if (!m[0]) { re.lastIndex++; continue; }
-      out += esc(slice.slice(last, m.index)) + '<mark>' + esc(m[0]) + '</mark>';
-      last = m.index + m[0].length;
-    }
-    return (start > 0 ? '… ' : '') + out + esc(slice.slice(last)) + (end < text.length ? ' …' : '');
-  }
-
-  function find(terms) {
-    return guides.map(function (g) {
-      var allInCard = terms.every(function (w) { return g.n.indexOf(needle(w)) > -1; });
-      var secs = [];
-      (g.sections || []).forEach(function (s) {
-        var hits = 0, score = 0, ok = true;
-        terms.forEach(function (w) {
-          var inHeading = s.hn.indexOf(needle(w)) > -1, c = count(s.n, w);
-          if (inHeading || c) { hits++; score += (inHeading ? 6 : 0) + Math.min(c, 5); }
-          else if (g.tn.indexOf(needle(w)) === -1) ok = false;
-        });
-        if (ok && hits) secs.push({ s: s, score: score + hits * 3 });
-      });
-      if (!allInCard && !secs.length) return null;
-      secs.sort(function (a, b) { return b.score - a.score; });
-      var titleHits = terms.filter(function (w) { return g.tn.indexOf(needle(w)) > -1; }).length;
-      return { g: g, secs: secs, score: titleHits * 12 + (allInCard ? 6 : 0) + (secs[0] ? secs[0].score : 0) + Math.min(secs.length, 6) };
-    }).filter(Boolean).sort(function (a, b) { return b.score - a.score; });
-  }
-
-  var wasActive = false;
-  function runSearch() {
-    var q = gsInput.value.trim();
-    var terms = norm(q).split(' ').filter(function (w) { return w.length > 1; }).slice(0, 6);
-    var active = terms.length > 0;
-    gsClear.hidden = !gsInput.value;
-    srSection.hidden = !active;
-    groupsWrap.hidden = active;
-    history.replaceState(null, '', location.pathname + (active ? '?q=' + encodeURIComponent(q) : ''));
-    if (!active) { wasActive = false; return; }
-    loadIndex();
-
-    var results = find(terms);
-    var re = new RegExp(terms.map(termPattern).join('|'), 'gi');
-    var reading = indexState !== 'ready';
-    srList.innerHTML = results.map(function (r) {
-      var g = r.g, rows = r.secs.slice(0, 3).map(function (x) {
-        return '<li><a href="' + esc(g.href + (x.s.a ? '#' + x.s.a : '')) + '"><strong>' + esc(x.s.h) + '</strong>' +
-               '<span class="sr-snip">' + snippet(x.s.t, re) + '</span></a></li>';
-      }).join('');
-      var more = r.secs.length - 3;
-      return '<li class="sr-guide"><span class="sr-group">' + esc(g.group) + '</span>' +
-             '<a class="sr-title" href="' + esc(g.href) + '">' + esc(g.title) + '</a>' +
-             (rows ? '<ul class="sr-sections">' + rows + '</ul>' +
-                     (more > 0 ? '<p class="sr-more">' + more + ' more ' + (more === 1 ? 'section' : 'sections') + ' in this guide ' + (more === 1 ? 'mentions' : 'mention') + ' it.</p>' : '')
-                   : '<p class="sr-excerpt">' + esc(g.excerpt) + '</p>') +
-             '</li>';
-    }).join('');
-    srEmpty.hidden = !!results.length || reading;
-    srStatus.textContent = results.length
-      ? results.length + (results.length === 1 ? ' guide mentions ' : ' guides mention ') + '“' + q + '”.' + (reading ? ' Still reading the guides…' : '')
-      : (reading ? 'Reading the guides…' : 'Nothing found for “' + q + '”.');
-
-    /* On small screens, bring the search box to the top so the results are in view */
-    if (!wasActive && srSection.getBoundingClientRect().top > window.innerHeight * 0.6) {
-      gsForm.scrollIntoView({ block: 'start', behavior: reduceMotion ? 'auto' : 'smooth' });
-    }
-    wasActive = true;
-  }
-
-  var searchTimer;
-  gsInput.addEventListener('focus', loadIndex);
-  gsInput.addEventListener('input', function () { clearTimeout(searchTimer); searchTimer = setTimeout(runSearch, 140); });
-  gsInput.addEventListener('keydown', function (e) { if (e.key === 'Escape' && gsInput.value) { gsInput.value = ''; runSearch(); } });
-  gsForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    clearTimeout(searchTimer);
-    runSearch();
-    if (window.matchMedia('(max-width: 699px)').matches) gsInput.blur();
-  });
-  gsClear.addEventListener('click', function () { gsInput.value = ''; runSearch(); gsInput.focus(); });
-  srSection.querySelector('.sr-clear').addEventListener('click', function () {
-    gsInput.value = ''; runSearch();
-    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
-  });
-  Array.prototype.forEach.call(gsForm.querySelectorAll('[data-q]'), function (b) {
-    b.addEventListener('click', function () { gsInput.value = b.getAttribute('data-q'); runSearch(); });
-  });
-  var firstQuery = new URLSearchParams(location.search).get('q');
-  if (firstQuery) { gsInput.value = firstQuery; runSearch(); }
 
   /* ---------- Footer year ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
