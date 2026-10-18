@@ -215,7 +215,7 @@
           <li><a href="/#services">Services</a></li>
           <li><a href="/insights.html">Insights &amp; Guides</a></li>
           <li><a href="/about.html">About Us</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </nav>
 
@@ -397,7 +397,7 @@
             <li><a href="/free-kits">Free Kits</a></li>
             <li><a href="/faq.html">FAQ</a></li>
             <li><a href="/about.html">About Us</a></li>
-            <li><a href="/#contact">Contact</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
         </nav>
         <a class="to-top" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg> Back to top</a>
@@ -410,7 +410,7 @@
         <ul class="legal-links">
           <li><a href="/privacy.html">Privacy</a></li>
           <li><a href="/terms.html">Terms</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -555,18 +555,18 @@
                           : 'Hi Laura, I sent a request on your website for: ' + service + '.';
         if (accepting && (kind === 'saved' || kind === 'saved-no-email' || kind === 'saved-none' || kind === 'sent')) {
           title = kind === 'sent' ? 'Sent' : 'Thank you';
-          text = kind === 'saved' ? 'Your acceptance is recorded, and a copy has been sent to your email.'
+          text = kind === 'saved' ? 'Your acceptance is recorded, and a copy has been sent to your email. If you do not see it, check your junk or spam folder.'
                : kind === 'sent' ? 'Your acceptance has been sent. If you do not hear from me shortly, message me on WhatsApp so I can check that it came through.'
                : 'Your acceptance is recorded.';
           wa = 'Hi Laura, I have accepted the terms' + (acceptService ? ' for my ' + acceptService : '') + '.';
           ref = '';
         } else if (kind === 'saved') {
-          text = 'A confirmation has been sent to ' + email + (personal ? '. Your invoice comes next, quoting this reference.' : '. I will reply on WhatsApp or by email.');
+          text = 'A confirmation has been sent to ' + email + (personal ? '. Your invoice comes next, quoting this reference.' : '. I will reply on WhatsApp or by email.') + ' If you do not see it in a few minutes, check your junk or spam folder and mark it as not spam.';
         } else if (kind === 'saved-no-email') {
           text = 'Your request is saved, but the confirmation email could not be sent. Please note your reference. ' + (personal ? 'Your invoice comes next.' : 'I will reply on WhatsApp or by email.');
         } else if (kind === 'sent') {
           title = 'Request sent';
-          text = 'A confirmation with your reference number should reach ' + email + ' within a few minutes. If it does not arrive, message me on WhatsApp so I can check that your request came through.';
+          text = 'A confirmation with your reference number should reach ' + email + ' within a few minutes. Check your junk or spam folder too. If it does not arrive, message me on WhatsApp so I can check that your request came through.';
         } else {
           title = 'Please message me instead'; showSteps = false;
           text = 'The online form could not take your request just now. Nothing was lost on your side: message me on WhatsApp and I will start it with you there.';

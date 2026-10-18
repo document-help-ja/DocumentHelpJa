@@ -215,6 +215,22 @@
       body { background: #fff; font-size: 11pt; }
       .card { border: 0; padding: 0; }
     }
+
+    /* Moved from the homepage, Oct 2026 */
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+    .steps .card, .trust .card, .reviews .card { margin-top: 0; }
+    .steps h3, .trust h3 { font-size: 1.15rem; margin: .5rem 0 .4rem; }
+    .steps p, .trust p { margin: 0; color: var(--muted); }
+    .step-num { width: 40px; height: 40px; background: var(--ink); color: #fff; display: grid; place-items: center; font-weight: 700; }
+    .trust { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+    .reviews { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+    .review { margin: 0; border-top: 3px solid var(--gold); display: flex; flex-direction: column; gap: .75rem; }
+    .review .stars { color: var(--gold); letter-spacing: 2px; }
+    .review blockquote { margin: 0; color: var(--ink); line-height: 1.55; }
+    .review figcaption strong { display: block; color: var(--ink); }
+    .review figcaption span { font-size: .9rem; color: var(--muted); }
+    @media (min-width: 860px) { .steps, .trust { grid-template-columns: repeat(3, minmax(0, 1fr)); } .reviews { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 619px) { .steps .card, .trust .card, .reviews .card { border: 1px solid var(--line); padding: 1.25rem; } }
   </style>
 </head>
 <body id="top">
@@ -246,7 +262,7 @@
           <li><a href="/#services">Services</a></li>
           <li><a href="/insights.html">Insights &amp; Guides</a></li>
           <li><a href="/about.html" aria-current="page">About Us</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </nav>
 
@@ -329,13 +345,45 @@
 
     </div>
 
+    <!-- HOW IT WORKS (moved from the homepage) -->
+    <div class="approach-head">
+      <h2>How it works</h2>
+    </div>
+    <ol class="steps">
+      <li class="card"><span class="step-num" aria-hidden="true">1</span><h3>Choose your service</h3><p>Answer a few quick questions about your situation. It takes about two minutes.</p></li>
+      <li class="card"><span class="step-num" aria-hidden="true">2</span><h3>I confirm everything before you pay</h3><p>What's needed and the full cost, agency fees included, before any money goes to the agency.</p></li>
+      <li class="card"><span class="step-num" aria-hidden="true">3</span><h3>Accept my terms, then I take it from there</h3><p>Filing, follow-up and delivery by pickup or courier, with updates along the way.</p></li>
+    </ol>
+
+    <!-- WHY CLIENTS TRUST ME (moved from the homepage) -->
+    <div class="approach-head">
+      <h2>Why clients trust me</h2>
+    </div>
+    <div class="trust">
+      <section class="card"><h3>Checked before you pay</h3><p>I pre-audit your paperwork against each agency's exact counter rules, then handle the legwork, so you avoid rejections, delays and queues at PICA, TAJ, RGD and JCF.</p></section>
+      <section class="card"><h3>Your documents are safe with me</h3><p>Used only to prepare your application, never shared with third parties, and securely deleted once it's complete. Read my <a href="/privacy.html">Privacy Policy</a>.</p></section>
+      <section class="card"><h3>A registered Jamaican business</h3><p>Laura Clarke Administrative Services is registered with the Companies Office of Jamaica.</p></section>
+    </div>
+
+    <!-- ALL REVIEWS -->
+    <div class="approach-head" id="reviews">
+      <h2>What clients say</h2>
+    </div>
+    <div class="reviews">
+      <figure class="card review"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“The service provided was excellent. I was very impressed with the efficiency and exceptional attention to every detail. The speedy delivery was a plus for me. In all, everything was professionally done. I appreciate the service very much.”</blockquote><figcaption><strong>Owen M.</strong><span>Passport renewal from overseas</span></figcaption></figure>
+      <figure class="card review"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“From getting passport-size pictures to getting through at the office and collecting my new ID, the process was smooth and easy. Thanks so much for your expertise!”</blockquote><figcaption><strong>Danielle H.</strong><span>Passport in Jamaica</span></figcaption></figure>
+      <figure class="card review"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“I had no problem dealing with my passport. She told me everything I need to do, so it was a breeze. Then in space of no time I was collecting something people told me would take forever.”</blockquote><figcaption><strong>Kentish</strong><span>Passport · Google review</span></figcaption></figure>
+      <figure class="card review"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Laura Clarke did an excellent job. Super professional. I highly recommend her.”</blockquote><figcaption><strong>Paulette W.</strong><span>Passport renewal</span></figcaption></figure>
+      <figure class="card review"><div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Excellent. Your service is beyond expectation. It's worth every cent that I spent.”</blockquote><figcaption><strong>Vincent W.</strong><span>Passport renewal</span></figcaption></figure>
+    </div>
+
     <!-- CTA BANNER -->
     <section class="cta" aria-labelledby="cta-title">
       <h2 id="cta-title">Ready to get your paperwork sorted?</h2>
       <p>Choose your service to see what's included and the fee, then start your request.</p>
       <div class="cta-actions">
         <a class="btn btn-gold" href="/#services">See the services</a>
-        <a class="btn btn-ghost" href="/start.html">Start a request</a>
+        <a class="btn btn-ghost" href="/contact.html">Tell us how we can help</a>
       </div>
     </section>
 
@@ -357,7 +405,7 @@
             <li><a href="/free-kits">Free Kits</a></li>
             <li><a href="/faq.html">FAQ</a></li>
             <li><a href="/about.html">About Us</a></li>
-            <li><a href="/#contact">Contact</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
         </nav>
         <a class="to-top" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg> Back to top</a>
@@ -370,7 +418,7 @@
         <ul class="legal-links">
           <li><a href="/privacy.html">Privacy</a></li>
           <li><a href="/terms.html">Terms</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
     </div>

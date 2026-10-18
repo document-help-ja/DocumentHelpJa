@@ -460,6 +460,91 @@ h1,h2,h3{color:var(--ink)}
   .brand-name small{font-size:10px;letter-spacing:1px}
   .hero .btns .btn{width:100%}
 }
+
+/* ===== Redesign Oct 2026: square edges, cream hero, gold service titles, navy footer ===== */
+:root{--radius:0px}
+.btn,.btn-more,.nl input[type=email],.float .wa,.float .up,.svc-dialog,.dlg-close,.menu-btn{border-radius:0}
+.float .up{border-radius:0}
+.h2.center{text-align:center;background-position:center bottom}
+.hero{background:var(--cream);border-bottom:1px solid var(--cream-line)}
+.hero-grid{display:flex;flex-wrap:wrap;align-items:center;gap:56px;padding-top:72px;padding-bottom:72px}
+.hero-photo{flex:0 1 440px;min-width:0}
+.hero-photo img{width:100%;height:auto;object-fit:contain;border-bottom:4px solid var(--gold)}
+.hero-copy{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.hero h1{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,3.6vw,2.6rem);line-height:1.25;color:var(--text);max-width:20ch}
+.hero p.sub{margin:0;font-size:18px;color:var(--muted);max-width:34rem}
+.hero .note{margin:0;font-size:14px;color:var(--muted)}
+.cards{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));margin-top:48px}
+.card{border-radius:0;box-shadow:0 1px 2px rgba(15,37,55,.06)}
+.card img{height:190px}
+.card-body{align-items:center;text-align:center;gap:10px;padding:26px 24px 22px}
+.card-title{color:var(--gold-text);font-weight:800;font-size:17px;letter-spacing:.04em;text-transform:uppercase}
+.card-line{font-size:16px;color:var(--text)}
+.card-cta{border-top:0;padding-top:4px;color:var(--gold-text);font-weight:700;font-size:16px;min-height:44px}
+.card-cta svg{stroke:var(--gold-text)}
+.ask{flex-direction:column;align-items:center;text-align:center;gap:12px;padding:40px 28px;max-width:44rem;margin-left:auto;margin-right:auto}
+.ask strong{font-size:22px;font-family:var(--serif)}
+.ask span{font-size:16px;color:var(--text)}
+.ask .btn{margin-top:8px}
+.reviews-band{border-top:0;padding-top:24px}
+.reviews{columns:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:56rem;margin:40px auto 0}
+.review{margin:0;border-top:3px solid var(--gold)}
+.reviews-all{text-align:center;margin:28px 0 0}
+@media (max-width:640px){.reviews{display:grid;overflow:visible;padding:0}.review{flex:none}}
+/* Navy footer */
+.site-footer{background:var(--navy);border-top:4px solid var(--gold);color:var(--on-dark)}
+.nl{border-bottom-color:rgba(255,255,255,.16)}
+.nl-copy strong{color:#fff}
+.nl-copy p{color:var(--on-dark)}
+.nl input[type=email]{border:0}
+.nl-success{border-bottom-color:rgba(255,255,255,.16)}
+.nl-success strong{color:#fff}
+.nl-success p{color:var(--on-dark)}
+.fcols h3{color:var(--gold-light)}
+.fcols a{color:#fff}
+.fcols a:hover{color:var(--gold-light)}
+.fbrand .brand{color:#fff}
+.fbrand .mark{background:transparent}
+.fbrand .brand-name small{color:var(--gold-light)}
+.fbrand p{color:var(--on-dark)}
+.legal{border-top-color:rgba(255,255,255,.16);color:#B8C4D8}
+.legal a{color:#fff}
+.legal a.top{color:var(--gold-light)}
+.card-x .card-title{margin:0}
+.card-x .card-line{margin:0}
+.xd{width:100%}
+.xd summary{list-style:none;cursor:pointer;justify-content:center}
+.xd summary::-webkit-details-marker{display:none}
+.xd summary svg{transition:transform .2s}
+.xd[open] summary svg{transform:rotate(180deg)}
+.xd-in{text-align:left;border-top:1px solid var(--hair);padding-top:14px;margin-top:6px;font-size:15px}
+.xd-in p{margin:0 0 10px}
+.xd-in ul{margin:0 0 10px;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.xd-in a{font-weight:600}
+/* Tighter footer */
+.ft{padding-top:44px;padding-bottom:36px;gap:28px}
+.nl{padding-bottom:28px}
+.nl-success{padding-bottom:28px}
+.fcols{grid-template-columns:1.4fr 1fr 1fr;gap:24px 32px}
+.fcols ul{gap:6px}
+.fcols h3{margin-bottom:8px}
+.legal{padding-top:18px;font-size:12.5px;gap:10px 20px}
+@media (max-width:820px){
+  .ft{padding-bottom:92px}
+  .fcols{grid-template-columns:1fr 1fr}
+  .fbrand{grid-column:1/-1}
+}
+/* Gentle fade-in as cards scroll into view */
+.js-reveal .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.js-reveal .reveal.in{opacity:1;transform:none}
+@media (max-width:820px){
+  .hero-grid{padding:0 0 48px;gap:28px}
+  .hero-photo{flex:1 1 100%}
+  .hero-photo{max-width:520px;margin:0 auto}
+  .hero-photo img{aspect-ratio:auto;height:auto}
+  .hero-copy{padding:0 20px}
+  .hero-copy .btn{width:100%}
+}
 </style>
 </head>
 <body id="top">
@@ -477,6 +562,7 @@ h1,h2,h3{color:var(--ink)}
       <button class="nav-btn" type="button" aria-expanded="false" aria-controls="dd-guides">Guides
         <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F6DFA6" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
       <a class="nav-link" href="/about.html">About</a>
+      <a class="nav-link" href="/contact.html">Contact</a>
       <a class="btn btn-gold btn-sm" href="#services">Choose your service</a>
     </nav>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mnav">
@@ -593,7 +679,7 @@ h1,h2,h3{color:var(--ink)}
     </details>
     <a href="/about.html">About Laura</a>
     <a href="/faq.html">FAQ</a>
-    <a href="#contact">Contact</a>
+    <a href="/contact.html">Contact</a>
     <a class="btn btn-navy" href="#services">Choose your service</a>
   </nav>
 </header>
@@ -601,174 +687,104 @@ h1,h2,h3{color:var(--ink)}
 <main id="main">
 
   <section class="hero" aria-labelledby="hero-title">
-    <div class="wrap hero-inner">
+    <div class="wrap hero-grid">
+      <div class="hero-photo"><img src="assets/profile.webp" width="510" height="507" alt="Laura Clarke" fetchpriority="high"></div>
       <div class="hero-copy">
-        <p class="kicker">Private document representative</p>
         <h1 id="hero-title">Jamaican documents, without the running around.</h1>
-        <p class="sub">Tell me what you need. I check your paperwork, deal with the agency, and keep you updated, whether you're in Jamaica or overseas.</p>
-        <div class="btns">
-          <a class="btn btn-gold" href="#services">Choose your service</a>
-          <a class="btn btn-outline" href="#how">See how it works</a>
-        </div>
+        <p class="sub">Whether you're in Jamaica or overseas, I check your paperwork, deal with the agency, and keep you updated.</p>
+        <a class="btn btn-gold" href="/contact.html">Tell us how we can help</a>
         <p class="note">Independent private service · Not a government agency</p>
-      </div>
-      <div class="hero-img">
-        <img src="assets/office-hero.webp" srcset="assets/office-hero-960.webp 960w, assets/office-hero.webp 1600w" sizes="(min-width: 900px) 540px, 100vw" width="960" height="536" alt="Laura Clarke's office, where documents are checked and prepared" fetchpriority="high">
       </div>
     </div>
   </section>
 
-  <section class="section" id="how" aria-labelledby="how-title">
-    <div class="wrap">
-      <h2 class="h2" id="how-title">How it works</h2>
-      <ol class="steps">
-        <li><span class="num" aria-hidden="true">1</span><h3>Choose your service</h3><p>Answer a few quick questions about your situation. It takes about two minutes.</p></li>
-        <li><span class="num" aria-hidden="true">2</span><h3>I confirm everything before you pay</h3><p>What's needed and the full cost, agency fees included, before any money goes to the agency.</p></li>
-        <li><span class="num" aria-hidden="true">3</span><h3>Accept my terms, then I take it from there</h3><p>Filing, follow-up and delivery by pickup or courier, with updates along the way.</p></li>
-      </ol>
-    </div>
-  </section>
 
   <section class="section tint" id="services" aria-labelledby="services-title">
     <div class="wrap">
-      <h2 class="h2" id="services-title">What do you need help with?</h2>
-      <p class="lead">Tap a service to see what you'll need, the fees, and how to start.</p>
-
-      <div class="grp-head first">
-        <h3 class="grp-title">Most requested</h3>
-        <p class="grp-sub">Our fastest-moving services: passports and TAJ renewals.</p>
-      </div>
+      <h2 class="h2 center" id="services-title">Choose your service</h2>
       <div class="cards">
-        <a class="card" href="/jamaican-passport-services.html">
+        <a class="card reveal" href="/jamaican-passport-services.html">
           <img src="assets/passport-renewal-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
-          <span class="card-body"><span class="card-title">Jamaican Passport</span><span class="card-line">We apply for you and deliver to your door</span><span class="card-cta">View details and start <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="card-body"><span class="card-title">Jamaican Passport</span><span class="card-line">We apply for you and deliver to your door</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
-        <a class="card" href="/drivers-licence-renewal.html">
+        <a class="card reveal" href="/drivers-licence-renewal.html">
           <img src="assets/driver-license-renewal-hero-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
-          <span class="card-body"><span class="card-title">Driver's Licence Renewal</span><span class="card-line">Road-ready today. Skip the cashier line</span><span class="card-cta">View details and start <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="card-body"><span class="card-title">Driver's Licence Renewal</span><span class="card-line">Road-ready today. Skip the cashier line</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
-        <a class="card" href="/motor-vehicle-licence-renewal.html">
+        <a class="card reveal" href="/motor-vehicle-licence-renewal.html">
           <img src="assets/motor-vehicle-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
-          <span class="card-body"><span class="card-title">Motor Vehicle Licence Renewal</span><span class="card-line">Same-day renewal. No Tax Office line</span><span class="card-cta">View details and start <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="card-body"><span class="card-title">Motor Vehicle Licence Renewal</span><span class="card-line">Same-day renewal. No Tax Office line</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
-      </div>
-
-      <div class="grp-head">
-        <h3 class="grp-title">From overseas or at home</h3>
-        <p class="grp-sub">Certificates and records from Jamaica, without flying home.</p>
-      </div>
-      <div class="cards">
-        <a class="card" href="/jamaica-police-record.html">
+        <a class="card reveal" href="/motor-vehicle-licence-renewal.html#ticket-lookup">
+          <img src="assets/traffic-tickets-800.webp" width="800" height="446" alt="" loading="lazy" decoding="async">
+          <span class="card-body"><span class="card-title">Traffic Tickets</span><span class="card-line">Find and clear outstanding tickets</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </a>
+        <a class="card reveal" href="/jamaica-police-record.html">
           <img src="assets/police-record-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
-          <span class="card-body"><span class="card-title">Police Record</span><span class="card-line">Done right the first time, at home or abroad</span><span class="card-cta">View details and start <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="card-body"><span class="card-title">Police Record</span><span class="card-line">Done right the first time, at home or abroad</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
-        <a class="card" href="/jamaican-rgd-certificates.html">
+        <a class="card reveal" href="/jamaican-rgd-certificates.html">
           <img src="assets/rgd-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
-          <span class="card-body"><span class="card-title">Birth, Marriage &amp; Death Certificates</span><span class="card-line">Collected and couriered to you</span><span class="card-cta">View details and start <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="card-body"><span class="card-title">Birth, Marriage &amp; Death Certificates</span><span class="card-line">Collected and couriered to you</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
-        <a class="card" href="/jamaican-trn-application-overseas-diaspora.html">
+        <a class="card reveal" href="/jamaican-trn-application-overseas-diaspora.html">
           <img src="assets/trn-application-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
-          <span class="card-body"><span class="card-title">TRN from Overseas</span><span class="card-line">Your TRN, without coming home</span><span class="card-cta">View details and start <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="card-body"><span class="card-title">TRN from Overseas</span><span class="card-line">Your TRN, without coming home</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
-        <a class="card" href="/jamaica-driving-abstract.html">
+        <a class="card reveal" href="/jamaica-driving-abstract.html">
           <img src="assets/driving-abstract-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
-          <span class="card-body"><span class="card-title">Driving Abstract</span><span class="card-line">Your driving record, shipped to you</span><span class="card-cta">View details and start <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="card-body"><span class="card-title">Driving Abstract</span><span class="card-line">Your driving record, shipped to you</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
+        <div class="card card-x reveal">
+          <img src="assets/apostille-800.webp" width="800" height="446" alt="" loading="lazy" decoding="async">
+          <div class="card-body"><h3 class="card-title">Apostille</h3><p class="card-line">So your document is accepted overseas</p>
+            <details class="xd">
+              <summary class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+              <div class="xd-in">
+                <p>An apostille is added to a Jamaican document so it is accepted in another country. It is an add-on to:</p>
+                <ul>
+                  <li><a href="/jamaican-rgd-certificates.html">Birth, marriage &amp; death certificates</a></li>
+                  <li><a href="/jamaica-police-record.html">Police record</a></li>
+                  <li><a href="/jamaica-driving-abstract.html">Driving abstract</a></li>
+                  <li><a href="/jamaican-trn-application-overseas-diaspora.html">TRN from overseas</a></li>
+                </ul>
+                <p>Choose your document to add it to your order.</p>
+              </div>
+            </details>
+          </div>
+        </div>
       </div>
 
-      <div class="ask">
-        <div><strong>Don't see your document?</strong><span>If it involves a Jamaican government office, book a consultation and I'll review your situation with you.</span></div>
-        <a class="btn btn-navy btn-sm" href="#consultation" data-dialog="consultation">Book a consultation</a>
+      <div class="ask reveal">
+        <strong>Don't see your document?</strong>
+        <span>Tell us what you need and we'll let you know how we can help.</span>
+        <a class="btn btn-gold" href="/contact.html">Tell us how we can help</a>
+        <a class="link-strong" href="/about.html">More about us</a>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="trust-title">
-    <div class="wrap narrow">
-      <div class="meet">
-        <img src="assets/profile.webp" width="88" height="88" alt="Laura Clarke" loading="lazy">
-        <div><strong>Hi, I'm Laura Clarke.</strong><a class="link-strong" href="/about.html">Meet Laura →</a></div>
-      </div>
-      <h2 class="h2" id="trust-title">Why clients trust me</h2>
-      <p class="lead">Tap any line to read more.</p>
-      <div class="acc">
-        <details><summary>Checked before you pay <span class="chev" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2537" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
-          <p>I pre-audit your paperwork against each agency's exact counter rules, then handle the legwork, so you avoid rejections, delays and queues at PICA, TAJ, RGD and JCF.</p></details>
-        <details><summary>Your documents are safe with me <span class="chev" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2537" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
-          <p>Used only to prepare your application, never shared with third parties, and securely deleted once it's complete. Read my <a href="/privacy.html">Privacy Policy</a>.</p></details>
-        <details><summary>A registered Jamaican business <span class="chev" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2537" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
-          <p>Laura Clarke Administrative Services is registered with the Companies Office of Jamaica.</p></details>
-        <details><summary>Not a government agency <span class="chev" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2537" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
-          <p>I'm an independent private service, not affiliated with the Government of Jamaica. Government fees are paid to the agency and are separate from my service fee.</p></details>
-      </div>
-    </div>
-  </section>
 
-  <section class="section tint" aria-labelledby="reviews-title">
+  <section class="section tint reviews-band" aria-labelledby="reviews-title">
     <div class="wrap">
-      <div class="head-row">
-        <h2 class="h2" id="reviews-title">What clients say</h2>
-      </div>
-      <div class="reviews" id="reviews-list">
-        <figure class="review">
+      <h2 class="h2 center" id="reviews-title">What clients say</h2>
+      <div class="reviews">
+        <figure class="review reveal">
           <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
           <blockquote>“The service provided was excellent. I was very impressed with the efficiency and exceptional attention to every detail. The speedy delivery was a plus for me. In all, everything was professionally done. I appreciate the service very much.”</blockquote>
-          <figcaption><strong>Owen M.</strong><span>Passport renewal · via WhatsApp</span></figcaption>
+          <figcaption><strong>Owen M.</strong><span>Passport renewal from overseas</span></figcaption>
         </figure>
-        <figure class="review">
+        <figure class="review reveal">
           <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
           <blockquote>“From getting passport-size pictures to getting through at the office and collecting my new ID, the process was smooth and easy. Thanks so much for your expertise!”</blockquote>
-          <figcaption><strong>Danielle H.</strong><span>Passport · Google review</span></figcaption>
-        </figure>
-        <figure class="review">
-          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>“I had no problem dealing with my passport. She told me everything I need to do, so it was a breeze. Then in space of no time I was collecting something people told me would take forever.”</blockquote>
-          <figcaption><strong>Kentish</strong><span>Passport · Google review</span></figcaption>
-        </figure>
-        <figure class="review more" hidden>
-          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>“Laura Clarke did an excellent job. Super professional. I highly recommend her.”</blockquote>
-          <figcaption><strong>Paulette W.</strong><span>Passport renewal</span></figcaption>
-        </figure>
-        <figure class="review more" hidden>
-          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>“Excellent. Your service is beyond expectation. It's worth every cent that I spent.”</blockquote>
-          <figcaption><strong>Vincent W.</strong><span>Passport renewal</span></figcaption>
+          <figcaption><strong>Danielle H.</strong><span>Passport in Jamaica</span></figcaption>
         </figure>
       </div>
-      <div class="reviews-actions">
-        <button type="button" class="btn-more" id="reviews-more" aria-controls="reviews-list" aria-expanded="false">See more reviews</button>
-        <a class="link-strong" href="https://g.page/r/CRdrisBur3T6EBM" target="_blank" rel="noopener">Read all reviews on Google →</a>
-      </div>
-      <script>(function(){var b=document.getElementById("reviews-more");if(!b)return;b.addEventListener("click",function(){var open=b.getAttribute("aria-expanded")==="true";document.querySelectorAll("#reviews-list .more").forEach(function(c){c.hidden=open;});b.setAttribute("aria-expanded",String(!open));b.textContent=open?"See more reviews":"Show fewer";});})();</script>
+      <p class="reviews-all"><a class="link-strong" href="/about.html#reviews">See all reviews →</a></p>
     </div>
   </section>
 
-  <section class="section" id="guides" aria-labelledby="guides-title">
-    <div class="wrap">
-      <div class="head-row">
-        <div><h2 class="h2" id="guides-title">Free guides</h2><p class="lead">Prefer to do it yourself? Start here.</p></div>
-        <a class="link-strong" href="/insights.html">All guides →</a>
-      </div>
-      <ul class="glist">
-        <li><a href="/jamaica-passport-guide"><span><span class="tag">Passport</span><span class="t">Getting a Jamaican Passport: What to Know Before You Apply</span></span><span class="r">Read →</span></a></li>
-        <li><a href="/jamaica-rgd-certificates-guide"><span><span class="tag">RGD records</span><span class="t">How to Get a Jamaican Birth, Marriage or Death Certificate (and Fix One That's Wrong)</span></span><span class="r">Read →</span></a></li>
-        <li><a href="/jamaica-learners-permit-guide.html"><span><span class="tag">Driving</span><span class="t">How to Get Your Jamaican Learner's Permit: The Complete Step-by-Step Guide</span></span><span class="r">Read →</span></a></li>
-      </ul>
-    </div>
-  </section>
 
-  <section class="band" id="contact" aria-labelledby="contact-title">
-    <div class="wrap">
-      <h2 id="contact-title">Ready when you are.</h2>
-      <p>Choose your service to see what you'll need and the full cost. I confirm the requirements before you spend anything on government fees.</p>
-      <div class="btns">
-        <a class="btn btn-gold" href="#services">Choose your service</a>
-        <a class="btn btn-ghost-light" href="#consultation" data-dialog="consultation">Book a consultation</a>
-      </div>
-      <p class="band-note">Already working with me, or referred by a client? WhatsApp <a href="https://wa.me/18765612614" target="_blank" rel="noopener">+1 (876) 561-2614</a></p>
-    </div>
-  </section>
 
 </main>
 
@@ -779,7 +795,7 @@ h1,h2,h3{color:var(--ink)}
       <label for="nl-email" class="sr-only">Email address</label>
       <input id="nl-email" name="email" type="email" autocomplete="email" required placeholder="Your email address">
       <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
-      <button type="submit" class="btn btn-navy btn-sm">Subscribe</button>
+      <button type="submit" class="btn btn-gold btn-sm">Subscribe</button>
     </form>
     <div id="newsletter-success" class="nl-success" hidden role="status">
       <strong>You're on the list</strong>
@@ -806,6 +822,7 @@ h1,h2,h3{color:var(--ink)}
         <ul>
           <li><a href="https://wa.me/18765612614" target="_blank" rel="noopener">WhatsApp +1 (876) 561-2614</a></li>
           <li><a href="mailto:info@documenthelpja.com">info@documenthelpja.com</a></li>
+          <li><a href="/contact.html">Send an enquiry</a></li>
           <li><a href="#consultation" data-dialog="consultation">Book a consultation</a></li>
         </ul>
       </div>
@@ -953,5 +970,6 @@ h1,h2,h3{color:var(--ink)}
   });
 })();
 </script>
+<script>(function(){var els=document.querySelectorAll('.reveal');if(!els.length||!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.documentElement.classList.add('js-reveal');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -6% 0px'});els.forEach(function(el){io.observe(el);});})();</script>
 </body>
 </html>
