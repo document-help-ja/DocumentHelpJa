@@ -841,10 +841,6 @@ h1,h2,h3{color:var(--ink)}
   </div>
 </footer>
 
-<div class="float" id="float-bar">
-  <a class="btn btn-navy wa" href="#services">Choose your service</a>
-  <a class="up" href="#top" aria-label="Back to top"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F2537" stroke-width="2.2" stroke-linecap="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
-</div>
 
 <dialog id="consultation" class="svc-dialog" aria-labelledby="consultation-title">
   <div class="dlg-head">
@@ -919,11 +915,6 @@ h1,h2,h3{color:var(--ink)}
     });
   });
 
-  /* ---------- Floating "Choose your service" + back-to-top (phones) ---------- */
-  var floatBar = document.getElementById('float-bar');
-  function toggleFloat() { floatBar.classList.toggle('is-visible', window.scrollY > 500); }
-  window.addEventListener('scroll', toggleFloat, { passive: true });
-  toggleFloat();
 
   /* ---------- Consultation window ---------- */
   var dialogs = Array.prototype.slice.call(document.querySelectorAll('dialog.svc-dialog'));
