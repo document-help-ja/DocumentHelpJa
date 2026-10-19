@@ -772,6 +772,17 @@
       .card-head { margin-bottom: 24px; }
       .grid-2 p:last-child, .callout-box p:last-child, .warning-box p:last-child { margin-bottom: 0; }
     }
+    .help-cards { padding: 8px 0; text-align: center; }
+    .help-cards h2 { margin: 0 0 8px; font-size: 1.35rem; color: var(--ink); }
+    .help-intro { margin: 0 auto 20px; max-width: 30rem; color: var(--muted); }
+    .help-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; text-align: left; }
+    .help-card { display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--gold); text-decoration: none; color: var(--text); }
+    .help-card:hover { border-color: var(--gold); }
+    .help-title { color: var(--gold-text); font-weight: 700; font-size: 1rem; }
+    .help-line { font-size: .92rem; color: var(--muted); }
+    .help-more { font-size: .9rem; font-weight: 700; color: var(--gold-text); margin-top: 4px; }
+    .help-fine { font-size: .85rem; color: var(--muted); margin: 18px 0 0; }
+    @media print { .help-cards { display: none !important; } }
 </style>
 </head>
 <body id="top">
@@ -1210,20 +1221,22 @@
         <p class="reviewed">Last checked <time datetime="2026-10">October 2026</time> against the <a href="https://jm.usembassy.gov/visas/" target="_blank" rel="noopener">U.S. Embassy in Jamaica</a>, the U.S. Department of State’s pages on <a href="https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html" target="_blank" rel="noopener">visitor visas</a>, <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees/fees-visa-services.html" target="_blank" rel="noopener">fees</a>, <a href="https://travel.state.gov/content/travel/en/News/visas-news/interview-waiver-update-sept-18-2025.html" target="_blank" rel="noopener">interview waivers</a>, <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html" target="_blank" rel="noopener">visa denials</a>, <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/global-visa-wait-times.html" target="_blank" rel="noopener">appointment wait times</a> and <a href="https://travel.state.gov/content/travel/en/News/visas-news/countries-subject-to-visa-bonds.html" target="_blank" rel="noopener">visa bonds</a>, the <a href="https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Jamaica.html" target="_blank" rel="noopener">reciprocity schedule for Jamaica</a>, the <a href="https://ais.usvisa-info.com/en-jm/niv" target="_blank" rel="noopener">official appointment site for Jamaica</a>, and the Embassy’s Jamaica Observer columns on <a href="https://www.jamaicaobserver.com/2024/05/01/beware-fraud-visa-application-interview/" target="_blank" rel="noopener">visa fraud</a> (May 2024) and <a href="https://www.jamaicaobserver.com/news/completing-your-consular-electronic-application/" target="_blank" rel="noopener">completing the form</a> (May 2022). This is general information, not legal or immigration advice. Fees, rules and waiting times change often, so confirm with the Embassy before you pay.</p>
 
         <!-- SERVICE BRIDGE -->
-        <section class="card cta-card" id="help" aria-labelledby="bridge-title">
-          <span class="kicker">Document help</span>
-          <h2 id="bridge-title">Need your Jamaican documents ready first?</h2>
-          <p>The visa application is yours to make. The Jamaican paperwork behind it is the part we help with:</p>
-          <ul class="bridge-steps">
-            <li><strong>Passport:</strong> we make the digital application to renew where PICA allows. For other passports, a consultation helps you apply yourself.</li>
-            <li><strong>Birth and marriage certificates:</strong> we collect certified copies from the RGD for you.</li>
-            <li><strong>Police record:</strong> we complete your application, pay the fee and book your fingerprinting appointment.</li>
-          </ul>
-          <p class="fine" style="margin-top:14px">We do not fill in visa forms, book Embassy appointments or give immigration advice.</p>
-          <div class="bridge-actions">
-            <a class="btn-sub" href="/#services">See our services</a>
-            
+        <section class="help-cards" id="help" aria-labelledby="bridge-title">
+          <h2 id="bridge-title">Need your Jamaican documents first?</h2>
+          <p class="help-intro">The visa application is yours to make. We help with the Jamaican paperwork behind it.</p>
+          <div class="help-grid">
+            <a class="help-card" href="/jamaican-passport-services.html">
+              <span class="help-title">Jamaican Passport</span>
+              <span class="help-line">We apply for you and deliver to your door</span>
+              <span class="help-more">Learn more →</span>
+            </a>
+            <a class="help-card" href="/jamaican-rgd-certificates.html">
+              <span class="help-title">Birth &amp; Marriage Certificates</span>
+              <span class="help-line">For a child’s application or a name change</span>
+              <span class="help-more">Learn more →</span>
+            </a>
           </div>
+          <p class="help-fine">We do not fill in visa forms, book Embassy appointments or give immigration advice.</p>
         </section>
 
         <!-- PREVIOUS / NEXT -->
