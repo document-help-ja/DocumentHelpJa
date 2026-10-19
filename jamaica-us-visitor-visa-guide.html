@@ -784,6 +784,26 @@
     .help-more { font-size: .9rem; font-weight: 700; color: var(--gold-text); margin-top: 4px; }
     .help-fine { font-size: .85rem; color: var(--muted); margin: 18px 0 0; }
     @media print { .help-cards { display: none !important; } }
+    /* Colour bands by topic */
+    .band { margin: 0 calc(-1 * var(--gutter)); padding: 28px var(--gutter); display: flex; flex-direction: column; gap: var(--gap); }
+    .band-label { margin: 0 0 -6px; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; }
+    .band-getting { background: #FFFFFF; } .band-getting .band-label { color: #7A5C17; }
+    .band-app { background: #EAF1F8; } .band-app .band-label { color: #185FA5; } .band-app .card { border-color: #D3DFEB; }
+    .band-cost { background: #FBF5E8; } .band-cost .band-label { color: #854F0B; } .band-cost .card { border-color: #EFE2C4; }
+    .band-renew { background: #EAF4EE; } .band-renew .band-label { color: #0F6E56; } .band-renew .card { border-color: #CFE5D8; }
+    .band-good { background: #F1F2F4; } .band-good .band-label { color: #5F5E5A; }
+    .band-end { background: #F3E6C6; padding-top: 36px; padding-bottom: 36px; }
+    @media (min-width: 960px) { .band { margin: 0; padding: 32px 28px; border-radius: 14px; } }
+    .content { gap: 0; }
+    .content > .card { margin-bottom: var(--gap); }
+    /* Drop-downs inside sections */
+    .sub-fold { border-top: 1px solid var(--line); margin-top: 18px; }
+    .sub-fold:last-of-type { border-bottom: 1px solid var(--line); }
+    .sub-fold summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; min-height: 52px; padding: 12px 2px; font-weight: 700; color: var(--ink); }
+    .sub-fold summary::-webkit-details-marker { display: none; }
+    .sub-fold summary::after { content: "+"; font-size: 1.4rem; font-weight: 400; color: var(--gold-text); }
+    .sub-fold[open] summary::after { content: "−"; }
+    .sub-fold-body { padding: 4px 2px 14px; }
 </style>
 </head>
 <body id="top">
@@ -893,6 +913,8 @@
         <aside class="card role-note" aria-label="About this guide">
           <p><strong>We are not the U.S. Embassy, and we do not give immigration advice.</strong> We cannot get you a visa, and nobody can guarantee one. This free guide explains the official steps, and we help with the Jamaican documents you may need along the way.</p>
         </aside>
+        <div class="band band-getting">
+          <p class="band-label">Getting started</p>
         <!-- AT A GLANCE -->
         <section class="card" id="takeaways" aria-labelledby="takeaways-title">
           <div class="card-head">
@@ -933,9 +955,13 @@
             </div>
           </div>
           <p>Need to work, study or move there? Those are different visas with different rules. For seasonal work, see the <a href="/jamaica-h2b-work-visa-guide">H-2B guide</a>.</p>
-          <h3 class="sub-head">How long it lasts</h3>
+          <details class="sub-fold" data-open-desktop>
+            <summary>How long it lasts</summary>
+            <div class="sub-fold-body">
           <p>For Jamaicans, a B1/B2 visa can be issued for <strong>up to 10 years</strong> with multiple entries. The officer decides, so yours may be shorter.</p>
           <div class="callout-box"><p><strong>The visa is not your length of stay.</strong> A visa lets you travel to a U.S. airport and ask to enter. The border officer there decides whether you come in and how long you may stay, so a visa does not guarantee entry.</p></div>
+            </div>
+          </details>
           <a class="next-link" href="#prerequisites"><div><span>Next</span><strong>What you need</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
 
@@ -972,7 +998,10 @@
           </div>
           <a class="next-link" href="#form-data"><div><span>Next</span><strong>What the form asks</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
+        </div>
 
+        <div class="band band-app">
+          <p class="band-label">The application</p>
         <!-- WHAT THE FORM ASKS (summary only) -->
         <section class="card" id="form-data" aria-labelledby="form-data-title">
           <div class="card-head">
@@ -1027,7 +1056,7 @@
 
         <!-- MID CTA -->
         <aside class="card mid-cta" aria-label="Passport service">
-          <p><strong>Passport expiring soon? Sort that out first.</strong>We file online adult renewals for J$5,000 (US$70 overseas). First and children’s passports you apply for yourself; a consultation is J$5,000 (US$50).</p>
+          <p><strong>Passport expiring soon? Sort that out first.</strong>We file online adult renewals for J$5,000 (US$70 overseas). First and children’s passports you apply for yourself; a consultation is J$5,000 (US$70 overseas).</p>
           <a class="btn-wa-sm" style="background:#0F2537;color:#fff" href="/jamaican-passport-services.html">See the service and fees</a>
         </aside>
 
@@ -1046,7 +1075,10 @@
           </ul>
           <a class="next-link" href="#fees"><div><span>Next</span><strong>What it costs</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
+        </div>
 
+        <div class="band band-cost">
+          <p class="band-label">Cost and interview</p>
         <!-- FEES (always open: money information is never hidden) -->
         <section class="card" id="fees" aria-labelledby="fees-title">
           <div class="card-head">
@@ -1079,32 +1111,51 @@
             <li><span class="site-parish">Without an appointment</span><span class="site-name">You will not be let in</span></li>
             <li><span class="site-parish">Security</span><span class="site-name">Airport-style screening for everyone</span></li>
           </ul>
-          <h3 class="sub-head">Bring with you</h3>
+          <details class="sub-fold" data-open-desktop>
+            <summary>Bring with you</summary>
+            <div class="sub-fold-body">
           <ul class="rule-list">
             <li>Your passport, and any old passports with earlier U.S. visas</li>
             <li>Your DS-160 confirmation page with the barcode</li>
             <li>Your appointment confirmation and fee receipt</li>
             <li>Your supporting papers, in case the officer asks for them</li>
           </ul>
-          <h3 class="sub-head">What the officer looks at</h3>
+            </div>
+          </details>
+          <details class="sub-fold" data-open-desktop>
+            <summary>What the officer looks at</summary>
+            <div class="sub-fold-body">
           <p>The officer starts from the view that you plan to stay, and looks for what brings you back to Jamaica: your <strong>ties</strong>, such as a job, a home and family. They may ask for evidence of why you are going, that you will come back, and that the trip is paid for.</p>
           <div class="callout-box"><p><strong>There is no magic document.</strong> Bring real, current papers and answer truthfully. A letter of invitation is not needed and is not used to decide.</p></div>
-          <h3 class="sub-head">What you can take inside</h3>
+            </div>
+          </details>
+          <details class="sub-fold" data-open-desktop>
+            <summary>What you can take inside</summary>
+            <div class="sub-fold-body">
           <p>Phones, earbuds and smartwatches are allowed again since September 2026. Leave laptops, tablets, cameras, liquids and any large bag at home.</p>
           <a class="resource-box" href="https://jm.usembassy.gov/visas/important-visa-information/#security" target="_blank" rel="noopener">
             <span class="resource-kicker">Official list</span>
             <span class="resource-title">Embassy security rules <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg></span>
             <span class="resource-desc">Check the current list the day before you go.</span>
           </a>
-          <h3 class="sub-head">Appointment help line</h3>
+            </div>
+          </details>
+          <details class="sub-fold" data-open-desktop>
+            <summary>Appointment help line</summary>
+            <div class="sub-fold-body">
           <ul class="site-list">
             <li><span class="site-parish">From Jamaica</span><span class="site-name"><a href="tel:+18766568535">876-656-8535</a> or <a href="tel:+18766302040">876-630-2040</a></span></li>
             <li><span class="site-parish">From the United States</span><span class="site-name"><a href="tel:+17039887005">703-988-7005</a></span></li>
             <li><span class="site-parish">Hours</span><span class="site-name">Monday to Friday, 9 a.m. to 5 p.m.</span></li>
             <li><span class="site-parish">Email</span><span class="site-name"><a href="mailto:Jamaica.Visas@gdit-gss.com">Jamaica.Visas@gdit-gss.com</a></span></li>
           </ul>
+            </div>
+          </details>
           <a class="next-link" href="#renewal"><div><span>Next</span><strong>Renewing your visa</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
+        </div>
+        <div class="band band-renew">
+          <p class="band-label">Renewing</p>
         <section class="card" id="renewal" aria-labelledby="renewal-title">
           <div class="card-head">
             <span class="step-badge" aria-hidden="true">8</span>
@@ -1116,7 +1167,9 @@
             <li><strong>Your old visa:</strong> a valid visa in an expired passport can still be used. Travel with both passports, and do not remove the visa from the old one.</li>
             <li><strong>Your passport:</strong> the new visa is printed in the passport you apply with, so renew a passport that is close to expiring first.</li>
           </ul>
-          <h3 class="sub-head">Can you skip the interview?</h3>
+          <details class="sub-fold" data-open-desktop>
+            <summary>Can you skip the interview?</summary>
+            <div class="sub-fold-body">
           <p>Some renewals can be done without going to the Embassy, but only if all of these are true:</p>
           <ul class="rule-list">
             <li>Your last B1/B2 visa is still valid, or expired less than 12 months ago.</li>
@@ -1127,9 +1180,14 @@
           </ul>
           <p>The appointment site asks you questions and tells you whether you qualify. If you do, it gives instructions for handing in your passport.</p>
           <div class="callout-box"><p><strong>The Embassy can still call you in.</strong> An officer may ask anyone to attend an interview, for any reason, so do not book travel around a renewal.</p></div>
+            </div>
+          </details>
           <a class="next-link" href="#refused"><div><span>Next</span><strong>If you are refused</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
+        </div>
 
+        <div class="band band-good">
+          <p class="band-label">Good to know</p>
         <section class="card" id="refused" aria-labelledby="refused-title">
           <div class="card-head">
             <span class="step-badge" aria-hidden="true">9</span>
@@ -1169,7 +1227,9 @@
           </ul>
           <p class="panel-note">The first four come from the Embassy’s own advice to Jamaican applicants.</p>
 
-          <h3 class="sub-head">What proper help looks like</h3>
+          <details class="sub-fold" data-open-desktop>
+            <summary>What proper help looks like</summary>
+            <div class="sub-fold-body">
           <ul class="rule-list">
             <li><strong>Their name is on your form.</strong> Anyone who helps must be named on the Sign and Submit page.</li>
             <li><strong>You read every answer,</strong> and you click Sign Application yourself.</li>
@@ -1178,6 +1238,8 @@
             <li><strong>Their fee is in writing,</strong> separate from the US$185, and you get a receipt.</li>
             <li><strong>They say plainly</strong> that they cannot influence the Embassy’s decision.</li>
           </ul>
+            </div>
+          </details>
 
           <h3 class="sub-head">The only websites you need</h3>
           <ul class="site-list">
@@ -1220,7 +1282,9 @@
         </section>
 
         <p class="reviewed">Last checked <time datetime="2026-10">October 2026</time> against the <a href="https://jm.usembassy.gov/visas/" target="_blank" rel="noopener">U.S. Embassy in Jamaica</a>, the U.S. Department of State’s pages on <a href="https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html" target="_blank" rel="noopener">visitor visas</a>, <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees/fees-visa-services.html" target="_blank" rel="noopener">fees</a>, <a href="https://travel.state.gov/content/travel/en/News/visas-news/interview-waiver-update-sept-18-2025.html" target="_blank" rel="noopener">interview waivers</a>, <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html" target="_blank" rel="noopener">visa denials</a>, <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/global-visa-wait-times.html" target="_blank" rel="noopener">appointment wait times</a> and <a href="https://travel.state.gov/content/travel/en/News/visas-news/countries-subject-to-visa-bonds.html" target="_blank" rel="noopener">visa bonds</a>, the <a href="https://travel.state.gov/content/travel/en/us-visas/Visa-Reciprocity-and-Civil-Documents-by-Country/Jamaica.html" target="_blank" rel="noopener">reciprocity schedule for Jamaica</a>, the <a href="https://ais.usvisa-info.com/en-jm/niv" target="_blank" rel="noopener">official appointment site for Jamaica</a>, and the Embassy’s Jamaica Observer columns on <a href="https://www.jamaicaobserver.com/2024/05/01/beware-fraud-visa-application-interview/" target="_blank" rel="noopener">visa fraud</a> (May 2024) and <a href="https://www.jamaicaobserver.com/news/completing-your-consular-electronic-application/" target="_blank" rel="noopener">completing the form</a> (May 2022). This is general information, not legal or immigration advice. Fees, rules and waiting times change often, so confirm with the Embassy before you pay.</p>
+        </div>
 
+        <div class="band band-end">
         <!-- SERVICE BRIDGE -->
         <section class="help-cards" id="help" aria-labelledby="bridge-title">
           <h2 id="bridge-title">Need your Jamaican documents first?</h2>
@@ -1276,6 +1340,7 @@
             </a>
           </div>
         </section>
+        </div>
 
       </div>
     </article>
