@@ -265,6 +265,8 @@
   .btn-line:hover { background: var(--primary); color: var(--white); }
   .btn-dark { background: var(--primary); color: var(--white); }
   .btn-dark:hover { background: var(--ink); color: var(--white); }
+  .btn-gold { background: #C89B3C; color: #0F2537; font-weight: 700; }
+  .btn-gold:hover { background: #B08733; color: #0F2537; }
   @media (max-width: 520px) { .btn-block { width: 100%; } }
 
   .tier { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 16px 22px; border-bottom: 1px solid var(--line); }
@@ -761,7 +763,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
             <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total>J$4,000 + TAJ's fee</b><small data-sum>Choose above to see your full total.</small></div>
             <p class="bill-note">We confirm your exact figure before you pay.</p>
           </div>
-          <a href="/start.html?service=motor-vehicle&amp;source=mv-online" class="btn btn-dark">Start my online renewal</a>
+          <a href="/start.html?service=motor-vehicle&amp;source=mv-online" class="btn btn-gold">Start my online renewal</a>
           <details class="duo-drop"><summary>What we do, and what you do</summary><div class="duo">
             <div class="we"><h3>We do</h3><ul>
               <li>Calculate your exact TAJ fee before you pay</li>
@@ -824,7 +826,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
             <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total>J$5,000 + TAJ's fees</b><small data-sum>Choose above to see your full total.</small></div>
             <p class="bill-note">We confirm your exact figure before you pay.</p>
           </div>
-          <a href="/start.html?service=motor-vehicle&amp;source=mv-fitness-prepay" class="btn btn-dark">Start my package</a>
+          <a href="/start.html?service=motor-vehicle&amp;source=mv-fitness-prepay" class="btn btn-gold">Start my package</a>
           <details class="duo-drop"><summary>What we do, and what you do</summary><div class="duo">
             <div class="we"><h3>We do</h3><ul>
               <li>Pre-pay your TAJ fitness fee</li>
@@ -1106,13 +1108,33 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
       if (!missing.length) msg += '\nTotal shown on the page: ' + money(known) + ' (' + perName + ')';
       if (btn) btn.setAttribute('href', href0.slice(0, cut) + encodeURIComponent(msg));
     }
+    var startBtn = bill.parentNode.querySelector('.btn');
+    function smooth() { return window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'; }
+    function goNext() {
+      var pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+      var next = doors.filter(function (d) { return !d.querySelector('input:checked'); })[0];
+      if (next) {
+        next.open = true;
+        window.scrollTo({ top: next.getBoundingClientRect().top + window.scrollY - pad, behavior: smooth() });
+        return;
+      }
+      /* Bring the total and the start button into view together, without hiding the total under the header */
+      var totalTop = box.getBoundingClientRect().top + window.scrollY - pad;
+      var btnBottom = (startBtn || box).getBoundingClientRect().bottom + window.scrollY + 24;
+      var y = Math.min(btnBottom - window.innerHeight, totalTop);
+      window.scrollTo({ top: Math.max(y, 0), behavior: smooth() });
+    }
     var periodBox = bill.querySelector('.period');
     if (periodBox) periodBox.addEventListener('change', update);
     doors.forEach(function (door) {
       door.addEventListener('change', update);
-      door.addEventListener('click', function (e) {
-        /* A tap or mouse click on an option closes the door; keyboard arrows leave it open */
-        if (e.detail > 0 && e.target.closest('.bill-opt')) { setTimeout(function () { door.open = false; }, 140); }
+      /* A tap or click on an option closes the list, then moves on: to the next choice still to make, or to the total and start button. Keyboard arrows leave it open. */
+      var tapped = false;
+      door.addEventListener('pointerdown', function (e) { tapped = !!e.target.closest('.bill-opt'); });
+      door.addEventListener('change', function () {
+        if (!tapped) return;
+        tapped = false;
+        setTimeout(function () { door.open = false; goNext(); }, 160);
       });
     });
     update();
