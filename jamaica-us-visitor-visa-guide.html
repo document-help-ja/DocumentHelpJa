@@ -804,6 +804,10 @@
     .sub-fold summary::after { content: "+"; font-size: 1.4rem; font-weight: 400; color: var(--gold-text); }
     .sub-fold[open] summary::after { content: "−"; }
     .sub-fold-body { padding: 4px 2px 14px; }
+    .list-fold { margin-top: 6px; border: 1px solid var(--line); border-radius: 10px; padding: 0 14px; background: #fff; }
+    .list-fold:last-of-type { border-bottom: 1px solid var(--line); }
+    .list-fold summary { color: var(--gold-text); }
+    .list-fold + .list-fold, .list-fold + .sub-fold { margin-top: 14px; }
 </style>
 </head>
 <body id="top">
@@ -944,6 +948,9 @@
             <div><span class="eyebrow">First, check</span><h2 id="right-visa-title">Is a visitor visa the right one?</h2></div>
           </div>
           <p>The B1/B2 is a visa for short visits. B-1 covers business trips and B-2 covers tourism, and most Jamaicans are issued the two together.</p>
+          <details class="sub-fold list-fold" data-open-desktop>
+            <summary>What you can and can’t do</summary>
+            <div class="sub-fold-body">
           <div class="grid-2">
             <div>
               <h3>You can</h3>
@@ -954,6 +961,8 @@
               <p>Work, study for credit, perform for pay, or live in the United States. Travelling mainly to give birth there is also not allowed on a visitor visa.</p>
             </div>
           </div>
+            </div>
+          </details>
           <p>Need to work, study or move there? Those are different visas with different rules. For seasonal work, see the <a href="/jamaica-h2b-work-visa-guide">H-2B guide</a>.</p>
           <details class="sub-fold" data-open-desktop>
             <summary>How long it lasts</summary>
@@ -973,6 +982,9 @@
           </div>
           <p>The online form asks a lot of questions, and it is much easier with everything beside you. Tick these off as you go.</p>
 
+          <details class="sub-fold list-fold" data-open-desktop>
+            <summary>Open the checklist (8 items)</summary>
+            <div class="sub-fold-body">
           <div class="check-meter" aria-live="polite"><span class="bar"><span id="checklist-fill"></span></span><span class="count" id="checklist-count">0 of 8 gathered</span><button type="button" class="reset" id="checklist-reset">Clear</button></div>
 
           <div class="tab-panel" id="panel-prereqs">
@@ -991,6 +1003,8 @@
 
           <p class="checklist-done" id="checklist-done" role="status" hidden>Everything’s gathered. Next, see what the form involves.</p>
           <p class="check-hint">Your ticks are saved on this device only.</p>
+            </div>
+          </details>
 
           <div class="warning-box" role="note">
             <h3>Do not buy your ticket yet</h3>
@@ -1022,6 +1036,10 @@
             <span class="step-badge" aria-hidden="true">4</span>
             <div><span class="eyebrow">How it works</span><h2 id="process-title">The 6 steps</h2></div>
           </div>
+          <p>From checking your passport to getting it back with the visa inside. Each step happens on an official U.S. government site or at the Embassy.</p>
+          <details class="sub-fold list-fold" data-open-desktop>
+            <summary>See the 6 steps</summary>
+            <div class="sub-fold-body">
           <ol class="timeline">
             <li>
               <h3>Check your passport</h3>
@@ -1048,6 +1066,8 @@
               <p>If you are approved, it comes back by courier with the visa inside.</p>
             </li>
           </ol>
+            </div>
+          </details>
           <div class="callout-box">
             <p><strong>Collecting a child’s passport?</strong> The courier asks the parent for the child’s birth certificate showing the parent’s name, plus the parent’s own photo ID. <a href="/jamaican-rgd-certificates.html">Getting a birth certificate</a></p>
           </div>
@@ -1067,12 +1087,17 @@
             <div><span class="eyebrow">The fine print</span><h2 id="mistakes-title">Details that trip people up</h2></div>
           </div>
           <p>Most refusals and restarts come down to small things on the form, not the interview. A few of the most common:</p>
+          <details class="sub-fold list-fold" data-open-desktop>
+            <summary>See the 4 most common</summary>
+            <div class="sub-fold-body">
           <ul class="takeaway-list">
             <li><strong>Answers that don’t match.</strong> Your form, your appointment account, your passport and what you say at the interview all have to line up.</li>
             <li><strong>Leaving something out.</strong> A past refusal, an overstay, relatives in the U.S. or any arrest, even an expunged one, must be declared. The Embassy warns that small omissions can add up to a refusal.</li>
             <li><strong>A photo that failed to upload.</strong> It is easy to miss, and it shows up on interview day.</li>
             <li><strong>Staying past your date.</strong> Leaving the U.S. late cancels the visa, even a ten-year one, and you may not qualify for another.</li>
           </ul>
+            </div>
+          </details>
           <a class="next-link" href="#fees"><div><span>Next</span><strong>What it costs</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
         </div>
@@ -1162,12 +1187,17 @@
             <div><span class="eyebrow">Already had a visa?</span><h2 id="renewal-title">Renewing your visa: what to expect</h2></div>
           </div>
           <p>Renewing uses the same DS-160 form, the same US$185 fee and the same appointment site. The steps are the same as for a first visa, so use <a href="#process">section 4, The 6 steps</a>, further up this page.</p>
+          <details class="sub-fold list-fold" data-open-desktop>
+            <summary>What’s different (4 points)</summary>
+            <div class="sub-fold-body">
           <ul class="rule-list">
             <li><strong>The form:</strong> it is the same DS-160, but saying you have had a U.S. visa before opens extra questions about it. Keep your old passport with the old visa beside you.</li>
             <li><strong>Interviews:</strong> since October 1, 2025, almost everyone attends in person, including children under 14 and adults over 79, who used to be excused.</li>
             <li><strong>Your old visa:</strong> a valid visa in an expired passport can still be used. Travel with both passports, and do not remove the visa from the old one.</li>
             <li><strong>Your passport:</strong> the new visa is printed in the passport you apply with, so renew a passport that is close to expiring first.</li>
           </ul>
+            </div>
+          </details>
           <details class="sub-fold" data-open-desktop>
             <summary>Can you skip the interview?</summary>
             <div class="sub-fold-body">
@@ -1195,12 +1225,17 @@
             <div><span class="eyebrow">If it goes wrong</span><h2 id="refused-title">If you are refused</h2></div>
           </div>
           <p>Most visitor visa refusals are under a rule called <strong>section 214(b)</strong>. It means the officer was not satisfied that you qualify for a visitor visa, or that your ties to Jamaica are strong enough.</p>
+          <details class="sub-fold list-fold" data-open-desktop>
+            <summary>What a refusal means</summary>
+            <div class="sub-fold-body">
           <ul class="rule-list">
             <li><strong>It is not permanent.</strong> It applies to that application only.</li>
             <li><strong>There is no appeal.</strong> The fee is not refunded.</li>
             <li><strong>You can apply again.</strong> That means a new DS-160, a new fee and a new interview.</li>
             <li><strong>It makes sense to wait</strong> until you have new information, or something important in your life has changed.</li>
           </ul>
+            </div>
+          </details>
           <p>If you were refused for a different reason, such as an earlier overstay or a problem with a past application, speak to a licensed U.S. immigration attorney before you apply again. That is legal advice, and we do not give it.</p>
           <a class="resource-box" href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html" target="_blank" rel="noopener">
             <span class="resource-kicker">Official explanation</span>
@@ -1242,13 +1277,17 @@
             </div>
           </details>
 
-          <h3 class="sub-head">The only websites you need</h3>
-          <ul class="site-list">
+          <details class="sub-fold list-fold" data-open-desktop>
+            <summary>The only official websites</summary>
+            <div class="sub-fold-body">
+                    <ul class="site-list">
             <li><span class="site-parish">The form</span><span class="site-name"><a href="https://ceac.state.gov/genniv/" target="_blank" rel="noopener">ceac.state.gov</a></span></li>
             <li><span class="site-parish">Fee and appointment</span><span class="site-name"><a href="https://ais.usvisa-info.com/en-jm/niv" target="_blank" rel="noopener">ais.usvisa-info.com/en-jm</a></span></li>
             <li><span class="site-parish">U.S. Embassy in Jamaica</span><span class="site-name"><a href="https://jm.usembassy.gov/visas/" target="_blank" rel="noopener">jm.usembassy.gov</a></span></li>
             <li><span class="site-parish">Visa rules</span><span class="site-name"><a href="https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html" target="_blank" rel="noopener">travel.state.gov</a></span></li>
           </ul>
+            </div>
+          </details>
           <div class="warning-box" role="note">
             <h3>You answer for the form, not the agency</h3>
             <p>The Embassy’s words: <strong>“You (not the travel agency) are responsible for the accuracy of your application.”</strong> Fraud, or lying about an important fact, can make you permanently ineligible for a U.S. visa, and the Embassy says it can also lead to prosecution in Jamaica or the United States. If you think you were a victim of visa fraud, the Embassy’s Fraud Prevention Unit takes reports at <a href="mailto:KingstonFPU@state.gov">KingstonFPU@state.gov</a>.</p>
