@@ -407,6 +407,16 @@
   .bill-total.todo b { font-size: 1.2rem; letter-spacing: -0.01em; }
   .bill-total small { display: block; margin-top: 8px; font-size: .9rem; line-height: 1.55; color: rgba(255,255,255,.8); }
   .bill-note { margin: 14px 0 0; font-size: .9rem; line-height: 1.6; color: var(--muted); }
+  .period { border: 0; margin: 0 0 18px; padding: 0; min-width: 0; }
+  .period-q { padding: 0; margin: 0 0 10px; font-size: .95rem; line-height: 1.5; color: var(--ink); }
+  .period-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .period-grid label { position: relative; display: block; cursor: pointer; }
+  .period-grid input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .period-grid span { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 64px; padding: 10px 4px; border: 1px solid var(--edge); border-radius: 10px; background: var(--paper); color: var(--ink); font-weight: 600; font-size: .9rem; line-height: 1.3; white-space: nowrap; }
+  .period-grid small { display: block; margin-top: 3px; font-weight: 400; font-size: .8rem; color: var(--muted); }
+  .period-grid input:checked + span { border-color: var(--gold); background: var(--gold-soft); box-shadow: inset 0 0 0 1px var(--gold); }
+  .period-grid input:focus-visible + span { outline: 3px solid var(--gold); outline-offset: 2px; }
+  @media (max-width: 360px) { .period-grid { gap: 8px; } .period-grid span { font-size: .82rem; padding: 10px 2px; } }
   .bill + .btn { margin-top: 26px; }
   .jump small { font-weight: 400; color: var(--muted); font-size: .86rem; margin-top: 5px; }
   .jump a:hover { border-color: var(--primary); color: var(--ink); }
@@ -727,7 +737,14 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
           </div>
           <div class="bill" data-bill data-base="4000">
             <p class="lbl">Work out TAJ's fee</p>
-            <details class="door" data-name="registration" data-line="Engine size">
+            <fieldset class="period"><legend class="period-q">How long are you renewing for?</legend>
+              <div class="period-grid">
+                <label><input type="radio" name="period-valid" value="0.5"><span>6 months<small>Half</small></span></label>
+                <label><input type="radio" name="period-valid" value="1" checked><span>12 months<small>Standard</small></span></label>
+                <label><input type="radio" name="period-valid" value="2"><span>24 months<small>Double</small></span></label>
+              </div>
+            </fieldset>
+            <details class="door" data-name="registration" data-line="Engine size" data-period>
               <summary><span class="what"><b>Registration fee</b><small data-pick>12 months. Tap to choose engine size</small></span><span class="amt" data-amt>Choose</span></summary>
               <fieldset class="bill-opts"><legend class="sr-only">Choose your engine size</legend>
                 <label class="bill-opt"><input type="radio" name="reg-valid" value="9240" data-label="Private car, up to 1,199 cc"><span>Private car, up to 1,199 cc</span><strong>J$9,240</strong></label>
@@ -742,7 +759,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
               </fieldset>
             </details>
             <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total>J$4,000 + TAJ's fee</b><small data-sum>Choose above to see your full total.</small></div>
-            <p class="bill-note">Renewing for 6 or 24 months? <a href="#periods">See the periods</a>. We confirm your exact figure before you pay.</p>
+            <p class="bill-note">We confirm your exact figure before you pay.</p>
           </div>
           <a href="/start.html?service=motor-vehicle&amp;source=mv-online" class="btn btn-dark">Start my online renewal</a>
           <details class="duo-drop"><summary>What we do, and what you do</summary><div class="duo">
@@ -776,6 +793,13 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
           <span class="save">Save J$500 on booking them separately</span>
           <div class="bill" data-bill data-base="5000">
             <p class="lbl">Work out TAJ's fees</p>
+            <fieldset class="period"><legend class="period-q">How long are you renewing for?</legend>
+              <div class="period-grid">
+                <label><input type="radio" name="period-expired" value="0.5"><span>6 months<small>Half</small></span></label>
+                <label><input type="radio" name="period-expired" value="1" checked><span>12 months<small>Standard</small></span></label>
+                <label><input type="radio" name="period-expired" value="2"><span>24 months<small>Double</small></span></label>
+              </div>
+            </fieldset>
             <details class="door" data-name="fitness" data-line="Vehicle class">
               <summary><span class="what"><b>Fitness fee</b><small data-pick>Tap to choose your vehicle</small></span><span class="amt" data-amt>Choose</span></summary>
               <fieldset class="bill-opts"><legend class="sr-only">Choose your vehicle class</legend>
@@ -783,7 +807,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
                 <label class="bill-opt"><input type="radio" name="fit-expired" value="5400" data-label="Commercial, trailer and tractor"><span>Commercial, trailer and tractor</span><strong>J$5,400</strong></label>
               </fieldset>
             </details>
-            <details class="door" data-name="registration" data-line="Engine size">
+            <details class="door" data-name="registration" data-line="Engine size" data-period>
               <summary><span class="what"><b>Registration fee</b><small data-pick>12 months. Tap to choose engine size</small></span><span class="amt" data-amt>Choose</span></summary>
               <fieldset class="bill-opts"><legend class="sr-only">Choose your engine size</legend>
                 <label class="bill-opt"><input type="radio" name="reg-expired" value="9240" data-label="Private car, up to 1,199 cc"><span>Private car, up to 1,199 cc</span><strong>J$9,240</strong></label>
@@ -798,7 +822,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
               </fieldset>
             </details>
             <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total>J$5,000 + TAJ's fees</b><small data-sum>Choose above to see your full total.</small></div>
-            <p class="bill-note">Renewing for 6 or 24 months? <a href="#periods">See the periods</a>. We confirm your exact figure before you pay.</p>
+            <p class="bill-note">We confirm your exact figure before you pay.</p>
           </div>
           <a href="/start.html?service=motor-vehicle&amp;source=mv-fitness-prepay" class="btn btn-dark">Start my package</a>
           <details class="duo-drop"><summary>What we do, and what you do</summary><div class="duo">
@@ -1052,25 +1076,38 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     var btn = bill.parentNode.querySelector('.btn-wa');
     var href0 = btn ? btn.getAttribute('href') : '', cut = href0.indexOf('text=') + 5;
     var msg0 = btn ? decodeURIComponent(href0.slice(cut)) : '';
+    var periodNames = { '0.5': '6 months', '1': '12 months', '2': '24 months' };
+    function period() { var p = bill.querySelector('.period input:checked'); return p ? p.value : '1'; }
     function update() {
       var known = base, missing = [], parts = [money(base) + ' our fee'], msg = msg0;
+      var per = period(), mult = Number(per), perName = periodNames[per];
       doors.forEach(function (door) {
         var r = door.querySelector('input:checked'), name = door.getAttribute('data-name');
+        var scaled = door.hasAttribute('data-period');
+        if (scaled) {
+          /* Show each engine-size price for the chosen period */
+          door.querySelectorAll('.bill-opt input').forEach(function (o) {
+            var ov = Number(o.value); if (ov) o.parentNode.querySelector('strong').textContent = money(Math.round(ov * mult));
+          });
+          if (!r) door.querySelector('[data-pick]').textContent = perName + '. Tap to choose engine size';
+        }
         if (!r) { missing.push(name); return; }
-        var v = Number(r.value), amt = door.querySelector('[data-amt]'), line = door.getAttribute('data-line');
-        door.querySelector('[data-pick]').textContent = r.getAttribute('data-label');
+        var v = Math.round(Number(r.value) * (scaled ? mult : 1)), amt = door.querySelector('[data-amt]'), line = door.getAttribute('data-line');
+        door.querySelector('[data-pick]').textContent = r.getAttribute('data-label') + (scaled ? ', ' + perName : '');
         amt.textContent = v ? money(v) : 'We confirm'; amt.classList.add('set');
         if (v) { known += v; parts.push(money(v) + ' ' + name); } else { missing.push(name); }
         msg = msg.replace(new RegExp('^' + line + '[^\\n]*$', 'm'), line + ': ' + r.getAttribute('data-label'));
       });
-      var picked = bill.querySelectorAll('input:checked').length;
+      var picked = bill.querySelectorAll('.door input:checked').length;
       if (!picked) return;
       box.classList.toggle('todo', missing.length > 0);
       total.textContent = money(known) + (missing.length ? ' + ' + missing.join(' and ') + (missing.length > 1 ? ' fees' : ' fee') : '');
       sum.textContent = missing.length ? (picked < doors.length ? 'Choose the rest above to see your full total.' : 'We confirm the rest with you.') : parts.join(' + ');
-      if (!missing.length) msg += '\nTotal shown on the page: ' + money(known) + ' (12 months)';
+      if (!missing.length) msg += '\nTotal shown on the page: ' + money(known) + ' (' + perName + ')';
       if (btn) btn.setAttribute('href', href0.slice(0, cut) + encodeURIComponent(msg));
     }
+    var periodBox = bill.querySelector('.period');
+    if (periodBox) periodBox.addEventListener('change', update);
     doors.forEach(function (door) {
       door.addEventListener('change', update);
       door.addEventListener('click', function (e) {
