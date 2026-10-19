@@ -95,15 +95,7 @@
             "text": "It changes from week to week. When the U.S. State Department last updated its wait-time table on September 17, 2026, the next available visitor visa interview in Kingston was about one month away. After an approval, allow a few more business days for the visa to be printed and your passport to reach the courier. Apply early and do not buy tickets until the visa is in your hand."
           }
         },
-                                        {
-          "@type": "Question",
-          "name": "My US visa is still valid but it is in my old passport. Do I need a new visa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. A valid visa in an expired passport can still be used. Travel with both passports, and do not remove the visa from the old one."
-          }
-        },
-        {
+                                                {
           "@type": "Question",
           "name": "Does my passport need six months left on it?",
           "acceptedAnswer": {
@@ -770,6 +762,16 @@
     @media (min-width: 960px) { .section-nav { max-height: calc(100vh - var(--header-h) - 48px); overflow-y: auto; } }
 
     @media (hover: none) { .btn-wa-cta:hover, .btn-sub:hover, .toolkit-card .btn-sub:hover { transform: none; } }
+    /* Roomier mobile spacing */
+    @media (max-width: 599px) {
+      :root { --gap: 36px; }
+      .card p { margin-bottom: 18px; }
+      .card .sub-head { margin-top: 36px; }
+      .callout-box, .warning-box { margin: 30px 0; }
+      .rule-list li, .takeaway-list li, .flag-list li { margin-bottom: 14px; }
+      .card-head { margin-bottom: 24px; }
+      .grid-2 p:last-child, .callout-box p:last-child, .warning-box p:last-child { margin-bottom: 0; }
+    }
 </style>
 </head>
 <body id="top">
@@ -857,15 +859,14 @@
       <nav class="section-nav" aria-label="Jump to a section">
         <p class="nav-title">In this guide</p>
         <ol>
-          <li><a href="#takeaways"><span class="num">i</span>At a glance</a></li>
           <li><a href="#right-visa"><span class="num">1</span>Is it the right visa?</a></li>
           <li><a href="#prerequisites"><span class="num">2</span>What you need</a></li>
           <li><a href="#form-data"><span class="num">3</span>What the form asks</a></li>
           <li><a href="#process"><span class="num">4</span>The 6 steps</a></li>
           <li><a href="#mistakes"><span class="num">5</span>Easy mistakes</a></li>
           <li><a href="#fees"><span class="num">6</span>What it costs</a></li>
-          <li><a href="#renewal"><span class="num">7</span>Renewing a visa</a></li>
-          <li><a href="#interview-day"><span class="num">8</span>Interview day</a></li>
+          <li><a href="#interview-day"><span class="num">7</span>Interview day</a></li>
+          <li><a href="#renewal"><span class="num">8</span>Renewing your visa</a></li>
           <li><a href="#refused"><span class="num">9</span>If you are refused</a></li>
           <li><a href="#traps"><span class="num">10</span>Agency red flags</a></li>
           <li><a href="#faq"><span class="num">?</span>Common questions</a></li>
@@ -889,11 +890,11 @@
           <div class="glance">
             <ul class="glance-list" id="glance-list">
               <li><a href="#right-visa"><span class="g-label">The visa</span><span class="g-value">B1/B2, for visits and business trips</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
+              <li><a href="#renewal"><span class="g-label">Renewing</span><span class="g-value">What to expect, and who can skip the interview</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
               <li><a href="#fees"><span class="g-label">Application fee</span><span class="g-value">US$185 each, not refundable</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
               <li><a href="#form-data"><span class="g-label">The form</span><span class="g-value">DS-160, online and free to fill in</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
               <li><a href="#traps"><span class="g-label">Biggest red flag</span><span class="g-value">A “guaranteed” visa</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
               <li><a href="#interview-day"><span class="g-label">Interview</span><span class="g-value">U.S. Embassy, Kingston</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
-              <li><a href="#renewal"><span class="g-label">Who is interviewed</span><span class="g-value">Almost everyone, children too</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
               <li><a href="#faq"><span class="g-label">Next appointment</span><span class="g-value">About 1 month (Sept 2026)</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
               <li><a href="#right-visa"><span class="g-label">If approved</span><span class="g-value">Valid for up to 10 years</span><svg class="icon g-go" aria-hidden="true"><use href="#i-down"/></svg></a></li>
             </ul>
@@ -1052,31 +1053,12 @@
             <p>A U.S. law passed in 2025 created a <strong>Visa Integrity Fee of US$250</strong>, charged only when a visa is issued. It was not yet on the official fee pages when we checked in October 2026, and reports say embassies have started collecting it at different times. Ask the appointment call centre before your interview, and have the money set aside in case.</p>
           </div>
           <p class="table-foot">Fees change. Confirm on the <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/fees/fees-visa-services.html" target="_blank" rel="noopener">State Department fee page</a> and the <a href="https://ais.usvisa-info.com/en-jm/niv" target="_blank" rel="noopener">appointment site</a> before you pay.</p>
-          <a class="next-link" href="#renewal"><div><span>Next</span><strong>Renewing a visa</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
-        </section>
-
-        <section class="card" id="renewal" aria-labelledby="renewal-title">
-          <div class="card-head">
-            <span class="step-badge" aria-hidden="true">7</span>
-            <div><span class="eyebrow">Already had a visa?</span><h2 id="renewal-title">Renewing a visa, and who must be interviewed</h2></div>
-          </div>
-          <p>Renewing uses the same form, the same fee and the same appointment site. The rules on interviews were tightened from October 1, 2025. Almost everyone now attends in person, <strong>including children under 14 and adults over 79</strong>, who used to be excused.</p>
-          <p>You may be able to renew a B1/B2 visa without an interview only if all of these are true:</p>
-          <ul class="rule-list">
-            <li>Your last B1/B2 visa is still valid, or expired less than 12 months ago.</li>
-            <li>It was issued for the full period, and you were at least 18 when you got it.</li>
-            <li>You are applying in the country where you are a citizen or where you live.</li>
-            <li>You have never been refused a visa, unless that refusal was later overcome or waived.</li>
-            <li>Nothing in your record suggests you may not qualify.</li>
-          </ul>
-          <p>The appointment site asks you questions and tells you whether you qualify. If you do, it gives instructions for handing in your passport.</p>
-          <div class="callout-box"><p><strong>The Embassy can still call you in.</strong> An officer may ask anyone to attend an interview, for any reason, so do not book travel around a renewal.</p></div>
           <a class="next-link" href="#interview-day"><div><span>Next</span><strong>Interview day</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
 
         <section class="card" id="interview-day" aria-labelledby="interview-day-title">
           <div class="card-head">
-            <span class="step-badge" aria-hidden="true">8</span>
+            <span class="step-badge" aria-hidden="true">7</span>
             <div><span class="eyebrow">On the day</span><h2 id="interview-day-title">Interview day at the Embassy</h2></div>
           </div>
           <ul class="site-list">
@@ -1109,6 +1091,30 @@
             <li><span class="site-parish">Hours</span><span class="site-name">Monday to Friday, 9 a.m. to 5 p.m.</span></li>
             <li><span class="site-parish">Email</span><span class="site-name"><a href="mailto:Jamaica.Visas@gdit-gss.com">Jamaica.Visas@gdit-gss.com</a></span></li>
           </ul>
+          <a class="next-link" href="#renewal"><div><span>Next</span><strong>Renewing your visa</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+        </section>
+        <section class="card" id="renewal" aria-labelledby="renewal-title">
+          <div class="card-head">
+            <span class="step-badge" aria-hidden="true">8</span>
+            <div><span class="eyebrow">Already had a visa?</span><h2 id="renewal-title">Renewing your visa: what to expect</h2></div>
+          </div>
+          <p>Renewing uses the same DS-160 form, the same US$185 fee and the same appointment site. Follow <a href="#process">the 6 steps</a> for the form, fee and booking.</p>
+          <ul class="rule-list">
+            <li><strong>Interviews:</strong> since October 1, 2025, almost everyone attends in person, including children under 14 and adults over 79, who used to be excused.</li>
+            <li><strong>Your old visa:</strong> a valid visa in an expired passport can still be used. Travel with both passports, and do not remove the visa from the old one.</li>
+            <li><strong>Your passport:</strong> the new visa is printed in the passport you apply with, so renew a passport that is close to expiring first.</li>
+          </ul>
+          <h3 class="sub-head">Can you skip the interview?</h3>
+          <p>Some renewals can be done without going to the Embassy, but only if all of these are true:</p>
+          <ul class="rule-list">
+            <li>Your last B1/B2 visa is still valid, or expired less than 12 months ago.</li>
+            <li>It was issued for the full period, and you were at least 18 when you got it.</li>
+            <li>You are applying in the country where you are a citizen or where you live.</li>
+            <li>You have never been refused a visa, unless that refusal was later overcome or waived.</li>
+            <li>Nothing in your record suggests you may not qualify.</li>
+          </ul>
+          <p>The appointment site asks you questions and tells you whether you qualify. If you do, it gives instructions for handing in your passport.</p>
+          <div class="callout-box"><p><strong>The Embassy can still call you in.</strong> An officer may ask anyone to attend an interview, for any reason, so do not book travel around a renewal.</p></div>
           <a class="next-link" href="#refused"><div><span>Next</span><strong>If you are refused</strong></div><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
         </section>
 
@@ -1185,10 +1191,6 @@
               <details>
                 <summary>How long does it take to get a US visitor visa in Jamaica?</summary>
                 <div class="answer"><p>It changes from week to week. When the U.S. State Department last updated its wait-time table on September 17, 2026, the next available visitor visa interview in Kingston was about one month away. After an approval, allow a few more business days for the visa to be printed and your passport to reach the courier. Apply early and do not buy tickets until the visa is in your hand.</p></div>
-              </details>
-              <details>
-                <summary>My US visa is still valid but it is in my old passport. Do I need a new visa?</summary>
-                <div class="answer"><p>No. A valid visa in an expired passport can still be used. Travel with both passports, and do not remove the visa from the old one.</p></div>
               </details>
               <details>
                 <summary>Does my passport need six months left on it?</summary>
