@@ -800,6 +800,8 @@
     .section-nav a.nav-cta { text-decoration: none; }
     /* This guide has more sections than the others: let the sidebar scroll on short screens */
     @media (min-width: 960px) { .section-nav { max-height: calc(100vh - var(--header-h) - 48px); overflow-y: auto; } }
+
+    @media (hover: none) { .btn-wa-cta:hover, .btn-sub:hover, .toolkit-card .btn-sub:hover { transform: none; } }
 </style>
 </head>
 <body id="top">
