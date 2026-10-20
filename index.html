@@ -508,10 +508,10 @@ h1,h2,h3{color:var(--ink)}
 .grp-head p{margin:0;font-size:16px;color:var(--muted)}
 .grp-head + .cards{margin-top:28px}
 /* Travel and ID: 4 cards as two even rows of two on wider screens */
-@media (min-width:640px){.cards.cards-2{grid-template-columns:repeat(2,1fr);column-gap:56px;row-gap:56px}}
-@media (min-width:960px){.cards.cards-2{column-gap:120px;row-gap:64px}}
-/* Driver and Vehicle: 5 cards as 3 on top, 2 wider below */
-@media (min-width:960px){.cards.cards-5{grid-template-columns:repeat(6,1fr);column-gap:44px;row-gap:64px}.cards.cards-5>*{grid-column:span 2}.cards.cards-5>:nth-child(n+4){grid-column:span 3}.cards.cards-5>:nth-child(4){margin-right:38px}.cards.cards-5>:nth-child(5){margin-left:38px}}
+@media (min-width:640px){.cards.cards-2{grid-template-columns:repeat(2,1fr);column-gap:48px;row-gap:56px}}
+@media (min-width:960px){.cards.cards-2{column-gap:64px;row-gap:64px;padding-left:6%;padding-right:6%}}
+.cards + .cards.cards-2{margin-top:32px}
+@media (min-width:960px){.cards + .cards.cards-2{margin-top:64px}}
 .grp-note{text-align:center;margin:24px 0 0;font-size:15px;color:var(--muted)}
 .card-x .card-title{margin:0}
 .card-x .card-line{margin:0}
@@ -741,7 +741,7 @@ h1,h2,h3{color:var(--ink)}
         <h3>Driver and Vehicle</h3>
         <p>Your licence, your car, and your driving record, kept road-ready.</p>
       </div>
-      <div class="cards cards-5">
+      <div class="cards">
         <a class="card reveal" href="/jamaican-trn-application-overseas-diaspora.html">
           <img src="assets/trn-application-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
           <span class="card-body"><span class="card-title">Get Your TRN</span><span class="card-line">Your first step, at home or abroad</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
@@ -754,6 +754,8 @@ h1,h2,h3{color:var(--ink)}
           <img src="assets/motor-vehicle-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
           <span class="card-body"><span class="card-title">Motor Vehicle Licence Renewal</span><span class="card-line">Same-day renewal. No Tax Office line</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
+      </div>
+      <div class="cards cards-2">
         <a class="card reveal" href="/motor-vehicle-licence-renewal.html#ticket-lookup">
           <img src="assets/traffic-tickets-800.webp" width="800" height="446" alt="" loading="lazy" decoding="async">
           <span class="card-body"><span class="card-title">Traffic Tickets</span><span class="card-line">Find and clear your tickets before you renew</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
