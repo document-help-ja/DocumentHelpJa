@@ -507,6 +507,10 @@ h1,h2,h3{color:var(--ink)}
 .grp-head h3{margin:0 0 8px;font-family:var(--serif);font-weight:400;font-size:1.6rem;color:var(--ink)}
 .grp-head p{margin:0;font-size:16px;color:var(--muted)}
 .grp-head + .cards{margin-top:28px}
+/* Travel and ID: 4 cards as two even rows of two on wider screens */
+@media (min-width:640px){.cards.cards-2{grid-template-columns:repeat(2,1fr)}}
+/* Driver and Vehicle: 5 cards as 3 on top, 2 wider below */
+@media (min-width:960px){.cards.cards-5{grid-template-columns:repeat(6,1fr)}.cards.cards-5>*{grid-column:span 2}.cards.cards-5>:nth-child(n+4){grid-column:span 3}}
 .grp-note{text-align:center;margin:24px 0 0;font-size:15px;color:var(--muted)}
 .card-x .card-title{margin:0}
 .card-x .card-line{margin:0}
@@ -712,7 +716,7 @@ h1,h2,h3{color:var(--ink)}
         <h3>Travel and ID</h3>
         <p>From your birth certificate to your passport and records, at home or overseas.</p>
       </div>
-      <div class="cards">
+      <div class="cards cards-2">
         <a class="card reveal" href="/jamaican-passport-services.html">
           <img src="assets/passport-renewal-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
           <span class="card-body"><span class="card-title">Jamaican Passport</span><span class="card-line">We apply for you and deliver to your door</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
@@ -736,7 +740,7 @@ h1,h2,h3{color:var(--ink)}
         <h3>Driver and Vehicle</h3>
         <p>Your licence, your car, and your driving record, kept road-ready.</p>
       </div>
-      <div class="cards">
+      <div class="cards cards-5">
         <a class="card reveal" href="/jamaican-trn-application-overseas-diaspora.html">
           <img src="assets/trn-application-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
           <span class="card-body"><span class="card-title">Get Your TRN</span><span class="card-line">Your first step, at home or abroad</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
