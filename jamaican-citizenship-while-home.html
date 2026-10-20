@@ -954,6 +954,11 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
 .cz-card { background: #fff; border: 1px solid #EAD9B8; border-left: 4px solid var(--gold); border-radius: 14px; padding: 1.25rem; }
 .cz-card h3 { margin: 0 0 .5rem; font-size: 1.02rem; color: var(--ink); }
 .cz-card p { margin: 0; line-height: 1.6; }
+.cz-card ul { margin: 0 0 .9rem; padding-left: 1.2rem; list-style: disc; }
+.cz-card li { display: list-item; }
+.cz-card li { margin: .35rem 0; line-height: 1.5; }
+.cz-card li::marker { color: var(--gold); }
+.cz-act .ov-btn { align-self: center; }
 .cz-wa { margin: 0; text-align: center; font-size: .95rem; color: var(--muted); }
 .cz-wa a { color: var(--gold-text); font-weight: 500; }
 .cz-small { font-size: .88rem; color: var(--muted); }
@@ -1116,11 +1121,21 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
       <div class="cz-cards">
         <div class="cz-card">
           <h3>Not sure what applies to you?</h3>
-          <p>Mother or father? Grandparents? A name that changed along the way? A short consultation walks you through your situation.</p>
+          <ul>
+            <li>Claiming through your mother or father</li>
+            <li>Claiming through a grandparent</li>
+            <li>A name that changed along the way</li>
+          </ul>
+          <p>A short consultation walks you through it.</p>
         </div>
         <div class="cz-card">
           <h3>Missing a family record?</h3>
-          <p>We search the RGD for missing birth, marriage or death certificates, for any generation.</p>
+          <ul>
+            <li>Birth certificates</li>
+            <li>Marriage certificates</li>
+            <li>Death certificates</li>
+          </ul>
+          <p>We search the RGD for them, for any generation.</p>
         </div>
       </div>
       <p>Start early. Searches take time, and you’ll want every record in hand before you fly.</p>
