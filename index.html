@@ -511,7 +511,7 @@ h1,h2,h3{color:var(--ink)}
 @media (min-width:640px){.cards.cards-2{grid-template-columns:repeat(2,1fr);column-gap:56px;row-gap:56px}}
 @media (min-width:960px){.cards.cards-2{column-gap:120px;row-gap:64px}}
 /* Driver and Vehicle: 5 cards as 3 on top, 2 wider below */
-@media (min-width:960px){.cards.cards-5{grid-template-columns:repeat(6,1fr)}.cards.cards-5>*{grid-column:span 2}.cards.cards-5>:nth-child(n+4){grid-column:span 3}}
+@media (min-width:960px){.cards.cards-5{grid-template-columns:repeat(6,1fr);column-gap:44px;row-gap:64px}.cards.cards-5>*{grid-column:span 2}.cards.cards-5>:nth-child(n+4){grid-column:span 3}.cards.cards-5>:nth-child(4){margin-right:38px}.cards.cards-5>:nth-child(5){margin-left:38px}}
 .grp-note{text-align:center;margin:24px 0 0;font-size:15px;color:var(--muted)}
 .card-x .card-title{margin:0}
 .card-x .card-line{margin:0}
