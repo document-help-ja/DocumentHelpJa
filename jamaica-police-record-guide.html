@@ -929,6 +929,31 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
 @media (min-width: 760px) { .ga-figure img { height: 300px; } .ga-block { padding: 1.75rem 1.75rem; } }
 .ga-faq h3 { margin-top: 1.1rem; }
 .ga-small { font-size: .88rem; color: var(--muted); }
+/* Quick answers + blog layout + drop-downs (Oct 2026 redesign) */
+.qa-box { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.3rem 1.2rem; }
+.qa-box .qa-q, .blog h2 { font: 700 1.12rem/1.35 var(--sans); color: var(--ink); margin: 1.4rem 0 .45rem; }
+.qa-box .ga-kicker + .qa-q { margin-top: .2rem; }
+.qa-fees { list-style: none; padding: 0; margin: .3rem 0 .7rem; border: 1px solid var(--line); border-radius: 10px; }
+.qa-fees li { padding: .6rem .8rem; border-top: 1px solid var(--line); }
+.qa-fees li:first-child { border-top: 0; }
+.qa-box p { margin-bottom: .6rem; }
+.qa-note { font-size: .95rem; color: var(--muted, #5B656C); margin-top: .4rem; }
+.blog h2:first-of-type { margin-top: .6rem; }
+.blog .ga-figure { margin: 1.2rem 0; }
+.sub-fold { border-top: 1px solid var(--line); margin-top: 14px; }
+.sub-fold summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 52px; padding: 12px 2px; font-weight: 700; color: var(--ink); }
+.sub-fold summary::-webkit-details-marker { display: none; }
+.sub-fold summary::after { content: "+"; flex: 0 0 auto; font-size: 1.4rem; font-weight: 400; color: var(--gold-text); }
+.sub-fold[open] summary::after { content: "\2212"; }
+.sub-fold summary:focus-visible { outline: 2px solid var(--gold-text); outline-offset: 2px; }
+.sub-fold-body { padding: 4px 2px 14px; }
+.sub-fold-body h3:first-child { margin-top: .2rem; }
+.list-fold { margin-top: 10px; border: 1px solid var(--line); border-radius: 10px; padding: 0 14px; background: #fff; }
+.list-fold summary { color: var(--gold-text); }
+.list-fold + .list-fold { margin-top: 10px; }
+.faq-folds .sub-fold { margin-top: 0; }
+.faq-folds .sub-fold:last-child { border-bottom: 1px solid var(--line); }
+.blog-end { margin-top: 1.4rem; }
 </style>
 </head>
 
@@ -994,7 +1019,7 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
       <p class="ov-crumb"><a href="/insights.html">Guides</a> › Records &amp; IDs</p>
       <p class="ov-kicker">Police record overview</p>
       <h1 id="article-title">Getting a Jamaican police record: what to know before you apply</h1>
-      <p class="ov-lead">A police record has stricter rules than most documents. One name mismatch or the wrong kind of photo, and you’re sent out of the line. Here’s what the Criminal Records Office checks, which route fits you, and how to get one without flying home.</p>
+      <p class="ov-lead">A police record has stricter rules than most documents. One name mismatch or the wrong kind of photo, and you’re sent out of the line. Start with the quick answers, then read on for the details, in Jamaica or from overseas.</p>
       <div class="author-bar">
         <img src="/assets/profile.webp" width="112" height="112" alt="" loading="lazy" decoding="async">
         <div>
@@ -1005,184 +1030,129 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
     </div>
   </section>
 
-  <!-- ===================== AT A GLANCE ===================== -->
-  <section class="ov-section ov-glance-wrap" aria-labelledby="glance-title">
+  <!-- ===================== QUICK ANSWERS ===================== -->
+  <section class="ov-section" id="quick" aria-label="Quick answers">
     <div class="ov-wrap">
-      <div class="ov-glance">
-        <h2 id="glance-title">At a glance</h2>
-        <dl>
-          <div><dt>Who it’s for</dt><dd>Anyone who needs a Jamaican police record for work, travel or immigration, in Jamaica or overseas</dd></div>
-          <div><dt>Speed and JCF fee</dt><dd><ul class="ov-mini"><li>Regular, 21 working days: J$3,000</li><li>Express, 5 working days: J$6,000</li><li>Next day, Kingston only: J$8,000</li></ul></dd></div>
-          <div><dt>Living overseas?</dt><dd>No need to fly home. Your fingerprints are taken where you live.</dd></div>
-        </dl>
-        <a class="ov-btn ov-btn-dark" href="#help">Have us handle it →</a>
+      <div class="qa-box">
+        <p class="ga-kicker">The quick answers</p>
+
+        <h2 class="qa-q">How much does it cost, and how long does it take?</h2>
+        <ul class="qa-fees">
+          <li><strong>Regular:</strong> J$3,000, 21 working days</li>
+          <li><strong>Express:</strong> J$6,000, 5 working days after fingerprinting</li>
+          <li><strong>Next-day:</strong> J$8,000, temporarily suspended</li>
+        </ul>
+        <p>Weekends and public holidays don’t count. Receipts are non-refundable, and the tax office will not reprint a lost one (JCF advisory, effective November 2025), so keep yours safe.</p>
+
+        <h2 class="qa-q">What do I need to bring?</h2>
+        <ul class="ga-check">
+          <li>Your tax office receipt, in your own name</li>
+          <li>Your printed online application</li>
+          <li>The ID you used on the application: elector ID, driver’s licence or passport. For overseas or travel, a valid passport.</li>
+          <li>One or two passport-size photos that are <strong>not</strong> signed, stamped or embossed by a JP</li>
+        </ul>
+
+        <h2 class="qa-q">How do I apply?</h2>
+        <p>Pay the fee at the tax office, fill in the application on the JCF website and book your fingerprint appointment, then attend in person. You collect your certificate within three months. <a href="#in-jamaica">See the steps</a></p>
+        <p class="qa-note">Living overseas? You don’t need to fly home. <a href="#overseas">Applying from overseas</a></p>
       </div>
     </div>
   </section>
 
-  <!-- ===================== LANES ===================== -->
-  <section class="ov-section ov-tint" aria-labelledby="lanes-title">
+  <!-- ===================== THE ARTICLE ===================== -->
+  <section class="ov-section ov-tint" id="full-guide" aria-label="The full guide">
     <div class="ov-wrap">
-      <h2 id="lanes-title">Which route are you on?</h2>
-      <p>Where you live and who is asking for the record decide what’s involved.</p>
-      <div class="ov-cards">
-        <div class="ov-card"><h3>Applying in Jamaica</h3><p>You attend fingerprinting in person at one of the JCF’s stations.</p></div>
-        <div class="ov-card"><h3>Living overseas</h3><p>Your fingerprints are taken by police where you live, and the application is handled in Jamaica.</p></div>
-        <div class="ov-card"><h3>For a foreign government</h3><p>Immigration, visas and overseas jobs usually also need an apostille from the Ministry of Foreign Affairs before the record leaves Jamaica.</p></div>
-        <div class="ov-card"><h3>Your name has changed</h3><p>You apply under the name on your photo ID, not your new name, until your ID is updated.</p></div>
-      </div>
-    </div>
-  </section>
+      <article class="ga-block blog">
+        <figure class="ga-figure"><img src="/assets/police-record.webp" alt="Jamaican police record application" loading="lazy" decoding="async"></figure>
 
-  <!-- ===================== KNOW THIS FIRST ===================== -->
-  <section class="ov-section" aria-labelledby="speed-title">
-    <div class="ov-wrap">
-      <h2 id="speed-title">Know this first</h2>
-      <div class="ov-cards">
-        <div class="ov-card"><h3>One certificate, one recipient</h3><p>Your certificate is locked to the embassy or employer you name, and can’t be reused for anyone else. Confirm who is asking for it before you apply.</p></div>
-        <div class="ov-card"><h3>Plan for the whole timeline</h3><p>From overseas, add the apostille and courier time on top of the JCF’s processing time.</p></div>
-      </div>
-      <p class="ov-note">Next-day service is offered in Kingston only, when the JCF has capacity.</p>
-    </div>
-  </section>
-
-  <!-- ===================== WHAT THE CRO LOOKS AT ===================== -->
-  <section class="ov-section ov-tint" aria-labelledby="checks-title">
-    <div class="ov-wrap">
-      <h2 id="checks-title">What the Criminal Records Office looks at</h2>
-      <p>These are the things your application is checked against.</p>
-      <ul class="ov-checks">
-        <li><strong>Your name</strong>It must match your photo ID exactly, middle name included.</li>
-        <li><strong>Your photo ID</strong>Valid and government-issued. For immigration, usually your passport.</li>
-        <li><strong>Your photo</strong>A professional passport-size photo, never certified or stamped by a JP.</li>
-        <li><strong>Your fingerprints</strong>Taken in person, in Jamaica or by police where you live.</li>
-        <li><strong>Payment</strong>The right fee for the speed you choose.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===================== WHERE PEOPLE GET STUCK ===================== -->
-  <section class="ov-section" aria-labelledby="stuck-title">
-    <div class="ov-wrap">
-      <h2 id="stuck-title">Where people get stuck</h2>
-      <p>Most people are turned away for small things they couldn’t have known.</p>
-      <ol class="ov-stuck">
-        <li><strong>The name doesn’t match the ID</strong>A missing middle name, or a married name the ID doesn’t show yet.</li>
-        <li><strong>A certified photo</strong>A habit from passports. A JP stamp on a police record photo means new photos.</li>
-        <li><strong>The wrong recipient</strong>The certificate can’t be reused, so a mistake means paying again.</li>
-        <li><strong>A fingerprint card that isn’t accepted</strong>From overseas, you only find out after it’s been posted to Jamaica.</li>
-      </ol>
-      <p>From overseas, every mistake costs another round of courier fees and weeks of waiting. That’s why your fingerprint card is checked before you send it.</p>
-    </div>
-  </section>
-
-
-  <!-- ===================== FULL GUIDE ===================== -->
-  <section class="ov-section ov-tint" id="full-guide" aria-labelledby="fg-title">
-    <div class="ov-wrap">
-      <p class="ga-kicker">The complete guide</p>
-      <h2 id="fg-title">Requirements, fees, processing times and overseas applications</h2>
-      <p>The overview above gives you the short version. Below is everything in detail, whether you’re applying in Jamaica or from abroad.</p>
-
-      <figure class="ga-figure"><img src="/assets/police-record.webp" alt="Jamaican police record application" loading="lazy" decoding="async"></figure>
-
-      <div class="ga-block">
         <h2>What is a Jamaican police record?</h2>
-        <p>A Jamaican police record (also called a police certificate or criminal clearance certificate) is issued by the Jamaica Constabulary Force (JCF) through its Criminal Records Office. It is commonly requested for:</p>
-        <ul>
-          <li>Overseas jobs and work permits</li>
-          <li>Immigration, permanent residence and visa applications</li>
-          <li>Professional or educational opportunities</li>
-          <li>Employer background checks</li>
-        </ul>
-        <div class="alert"><p class="alert-title">Before you apply</p><p>Ask the organisation requesting it exactly who the certificate should be for, how it should be delivered, and whether it needs an apostille. Your application must name the requesting organisation.</p></div>
-      </div>
+        <p>A Jamaican police record, also called a police certificate or criminal clearance certificate, is issued by the Jamaica Constabulary Force (JCF) through its Criminal Records Office. Employers, embassies and immigration offices ask for it for overseas jobs and work permits, immigration and visa applications, studies, and background checks.</p>
 
-      <div class="ga-block">
-        <h2>How much does a Jamaican police record cost?</h2>
-        <div class="table-scroll">
-          <table class="fee-table">
-            <thead><tr><th scope="col">Service</th><th scope="col">Government fee</th><th scope="col">Processing time</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Regular</th><td>J$3,000</td><td>21 working days</td></tr>
-              <tr><th scope="row">Express</th><td>J$6,000</td><td>5 working days, starting after fingerprinting</td></tr>
-              <tr><th scope="row">Next-day</th><td>J$8,000</td><td>Temporarily suspended</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p>Don’t pay for next-day service unless the Criminal Records Office confirms it is available again. Processing times are estimates, not guarantees, and weekends and public holidays don’t count.</p>
-        <p>Receipts are non-refundable, and the Tax Administration of Jamaica will not reprint a lost receipt (JCF advisory, effective November 2025). Check your details and chosen service before paying, and keep your receipt safe.</p>
-      </div>
+        <h2>First, who is asking for it?</h2>
+        <p>Before you pay, ask the organisation that wants your record exactly who the certificate should be for, how it should reach them, and whether it needs an apostille. Your application must name that organisation, and the certificate is locked to it. It can’t be reused for another employer or embassy, so a mistake here means applying and paying again.</p>
 
-      <div class="ga-block">
-        <h2>What documents do you need?</h2>
-        <h3>Valid government-issued photo ID</h3>
-        <p>A passport, national ID or driver’s licence. If the record is for overseas or travel purposes, the JCF requires a valid passport.</p>
-        <h3>Passport-sized photographs</h3>
-        <p>The JCF asks for one or two photos. We recommend bringing two to be safe. They must <strong>not</strong> be certified or embossed. This is different from passport and TRN applications, where a Justice of the Peace often signs the photos.</p>
-        <h3>Your TRN and payment receipt</h3>
-        <p>The receipt should be in your own name.</p>
-        <h3>Online application and appointment confirmation</h3>
-        <p>After paying, you complete the application online. The confirmation email may contain details you need to print and bring to your appointment.</p>
-      </div>
+        <h2 id="in-jamaica">Applying in Jamaica, step by step</h2>
+        <p>It takes six steps, from paying the fee to collecting your certificate. You only attend in person once, for fingerprinting.</p>
+        <details class="sub-fold list-fold" data-open-desktop>
+          <summary>See the 6 steps</summary>
+          <div class="sub-fold-body">
+            <h3>Step 1: Pay the government fee</h3>
+            <p>Pay through an accepted Tax Administration Jamaica (TAJ) payment channel, following the JCF’s current instructions. Keep your receipt.</p>
+            <h3>Step 2: Complete the online application</h3>
+            <p>Use the JCF’s Police Certificate Application Management System on the official JCF website. Enter your details carefully, including the organisation requesting your record. You may need to upload your photo, receipt and ID.</p>
+            <h3>Step 3: Book your fingerprinting appointment</h3>
+            <p>Choose an available date and location online, then check your email for the confirmation.</p>
+            <h3>Step 4: Attend your appointment</h3>
+            <p>Go in person with your receipt, printed application, photographs and valid ID. Your name on the application must match your ID exactly, including all middle names.</p>
+            <h3>Step 5: Wait for processing</h3>
+            <p>Keep your application reference and watch for any messages from the JCF. If you have a deadline, allow extra time.</p>
+            <h3>Step 6: Collect your certificate</h3>
+            <p>Collect your certificate from the pickup location you chose on your application form, within three months. If someone else collects for you, they need a letter of authorisation and valid ID. Questions? Call the Criminal Records Office at 876-922-3221.</p>
+          </div>
+        </details>
+        <details class="sub-fold list-fold" data-open-desktop>
+          <summary>Where fingerprints are taken</summary>
+          <div class="sub-fold-body">
+            <ul>
+              <li><strong>Kingston:</strong> 56 Duke Street</li>
+              <li><strong>St. James:</strong> Summit Police Station</li>
+              <li><strong>St. Mary:</strong> Area 2 Police Headquarters, Pompano Bay</li>
+              <li><strong>Clarendon:</strong> May Pen</li>
+            </ul>
+            <p>Confirm the address and collection arrangements in the online booking system before you travel.</p>
+          </div>
+        </details>
 
-      <div class="ga-block">
-        <h2>How to apply in Jamaica</h2>
-        <h3>Step 1: Pay the government fee</h3>
-        <p>Pay through an accepted Tax Administration Jamaica (TAJ) payment channel, following the JCF’s current instructions. Keep your receipt.</p>
-        <h3>Step 2: Complete the online application</h3>
-        <p>Use the JCF’s Police Certificate Application Management System on the official JCF website. Enter your details carefully, including the organisation requesting your record. You may need to upload your photo, receipt and ID.</p>
-        <h3>Step 3: Book your fingerprinting appointment</h3>
-        <p>Choose an available date and location online, then check your email for the confirmation.</p>
-        <h3>Step 4: Attend your appointment</h3>
-        <p>Go in person with your receipt, printed application, photographs and valid ID. Your name on the application must match your ID exactly, including all middle names.</p>
-        <h3>Step 5: Wait for processing</h3>
-        <p>Keep your application reference and watch for any messages from the JCF. If you have a deadline, allow extra time.</p>
-        <h3>Step 6: Collect your certificate</h3>
-        <p>Collect your certificate from the pickup location you chose on your application form, within three months. If someone else collects for you, they need a letter of authorisation and valid ID. Questions? Call the Criminal Records Office at 876-922-3221.</p>
-      </div>
+        <h2 id="overseas">Applying from overseas</h2>
+        <p>You don’t need to fly home. Your fingerprints are taken where you live, and the application is handled in Jamaica. It takes longer than the 21 or 5 working days, because of fingerprinting, postage, collection and delivery, so start early and add more time if you also need an apostille.</p>
+        <details class="sub-fold list-fold" data-open-desktop>
+          <summary>See the 5 steps</summary>
+          <div class="sub-fold-body">
+            <h3>Step 1: Get your fingerprints taken</h3>
+            <p>Use your local police or a reputable fingerprinting agency. The JCF needs a full set of prints with the agency’s stamp and the name of the person who took them. Confirm the format first, because cards that don’t meet requirements cause delays.</p>
+            <h3>Step 2: Prepare your passport copy and photos</h3>
+            <p>You’ll usually need a certified copy of your passport’s photo page and recent passport photos that are not signed or sealed. Don’t send your original passport unless you are told to.</p>
+            <h3>Step 3: Complete the application and pay</h3>
+            <p>Follow the current overseas instructions. Payment options can differ depending on whether you have a TRN. The overseas process is not identical to the local online one.</p>
+            <h3>Step 4: Arrange submission and collection</h3>
+            <p>If someone in Jamaica is submitting or collecting for you, check whether their letter of authorisation must be certified or notarised.</p>
+            <h3>Step 5: Arrange delivery</h3>
+            <p>Confirm how the finished certificate will reach you. A prepaid return courier envelope may be required. Keep your tracking details.</p>
+          </div>
+        </details>
 
-      <div class="ga-block">
-        <h2>Fingerprinting locations</h2>
-        <ul>
-          <li><strong>Kingston:</strong> 56 Duke Street</li>
-          <li><strong>St. James:</strong> Summit Police Station</li>
-          <li><strong>St. Mary:</strong> Area 2 Police Headquarters, Pompano Bay</li>
-          <li><strong>Clarendon:</strong> May Pen</li>
-        </ul>
-        <p>Confirm the address and collection arrangements in the online booking system before you travel.</p>
-      </div>
+        <figure class="ga-figure"><img src="/assets/official-documents.webp" alt="Official Jamaican documents prepared for use overseas" loading="lazy" decoding="async"></figure>
 
-      <div class="ga-block">
-        <h2>Applying from overseas</h2>
-        <p>You don’t need to fly home. Overseas applicants can have their fingerprints taken where they live.</p>
-        <h3>Step 1: Get your fingerprints taken</h3>
-        <p>Use your local police or a reputable fingerprinting agency. The JCF needs a full set of prints with the agency’s stamp and the name of the person who took them. Confirm the format first, because cards that don’t meet requirements cause delays.</p>
-        <h3>Step 2: Prepare your passport copy and photos</h3>
-        <p>You’ll usually need a certified copy of your passport’s photo page and recent passport photos that are not signed or sealed. Don’t send your original passport unless you are told to.</p>
-        <h3>Step 3: Complete the application and pay</h3>
-        <p>Follow the current overseas instructions. Payment options can differ depending on whether you have a TRN. The overseas process is not identical to the local online one.</p>
-        <h3>Step 4: Arrange submission and collection</h3>
-        <p>If someone in Jamaica is submitting or collecting for you, check whether their letter of authorisation must be certified or notarised.</p>
-        <h3>Step 5: Arrange delivery</h3>
-        <p>Confirm how the finished certificate will reach you. A prepaid return courier envelope may be required. Keep your tracking details.</p>
-        <div class="alert"><p>Overseas applications take longer than the 21 or 5 working days, because of fingerprinting, postage, collection and delivery. Add more time if you also need an apostille.</p></div>
-      </div>
-
-      <figure class="ga-figure"><img src="/assets/official-documents.webp" alt="Official Jamaican documents prepared for use overseas" loading="lazy" decoding="async"></figure>
-
-      <div class="ga-block">
         <h2>Do you need an apostille?</h2>
-        <p>An apostille confirms that a Jamaican public document is genuine so it can be used in another country that is part of the Hague Apostille Convention. Whether you need one depends on the country and organisation requesting your record, so ask them first.</p>
-        <p>Jamaica’s Ministry of Foreign Affairs and Foreign Trade issues apostilles. The Ministry’s fees are:</p>
-        <ul>
-          <li>J$3,500 per document for standard service (5 business days)</li>
-          <li>J$5,000 per document for 24-hour rush service, where eligible</li>
-        </ul>
-        <p>These are separate from the police record fee and don’t include courier costs.</p>
-      </div>
+        <p>An apostille confirms that a Jamaican public document is genuine so it can be used in another country that is part of the Hague Apostille Convention. Immigration offices and overseas employers often ask for one, but it depends on the country and organisation, so ask them first.</p>
+        <p>Jamaica’s Ministry of Foreign Affairs and Foreign Trade issues apostilles, for J$3,500 per document (standard, 5 business days) or J$5,000 for 24-hour rush service where eligible. These are separate from the police record fee and don’t include courier costs.</p>
 
-      <div class="ga-block">
+        <h2>Where do people get turned away?</h2>
+        <p>Most people are sent back for small things they couldn’t have known. From overseas, every mistake costs another round of courier fees and weeks of waiting.</p>
+        <ul>
+          <li><strong>The name doesn’t match the ID.</strong> “Andrew Clarke” on the form and “Andrew Marcus Clarke” on the ID can cause problems. If your name changed but your ID wasn’t updated, apply under the name on your ID and ask the JCF what to do.</li>
+          <li><strong>Certified photos.</strong> A habit from passport applications. Photos signed, stamped or embossed by a Justice of the Peace may be rejected, so tell the photographer they’re for a police record.</li>
+          <li><strong>The wrong recipient.</strong> The certificate can’t be reused, so a mistake means paying again.</li>
+          <li><strong>A fingerprint card that isn’t accepted.</strong> From overseas, you only find out after it has been posted to Jamaica.</li>
+          <li><strong>Not allowing enough time.</strong> Plan backwards from your deadline, including collection, apostille and shipping.</li>
+        </ul>
+        <details class="sub-fold list-fold" data-open-desktop>
+          <summary>Before you apply: quick checklist</summary>
+          <div class="sub-fold-body">
+            <ul class="ga-check">
+              <li>I know who is requesting the record and how they want it</li>
+              <li>My name on the application matches my photo ID exactly</li>
+              <li>I have two uncertified, unembossed passport photos</li>
+              <li>I have my TRN</li>
+              <li>I’ve chosen an available service and kept my receipt</li>
+              <li>I’ve completed the online application and booked my appointment</li>
+              <li>I know where to collect my certificate</li>
+              <li>Overseas: I’ve checked fingerprint, authorisation and delivery requirements</li>
+              <li>I know whether I need an apostille</li>
+            </ul>
+          </div>
+        </details>
+
         <h2>What if you have a past conviction?</h2>
         <p>Not every record is clean, and an old conviction doesn’t always have to follow you. Under Jamaica’s Criminal Records (Rehabilitation of Offenders) Act, amended in 2026:</p>
         <ul>
@@ -1190,58 +1160,35 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
           <li><strong>Expungement:</strong> you can apply to have a spent conviction removed from your record. Applications go to the Ministry of Justice and are decided by the Criminal Records (Rehabilitation of Offenders) Board.</li>
           <li><strong>Some minor, older convictions</strong> are cleared automatically, without an application.</li>
         </ul>
-        <p>To apply, the Ministry’s current process asks for its two application forms (from moj.gov.jm or its office at 61 Constant Spring Road), a J$3,000 fee paid at a tax office, fingerprints, two character references and ID. Expect it to take about a year, so start well before you need a clean police record.</p>
-        <p>Whether a conviction qualifies is a legal question. Check with the <a href="https://moj.gov.jm" target="_blank" rel="noopener">Ministry of Justice</a> or an attorney.</p>
-      </div>
+        <p>To apply, the Ministry’s current process asks for its two application forms (from moj.gov.jm or its office at 61 Constant Spring Road), a J$3,000 fee paid at a tax office, fingerprints, two character references and ID. Expect it to take about a year, so start well before you need a clean police record. Whether a conviction qualifies is a legal question, so check with the <a href="https://moj.gov.jm" target="_blank" rel="noopener">Ministry of Justice</a> or an attorney.</p>
 
-      <div class="ga-block">
-        <h2>Common mistakes that cause delays</h2>
-        <ul>
-          <li><strong>Name doesn’t match your ID.</strong> “Andrew Clarke” on the form and “Andrew Marcus Clarke” on the ID can cause problems. If your name changed but your ID wasn’t updated, ask the JCF what to do before applying.</li>
-          <li><strong>Certified photos.</strong> Photos signed, stamped or embossed by a Justice of the Peace may be rejected. Tell the photographer they’re for a police record.</li>
-          <li><strong>Wrong recipient.</strong> Confirm the exact organisation details. Don’t assume one certificate can be reused for another employer or embassy.</li>
-          <li><strong>Paying before checking.</strong> Confirm your ID, photos and recipient first.</li>
-          <li><strong>Not allowing enough time.</strong> Plan backwards from your deadline, including collection, apostille and shipping.</li>
-        </ul>
-        <h3>Before you apply: quick checklist</h3>
-        <ul class="ga-check">
-          <li>I know who is requesting the record and how they want it</li>
-          <li>My name on the application matches my photo ID exactly</li>
-          <li>I have two uncertified, unembossed passport photos</li>
-          <li>I have my TRN</li>
-          <li>I’ve chosen an available service and kept my receipt</li>
-          <li>I’ve completed the online application and booked my appointment</li>
-          <li>I know where to collect my certificate</li>
-          <li>Overseas: I’ve checked fingerprint, authorisation and delivery requirements</li>
-          <li>I know whether I need an apostille</li>
-        </ul>
-      </div>
+        <h2>More questions</h2>
+        <div class="faq-folds">
+          <details class="sub-fold">
+            <summary>How long is a Jamaican police record valid?</summary>
+            <div class="sub-fold-body"><p>The JCF does not publish an expiry date. The employer, embassy or immigration office asking for it decides how recent it must be, and many want one issued within the last few months. Check their rules before you apply, so it isn’t too old by the time you hand it in.</p></div>
+          </details>
+          <details class="sub-fold">
+            <summary>Do I need to go in person?</summary>
+            <div class="sub-fold-body"><p>In Jamaica, yes, for fingerprinting. Overseas applicants can have fingerprints taken where they live.</p></div>
+          </details>
+          <details class="sub-fold">
+            <summary>Can someone collect my police record for me?</summary>
+            <div class="sub-fold-body"><p>Yes, with a letter of authorisation and their valid ID.</p></div>
+          </details>
+          <details class="sub-fold">
+            <summary>Can I use one police record for more than one employer?</summary>
+            <div class="sub-fold-body"><p>Don’t assume so. Check with each recipient and the JCF before applying.</p></div>
+          </details>
+          <details class="sub-fold">
+            <summary>What if my name has changed?</summary>
+            <div class="sub-fold-body"><p>Your application must match your ID. If your ID hasn’t been updated, ask the JCF which documents they will accept.</p></div>
+          </details>
+        </div>
 
-      <div class="ga-block ga-faq">
-        <h2>Frequently asked questions</h2>
-        <h3>How much is a Jamaican police record?</h3>
-        <p>J$3,000 for regular service and J$6,000 for express. Next-day service (J$8,000) is temporarily suspended.</p>
-        <h3>What do I bring to my police record appointment?</h3>
-        <p>Your tax office receipt in your own name, your printed application, the ID you used on the application (elector ID, driver’s licence or passport), and one or two passport-size photos that are not certified or embossed. If the record is for overseas or travel, bring a valid passport.</p>
-        <h3>How long is a Jamaican police record valid?</h3>
-        <p>The JCF does not publish an expiry date. The employer, embassy or immigration office asking for it decides how recent it must be, and many want one issued within the last few months. Check their rules before you apply, so it isn’t too old by the time you hand it in.</p>
-        <h3>Do I need to go in person?</h3>
-        <p>In Jamaica, yes, for fingerprinting. Overseas applicants can have fingerprints taken where they live.</p>
-        <h3>Can someone collect my police record for me?</h3>
-        <p>Yes, with a letter of authorisation and their valid ID.</p>
-        <h3>Can I use one police record for more than one employer?</h3>
-        <p>Don’t assume so. Check with each recipient and the JCF before applying.</p>
-        <h3>Do I need an apostille?</h3>
-        <p>Not always. It depends on the destination country and the organisation requesting it.</p>
-        <h3>What if my name has changed?</h3>
-        <p>Your application must match your ID. If your ID hasn’t been updated, ask the JCF which documents they will accept.</p>
-      </div>
-
-      <div class="ga-block">
-        <h2>Final thoughts</h2>
-        <p>Confirm who needs your police record, check that your name matches your ID, use uncertified photos, and allow enough time for processing and delivery. For official instructions, visit the <a href="https://jcf.gov.jm/police-certificate" target="_blank" rel="noopener">JCF’s police certificate page</a>.</p>
+        <p class="blog-end">For official instructions, visit the <a href="https://jcf.gov.jm/police-certificate" target="_blank" rel="noopener">JCF’s police certificate page</a>.</p>
         <p class="ga-small">Government fees and our service fee are separate. Laura Clarke Administrative Services is independent and not affiliated with the JCF, TAJ, the Ministry of Foreign Affairs and Foreign Trade or the Government of Jamaica. You may apply directly to the government agency.</p>
-      </div>
+      </article>
     </div>
   </section>
 
@@ -1427,5 +1374,17 @@ iframe[style*="display: none"], iframe[width="0"][height="0"] { display: none !i
 })();
 </script>
 
+<script>
+if (window.matchMedia('(min-width: 960px)').matches) {
+  document.querySelectorAll('details[data-open-desktop]').forEach(function (d) { d.open = true; });
+}
+document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+  a.addEventListener('click', function () {
+    var t = document.querySelector(a.getAttribute('href'));
+    var n = t && t.nextElementSibling;
+    while (n && n.tagName !== 'H2') { if (n.matches && n.matches('details[data-open-desktop]')) { n.open = true; break; } n = n.nextElementSibling; }
+  });
+});
+</script>
 </body>
 </html>
