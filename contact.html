@@ -286,6 +286,11 @@
     </nav>
 
     <div class="contact-wrap">
+      <section class="card done" id="paused" hidden aria-labelledby="paused-title">
+  <h1 id="paused-title">Online Requests Temporarily Paused</h1>
+  <p>Thank you for visiting. We are not accepting new online requests at this time. Our guides and service information remain available for you to read. If you were referred to us or are already in touch with us, please contact us at <a href="mailto:info@documenthelpja.com">info@documenthelpja.com</a>.</p>
+  <p><a class="btn btn-gold" href="/insights.html">Browse free guides</a></p>
+</section>
       <section class="card contact-card" id="form-card" aria-labelledby="contact-title">
         <h1 id="contact-title">Tell us how we can help</h1>
         <p>Leave your details and I'll get in touch to talk through your situation. No documents needed yet.</p>
@@ -429,6 +434,14 @@
       var oops = document.getElementById('send-oops');
       function el(id) { return document.getElementById(id); }
       function val(id) { return (el(id).value || '').trim(); }
+      var INTAKE_PAUSED = true;
+if (INTAKE_PAUSED) {
+  document.title = 'Online requests paused | Laura Clarke Administrative Services';
+  el('form-card').hidden = true;
+  el('next-card').hidden = true;
+  el('paused').hidden = false;
+  return;
+}
       var checks = {
         name: function (v) { return /^[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F .'\u2019\-]{1,79}$/.test(v); },
         phone: function (v) { var d = v.replace(/\D/g, ''); return d.length >= 7 && d.length <= 15; },
