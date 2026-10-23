@@ -352,6 +352,14 @@
       <p class="small">We are a private business, not a government agency.</p>
     </form>
 
+    <section class="card done" id="paused" hidden>
+  <h2>Online Requests Temporarily Paused</h2>
+  <p>Thank you for visiting. We are not accepting new online requests at this time. Our guides and service information remain available for you to read. If you were referred to us or are already in touch with us, please contact us at <a class="plain" href="mailto:info@documenthelpja.com">info@documenthelpja.com</a>.</p>
+  <div class="done-actions">
+    <a class="btn btn-gold" href="/insights.html">Browse free guides</a>
+    <a class="btn btn-line" href="/">Back to the website</a>
+  </div>
+</section>
     <!-- ===================== AFTER SENDING ===================== -->
     <section class="card done" id="done" hidden tabindex="-1" aria-live="polite">
       <h2 id="done-title">Request received</h2>
@@ -473,6 +481,16 @@
       var acceptService = '';
       var cid = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : 'r' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
 
+      var INTAKE_PAUSED = true;
+if (INTAKE_PAUSED && !personal) {
+  document.title = 'Online requests paused | Laura Clarke Administrative Services';
+  el('page-title').textContent = 'Online requests paused';
+  el('crumb').textContent = 'Requests paused';
+  el('page-intro').hidden = true;
+  form.hidden = true;
+  el('paused').hidden = false;
+  return;
+}
       var checks = {
         service: function (v) { return personal || !!SERVICES[v]; },      /* a personal link carries its own service */
         name: function (v) { return /^[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F .'\u2019\-]{1,79}$/.test(v); },
