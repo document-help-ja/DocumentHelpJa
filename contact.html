@@ -434,7 +434,7 @@
       var oops = document.getElementById('send-oops');
       function el(id) { return document.getElementById(id); }
       function val(id) { return (el(id).value || '').trim(); }
-      var INTAKE_PAUSED = true;
+      var INTAKE_PAUSED = false;
 if (INTAKE_PAUSED) {
   document.title = 'Online requests paused | Laura Clarke Administrative Services';
   el('form-card').hidden = true;
