@@ -235,8 +235,8 @@
     }
   ]
 }
-  
 </script>
+
 
 <style>
 :root{
@@ -483,11 +483,7 @@ h1,h2,h3{color:var(--ink)}
 .reviews{columns:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:56rem;margin:40px auto 0}
 .review{margin:0;border-top:3px solid var(--gold)}
 .reviews-all{text-align:center;margin:28px 0 0}
-@media (max-width:640px){
-  .reviews { display:grid; grid-template-columns:1fr; overflow:visible; padding:0 }
-  .cards, .cards.cards-2 { grid-template-columns:1fr }
-  .review { flex:none }
-}
+@media (max-width:640px){.reviews{display:grid;overflow:visible;padding:0}.review{flex:none}}
 /* Navy footer */
 .site-footer{background:var(--navy);border-top:4px solid var(--gold);color:var(--on-dark)}
 .nl{border-bottom-color:rgba(255,255,255,.16)}
@@ -556,10 +552,6 @@ h1,h2,h3{color:var(--ink)}
   .ask{margin-top:56px}
   .reviews{gap:32px}
 }
-
-.pause-bar{background:var(--navy-2);color:#fff;text-align:center;padding:16px 20px;font-size:15px;line-height:1.55;border-bottom:3px solid var(--gold)}
-.pause-bar strong{display:block;color:var(--gold-light);font-family:var(--serif);font-size:18px;margin-bottom:4px}
-.pause-bar a{color:var(--gold-light);font-weight:600}
 </style>
 </head>
 <body id="top">
@@ -703,10 +695,6 @@ h1,h2,h3{color:var(--ink)}
   </nav>
 </header>
 
-  <div class="pause-bar" role="status">
-  <strong>Online Requests Temporarily Paused</strong>
-  Thank you for visiting. We are not accepting new online requests at this time. Our guides and service information remain available for you to read. If you were referred to us or are already in touch with us, please contact us at <a href="mailto:info@documenthelpja.com">info@documenthelpja.com</a>.
-</div>
 <main id="main">
 
   <section class="hero" aria-labelledby="hero-title">
@@ -715,8 +703,7 @@ h1,h2,h3{color:var(--ink)}
       <div class="hero-copy">
         <h1 id="hero-title">Jamaican documents, without the running around.</h1>
         <p class="sub">Whether you're in Jamaica or overseas, I check your paperwork, deal with the agency, and keep you updated.</p>
-       <!-- <a class="btn btn-gold" href="/contact.html">Tell us how we can help</a> -->
-<a class="btn btn-gold" href="/insights.html">Browse free guides</a>
+        <a class="btn btn-gold" href="/contact.html">Tell us how we can help</a>
         <p class="note">Independent private service · Not a government agency</p>
       </div>
     </div>
@@ -781,9 +768,8 @@ h1,h2,h3{color:var(--ink)}
 
       <div class="ask reveal">
         <strong>Don't see your document?</strong>
-       <span>Our free guides cover the most common questions.</span>
-<!-- <a class="btn btn-gold" href="/contact.html">Tell us how we can help</a> -->
-<a class="btn btn-gold" href="/insights.html">Browse free guides</a>
+        <span>Tell us what you need and we'll let you know how we can help.</span>
+        <a class="btn btn-gold" href="/contact.html">Tell us how we can help</a>
         <a class="link-strong" href="/about.html">More about us</a>
       </div>
     </div>
