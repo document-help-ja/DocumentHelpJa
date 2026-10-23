@@ -361,6 +361,15 @@ h1,h2,h3{color:var(--ink)}
 .ask strong{color:var(--ink);display:block}
 .ask span{font-size:15px;color:var(--muted)}
 
+/* Temporarily unavailable services */
+.card-paused{cursor:default;box-shadow:none}
+.card-paused img,.card-paused .card-title,.card-paused .card-line{opacity:.55;filter:grayscale(1)}
+.card-guide{display:inline-block;margin-top:2px;font-size:15px;font-weight:600;color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.card-guide:hover{color:var(--gold-text)}
+.card-paused .card-cta{color:var(--muted);border-top-color:var(--hair)}
+.is-paused{display:block;color:var(--muted);cursor:default}
+.is-paused em{font-style:normal;font-size:.85em}
+
 /* Trust */
 .narrow{max-width:48rem}
 .meet{display:flex;align-items:center;gap:20px;margin-bottom:28px;flex-wrap:wrap}
@@ -586,17 +595,17 @@ h1,h2,h3{color:var(--ink)}
         <ul>
           <li><a href="/jamaican-passport-services.html">Jamaican Passport <span aria-hidden="true">→</span></a></li>
           <li><a href="/jamaican-rgd-certificates.html">Birth &amp; Marriage Certificates <span aria-hidden="true">→</span></a></li>
-          <li><a href="/jamaica-police-record.html">Police Record <span aria-hidden="true">→</span></a></li>
+          <li><a href="/jamaica-police-record-guide">Police Record (guide) <span aria-hidden="true">→</span></a></li>
         </ul>
       </div>
       <div class="dd-col services">
         <h3>Driver and Vehicle</h3>
         <ul>
-          <li><a href="/jamaican-trn-application-overseas-diaspora.html">Get Your TRN <span aria-hidden="true">→</span></a></li>
+          <li><a href="/trn-without-photo-id">Get Your TRN (guide) <span aria-hidden="true">→</span></a></li>
           <li><a href="/drivers-licence-renewal.html">Driver's Licence Renewal <span aria-hidden="true">→</span></a></li>
           <li><a href="/motor-vehicle-licence-renewal.html">Motor Vehicle Licence Renewal <span aria-hidden="true">→</span></a></li>
           <li><a href="/motor-vehicle-licence-renewal.html#ticket-lookup">Traffic Ticket Lookup <span aria-hidden="true">→</span></a></li>
-          <li><a href="/jamaica-driving-abstract.html">Driving Abstract <span aria-hidden="true">→</span></a></li>
+          <li><span class="is-paused">Driving Abstract <em>(temporarily unavailable)</em></span></li>
         </ul>
       </div>
     </div>
@@ -653,13 +662,13 @@ h1,h2,h3{color:var(--ink)}
         <span class="grp">Travel and ID</span>
         <a href="/jamaican-passport-services.html">Jamaican Passport</a>
         <a href="/jamaican-rgd-certificates.html">Birth &amp; Marriage Certificates</a>
-        <a href="/jamaica-police-record.html">Police Record</a>
+        <a href="/jamaica-police-record-guide">Police Record (guide)</a>
         <span class="grp">Driver and Vehicle</span>
-        <a href="/jamaican-trn-application-overseas-diaspora.html">Get Your TRN</a>
+        <a href="/trn-without-photo-id">Get Your TRN (guide)</a>
         <a href="/drivers-licence-renewal.html">Driver's Licence Renewal</a>
         <a href="/motor-vehicle-licence-renewal.html">Motor Vehicle Licence Renewal</a>
         <a href="/motor-vehicle-licence-renewal.html#ticket-lookup">Traffic Ticket Lookup</a>
-        <a href="/jamaica-driving-abstract.html">Driving Abstract</a>
+        <span class="is-paused">Driving Abstract <em>(temporarily unavailable)</em></span>
       </div>
     </details>
     <details>
@@ -726,13 +735,13 @@ h1,h2,h3{color:var(--ink)}
           <img src="assets/rgd-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
           <span class="card-body"><span class="card-title">Birth &amp; Marriage Certificates</span><span class="card-line">Copies and family record searches</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
-        <a class="card reveal" href="/jamaica-police-record.html">
+        <a class="card reveal" href="/jamaica-police-record-guide">
           <img src="assets/police-record-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
-          <span class="card-body"><span class="card-title">Police Record</span><span class="card-line">Done right the first time, at home or abroad</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="card-body"><span class="card-title">Police Record</span><span class="card-line">Done right the first time, at home or abroad</span><span class="card-cta">Read our guide <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
-        <a class="card reveal" href="/jamaican-citizenship-services.html">
+        <a class="card reveal" href="/jamaican-citizenship-by-descent">
           <img src="assets/citizenship-descent-hero-800.webp" width="800" height="436" alt="" loading="lazy" decoding="async">
-          <span class="card-body"><span class="card-title">Jamaican Citizenship</span><span class="card-line">Claim it through a parent or grandparent</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="card-body"><span class="card-title">Jamaican Citizenship</span><span class="card-line">Claim it through a parent or grandparent</span><span class="card-cta">Read our guide <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
       </div>
       <p class="grp-note">Going overseas? Apostille available on documents we order for you.</p>
@@ -742,9 +751,9 @@ h1,h2,h3{color:var(--ink)}
         <p>Your licence, your car, and your driving record, kept road-ready.</p>
       </div>
       <div class="cards">
-        <a class="card reveal" href="/jamaican-trn-application-overseas-diaspora.html">
+        <a class="card reveal" href="/trn-without-photo-id">
           <img src="assets/trn-application-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
-          <span class="card-body"><span class="card-title">Get Your TRN</span><span class="card-line">Your first step, at home or abroad</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          <span class="card-body"><span class="card-title">Get Your TRN</span><span class="card-line">Your first step, at home or abroad</span><span class="card-cta">Read our guide <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
         <a class="card reveal" href="/drivers-licence-renewal.html">
           <img src="assets/driver-license-renewal-hero-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
@@ -760,10 +769,10 @@ h1,h2,h3{color:var(--ink)}
           <img src="assets/traffic-tickets-800.webp" width="800" height="446" alt="" loading="lazy" decoding="async">
           <span class="card-body"><span class="card-title">Traffic Tickets</span><span class="card-line">Find and clear your tickets before you renew</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
-        <a class="card reveal" href="/jamaica-driving-abstract.html">
+        <div class="card reveal card-paused" aria-disabled="true">
           <img src="assets/driving-abstract-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
-          <span class="card-body"><span class="card-title">Driving Abstract</span><span class="card-line">Your driving record, shipped to you</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-        </a>
+          <span class="card-body"><span class="card-title">Driving Abstract</span><span class="card-line">Your driving record, shipped to you</span><span class="card-cta">Temporarily unavailable</span></span>
+        </div>
       </div>
 
       <div class="ask reveal">
