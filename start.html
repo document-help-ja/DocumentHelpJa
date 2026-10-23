@@ -481,7 +481,7 @@
       var acceptService = '';
       var cid = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : 'r' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
 
-      var INTAKE_PAUSED = true;
+      var INTAKE_PAUSED = false;
 if (INTAKE_PAUSED && !personal) {
   document.title = 'Online requests paused | Laura Clarke Administrative Services';
   el('page-title').textContent = 'Online requests paused';
