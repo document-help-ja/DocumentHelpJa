@@ -296,11 +296,22 @@
         { k: 'workPhone', label: 'Work phone number', type: 'tel', opt: true },
         { k: 'otherPhones', label: 'Any other phone numbers you used in the last 5 years?', type: 'area', opt: true, help: 'One per line. Leave blank if none.' },
         { k: 'email', label: 'Your email', type: 'email', req: true, help: 'Must be your own email. It becomes your login for booking the appointment.' },
-        { k: 'otherEmails', label: 'Any other emails you used in the last 5 years?', type: 'area', opt: true, help: 'One per line. Leave blank if none.' },
-        { k: 'social', label: 'Social media you used in the last 5 years', type: 'list', add: 'Add another account',
-          help: 'Include every account, even ones you no longer use. Leave this empty if you have none.', item: [
-          { k: 'site', label: 'Which app or site', type: 'select', req: true, opts: ['Facebook', 'Instagram', 'TikTok', 'X (Twitter)', 'YouTube', 'LinkedIn', 'Snapchat', 'Pinterest', 'Reddit', 'Tumblr', 'Flickr', 'Other'] },
-          { k: 'handle', label: 'Your username', type: 'text', req: true, help: 'The name people search to find you, e.g. @marcia.b' } ] }
+        { k: 'otherEmails', label: 'Any other emails you used in the last 5 years?', type: 'area', opt: true, help: 'One per line. Leave blank if none.' }
+      ]},
+
+      { id: 'social', title: 'Social media', intro: 'The US asks about every social media account you have used in the last 5 years. Social media means apps and websites where you post, share or comment, such as Facebook, Instagram, TikTok, YouTube, X (Twitter), Snapchat or LinkedIn.', tips: [
+          'Include every account, even ones you hardly use, no longer use, or have deleted.',
+          'Include business or church pages that you post on.',
+          'We only need your username, the name people search to find you. Never send your password.',
+          'WhatsApp and text messages do not count.'
+        ], fields: [
+        { k: 'socialAny', label: 'Have you used any social media in the last 5 years?', type: 'choice', opts: YN, req: true },
+        { k: 'social', label: 'Your accounts', type: 'list', show: yes('socialAny'), min: 1, add: 'Add another account',
+          help: 'One box for each account. If you have two Facebook accounts, add both.', item: [
+          { k: 'site', label: 'Which app or website?', type: 'select', req: true, opts: ['Facebook', 'Instagram', 'TikTok', 'YouTube', 'X (Twitter)', 'Snapchat', 'LinkedIn', 'Pinterest', 'Threads', 'Reddit', 'Tumblr', 'Flickr', 'Other'] },
+          { k: 'siteOther', label: 'Name of the app or website', type: 'text', req: true, show: function (it) { return it.site === 'Other'; } },
+          { k: 'handle', label: 'Your username', type: 'text', req: true,
+            help: 'Instagram, TikTok, X, Snapchat: the name after the @ on your profile, e.g. @marcia.b.  Facebook and LinkedIn: open your profile, tap Share or Copy link, and paste the link here.' } ] }
       ]},
 
       { id: 'passport', title: 'Your passport', fields: [
@@ -580,6 +591,8 @@
       else if (step.id === 'review') h = reviewHTML();
       else {
         h = '<div class="step"><h1 tabindex="-1">' + esc(step.title) + '</h1>';
+        if (step.intro) h += '<p class="lead">' + esc(step.intro) + '</p>';
+        if (step.tips) h += '<ul class="check" style="margin-top:1rem">' + step.tips.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
         if (step.security) h += '<p class="lead">The US asks everyone these. Most people answer No to all of them. Answer each one truthfully: if any is a Yes, Laura will call you first.</p>';
         if (step.known) {
           var known = step.known.filter(function (k) { return filled(KNOWN[k]); });
@@ -617,7 +630,8 @@
         '<li>Your trip plans: when you’ll go, and where you’ll stay</li>' +
         '<li>Your work and school history for the last 5 years</li>' +
         '<li>Family names and birth dates (parents, husband or wife)</li>' +
-        '<li>Phone numbers, emails and social media you’ve used in the last 5 years</li>' +
+        '<li>Phone numbers and emails you’ve used in the last 5 years</li>' +
+        '<li>Your social media usernames (Facebook, Instagram, TikTok and so on)</li>' +
         '<li>The countries you’ve visited in the last 5 years</li>' +
         '</ul><p class="note">Don’t have something? Skip it and come back. When you press Send at the end, the form locks and goes to Laura.</p></div>' +
         '<div class="nav"><button type="button" class="btn btn-gold" data-go="next">' + (started ? 'Carry on where I left off' : 'Start the form') + '</button></div></div>';
