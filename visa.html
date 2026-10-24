@@ -465,6 +465,30 @@
       return out;
     }
 
+    /* A readable copy in DS-160 order, for Laura's live view and the client's file. */
+    function summary() {
+      var out = [];
+      STEPS.forEach(function (st) {
+        if (!st.fields) return;
+        var lines = [];
+        st.fields.forEach(function (f) {
+          if (f.sub || !f.k || !shown(f, A)) return;
+          if (f.type === 'list') {
+            (A[f.k] || []).forEach(function (it, i) {
+              var parts = f.item.filter(function (sf) { return shown(sf, it) && filled(it[sf.k]); })
+                .map(function (sf) { return sf.label + ': ' + (sf.type === 'date' ? niceDate(it[sf.k]) : String(it[sf.k]).trim()); });
+              if (parts.length) lines.push(f.label + ' ' + (i + 1) + '\n   ' + parts.join('\n   '));
+            });
+            return;
+          }
+          var v = A[f.k];
+          lines.push(f.label + ': ' + (filled(v) ? (f.type === 'date' ? niceDate(v) : String(v).trim()) : '\u2014'));
+        });
+        out.push(st.title.toUpperCase() + '\n' + lines.join('\n'));
+      });
+      return out.join('\n\n');
+    }
+
     /* ===================================================================
        SAVING
        =================================================================== */
@@ -485,7 +509,7 @@
       if (preview) { dirty = false; status('Saved on this device ✓'); return Promise.resolve(true); }
       if (saving) { saveTimer = setTimeout(saveNow, 800); return Promise.resolve(false); }
       saving = true; dirty = false;
-      return post({ kit: 'visasave', code: code, step: STEPS[stepIx].id, answers: JSON.stringify(A) })
+      return post({ kit: 'visasave', code: code, step: STEPS[stepIx].id, answers: JSON.stringify(A), summary: summary() })
         .then(function (r) {
           saving = false;
           if (r.result === 'Saved') { if (!dirty) status('Saved ✓'); return true; }
@@ -790,10 +814,11 @@
       clearTimeout(saveTimer);
       var done = function () { locked = true; clearLocal(); thanks(); };
       if (preview) { done(); return; }
-      post({ kit: 'visasubmit', code: code, answers: JSON.stringify(A) })
+      post({ kit: 'visasubmit', code: code, step: 'review', answers: JSON.stringify(A), summary: summary() })
         .then(function (r) {
           if (r.result === 'Submitted') return done();
           if (r.result === 'Used') return done();             /* already sent from another device */
+          if (r.result === 'TooLong') { btn.disabled = false; btn.textContent = 'Send to Laura'; oops.textContent = 'Some answers are very long. Please shorten them, or message Laura.'; oops.hidden = false; return; }
           if (r.result === 'Expired' || r.result === 'Unknown') return closed(r.result);
           throw new Error('no');
         })
@@ -835,13 +860,15 @@
       KNOWN = prefill || {};
       /* Start from what Laura already has, then the saved answers on the server, then anything newer on this phone. */
       A = {};
+      var FIXED = [];
+      STEPS.forEach(function (s) { (s.known || []).forEach(function (k) { FIXED.push(k); }); });
       Object.keys(KNOWN).forEach(function (k) { if (filled(KNOWN[k])) A[k] = KNOWN[k]; });
       STEPS.forEach(function (s) { (s.fields || []).forEach(function (f) { if (f.def && !filled(A[f.k])) A[f.k] = f.def; }); });
       Object.assign(A, serverAnswers || {});
       var local = readLocal();
       if (local && local.a && (!serverAnswers || !Object.keys(serverAnswers).length || preview)) { Object.assign(A, local.a); stepIx = local.step || 0; }
       else if (local && local.a) { stepIx = local.step || 0; }
-      Object.keys(KNOWN).forEach(function (k) { if (filled(KNOWN[k])) A[k] = KNOWN[k]; });   /* Laura's details stay as she has them */
+      FIXED.forEach(function (k) { if (filled(KNOWN[k])) A[k] = KNOWN[k]; });   /* name, birth date and email stay as Laura has them */
       resumed = !!(local || Object.keys(serverAnswers || {}).length);
       el('loading').hidden = true; app.hidden = false;
       status(Object.keys(serverAnswers || {}).length || local ? 'Saved ✓' : '');
