@@ -538,6 +538,23 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 .fee-pair small { display: block; margin-top: 6px; font-size: .88rem; line-height: 1.5; color: var(--muted); }
 .svc-in .fee-pair + .bill { margin-top: 18px !important; }
 .fee-pair .mine { background: #EAF0F6; border: 1px solid #C6D2DC; }
+
+/* Clearer choices (Oct 2026): big Choose buttons and a clear next step */
+.pick-lead { margin: 0 0 16px; font-size: 1.12rem; line-height: 1.45; color: #0F2537; }
+.band .jump { gap: 14px !important; }
+.jump a { min-height: 128px !important; padding: 16px 14px !important; justify-content: space-between !important; border: 2px solid #C89B3C !important; box-shadow: none !important; }
+.jump a .j-name { display: block; font-weight: 600; color: #0F2537; }
+.jump a .j-go { display: block; margin-top: 14px; padding: 10px 8px; background: #0F2537; color: #fff; text-align: center; font-size: .92rem; font-weight: 600; }
+.jump a:hover .j-go { background: #1D4E89; }
+.next-step { margin: 34px 0 14px; padding-top: 24px; border-top: 1px solid var(--line, #E1E5E8); }
+.next-step .lbl { color: #7A5C17 !important; margin: 0 0 4px !important; }
+.next-step p { margin: 0; font-size: 1.15rem; line-height: 1.4; color: #0F2537; }
+.door:has(.amt:not(.set)) { border: 2px solid #C89B3C; }
+.door > summary { min-height: 80px; }
+.door .amt:not(.set) { padding: 11px 16px; background: #0F2537; color: #fff; font-size: .92rem; }
+.door .amt:not(.set)::after { border-color: #fff; }
+.door .what small { font-size: .95rem; }
+.bill-total { margin-top: 22px !important; }
 </style>
 </head>
 <body>
@@ -589,9 +606,10 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
   <section class="band band-white ">
     <div class="band-in">
       <p class="band-label">1 · Choose</p>
+      <p class="pick-lead">What do you need? Tap one to start.</p>
       <nav class="jump always" aria-label="Choose your service">
-      <a href="#renewal">Licence renewal<small data-sale-text="J$2,800 + TAJ fee · 30% off">J$4,000 + TAJ fee</small></a>
-      <a href="#ticket-lookup">Ticket lookup<small>J$1,500</small></a>
+      <a href="#renewal"><span class="j-name">Licence renewal</span><small data-sale-text="J$2,800 + TAJ fee · 30% off">J$4,000 + TAJ fee</small><span class="j-go">Choose →</span></a>
+      <a href="#ticket-lookup"><span class="j-name">Ticket lookup</span><small>J$1,500</small><span class="j-go">Choose →</span></a>
     </nav>
       <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
     </div>
@@ -611,9 +629,9 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
             <div class="agency"><span class="lbl">Agency fee (TAJ)</span><b>By licence class</b><small>Choose below</small></div>
           </div>
           <div class="bill" data-bill data-base="4000" data-sale-base="2800">
-            <p class="lbl">Work out your total</p>
+            <div class="next-step"><span class="lbl">Next step</span><p>Choose your licence class</p></div>
             <details class="door" data-name="TAJ" data-line="Licence class">
-              <summary><span class="what"><b>Licence class</b><small data-pick>Tap to choose your class</small></span><span class="amt" data-amt>Choose</span></summary>
+              <summary><span class="what"><b>Licence class</b><small data-pick>Class B or Class C</small></span><span class="amt" data-amt>Choose</span></summary>
               <fieldset class="bill-opts"><legend class="sr-only">Choose your licence class</legend>
                 <label class="bill-opt"><input type="radio" name="dl-class" value="5400" data-label="Class B, private"><span>Class B, private</span><strong>J$5,400</strong></label>
                 <label class="bill-opt"><input type="radio" name="dl-class" value="7200" data-label="Class C, commercial or general"><span>Class C, commercial or general</span><strong>J$7,200</strong></label>
