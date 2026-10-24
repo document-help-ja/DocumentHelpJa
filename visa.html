@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en-JM">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Your US visa form | Laura Clarke Administrative Services</title>
+  <!-- Private page: only clients with a personal link from Laura use it. Keep it out of search engines and off the sitemap. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0F2537">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #0F2537; --text: #2F3538; --muted: #5B6468;
+      --paper: #FFFFFF; --tone: #EEF1F4; --line: #D5DCE3; --bg: #F4F6F8;
+      --gold: #C89B3C; --gold-hover: #B08733; --gold-text: #7A5C17;
+      --wa: #177245; --bad: #A3271F; --link: #084298;
+      --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+      --sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin: 0; font-family: var(--sans); font-size: 1.0625rem; line-height: 1.6; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+    h1, h2 { font-family: var(--serif); color: var(--ink); line-height: 1.2; margin: 0; font-weight: 700; }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    [hidden] { display: none !important; }
+    h1:focus { outline: none; }
+    .icon { width: 1.15em; height: 1.15em; flex-shrink: 0; fill: currentColor; }
+
+    /* Header */
+    .top { position: sticky; top: 0; z-index: 20; background: var(--ink); color: #fff; padding-top: env(safe-area-inset-top, 0px); }
+    .top-bar { max-width: 40rem; margin: 0 auto; padding: .75rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { font: 600 .95rem/1.2 var(--sans); letter-spacing: .01em; }
+    .saved { font-size: .82rem; color: #E6C77A; white-space: nowrap; }
+    .saved.warn { color: #F2B8B0; }
+    .progress { max-width: 40rem; margin: 0 auto; padding: 0 1.25rem .7rem; }
+    .progress span { display: block; font-size: .8rem; color: #B9C0C4; margin-bottom: .3rem; }
+    .bar { height: 4px; background: rgba(255,255,255,.18); }
+    .bar i { display: block; height: 4px; background: var(--gold); transition: width .25s ease; }
+
+    main { max-width: 40rem; margin: 0 auto; padding: 1.5rem 1.25rem 2rem; }
+    .step h1 { font-size: clamp(1.7rem, 6vw, 2.1rem); }
+    .step .lead { margin: .6rem 0 0; color: var(--text); }
+    .card { background: var(--paper); border: 1px solid var(--line); padding: 1.4rem 1.15rem; margin-top: 1.25rem; }
+    @media (min-width: 620px) { .card { padding: 1.9rem; } }
+    .card > h2 { font: 600 1.05rem/1.3 var(--sans); color: var(--ink); margin: 0 0 .25rem; }
+
+    /* Checklist */
+    .check { list-style: none; margin: .8rem 0 0; padding: 0; display: grid; gap: .6rem; }
+    .check li { display: grid; grid-template-columns: .7rem minmax(0, 1fr); gap: .75rem; align-items: baseline; }
+    .check li::before { content: ""; width: .55rem; height: .55rem; background: var(--gold); transform: translateY(-.1rem); }
+    .note { margin: 1rem 0 0; font-size: .92rem; color: var(--muted); }
+
+    /* Pre-filled details */
+    .known { background: var(--tone); padding: 1rem 1.1rem; margin-top: 1.25rem; }
+    .known p { margin: 0 0 .6rem; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+    .known dl { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem 1rem; }
+    .known dt { font-size: .82rem; color: var(--muted); }
+    .known dd { margin: 0; font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+
+    /* Fields */
+    .field { margin-top: 1.4rem; border: 0; padding: 0; min-width: 0; }
+    .field:first-child { margin-top: 0; }
+    .field > label, .field > legend { display: block; padding: 0; font-weight: 600; font-size: 1rem; color: var(--ink); }
+    .opt { font-weight: 400; color: var(--muted); }
+    .help { margin: .2rem 0 0; font-size: .9rem; line-height: 1.45; color: var(--muted); }
+    .field input[type=text], .field input[type=email], .field input[type=tel], .field input[type=date], .field input[type=number], .field select, .field textarea {
+      display: block; width: 100%; margin-top: .5rem; padding: .75rem .85rem; min-height: 3rem;
+      font: 400 1rem/1.4 var(--sans); color: var(--ink); background: #fff;
+      border: 1.5px solid #AEB8B2; border-radius: 0; -webkit-appearance: none; appearance: none;
+    }
+    .field textarea { min-height: 5.5rem; resize: vertical; }
+    .field select {
+      padding-right: 2.5rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23181A1B' d='M6.7 8.3 12 13.6l5.3-5.3 1.4 1.4L12 16.4 5.3 9.7z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right .8rem center; background-size: 1.1rem;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: 3px solid var(--gold); outline-offset: 1px; border-color: var(--ink); }
+    .field.missing input, .field.missing select, .field.missing textarea { border-color: var(--bad); }
+    .field.missing .choices label { border-color: var(--bad); }
+    .row2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 .75rem; }
+
+    .choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)); gap: .5rem; margin-top: .55rem; }
+    .choices.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .choices label { position: relative; display: flex; align-items: center; justify-content: center; text-align: center; min-height: 3rem; padding: .55rem .7rem; border: 1.5px solid #AEB8B2; background: #fff; font-size: .95rem; line-height: 1.3; color: var(--ink); cursor: pointer; }
+    .choices input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+    .choices input:checked + span { color: #fff; }
+    .choices label:has(input:checked) { background: var(--ink); border-color: var(--ink); color: #fff; }
+    .choices label:has(input:focus-visible) { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+    /* Repeating lists (past jobs, visits...) */
+    .list-item { border: 1px solid var(--line); background: #FBFCFD; padding: 1rem; margin-top: .75rem; }
+    .list-item .field { margin-top: 1rem; }
+    .list-item .field:first-of-type { margin-top: 0; }
+    .list-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: .75rem; font-size: .88rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+    .link-btn { background: none; border: 0; padding: .4rem 0; min-height: 44px; font: 500 .92rem var(--sans); color: var(--link); text-decoration: underline; cursor: pointer; }
+    .add-btn { margin-top: .75rem; width: 100%; min-height: 3rem; background: #fff; border: 1.5px dashed #AEB8B2; font: 500 .95rem var(--sans); color: var(--ink); cursor: pointer; }
+
+    /* Security questions */
+    .sec-q { padding: 1rem 0; border-top: 1px solid var(--line); }
+    .sec-q:first-child { border-top: 0; padding-top: 0; }
+    .yes-note { margin: .6rem 0 0; padding: .7rem .85rem; background: #FFF4D6; font-size: .9rem; color: #5C4300; }
+
+    /* Review */
+    .review-step { padding: .9rem 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .review-step:first-child { border-top: 0; padding-top: 0; }
+    .review-step b { color: var(--ink); font-weight: 600; }
+    .review-step small { display: block; color: var(--muted); font-size: .88rem; }
+    .review-step small.bad { color: var(--bad); }
+    .agree { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .8rem; align-items: start; margin-top: 1.25rem; font-weight: 500; color: var(--ink); cursor: pointer; }
+    .agree input { width: 1.5rem; height: 1.5rem; margin: .1rem 0 0; accent-color: var(--ink); }
+
+    /* Buttons */
+    .nav { display: flex; gap: .75rem; margin-top: 1.5rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 3.25rem; padding: .8rem 1.2rem; font: 600 1rem/1.2 var(--sans); text-decoration: none; border: 1.5px solid transparent; cursor: pointer; }
+    .btn-gold { flex: 2; background: var(--gold); color: var(--ink); }
+    .btn-gold:hover { background: var(--gold-hover); }
+    .btn-line { flex: 1; background: #fff; color: var(--ink); border-color: #AEB8B2; }
+    .btn[disabled] { opacity: .65; cursor: progress; }
+    .oops { margin: .75rem 0 0; font-size: .95rem; font-weight: 600; color: var(--bad); }
+
+    .help-link { display: flex; align-items: center; justify-content: center; gap: .5rem; min-height: 48px; margin-top: 1.25rem; color: var(--wa); font-weight: 500; font-size: .95rem; text-decoration: none; }
+    .help-link:hover { text-decoration: underline; }
+
+    .demo { background: #FFF4D6; color: #5C4300; font-size: .88rem; padding: .6rem 1.25rem; text-align: center; }
+    .center { text-align: center; }
+    .foot { max-width: 40rem; margin: 0 auto; padding: 0 1.25rem calc(2rem + env(safe-area-inset-bottom, 0px)); font-size: .82rem; color: var(--muted); text-align: center; }
+    .foot a { color: var(--link); }
+  </style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.37l-.36-.22-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41Z"/></symbol>
+  </svg>
+
+  <header class="top">
+    <div class="top-bar">
+      <span class="brand">Laura Clarke Administrative Services</span>
+      <span class="saved" id="saved" role="status" aria-live="polite"></span>
+    </div>
+    <div class="progress" id="progress" hidden>
+      <span id="progress-label"></span>
+      <div class="bar"><i id="progress-bar" style="width:0"></i></div>
+    </div>
+  </header>
+  <div class="demo" id="demo" hidden>Preview only: answers stay on this device and nothing is sent.</div>
+
+  <main id="main">
+    <div id="loading" class="center"><p>Opening your form…</p></div>
+    <div id="app" hidden></div>
+
+    <!-- Shown when the link is closed, used or not recognised -->
+    <section class="card" id="closed" hidden>
+      <h1 id="closed-title">This link is not open</h1>
+      <p id="closed-text"></p>
+      <a class="btn btn-gold" id="closed-wa" href="https://wa.me/18765612614" target="_blank" rel="noopener" style="width:100%"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Message Laura on WhatsApp</a>
+    </section>
+
+    <a class="help-link" id="help" href="https://wa.me/18765612614" target="_blank" rel="noopener" hidden>
+      <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Stuck on a question? Ask Laura on WhatsApp
+    </a>
+  </main>
+
+  <p class="foot">Laura Clarke Administrative Services is a private business, not the US Embassy or any government agency. Your answers are used only to prepare your application. <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a></p>
+
+  <script>
+  (function () {
+    'use strict';
+
+    /* ===================================================================
+       CONNECTION
+       The Kit Delivery script (same one behind /start) answers these:
+         kit=visaload   code        -> {result:'Open', name, prefill:{...}, answers:{...}} | Used | Expired | Unknown
+         kit=visasave   code, answers(JSON), step  -> {result:'Saved'} | Used | Expired | Unknown
+         kit=visasubmit code, answers(JSON)        -> {result:'Submitted'} | Used | Expired | Unknown
+       Personal link: /visa?v=CODE      Preview without saving: /visa?preview=1
+       =================================================================== */
+    var URL_ = 'https://script.google.com/macros/s/AKfycbzrkEPs6xf6WhdJbZuYBUYCittkeJGW7d83mUh77jdVSrG7Jto_nl5PCik36JfBvimCDg/exec';
+    var WA = '18765612614';
+
+    var q = new URLSearchParams(location.search);
+    var code = (q.get('v') || '').replace(/[^A-Za-z0-9]/g, '').slice(0, 40);
+    var preview = !code && q.get('preview') === '1';
+    var el = function (id) { return document.getElementById(id); };
+    var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+
+    /* Take the code out of the address bar so it is not left in a shared screenshot. */
+    if (code) { try { history.replaceState(null, '', location.pathname + '?v=' + code); } catch (e) {} }
+
+    /* ===================================================================
+       THE QUESTIONS — in DS-160 order, in plain words.
+       Field types: text, email, tel, date, number, area, choice (buttons), select, list (repeating group)
+       show(a): only shown when it returns true.  req: needed before submitting.
+       Keys never change once clients use the form (Citadel reads them by name).
+       =================================================================== */
+    var YN = ['No', 'Yes'];
+    var yes = function (k) { return function (a) { return a[k] === 'Yes'; }; };
+    var renewing = function (a) { return a.beenToUS === 'Yes' && a.hadVisa === 'Yes'; };
+    var married = function (a) { return a.marital === 'Married' || a.marital === 'Common-law partner' || a.marital === 'Civil union'; };
+
+    var STEPS = [
+      { id: 'welcome', title: 'Welcome' },
+
+      { id: 'about', title: 'About you', known: ['surname', 'givenNames', 'dob'], fields: [
+        { k: 'surname', label: 'Surname (last name)', type: 'text', req: true, caps: true, help: 'Exactly as it is in your passport.' },
+        { k: 'givenNames', label: 'First and middle names', type: 'text', req: true, help: 'Exactly as they are in your passport.' },
+        { k: 'otherNames', label: 'Have you ever used any other name?', type: 'choice', opts: YN, req: true, help: 'For example a maiden name, a married name, a name you used before, or your name spelt a different way.' },
+        { k: 'otherNamesList', label: 'Your other names', type: 'list', show: yes('otherNames'), min: 1, add: 'Add another name', item: [
+          { k: 'surname', label: 'Surname', type: 'text', req: true },
+          { k: 'given', label: 'First and middle names', type: 'text', req: true } ] },
+        { k: 'sex', label: 'Sex', type: 'choice', opts: ['Female', 'Male'], req: true, help: 'As it is in your passport.' },
+        { k: 'marital', label: 'Are you married, single, or something else?', type: 'select', req: true,
+          opts: ['Single', 'Married', 'Common-law partner', 'Civil union', 'Separated', 'Divorced', 'Widowed'] },
+        { k: 'dob', label: 'Date of birth', type: 'date', req: true },
+        { k: 'birthCity', label: 'Town or city where you were born', type: 'text', req: true },
+        { k: 'birthParish', label: 'Parish (or state or province) where you were born', type: 'text', req: true },
+        { k: 'birthCountry', label: 'Country where you were born', type: 'text', req: true, def: 'Jamaica' }
+      ]},
+
+      { id: 'nationality', title: 'Citizenship and ID numbers', fields: [
+        { k: 'nationality', label: 'Your country of citizenship', type: 'text', req: true, def: 'Jamaica', help: 'The country whose passport you will use for this visa.' },
+        { k: 'otherCitizen', label: 'Are you a citizen of any other country?', type: 'choice', opts: YN, req: true, help: 'Include any country where you hold, or used to hold, citizenship.' },
+        { k: 'otherCitizenList', label: 'Your other citizenship', type: 'list', show: yes('otherCitizen'), min: 1, add: 'Add another country', item: [
+          { k: 'country', label: 'Country', type: 'text', req: true },
+          { k: 'hasPassport', label: 'Do you have a passport from that country?', type: 'choice', opts: YN, req: true },
+          { k: 'passportNo', label: 'That passport number', type: 'text', caps: true, show: function (it) { return it.hasPassport === 'Yes'; } } ] },
+        { k: 'otherResident', label: 'Do you live permanently in any country other than Jamaica?', type: 'choice', opts: YN, req: true, help: 'For example a green card, Canadian PR, or UK settled status.' },
+        { k: 'otherResidentCountry', label: 'Which country?', type: 'text', show: yes('otherResident'), req: true },
+        { k: 'trn', label: 'Your TRN', type: 'text', req: true, mode: 'numeric', help: 'Your Taxpayer Registration Number. The form uses it as your national ID number.' },
+        { k: 'ssn', label: 'US Social Security number', type: 'text', mode: 'numeric', opt: true, help: 'Most people do not have one. Leave it blank if you don’t.' },
+        { k: 'usTaxId', label: 'US taxpayer ID number', type: 'text', opt: true, help: 'Most people do not have one. Leave it blank if you don’t.' }
+      ]},
+
+      { id: 'trip', title: 'Your trip', fields: [
+        { k: 'purpose', label: 'Why are you going to the US?', type: 'choice', req: true,
+          opts: ['Holiday', 'Visit family or friends', 'Business meetings', 'Medical treatment', 'Other'] },
+        { k: 'purposeOther', label: 'Tell us a little more', type: 'text', show: function (a) { return a.purpose === 'Other' || a.purpose === 'Medical treatment' || a.purpose === 'Business meetings'; }, req: true },
+        { k: 'arrive', label: 'When do you plan to arrive?', type: 'date', req: true, help: 'No ticket yet? Your best guess is fine.' },
+        { k: 'stayNum', label: 'How long will you stay?', type: 'number', req: true, half: true },
+        { k: 'stayUnit', label: 'Days, weeks or months?', type: 'select', opts: ['Days', 'Weeks', 'Months'], req: true, half: true },
+        { k: 'stayAddress', label: 'Where will you stay?', type: 'area', req: true, help: 'The hotel, or the home of the person you’re visiting. Street, city, state and zip code.' },
+        { k: 'payer', label: 'Who is paying for the trip?', type: 'choice', req: true, opts: ['Me', 'Someone else', 'My employer', 'A company or group'] },
+        { k: 'payerName', label: 'Name of the person or company paying', type: 'text', req: true, show: function (a) { return a.payer && a.payer !== 'Me'; } },
+        { k: 'payerRel', label: 'How are they related to you?', type: 'text', show: function (a) { return a.payer === 'Someone else'; }, req: true, help: 'For example sister, son, friend.' },
+        { k: 'payerPhone', label: 'Their phone number', type: 'tel', show: function (a) { return a.payer && a.payer !== 'Me'; }, req: true },
+        { k: 'payerEmail', label: 'Their email', type: 'email', show: function (a) { return a.payer && a.payer !== 'Me'; } },
+        { k: 'payerAddress', label: 'Their address', type: 'area', show: function (a) { return a.payer && a.payer !== 'Me'; }, req: true }
+      ]},
+
+      { id: 'companions', title: 'Who you’re travelling with', fields: [
+        { k: 'withOthers', label: 'Is anyone travelling with you?', type: 'choice', opts: YN, req: true, help: 'Family or friends on the same trip. They each need their own visa form.' },
+        { k: 'groupTrip', label: 'Are you travelling as part of an organised group?', type: 'choice', opts: YN, show: yes('withOthers'), req: true, help: 'For example a church, school or sports trip.' },
+        { k: 'groupName', label: 'Name of the group', type: 'text', show: function (a) { return a.withOthers === 'Yes' && a.groupTrip === 'Yes'; }, req: true },
+        { k: 'companionList', label: 'Who is going with you?', type: 'list', show: function (a) { return a.withOthers === 'Yes' && a.groupTrip !== 'Yes'; }, min: 1, add: 'Add another person', item: [
+          { k: 'surname', label: 'Surname', type: 'text', req: true },
+          { k: 'given', label: 'First names', type: 'text', req: true },
+          { k: 'rel', label: 'How are they related to you?', type: 'select', req: true, opts: ['Spouse', 'Child', 'Parent', 'Other relative', 'Friend', 'Business associate', 'Other'] } ] }
+      ]},
+
+      { id: 'pastTravel', title: 'Your past US travel', fields: [
+        { k: 'beenToUS', label: 'Have you ever been to the US?', type: 'choice', opts: YN, req: true },
+        { k: 'visits', label: 'Your last US visits', type: 'list', show: yes('beenToUS'), min: 1, max: 5, add: 'Add another visit',
+          help: 'Up to your last five trips. Your old passport stamps help here.', item: [
+          { k: 'date', label: 'Date you arrived', type: 'date', req: true },
+          { k: 'num', label: 'How long you stayed', type: 'number', req: true, half: true },
+          { k: 'unit', label: 'Days, weeks or months?', type: 'select', opts: ['Days', 'Weeks', 'Months'], req: true, half: true } ] },
+        { k: 'usLicence', label: 'Have you ever had a US driver’s licence?', type: 'choice', opts: YN, show: yes('beenToUS'), req: true },
+        { k: 'usLicenceNo', label: 'Licence number and state', type: 'text', show: yes('usLicence'), req: true },
+        { k: 'hadVisa', label: 'Have you ever had a US visa?', type: 'choice', opts: YN, req: true },
+        { k: 'visaIssued', label: 'Date your last visa was issued', type: 'date', show: yes('hadVisa'), req: true, help: 'Printed on the visa as “Issue Date”.' },
+        { k: 'visaNumber', label: 'Visa number', type: 'text', caps: true, show: yes('hadVisa'), req: true, help: 'The red number in the bottom right corner of the visa, usually 8 digits.' },
+        { k: 'visaSameType', label: 'Are you applying for the same kind of visa?', type: 'choice', opts: ['Yes', 'No', 'Not sure'], show: yes('hadVisa'), req: true, help: 'A visitor visa says B1/B2 under “Visa Type/Class”.' },
+        { k: 'visaSamePlace', label: 'Was that visa issued in Jamaica?', type: 'choice', opts: YN, show: yes('hadVisa'), req: true },
+        { k: 'visaPrints', label: 'Did they take all 10 of your fingerprints that time?', type: 'choice', opts: ['Yes', 'No', 'Not sure'], show: yes('hadVisa'), req: true },
+        { k: 'visaLost', label: 'Has a US visa of yours ever been lost or stolen?', type: 'choice', opts: YN, show: yes('hadVisa'), req: true },
+        { k: 'visaLostDetail', label: 'When and how?', type: 'area', show: yes('visaLost'), req: true },
+        { k: 'visaCancelled', label: 'Has a US visa of yours ever been cancelled or taken back?', type: 'choice', opts: YN, show: yes('hadVisa'), req: true },
+        { k: 'visaCancelledDetail', label: 'Tell us what happened', type: 'area', show: yes('visaCancelled'), req: true },
+        { k: 'refused', label: 'Has the US ever said no to you?', type: 'choice', opts: YN, req: true, help: 'A visa refused, being turned back at a US airport, or withdrawing your entry.' },
+        { k: 'refusedDetail', label: 'When, and what happened?', type: 'area', show: yes('refused'), req: true },
+        { k: 'petition', label: 'Has anyone ever filed papers for you to live in the US?', type: 'choice', opts: YN, req: true, help: 'For example a relative or employer filing a petition for a green card.' },
+        { k: 'petitionDetail', label: 'Who filed, and when?', type: 'area', show: yes('petition'), req: true }
+      ]},
+
+      { id: 'contact', title: 'Address, phone and email', known: ['email'], fields: [
+        { k: 'homeAddress', label: 'Your home address', type: 'area', req: true, help: 'Street, district, town and parish.' },
+        { k: 'mailSame', label: 'Is your mailing address the same?', type: 'choice', opts: ['Yes', 'No'], req: true },
+        { k: 'mailAddress', label: 'Your mailing address', type: 'area', show: function (a) { return a.mailSame === 'No'; }, req: true },
+        { k: 'phone', label: 'Main phone number', type: 'tel', req: true },
+        { k: 'phone2', label: 'Second phone number', type: 'tel', opt: true },
+        { k: 'workPhone', label: 'Work phone number', type: 'tel', opt: true },
+        { k: 'otherPhones', label: 'Any other phone numbers you used in the last 5 years?', type: 'area', opt: true, help: 'One per line. Leave blank if none.' },
+        { k: 'email', label: 'Your email', type: 'email', req: true, help: 'Must be your own email. It becomes your login for booking the appointment.' },
+        { k: 'otherEmails', label: 'Any other emails you used in the last 5 years?', type: 'area', opt: true, help: 'One per line. Leave blank if none.' },
+        { k: 'social', label: 'Social media you used in the last 5 years', type: 'list', add: 'Add another account',
+          help: 'Include every account, even ones you no longer use. Leave this empty if you have none.', item: [
+          { k: 'site', label: 'Which app or site', type: 'select', req: true, opts: ['Facebook', 'Instagram', 'TikTok', 'X (Twitter)', 'YouTube', 'LinkedIn', 'Snapchat', 'Pinterest', 'Reddit', 'Tumblr', 'Flickr', 'Other'] },
+          { k: 'handle', label: 'Your username', type: 'text', req: true, help: 'The name people search to find you, e.g. @marcia.b' } ] }
+      ]},
+
+      { id: 'passport', title: 'Your passport', fields: [
+        { k: 'ppNumber', label: 'Passport number', type: 'text', caps: true, req: true },
+        { k: 'ppIssueCity', label: 'Where was it issued?', type: 'text', req: true, help: 'The town on the passport, e.g. Kingston or Montego Bay. If it was done at a consulate overseas, put that city.' },
+        { k: 'ppIssued', label: 'Date issued', type: 'date', req: true, half: true },
+        { k: 'ppExpires', label: 'Expiry date', type: 'date', req: true, half: true },
+        { k: 'ppLost', label: 'Have you ever lost a passport, or had one stolen?', type: 'choice', opts: YN, req: true },
+        { k: 'ppLostDetail', label: 'Which passport, and what happened?', type: 'area', show: yes('ppLost'), req: true, help: 'The number if you have it, the country, and when.' }
+      ]},
+
+      { id: 'usContact', title: 'Your contact in the US', fields: [
+        { k: 'usContactKind', label: 'Who is your contact in the US?', type: 'choice', req: true, opts: ['A person I know', 'A hotel or company'], help: 'Usually the person you’re visiting. If you know no one there, use your hotel.' },
+        { k: 'usContactName', label: 'Their full name', type: 'text', show: function (a) { return a.usContactKind === 'A person I know'; }, req: true },
+        { k: 'usContactOrg', label: 'Name of the hotel or company', type: 'text', show: function (a) { return a.usContactKind === 'A hotel or company'; }, req: true },
+        { k: 'usContactRel', label: 'How do you know them?', type: 'select', show: function (a) { return a.usContactKind === 'A person I know'; }, req: true, opts: ['Relative', 'Spouse', 'Friend', 'Business associate', 'Employer', 'School', 'Other'] },
+        { k: 'usContactAddress', label: 'Their address', type: 'area', req: true, show: function (a) { return !!a.usContactKind; } },
+        { k: 'usContactPhone', label: 'Their phone number', type: 'tel', req: true, show: function (a) { return !!a.usContactKind; } },
+        { k: 'usContactEmail', label: 'Their email', type: 'email', show: function (a) { return !!a.usContactKind; } }
+      ]},
+
+      { id: 'family', title: 'Your family', fields: [
+        { sub: 'Your father' },
+        { k: 'dadSurname', label: 'Father’s surname', type: 'text', help: 'Leave blank if you don’t know.' },
+        { k: 'dadGiven', label: 'Father’s first names', type: 'text' },
+        { k: 'dadDob', label: 'Father’s date of birth', type: 'date', help: 'Leave blank if you don’t know.' },
+        { k: 'dadInUS', label: 'Is your father in the US?', type: 'choice', opts: YN, show: function (a) { return !!(a.dadSurname || a.dadGiven); }, req: true },
+        { k: 'dadStatus', label: 'What is his status there?', type: 'select', show: yes('dadInUS'), req: true, opts: ['US citizen', 'Green card holder', 'Visitor or other visa', 'Not sure'] },
+        { sub: 'Your mother' },
+        { k: 'momSurname', label: 'Mother’s surname', type: 'text', help: 'Her surname before marriage, if you know it.' },
+        { k: 'momGiven', label: 'Mother’s first names', type: 'text' },
+        { k: 'momDob', label: 'Mother’s date of birth', type: 'date', help: 'Leave blank if you don’t know.' },
+        { k: 'momInUS', label: 'Is your mother in the US?', type: 'choice', opts: YN, show: function (a) { return !!(a.momSurname || a.momGiven); }, req: true },
+        { k: 'momStatus', label: 'What is her status there?', type: 'select', show: yes('momInUS'), req: true, opts: ['US citizen', 'Green card holder', 'Visitor or other visa', 'Not sure'] },
+        { sub: 'Other family in the US' },
+        { k: 'closeInUS', label: 'Do you have a husband, wife, child, brother or sister in the US?', type: 'choice', opts: YN, req: true, help: 'Including fiancé(e).' },
+        { k: 'closeInUSList', label: 'Who are they?', type: 'list', show: yes('closeInUS'), min: 1, add: 'Add another person', item: [
+          { k: 'name', label: 'Full name', type: 'text', req: true },
+          { k: 'rel', label: 'Relationship', type: 'select', req: true, opts: ['Spouse', 'Fiancé(e)', 'Child', 'Brother or sister'] },
+          { k: 'status', label: 'Their status in the US', type: 'select', req: true, opts: ['US citizen', 'Green card holder', 'Visitor or other visa', 'Not sure'] } ] },
+        { k: 'otherInUS', label: 'Do you have any other relatives in the US?', type: 'choice', opts: YN, req: true, help: 'Aunts, uncles, cousins, grandparents and so on.' },
+        { sub: 'Your husband or wife', show: married },
+        { k: 'spSurname', label: 'Their surname', type: 'text', show: married, req: true, help: 'Include a maiden name if different.' },
+        { k: 'spGiven', label: 'Their first names', type: 'text', show: married, req: true },
+        { k: 'spDob', label: 'Their date of birth', type: 'date', show: married, req: true },
+        { k: 'spNationality', label: 'Their nationality', type: 'text', show: married, req: true, def: 'Jamaican' },
+        { k: 'spBirthPlace', label: 'Where they were born', type: 'text', show: married, req: true, help: 'Town and country.' },
+        { k: 'spAddressSame', label: 'Do they live with you?', type: 'choice', opts: YN, show: married, req: true },
+        { k: 'spAddress', label: 'Their address', type: 'area', show: function (a) { return married(a) && a.spAddressSame === 'No'; }, req: true },
+        { sub: 'Your former husband or wife', show: function (a) { return a.marital === 'Divorced' || a.marital === 'Widowed' || a.marital === 'Separated'; } },
+        { k: 'formerSpouse', label: 'Their name, date of birth, where they were born, the dates you were married, and how it ended', type: 'area',
+          show: function (a) { return a.marital === 'Divorced' || a.marital === 'Widowed' || a.marital === 'Separated'; }, req: true,
+          help: 'Write what you know in your own words. Laura will go over it with you.' }
+      ]},
+
+      { id: 'work', title: 'Work and school', fields: [
+        { sub: 'What you do now' },
+        { k: 'occupation', label: 'What do you mainly do?', type: 'select', req: true,
+          opts: ['Employed', 'Self-employed or business owner', 'Student', 'Retired', 'Homemaker', 'Not employed', 'Government', 'Medical or health', 'Education (teacher)', 'Agriculture', 'Other'] },
+        { k: 'occupationOther', label: 'Your job', type: 'text', show: function (a) { return a.occupation === 'Other'; }, req: true },
+        { k: 'employer', label: 'Name of your employer, business or school', type: 'text', req: true,
+          show: function (a) { return a.occupation && ['Retired', 'Homemaker', 'Not employed'].indexOf(a.occupation) < 0; } },
+        { k: 'employerAddress', label: 'Its address', type: 'area', req: true, show: function (a) { return a.occupation && ['Retired', 'Homemaker', 'Not employed'].indexOf(a.occupation) < 0; } },
+        { k: 'employerPhone', label: 'Its phone number', type: 'tel', req: true, show: function (a) { return a.occupation && ['Retired', 'Homemaker', 'Not employed'].indexOf(a.occupation) < 0; } },
+        { k: 'jobStart', label: 'When did you start?', type: 'date', req: true, show: function (a) { return a.occupation && ['Retired', 'Homemaker', 'Not employed'].indexOf(a.occupation) < 0; } },
+        { k: 'income', label: 'About how much do you earn a month (J$)?', type: 'number', opt: true, show: function (a) { return a.occupation && ['Student', 'Retired', 'Homemaker', 'Not employed'].indexOf(a.occupation) < 0; }, help: 'Before deductions. A round figure is fine.' },
+        { k: 'duties', label: 'What do you do there, in a sentence or two?', type: 'area', req: true, show: function (a) { return a.occupation && ['Retired', 'Homemaker', 'Not employed'].indexOf(a.occupation) < 0; } },
+        { k: 'notWorking', label: 'Tell us a little about your situation', type: 'area', req: true, show: function (a) { return a.occupation === 'Not employed'; }, help: 'For example how long, and how you support yourself.' },
+        { sub: 'Earlier jobs' },
+        { k: 'pastJobs', label: 'Did you have any other jobs in the last 5 years?', type: 'choice', opts: YN, req: true },
+        { k: 'pastJobList', label: 'Your earlier jobs', type: 'list', show: yes('pastJobs'), min: 1, add: 'Add another job', item: [
+          { k: 'employer', label: 'Employer', type: 'text', req: true },
+          { k: 'address', label: 'Address', type: 'area', req: true },
+          { k: 'phone', label: 'Phone number', type: 'tel' },
+          { k: 'title', label: 'Your job title', type: 'text', req: true },
+          { k: 'supervisor', label: 'Your supervisor’s name', type: 'text', opt: true },
+          { k: 'from', label: 'Started', type: 'date', req: true, half: true },
+          { k: 'to', label: 'Left', type: 'date', req: true, half: true },
+          { k: 'duties', label: 'What you did', type: 'area', req: true } ] },
+        { sub: 'School' },
+        { k: 'school', label: 'Did you go to high school or beyond?', type: 'choice', opts: YN, req: true },
+        { k: 'schoolList', label: 'Schools after primary', type: 'list', show: yes('school'), min: 1, add: 'Add another school',
+          help: 'High school, college, university or training. Start with the most recent.', item: [
+          { k: 'name', label: 'School name', type: 'text', req: true },
+          { k: 'address', label: 'Address (town is fine)', type: 'text', req: true },
+          { k: 'course', label: 'What you studied', type: 'text', req: true, help: 'For high school, put “General”.' },
+          { k: 'from', label: 'Started', type: 'date', req: true, half: true },
+          { k: 'to', label: 'Finished', type: 'date', req: true, half: true } ] },
+        { sub: 'A few more' },
+        { k: 'languages', label: 'What languages do you speak?', type: 'text', req: true, def: 'English', help: 'Patois counts. Separate with commas.' },
+        { k: 'countries', label: 'Have you been to any other countries in the last 5 years?', type: 'choice', opts: YN, req: true, help: 'Not counting Jamaica and the US.' },
+        { k: 'countriesList', label: 'Which countries?', type: 'text', show: yes('countries'), req: true, help: 'Separate with commas.' },
+        { k: 'groups', label: 'Do you belong to any clubs, churches, unions or charities?', type: 'choice', opts: YN, req: true },
+        { k: 'groupsList', label: 'Which ones?', type: 'area', show: yes('groups'), req: true },
+        { k: 'military', label: 'Have you ever served in the army, police or another armed force?', type: 'choice', opts: YN, req: true, help: 'Including the JDF or JCF.' },
+        { k: 'militaryDetail', label: 'Where, what rank, and when?', type: 'area', show: yes('military'), req: true },
+        { k: 'skills', label: 'Do you have training in explosives, firearms, nuclear, chemical or biological work?', type: 'choice', opts: YN, req: true }
+      ]},
+
+      { id: 'security', title: 'Background questions', security: true, fields: [
+        { k: 's_disease', label: 'Do you have a serious infectious disease, such as active tuberculosis?', type: 'choice', opts: YN, req: true },
+        { k: 's_mental', label: 'Do you have a mental or physical condition that could make you a danger to yourself or others?', type: 'choice', opts: YN, req: true },
+        { k: 's_drugs', label: 'Are you now, or have you ever been, addicted to or a regular user of illegal drugs?', type: 'choice', opts: YN, req: true },
+        { k: 's_arrest', label: 'Have you ever been arrested or convicted of anything, anywhere?', type: 'choice', opts: YN, req: true, help: 'Even if it was dismissed, pardoned or a long time ago.' },
+        { k: 's_drugLaw', label: 'Have you ever broken any law about drugs (ganja included)?', type: 'choice', opts: YN, req: true },
+        { k: 's_vice', label: 'Have you ever been involved in prostitution or illegal gambling?', type: 'choice', opts: YN, req: true },
+        { k: 's_money', label: 'Have you ever been involved in money laundering?', type: 'choice', opts: YN, req: true },
+        { k: 's_traffic', label: 'Have you ever been involved in human trafficking, or helped someone who was?', type: 'choice', opts: YN, req: true },
+        { k: 's_violence', label: 'Have you ever been involved in terrorism, spying, violence against people, or helping any group that does?', type: 'choice', opts: YN, req: true },
+        { k: 's_fraud', label: 'Have you ever lied or used false papers to get a visa or get into the US?', type: 'choice', opts: YN, req: true },
+        { k: 's_overstay', label: 'Have you ever stayed in the US longer than you were allowed?', type: 'choice', opts: YN, req: true },
+        { k: 's_removed', label: 'Have you ever been deported, removed or sent back from the US?', type: 'choice', opts: YN, req: true },
+        { k: 's_hearing', label: 'Have you ever missed a US immigration court hearing?', type: 'choice', opts: YN, req: true },
+        { k: 's_child', label: 'Have you ever kept a US citizen child away from a parent who had custody?', type: 'choice', opts: YN, req: true },
+        { k: 's_vote', label: 'Have you ever voted in a US election when you weren’t allowed to?', type: 'choice', opts: YN, req: true },
+        { k: 's_tax', label: 'Have you ever given up US citizenship to avoid paying tax?', type: 'choice', opts: YN, req: true },
+        { k: 's_school', label: 'Have you ever gone to a US public school on a student visa without paying?', type: 'choice', opts: YN, req: true }
+      ]},
+
+      { id: 'review', title: 'Check and send' }
+    ];
+    var SEC_NOTE = 'Thank you for being honest. Laura will call you about this before anything is filled in. Please don’t worry: a Yes does not always mean a refusal.';
+
+    /* ===================================================================
+       STATE
+       =================================================================== */
+    var A = {}, KNOWN = {}, resumed = false, stepIx = 0, clientName = '', dirty = false, saveTimer = null, saving = false, locked = false;
+    var LOCAL = 'lcVisa.' + (code || 'preview');
+
+    function readLocal() { try { var v = JSON.parse(localStorage.getItem(LOCAL) || 'null'); return v && typeof v === 'object' ? v : null; } catch (e) { return null; } }
+    function writeLocal() { try { localStorage.setItem(LOCAL, JSON.stringify({ a: A, step: stepIx, at: Date.now() })); } catch (e) {} }
+    function clearLocal() { try { localStorage.removeItem(LOCAL); } catch (e) {} }
+
+    function filled(v) { return Array.isArray(v) ? v.length > 0 : v != null && String(v).trim() !== ''; }
+    function shown(f, a) { return !f.show || f.show(a); }
+    function isReq(f) { return !!f.req && !f.opt; }
+
+    /* What is still missing on a step (labels), for the review page and the Next check. */
+    function missing(step) {
+      var out = [];
+      (step.fields || []).forEach(function (f) {
+        if (!f.k || !shown(f, A) || !isReq(f) && f.type !== 'list') return;
+        if (f.type === 'list') {
+          var items = A[f.k] || [];
+          if (f.min && items.length < f.min) { out.push(f.label); return; }
+          items.forEach(function (it, i) {
+            f.item.forEach(function (sf) { if (isReq(sf) && shown(sf, it) && !filled(it[sf.k])) out.push(f.label + ' ' + (i + 1) + ': ' + sf.label); });
+          });
+        } else if (!filled(A[f.k])) out.push(f.label);
+      });
+      return out;
+    }
+
+    /* ===================================================================
+       SAVING
+       =================================================================== */
+    function status(text, warn) { var s = el('saved'); s.textContent = text; s.className = 'saved' + (warn ? ' warn' : ''); }
+    function post(params) {
+      var body = new URLSearchParams();
+      Object.keys(params).forEach(function (k) { body.set(k, params[k]); });
+      return fetch(URL_, { method: 'POST', body: body }).then(function (r) { return r.json(); });
+    }
+    function queueSave() {
+      dirty = true; writeLocal();
+      status('Saving…');
+      clearTimeout(saveTimer); saveTimer = setTimeout(saveNow, 1200);
+    }
+    function saveNow() {
+      clearTimeout(saveTimer); saveTimer = null;
+      if (!dirty || locked) return Promise.resolve(true);
+      if (preview) { dirty = false; status('Saved on this device ✓'); return Promise.resolve(true); }
+      if (saving) { saveTimer = setTimeout(saveNow, 800); return Promise.resolve(false); }
+      saving = true; dirty = false;
+      return post({ kit: 'visasave', code: code, step: STEPS[stepIx].id, answers: JSON.stringify(A) })
+        .then(function (r) {
+          saving = false;
+          if (r.result === 'Saved') { if (!dirty) status('Saved ✓'); return true; }
+          if (r.result === 'Used' || r.result === 'Expired' || r.result === 'Unknown') { closed(r.result); return false; }
+          throw new Error('not saved');
+        })
+        .catch(function () {
+          saving = false; dirty = true;
+          status(navigator.onLine ? 'Not saved yet – trying again' : 'Offline – saved on this phone', true);
+          clearTimeout(saveTimer); saveTimer = setTimeout(saveNow, 8000);
+          return false;
+        });
+    }
+    window.addEventListener('online', function () { if (dirty) saveNow(); });
+    document.addEventListener('visibilitychange', function () { if (document.hidden && dirty) saveNow(); });
+
+    /* ===================================================================
+       DRAWING
+       =================================================================== */
+    var app = el('app');
+    var uid = 0;
+
+    function inputHTML(f, val, name, idBase) {
+      var id = idBase + '_' + (++uid);
+      var helpId = f.help ? id + '_h' : '';
+      var opt = f.opt ? ' <span class="opt">(optional)</span>' : '';
+      var help = f.help ? '<p class="help" id="' + helpId + '">' + esc(f.help) + '</p>' : '';
+      var desc = helpId ? ' aria-describedby="' + helpId + '"' : '';
+      if (f.type === 'choice') {
+        var two = f.opts.length === 2 ? ' two' : '';
+        return '<fieldset class="field" data-k="' + esc(name) + '"><legend>' + esc(f.label) + opt + '</legend>' + help +
+          '<div class="choices' + two + '">' + f.opts.map(function (o) {
+            return '<label><input type="radio" name="' + esc(name) + '" value="' + esc(o) + '"' + (val === o ? ' checked' : '') + '><span>' + esc(o) + '</span></label>';
+          }).join('') + '</div></fieldset>';
+      }
+      var ctl;
+      if (f.type === 'select') {
+        ctl = '<select id="' + id + '" name="' + esc(name) + '"' + desc + '><option value="">Choose one</option>' +
+          f.opts.map(function (o) { return '<option' + (val === o ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select>';
+      } else if (f.type === 'area') {
+        ctl = '<textarea id="' + id + '" name="' + esc(name) + '" rows="3"' + desc + '>' + esc(val) + '</textarea>';
+      } else {
+        var t = f.type === 'number' ? 'text' : f.type;
+        var extra = f.type === 'number' ? ' inputmode="decimal"' : f.mode ? ' inputmode="' + f.mode + '"' : '';
+        if (f.caps) extra += ' autocapitalize="characters"';
+        if (f.type === 'email') extra += ' autocapitalize="off"';
+        ctl = '<input id="' + id + '" name="' + esc(name) + '" type="' + t + '"' + extra + ' autocomplete="off" spellcheck="false" value="' + esc(val) + '"' + desc + '>';
+      }
+      return '<div class="field" data-k="' + esc(name) + '"><label for="' + id + '">' + esc(f.label) + opt + '</label>' + help + ctl + '</div>';
+    }
+
+    /* Puts two "half" fields side by side. */
+    function fieldsHTML(list, values, prefix) {
+      var out = '', i = 0;
+      while (i < list.length) {
+        var f = list[i];
+        if (f.half && list[i + 1] && list[i + 1].half) {
+          var g = list[i + 1];
+          out += '<div class="row2"' + (shown(f, values) ? '' : ' hidden') + '>' + inputHTML(f, values[f.k] || '', prefix + f.k, prefix + f.k) +
+                 inputHTML(g, values[g.k] || '', prefix + g.k, prefix + g.k) + '</div>';
+          i += 2; continue;
+        }
+        out += oneFieldHTML(f, values, prefix);
+        i++;
+      }
+      return out;
+    }
+
+    function oneFieldHTML(f, values, prefix) {
+      if (f.sub) return '<h2 class="sub" data-sub style="font:600 .82rem/1.3 var(--sans);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:2rem 0 0"' + (shown(f, values) ? '' : ' hidden') + '>' + esc(f.sub) + '</h2>';
+      if (f.type === 'list') return listHTML(f);
+      var h = inputHTML(f, values[f.k] == null ? '' : values[f.k], prefix + f.k, prefix + f.k);
+      if (!shown(f, values)) h = h.replace(/^<(div|fieldset) /, '<$1 hidden ');
+      if (STEPS[stepIx].security && A[f.k] === 'Yes') h += '<p class="yes-note">' + esc(SEC_NOTE) + '</p>';
+      return STEPS[stepIx].security ? '<div class="sec-q">' + h + '</div>' : h;
+    }
+
+    function listHTML(f) {
+      var items = A[f.k] || [];
+      var wrapHidden = shown(f, A) ? '' : ' hidden';
+      var full = f.max && items.length >= f.max;
+      return '<div class="field" data-list="' + f.k + '"' + wrapHidden + '><span style="display:block;font-weight:600;color:var(--ink)">' + esc(f.label) + '</span>' +
+        (f.help ? '<p class="help">' + esc(f.help) + '</p>' : '') +
+        items.map(function (it, i) {
+          return '<div class="list-item" data-item="' + i + '"><div class="list-head"><span>' + (i + 1) + '</span>' +
+            '<button type="button" class="link-btn" data-remove="' + f.k + '" data-i="' + i + '">Remove</button></div>' +
+            fieldsHTML(f.item, it, f.k + '.' + i + '.') + '</div>';
+        }).join('') +
+        (full ? '' : '<button type="button" class="add-btn" data-add="' + f.k + '">+ ' + esc(items.length ? f.add : f.add.replace('another ', 'a ')) + '</button>') +
+        '</div>';
+    }
+
+    function render(keepFocus) {
+      var step = STEPS[stepIx];
+      var n = STEPS.length - 1;
+      el('progress').hidden = stepIx === 0;
+      el('progress-label').textContent = 'Step ' + stepIx + ' of ' + n + ': ' + step.title;
+      el('progress-bar').style.width = Math.round(stepIx / n * 100) + '%';
+      el('help').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Hi Laura, I have a question about my US visa form (' + step.title + ').');
+
+      var h = '';
+      if (step.id === 'welcome') h = welcomeHTML();
+      else if (step.id === 'review') h = reviewHTML();
+      else {
+        h = '<div class="step"><h1 tabindex="-1">' + esc(step.title) + '</h1>';
+        if (step.security) h += '<p class="lead">The US asks everyone these. Most people answer No to all of them. Answer each one truthfully: if any is a Yes, Laura will call you first.</p>';
+        if (step.known) {
+          var known = step.known.filter(function (k) { return filled(KNOWN[k]); });
+          if (known.length) {
+            h += '<div class="known"><p>From your call with Laura</p><dl>' + known.map(function (k) {
+              var f = step.fields.filter(function (x) { return x.k === k; })[0];
+              return '<div><dt>' + esc(f.label.replace(/ \(.*\)$/, '')) + '</dt><dd>' + esc(f.type === 'date' ? niceDate(KNOWN[k]) : KNOWN[k]) + '</dd></div>';
+            }).join('') + '</dl></div>';
+          }
+        }
+        var fields = step.fields.filter(function (f) { return !(step.known && step.known.indexOf(f.k) >= 0 && filled(KNOWN[f.k])); });
+        h += '<form class="card" id="step-form" novalidate onsubmit="return false">' + fieldsHTML(fields, A, '') + '</form>';
+        h += navHTML(stepIx === n - 1 ? 'Check my answers' : 'Next') + '</div>';
+      }
+      app.innerHTML = h;
+      el('help').hidden = false;
+      if (!keepFocus) { var head = app.querySelector('h1'); if (head) head.focus({ preventScroll: true }); }
+    }
+
+    function navHTML(next) {
+      return '<div class="nav">' + (stepIx > 0 ? '<button type="button" class="btn btn-line" data-go="back">Back</button>' : '') +
+        '<button type="button" class="btn btn-gold" data-go="next">' + esc(next) + '</button></div><p class="oops" id="step-oops" role="alert" hidden></p>';
+    }
+
+    function welcomeHTML() {
+      var hi = clientName ? 'Hi ' + esc(clientName.split(' ')[0]) + ',' : 'Welcome';
+      var started = resumed;
+      return '<div class="step"><p style="margin:0;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)">US visitor visa</p>' +
+        '<h1 tabindex="-1" style="margin-top:.3rem">' + hi + '</h1>' +
+        '<p class="lead">These questions give Laura everything she needs to fill in your US visa form (the DS-160). The questions are in plain words, so there is nothing to trip you up.</p>' +
+        '<p class="lead">Your answers save as you go. You can stop and come back any time with this same link, on your phone or computer.</p>' +
+        '<div class="card"><h2>Have these handy</h2><ul class="check">' +
+        '<li>Your current passport</li>' +
+        '<li>Your old passport with your US visa in it, if you had one</li>' +
+        '<li>Your trip plans: when you’ll go, and where you’ll stay</li>' +
+        '<li>Your work and school history for the last 5 years</li>' +
+        '<li>Family names and birth dates (parents, husband or wife)</li>' +
+        '<li>Phone numbers, emails and social media you’ve used in the last 5 years</li>' +
+        '<li>The countries you’ve visited in the last 5 years</li>' +
+        '</ul><p class="note">Don’t have something? Skip it and come back. When you press Send at the end, the form locks and goes to Laura.</p></div>' +
+        '<div class="nav"><button type="button" class="btn btn-gold" data-go="next">' + (started ? 'Carry on where I left off' : 'Start the form') + '</button></div></div>';
+    }
+
+    function niceDate(iso) {
+      var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+      return m ? (+m[3]) + ' ' + ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][+m[2] - 1] + ' ' + m[1] : iso;
+    }
+
+    function reviewHTML() {
+      var total = 0;
+      var rows = STEPS.slice(1, -1).map(function (s, i) {
+        var miss = missing(s); total += miss.length;
+        return '<div class="review-step"><div><b>' + esc(s.title) + '</b><small' + (miss.length ? ' class="bad">' + miss.length + ' still to answer' : '>Done ✓') + '</small></div>' +
+          '<button type="button" class="link-btn" data-jump="' + (i + 1) + '">' + (miss.length ? 'Finish' : 'Change') + '</button></div>';
+      }).join('');
+      var anyYes = STEPS.filter(function (s) { return s.security; })[0].fields.some(function (f) { return A[f.k] === 'Yes'; });
+      return '<div class="step"><h1 tabindex="-1">Check and send</h1>' +
+        '<p class="lead">' + (total ? 'A few answers are still missing. Tap Finish to go straight to them. If you really can’t find something, you can still send, and Laura will ask you for it.' : 'Everything is answered. Have a last look, then send it to Laura.') + '</p>' +
+        '<div class="card">' + rows + '</div>' +
+        (anyYes ? '<p class="yes-note" style="margin-top:1rem">You answered Yes to a background question. Laura will call you about it before anything is filled in.</p>' : '') +
+        '<div class="card"><h2>Before you send</h2>' +
+        '<p class="note" style="margin-top:.4rem">After you send, the form locks and you can’t change it here. Laura goes over every answer with you before your visa form is submitted, and can fix anything then.</p>' +
+        '<label class="agree"><input type="checkbox" id="truth"><span>My answers are true and complete to the best of my knowledge.</span></label>' +
+        '<p class="oops" id="truth-oops" hidden>Tick the box to confirm before sending.</p></div>' +
+        '<div class="nav"><button type="button" class="btn btn-line" data-go="back">Back</button>' +
+        '<button type="button" class="btn btn-gold" id="send">Send to Laura</button></div>' +
+        '<p class="oops" id="send-oops" role="alert" hidden></p></div>';
+    }
+
+    /* Show or hide follow-up questions without redrawing (keeps the keyboard where it is). */
+    function refreshVisibility() {
+      var step = STEPS[stepIx]; if (!step.fields) return;
+      var form = el('step-form'); if (!form) return;
+      var redraw = false;
+      step.fields.forEach(function (f) {
+        if (f.sub) return;
+        var node = f.type === 'list' ? form.querySelector('[data-list="' + f.k + '"]') : form.querySelector('[data-k="' + f.k + '"]');
+        if (!node) return;
+        var box = node.parentNode.classList.contains('row2') ? node.parentNode : node;
+        var want = shown(f, A);
+        if (box.hidden === want) {
+          box.hidden = !want;
+          if (want && f.type === 'list' && !(A[f.k] || []).length) redraw = true;
+        }
+      });
+      form.querySelectorAll('[data-sub]').forEach(function (h, i) {
+        var subs = step.fields.filter(function (f) { return f.sub; });
+        if (subs[i]) h.hidden = !shown(subs[i], A);
+      });
+      return redraw;
+    }
+
+    /* ===================================================================
+       EVENTS
+       =================================================================== */
+    function setValue(name, value) {
+      var parts = name.split('.');
+      if (parts.length === 3) {
+        var list = A[parts[0]] || (A[parts[0]] = []);
+        (list[+parts[1]] || (list[+parts[1]] = {}))[parts[2]] = value;
+      } else A[name] = value;
+    }
+
+    app.addEventListener('input', onField);
+    app.addEventListener('change', onField);
+    function onField(e) {
+      var t = e.target; if (!t.name) return;
+      if (t.id === 'truth') return;
+      setValue(t.name, t.type === 'radio' ? (t.checked ? t.value : A[t.name]) : t.value);
+      var box = t.closest('.field'); if (box) box.classList.remove('missing');
+      queueSave();
+      if (t.type === 'radio' || t.tagName === 'SELECT') {
+        /* A new follow-up list needs its first box; security answers show their note. */
+        var y = window.scrollY; ensureFirstItems(); render(true); window.scrollTo(0, y);
+      }
+    }
+
+    function ensureFirstItems() {
+      (STEPS[stepIx].fields || []).forEach(function (f) {
+        if (f.type === 'list' && shown(f, A) && f.min && !(A[f.k] || []).length) A[f.k] = [{}];
+      });
+    }
+
+    app.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      if (b.dataset.add) {
+        var k = b.dataset.add; (A[k] || (A[k] = [])).push({}); queueSave();
+        var y = window.scrollY; render(true); window.scrollTo(0, y);
+        var items = app.querySelectorAll('[data-list="' + k + '"] .list-item');
+        var last = items[items.length - 1]; if (last) { var f = last.querySelector('input, select, textarea'); if (f) f.focus(); }
+      } else if (b.dataset.remove) {
+        if (!confirm('Remove this one?')) return;
+        A[b.dataset.remove].splice(+b.dataset.i, 1); queueSave();
+        var y2 = window.scrollY; render(true); window.scrollTo(0, y2);
+      } else if (b.dataset.go === 'next') {
+        var step = STEPS[stepIx];
+        if (step.fields) {
+          var miss = missing(step);
+          if (miss.length) {
+            /* Gentle: highlight what's missing but still let them move on and come back. */
+            markMissing();
+            var o = el('step-oops');
+            if (!o.dataset.warned) {
+              o.textContent = miss.length + (miss.length === 1 ? ' question is' : ' questions are') + ' not answered yet (marked in red). Tap Next again to come back to them later.';
+              o.hidden = false; o.dataset.warned = '1';
+              var first = app.querySelector('.missing'); if (first) first.scrollIntoView({ block: 'center', behavior: 'smooth' });
+              return;
+            }
+          }
+        }
+        go(stepIx + 1);
+      } else if (b.dataset.go === 'back') {
+        go(stepIx - 1);
+      } else if (b.dataset.jump) {
+        go(+b.dataset.jump);
+        setTimeout(markMissing, 0);
+      } else if (b.id === 'send') {
+        submit();
+      }
+    });
+
+    function markMissing() {
+      var step = STEPS[stepIx]; if (!step.fields) return;
+      step.fields.forEach(function (f) {
+        if (!f.k || !shown(f, A)) return;
+        if (f.type === 'list') {
+          (A[f.k] || []).forEach(function (it, i) {
+            f.item.forEach(function (sf) {
+              if (isReq(sf) && shown(sf, it) && !filled(it[sf.k])) {
+                var n = app.querySelector('[data-k="' + f.k + '.' + i + '.' + sf.k + '"]'); if (n) n.classList.add('missing');
+              }
+            });
+          });
+        } else if (isReq(f) && !filled(A[f.k])) {
+          var n2 = app.querySelector('[data-k="' + f.k + '"]'); if (n2) n2.classList.add('missing');
+        }
+      });
+    }
+
+    function go(ix) {
+      stepIx = Math.max(0, Math.min(STEPS.length - 1, ix));
+      ensureFirstItems();
+      writeLocal();
+      if (dirty) saveNow();
+      render();
+      window.scrollTo(0, 0);
+    }
+
+    function submit() {
+      if (!el('truth').checked) { el('truth-oops').hidden = false; el('truth').focus(); return; }
+      el('truth-oops').hidden = true;
+      var btn = el('send'); btn.disabled = true; btn.textContent = 'Sending…';
+      var oops = el('send-oops'); oops.hidden = true;
+      clearTimeout(saveTimer);
+      var done = function () { locked = true; clearLocal(); thanks(); };
+      if (preview) { done(); return; }
+      post({ kit: 'visasubmit', code: code, answers: JSON.stringify(A) })
+        .then(function (r) {
+          if (r.result === 'Submitted') return done();
+          if (r.result === 'Used') return done();             /* already sent from another device */
+          if (r.result === 'Expired' || r.result === 'Unknown') return closed(r.result);
+          throw new Error('no');
+        })
+        .catch(function () {
+          btn.disabled = false; btn.textContent = 'Send to Laura';
+          oops.textContent = 'That did not go through. Your answers are still saved. Check your connection and try again, or message Laura on WhatsApp.';
+          oops.hidden = false;
+        });
+    }
+
+    function thanks() {
+      el('progress').hidden = true; el('help').hidden = true;
+      status('');
+      app.innerHTML = '<section class="card"><h1 tabindex="-1">Thank you' + (clientName ? ', ' + esc(clientName.split(' ')[0]) : '') + '</h1>' +
+        '<p>Laura has your answers. She will go through them, fill in your visa form, and go over it with you before anything is submitted.</p>' +
+        '<p>This link is now closed. If you remember something you left out, just message Laura.</p>' +
+        '<a class="btn btn-gold" style="width:100%;margin-top:.5rem" target="_blank" rel="noopener" href="https://wa.me/' + WA + '?text=' + encodeURIComponent('Hi Laura, I have sent my US visa form.') + '"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Message Laura on WhatsApp</a></section>';
+      app.querySelector('h1').focus();
+      window.scrollTo(0, 0);
+    }
+
+    function closed(state) {
+      locked = true; clearTimeout(saveTimer);
+      el('loading').hidden = true; app.hidden = true; el('help').hidden = true; el('progress').hidden = true; status('');
+      var text = state === 'Used' ? 'This form has already been sent to Laura, so it is closed. If you need to change something, message her and she will fix it with you.'
+               : state === 'Expired' ? 'This link has expired. Message Laura and she will send you a new one.'
+               : 'This link was not recognised. Check that you opened the whole link Laura sent you, or message her for a new one.';
+      el('closed-title').textContent = state === 'Used' ? 'Already sent' : 'This link is not open';
+      el('closed-text').textContent = text;
+      el('closed-wa').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Hi Laura, my US visa form link is not opening. Could you help?');
+      el('closed').hidden = false;
+    }
+
+    /* ===================================================================
+       START
+       =================================================================== */
+    function begin(serverAnswers, prefill, name) {
+      clientName = name || '';
+      KNOWN = prefill || {};
+      /* Start from what Laura already has, then the saved answers on the server, then anything newer on this phone. */
+      A = {};
+      Object.keys(KNOWN).forEach(function (k) { if (filled(KNOWN[k])) A[k] = KNOWN[k]; });
+      STEPS.forEach(function (s) { (s.fields || []).forEach(function (f) { if (f.def && !filled(A[f.k])) A[f.k] = f.def; }); });
+      Object.assign(A, serverAnswers || {});
+      var local = readLocal();
+      if (local && local.a && (!serverAnswers || !Object.keys(serverAnswers).length || preview)) { Object.assign(A, local.a); stepIx = local.step || 0; }
+      else if (local && local.a) { stepIx = local.step || 0; }
+      Object.keys(KNOWN).forEach(function (k) { if (filled(KNOWN[k])) A[k] = KNOWN[k]; });   /* Laura's details stay as she has them */
+      resumed = !!(local || Object.keys(serverAnswers || {}).length);
+      el('loading').hidden = true; app.hidden = false;
+      status(Object.keys(serverAnswers || {}).length || local ? 'Saved ✓' : '');
+      if (stepIx >= STEPS.length - 1) stepIx = STEPS.length - 1;
+      render();
+      if (local && local.a && !preview && JSON.stringify(local.a) !== JSON.stringify(serverAnswers || {})) { dirty = true; saveNow(); }
+    }
+
+    if (preview) {
+      el('demo').hidden = false;
+      begin({}, {}, '');
+    } else if (!code) {
+      closed('Unknown');
+    } else {
+      post({ kit: 'visaload', code: code })
+        .then(function (r) {
+          if (r.result === 'Open') {
+            var ans = {};
+            try { ans = typeof r.answers === 'string' ? JSON.parse(r.answers || '{}') : (r.answers || {}); } catch (e) {}
+            begin(ans, r.prefill || {}, r.name || '');
+          } else closed(r.result || 'Unknown');
+        })
+        .catch(function () {
+          /* No connection: carry on from this phone if they started here before. */
+          var local = readLocal();
+          if (local) { begin({}, {}, ''); status('Offline – saved on this phone', true); dirty = true; }
+          else {
+            el('loading').innerHTML = '<p>Could not open your form just now. Check your connection and reload the page, or message Laura on WhatsApp.</p>';
+          }
+        });
+    }
+  })();
+  </script>
+</body>
+</html>
