@@ -691,7 +691,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     <div class="band-in">
       <p class="band-label">1 · Choose a service</p>
       <div class="pick3" role="list">
-        <a role="listitem" class="opt3 c-renew" href="#renew" data-open="renew"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M5 17a2 2 0 1 0 4 0M15 17a2 2 0 1 0 4 0M3 17v-4l2-5h14l2 5v4"/><path d="M3 13h18"/></svg></span><span><strong>Motor vehicle licence renewal</strong><small>Same-day renewal. No Tax Office line.</small><em>From J$4,000 + TAJ's fee</em></span><span class="go" aria-hidden="true">→</span></a>
+        <a role="listitem" class="opt3 c-renew" href="#renew" data-open="renew"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M5 17a2 2 0 1 0 4 0M15 17a2 2 0 1 0 4 0M3 17v-4l2-5h14l2 5v4"/><path d="M3 13h18"/></svg></span><span><strong>Motor vehicle licence renewal</strong><small>Same-day renewal. No Tax Office line.</small><em data-sale-text="From J$2,800 + TAJ's fee · 30% off">From J$4,000 + TAJ's fee</em></span><span class="go" aria-hidden="true">→</span></a>
         <a role="listitem" class="opt3 c-fit" href="#fitness-only" data-open="fitness"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l2 2 4-4"/><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg></span><span><strong>Fitness fee payment</strong><small>We pay your fitness fee so you go straight to the depot.</small><em>J$1,500 + TAJ's fee</em></span><span class="go" aria-hidden="true">→</span></a>
         <a role="listitem" class="opt3 c-tik" href="#ticket-lookup" data-open="tickets"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span><span><strong>Traffic ticket lookup</strong><small>We find your outstanding tickets and pay them.</small><em>J$1,500 per session</em></span><span class="go" aria-hidden="true">→</span></a>
       </div>
@@ -739,11 +739,12 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <div class="svc-in">
           <h2 id="valid-title">Online registration renewal</h2>
           <p class="svc-sub">Same-day renewal. No Tax Office line.</p>
+          <p class="sale-note" data-sale-only hidden>Sale: 30% off our fee for clients in Jamaica, until 30 November.</p>
           <div class="fee-pair">
-            <div class="mine"><span class="lbl">Our fee</span><b>J$4,000</b></div>
+            <div class="mine"><span class="lbl">Our fee</span><b data-sale-fee="J$2,800">J$4,000</b></div>
             <div class="agency"><span class="lbl">Agency fee (TAJ)</span><b>By engine size</b><small>Work it out below</small></div>
           </div>
-          <div class="bill" data-bill data-base="4000">
+          <div class="bill" data-bill data-base="4000" data-sale-base="2800">
             <h3 class="bill-h">Work out your total</h3>
             <p class="bill-intro">Two quick choices, then you'll see what you pay.</p>
             <fieldset class="period"><legend class="step"><span class="step-n">1</span>Choose how long to renew for</legend>
@@ -768,7 +769,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
                 <label class="bill-opt"><input type="radio" name="reg-valid" value="0" data-label="Commercial, truck, trailer or other"><span>Commercial, truck, trailer or other</span><strong>We confirm</strong></label>
               </fieldset>
             </details>
-            <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total>J$4,000 + TAJ's fee</b><small data-sum>Choose above to see your full total.</small></div>
+            <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total data-sale-text="J$2,800 + TAJ's fee">J$4,000 + TAJ's fee</b><small data-sum>Choose above to see your full total.</small></div>
             <p class="bill-note">We confirm your exact figure before you pay.</p>
           </div>
           <a href="/start.html?service=motor-vehicle&amp;source=mv-online" class="btn btn-gold">Start my online renewal</a>
@@ -797,12 +798,13 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <div class="svc-in">
           <h2 id="expired-title">Fitness and renewal package</h2>
           <p class="svc-sub">We pay your fitness and renew your licence.</p>
+          <p class="sale-note" data-sale-only hidden>Sale: 30% off our fee for clients in Jamaica, until 30 November.</p>
           <div class="fee-pair">
-            <div class="mine"><span class="lbl">Our fee</span><b>J$5,000</b><small>Fitness pre-pay and renewal</small></div>
+            <div class="mine"><span class="lbl">Our fee</span><b data-sale-fee="J$3,500">J$5,000</b><small>Fitness pre-pay and renewal</small></div>
             <div class="agency"><span class="lbl">Agency fees (TAJ)</span><b>Fitness + registration</b><small>Work them out below</small></div>
           </div>
           <span class="save">Save J$500 on booking them separately</span>
-          <div class="bill" data-bill data-base="5000">
+          <div class="bill" data-bill data-base="5000" data-sale-base="3500">
             <h3 class="bill-h">Work out your total</h3>
             <p class="bill-intro">Three quick choices, then you'll see what you pay.</p>
             <fieldset class="period"><legend class="step"><span class="step-n">1</span>Choose how long to renew for</legend>
@@ -835,7 +837,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
                 <label class="bill-opt"><input type="radio" name="reg-expired" value="0" data-label="Commercial, truck, trailer or other"><span>Commercial, truck, trailer or other</span><strong>We confirm</strong></label>
               </fieldset>
             </details>
-            <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total>J$5,000 + TAJ's fees</b><small data-sum>Choose above to see your full total.</small></div>
+            <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total data-sale-text="J$3,500 + TAJ's fees">J$5,000 + TAJ's fees</b><small data-sum>Choose above to see your full total.</small></div>
             <p class="bill-note">We confirm your exact figure before you pay.</p>
           </div>
           <a href="/start.html?service=motor-vehicle&amp;source=mv-fitness-prepay" class="btn btn-gold">Start my package</a>
@@ -884,7 +886,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
             </ul></div>
           </div></details>
           <div class="fine">
-            <p class="note">Renewing too? The <a href="#renew" data-open="renew">fitness and renewal package</a> is J$5,000 for both.</p>
+            <p class="note">Renewing too? The <a href="#renew" data-open="renew">fitness and renewal package</a> is <span data-sale-text="J$3,500 for both during our sale (usually J$5,000)">J$5,000 for both</span>.</p>
             <p class="note">By proceeding you agree to our <a href="/terms.html">Terms &amp; Conditions</a>.</p>
           </div>
         </div>
@@ -1006,6 +1008,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
   </div>
 </footer>
 
+<script src="/assets/sale.js"></script>
 <script>
 (function () {
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -1087,7 +1090,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
   /* Bill: pick vehicle and engine size, see the total, carry the picks into WhatsApp */
   function money(n) { return 'J$' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
   document.querySelectorAll('[data-bill]').forEach(function (bill) {
-    var base = Number(bill.getAttribute('data-base'));
+    var base = Number(bill.getAttribute('data-base')), was = Number(bill.getAttribute('data-was')) || base;
     var box = bill.querySelector('.bill-total'), total = bill.querySelector('[data-total]'), sum = bill.querySelector('[data-sum]');
     var doors = Array.prototype.slice.call(bill.querySelectorAll('.door'));
     var btn = bill.parentNode.querySelector('.btn-wa');
@@ -1120,6 +1123,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
       box.classList.toggle('todo', missing.length > 0);
       total.textContent = money(known) + (missing.length ? ' + ' + missing.join(' and ') + (missing.length > 1 ? ' fees' : ' fee') : '');
       sum.textContent = missing.length ? (picked < doors.length ? 'Choose the rest above to see your full total.' : 'We confirm the rest with you.') : parts.join(' + ');
+      if (!missing.length && was > base) { var sv = document.createElement('span'); sv.className = 'sale-save'; sv.textContent = 'You save ' + money(was - base) + ' on our fee.'; sum.appendChild(sv); }
       if (!missing.length) msg += '\nTotal shown on the page: ' + money(known) + ' (' + perName + ')';
       if (btn) btn.setAttribute('href', href0.slice(0, cut) + encodeURIComponent(msg));
     }

@@ -590,7 +590,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     <div class="band-in">
       <p class="band-label">1 · Choose</p>
       <nav class="jump always" aria-label="Choose your service">
-      <a href="#renewal">Licence renewal<small>J$4,000 + TAJ fee</small></a>
+      <a href="#renewal">Licence renewal<small data-sale-text="J$2,800 + TAJ fee · 30% off">J$4,000 + TAJ fee</small></a>
       <a href="#ticket-lookup">Ticket lookup<small>J$1,500</small></a>
     </nav>
       <p class="lcs-checked">Fees checked October 2026. Government fees are separate.</p>
@@ -605,11 +605,12 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
         <div class="svc-in">
           <h2 id="renewal-title">Licence renewal</h2>
           <p class="svc-sub">Road-ready today. Skip the cashier line.</p>
+          <p class="sale-note" data-sale-only hidden>Sale: 30% off our fee for clients in Jamaica, until 30 November.</p>
           <div class="fee-pair">
-            <div class="mine"><span class="lbl">Our fee</span><b>J$4,000</b></div>
+            <div class="mine"><span class="lbl">Our fee</span><b data-sale-fee="J$2,800">J$4,000</b></div>
             <div class="agency"><span class="lbl">Agency fee (TAJ)</span><b>By licence class</b><small>Choose below</small></div>
           </div>
-          <div class="bill" data-bill data-base="4000">
+          <div class="bill" data-bill data-base="4000" data-sale-base="2800">
             <p class="lbl">Work out your total</p>
             <details class="door" data-name="TAJ" data-line="Licence class">
               <summary><span class="what"><b>Licence class</b><small data-pick>Tap to choose your class</small></span><span class="amt" data-amt>Choose</span></summary>
@@ -618,7 +619,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
                 <label class="bill-opt"><input type="radio" name="dl-class" value="7200" data-label="Class C, commercial or general"><span>Class C, commercial or general</span><strong>J$7,200</strong></label>
               </fieldset>
             </details>
-            <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total>J$4,000 + TAJ's fee</b><small data-sum>Choose your class to see your full total.</small></div>
+            <div class="bill-total" aria-live="polite"><span class="lbl">Your total</span><b data-total data-sale-text="J$2,800 + TAJ's fee">J$4,000 + TAJ's fee</b><small data-sum>Choose your class to see your full total.</small></div>
           </div>
           <a href="/start.html?service=drivers-licence" class="btn btn-dark">Start my renewal</a>
           <p class="wa-chat" style="margin:12px 0 0;text-align:center;font-size:.92rem;color:var(--muted,#59636B)">Have a quick question? <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20have%20a%20quick%20question%20about%20a%20driver%27s%20licence%20renewal." target="_blank" rel="noopener" style="color:var(--gold-text,#7A6030);font-weight:500">Ask us on WhatsApp, free</a></p>
@@ -766,6 +767,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
   </div>
 </footer>
 
+<script src="/assets/sale.js"></script>
 <script>
 (function () {
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -793,7 +795,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
   /* Bill: pick the licence class and engine size, see the total, carry the picks into WhatsApp */
   function money(n) { return 'J$' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
   document.querySelectorAll('[data-bill]').forEach(function (bill) {
-    var base = Number(bill.getAttribute('data-base'));
+    var base = Number(bill.getAttribute('data-base')), was = Number(bill.getAttribute('data-was')) || base;
     var box = bill.querySelector('.bill-total'), total = bill.querySelector('[data-total]'), sum = bill.querySelector('[data-sum]');
     var doors = Array.prototype.slice.call(bill.querySelectorAll('.door'));
     var btn = bill.parentNode.querySelector('.btn-wa');
@@ -815,6 +817,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
       box.classList.toggle('todo', missing.length > 0);
       total.textContent = money(known) + (missing.length ? ' + ' + missing.join(' and ') + (missing.length > 1 ? ' fees' : ' fee') : '');
       sum.textContent = missing.length ? (picked < doors.length ? 'Choose the rest above to see your full total.' : 'We confirm the rest with you.') : parts.join(' + ');
+      if (!missing.length && was > base) { var sv = document.createElement('span'); sv.className = 'sale-save'; sv.textContent = 'You save ' + money(was - base) + ' on our fee.'; sum.appendChild(sv); }
       if (!missing.length) msg += '\nTotal shown on the page: ' + money(known) + ' (12 months)';
       if (btn) btn.setAttribute('href', href0.slice(0, cut) + encodeURIComponent(msg));
     }

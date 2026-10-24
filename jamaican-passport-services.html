@@ -979,6 +979,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
             <label><input type="radio" name="where" value="ja" checked><span>Jamaica</span></label>
             <label><input type="radio" name="where" value="os"><span>Overseas</span></label>
           </div>
+          <p class="sale-note" data-sale-note hidden>Sale: 30% off our fee for clients in Jamaica, until 30 November.</p>
           <div class="fee-pair">
             <div class="mine"><span class="lbl2">Our fee</span><b data-our>J$5,000</b></div>
             <div class="agency"><span class="lbl2">PICA's fee, from</span><b data-pica>J$6,500</b><small data-pica-note>Regular service</small></div>
@@ -1071,6 +1072,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
   </div>
 </footer>
 
+<script src="/assets/sale.js"></script>
 <script>
 (function () {
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -1105,13 +1107,14 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
   /* Digital renewal total: Jamaica (J$) or overseas (US$), and how they receive it */
   var P = { ja: { our: 'J$5,000', pica: 'J$6,500', note: 'Regular service', total: 'J$11,500', tnote: 'J$5,000 our fee + J$6,500 PICA' },
             os: { our: 'US$70', pica: 'US$80', note: 'Regular service', total: 'US$150', tnote: 'US$70 our fee + US$80 PICA' } };
+  if (window.DHJ_SALE) { P.ja.our = '<s class="sale-was">J$5,000</s>J$3,500'; P.ja.total = 'J$10,000'; P.ja.tnote = 'J$3,500 our fee + J$6,500 PICA. You save J$1,500 on our fee.'; }
   function price() {
     var w = ($('input[name="where"]:checked') || {}).value || 'ja', x = P[w];
     var collectLbl = $('[data-ja-only]'), collect = collectLbl.querySelector('input');
     collectLbl.hidden = w !== 'ja';
     if (w !== 'ja' && collect.checked) { collect.checked = false; $('input[name="deliv"][value="courier"]').checked = true; }
     var courier = $('input[name="deliv"][value="courier"]').checked;
-    $('[data-our]').textContent = x.our; $('[data-pica]').textContent = x.pica; $('[data-pica-note]').textContent = x.note;
+    $('[data-our]').innerHTML = x.our; $('[data-sale-note]').hidden = !(window.DHJ_SALE && w === 'ja'); $('[data-pica]').textContent = x.pica; $('[data-pica-note]').textContent = x.note;
     $('[data-total]').textContent = x.total + (courier ? ' + courier' : '');
     $('[data-total-note]').textContent = x.tnote;
     $('[data-courier-note]').hidden = !courier;
