@@ -101,6 +101,13 @@
     .link-btn { background: none; border: 0; padding: .4rem 0; min-height: 44px; font: 500 .92rem var(--sans); color: var(--link); text-decoration: underline; cursor: pointer; }
     .add-btn { margin-top: .75rem; width: 100%; min-height: 3rem; background: #fff; border: 1.5px dashed #AEB8B2; font: 500 .95rem var(--sans); color: var(--ink); cursor: pointer; }
 
+    /* How to find your username */
+    .howto { margin-top: 1.25rem; background: var(--paper); border: 1px solid var(--line); }
+    .howto summary { cursor: pointer; padding: .9rem 1.1rem; min-height: 48px; font-weight: 600; color: var(--ink); }
+    .howto dl { margin: 0; padding: 0 1.1rem 1.1rem; }
+    .howto dt { margin-top: .8rem; font-weight: 600; color: var(--ink); font-size: .95rem; }
+    .howto dd { margin: .15rem 0 0; font-size: .92rem; line-height: 1.45; color: var(--text); }
+
     /* Security questions */
     .sec-q { padding: 1rem 0; border-top: 1px solid var(--line); }
     .sec-q:first-child { border-top: 0; padding-top: 0; }
@@ -304,6 +311,14 @@
           'Include business or church pages that you post on.',
           'We only need your username, the name people search to find you. Never send your password.',
           'WhatsApp and text messages do not count.'
+        ], howto: [
+          ['Facebook', 'Open your profile, tap the three dots (\u2026) next to Edit profile, then Copy link. Paste the whole link.'],
+          ['Instagram', 'Tap your picture at the bottom right. Your username is at the top of the screen.'],
+          ['TikTok', 'Tap Profile at the bottom right. Your username is under your photo, starting with @.'],
+          ['YouTube', 'Tap your picture, then Your channel. Your handle is under your name, starting with @.'],
+          ['X (Twitter)', 'Tap your picture. Your username is under your name, starting with @.'],
+          ['Snapchat', 'Tap your picture at the top left. Your username is under your name.'],
+          ['LinkedIn', 'Tap your picture, then View profile. Tap the three dots (\u2026), then Share profile, and copy the link.']
         ], fields: [
         { k: 'socialAny', label: 'Have you used any social media in the last 5 years?', type: 'choice', opts: YN, req: true },
         { k: 'social', label: 'Your accounts', type: 'list', show: yes('socialAny'), min: 1, add: 'Add another account',
@@ -311,7 +326,7 @@
           { k: 'site', label: 'Which app or website?', type: 'select', req: true, opts: ['Facebook', 'Instagram', 'TikTok', 'YouTube', 'X (Twitter)', 'Snapchat', 'LinkedIn', 'Pinterest', 'Threads', 'Reddit', 'Tumblr', 'Flickr', 'Other'] },
           { k: 'siteOther', label: 'Name of the app or website', type: 'text', req: true, show: function (it) { return it.site === 'Other'; } },
           { k: 'handle', label: 'Your username', type: 'text', req: true,
-            help: 'Instagram, TikTok, X, Snapchat: the name after the @ on your profile, e.g. @marcia.b.  Facebook and LinkedIn: open your profile, tap Share or Copy link, and paste the link here.' } ] }
+            help: 'For example @marcia.b. For Facebook and LinkedIn, paste your profile link. Not sure where to find it? Open \u201cHow to find your username\u201d above.' } ] }
       ]},
 
       { id: 'passport', title: 'Your passport', fields: [
@@ -617,6 +632,9 @@
         h = '<div class="step"><h1 tabindex="-1">' + esc(step.title) + '</h1>';
         if (step.intro) h += '<p class="lead">' + esc(step.intro) + '</p>';
         if (step.tips) h += '<ul class="check" style="margin-top:1rem">' + step.tips.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul>';
+        if (step.howto) h += '<details class="howto"><summary>How to find your username</summary><dl>' + step.howto.map(function (r) {
+          return '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>'; }).join('') +
+          '<p class="help" style="margin-top:.8rem">Still stuck? Tap the WhatsApp link at the bottom and Laura will help you find it.</p></dl></details>';
         if (step.security) h += '<p class="lead">The US asks everyone these. Most people answer No to all of them. Answer each one truthfully: if any is a Yes, Laura will call you first.</p>';
         if (step.known) {
           var known = step.known.filter(function (k) { return filled(KNOWN[k]); });
