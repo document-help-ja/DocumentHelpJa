@@ -113,7 +113,10 @@ footer{text-align:center;font-size:13px;color:var(--muted)}
  .cart svg{width:100%;height:200px;display:block}
  .cbody{padding:22px;display:flex;flex-direction:column;gap:6px}
  .cbody h3{font-family:var(--display);font-weight:500;font-size:26px;margin:0}
- .cline{margin:0 0 10px;color:var(--muted);font-size:15px}
+ .cart{position:relative}
+ .cart .tag{position:absolute;top:16px;left:18px;background:var(--card);line-height:1.4;font-size:12px;padding:5px 14px}
+ .cat.featured{border:2px solid var(--gold)}
+ .cline{margin:0 0 10px;font-family:var(--display);font-style:italic;font-size:18px;line-height:1.35;color:var(--sage)}
  .svc{border-top:1px solid var(--sand)}
  .svc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0}
  .svc summary::-webkit-details-marker{display:none}
@@ -237,17 +240,17 @@ services.forEach((s,i)=>{
 });
 
 const CATS=[
- {art:'school',name:'School Success Skills',line:'Our special for the school year.',items:['School Success Skills']},
+ {art:'school',tag:'Special',name:'School Success Skills',line:'Our special for the school year.',items:['School Success Skills']},
  {art:'parent',name:'Parents and children',line:'Support for parents and the children in their care.',items:['Basic parenting skills','Child behaviour support','Managing aggression']},
  {art:'family',name:'Wellbeing and family',line:'Support for you and your whole family.',items:['Stress management','General family counselling','Grief and trauma support']}
 ];
 const chev='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
 const catsEl=document.getElementById('cats');
 CATS.forEach(c=>{
-  const box=document.createElement('article');box.className='cat';
+  const box=document.createElement('article');box.className='cat'+(c.tag?' featured':'');
   const rows=c.items.map(t=>{const sv=services.find(x=>x.title===t);const msg=encodeURIComponent(`Hi Ms. Clarke, I'd like to know more about ${t}.`);
     return c.items.length===1?`<div class="sbody solo"><div class="hook">${sv.hook}</div><ul>${(sv.points||[]).map(p=>`<li>${check}<span>${p}</span></li>`).join('')}</ul><a class="ask soft" href="https://wa.me/${WA}?text=${msg}" target="_blank" rel="noopener">Ask about this on WhatsApp</a></div>`:`<details class="svc"><summary><span class="sname">${t}</span><span class="more">Learn more ${chev}</span></summary><div class="sbody"><div class="hook">${sv.hook}</div>${sv.text?`<p>${sv.text}</p>`:''}<ul>${(sv.points||[]).map(p=>`<li>${check}<span>${p}</span></li>`).join('')}</ul><a class="ask soft" href="https://wa.me/${WA}?text=${msg}" target="_blank" rel="noopener">Ask about this on WhatsApp</a></div></details>`}).join('');
-  box.innerHTML=`<div class="cart">${ART[c.art]}</div><div class="cbody"><h3>${c.name}</h3><p class="cline">${c.line}</p><div class="svcs">${rows}</div></div>`;
+  box.innerHTML=`<div class="cart">${ART[c.art]}${c.tag?`<span class="tag">${c.tag}</span>`:''}</div><div class="cbody"><h3>${c.name}</h3><p class="cline">${c.line}</p><div class="svcs">${rows}</div></div>`;
   catsEl.appendChild(box);
 });
 const cards=[...deck.querySelectorAll(".card")];dots.innerHTML=cards.map((c,i)=>i?"<i></i>":'<i class="on"></i>').join("");
