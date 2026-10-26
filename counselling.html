@@ -158,6 +158,16 @@ footer{text-align:center;font-size:13px;color:var(--muted)}
  .wsec.reach .num{font-size:21px}
  .wsec.reach .copy{padding:8px 16px;font-size:14px}
  .nav button{width:34px;height:34px}
+ .tbody{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:8px;min-height:0}
+ .card h2{font-size:clamp(22px,3.6dvh,32px)}
+ .card .tbody .hook{font-size:clamp(16px,2.8dvh,24px)}
+ .card .tbody p,.card .tbody li{font-size:clamp(14px,2.4dvh,20px)}
+ .card .tbody ul{gap:clamp(6px,1.4dvh,14px)}
+ .card .meta{margin-top:0}
+ .card.special{border:2px solid var(--gold);background:#FBF3E4}
+ .card.special .art .tag{background:var(--gold);color:#FFFDF9;border-color:var(--gold);font-size:12px;padding:5px 14px}
+ .card.special h2{color:var(--gold-ink)}
+ .card.special .ask.soft{border-color:var(--gold);color:var(--gold-ink)}
 }
 .ask.soft{background:transparent;color:var(--sage);border:1.5px solid var(--sage-soft);font-weight:500;font-size:14px;padding:10px 14px}
 .ask.soft:hover{border-color:var(--sage);background:var(--sage-soft)}
@@ -230,9 +240,9 @@ const deck=document.getElementById('deck'),dots=document.getElementById('dots');
 services.forEach((s,i)=>{
   const msg=encodeURIComponent(`Hi Ms. Clarke, I'd like to know more about ${s.title}.`);
   const el=document.createElement('article');el.className='card'+(s.tag==='Special'?' special':'');
-  el.innerHTML=`<div class="art">${ART[s.art]}<span class="tag">${s.tag}</span></div><h2>${s.title}</h2><div class="hook">${s.hook}</div>`+
+  el.innerHTML=`<div class="art">${ART[s.art]}<span class="tag">${s.tag}</span></div><div class="tbody"><h2>${s.title}</h2><div class="hook">${s.hook}</div>`+
    (s.text?`<p>${s.text}</p>`:'')+
-   (s.points?`<ul>${s.points.map(p=>`<li>${check}<span>${p}</span></li>`).join('')}</ul>`:'')+
+   (s.points?`<ul>${s.points.map(p=>`<li>${check}<span>${p}</span></li>`).join('')}</ul>`:'')+`</div>`+
    `<div class="meta"><span>${laptop}100% online · Fees by consultation</span></div>`+
    `<a class="ask soft" href="https://wa.me/${WA}?text=${msg}" target="_blank" rel="noopener">Ask about this on WhatsApp</a>`;
   deck.appendChild(el);
