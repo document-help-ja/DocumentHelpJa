@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Laura Clarke | Private Document Representative, Jamaica</title>
-  <meta name="description" content="Save Laura Clarke's contact, message her on WhatsApp, or go straight to help with a Jamaican passport, motor vehicle licence, driver's licence or police record.">
+  <meta name="description" content="Save Laura Clarke's contact, message her on WhatsApp, or go straight to help with a US visa renewal, Jamaican passport, driver's licence or motor vehicle licence.">
   <link rel="canonical" href="https://documenthelpja.com/card.html">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0F2537">
@@ -18,8 +18,8 @@
   <meta property="og:description" content="Jamaican documents, without the running around. Save my contact or message me on WhatsApp.">
   <meta property="og:url" content="https://documenthelpja.com/card.html">
   <meta property="og:image" content="https://documenthelpja.com/assets/share-laura.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,11 +28,11 @@
   <style>
     /* Colours and type are the same ones the rest of the site uses. */
     :root {
-      --page: #DDE4E0;        /* behind the card: a quiet grey-green, deep enough for the card edge to show */
+      --page: #DDE4E0;
       --card: #FFFFFF;
-      --tone: #EEF1F4;        /* the guides band */
+      --tone: #EEF1F4;
       --line: #D5DCE3;
-      --edge: #C3CDC7;        /* card outline */
+      --edge: #C3CDC7;
       --ink: #0F2537;
       --text: #2F3538;
       --muted: #5B6468;
@@ -40,6 +40,7 @@
       --navy-hover: #183650;
       --gold: #C89B3C;
       --gold-text: #7A5C17;
+      --gold-light: #E7C877;
       --serif: "Playfair Display", Georgia, "Times New Roman", serif;
       --sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
       --pad: 1.5rem;
@@ -68,7 +69,7 @@
     :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
     .icon { width: 1.15rem; height: 1.15rem; flex-shrink: 0; fill: currentColor; }
 
-    /* ---------- Three containers ---------- */
+    /* ---------- Containers ---------- */
     .stack { width: 100%; max-width: 26rem; display: grid; gap: 1rem; }
     .card {
       background: var(--card);
@@ -80,7 +81,6 @@
     .card-first { border-top: 3px solid var(--gold); padding-top: 2.25rem; }
 
     /* ---------- Who ---------- */
-    .who { display: block; }
     .photo {
       display: block; width: 4.75rem; height: 4.75rem; margin-bottom: 1.25rem;
       border-radius: 50%;
@@ -105,7 +105,7 @@
     }
     .btn-solid { background: var(--navy); color: #fff; }
     .btn-solid:hover { background: var(--navy-hover); }
-    .btn-solid .icon { color: #E7C877; }
+    .btn-solid .icon { color: var(--gold-light); }
     .btn-line { background: var(--card); color: var(--navy); border-color: var(--navy); }
     .btn-line:hover { background: var(--tone); }
 
@@ -121,54 +121,73 @@
     .quick a:hover { background: #E6EBE8; color: var(--ink); }
     .quick .icon { width: 1rem; height: 1rem; color: var(--gold-text); }
 
-    /* ---------- Lists ---------- */
+    /* ---------- Services ---------- */
     .card h2 { font: 600 1.25rem/1.25 var(--serif); color: var(--ink); }
 
     .chip { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; flex-shrink: 0; border-radius: 10px; }
     .ln { width: 1.5rem; height: 1.5rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
-    /* Services: four tiles */
-    .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin-top: 1.25rem; }
-    .tile {
-      display: flex; flex-direction: column; justify-content: space-between; gap: 1.25rem;
-      height: 100%; min-height: 7.75rem; padding: 1rem;
-      text-decoration: none;
-      background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .14); border-radius: 12px;
-      transition: background-color .15s ease, border-color .15s ease;
-    }
-    .tile .chip { background: rgba(231, 200, 119, .14); color: #E7C877; }
-    .tile strong { font-weight: 500; font-size: 1rem; line-height: 1.3; color: #F1F4F6; }
-    .tile:hover { background: rgba(255, 255, 255, .09); border-color: #E7C877; }
+    .card-navy { background: var(--navy); border-color: var(--navy); }
+    .card-navy h2 { color: #fff; }
 
-    /* Guides: three question cards */
-    .reads { display: grid; gap: .75rem; margin-top: 1.25rem; }
-    .read {
-      display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: .9rem;
-      min-height: 4.75rem; padding: .9rem 1rem;
-      text-decoration: none;
-      background: #FCF9F1; border: 1px solid #DDCFA9; border-radius: 12px;
-      transition: background-color .15s ease, border-color .15s ease;
+    /* Service list: each one opens to a short description and a WhatsApp button */
+    .svc-list { display: grid; gap: .75rem; margin-top: 1.25rem; }
+    .svc {
+      border: 1px solid rgba(255, 255, 255, .14); border-radius: 12px;
+      background: rgba(255, 255, 255, .05);
+      transition: border-color .15s ease, background-color .15s ease;
     }
-    .read .chip { background: #EFE3C6; color: var(--gold-text); }
-    .read strong { font-weight: 500; font-size: 1rem; line-height: 1.35; color: var(--ink); text-wrap: balance; }
-    .read .icon { width: 1rem; height: 1rem; color: var(--gold-text); transition: transform .15s ease; }
-    .read:hover { background: #fff; border-color: var(--gold); }
-    .read:hover .icon { transform: translateX(3px); }
+    .svc.open { border-color: var(--gold-light); background: rgba(255, 255, 255, .08); }
+    .svc-head {
+      display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: 1rem;
+      width: 100%; padding: 1rem; min-height: 4.5rem;
+      font: inherit; text-align: left; color: inherit;
+      background: none; border: 0; border-radius: 12px; cursor: pointer;
+    }
+    .svc .chip { background: rgba(231, 200, 119, .14); color: var(--gold-light); }
+    .svc-name { display: block; font-weight: 500; font-size: 1.05rem; line-height: 1.3; color: #F1F4F6; }
+    .svc-tag { display: block; margin-top: .2rem; font-size: .88rem; line-height: 1.4; color: #B9C5CF; }
+    .svc-arrow { width: 1.1rem; height: 1.1rem; fill: var(--gold-light); transition: transform .2s ease; }
+    .svc.open .svc-arrow { transform: rotate(90deg); }
+    .svc-body { padding: 0 1rem 1.25rem; }
+    .svc-body[hidden] { display: none; }
+    .svc-body p { font-size: .95rem; line-height: 1.6; color: #DDE4EA; }
+    .svc-body p + p { margin-top: .6rem; }
+    .price { margin-bottom: 1rem; padding: .9rem 1rem; background: rgba(255, 255, 255, .07); border-radius: 8px; }
+    .price-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: .6rem; }
+    .was { font-size: 1rem; color: #9FB0BD; text-decoration: line-through; }
+    .now { font: 600 1.5rem/1.2 var(--serif); color: #fff; }
+    .price-note { display: block; margin-top: .3rem; font-size: .85rem; line-height: 1.45; color: #C9D3DB; }
+    .price-note.gold { color: var(--gold-light); font-weight: 500; }
+    .extras { margin-top: .5rem; font-size: .85rem; line-height: 1.5; color: #C9D3DB; }
+    .sale-badge { background: #F1F4F6; }
+    /* After the sale ends, the page switches to the regular prices on its own. */
+    body.sale-over .sale-only { display: none !important; }
+    body:not(.sale-over) .regular-only { display: none !important; }
+    .new-app { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, .16); }
+    .new-app strong { color: #fff; font-weight: 600; }
+    .btn-ghost { margin-top: .9rem; background: transparent; color: #fff; border-color: rgba(231, 200, 119, .7); }
+    .btn-ghost:hover { background: rgba(231, 200, 119, .12); }
+    .btn-ghost .icon { color: var(--gold-light); }
+    .btn-wa {
+      margin-top: 1.25rem;
+      background: var(--gold-light); color: var(--navy);
+    }
+    .btn-wa:hover { background: #F0D68F; }
+    .btn-wa .icon { color: var(--navy); }
+
+    /* Featured: US visa renewal */
+    .svc.featured { border: 1.5px solid var(--gold-light); background: rgba(231, 200, 119, .1); }
+    .svc.featured .chip { width: 3.25rem; height: 3.25rem; background: var(--gold-light); color: var(--navy); }
+    .svc.featured .svc-name { font: 600 1.2rem/1.25 var(--serif); color: #fff; }
+    .badge { display: inline-block; margin-bottom: .35rem; padding: .15rem .55rem; font-size: .75rem; font-weight: 600; color: var(--navy); background: var(--gold-light); border-radius: 4px; }
 
     .more {
       display: inline-flex; align-items: center; min-height: 2.75rem; margin-top: 1rem;
-      font-size: .95rem; font-weight: 600; color: var(--navy);
-      text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 4px;
+      font-size: .95rem; font-weight: 600; color: #fff;
+      text-decoration: underline; text-decoration-color: var(--gold-light); text-underline-offset: 4px;
     }
     .more:hover { text-decoration-thickness: 2px; }
-
-    /* ---------- Services: deep navy ---------- */
-    .card-navy { background: var(--navy); border-color: var(--navy); }
-    .card-navy h2 { color: #fff; }
-    .card-navy .more { color: #fff; text-decoration-color: #E7C877; }
-
-    /* ---------- Guides: warm sand, a tint of the brand gold ---------- */
-    .card-sand { background: #F3EBD8; border-color: #DDCFA9; }
 
     /* ---------- Foot ---------- */
     .foot { padding: .75rem var(--pad) 0; font-size: .82rem; line-height: 1.6; color: #49524F; }
@@ -188,7 +207,7 @@
     @media print {
       body { background: #fff; padding: 0; }
       .card { box-shadow: none; break-inside: avoid; }
-      .card-navy, .card-sand { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .card-navy { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
   </style>
 </head>
@@ -196,17 +215,14 @@
 
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
     <symbol id="i-person" viewBox="0 0 24 24"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-4.4 0-8 2.2-8 5v2h16v-2c0-2.8-3.6-5-8-5z"/></symbol>
-    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.37l-.36-.22-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41Z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.260-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.420 7.4h-.01a9.87 9.87 0 0 1-5.030-1.370l-.36-.22-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41Z"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.6 21 3 13.4 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></symbol>
     <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 3.2V17h16V8.2l-8 5.3-8-5.3zM5.3 7l6.7 4.4L18.7 7H5.3z"/></symbol>
-    <symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-2.95a15.6 15.6 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.9 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a8.2 8.2 0 0 1 0-4h3.38a16.5 16.5 0 0 0 0 4H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.99 7.99 0 0 1 5.08 16zm2.95-8H5.08a7.99 7.99 0 0 1 4.33-3.56A15.6 15.6 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66a14.7 14.7 0 0 1 0-4h4.68a14.7 14.7 0 0 1 0 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14a16.5 16.5 0 0 0 0-4h3.38a8.2 8.2 0 0 1 0 4h-3.38z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-2.95a15.6 15.6 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.9 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a8.2 8.2 0 0 1 0-4h3.38a16.5 16.5 0 0 0 0 4H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.99 7.99 0 0 1 5.08 16zm2.95-8H5.08a7.99 7.99 0 0 1 4.33-3.56A15.6 15.6 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.910 3.960zM14.34 14H9.66a14.7 14.7 0 0 1 0-4h4.68a14.7 14.7 0 0 1 0 4zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.560h2.950a8.03 8.03 0 0 1-4.33 3.56zM16.36 14a16.5 16.5 0 0 0 0-4h3.38a8.2 8.2 0 0 1 0 4h-3.38z"/></symbol>
+    <symbol id="l-visa" viewBox="0 0 24 24"><path d="M2.5 13.5 21 7.2a1.6 1.6 0 0 0-1.3-2.6l-3.4.6-5-2.6-1.8.8 3.2 3.3-4.4 1.3-2-1.5-1.4.5 1.4 2.9z"/><path d="M3 20h18"/></symbol>
     <symbol id="l-passport" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2.2"/><circle cx="12" cy="10" r="3.2"/><path d="M8.8 10h6.4M12 6.8c-1.1 1-1.1 5.4 0 6.4M12 6.8c1.1 1 1.1 5.4 0 6.4M9 17h6"/></symbol>
     <symbol id="l-car" viewBox="0 0 24 24"><path d="M4.5 12.5 6.2 8a2 2 0 0 1 1.9-1.3h7.8A2 2 0 0 1 17.8 8l1.7 4.5"/><rect x="3" y="12.5" width="18" height="5" rx="1.6"/><path d="M6 17.5v1.7M18 17.5v1.7M6.6 15h1.6M15.8 15h1.6"/></symbol>
     <symbol id="l-licence" viewBox="0 0 24 24"><rect x="2.8" y="5.5" width="18.4" height="13" rx="2.2"/><circle cx="8.3" cy="10.6" r="1.9"/><path d="M5.5 15.4c.5-1.4 1.5-2.1 2.8-2.1s2.3.7 2.8 2.1M14 10h4.2M14 13.4h3"/></symbol>
-    <symbol id="l-shield" viewBox="0 0 24 24"><path d="M12 3 5 5.6v5.3c0 4.2 2.8 7.9 7 9.6 4.2-1.7 7-5.4 7-9.600V5.600L12 3z"/><path d="m8.9 11.8 2.2 2.2 4-4.2"/></symbol>
-    <symbol id="l-ticket" viewBox="0 0 24 24"><path d="M3.5 8a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v1.800a2.2 2.2 0 0 0 0 4.400V16a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-1.800a2.2 2.2 0 0 0 0-4.400V8z"/><path d="M14.5 6v2.200M14.5 10.900v2.200M14.5 15.800V18"/></symbol>
-    <symbol id="l-photo" viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="2.2"/><circle cx="12" cy="10" r="2.6"/><path d="M8 17c.700-1.9 2.2-3 4-3s3.3 1.1 4 3"/></symbol>
-    <symbol id="l-book" viewBox="0 0 24 24"><path d="M5 5.500A2.5 2.5 0 0 1 7.5 3H19v15H7.500A2.5 2.5 0 0 0 5 20.500v-15z"/><path d="M5 20.500A2.5 2.5 0 0 0 7.5 21H19v-3M9 7.500h6M9 11h4"/></symbol>
     <symbol id="i-next" viewBox="0 0 24 24"><path d="M9.3 5.3 7.9 6.7l5.3 5.3-5.3 5.3 1.4 1.4 6.7-6.7z"/></symbol>
   </svg>
 
@@ -214,13 +230,9 @@
 
     <!-- ===================== WHO, AND HOW TO REACH HER ===================== -->
     <section class="card card-first" aria-labelledby="name">
-      <div class="who">
-        <img class="photo" src="/assets/profile.webp" alt="" width="510" height="507">
-        <div>
-          <h1 class="name" id="name">Laura Clarke</h1>
-          <p class="role">Private document representative</p>
-        </div>
-      </div>
+      <img class="photo" src="/assets/profile.webp" alt="" width="510" height="507">
+      <h1 class="name" id="name">Laura Clarke</h1>
+      <p class="role">Private document representative</p>
 
       <p class="line">Jamaican documents, without the running around. For Jamaicans at home and abroad.</p>
 
@@ -229,7 +241,7 @@
           <svg class="icon" aria-hidden="true"><use href="#i-person"/></svg>
           Save my contact
         </button>
-        <a class="btn btn-line" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20have%20your%20contact%20card%20and%20would%20like%20help%20with%20a%20Jamaican%20document." target="_blank" rel="noopener">
+        <a class="btn btn-line" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20have%20your%20contact%20card%20and%20would%20like%20help%20with%20a%20document." target="_blank" rel="noopener">
           <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
           WhatsApp me
         </a>
@@ -242,56 +254,104 @@
       </div>
     </section>
 
-    <!-- ===================== MOST REQUESTED SERVICES ===================== -->
+    <!-- ===================== SERVICES ===================== -->
     <section class="card card-navy" aria-labelledby="services-title">
-      <h2 id="services-title">Most requested</h2>
-      <ul class="tiles">
-        <li><a class="tile" href="/jamaican-passport-services.html">
+      <h2 id="services-title">How I can help</h2>
+      <div class="svc-list">
+      <div class="svc featured">
+        <button type="button" class="svc-head" aria-expanded="false" aria-controls="s-visa">
+          <span class="chip"><svg class="ln" aria-hidden="true"><use href="#l-visa"/></svg></span>
+          <span><span class="badge">New</span><span class="svc-name">US visa renewal</span><span class="svc-tag">Your DS-160, done together</span></span>
+          <svg class="svc-arrow" aria-hidden="true"><use href="#i-next"/></svg>
+        </button>
+        <div class="svc-body" id="s-visa" hidden>
+          <div class="price">
+            <div class="price-row"><span class="now">J$10,000</span></div>
+            <span class="price-note">My fee. You pay the US$185 visa fee yourself, straight to the Embassy's payment system.</span>
+          </div>
+          <p>Visa expired or about to? We sit together, in person or by video call, and I fill in your DS-160 as you answer. Nothing is sent until you have checked every answer.</p>
+          <a class="btn btn-wa" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20got%20your%20contact%20card.%20I%20would%20like%20help%20renewing%20my%20US%20visa." target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
+            Start my visa renewal
+          </a>
+          <div class="new-app">
+            <p><strong>Applying for the first time?</strong> New applications work a little differently. Message me and I will tell you what applies to you.</p>
+            <a class="btn btn-ghost" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20got%20your%20contact%20card.%20I%20would%20like%20help%20with%20a%20new%20US%20visa%20application." target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
+              Ask about a new application
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="svc">
+        <button type="button" class="svc-head" aria-expanded="false" aria-controls="s-pass">
           <span class="chip"><svg class="ln" aria-hidden="true"><use href="#l-passport"/></svg></span>
-          <strong>Passport</strong>
-        </a></li>
-        <li><a class="tile" href="/motor-vehicle-licence-renewal.html">
-          <span class="chip"><svg class="ln" aria-hidden="true"><use href="#l-car"/></svg></span>
-          <strong>Motor vehicle licence</strong>
-        </a></li>
-        <li><a class="tile" href="/drivers-licence-renewal.html">
+          <span><span class="svc-name">Jamaican passport</span><span class="svc-tag">I apply, it comes to your door</span></span>
+          <svg class="svc-arrow" aria-hidden="true"><use href="#i-next"/></svg>
+        </button>
+        <div class="svc-body" id="s-pass" hidden>
+          <div class="price">
+            <div class="price-row"><span class="now">J$6,000</span></div>
+            <span class="price-note gold">Courier to your door included</span>
+            <span class="price-note">My fee. The PICA fee is paid on top.</span>
+          </div>
+          <p>Renewing your Jamaican passport online. You send me your current passport page, birth certificate and one photo, and I handle the application and keep you updated until it is delivered to your door.</p>
+          <p>Not sure what you need? Message me and we will sort it out together.</p>
+          <a class="btn btn-wa" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20got%20your%20contact%20card.%20I%20would%20like%20help%20with%20my%20Jamaican%20passport." target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
+            Ask me on WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="svc">
+        <button type="button" class="svc-head" aria-expanded="false" aria-controls="s-dl">
           <span class="chip"><svg class="ln" aria-hidden="true"><use href="#l-licence"/></svg></span>
-          <strong>Driver's licence</strong>
-        </a></li>
-        <li><a class="tile" href="/jamaica-police-record.html">
-          <span class="chip"><svg class="ln" aria-hidden="true"><use href="#l-shield"/></svg></span>
-          <strong>Police record</strong>
-        </a></li>
-      </ul>
-      <a class="more" href="/#services">See all services</a>
-    </section>
-
-    <!-- ===================== A TASTE OF THE GUIDES ===================== -->
-    <section class="card card-sand" aria-labelledby="guides-title">
-      <h2 id="guides-title">From the guides</h2>
-      <ul class="reads">
-        <li><a class="read" href="/jamaica-drivers-license-renewal-guide">
-          <span class="chip"><svg class="ln" aria-hidden="true"><use href="#l-ticket"/></svg></span>
-          <strong>Why is there a hold on my licence renewal?</strong>
-          <svg class="icon" aria-hidden="true"><use href="#i-next"/></svg>
-        </a></li>
-        <li><a class="read" href="/jamaica-police-record-guide">
-          <span class="chip"><svg class="ln" aria-hidden="true"><use href="#l-photo"/></svg></span>
-          <strong>Why do police record applications get turned away?</strong>
-          <svg class="icon" aria-hidden="true"><use href="#i-next"/></svg>
-        </a></li>
-        <li><a class="read" href="/jamaica-motor-vehicle-licence-guide">
-          <span class="chip"><svg class="ln" aria-hidden="true"><use href="#l-book"/></svg></span>
-          <strong>Lost logbook, or fitness expired?</strong>
-          <svg class="icon" aria-hidden="true"><use href="#i-next"/></svg>
-        </a></li>
-      </ul>
-      <a class="more" href="/insights.html">Browse all the guides</a>
+          <span><span class="badge sale-badge sale-only">30% off</span><span class="svc-name">Driver's licence</span><span class="svc-tag">Road-ready today</span></span>
+          <svg class="svc-arrow" aria-hidden="true"><use href="#i-next"/></svg>
+        </button>
+        <div class="svc-body" id="s-dl" hidden>
+          <div class="price">
+            <div class="price-row sale-only"><span class="was">J$4,000</span><span class="now">J$2,800</span></div>
+            <div class="price-row regular-only"><span class="now">J$4,000</span></div>
+            <span class="price-note gold sale-only">30% off for local clients until 30 November</span>
+            <span class="price-note">My fee. The TAJ fee is paid on top.</span>
+          </div>
+          <p>Renew without the TAJ line. Once it is done, you can drive on your receipt and collect your new card when it suits you.</p>
+          <p>Message me and I will tell you what I need from you.</p>
+          <a class="btn btn-wa" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20got%20your%20contact%20card.%20I%20would%20like%20help%20renewing%20my%20driver%27s%20licence." target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
+            Ask me on WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="svc">
+        <button type="button" class="svc-head" aria-expanded="false" aria-controls="s-mv">
+          <span class="chip"><svg class="ln" aria-hidden="true"><use href="#l-car"/></svg></span>
+          <span><span class="badge sale-badge sale-only">30% off</span><span class="svc-name">Motor vehicle licence</span><span class="svc-tag">Same-day renewal. No Tax Office line.</span></span>
+          <svg class="svc-arrow" aria-hidden="true"><use href="#i-next"/></svg>
+        </button>
+        <div class="svc-body" id="s-mv" hidden>
+          <div class="price">
+            <div class="price-row sale-only"><span class="was">J$4,000</span><span class="now">J$2,800</span></div>
+            <div class="price-row regular-only"><span class="now">J$4,000</span></div>
+            <span class="price-note gold sale-only">30% off for local clients until 30 November</span>
+            <span class="price-note">My fee. For renewal with a valid fitness. The TAJ fee is paid on top.</span>
+          </div>
+          <p>Your car registration renewed the same day, usually in about 30 minutes.</p>
+          <p>Have traffic tickets? They need to be cleared before renewal. Message me and I will sort you out.</p>
+          <a class="btn btn-wa" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20got%20your%20contact%20card.%20I%20would%20like%20help%20renewing%20my%20motor%20vehicle%20licence." target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
+            Ask me on WhatsApp
+          </a>
+        </div>
+      </div>
+      </div>
+      <a class="more" href="/#services">See all services on my website</a>
     </section>
 
     <!-- ===================== FOOT ===================== -->
     <footer class="foot">
-      <p>An independent, private business. Not a government agency.</p>
+      <p>An independent, private business. Not a government agency or the US Embassy.</p>
       <p>&copy; <span id="year">2026</span> Laura Clarke Administrative Services. <a href="/privacy.html">Privacy</a></p>
     </footer>
 
@@ -301,6 +361,29 @@
     (function () {
       'use strict';
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      /* The sale ends at midnight on 30 November (Jamaica time). */
+      if (Date.now() > Date.parse('2026-12-01T00:00:00-05:00')) {
+        document.body.classList.add('sale-over');
+      }
+
+      /* Services: tap one to open it; the others close. */
+      var heads = document.querySelectorAll('.svc-head');
+      heads.forEach(function (head) {
+        head.addEventListener('click', function () {
+          var opening = head.getAttribute('aria-expanded') !== 'true';
+          heads.forEach(function (h) {
+            h.setAttribute('aria-expanded', 'false');
+            document.getElementById(h.getAttribute('aria-controls')).hidden = true;
+            h.parentElement.classList.remove('open');
+          });
+          if (opening) {
+            head.setAttribute('aria-expanded', 'true');
+            document.getElementById(head.getAttribute('aria-controls')).hidden = false;
+            head.parentElement.classList.add('open');
+          }
+        });
+      });
 
       /* Save my contact: builds a contact file the phone can add to its address book. */
       document.getElementById('save-contact').addEventListener('click', function () {
@@ -314,7 +397,7 @@
           'TEL;TYPE=CELL,VOICE:+18765612614',
           'EMAIL;TYPE=WORK:info@documenthelpja.com',
           'URL:https://documenthelpja.com',
-          'NOTE:Help with Jamaican documents: passports\\, motor vehicle and driver\'s licences\\, police records and more. Independent\\, private business. WhatsApp +1 876 561 2614.',
+          'NOTE:Help with US visa renewals\\, Jamaican passports\\, driver\'s licences\\, motor vehicle licences and more. Independent\\, private business. WhatsApp +1 876 561 2614.',
           'END:VCARD'
         ].join('\r\n');
         var link = document.createElement('a');
