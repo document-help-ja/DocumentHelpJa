@@ -78,26 +78,27 @@
       padding: 2rem var(--pad);
       box-shadow: 0 1px 2px rgba(15, 37, 55, .05), 0 14px 30px -20px rgba(15, 37, 55, .3);
     }
-    .card-first { border-top: 3px solid var(--gold); padding-top: 2.25rem; }
+    .card-first { padding-top: 2.25rem; overflow: hidden; }
 
     /* ---------- Who ---------- */
-    .photo {
-      display: block; width: 4.75rem; height: 4.75rem; margin-bottom: 1.25rem;
-      border-radius: 50%;
-      object-fit: cover; object-position: 50% 20%;
-      background: var(--tone);
-      box-shadow: 0 0 0 1px var(--edge);
+    .banner {
+      display: block; width: calc(100% + 2 * var(--pad)); max-width: none;
+      height: auto; aspect-ratio: 9 / 7;
+      margin: -2.25rem calc(-1 * var(--pad)) 1.5rem;
+      object-fit: cover; object-position: 50% 30%;
+      background: var(--navy);
+      border-radius: 13px 13px 0 0;
     }
     .name { font: 700 1.875rem/1.1 var(--serif); color: var(--ink); letter-spacing: -.005em; }
     .role { margin-top: .45rem; font-size: .95rem; font-weight: 500; color: var(--gold-text); }
     .line { margin-top: 1.25rem; font-size: 1.0625rem; line-height: 1.5; color: var(--text); text-wrap: pretty; }
 
     /* ---------- Actions ---------- */
-    .actions { display: grid; gap: .75rem; margin-top: 1.75rem; }
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-top: 1.5rem; }
     .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
-      width: 100%; min-height: 3.125rem; padding: .75rem 1rem;
-      font: 600 1rem/1.2 var(--sans);
+      display: inline-flex; align-items: center; justify-content: center; gap: .45rem;
+      width: 100%; min-height: 2.75rem; padding: .55rem 1rem;
+      font: 600 .9rem/1.2 var(--sans); white-space: nowrap;
       text-decoration: none;
       border-radius: 8px; border: 1.5px solid transparent;
       cursor: pointer;
@@ -109,11 +110,11 @@
     .btn-line { background: var(--card); color: var(--navy); border-color: var(--navy); }
     .btn-line:hover { background: var(--tone); }
 
-    .quick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; margin-top: .75rem; }
+    .quick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; margin-top: .6rem; }
     .quick a {
       display: flex; align-items: center; justify-content: center; gap: .45rem;
-      min-height: 2.75rem; padding: .5rem .25rem;
-      font-size: .9rem; font-weight: 500; color: var(--text);
+      min-height: 2.4rem; padding: .4rem .25rem;
+      font-size: .85rem; font-weight: 500; color: var(--text);
       text-decoration: none;
       background: var(--tone); border-radius: 8px;
       transition: background-color .15s ease, color .15s ease;
@@ -127,17 +128,17 @@
     .chip { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; flex-shrink: 0; border-radius: 10px; }
     .ln { width: 1.5rem; height: 1.5rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
-    .card-navy { background: var(--navy); border-color: var(--navy); }
+    .card-navy { background: #183650; border-color: #183650; }
     .card-navy h2 { color: #fff; }
 
     /* Service list: each one opens to a short description and a WhatsApp button */
     .svc-list { display: grid; gap: .75rem; margin-top: 1.25rem; }
     .svc {
-      border: 1px solid rgba(255, 255, 255, .14); border-radius: 12px;
-      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .18); border-radius: 12px;
+      background: rgba(255, 255, 255, .07);
       transition: border-color .15s ease, background-color .15s ease;
     }
-    .svc.open { border-color: var(--gold-light); background: rgba(255, 255, 255, .08); }
+    .svc.open { border-color: var(--gold-light); background: rgba(255, 255, 255, .11); }
     .svc-head {
       display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: 1rem;
       width: 100%; padding: 1rem; min-height: 4.5rem;
@@ -153,7 +154,7 @@
     .svc-body[hidden] { display: none; }
     .svc-body p { font-size: .95rem; line-height: 1.6; color: #DDE4EA; }
     .svc-body p + p { margin-top: .6rem; }
-    .price { margin-bottom: 1rem; padding: .9rem 1rem; background: rgba(255, 255, 255, .07); border-radius: 8px; }
+    .price { margin-bottom: 1rem; padding: .9rem 1rem; background: rgba(255, 255, 255, .09); border-radius: 8px; }
     .price-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: .6rem; }
     .was { font-size: 1rem; color: #9FB0BD; text-decoration: line-through; }
     .now { font: 600 1.5rem/1.2 var(--serif); color: #fff; }
@@ -199,6 +200,7 @@
       body { padding-top: 2.5rem; padding-bottom: 2.5rem; }
       .stack { gap: 1.25rem; }
       .card { padding-top: 2.25rem; padding-bottom: 2.25rem; }
+      .banner { margin-top: -2.25rem; }
     }
     @media (max-width: 21.5rem) {
       .name { font-size: 1.7rem; }
@@ -230,7 +232,7 @@
 
     <!-- ===================== WHO, AND HOW TO REACH HER ===================== -->
     <section class="card card-first" aria-labelledby="name">
-      <img class="photo" src="/assets/profile.webp" alt="" width="510" height="507">
+      <img class="banner" src="/assets/card-banner.jpg" alt="Laura Clarke" width="900" height="700">
       <h1 class="name" id="name">Laura Clarke</h1>
       <p class="role">Private document representative</p>
 
@@ -239,11 +241,11 @@
       <div class="actions">
         <button type="button" class="btn btn-solid" id="save-contact">
           <svg class="icon" aria-hidden="true"><use href="#i-person"/></svg>
-          Save my contact
+          Save contact
         </button>
         <a class="btn btn-line" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20have%20your%20contact%20card%20and%20would%20like%20help%20with%20a%20document." target="_blank" rel="noopener">
           <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>
-          WhatsApp me
+          WhatsApp
         </a>
       </div>
 
