@@ -107,7 +107,8 @@ footer{text-align:center;font-size:13px;color:var(--muted)}
  .gridhead p{margin:0;color:var(--muted)}
 }
 .cats{display:none}
-@media (min-width:720px){
+/* Services stack below the first card on every screen size (phones scroll down too, Oct 2026) */
+@media all{
  .deck{display:block}
  .deck .card:not(.welcome){display:none}
  .welcome{display:grid}
@@ -171,6 +172,20 @@ footer{text-align:center;font-size:13px;color:var(--muted)}
  .card.special .art .tag{background:var(--gold);color:#FFFDF9;border-color:var(--gold);font-size:12px;padding:5px 14px}
  .card.special h2{color:var(--gold-ink)}
  .card.special .ask.soft{border-color:var(--gold);color:var(--gold-ink)}
+ /* Phone: scroll down instead of swiping sideways */
+ .wrap{min-height:0;justify-content:flex-start}
+ .deck{margin:0;padding:0}
+ .card.welcome{width:auto;height:auto;max-height:none;overflow:hidden}
+ .wphoto{height:260px}
+ .nav,.swipehint{display:none}
+ .choose{display:inline-flex;align-self:center;gap:8px;align-items:center;margin-top:6px;font-family:var(--display);font-size:20px;color:var(--cream);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:3px}
+ .choose span{color:var(--gold)}
+ .gridhead{display:block;text-align:center;padding:30px 4px 6px;scroll-margin-top:12px}
+ .gridhead h2{font-family:var(--display);font-weight:500;font-size:28px;margin:0 0 6px}
+ .gridhead p{margin:0;color:var(--muted);font-size:15px}
+ .cats{grid-template-columns:minmax(0,1fr);gap:36px;margin-top:8px}
+ .cart svg{height:170px}
+ .cbody{padding:20px 18px}
 }
 .ask.soft{background:transparent;color:var(--sage);border:1.5px solid var(--sage-soft);font-weight:500;font-size:14px;padding:10px 14px}
 .ask.soft:hover{border-color:var(--sage);background:var(--sage-soft)}
