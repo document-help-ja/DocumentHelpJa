@@ -123,6 +123,20 @@
           },
           {
             "@type": "Offer",
+            "priceCurrency": "JMD",
+            "price": 10000,
+            "description": "US visitor visa (B1/B2) help: we fill in the DS-160 with you, in person or by video call. The US visa fee is paid by the client. New applicants start with a J$5,000 consultation.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "US Visitor Visa Help",
+              "url": "https://documenthelpja.com/us-visitor-visa-services.html",
+              "provider": {
+                "@id": "https://documenthelpja.com/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
             "priceCurrency": "USD",
             "price": 70,
             "description": "Overseas TRN by proxy: form preparation, ID check, TAJ submission and collection. TAJ charges no fee; courier is quoted by address.",
@@ -517,7 +531,7 @@ h1,h2,h3{color:var(--ink)}
 .grp-head p{margin:0;font-size:16px;color:var(--muted)}
 .grp-head + .cards{margin-top:28px}
 /* Travel and ID: 4 cards as two even rows of two on wider screens */
-@media (min-width:640px){.cards.cards-2{grid-template-columns:repeat(2,1fr);column-gap:48px;row-gap:56px}}
+@media (min-width:640px){.cards.cards-2{grid-template-columns:repeat(2,1fr);column-gap:48px;row-gap:56px}.cards.cards-2 .card-wide{grid-column:1/-1}}
 @media (min-width:960px){.cards.cards-2{column-gap:64px;row-gap:64px;padding-left:6%;padding-right:6%}}
 .cards + .cards.cards-2{margin-top:32px}
 @media (min-width:960px){.cards + .cards.cards-2{margin-top:64px}}
@@ -594,6 +608,7 @@ h1,h2,h3{color:var(--ink)}
         <h3>Travel and ID</h3>
         <ul>
           <li><a href="/jamaican-passport-services.html">Jamaican Passport <span aria-hidden="true">→</span></a></li>
+          <li><a href="/us-visitor-visa-services.html">US Visitor Visa <span aria-hidden="true">→</span></a></li>
           <li><a href="/jamaican-rgd-certificates.html">Birth &amp; Marriage Certificates <span aria-hidden="true">→</span></a></li>
           <li><a href="/jamaica-police-record-guide">Police Record (guide) <span aria-hidden="true">→</span></a></li>
         </ul>
@@ -661,6 +676,7 @@ h1,h2,h3{color:var(--ink)}
       <div class="sub">
         <span class="grp">Travel and ID</span>
         <a href="/jamaican-passport-services.html">Jamaican Passport</a>
+        <a href="/us-visitor-visa-services.html">US Visitor Visa</a>
         <a href="/jamaican-rgd-certificates.html">Birth &amp; Marriage Certificates</a>
         <a href="/jamaica-police-record-guide">Police Record (guide)</a>
         <span class="grp">Driver and Vehicle</span>
@@ -731,6 +747,10 @@ h1,h2,h3{color:var(--ink)}
           <img src="assets/passport-renewal-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
           <span class="card-body"><span class="card-title">Jamaican Passport</span><span class="card-line">We apply for you and deliver to your door</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
+        <a class="card reveal" href="/us-visitor-visa-services.html">
+          <img src="assets/family-airport-1200.webp" width="1200" height="654" alt="" loading="lazy" decoding="async">
+          <span class="card-body"><span class="card-title">US Visitor Visa</span><span class="card-line">We fill in your DS-160 with you, so nothing is missed</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+        </a>
         <a class="card reveal" href="/jamaican-rgd-certificates.html">
           <img src="assets/rgd-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
           <span class="card-body"><span class="card-title">Birth &amp; Marriage Certificates</span><span class="card-line">Copies and family record searches</span><span class="card-cta">Learn more <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
@@ -739,7 +759,7 @@ h1,h2,h3{color:var(--ink)}
           <img src="assets/police-record-800.webp" width="800" height="450" alt="" loading="lazy" decoding="async">
           <span class="card-body"><span class="card-title">Police Record</span><span class="card-line">Done right the first time, at home or abroad</span><span class="card-cta">Read our guide <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
-        <a class="card reveal" href="/jamaican-citizenship-by-descent">
+        <a class="card reveal card-wide" href="/jamaican-citizenship-by-descent">
           <img src="assets/citizenship-descent-hero-800.webp" width="800" height="436" alt="" loading="lazy" decoding="async">
           <span class="card-body"><span class="card-title">Jamaican Citizenship</span><span class="card-line">Claim it through a parent or grandparent</span><span class="card-cta">Read our guide <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         </a>
