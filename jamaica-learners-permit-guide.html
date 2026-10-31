@@ -465,6 +465,15 @@
     .guide-image img {display:block;width:100%;height:auto;aspect-ratio:3/2;border-radius:12px;background:var(--gold-soft);}
     .guide-image figcaption {font-size:.82rem;line-height:1.6;color:var(--muted);padding:10px 2px 0;}
     @media print {.guide-image {max-width:420px;break-inside:avoid;} }
+    /* Outcome preview: the same asset used at the end of the full-licence section. */
+    .hero {display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,280px);align-items:center;gap:32px;}
+    .hero-copy {min-width:0;}
+    .hero-image {display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.2);}
+    @media(max-width:700px) {
+      .hero {display:flex;flex-direction:column;align-items:stretch;gap:24px;}
+      .hero-image {order:-1;width:100%;max-width:280px;align-self:center;}
+    }
+    @media print {.hero-image {display:none;} .hero {display:block;}}
 </style>
 </head>
 <body id="top">
@@ -538,6 +547,7 @@
 
       <!-- HERO CONTAINER -->
       <header class="card hero">
+        <div class="hero-copy">
         <span class="category">Driving &amp; Licensing</span>
         <h1>How to Get a Learner’s Permit in Jamaica</h1>
         <p class="dek">Start with your documents and the Road Code Test. Follow the steps to your learner’s permit, then see how to progress to your full licence.</p>
@@ -545,6 +555,8 @@
           <span>By <a href="/about.html" rel="author">Laura Clarke</a></span>
           <span>Guide updated <time datetime="2026-10-31">October 31, 2026</time></span>
         </div>
+              </div>
+        <img class="hero-image" src="assets/jamaica-new-driver-licence-success.webp" width="1536" height="1024" fetchpriority="high" decoding="async" alt="A smiling Jamaican woman holding a generic driver’s licence beside a parked car—the goal of the learner-driver journey.">
       </header>
 
       <!-- SECTION NAVIGATION -->
