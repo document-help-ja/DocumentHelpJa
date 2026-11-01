@@ -342,8 +342,8 @@
             <div class="fee-row"><span>Ticket amounts</span><strong>As on your record</strong></div>
             <div class="total-row"><span>Total</span><b id="tt-total"></b></div>
             <div class="you-need"><span class="lbl">What you need to do</span><p id="tt-need"></p></div>
-            <a href="/start.html?service=drivers-licence&amp;source=ticket-lookup" class="start-btn" id="tt-btn">Start my ticket lookup</a>
-            <p class="after-btn">A ticket past its court date can't be paid online. You'll get a printout to take to court, and the lookup fee still applies. We use your photos only for this service. See our <a href="/privacy.html">Privacy</a> page. Quick question? <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20have%20a%20quick%20question%20about%20my%20traffic%20tickets." target="_blank" rel="noopener">Ask us on WhatsApp, free</a></p>
+            <a href="https://wa.me/18765612614" target="_blank" rel="noopener" class="start-btn" id="tt-btn">Ask on WhatsApp</a>
+            <p class="after-btn">A ticket past its court date can't be paid online. You'll get a printout to take to court, and the lookup fee still applies.</p>
           </div>
         </div>
       </div>
@@ -451,9 +451,10 @@
     el('tt-rows').innerHTML = rows;
     el('tt-total').textContent = money(fee) + ' + tickets';
     el('tt-need').textContent = tl ? "Send us your driver's licence number, or a photo of the front and back of your licence." : 'Send us your ticket number, or a photo of the ticket.';
-    var btn = el('tt-btn');
-    btn.textContent = tl ? 'Start my ticket lookup' : 'Start my ticket payment';
-    btn.href = '/start.html?service=drivers-licence&source=' + (tl && tp ? 'ticket-both' : tl ? 'ticket-lookup' : 'ticket-pay');
+    var chosen = [tl ? 'ticket lookup (J$1,000)' : '', tp ? 'ticket payment (J$1,500)' : ''].filter(Boolean).join(' and ');
+    var msg = 'Hi Laura, I would like help with my traffic tickets: ' + chosen + '. Total ' + money(fee) + ' + tickets. ' +
+      (tl ? "My driver's licence number is: " : 'My ticket number is: ');
+    el('tt-btn').href = 'https://wa.me/18765612614?text=' + encodeURIComponent(msg);
   }
   el('s-ticket').addEventListener('change', ttUpdate);
 
