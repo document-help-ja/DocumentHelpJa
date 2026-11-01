@@ -450,10 +450,9 @@
     if (tp) { rows += '<div class="fee-row"><span>Ticket payment</span><strong>J$1,500</strong></div>'; fee += 1500; }
     el('tt-rows').innerHTML = rows;
     el('tt-total').textContent = money(fee) + ' + tickets';
-    el('tt-need').textContent = tl ? "Send us your driver's licence number, or a photo of the front and back of your licence." : 'Send us your ticket number, or a photo of the ticket.';
+    el('tt-need').textContent = "Message us on WhatsApp with your choice. We'll send you our terms to accept, then ask for your " + (tl ? "driver's licence number." : 'ticket number.') + " Please don't send any details before then.";
     var chosen = [tl ? 'ticket lookup (J$1,000)' : '', tp ? 'ticket payment (J$1,500)' : ''].filter(Boolean).join(' and ');
-    var msg = 'Hi Laura, I would like help with my traffic tickets: ' + chosen + '. Total ' + money(fee) + ' + tickets. ' +
-      (tl ? "My driver's licence number is: " : 'My ticket number is: ');
+    var msg = 'Hi Laura, I would like help with my traffic tickets: ' + chosen + '. Total ' + money(fee) + ' + tickets.';
     el('tt-btn').href = 'https://wa.me/18765612614?text=' + encodeURIComponent(msg);
   }
   el('s-ticket').addEventListener('change', ttUpdate);

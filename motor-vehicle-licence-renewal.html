@@ -435,13 +435,12 @@
         if (tp) { rows.push(['Ticket payment', money(FEE.pay)]); fee += FEE.pay; }
         rows.push(['Ticket amounts', 'As on your record']);
         var chosen = [tl ? 'ticket lookup (J$1,000)' : '', tp ? 'ticket payment (J$1,500)' : ''].filter(Boolean).join(' and ');
-        var msg = 'Hi Laura, I would like help with my traffic tickets: ' + chosen + '. Total ' + money(fee) + ' + tickets. ' +
-          (tl ? 'My driver\'s licence number is: ' : 'My ticket number is: ');
+        var msg = 'Hi Laura, I would like help with my traffic tickets: ' + chosen + '. Total ' + money(fee) + ' + tickets.';
         var out = '';
         rows.forEach(function (r) { out += '<div class="fee-row"><span>' + r[0] + '</span><strong>' + r[1] + '</strong></div>'; });
         out += '<div class="total-row"><span>Total</span><b>' + money(fee) + ' + tickets</b></div>';
         out += '<div class="you-need"><span class="lbl">What you need to do</span><p>' +
-          (tl ? 'Send us your driver\'s licence number, or a photo of the front and back of your licence.' : 'Send us your ticket number, or a photo of the ticket.') + '</p></div>';
+          'Message us on WhatsApp with your choice. We\'ll send you our terms to accept, then ask for your ' + (tl ? 'driver\'s licence number.' : 'ticket number.') + ' Please don\'t send any details before then.</p></div>';
         out += '<a href="' + WA + encodeURIComponent(msg) + '" target="_blank" rel="noopener" class="start-btn">Ask on WhatsApp</a>';
         out += '<p class="after-btn">A ticket past its court date can\'t be paid online. You\'ll get a printout to take to court, and the lookup fee still applies.</p>';
         body += '<div class="tt-out">' + out + '</div>';
