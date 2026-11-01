@@ -538,8 +538,9 @@
   flow.addEventListener('change', function (e) {
     var t = e.target; if (!t.dataset || !t.dataset.tt) return;
     s[t.dataset.tt] = t.checked;
+    var y = window.scrollY;
     render(false);
-    var o = flow.querySelector('.tt-out'); if (o && t.checked) o.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    window.scrollTo(0, y);   /* stay put so the other box can be ticked */
   });
 
   /* Links from the homepage or elsewhere open that service straight away */
