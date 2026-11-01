@@ -557,6 +557,9 @@ h1,h2,h3{color:var(--ink)}
 .travel-options>a{flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:10px}
 .travel-options>a>span:first-child{min-width:0;width:100%}
 .travel-options small{overflow-wrap:break-word}
+/* Section pictures: taller, keep heads in view */
+.panel-img,.panel-img[src]{height:auto;aspect-ratio:16/10;object-fit:cover;object-position:center 20%}
+@media(max-width:640px){.panel-img,.panel-img[src]{height:auto;aspect-ratio:16/10}}
 </style>
 </head>
 <body id="top">
