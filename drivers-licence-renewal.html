@@ -6,7 +6,7 @@
   <title>Driver's Licence Renewal in Jamaica | Laura Clarke</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="description" content="Renew your Jamaican driver&#x27;s licence for J$4,000 plus TAJ&#x27;s fee: road-ready today, no cashier line. Traffic ticket lookup J$1,500.">
+  <meta name="description" content="Renew your Jamaican driver&#x27;s licence for J$4,000 plus TAJ&#x27;s fee: road-ready today, no cashier line. Traffic tickets looked up and paid, J$2,500.">
   <meta name="author" content="Laura Clarke">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <link rel="canonical" href="https://documenthelpja.com/drivers-licence-renewal.html">
@@ -49,7 +49,7 @@
    "@id": "https://documenthelpja.com/drivers-licence-renewal.html",
    "url": "https://documenthelpja.com/drivers-licence-renewal.html",
    "name": "Driver's Licence Renewal",
-   "description": "Renew your Jamaican driver's licence for J$4,000 plus TAJ's fee: road-ready today, no cashier line. Traffic ticket lookup J$1,500.",
+   "description": "Renew your Jamaican driver's licence for J$4,000 plus TAJ's fee: road-ready today, no cashier line. Traffic tickets looked up and paid, J$2,500.",
    "inLanguage": "en-JM",
    "dateModified": "2026-10-27",
    "author": { "@type": "Person", "name": "Laura Clarke", "url": "https://documenthelpja.com/about.html" },
@@ -79,7 +79,7 @@
     "name": "Driver's Licence Renewal",
     "itemListElement": [
      { "@type": "Offer", "name": "Driver's licence renewal", "price": "4000", "priceCurrency": "JMD", "url": "https://documenthelpja.com/drivers-licence-renewal.html#renewal", "description": "Service fee. TAJ's government fee is separate. The driver collects the card at TAJ in person." },
-     { "@type": "Offer", "name": "Traffic ticket lookup", "price": "1500", "priceCurrency": "JMD", "url": "https://documenthelpja.com/drivers-licence-renewal.html#ticket-lookup", "description": "Standalone service fee. Separate from a renewal." }
+     { "@type": "Offer", "name": "Traffic ticket lookup and payment", "price": "2500", "priceCurrency": "JMD", "url": "https://documenthelpja.com/drivers-licence-renewal.html#ticket-lookup", "description": "Standalone service fee. Separate from a renewal." }
     ]
    }
   }
@@ -288,7 +288,7 @@
         <div class="step-head"><h2>1. What do you need?</h2></div>
         <div class="step-body pick-row">
           <button type="button" class="pick" data-svc="renewal"><span><b>Licence renewal</b><small>Road-ready today</small></span><span class="arrow" aria-hidden="true">→</span></button>
-          <button type="button" class="pick" data-svc="ticket-lookup"><span><b>Traffic ticket lookup</b><small>See what is on your record before it blocks you</small></span><span class="arrow" aria-hidden="true">→</span></button>
+          <button type="button" class="pick" data-svc="ticket-lookup"><span><b>Traffic tickets: look up and pay</b><small>We find what you owe and get it paid</small></span><span class="arrow" aria-hidden="true">→</span></button>
         </div>
       </div>
       <div class="step step-done" id="d-svc" hidden>
@@ -315,7 +315,7 @@
           <div class="fee-row"><span>Our fee</span><strong>J$4,000</strong></div>
           <div class="fee-row"><span>TAJ fee</span><strong data-show="taj"></strong></div>
           <div class="total-row"><span>Total</span><b data-show="total"></b></div>
-          <p class="gov-note">TAJ's fee is paid to TAJ. Fees checked October 2026.</p>
+          <p class="gov-note">TAJ's fee is paid to TAJ. Fees checked November 2026.</p>
           <div class="you-need"><span class="lbl">What you need to do</span><p>Send us a photo of the front and back of your licence.</p></div>
           <a href="/start.html?service=drivers-licence" class="start-btn">Start my renewal</a>
           <p class="after-btn">By starting, you agree to our <a href="/terms.html">Terms</a>. Quick question? <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20have%20a%20quick%20question%20about%20a%20driver%27s%20licence%20renewal." target="_blank" rel="noopener">Ask us on WhatsApp, free</a></p>
@@ -326,9 +326,9 @@
       <div class="step open" id="s-ticket" hidden>
         <div class="step-head"><h2>2. Your cost</h2></div>
         <div class="step-body">
-          <div class="fee-row"><span>Our fee, per lookup</span><strong>J$1,500</strong></div>
+          <div class="fee-row"><span>Our fee, per session</span><strong>J$2,500</strong></div>
           <div class="you-need"><span class="lbl">What you need to do</span><p>Send us a photo of the front and back of your licence.</p></div>
-          <a href="/start.html?service=drivers-licence&amp;source=ticket-lookup" class="start-btn">Start my ticket lookup</a>
+          <a href="/start.html?service=drivers-licence&amp;source=ticket-lookup" class="start-btn">Start my ticket payment</a>
           <p class="after-btn">We use your photos only for this lookup. See our <a href="/privacy.html">Privacy</a> page. Quick question? <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20have%20a%20quick%20question%20about%20a%20traffic%20ticket%20lookup." target="_blank" rel="noopener">Ask us on WhatsApp, free</a></p>
         </div>
       </div>
@@ -393,7 +393,7 @@
   /* Step-by-step flow: finish one step, it folds up and the next one opens */
   var OUR_FEE = 4000;
   var state = { svc: null, cls: null, fee: 0 };
-  var names = { 'renewal': 'Licence renewal', 'ticket-lookup': 'Traffic ticket lookup' };
+  var names = { 'renewal': 'Licence renewal', 'ticket-lookup': 'Traffic ticket lookup and payment' };
   function el(id) { return document.getElementById(id); }
   function money(n) { return 'J$' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
   function show(key, text) { var s = document.querySelector('[data-show="' + key + '"]'); if (s) s.textContent = text; }

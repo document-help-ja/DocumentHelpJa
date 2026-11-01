@@ -6,7 +6,7 @@
   <title>Motor Vehicle Licence Renewal in Jamaica | Laura Clarke</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="description" content="Renew your Jamaican motor vehicle registration without the Tax Office line. J$4,000 online renewal, or J$5,000 with fitness payment. Fitness payment and traffic ticket lookup also available on their own.">
+  <meta name="description" content="Renew your Jamaican motor vehicle registration without the Tax Office line. J$4,000 online renewal, or J$5,000 with fitness payment. Fitness payment and traffic ticket lookup and payment also available on their own.">
   <meta name="author" content="Laura Clarke">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <link rel="canonical" href="https://documenthelpja.com/motor-vehicle-licence-renewal.html">
@@ -17,7 +17,7 @@
   <meta property="og:site_name" content="Laura Clarke Administrative Services">
   <meta property="og:locale" content="en_JM">
   <meta property="og:title" content="Motor Vehicle Licence Renewal: J$4,000 + TAJ fee">
-  <meta property="og:description" content="Skip the Tax Office line. Online renewal, fitness payment and traffic ticket lookup.">
+  <meta property="og:description" content="Skip the Tax Office line. Online renewal, fitness payment and traffic tickets looked up and paid.">
   <meta property="og:url" content="https://documenthelpja.com/motor-vehicle-licence-renewal.html">
   <meta property="og:image" content="https://documenthelpja.com/assets/share-laura.jpg">
   <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
   <meta property="og:image:alt" content="Motor Vehicle Licence Renewal: J$4,000 + TAJ fee">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Motor Vehicle Licence Renewal: J$4,000 + TAJ fee">
-  <meta name="twitter:description" content="Skip the Tax Office line. Online renewal, fitness payment and traffic ticket lookup.">
+  <meta name="twitter:description" content="Skip the Tax Office line. Online renewal, fitness payment and traffic tickets looked up and paid.">
   <meta name="twitter:image" content="https://documenthelpja.com/assets/share-laura.jpg">
 
   <script type="application/ld+json">
@@ -49,7 +49,7 @@
    "@id": "https://documenthelpja.com/motor-vehicle-licence-renewal.html",
    "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html",
    "name": "Motor Vehicle Licence Renewal",
-   "description": "Renew your Jamaican motor vehicle registration without the Tax Office line. J$4,000 online renewal, or J$5,000 with fitness payment. Fitness payment and traffic ticket lookup also available on their own.",
+   "description": "Renew your Jamaican motor vehicle registration without the Tax Office line. J$4,000 online renewal, or J$5,000 with fitness payment. Fitness payment and traffic ticket lookup and payment also available on their own.",
    "inLanguage": "en-JM",
    "dateModified": "2026-10-27",
    "author": { "@type": "Person", "name": "Laura Clarke", "url": "https://documenthelpja.com/about.html" },
@@ -81,7 +81,7 @@
      { "@type": "Offer", "name": "Online registration renewal (fitness and insurance valid)", "price": "4000", "priceCurrency": "JMD", "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#renew", "description": "Service fee. TAJ's government fee is separate and depends on engine size." },
      { "@type": "Offer", "name": "Fitness and renewal package (fitness expired)", "price": "5000", "priceCurrency": "JMD", "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#renew", "description": "Service fee. TAJ's fitness and registration fees are separate. The owner takes the vehicle to the ITA depot for inspection." },
      { "@type": "Offer", "name": "Fitness fee payment", "price": "1500", "priceCurrency": "JMD", "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#fitness-only", "description": "Service fee. TAJ's fitness fee is separate. The owner takes the vehicle to the ITA depot for inspection." },
-     { "@type": "Offer", "name": "Traffic ticket lookup", "price": "1500", "priceCurrency": "JMD", "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#ticket-lookup", "description": "Service fee per session. Ticket amounts are separate." }
+     { "@type": "Offer", "name": "Traffic ticket lookup and payment", "price": "2500", "priceCurrency": "JMD", "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#ticket-lookup", "description": "Service fee per session. Ticket amounts are separate." }
     ]
    }
   }
@@ -292,7 +292,7 @@
     <div class="wrap">
       <p class="gtk-label">Good to know</p>
       <ul class="gtk">
-        <li>Unpaid traffic tickets block a renewal. Not sure? Choose traffic ticket lookup above.</li>
+        <li>Unpaid traffic tickets block a renewal. Not sure? Choose traffic tickets above and we will look them up and pay them.</li>
         <li>No sticker is issued any more. Your registration certificate comes by email.</li>
       </ul>
     </div>
@@ -343,12 +343,12 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   /* ---- Prices: change them here ---- */
-  var FEE = { online: 4000, pack: 5000, fitness: 1500, tickets: 1500 };
+  var FEE = { online: 4000, pack: 5000, fitness: 1500, tickets: 2500 };
   var FIT_CLASSES = [
     ['Private car or truck, motorcycle', 4500],
     ['Commercial, trailer or tractor', 5400]
   ];
-  var ENGINES = [   /* TAJ 12-month rates, checked October 2026. 0 = we confirm */
+  var ENGINES = [   /* TAJ 12-month rates, checked November 2026. 0 = we confirm */
     ['Private car, up to 1,199 cc', 9240],
     ['Private car, 1,200 to 2,999 cc', 12600],
     ['Private car, 3,000 to 3,999 cc', 28800],
@@ -366,7 +366,7 @@
   var flow = document.getElementById('flow');
   var s = {};
   var ORDER = ['svc', 'ins', 'fit', 'per', 'cls', 'eng'];
-  var SVC = { renew: 'Motor vehicle licence renewal', fitness: 'Fitness fee payment', tickets: 'Traffic ticket lookup' };
+  var SVC = { renew: 'Motor vehicle licence renewal', fitness: 'Fitness fee payment', tickets: 'Traffic ticket lookup and payment' };
   var PERIODS = { '6': 0.5, '12': 1, '24': 2 };
 
   function money(n) { return 'J$' + String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
@@ -388,7 +388,7 @@
     var h = '';
     rows.forEach(function (r) { h += '<div class="fee-row"><span>' + r[0] + '</span><strong>' + r[1] + '</strong></div>'; });
     h += '<div class="total-row"><span>Total</span><b>' + total + '</b></div>';
-    h += '<p class="gov-note">Government fees are paid to the agency. Fees checked October 2026.</p>';
+    h += '<p class="gov-note">Government fees are paid to the agency. Fees checked November 2026.</p>';
     h += '<div class="you-need"><span class="lbl">What you need to do</span>' + needs.map(function (n) { return '<p>' + n + '</p>'; }).join('') + '</div>';
     h += '<a href="' + btnHref + '" class="start-btn">' + btnText + '</a>';
     h += '<p class="after-btn">' + (extra ? extra + ' ' : '') + TERMS + ' Quick question? <a href="' + WA + encodeURIComponent(waText) + '" target="_blank" rel="noopener">Ask us on WhatsApp, free</a></p>';
@@ -403,7 +403,7 @@
       h = '<h2 class="svc-title">1. What do you need?</h2><div class="pick-row">' +
         pick('svc', 'renew', 'Motor vehicle licence renewal', 'From J$4,000 + TAJ fee') +
         pick('svc', 'fitness', 'Fitness fee payment', 'J$1,500 + TAJ fee') +
-        pick('svc', 'tickets', 'Traffic ticket lookup', 'J$1,500 per session') + '</div>';
+        pick('svc', 'tickets', 'Traffic tickets: look up and pay', 'J$2,500 per session') + '</div>';
       flow.innerHTML = h; flow.parentNode.querySelector('.wrap').classList.add('wide');
       return;
     }
@@ -416,8 +416,8 @@
         [['Our fee, per session', money(FEE.tickets)], ['Ticket amounts', 'As on your record']],
         money(FEE.tickets) + ' + tickets',
         ['Send us a photo of the front and back of your driver\'s licence.'],
-        'Start my ticket lookup', '/start.html?service=motor-vehicle&source=mv-ticket-lookup',
-        'Hi Laura, I have a quick question about a traffic ticket lookup.',
+        'Start my ticket payment', '/start.html?service=motor-vehicle&source=mv-ticket-lookup',
+        'Hi Laura, I have a quick question about paying my traffic tickets.',
         'The fee is for the lookup. A ticket past its court date can\'t be paid online, and the lookup fee isn\'t refunded.'));
     }
 
