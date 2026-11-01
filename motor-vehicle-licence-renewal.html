@@ -81,7 +81,8 @@
      { "@type": "Offer", "name": "Online registration renewal (fitness and insurance valid)", "price": "4000", "priceCurrency": "JMD", "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#renew", "description": "Service fee. TAJ's government fee is separate and depends on engine size." },
      { "@type": "Offer", "name": "Fitness and renewal package (fitness expired)", "price": "5000", "priceCurrency": "JMD", "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#renew", "description": "Service fee. TAJ's fitness and registration fees are separate. The owner takes the vehicle to the ITA depot for inspection." },
      { "@type": "Offer", "name": "Fitness fee payment", "price": "1500", "priceCurrency": "JMD", "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#fitness-only", "description": "Service fee. TAJ's fitness fee is separate. The owner takes the vehicle to the ITA depot for inspection." },
-     { "@type": "Offer", "name": "Traffic ticket lookup and payment", "price": "2500", "priceCurrency": "JMD", "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#ticket-lookup", "description": "Service fee per session. Ticket amounts are separate." }
+     { "@type": "Offer", "name": "Traffic ticket lookup", "price": "1000", "priceCurrency": "JMD", "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#ticket-lookup", "description": "We check all outstanding tickets on your licence." },
+     { "@type": "Offer", "name": "Traffic ticket payment", "price": "1500", "priceCurrency": "JMD", "url": "https://documenthelpja.com/motor-vehicle-licence-renewal.html#ticket-lookup", "description": "Service fee. Ticket amounts are separate." }
     ]
    }
   }
@@ -167,6 +168,13 @@
   .you-need p + p { margin-top: 8px; }
   .start-btn { display: flex; justify-content: center; align-items: center; width: 100%; min-height: 56px; margin-top: 32px; padding: 12px 20px; background: var(--primary); color: #fff; text-decoration: none; font-weight: 600; font-size: 1.05rem; }
   .start-btn:hover { background: var(--ink); color: #fff; }
+  .tick { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 64px; margin-top: 12px; padding: 14px 16px; border: 1px solid var(--edge); background: #fff; cursor: pointer; color: var(--ink); }
+  .tick.on { border: 2px solid var(--gold); background: var(--tone); }
+  .tick input { width: 22px; height: 22px; flex: 0 0 auto; margin: 0; accent-color: var(--gold-text); }
+  .tick .tx { flex: 1; } .tick b { display: block; font-weight: 600; } .tick small { display: block; margin-top: 3px; font-size: .92rem; color: var(--muted); }
+  .tick .amt { flex: 0 0 auto; font-weight: 600; }
+  .tick-hint { margin: 0; color: var(--muted); }
+  .tt-out { margin-top: 18px; }
   .after-btn { margin-top: 12px; text-align: center; font-size: .88rem; line-height: 1.6; color: var(--muted); }
   .after-btn a { color: var(--gold-text); }
 
@@ -343,7 +351,7 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   /* ---- Prices: change them here ---- */
-  var FEE = { online: 4000, pack: 5000, fitness: 1500, tickets: 2500 };
+  var FEE = { online: 4000, pack: 5000, fitness: 1500, lookup: 1000, pay: 1500 };
   var FIT_CLASSES = [
     ['Private car or truck, motorcycle', 4500],
     ['Commercial, trailer or tractor', 5400]
@@ -366,7 +374,7 @@
   var flow = document.getElementById('flow');
   var s = {};
   var ORDER = ['svc', 'ins', 'fit', 'per', 'cls', 'eng'];
-  var SVC = { renew: 'Motor vehicle licence renewal', fitness: 'Fitness fee payment', tickets: 'Traffic ticket lookup and payment' };
+  var SVC = { renew: 'Motor vehicle licence renewal', fitness: 'Fitness fee payment', tickets: 'Traffic tickets' };
   var PERIODS = { '6': 0.5, '12': 1, '24': 2 };
 
   function money(n) { return 'J$' + String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
@@ -395,6 +403,11 @@
     return h;
   }
 
+  function tick(key, main, sub, fee, on) {
+    return '<label class="tick' + (on ? ' on' : '') + '"><input type="checkbox" data-tt="' + key + '"' + (on ? ' checked' : '') + '>' +
+      '<span class="tx"><b>' + main + '</b><small>' + sub + '</small></span><span class="amt">' + money(fee) + '</span></label>';
+  }
+
   function render(scroll) {
     var h = '', n = 2;
 
@@ -403,22 +416,32 @@
       h = '<h2 class="svc-title">1. What do you need?</h2><div class="pick-row">' +
         pick('svc', 'renew', 'Motor vehicle licence renewal', 'From J$4,000 + TAJ fee') +
         pick('svc', 'fitness', 'Fitness fee payment', 'J$1,500 + TAJ fee') +
-        pick('svc', 'tickets', 'Traffic tickets: look up and pay', 'J$2,500 per session') + '</div>';
+        pick('svc', 'tickets', 'Traffic tickets', 'You might have a warrant out. Check now.') + '</div>';
       flow.innerHTML = h; flow.parentNode.querySelector('.wrap').classList.add('wide');
       return;
     }
     flow.classList.remove('wide');
     h += done('Service', SVC[s.svc], 'svc');
 
-    /* Traffic ticket lookup */
+    /* Traffic tickets: tick lookup, payment, or both */
     if (s.svc === 'tickets') {
-      h += open('2. Your cost', finish(
-        [['Our fee, per session', money(FEE.tickets)], ['Ticket amounts', 'As on your record']],
-        money(FEE.tickets) + ' + tickets',
-        ['Send us a photo of the front and back of your driver\'s licence.'],
-        'Start my ticket payment', '/start.html?service=motor-vehicle&source=mv-ticket-lookup',
-        'Hi Laura, I have a quick question about paying my traffic tickets.',
-        'The fee is for the lookup. A ticket past its court date can\'t be paid online, and the lookup fee isn\'t refunded.'));
+      var tl = !!s.tl, tp = !!s.tp;
+      var body = '<p class="tick-hint">Tick one or both.</p>' +
+        tick('tl', 'Look up my tickets', 'We check everything outstanding on your licence', FEE.lookup, tl) +
+        tick('tp', 'Pay my tickets', 'You have the ticket number, or we pay what we find', FEE.pay, tp);
+      if (tl || tp) {
+        var rows = [], fee = 0;
+        if (tl) { rows.push(['Ticket lookup', money(FEE.lookup)]); fee += FEE.lookup; }
+        if (tp) { rows.push(['Ticket payment', money(FEE.pay)]); fee += FEE.pay; }
+        rows.push(['Ticket amounts', 'As on your record']);
+        body += '<div class="tt-out">' + finish(rows, money(fee) + ' + tickets',
+          [tl ? 'Send us your driver\'s licence number, or a photo of the front and back of your licence.' : 'Send us your ticket number, or a photo of the ticket.'],
+          tl ? 'Start my ticket lookup' : 'Start my ticket payment',
+          '/start.html?service=motor-vehicle&source=' + (tl && tp ? 'mv-ticket-both' : tl ? 'mv-ticket-lookup' : 'mv-ticket-pay'),
+          'Hi Laura, I have a quick question about my traffic tickets.',
+          'A ticket past its court date can\'t be paid online. You\'ll get a printout to take to court, and the lookup fee still applies.') + '</div>';
+      }
+      h += open('2. Tick what you need', body);
     }
 
     /* Fitness fee payment on its own */
@@ -506,6 +529,13 @@
       ORDER.slice(ORDER.indexOf(b.dataset.back)).forEach(function (x) { delete s[x]; });
     } else return;
     render(true);
+  });
+
+  flow.addEventListener('change', function (e) {
+    var t = e.target; if (!t.dataset || !t.dataset.tt) return;
+    s[t.dataset.tt] = t.checked;
+    render(false);
+    var o = flow.querySelector('.tt-out'); if (o && t.checked) o.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
 
   /* Links from the homepage or elsewhere open that service straight away */

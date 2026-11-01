@@ -6,7 +6,7 @@
   <title>Driver's Licence Renewal in Jamaica | Laura Clarke</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="description" content="Renew your Jamaican driver&#x27;s licence for J$4,000 plus TAJ&#x27;s fee: road-ready today, no cashier line. Traffic tickets looked up and paid, J$2,500.">
+  <meta name="description" content="Renew your Jamaican driver&#x27;s licence for J$4,000 plus TAJ&#x27;s fee: road-ready today, no cashier line. Traffic ticket lookup J$1,000, payment J$1,500.">
   <meta name="author" content="Laura Clarke">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <link rel="canonical" href="https://documenthelpja.com/drivers-licence-renewal.html">
@@ -49,7 +49,7 @@
    "@id": "https://documenthelpja.com/drivers-licence-renewal.html",
    "url": "https://documenthelpja.com/drivers-licence-renewal.html",
    "name": "Driver's Licence Renewal",
-   "description": "Renew your Jamaican driver's licence for J$4,000 plus TAJ's fee: road-ready today, no cashier line. Traffic tickets looked up and paid, J$2,500.",
+   "description": "Renew your Jamaican driver's licence for J$4,000 plus TAJ's fee: road-ready today, no cashier line. Traffic ticket lookup J$1,000, payment J$1,500.",
    "inLanguage": "en-JM",
    "dateModified": "2026-10-27",
    "author": { "@type": "Person", "name": "Laura Clarke", "url": "https://documenthelpja.com/about.html" },
@@ -79,7 +79,8 @@
     "name": "Driver's Licence Renewal",
     "itemListElement": [
      { "@type": "Offer", "name": "Driver's licence renewal", "price": "4000", "priceCurrency": "JMD", "url": "https://documenthelpja.com/drivers-licence-renewal.html#renewal", "description": "Service fee. TAJ's government fee is separate. The driver collects the card at TAJ in person." },
-     { "@type": "Offer", "name": "Traffic ticket lookup and payment", "price": "2500", "priceCurrency": "JMD", "url": "https://documenthelpja.com/drivers-licence-renewal.html#ticket-lookup", "description": "Standalone service fee. Separate from a renewal." }
+     { "@type": "Offer", "name": "Traffic ticket lookup", "price": "1000", "priceCurrency": "JMD", "url": "https://documenthelpja.com/drivers-licence-renewal.html#ticket-lookup", "description": "We check all outstanding tickets on your licence." },
+     { "@type": "Offer", "name": "Traffic ticket payment", "price": "1500", "priceCurrency": "JMD", "url": "https://documenthelpja.com/drivers-licence-renewal.html#ticket-lookup", "description": "Service fee. Ticket amounts are separate." }
     ]
    }
   }
@@ -161,6 +162,13 @@
   .you-need p { font-size: 1.1rem; line-height: 1.55; color: var(--ink); }
   .start-btn { display: flex; justify-content: center; align-items: center; width: 100%; min-height: 56px; margin-top: 32px; padding: 12px 20px; background: var(--primary); color: #fff; text-decoration: none; font-weight: 600; font-size: 1.05rem; }
   .start-btn:hover { background: var(--ink); color: #fff; }
+  .tick { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 64px; margin-top: 12px; padding: 14px 16px; border: 1px solid var(--edge); background: #fff; cursor: pointer; color: var(--ink); }
+  .tick.on { border: 2px solid var(--gold); background: var(--tone); }
+  .tick input { width: 22px; height: 22px; flex: 0 0 auto; margin: 0; accent-color: var(--gold-text); }
+  .tick .tx { flex: 1; } .tick b { display: block; font-weight: 600; } .tick small { display: block; margin-top: 3px; font-size: .92rem; color: var(--muted); }
+  .tick .amt { flex: 0 0 auto; font-weight: 600; }
+  .tick-hint { margin: 0; color: var(--muted); }
+  .tt-out { margin-top: 18px; }
   .after-btn { margin-top: 12px; text-align: center; font-size: .88rem; line-height: 1.6; color: var(--muted); }
   .after-btn a { color: var(--gold-text); }
   .gov-note { margin-top: 10px; font-size: .86rem; color: var(--muted); }
@@ -288,7 +296,7 @@
         <div class="step-head"><h2>1. What do you need?</h2></div>
         <div class="step-body pick-row">
           <button type="button" class="pick" data-svc="renewal"><span><b>Licence renewal</b><small>Road-ready today</small></span><span class="arrow" aria-hidden="true">→</span></button>
-          <button type="button" class="pick" data-svc="ticket-lookup"><span><b>Traffic tickets: look up and pay</b><small>We find what you owe and get it paid</small></span><span class="arrow" aria-hidden="true">→</span></button>
+          <button type="button" class="pick" data-svc="ticket-lookup"><span><b>Traffic tickets</b><small>You might have a warrant out. Check now.</small></span><span class="arrow" aria-hidden="true">→</span></button>
         </div>
       </div>
       <div class="step step-done" id="d-svc" hidden>
@@ -322,14 +330,21 @@
         </div>
       </div>
 
-      <!-- TICKET LOOKUP STEP 2: cost and start -->
+      <!-- TRAFFIC TICKETS STEP 2: tick lookup, payment, or both -->
       <div class="step open" id="s-ticket" hidden>
-        <div class="step-head"><h2>2. Your cost</h2></div>
+        <div class="step-head"><h2>2. Tick what you need</h2></div>
         <div class="step-body">
-          <div class="fee-row"><span>Our fee, per session</span><strong>J$2,500</strong></div>
-          <div class="you-need"><span class="lbl">What you need to do</span><p>Send us a photo of the front and back of your licence.</p></div>
-          <a href="/start.html?service=drivers-licence&amp;source=ticket-lookup" class="start-btn">Start my ticket payment</a>
-          <p class="after-btn">We use your photos only for this lookup. See our <a href="/privacy.html">Privacy</a> page. Quick question? <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20have%20a%20quick%20question%20about%20a%20traffic%20ticket%20lookup." target="_blank" rel="noopener">Ask us on WhatsApp, free</a></p>
+          <p class="tick-hint">Tick one or both.</p>
+          <label class="tick"><input type="checkbox" data-tt="tl"><span class="tx"><b>Look up my tickets</b><small>We check everything outstanding on your licence</small></span><span class="amt">J$1,000</span></label>
+          <label class="tick"><input type="checkbox" data-tt="tp"><span class="tx"><b>Pay my tickets</b><small>You have the ticket number, or we pay what we find</small></span><span class="amt">J$1,500</span></label>
+          <div class="tt-out" id="tt-out" hidden>
+            <div id="tt-rows"></div>
+            <div class="fee-row"><span>Ticket amounts</span><strong>As on your record</strong></div>
+            <div class="total-row"><span>Total</span><b id="tt-total"></b></div>
+            <div class="you-need"><span class="lbl">What you need to do</span><p id="tt-need"></p></div>
+            <a href="/start.html?service=drivers-licence&amp;source=ticket-lookup" class="start-btn" id="tt-btn">Start my ticket lookup</a>
+            <p class="after-btn">A ticket past its court date can't be paid online. You'll get a printout to take to court, and the lookup fee still applies. We use your photos only for this service. See our <a href="/privacy.html">Privacy</a> page. Quick question? <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20have%20a%20quick%20question%20about%20my%20traffic%20tickets." target="_blank" rel="noopener">Ask us on WhatsApp, free</a></p>
+          </div>
         </div>
       </div>
 
@@ -393,7 +408,7 @@
   /* Step-by-step flow: finish one step, it folds up and the next one opens */
   var OUR_FEE = 4000;
   var state = { svc: null, cls: null, fee: 0 };
-  var names = { 'renewal': 'Licence renewal', 'ticket-lookup': 'Traffic ticket lookup and payment' };
+  var names = { 'renewal': 'Licence renewal', 'ticket-lookup': 'Traffic tickets' };
   function el(id) { return document.getElementById(id); }
   function money(n) { return 'J$' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
   function show(key, text) { var s = document.querySelector('[data-show="' + key + '"]'); if (s) s.textContent = text; }
@@ -423,6 +438,24 @@
     else return;
     render(true);
   });
+
+  /* Traffic tickets: tick lookup, payment, or both */
+  function ttUpdate() {
+    var tl = document.querySelector('[data-tt="tl"]').checked, tp = document.querySelector('[data-tt="tp"]').checked;
+    document.querySelectorAll('#s-ticket .tick').forEach(function (l) { l.classList.toggle('on', l.querySelector('input').checked); });
+    el('tt-out').hidden = !(tl || tp);
+    if (!(tl || tp)) return;
+    var rows = '', fee = 0;
+    if (tl) { rows += '<div class="fee-row"><span>Ticket lookup</span><strong>J$1,000</strong></div>'; fee += 1000; }
+    if (tp) { rows += '<div class="fee-row"><span>Ticket payment</span><strong>J$1,500</strong></div>'; fee += 1500; }
+    el('tt-rows').innerHTML = rows;
+    el('tt-total').textContent = money(fee) + ' + tickets';
+    el('tt-need').textContent = tl ? "Send us your driver's licence number, or a photo of the front and back of your licence." : 'Send us your ticket number, or a photo of the ticket.';
+    var btn = el('tt-btn');
+    btn.textContent = tl ? 'Start my ticket lookup' : 'Start my ticket payment';
+    btn.href = '/start.html?service=drivers-licence&source=' + (tl && tp ? 'ticket-both' : tl ? 'ticket-lookup' : 'ticket-pay');
+  }
+  el('s-ticket').addEventListener('change', ttUpdate);
 
   /* Links from the homepage (e.g. #renewal or #ticket-lookup) open that service straight away */
   var h = location.hash.slice(1);
