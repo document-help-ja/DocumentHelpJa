@@ -15,9 +15,9 @@ How to start: send an enquiry through the contact page (https://documenthelpja.c
 
 ### Driver & vehicle
 
-- [Driver's licence renewal](https://documenthelpja.com/drivers-licence-renewal.html): We pay the TAJ fee online, so the driver is road-ready the same day with the receipt, and prepare everything for collecting the new card at TAJ. Our fee J$4,000 plus TAJ's fee (Class B J$5,400, Class C J$7,200).
+- [Driver's licence renewal](https://documenthelpja.com/drivers-licence-renewal.html): We pay the TAJ fee online, so the driver is road-ready the same day with the receipt, and prepare everything for collecting the new card at TAJ. Our fee J$4,000 plus TAJ's fee (Class B J$5,400, Class C J$7,200). The page also explains Jamaica's demerit points system and where it stands (the page shows the date it was last checked), what to do about unpaid tickets and missed court dates, and where to contact the courts and the JCF about them.
 - [Motor vehicle licence renewal](https://documenthelpja.com/motor-vehicle-licence-renewal.html): Same-day online renewal, no Tax Office line, when insurance and fitness are valid: J$4,000 plus TAJ's fee. With an expired fitness: J$5,000 plus TAJ's fees, and the owner takes the vehicle for inspection. Fitness fee payment on its own: J$1,500. The registration certificate comes by email.
-- Traffic tickets: lookup J$1,000 (we check everything outstanding on the licence), payment J$1,500, or both for J$2,500. Ticket amounts are separate. Tickets must be cleared before a renewal. Tickets past their court date cannot be paid online; the client gets a printout to take to court. Ask on WhatsApp.
+- Traffic tickets: we check everything outstanding on the licence and give the client a printout. The lookup is free, whether or not they use our payment service. If a ticket can still be paid online, we pay it for the client: our fee J$2,000, separate from the ticket amount. Tickets must be cleared before a renewal. Tickets past their court date cannot be paid online; the client takes the printout to court. Start on the driver's licence page (https://documenthelpja.com/drivers-licence-renewal.html) or ask on WhatsApp.
 
 ### Self-employed
 
@@ -37,15 +37,15 @@ How to start: send an enquiry through the contact page (https://documenthelpja.c
 - [Behind on your S04 returns or payments? Where to start](https://documenthelpja.com/self-employed-tax-traps-jamaica): Six steps: gather records, find what is outstanding, deal with assessment notices (online objection within 30 days of service), check and file missing returns, pay or talk to TAJ, and keep up with S04A estimates.
 - [Are your NIS contributions on record?](https://documenthelpja.com/jamaica-nis-guide): For employees and the self-employed: what to ask NIS after changing jobs, changing your name or starting a business, what to gather, and voluntary contributions. We do not handle NIS record checks or benefit claims.
 - [Jamaican passport overview](https://documenthelpja.com/jamaica-passport-guide): Which passport route fits, speed options and what PICA checks.
-- [PICA card payment failed](https://documenthelpja.com/pica-card-payment-failed): Why overseas cards are declined on the PICA renewal portal, and the fix.
-- [US visitor visa (B1/B2) from Jamaica](https://documenthelpja.com/jamaica-us-visitor-visa-guide): The DS-160, the visa fee, interview day in Kingston and agency red flags.
-- [H-2B work visa: steps and scam checks](https://documenthelpja.com/jamaica-h2b-work-visa-guide): How seasonal US work visas operate and how to check an agency. We do not recruit or place workers.
+- [PICA card payment failed](https://documenthelpja.com/pica-card-payment-failed): What to check if your PICA online renewal payment fails: a declined card, a locked application, or a payment your bank shows that PICA has not confirmed. The one rule: do not pay twice until PICA confirms.
+- [US visitor visa (B1/B2) from Jamaica](https://documenthelpja.com/jamaica-us-visitor-visa-guide): Whether a visitor visa fits your visit, what only the applicant can do, the US$185 fee and timing, renewals and common questions. Not a step-by-step guide; our service page explains the help we offer.
+- [H-2B work visa: steps and scam checks](https://documenthelpja.com/jamaica-h2b-work-visa-guide): How to stay safe: check the agency with the Ministry of Labour and Social Security before paying or sending a passport, what to do if someone asks for money, why no one can guarantee a visa, and the Ministry's own programme. The full process is in the free toolkit PDF. We do not recruit or place workers.
 - [Citizenship by descent](https://documenthelpja.com/jamaican-citizenship-by-descent): Who qualifies and the documents PICA needs.
 - [Coming home? Start your Jamaican citizenship while you're here](https://documenthelpja.com/jamaican-citizenship-while-home)
 - [Learner's permit guide](https://documenthelpja.com/jamaica-learners-permit-guide.html)
 - [Birth and marriage certificates guide](https://documenthelpja.com/jamaica-rgd-certificates-guide)
 - [C5 travel form and barrel clearance](https://documenthelpja.com/jamaica-c5-travel-form): Information only; we do not offer customs clearance.
-- [Free kits](https://documenthelpja.com/free-kits): Printable PDFs, no sign-up: Tax Backlog Recovery Guide and H-2B Application Toolkit.
+- [Free kits](https://documenthelpja.com/free-kits): Printable PDFs, no sign-up: Tax Backlog Recovery Guide and H-2B Process Guide and Toolkit.
 
 ## About & legal
 
