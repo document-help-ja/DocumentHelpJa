@@ -636,19 +636,20 @@ h1,h2,h3{color:var(--ink)}
 .st-taxhero h2{margin:14px 0 0;font-size:clamp(30px,5vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.015em}
 .st-tag{display:inline-block;background:#E3DCC9;border-radius:8px;padding:2px 14px;transform:rotate(-2deg);font-family:var(--st-hand);font-size:22px;font-weight:600}
 .st-other{padding:80px 0 80px;background:#fff}
-.st-other-box{border:2px solid #D5DEDC;border-radius:24px;padding:28px 24px;max-width:36rem;margin:0 auto;text-align:center}
+.st-other-box{background:#DDEBE8;border-radius:24px;padding:30px 24px;max-width:36rem;margin:0 auto;text-align:center}
 .st-other-box h2{margin:0;font-size:24px;font-weight:800}
 .st-other-box p{margin:8px 0 0;font-size:15px;line-height:1.5;color:var(--st-text)}
 .st-about{background:var(--st-sand);padding:48px 0}
 .st-about-head{display:flex;align-items:center;gap:14px}
-.st-about-head img{flex:none;width:56px;height:56px;border-radius:50%;object-fit:cover}
+.st-about-head{gap:18px}
+.st-about-head img{flex:none;width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:50% 20%}
 .st-script{font-family:var(--st-hand);font-size:20px;font-weight:600}
 .st-about h2{margin:0;font-size:19px;font-weight:800;line-height:1.2}
 .st-about p{margin:14px 0 0;font-size:15px;line-height:1.55;max-width:36rem}
 .st-link{display:inline-block;margin-top:10px;font-weight:600;font-size:15px;color:#0B5D56}
 .st-reviews{padding:72px 0 40px}
 .st-reviews h2{margin:0 0 6px;font-size:24px;font-weight:800}
-.st-rev-row{display:grid;grid-auto-flow:column;grid-auto-columns:min(240px,70vw);gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 20px 6px;scrollbar-width:none;max-width:72rem;margin:0 auto}
+.st-rev-row{display:grid;grid-auto-flow:column;grid-auto-columns:72vw;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 20px 6px;scroll-padding:0 20px;scrollbar-width:none;max-width:72rem;margin:0 auto}
 .st-rev-row::-webkit-scrollbar{display:none}
 .st-rev{scroll-snap-align:start;margin:0;border-radius:16px;background:#F2F5F4;padding:14px;font-size:13px;line-height:1.5;color:var(--st-text)}
 .st-rev blockquote{margin:6px 0 0}
@@ -656,16 +657,40 @@ h1,h2,h3{color:var(--ink)}
 .st-rev figcaption strong{display:block}
 .st-stars{color:#B08733;letter-spacing:2px}
 .st-rev-more{display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;color:#0B5D56;text-decoration:none}
-.st-guides{padding:6px 20px 30px;text-align:center}
-.st-guides p{margin:0;font-size:14px;color:var(--st-text)}
+.st-guides{padding:40px 20px 56px;text-align:center}
+.st-guides h2{margin:0;font-size:24px;font-weight:800}
+.st-guides p{margin:8px 0 0;font-size:16px;color:var(--st-text)}
 .st-guides a{font-weight:600;color:#0B5D56}
+@media (max-width:899px){
+ .sc-row{grid-auto-columns:80vw;gap:14px}
+ .sc{padding:10px 14px 12px;border-radius:26px}
+ .sc-tag{font-size:19px;padding:1px 12px}
+ .sc-small{margin-top:6px;font-size:12px}
+ .sc-h{font-size:19px}
+ .sc-panel{margin-top:8px;padding:22px 22px 0;border-radius:20px}
+ .sc-panel img{height:128px;border-radius:14px 14px 0 0}
+ .sc-badge{left:14px;top:10px;width:38px;height:38px}
+ .sc-badge svg{width:20px;height:20px}
+ .sc-fold{width:44px;height:44px;border-bottom-left-radius:14px}
+ .sc-box{margin-top:8px;padding:10px 14px 12px;border-radius:20px}
+ .sc-desc{font-size:13.5px;line-height:1.38}
+ .sc-steps{margin-top:8px;gap:4px}
+ .sc-steps li{font-size:13px;gap:8px}
+ .sc-n{width:26px;height:20px;font-size:11px}
+ .sc-safe{margin-top:6px;font-size:12px}
+ .sc-btn{min-height:42px;padding:0 20px;font-size:14px}
+ .sc-form .sc-btn{min-height:42px}
+ .sc-form input[type=email]{min-height:42px}
+}
 @media (min-width:900px){
+ .st-about-head img{width:128px;height:128px}
  .st-hero-grid{grid-template-columns:1.05fr 1fr;gap:48px}
  .st-hero{padding:56px 0 72px}
  .sc-row{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;overflow:visible;padding:0 20px}
  .sc-dots{display:none}
  .st-ask p{display:none}
  .st-rev-row{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible}
+ .st-rev-dots{display:none}
 }
 @media (prefers-reduced-motion:reduce){.sc-dots span{transition:none}}
 </style>
@@ -917,15 +942,19 @@ h1,h2,h3{color:var(--ink)}
 <div class="st-wrap">
 <h2 id="reviews-title">What clients say</h2>
 </div>
-<div class="st-rev-row" tabindex="0" aria-label="Client reviews, swipe for more">
+<div class="sc-group st-rev-group">
+<div class="st-rev-row sc-row-like" tabindex="0" aria-label="Client reviews, swipe for more">
 <figure class="st-rev"><div class="st-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“The service provided was excellent. I was very impressed with the efficiency and exceptional attention to every detail. The speedy delivery was a plus for me.”</blockquote><figcaption><strong>Owen M.</strong> Passport renewal from overseas</figcaption></figure>
 <figure class="st-rev"><div class="st-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“From getting passport-size pictures to getting through at the office and collecting my new ID, the process was smooth and easy. Thanks so much for your expertise!”</blockquote><figcaption><strong>Danielle H.</strong> Passport in Jamaica</figcaption></figure>
 <a class="st-rev st-rev-more" href="/about.html#reviews">See all reviews</a>
 </div>
+<div class="sc-dots st-rev-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+</div>
 </section>
 
 <section class="st-guides">
-<p>Prefer to read up first? <a href="/insights.html">Browse our free guides</a></p>
+<h2>Prefer to read up first?</h2>
+<p><a href="/insights.html">Browse our free guides</a></p>
 </section>
 
 </main>
@@ -1054,6 +1083,6 @@ h1,h2,h3{color:var(--ink)}
 
 <script>(function(){document.addEventListener('click',function(e){var c=e.target.closest('a.card');if(!c||e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey)return;var t=c.querySelector('.card-cta');if(t&&t.firstChild&&t.firstChild.nodeType===3){c.setAttribute('data-cta',t.firstChild.nodeValue);t.firstChild.nodeValue='Opening\u2026 ';}c.classList.add('is-opening');});window.addEventListener('pageshow',function(){document.querySelectorAll('a.card.is-opening').forEach(function(c){c.classList.remove('is-opening');var t=c.querySelector('.card-cta');if(t&&c.hasAttribute('data-cta'))t.firstChild.nodeValue=c.getAttribute('data-cta');});});})();</script>
 <script type="speculationrules">{"prerender":[{"where":{"selector_matches":"a.card"},"eagerness":"moderate"}]}</script>
-<script>(function(){document.querySelectorAll('.sc-group').forEach(function(g){var row=g.querySelector('.sc-row'),dots=g.querySelectorAll('.sc-dots span');if(!row||!dots.length)return;function upd(){var cards=row.children,best=0,min=1e9;for(var i=0;i<cards.length;i++){var d=Math.abs(cards[i].offsetLeft-row.offsetLeft-row.scrollLeft-20);if(d<min){min=d;best=i}}dots.forEach(function(s,i){s.classList.toggle('on',i===best)})}row.addEventListener('scroll',function(){window.requestAnimationFrame(upd)},{passive:true});upd()})})();</script>
+<script>(function(){document.querySelectorAll('.sc-group').forEach(function(g){var row=g.querySelector('.sc-row, .st-rev-row'),dots=g.querySelectorAll('.sc-dots span');if(!row||!dots.length)return;function upd(){var cards=row.children,best=0,min=1e9;for(var i=0;i<cards.length;i++){var d=Math.abs(cards[i].offsetLeft-row.offsetLeft-row.scrollLeft-20);if(d<min){min=d;best=i}}dots.forEach(function(s,i){s.classList.toggle('on',i===best)})}row.addEventListener('scroll',function(){window.requestAnimationFrame(upd)},{passive:true});upd()})})();</script>
 </body>
 </html>
