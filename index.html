@@ -28,9 +28,9 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap"></noscript>
 
 <!-- Structured data -->
 <script type="application/ld+json">
@@ -582,7 +582,94 @@ h1,h2,h3{color:var(--ink)}
 .reviews{gap:24px;margin-top:32px}
 }
 </style>
-<style id="book-soon">.tx-book{grid-template-columns:96px 1fr!important;gap:16px;padding:16px;align-items:start}.tx-book img{aspect-ratio:1/1;object-position:center top}.tx-book .soon{display:inline-block;background:var(--gold);color:#0F2537;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px}.tx-book h3{font-size:19px;margin:10px 0 4px}.tx-book p{font-size:14px;margin:0 0 10px}.tx-book .waitlist input[type=email]{height:40px}.tx-book .btn-sm{min-height:40px}.tx-book>div{min-width:0}.tx-book .service-label{display:inline-block;vertical-align:middle}@media(max-width:600px){.tx-book{grid-template-columns:1fr!important}.tx-book img{display:none}}</style><style id="tx-layout">.tx-sub{color:var(--gold-light);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:34px 0 14px}@media(min-width:861px){.tx-grid.tx-3{grid-template-columns:repeat(3,1fr)}.tx-3 .tx-card h3{font-size:22px}}.tx-diy .tx-covers{aspect-ratio:4/3}.tx-diy .tx-covers img{width:auto;height:100%;max-height:100%}.tx-card>p.tx-price{font-size:24px;font-weight:700;color:var(--navy)!important;margin:0 0 14px!important}.tx-free{border-top-color:#8FA98C}</style></head>
+<style id="book-soon">.tx-book{grid-template-columns:96px 1fr!important;gap:16px;padding:16px;align-items:start}.tx-book img{aspect-ratio:1/1;object-position:center top}.tx-book .soon{display:inline-block;background:var(--gold);color:#0F2537;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px}.tx-book h3{font-size:19px;margin:10px 0 4px}.tx-book p{font-size:14px;margin:0 0 10px}.tx-book .waitlist input[type=email]{height:40px}.tx-book .btn-sm{min-height:40px}.tx-book>div{min-width:0}.tx-book .service-label{display:inline-block;vertical-align:middle}@media(max-width:600px){.tx-book{grid-template-columns:1fr!important}.tx-book img{display:none}}</style><style id="tx-layout">.tx-sub{color:var(--gold-light);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:34px 0 14px}@media(min-width:861px){.tx-grid.tx-3{grid-template-columns:repeat(3,1fr)}.tx-3 .tx-card h3{font-size:22px}}.tx-diy .tx-covers{aspect-ratio:4/3}.tx-diy .tx-covers img{width:auto;height:100%;max-height:100%}.tx-card>p.tx-price{font-size:24px;font-weight:700;color:var(--navy)!important;margin:0 0 14px!important}.tx-free{border-top-color:#8FA98C}</style><style id="story-home">
+.story{--st-ink:#12201E;--st-text:#3C4A48;--st-sand:#F6F1E7;--st-mint:#E6EEEC;--st-hand:Caveat,"Segoe Print",cursive;font-family:var(--sans);color:var(--st-ink)}
+.story h1,.story h2,.story h3{font-family:var(--sans);color:var(--st-ink)}
+.st-wrap{max-width:72rem;margin:0 auto;padding:0 20px}
+.st-wrap-wide{max-width:76rem;margin:0 auto}
+.st-hero{background:var(--st-sand);padding:28px 0 44px}
+.st-hero-grid{display:grid;gap:22px;align-items:center}
+.st-hero h1{margin:0;font-size:clamp(32px,6vw,52px);line-height:1.08;font-weight:800;letter-spacing:-.02em}
+.st-lead{margin:14px 0 0;font-size:17px;line-height:1.55;color:var(--st-text);max-width:34rem}
+.st-hero-img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 0;border-radius:24px}
+.st-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;margin-top:20px;border-radius:24px;background:var(--st-ink);color:#fff;font-weight:600;font-size:16px;text-decoration:none}
+.st-btn:hover{color:#fff;background:#0B5D56}
+.st-btn-outline{background:transparent;color:var(--st-ink);border:2px solid var(--st-ink);min-height:44px;margin-top:14px}
+.st-btn-outline:hover{background:var(--st-ink);color:#fff}
+.st-note{margin:12px 0 0;font-size:13px;color:var(--st-text)}
+.st-ask{padding:64px 24px 48px;text-align:center;background:#fff}
+.st-ask h2{margin:0;font-size:clamp(28px,4.5vw,40px);line-height:1.15;font-weight:800;letter-spacing:-.015em}
+.st-ask p{margin:12px 0 0;font-size:15px;color:var(--st-text)}
+.st-cards{background:var(--st-mint);padding:32px 0 40px}
+.st-cards-tax{background:#EEEAE0}
+.sc-group+.sc-group{margin-top:48px}
+.sc-label{margin:0 20px 10px;display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--st-text);white-space:nowrap}
+.sc-label::after{content:"";flex:1;height:1px;background:#B9C7C4}
+.sc-row{display:grid;grid-auto-flow:column;grid-auto-columns:min(354px,88vw);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 20px 6px;scroll-padding:0 20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.sc-row::-webkit-scrollbar{display:none}
+.sc-row:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.sc{scroll-snap-align:start;background:#fff;border-radius:32px;padding:16px 18px 18px;display:flex;flex-direction:column;align-items:center;min-width:0}
+.sc-tag{background:var(--t);border-radius:8px;padding:2px 14px;transform:rotate(-2deg);font-family:var(--st-hand);font-size:22px;font-weight:600;line-height:1.3}
+.sc-small{margin:8px 0 0;font-size:13px;font-weight:500;color:var(--st-text);text-align:center}
+.sc-h{margin:2px 0 0;font-size:24px;line-height:1.15;font-weight:800;text-align:center;letter-spacing:-.01em}
+.sc-panel{position:relative;width:100%;margin-top:12px;padding:36px 32px 0;background:var(--p);border-radius:24px;overflow:hidden}
+.sc-panel img{width:100%;height:256px;object-fit:cover;object-position:50% 0;border-radius:18px 18px 0 0}
+.sc-badge{position:absolute;left:24px;top:14px;width:48px;height:48px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+.sc-fold{position:absolute;right:0;top:0;width:58px;height:58px;background:linear-gradient(225deg,#fff 50%,var(--f) 50%);border-bottom-left-radius:18px}
+.sc-box{width:100%;margin-top:10px;background:var(--p);border-radius:24px;padding:14px 18px 16px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+.sc-desc{margin:0;font-size:15px;line-height:1.45;color:var(--st-ink)}
+.sc-steps{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.sc-steps li{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;line-height:1.3}
+.sc-n{flex:none;width:30px;height:22px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+.sc-safe{margin:12px 0 0;display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:var(--st-text)}
+.sc-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 24px;margin-top:10px;border:0;border-radius:22px;background:var(--st-ink);color:#fff;font:600 15px/1 var(--sans);text-decoration:none;cursor:pointer}
+.sc-btn:hover{color:#fff;background:#0B5D56}
+.sc-form{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;width:100%;position:relative}
+.sc-form input[type=email]{flex:1 1 180px;min-height:44px;border:1px solid #C9BFB8;border-radius:22px;padding:0 16px;font:15px var(--sans)}
+.sc-form .sc-btn{margin-top:0}
+.sc-ok{margin:12px 0 0;font-size:14px;font-weight:600}
+.sc-dots{display:flex;justify-content:center;gap:8px;padding:10px 0 4px}
+.sc-dots span{width:8px;height:8px;border-radius:4px;background:#A9B6B3;transition:width .2s}
+.sc-dots span.on{width:22px;background:var(--st-ink)}
+.st-scope{margin:16px 20px 0;font-size:13px;color:var(--st-text)}
+.st-taxhero{background:#F3EFE2;padding:56px 0 44px}
+.st-taxhero h2{margin:14px 0 0;font-size:clamp(30px,5vw,44px);line-height:1.12;font-weight:800;letter-spacing:-.015em}
+.st-tag{display:inline-block;background:#E3DCC9;border-radius:8px;padding:2px 14px;transform:rotate(-2deg);font-family:var(--st-hand);font-size:22px;font-weight:600}
+.st-other{padding:80px 0 80px;background:#fff}
+.st-other-box{border:2px solid #D5DEDC;border-radius:24px;padding:28px 24px;max-width:36rem;margin:0 auto;text-align:center}
+.st-other-box h2{margin:0;font-size:24px;font-weight:800}
+.st-other-box p{margin:8px 0 0;font-size:15px;line-height:1.5;color:var(--st-text)}
+.st-about{background:var(--st-sand);padding:48px 0}
+.st-about-head{display:flex;align-items:center;gap:14px}
+.st-about-head img{flex:none;width:56px;height:56px;border-radius:50%;object-fit:cover}
+.st-script{font-family:var(--st-hand);font-size:20px;font-weight:600}
+.st-about h2{margin:0;font-size:19px;font-weight:800;line-height:1.2}
+.st-about p{margin:14px 0 0;font-size:15px;line-height:1.55;max-width:36rem}
+.st-link{display:inline-block;margin-top:10px;font-weight:600;font-size:15px;color:#0B5D56}
+.st-reviews{padding:72px 0 40px}
+.st-reviews h2{margin:0 0 6px;font-size:24px;font-weight:800}
+.st-rev-row{display:grid;grid-auto-flow:column;grid-auto-columns:min(240px,70vw);gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 20px 6px;scrollbar-width:none;max-width:72rem;margin:0 auto}
+.st-rev-row::-webkit-scrollbar{display:none}
+.st-rev{scroll-snap-align:start;margin:0;border-radius:16px;background:#F2F5F4;padding:14px;font-size:13px;line-height:1.5;color:var(--st-text)}
+.st-rev blockquote{margin:6px 0 0}
+.st-rev figcaption{margin-top:8px;color:var(--st-ink)}
+.st-rev figcaption strong{display:block}
+.st-stars{color:#B08733;letter-spacing:2px}
+.st-rev-more{display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;color:#0B5D56;text-decoration:none}
+.st-guides{padding:6px 20px 30px;text-align:center}
+.st-guides p{margin:0;font-size:14px;color:var(--st-text)}
+.st-guides a{font-weight:600;color:#0B5D56}
+@media (min-width:900px){
+ .st-hero-grid{grid-template-columns:1.05fr 1fr;gap:48px}
+ .st-hero{padding:56px 0 72px}
+ .sc-row{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;overflow:visible;padding:0 20px}
+ .sc-dots{display:none}
+ .st-ask p{display:none}
+ .st-rev-row{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible}
+}
+@media (prefers-reduced-motion:reduce){.sc-dots span{transition:none}}
+</style>
+</head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
 
@@ -683,47 +770,163 @@ h1,h2,h3{color:var(--ink)}
   </nav>
 </header>
 
-<main id="main">
 
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="wrap hero-grid">
-      <div class="hero-photo"><img src="assets/profile.webp" width="510" height="507" alt="Laura Clarke" fetchpriority="high"></div>
-      <div class="hero-copy">
-        <h1 id="hero-title">Jamaican documents, without the running around.</h1>
-        <p class="sub">Whether you're in Jamaica or overseas, I help organise your paperwork, navigate online applications, and keep you informed.</p>
-        <a class="btn btn-gold" href="/contact.html">Tell us how we can help</a>
-        <p class="note">Independent private service · Not a government agency</p>
-      </div>
-    </div>
-  </section>
+<main id="main" class="story">
 
+<section class="st-hero" aria-labelledby="hero-title">
+<div class="st-wrap st-hero-grid">
+<div>
+<h1 id="hero-title">Jamaican documents, without the running around.</h1>
+<p class="st-lead">Started it online and got stuck? One wrong step can mean a declined payment or a second trip. We get it right the first time.</p>
+<a class="st-btn" href="#services">See how we can help</a>
+<p class="st-note">Independent private service. Not a government agency.</p>
+</div>
+<img class="st-hero-img" src="assets/marcia-stuck-hero.webp" width="1000" height="747" alt="Marcia at home, stressed, holding her bank card in front of a laptop showing Payment declined, with her Jamaican passport on the table" fetchpriority="high">
+</div>
+</section>
 
-<section class="section focus-services" id="services" aria-labelledby="services-title"><div class="wrap"><div class="service-heading"><p class="kicker">Practical support, clearly explained</p><h2 class="h2" id="services-title">How can I help you?</h2><p>Choose the area that fits your needs. We will confirm the assistance available and what you need to provide.</p></div><div class="priority-grid">
-<section class="service-panel" id="travel-assistance" aria-labelledby="travel-title"><img class="panel-img" src="assets/family-airport-1200.webp" width="1200" height="655" loading="lazy" decoding="async" alt="A family walking through the airport with their passports"><div class="service-panel-top"><span class="service-label">For travel</span><h3 id="travel-title">Passport, Visa &amp; Police Record</h3><p>Choose one service or ask about several. We explain what we handle and what you complete in person.</p></div><div class="travel-options"><a href="/jamaican-passport-services.html"><span><strong>Online passport renewal</strong><small>Eligible online renewals, delivered to your door.</small></span><span class="see">See details →</span></a><a href="/us-visitor-visa-services.html"><span><strong>U.S. visitor visa</strong><small>Your DS-160 completed with you, step by step.</small></span><span class="see">See details →</span></a><a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20police%20record%20application%20assistance%3A%20online%20application%2C%20fee%20payment%2C%20appointment%20booking%20and%20preparation%20for%20my%20biometrics%20visit." target="_blank" rel="noopener"><span><strong>Police record</strong><small>Application, payment and booking. You attend for biometrics.</small></span><span class="see">Ask on WhatsApp →</span></a></div><p class="scope-note travel-note">Government fees are separate.</p></section>
-<section class="service-panel" id="renewal-assistance" aria-labelledby="renewal-title"><img class="panel-img" src="assets/jamaica-new-driver-licence-success.webp" width="1200" height="800" loading="lazy" decoding="async" alt="A driver holding her car keys"><div class="service-panel-top"><span class="service-label">For drivers</span><h3 id="renewal-title">Driver &amp; Vehicle</h3><p>Unable to visit the tax office? We handle your renewals and tickets online.</p></div><div class="travel-options"><a href="/motor-vehicle-licence-renewal.html"><span><strong>Motor vehicle renewal</strong><small>Same-day renewal. No Tax Office line.</small></span><span class="see">See details →</span></a><a href="/drivers-licence-renewal.html"><span><strong>Driver’s licence renewal</strong><small>Payment and preparation before your visit.</small></span><span class="see">See details →</span></a><a href="/motor-vehicle-licence-renewal.html#ticket-lookup"><span><strong>Traffic tickets<span class="new-tag">NEW</span></strong><small>You might have a warrant out. Check your tickets now.</small></span><span class="see">See details →</span></a></div><p class="scope-note travel-note">Tickets must be cleared before a renewal.</p></section></div>
-<div class="other-help"><div><h3>Need help with something else?</h3><p>Online forms, email correspondence, follow-up enquiries or supporting documents—tell us what you need and we will explain whether we can assist.</p></div><a class="btn btn-outline btn-sm" href="/contact.html">Ask Laura</a></div></div></section>
-<section class="section biz" id="self-employed-assistance" aria-labelledby="biz-title"><div class="wrap"><p class="kicker">For your business</p><h2 class="biz-h2" id="biz-title">Self-employed? File and pay your taxes online.</h2><p style="color:#D5DEE8;margin:-14px 0 26px;max-width:44rem">Tax returns now go through the TAJ website only. No paper, no line. Pick what you need: we do it with you or for you, or you keep your own records with our tools.</p><style id="s04-cards">.tx-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}.tx-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-top:4px solid var(--gold);padding:26px;min-width:0}.tx-card h3{font-family:var(--serif);font-size:25px;line-height:1.25;margin:10px 0 8px;color:var(--navy)}.tx-card>p{color:var(--muted);font-size:15px;margin:0 0 18px}.tx-img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:center top;margin:0 0 18px}.tx-covers{display:flex;gap:12px;justify-content:center;background:#F4F6F8;aspect-ratio:3/2;height:auto;padding:12px;margin:0 0 18px}.tx-covers{align-items:center;overflow:hidden}.tx-covers img{width:38%;height:auto;border:1px solid var(--border)}.tx-tools{border-top-color:var(--navy)}.tx-bottom{margin-top:auto}.tx-bottom .btn{width:100%;min-height:48px;justify-content:center}.tx-book{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center;margin-top:26px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);padding:20px;color:#D5DEE8}.tx-book img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:center top}.tx-book .service-label{color:var(--gold-light)}.tx-book h3{font-family:var(--serif);font-size:22px;color:#fff;margin:8px 0 6px}.tx-book p{font-size:15px;margin:0 0 14px}.tx-book .waitlist{display:flex;flex-direction:row;flex-wrap:wrap;gap:10px;margin:0}.tx-book .waitlist input[type=email]{flex:1 1 220px;height:44px;min-height:0}.tx-book .btn-outline{background:transparent;color:#fff;border-color:#fff}.tx-book .waitlist-ok{color:#fff}.biz .scope-note{color:#AEB5B9;font-size:13px;margin:18px 0 0}@media(max-width:860px){.tx-grid{grid-template-columns:1fr;gap:22px}.tx-card{padding:22px}.tx-book{grid-template-columns:1fr}}</style><p class="tx-sub" style="margin-top:0">We do it with you or for you</p><div class="tx-grid tx-3"><article class="tx-card"><img class="tx-img" src="assets/tax-office-jamaica.webp" loading="lazy" decoding="async" alt=""><span class="service-label">Service</span><h3>Your TAJ online account, set up</h3><p>We set up your account so you can log in, see what you owe, pay and find your tax notices.</p><div class="tx-bottom"><a class="btn btn-navy" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27m%20self-employed%20and%20need%20help%20setting%20up%20my%20TAJ%20online%20account." target="_blank" rel="noopener">Ask on WhatsApp</a></div></article><article class="tx-card"><img class="tx-img" src="assets/s04-barber-sorting-records-768.webp" loading="lazy" decoding="async" alt=""><span class="service-label">Service</span><h3>Your records, sorted</h3><p>We help you put each year’s income and expenses in order, ready for filing.</p><div class="tx-bottom"><a class="btn btn-navy" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27m%20self-employed%20and%20need%20help%20getting%20my%20records%20sorted%20for%20my%20S04." target="_blank" rel="noopener">Ask on WhatsApp</a></div></article><article class="tx-card"><img class="tx-img" src="assets/marcia-taj-online-filing-768.webp" loading="lazy" decoding="async" alt=""><span class="service-label">Service</span><h3>Your yearly tax return, filed</h3><p>The self-employed return (the S04), done online with you, or for you.</p><div class="tx-bottom"><a class="btn btn-navy" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27m%20self-employed%20and%20need%20help%20filing%20my%20S04%20tax%20return%20online." target="_blank" rel="noopener">Ask on WhatsApp</a></div></article></div><p class="tx-sub">Do it yourself</p><div class="tx-grid tx-diy"><article class="tx-card tx-paid"><a class="tx-covers" href="/s04-tax-record-planner" tabindex="-1" aria-hidden="true"><img src="assets/s04-tax-record-planner-cover.webp" width="935" height="1210" loading="lazy" decoding="async" alt=""></a><span class="service-label">For your S04 tax return</span><h3>S04 Tax Record Planner</h3><p>Gather your papers and totals in the order you need them, ready to file.</p><p class="tx-price">J$2,000</p><div class="tx-bottom"><a class="btn btn-gold" href="/s04-tax-record-planner">See the Planner</a></div></article><article class="tx-card tx-free"><a class="tx-covers" href="/assets/self-employed-income-expense-tracker-jamaica.pdf" download tabindex="-1" aria-hidden="true"><img src="assets/s04-income-expense-tracker-cover.webp" width="935" height="1210" loading="lazy" decoding="async" alt=""></a><span class="service-label">Free download</span><h3>S04 Income and Expense Tracker</h3><p>Type in your income and expenses and the totals add up for you.</p><p class="tx-price">Free</p><div class="tx-bottom"><a class="btn btn-navy" href="/assets/self-employed-income-expense-tracker-jamaica.pdf" download>Download free</a></div></article></div><article class="tx-book"><img src="assets/marcia-self-employed-jamaica-768.webp" width="768" height="512" loading="lazy" decoding="async" alt="Marcia holding her business records"><div><span class="soon">Coming December</span><span class="service-label" style="margin-left:10px">New book</span><h3>Don’t Pay Tax You Don’t Owe</h3><p>A plain-language walkthrough of filing your self-employed return on the TAJ website. Leave your email and we’ll tell you the day it’s out.</p><form class="waitlist" data-newsletter data-source="book-waitlist" data-success="waitlist-success"><label for="wl-email" class="sr-only">Email address</label><input id="wl-email" name="email" type="email" autocomplete="email" required placeholder="Your email address"><input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"><button type="submit" class="btn btn-outline btn-sm">Tell me when it’s ready</button></form><p id="waitlist-success" class="waitlist-ok" hidden role="status">You’re on the list. We’ll email you the day the book is out.</p></div></article><p class="scope-note">Administrative support. Tax calculations, deductions and professional tax advice may require a qualified tax professional.</p></div></section>
+<section class="st-ask" aria-labelledby="services-title">
+<h2 id="services-title">Which one sounds like you?</h2>
+<p>Swipe to find your situation.</p>
+</section>
 
-  <section class="section tint reviews-band" aria-labelledby="reviews-title">
-    <div class="wrap">
-      <h2 class="h2 center" id="reviews-title">What clients say</h2>
-      <div class="reviews">
-        <figure class="review reveal">
-          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>“The service provided was excellent. I was very impressed with the efficiency and exceptional attention to every detail. The speedy delivery was a plus for me. In all, everything was professionally done. I appreciate the service very much.”</blockquote>
-          <figcaption><strong>Owen M.</strong><span>Passport renewal from overseas</span></figcaption>
-        </figure>
-        <figure class="review reveal">
-          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>“From getting passport-size pictures to getting through at the office and collecting my new ID, the process was smooth and easy. Thanks so much for your expertise!”</blockquote>
-          <figcaption><strong>Danielle H.</strong><span>Passport in Jamaica</span></figcaption>
-        </figure>
-      </div>
-      <p class="reviews-all"><a class="link-strong" href="/about.html#reviews">See all reviews →</a></p>
-    </div>
-  </section>
+<section class="st-cards" id="services" aria-labelledby="services-title">
+<div class="st-wrap-wide">
+<div class="sc-group" id="travel-assistance">
+<p class="sc-label">Passport · Visa · Police record</p>
+<div class="sc-row" tabindex="0" aria-label="Passport · Visa · Police record, swipe for more">
+<article class="sc" style="--p:#F4ECDD;--f:#1E2A55;--t:#E9DAB9">
+<span class="sc-tag">Passport</span>
+<p class="sc-small">Renewing from Jamaica or abroad</p>
+<h3 class="sc-h">Passport due for renewal?</h3>
+<div class="sc-panel"><img src="assets/marcia-passport-delivery.webp" alt="Marcia smiling as a courier delivers her renewed Jamaican passport to her door" loading="lazy" decoding="async"><span class="sc-badge" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#12201E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 16h6"/></svg></span><span class="sc-fold" aria-hidden="true"></span></div>
+<div class="sc-box"><p class="sc-desc">Dreading the long line, or did your payment fail online? Skip both. We get it done right the first time.</p><ol class="sc-steps"><li><span class="sc-n">01</span>Share your passport details</li><li><span class="sc-n">02</span>We handle the renewal and payment</li><li><span class="sc-n">03</span>Your new passport is delivered to your door</li></ol><p class="sc-safe"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Your details are kept confidential.</p><a class="sc-btn" href="/jamaican-passport-services.html">Renew my passport</a></div>
+</article><article class="sc" style="--p:#E4F1F0;--f:#2C6E70;--t:#CDE5E4">
+<span class="sc-tag">U.S. visa</span>
+<p class="sc-small">Visiting the U.S.</p>
+<h3 class="sc-h">Planning a trip to the U.S.?</h3>
+<div class="sc-panel"><img src="assets/family-airport-1200.webp" alt="Jamaican family with passports at the airport departures hall" loading="lazy" decoding="async"><span class="sc-badge" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#12201E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 13.5l19-7-5.5 13-3.5-5.5z"/><path d="M12.5 14l3-4.5"/></svg></span><span class="sc-fold" aria-hidden="true"></span></div>
+<div class="sc-box"><p class="sc-desc">Not sure where to start with the DS-160 or your interview? Walk in prepared.</p><ol class="sc-steps"><li><span class="sc-n">01</span>Tell us about your trip</li><li><span class="sc-n">02</span>We prepare your application with you</li><li><span class="sc-n">03</span>You're ready for your interview</li></ol><p class="sc-safe"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Your details are kept confidential.</p><a class="sc-btn" href="/us-visitor-visa-services.html">Start my visa application</a></div>
+</article><article class="sc" style="--p:#F4EAE5;--f:#1F5A46;--t:#EAD9D0">
+<span class="sc-tag">Police record</span>
+<p class="sc-small">For work, travel or study</p>
+<h3 class="sc-h">Need a police record?</h3>
+<div class="sc-panel"><img src="assets/jamaica-us-visa-ready-to-apply.webp" alt="Smiling woman holding her completed documents" loading="lazy" decoding="async"><span class="sc-badge" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#12201E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 17c0-2 1.3-3.5 3-3.5s3 1.5 3 3.5"/></svg></span><span class="sc-fold" aria-hidden="true"></span></div>
+<div class="sc-box"><p class="sc-desc">Don't know where to start? You only need to go in once.</p><ol class="sc-steps"><li><span class="sc-n">01</span>Share your details</li><li><span class="sc-n">02</span>We complete the application and pay the fee</li><li><span class="sc-n">03</span>You get your appointment date and documents</li></ol><p class="sc-safe"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Your details are kept confidential.</p><a class="sc-btn" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20need%20police%20record%20application%20assistance%3A%20online%20application%2C%20fee%20payment%2C%20appointment%20booking%20and%20preparation%20for%20my%20biometrics%20visit." target="_blank" rel="noopener">Get my police record</a></div>
+</article>
+</div>
+<div class="sc-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+</div>
+<div class="sc-group" id="renewal-assistance">
+<p class="sc-label">Driver's licence · Motor vehicle · Ticket clearance</p>
+<div class="sc-row" tabindex="0" aria-label="Driver's licence · Motor vehicle · Ticket clearance, swipe for more">
+<article class="sc" style="--p:#E6EFF6;--f:#22355F;--t:#CFDDEB">
+<span class="sc-tag">Driver's licence</span>
+<p class="sc-small">Renewing your licence</p>
+<h3 class="sc-h">Licence due for renewal?</h3>
+<div class="sc-panel"><img src="assets/jamaica-new-driver-licence-success.webp" alt="Young woman beside her car holding her renewed driver's licence and keys" loading="lazy" decoding="async"><span class="sc-badge" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#12201E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><circle cx="8" cy="11" r="2.2"/><path d="M5 16c.8-1.6 1.8-2.2 3-2.2s2.2.6 3 2.2"/><path d="M14 10h5M14 13.5h4"/></svg></span><span class="sc-fold" aria-hidden="true"></span></div>
+<div class="sc-box"><p class="sc-desc">Not sure if you have unpaid traffic tickets? Find out before they hold up your renewal.</p><ol class="sc-steps"><li><span class="sc-n">01</span>Tell us your licence number</li><li><span class="sc-n">02</span>We check and clear any tickets</li><li><span class="sc-n">03</span>Your renewal goes through</li></ol><p class="sc-safe"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Your details are kept confidential.</p><a class="sc-btn" href="/drivers-licence-renewal.html">Renew my licence</a></div>
+</article><article class="sc" style="--p:#EDEBE6;--f:#2B2F33;--t:#DCD9D2">
+<span class="sc-tag">Motor vehicle</span>
+<p class="sc-small">Renewing your vehicle's licence</p>
+<h3 class="sc-h">Motor vehicle licence due?</h3>
+<div class="sc-panel"><img src="assets/motor-vehicle-800.webp" alt="Driver holding a phone showing the renewed electronic vehicle licence" loading="lazy" decoding="async"><span class="sc-badge" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#12201E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-3.5L6 8a2 2 0 0 1 1.8-1.2h8.4A2 2 0 0 1 18 8l2 4.5V16"/><path d="M3 16h18v2.5H3z"/><circle cx="7.5" cy="18.5" r="1.6"/><circle cx="16.5" cy="18.5" r="1.6"/></svg></span><span class="sc-fold" aria-hidden="true"></span></div>
+<div class="sc-box"><p class="sc-desc">No time for the Tax Office line? You don't have to stand in it.</p><ol class="sc-steps"><li><span class="sc-n">01</span>Give us your vehicle details</li><li><span class="sc-n">02</span>We submit and pay the renewal online</li><li><span class="sc-n">03</span>You're road ready right away</li></ol><p class="sc-safe"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Your details are kept confidential.</p><a class="sc-btn" href="/motor-vehicle-licence-renewal.html">Renew my vehicle</a></div>
+</article><article class="sc" style="--p:#F8EDE6;--f:#8C4127;--t:#F0D9CB">
+<span class="sc-tag">Traffic tickets</span>
+<p class="sc-small">Check before it becomes a problem</p>
+<h3 class="sc-h">Any traffic tickets on your name?</h3>
+<div class="sc-panel"><img src="assets/jamaica-learner-supervised-driving.webp" alt="Two women driving along a sunny Jamaican road" loading="lazy" decoding="async"><span class="sc-badge" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#12201E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><span class="sc-fold" aria-hidden="true"></span></div>
+<div class="sc-box"><p class="sc-desc">Worried an old ticket could catch up with you? Find out where you stand, free.</p><ol class="sc-steps"><li><span class="sc-n">01</span>Give us your licence number</li><li><span class="sc-n">02</span>We look up any outstanding tickets</li><li><span class="sc-n">03</span>We pay them for you, if you choose</li></ol><p class="sc-safe"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Your details are kept confidential.</p><a class="sc-btn" href="/motor-vehicle-licence-renewal.html#ticket-lookup">Check my tickets</a></div>
+</article>
+</div>
+<div class="sc-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+</div>
+</div>
+</section>
 
+<section class="st-taxhero" id="self-employed-assistance" aria-labelledby="biz-title">
+<div class="st-wrap st-hero-grid">
+<div>
+<span class="st-tag">For the self-employed</span>
+<h2 id="biz-title">Tax time feels like guesswork?</h2>
+<p class="st-lead">Receipts in a pile, a portal that doesn't explain itself, and a deadline in March. It doesn't have to be that way.</p>
+</div>
+<img class="st-hero-img" src="assets/s04-barber-sorting-records-768.webp" width="768" height="512" alt="Barber sorting a pile of receipts into folders at his shop counter" loading="lazy" decoding="async">
+</div>
+</section>
 
+<section class="st-ask" aria-labelledby="tax-help-title">
+<h2 id="tax-help-title">Which help do you need?</h2>
+<p>Swipe to see your options.</p>
+</section>
+
+<section class="st-cards st-cards-tax" aria-labelledby="tax-help-title">
+<div class="st-wrap-wide">
+<div class="sc-group" id="tax-options">
+<p class="sc-label">S04 filing · Record planner · The S04 book</p>
+<div class="sc-row" tabindex="0" aria-label="S04 filing · Record planner · The S04 book, swipe for more">
+<article class="sc" style="--p:#F2EEE4;--f:#1F3B5C;--t:#E3DCC9">
+<span class="sc-tag">S04 filing</span>
+<p class="sc-small">Self-employed in Jamaica</p>
+<h3 class="sc-h">Ready to file your S04?</h3>
+<div class="sc-panel"><img src="assets/marcia-taj-online-filing-768.webp" alt="Marcia the hairdresser smiling as she files her S04 online" loading="lazy" decoding="async"><span class="sc-badge" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#12201E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/><path d="M9 10.5l2 2 4-4"/></svg></span><span class="sc-fold" aria-hidden="true"></span></div>
+<div class="sc-box"><p class="sc-desc">Guessing your way through the TAJ portal? Skip the guessing and file it right the first time.</p><ol class="sc-steps"><li><span class="sc-n">01</span>Tell us about your business</li><li><span class="sc-n">02</span>We take you straight to the right place</li><li><span class="sc-n">03</span>Your S04 is filed properly</li></ol><p class="sc-safe"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Your details are kept confidential.</p><a class="sc-btn" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27m%20self-employed%20and%20need%20help%20filing%20my%20S04%20tax%20return%20online." target="_blank" rel="noopener">Get filing help</a></div>
+</article><article class="sc" style="--p:#E8EDF3;--f:#1E2A55;--t:#D3DCE8">
+<span class="sc-tag">Record planner</span>
+<p class="sc-small">Keep your records right all year</p>
+<h3 class="sc-h">Receipts all over the place?</h3>
+<div class="sc-panel"><img src="assets/s04-tax-record-planner-cover.webp" alt="Cover of the S04 Tax Record Planner" loading="lazy" decoding="async"><span class="sc-badge" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#12201E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><span class="sc-fold" aria-hidden="true"></span></div>
+<div class="sc-box"><p class="sc-desc">A few minutes each month now means no scramble in March.</p><ol class="sc-steps"><li><span class="sc-n">01</span>Get the planner and tracker</li><li><span class="sc-n">02</span>Write down every payment in and out</li><li><span class="sc-n">03</span>Have your totals ready at filing time</li></ol><a class="sc-btn" href="/s04-tax-record-planner">Get the planner</a></div>
+</article><article class="sc" style="--p:#F6E9E3;--f:#2E6B4F;--t:#EBD6CC">
+<span class="sc-tag">The S04 book</span>
+<p class="sc-small">Don't Pay Tax You Don't Owe, coming in December</p>
+<h3 class="sc-h">Rather file it yourself?</h3>
+<div class="sc-panel"><img src="assets/marcia-self-employed-jamaica-768.webp" alt="Marcia the hairdresser holding her business records in her salon" loading="lazy" decoding="async"><span class="sc-badge" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#12201E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5"/><path d="M9 8h6"/></svg></span><span class="sc-fold" aria-hidden="true"></span></div>
+<div class="sc-box"><p class="sc-desc">The book walks you through the TAJ portal, step by step, in plain language.</p><ol class="sc-steps"><li><span class="sc-n">01</span>Join the waitlist</li><li><span class="sc-n">02</span>Get an email when it launches</li><li><span class="sc-n">03</span>File with the book beside you</li></ol><form class="waitlist sc-form" data-newsletter data-source="book-waitlist" data-success="waitlist-success"><label for="wl-email" class="sr-only">Email address</label><input id="wl-email" name="email" type="email" autocomplete="email" required placeholder="Your email address"><input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"><button type="submit" class="sc-btn">Join the waitlist</button></form><p id="waitlist-success" class="sc-ok" hidden role="status">You're on the list. We'll email you the day the book is out.</p></div>
+</article>
+</div>
+<div class="sc-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+</div>
+<p class="st-scope">Administrative support. Tax calculations, deductions and professional tax advice may require a qualified tax professional.</p>
+</div>
+</section>
+
+<section class="st-other">
+<div class="st-wrap">
+<div class="st-other-box">
+<h2>Don't see yours?</h2>
+<p>Birth certificate copies, TRN and other Jamaican documents. Tell us what you need.</p>
+<a class="st-btn st-btn-outline" href="/contact.html">Get in touch</a>
+</div>
+</div>
+</section>
+
+<section class="st-about" aria-labelledby="about-title">
+<div class="st-wrap">
+<div class="st-about-head">
+<img src="assets/profile.webp" width="510" height="507" alt="Laura Clarke" loading="lazy" decoding="async">
+<div><span class="st-script">Why I do this</span><h2 id="about-title">I know where people get stuck.</h2></div>
+</div>
+<p>I've been through many of these myself and helped others through the rest. Your documents are handled like a bank would: confidential and verified.</p>
+<a class="st-link" href="/about.html">More about me</a>
+</div>
+</section>
+
+<section class="st-reviews" aria-labelledby="reviews-title">
+<div class="st-wrap">
+<h2 id="reviews-title">What clients say</h2>
+</div>
+<div class="st-rev-row" tabindex="0" aria-label="Client reviews, swipe for more">
+<figure class="st-rev"><div class="st-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“The service provided was excellent. I was very impressed with the efficiency and exceptional attention to every detail. The speedy delivery was a plus for me.”</blockquote><figcaption><strong>Owen M.</strong> Passport renewal from overseas</figcaption></figure>
+<figure class="st-rev"><div class="st-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“From getting passport-size pictures to getting through at the office and collecting my new ID, the process was smooth and easy. Thanks so much for your expertise!”</blockquote><figcaption><strong>Danielle H.</strong> Passport in Jamaica</figcaption></figure>
+<a class="st-rev st-rev-more" href="/about.html#reviews">See all reviews</a>
+</div>
+</section>
+
+<section class="st-guides">
+<p>Prefer to read up first? <a href="/insights.html">Browse our free guides</a></p>
+</section>
 
 </main>
 
@@ -851,5 +1054,6 @@ h1,h2,h3{color:var(--ink)}
 
 <script>(function(){document.addEventListener('click',function(e){var c=e.target.closest('a.card');if(!c||e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey)return;var t=c.querySelector('.card-cta');if(t&&t.firstChild&&t.firstChild.nodeType===3){c.setAttribute('data-cta',t.firstChild.nodeValue);t.firstChild.nodeValue='Opening\u2026 ';}c.classList.add('is-opening');});window.addEventListener('pageshow',function(){document.querySelectorAll('a.card.is-opening').forEach(function(c){c.classList.remove('is-opening');var t=c.querySelector('.card-cta');if(t&&c.hasAttribute('data-cta'))t.firstChild.nodeValue=c.getAttribute('data-cta');});});})();</script>
 <script type="speculationrules">{"prerender":[{"where":{"selector_matches":"a.card"},"eagerness":"moderate"}]}</script>
+<script>(function(){document.querySelectorAll('.sc-group').forEach(function(g){var row=g.querySelector('.sc-row'),dots=g.querySelectorAll('.sc-dots span');if(!row||!dots.length)return;function upd(){var cards=row.children,best=0,min=1e9;for(var i=0;i<cards.length;i++){var d=Math.abs(cards[i].offsetLeft-row.offsetLeft-row.scrollLeft-20);if(d<min){min=d;best=i}}dots.forEach(function(s,i){s.classList.toggle('on',i===best)})}row.addEventListener('scroll',function(){window.requestAnimationFrame(upd)},{passive:true});upd()})})();</script>
 </body>
 </html>
