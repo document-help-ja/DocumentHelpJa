@@ -701,7 +701,99 @@ h1,h2,h3{color:var(--ink)}
 .sc-result{margin-top:10px;font-size:15px;font-weight:600}
 .sc-btn{margin-top:16px;min-height:48px;border-radius:999px;background:#1B1F1E}
 .sc-btn:hover{background:#0B5D56}
+.sc-more{width:100%;margin-top:12px;border-top:1px solid rgba(0,0,0,.08)}
+.sc-more summary{display:flex;align-items:center;justify-content:space-between;min-height:44px;cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:#12201E}
+.sc-more summary::-webkit-details-marker{display:none}
+.sc-more summary::after{content:"+";font-size:20px;font-weight:500}
+.sc-more[open] summary::after{content:"\2212"}
+.sc-more ul{margin:0 0 8px;padding-left:18px;font-size:14.5px;line-height:1.5}
+.sc-more li{margin-bottom:4px}
+.sc-more p{margin:0 0 8px;font-size:14px;line-height:1.5;color:#3E4644}
+/* Tidy card spacing + dropdowns that stand apart */
+.sc-h{margin-top:20px}
+.sc-box{padding-top:10px}
+.sc-desc{margin:0}
+.sc-result{margin:14px 0 18px}
+.sc-box>.sc-more{margin-top:auto}
+.sc-box>.sc-more+.sc-btn,.sc-box>.sc-more+.sc-form,.sc-box>.sc-more+.sc-form+.sc-ok{margin-top:14px}
+.sc-box>.sc-result+.sc-more{margin-top:auto;padding-top:0}
+.sc-more{border-top:0;background:#FFFFFF;border-radius:14px;padding:0 14px;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.sc-more summary{color:#74551F}
+.sc-more summary::after{width:26px;height:26px;border-radius:50%;background:#F6EFE3;display:grid;place-items:center;font-size:18px;line-height:1}
+.sc-more[open]{padding-bottom:6px}
+@media (min-width:900px){.sc-h{min-height:2.5em}.sc-desc{min-height:4.5em}}
+/* Buttons in a deeper shade of each row's colour */
+#travel-assistance .sc-btn{background:#0F5E58}
+#travel-assistance .sc-btn:hover{background:#0A4743}
+#renewal-assistance .sc-btn{background:#2A4566}
+#renewal-assistance .sc-btn:hover{background:#1E334D}
+#tax-options .sc-btn{background:#9A6A3A}
+#tax-options .sc-btn:hover{background:#82582E}
+/* Calmer headings and hero button (Nov 2026) */
+.st-hero h1{font-size:clamp(26px,4.2vw,38px);line-height:1.15;font-weight:700;letter-spacing:-.01em}
+.st-taxhero h2{font-size:clamp(24px,3.8vw,34px);line-height:1.18;font-weight:700;letter-spacing:-.01em}
+.st-ask h2{font-size:clamp(24px,3.6vw,32px);line-height:1.2;font-weight:700;letter-spacing:-.01em}
+.st-other-box h2,.st-reviews h2,.st-guides h2{font-weight:700}
+.st-btn{background:#0F5E58}
+.st-btn:hover{background:#0A4743}
+.st-btn-outline{background:transparent;color:#0F5E58;border-color:#0F5E58}
+.st-btn-outline:hover{background:#0F5E58;color:#fff}
 @media (min-width:900px){.st-cards,.st-cards-tax{padding:64px 0 80px}.sc-row{gap:32px}.sc-h{font-size:21px}}
+/* Desktop: no stretched gaps, same-size buttons (Nov 2026) */
+.sc-price{margin:-8px 0 14px;font-size:14px;font-weight:600;color:#74551F}
+@media (min-width:900px){
+ .sc-row{align-items:start}
+ .sc-box{flex:none}
+ .sc-box>.sc-more,.sc-box>.sc-btn,.sc-box>.sc-form,.sc-box>.sc-result+.sc-more{margin-top:0}
+ .sc-box>.sc-more+.sc-btn,.sc-box>.sc-more+.sc-form{margin-top:14px}
+ .sc-result{min-height:2.8em}
+ .sc-btn{min-width:200px}
+}
+/* Desktop: buttons line up along the bottom of each row (Nov 2026) */
+@media (min-width:900px){
+ .sc-row{align-items:stretch}
+ .sc{display:flex;flex-direction:column}
+ .sc-box{flex:1 1 auto;display:flex;flex-direction:column}
+ .sc-box>.sc-more{margin-top:auto}
+}
+/* Fix: pin the dropdown + button group to the bottom of every card; tighten "Don't see yours?" (Nov 2026) */
+@media (min-width:900px){
+ .sc-box>.sc-more,.sc-box>.sc-result+.sc-more,.sc-box>.sc-price+.sc-more{margin-top:auto !important}
+ .sc-box>.sc-result,.sc-box>.sc-price{margin-bottom:18px}
+ .st-cards,.st-cards-tax{padding-bottom:48px}
+}
+.st-other{padding:40px 0}
+@media (min-width:900px){.st-other{padding:56px 0}}
+/* Book card: email box and button on one line, so all three buttons line up */
+.sc-form{flex-wrap:nowrap;margin-bottom:0 !important}
+.sc-form input[type=email]{flex:1 1 auto;min-width:0}
+.sc-form .sc-btn{flex:none;min-width:0;padding:0 18px;white-space:nowrap}
+/* About: a centred card with a proper-sized photo (Nov 2026) */
+.st-about{padding:56px 0}
+.st-about-card{max-width:760px;background:#FFFFFF;border-radius:28px;padding:28px 24px;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.st-about-head{flex-direction:column;align-items:center;text-align:center;gap:14px}
+.st-about-head img{width:150px;height:150px;border:4px solid #F6F1E7}
+.st-about h2{font-size:22px;font-weight:700}
+.st-script{font-size:22px}
+.st-about-card>p{margin:18px auto 0;font-size:16px;line-height:1.6;text-align:center;max-width:34rem}
+.st-about-facts{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.st-about-facts li{margin:0;padding:6px 14px;border-radius:999px;background:#E6F2F0;color:#0F5E58;font-size:13.5px;font-weight:600}
+.st-about-card>.st-link{display:block;width:max-content;margin:16px auto 0;min-height:44px;line-height:44px}
+@media (min-width:900px){
+ .st-about{padding:72px 0}
+ .st-about-card{display:grid;grid-template-columns:200px 1fr;column-gap:40px;align-items:center;padding:40px 48px;text-align:left}
+ .st-about-head{display:contents}
+ .st-about-head img{grid-row:1 / span 4;width:200px;height:200px}
+ .st-about-head>div,.st-about-card>p,.st-about-facts,.st-about-card>.st-link{grid-column:2}
+ .st-about-card>p{margin:12px 0 0;text-align:left;max-width:none}
+ .st-about-facts{justify-content:flex-start;margin-top:16px}
+ .st-about-card>.st-link{margin:12px 0 0}
+ .st-about h2{font-size:26px}
+ .st-about-head>div{text-align:left}
+ .st-about-card{max-width:880px;grid-template-columns:280px 1fr;column-gap:48px}
+ .st-about-head img{width:280px;height:280px}
+}
+@media (max-width:899px){.st-about-card{margin:0 16px}}
 </style>
 </head>
 <body id="top">
@@ -892,15 +984,15 @@ h1,h2,h3{color:var(--ink)}
 <article class="sc">
 <div class="sc-panel"><img src="assets/marcia-taj-online-filing-768.webp" alt="Marcia the hairdresser smiling as she files her S04 online" loading="lazy" decoding="async"></div>
 <h3 class="sc-h">Ready to file your S04?</h3>
-<div class="sc-box"><p class="sc-desc">Guessing your way through the TAJ portal? Skip the guessing and file it right the first time.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your S04 filed properly, on time.</p><a class="sc-btn" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27m%20self-employed%20and%20need%20help%20filing%20my%20S04%20tax%20return%20online." target="_blank" rel="noopener">Get filing help</a></div>
+<div class="sc-box"><p class="sc-desc">Guessing your way through the TAJ portal? Skip the guessing and file it right the first time.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your S04 filed properly, on time.</p><details class="sc-more"><summary>How it works</summary><ul><li>Message me on WhatsApp and tell me where you're stuck.</li><li>I guide you through the TAJ portal, step by step.</li><li>Your S04 gets filed properly and on time.</li></ul></details><a class="sc-btn" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27m%20self-employed%20and%20need%20help%20filing%20my%20S04%20tax%20return%20online." target="_blank" rel="noopener">Get filing help</a></div>
 </article><article class="sc">
 <div class="sc-panel"><img src="assets/s04-tax-record-planner-cover.webp" alt="Cover of the S04 Tax Record Planner" loading="lazy" decoding="async"></div>
 <h3 class="sc-h">Receipts all over the place?</h3>
-<div class="sc-box"><p class="sc-desc">A few minutes each month now means no scramble in March.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your totals ready when it's time to file.</p><a class="sc-btn" href="/s04-tax-record-planner">Get the planner</a></div>
+<div class="sc-box"><p class="sc-desc">A few minutes each month now means no scramble in March.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your totals ready when it's time to file.</p><p class="sc-price">J$2,000 · PDF download</p><details class="sc-more"><summary>What's in the planner?</summary><ul><li>Income, month by month</li><li>Business expenses</li><li>Papers to gather checklist</li><li>Year-end summary, ready for filing</li></ul><p>J$2,000 PDF. Pay by Lynk or bank transfer, and your download link comes on WhatsApp. A record-keeping planner, not tax advice.</p></details><a class="sc-btn" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20buy%20the%20S04%20Tax%20Record%20Planner%20for%20J%242%2C000." target="_blank" rel="noopener">Get the planner</a></div>
 </article><article class="sc">
 <div class="sc-panel"><img src="assets/marcia-self-employed-jamaica-768.webp" alt="Marcia the hairdresser holding her business records in her salon" loading="lazy" decoding="async"></div>
 <h3 class="sc-h">Rather file it yourself?</h3>
-<div class="sc-box"><p class="sc-desc">The book walks you through the TAJ portal, step by step, in plain language.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>File it yourself, with the book beside you.</p><form class="waitlist sc-form" data-newsletter data-source="book-waitlist" data-success="waitlist-success"><label for="wl-email" class="sr-only">Email address</label><input id="wl-email" name="email" type="email" autocomplete="email" required placeholder="Your email address"><input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"><button type="submit" class="sc-btn">Join the waitlist</button></form><p id="waitlist-success" class="sc-ok" hidden role="status">You're on the list. We'll email you the day the book is out.</p></div>
+<div class="sc-box"><p class="sc-desc">The book walks you through the TAJ portal, step by step, in plain language.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>File it yourself, with the book beside you.</p><details class="sc-more"><summary>What's in the book?</summary><p><strong>Don't Pay Tax You Don't Owe</strong>, coming in December. It takes you through filing your self-employed S04 on the TAJ portal, step by step, in plain language. Join the waitlist and we'll email you the day it's out.</p></details><form class="waitlist sc-form" data-newsletter data-source="book-waitlist" data-success="waitlist-success"><label for="wl-email" class="sr-only">Email address</label><input id="wl-email" name="email" type="email" autocomplete="email" required placeholder="Your email address"><input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"><button type="submit" class="sc-btn">Notify me</button></form><p id="waitlist-success" class="sc-ok" hidden role="status">You're on the list. We'll email you the day the book is out.</p></div>
 </article>
 </div>
 <div class="sc-dots" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -920,12 +1012,13 @@ h1,h2,h3{color:var(--ink)}
 </section>
 
 <section class="st-about" aria-labelledby="about-title">
-<div class="st-wrap">
+<div class="st-wrap st-about-card">
 <div class="st-about-head">
 <img src="assets/profile.webp" width="510" height="507" alt="Laura Clarke" loading="lazy" decoding="async">
 <div><span class="st-script">Why I do this</span><h2 id="about-title">I know where people get stuck.</h2></div>
 </div>
 <p>I've been through many of these myself and helped others through the rest. Your documents are handled like a bank would: confidential and verified.</p>
+<ul class="st-about-facts"><li>Registered business</li><li>Based in Linstead, St. Catherine</li><li>Clients at home and abroad</li></ul>
 <a class="st-link" href="/about.html">More about me</a>
 </div>
 </section>
