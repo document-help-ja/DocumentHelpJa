@@ -794,6 +794,19 @@ h1,h2,h3{color:var(--ink)}
  .st-about-head img{width:280px;height:280px}
 }
 @media (max-width:899px){.st-about-card{margin:0 16px}}
+/* One "Learn more" per card (Nov 2026) */
+.sc-learn{margin-top:14px !important}
+.sc-learn[open]{padding-bottom:12px}
+.sc-learn .sc-desc{margin:4px 0 0;min-height:0 !important}
+.sc-learn .sc-result{margin:12px 0 0;min-height:0 !important}
+.sc-learn .sc-price{margin:10px 0 0}
+.sc-learn .sc-sub{margin:14px 0 6px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#5A6361}
+.sc-learn ul{margin:0}
+.sc-learn p.sc-safe{display:none}
+@media (min-width:900px){
+ .sc-box>.sc-learn{margin-top:auto !important}
+ .sc-row{align-items:start}
+}
 </style>
 </head>
 <body id="top">
@@ -907,7 +920,7 @@ h1,h2,h3{color:var(--ink)}
 <a class="st-btn" href="#services">See how we can help</a>
 <p class="st-note">Independent private service. Not a government agency.</p>
 </div>
-<img class="st-hero-img" src="assets/marcia-stuck-hero.webp" width="1000" height="747" alt="Marcia at home, stressed, holding her bank card in front of a laptop showing Payment declined, with her Jamaican passport on the table" fetchpriority="high">
+<img class="st-hero-img" src="assets/marcia-stuck-hero-coral.webp" width="1200" height="896" alt="Marcia at home, stressed, holding her bank card in front of a laptop showing Payment declined, with her Jamaican passport on the table" fetchpriority="high">
 </div>
 </section>
 
@@ -925,15 +938,15 @@ h1,h2,h3{color:var(--ink)}
 <article class="sc">
 <div class="sc-panel"><img src="assets/marcia-passport-delivery-wide.webp" width="1200" height="900" alt="Marcia smiling as a courier delivers her renewed Jamaican passport to her door" loading="lazy" decoding="async"></div>
 <h3 class="sc-h">Passport due for renewal?</h3>
-<div class="sc-box"><p class="sc-desc">Dreading the long line, or did your payment fail online? Skip both. We get it done right the first time.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your new passport, delivered to your door.</p><a class="sc-btn" href="/jamaican-passport-services.html">Renew my passport</a></div>
+<div class="sc-box"><details class="sc-more sc-learn"><summary>Learn more</summary><p class="sc-desc">Dreading the long line, or did your payment fail online? Skip both. We get it done right the first time.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your new passport, delivered to your door.</p></details><a class="sc-btn" href="/jamaican-passport-services.html">Renew my passport</a></div>
 </article><article class="sc">
 <div class="sc-panel"><img src="assets/family-airport-1200.webp" alt="Jamaican family with passports at the airport departures hall" loading="lazy" decoding="async"></div>
 <h3 class="sc-h">Planning a trip to the U.S.?</h3>
-<div class="sc-box"><p class="sc-desc">Not sure where to start with the DS-160 or your interview? Walk in prepared.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>You walk into your interview ready.</p><a class="sc-btn" href="/us-visitor-visa-services.html">Start my visa application</a></div>
+<div class="sc-box"><details class="sc-more sc-learn"><summary>Learn more</summary><p class="sc-desc">Not sure where to start with the DS-160 or your interview? Walk in prepared.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>You walk into your interview ready.</p></details><a class="sc-btn" href="/us-visitor-visa-services.html">Start my visa application</a></div>
 </article><article class="sc">
 <div class="sc-panel"><img src="assets/jamaica-us-visa-ready-to-apply.webp" alt="Smiling woman holding her completed documents" loading="lazy" decoding="async"></div>
 <h3 class="sc-h">Need a police record?</h3>
-<div class="sc-box"><p class="sc-desc">Don't know where to start? You only need to go in once.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your appointment date and documents in hand.</p><a class="sc-btn" href="/jamaica-police-record.html">Get my police record</a></div>
+<div class="sc-box"><details class="sc-more sc-learn"><summary>Learn more</summary><p class="sc-desc">Don't know where to start? You only need to go in once.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your appointment date and documents in hand.</p></details><a class="sc-btn" href="/jamaica-police-record.html">Get my police record</a></div>
 </article>
 </div>
 <div class="sc-dots" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -944,15 +957,15 @@ h1,h2,h3{color:var(--ink)}
 <article class="sc">
 <div class="sc-panel"><img src="assets/jamaica-new-driver-licence-success.webp" alt="Young woman beside her car holding her renewed driver's licence and keys" loading="lazy" decoding="async"></div>
 <h3 class="sc-h">Licence due for renewal?</h3>
-<div class="sc-box"><p class="sc-desc">Not sure if you have unpaid traffic tickets? Find out before they hold up your renewal.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tickets cleared and your licence renewed.</p><a class="sc-btn" href="/drivers-licence-renewal.html">Renew my licence</a></div>
+<div class="sc-box"><details class="sc-more sc-learn"><summary>Learn more</summary><p class="sc-desc">Not sure if you have unpaid traffic tickets? Find out before they hold up your renewal.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tickets cleared and your licence renewed.</p></details><a class="sc-btn" href="/drivers-licence-renewal.html">Renew my licence</a></div>
 </article><article class="sc">
 <div class="sc-panel"><img src="assets/motor-vehicle-800.webp" alt="Driver holding a phone showing the renewed electronic vehicle licence" loading="lazy" decoding="async"></div>
 <h3 class="sc-h">Motor vehicle licence due?</h3>
-<div class="sc-box"><p class="sc-desc">No time for the Tax Office line? You don't have to stand in it.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Road ready right away.</p><a class="sc-btn" href="/motor-vehicle-licence-renewal.html">Renew my vehicle</a></div>
+<div class="sc-box"><details class="sc-more sc-learn"><summary>Learn more</summary><p class="sc-desc">No time for the Tax Office line? You don't have to stand in it.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Road ready right away.</p></details><a class="sc-btn" href="/motor-vehicle-licence-renewal.html">Renew my vehicle</a></div>
 </article><article class="sc">
 <div class="sc-panel"><img src="assets/jamaica-learner-supervised-driving.webp" alt="Two women driving along a sunny Jamaican road" loading="lazy" decoding="async"></div>
 <h3 class="sc-h">Any traffic tickets on your name?</h3>
-<div class="sc-box"><p class="sc-desc">Worried an old ticket could catch up with you? Find out where you stand, free.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Know where you stand, and clear it if you choose.</p><a class="sc-btn" href="/motor-vehicle-licence-renewal.html#ticket-lookup">Check my tickets</a></div>
+<div class="sc-box"><details class="sc-more sc-learn"><summary>Learn more</summary><p class="sc-desc">Worried an old ticket could catch up with you? Find out where you stand, free.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Know where you stand, and clear it if you choose.</p></details><a class="sc-btn" href="/motor-vehicle-licence-renewal.html#ticket-lookup">Check my tickets</a></div>
 </article>
 </div>
 <div class="sc-dots" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -984,15 +997,15 @@ h1,h2,h3{color:var(--ink)}
 <article class="sc">
 <div class="sc-panel"><img src="assets/marcia-taj-online-filing-768.webp" alt="Marcia the hairdresser smiling as she files her S04 online" loading="lazy" decoding="async"></div>
 <h3 class="sc-h">Ready to file your S04?</h3>
-<div class="sc-box"><p class="sc-desc">Guessing your way through the TAJ portal? Skip the guessing and file it right the first time.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your S04 filed properly, on time.</p><details class="sc-more"><summary>How it works</summary><ul><li>Message me on WhatsApp and tell me where you're stuck.</li><li>I guide you through the TAJ portal, step by step.</li><li>Your S04 gets filed properly and on time.</li></ul></details><a class="sc-btn" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27m%20self-employed%20and%20need%20help%20filing%20my%20S04%20tax%20return%20online." target="_blank" rel="noopener">Get filing help</a></div>
+<div class="sc-box"><details class="sc-more sc-learn"><summary>Learn more</summary><p class="sc-desc">Guessing your way through the TAJ portal? Skip the guessing and file it right the first time.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your S04 filed properly, on time.</p><p class="sc-sub">How it works</p><ul><li>Message me on WhatsApp and tell me where you're stuck.</li><li>I guide you through the TAJ portal, step by step.</li><li>Your S04 gets filed properly and on time.</li></ul></details><a class="sc-btn" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27m%20self-employed%20and%20need%20help%20filing%20my%20S04%20tax%20return%20online." target="_blank" rel="noopener">Get filing help</a></div>
 </article><article class="sc">
 <div class="sc-panel"><img src="assets/s04-tax-record-planner-cover.webp" alt="Cover of the S04 Tax Record Planner" loading="lazy" decoding="async"></div>
 <h3 class="sc-h">Receipts all over the place?</h3>
-<div class="sc-box"><p class="sc-desc">A few minutes each month now means no scramble in March.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your totals ready when it's time to file.</p><p class="sc-price">J$2,000 · PDF download</p><details class="sc-more"><summary>What's in the planner?</summary><ul><li>Income, month by month</li><li>Business expenses</li><li>Papers to gather checklist</li><li>Year-end summary, ready for filing</li></ul><p>J$2,000 PDF. Pay by Lynk or bank transfer, and your download link comes on WhatsApp. A record-keeping planner, not tax advice.</p></details><a class="sc-btn" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20buy%20the%20S04%20Tax%20Record%20Planner%20for%20J%242%2C000." target="_blank" rel="noopener">Get the planner</a></div>
+<div class="sc-box"><details class="sc-more sc-learn"><summary>Learn more</summary><p class="sc-desc">A few minutes each month now means no scramble in March.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Your totals ready when it's time to file.</p><p class="sc-price">J$2,000 · PDF download</p><p class="sc-sub">What's in the planner</p><ul><li>Income, month by month</li><li>Business expenses</li><li>Papers to gather checklist</li><li>Year-end summary, ready for filing</li></ul><p>J$2,000 PDF. Pay by Lynk or bank transfer, and your download link comes on WhatsApp. A record-keeping planner, not tax advice.</p></details><a class="sc-btn" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20buy%20the%20S04%20Tax%20Record%20Planner%20for%20J%242%2C000." target="_blank" rel="noopener">Get the planner</a></div>
 </article><article class="sc">
 <div class="sc-panel"><img src="assets/marcia-self-employed-jamaica-768.webp" alt="Marcia the hairdresser holding her business records in her salon" loading="lazy" decoding="async"></div>
 <h3 class="sc-h">Rather file it yourself?</h3>
-<div class="sc-box"><p class="sc-desc">The book walks you through the TAJ portal, step by step, in plain language.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>File it yourself, with the book beside you.</p><details class="sc-more"><summary>What's in the book?</summary><p><strong>Don't Pay Tax You Don't Owe</strong>, coming in December. It takes you through filing your self-employed S04 on the TAJ portal, step by step, in plain language. Join the waitlist and we'll email you the day it's out.</p></details><form class="waitlist sc-form" data-newsletter data-source="book-waitlist" data-success="waitlist-success"><label for="wl-email" class="sr-only">Email address</label><input id="wl-email" name="email" type="email" autocomplete="email" required placeholder="Your email address"><input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"><button type="submit" class="sc-btn">Notify me</button></form><p id="waitlist-success" class="sc-ok" hidden role="status">You're on the list. We'll email you the day the book is out.</p></div>
+<div class="sc-box"><details class="sc-more sc-learn"><summary>Learn more</summary><p class="sc-desc">The book walks you through the TAJ portal, step by step, in plain language.</p><p class="sc-result"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>File it yourself, with the book beside you.</p><p class="sc-sub">What's in the book</p><p><strong>Don't Pay Tax You Don't Owe</strong>, coming in December. It takes you through filing your self-employed S04 on the TAJ portal, step by step, in plain language. Join the waitlist and we'll email you the day it's out.</p></details><form class="waitlist sc-form" data-newsletter data-source="book-waitlist" data-success="waitlist-success"><label for="wl-email" class="sr-only">Email address</label><input id="wl-email" name="email" type="email" autocomplete="email" required placeholder="Your email address"><input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"><button type="submit" class="sc-btn">Notify me</button></form><p id="waitlist-success" class="sc-ok" hidden role="status">You're on the list. We'll email you the day the book is out.</p></div>
 </article>
 </div>
 <div class="sc-dots" aria-hidden="true"><span></span><span></span><span></span></div>
