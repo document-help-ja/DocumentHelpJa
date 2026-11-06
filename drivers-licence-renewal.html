@@ -68,8 +68,6 @@
   .crumbs a { color: var(--hero-muted); font-weight: 400; }
   .hero h1 { color: #fff; font-size: clamp(1.7rem, 5vw, 2.4rem); letter-spacing: -0.02em; }
   .hero .lead { margin-top: 14px; font-size: 1.08rem; }
-  .hero .jump { margin-top: 14px; font-size: .95rem; }
-  .hero .jump a { color: #F3D594; }
   .flow-band { padding: 36px 0 44px; }
   .step { border: 1px solid var(--edge); background: #fff; margin-bottom: 14px; }
   .step.open { border: 2px solid var(--gold); }
@@ -126,24 +124,12 @@
   .also-card p { margin-top: 10px; font-size: 1.02rem; line-height: 1.6; color: #3A4148; }
   .also-btn { display: inline-flex; justify-content: center; align-items: center; min-height: 54px; margin-top: 22px; padding: 12px 28px; background: var(--primary); color: #fff; text-decoration: none; font-weight: 600; }
   .also-btn:hover { background: var(--ink); color: #fff; }
+  .scene-band { padding: 40px 0 0; background: #fff; }
+  .scene-shot { margin: 0 0 24px; border: 1px solid var(--line); overflow: hidden; }
+  .scene-shot img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; background: #EEF3EA; }
+  .scene-shot figcaption { padding: 12px 16px; font-size: 14px; font-weight: 600; color: var(--ink); background: #fff; border-top: 1px solid var(--line); }
+  .scene-text { margin: 0; font-size: 1.2rem; line-height: 1.55; color: var(--ink); }
   @media (max-width: 599px) { .also-btn { width: 100%; } }
-  .rec-band{padding:72px 0 80px;line-height:1.85;background:#fff;border-top:1px solid var(--line)}
-.rec-eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-text);margin-bottom:10px}
-.rec-band h2{font-size:clamp(1.5rem,5vw,1.9rem)}
-.rec-band h3{font-size:1.15rem;margin:52px 0 14px;padding-top:28px;border-top:1px solid var(--line)}
-.rec-band p+p{margin-top:20px}
-.rec-lead{margin-top:20px;font-size:1.08rem}
-.rec-rule{margin-top:32px;padding:24px 24px;border-left:5px solid var(--sage);background:var(--gold-soft);font-size:1.2rem;line-height:1.5;font-weight:600;color:var(--ink)}
-.rec-thr{margin:24px 0;border:1px solid var(--edge)}
-.rec-thr div{display:flex;justify-content:space-between;gap:16px;padding:15px 18px;border-top:1px solid var(--line)}
-.rec-thr div:first-child{border-top:0}.rec-thr span{color:var(--muted)}.rec-thr strong{color:var(--ink);font-weight:600;text-align:right}
-.rec-status{margin-top:20px;padding:26px;border:2px solid var(--gold);background:var(--tone)}
-.rec-status .rec-asat{display:block;margin-bottom:8px;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-text)}
-.rec-video{margin:44px 0 12px}.rec-video .rec-eyebrow{margin-bottom:8px}
-.rec-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000}.rec-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.rec-list{margin:20px 0 0;padding-left:1.3rem}.rec-list li{margin-bottom:12px}
-.rec-links{margin-top:32px;text-align:center;font-size:.98rem}
-.rec-fine{margin-top:44px;font-size:.88rem;color:var(--muted);line-height:1.6}
 
   </style>
 <style id="lch-style">
@@ -235,11 +221,14 @@
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/index.html">Home</a> › <a href="/index.html#services">Services</a> › Driver's licence</nav>
     <h1>Driver's Licence Renewal</h1>
     <p class="lead">Road-ready today. Skip the cashier line.</p>
-    <p class="jump"><a href="#your-record">Tickets or demerit points on your mind? See what’s changed ↓</a></p>
   </div>
 </section>
 
 <main id="main">
+  <section class="scene-band" aria-label="Before you renew"><div class="wrap">
+    <figure class="scene-shot"><img src="/assets/jamaica-new-driver-licence-success.webp" width="1200" height="800" alt="A young woman driver holding her car keys, licence renewed" decoding="async"><figcaption>✓ Ticket cleared, licence renewed, road-ready</figcaption></figure>
+    <p class="scene-text">Driver’s licence due for renewal? You may have outstanding tickets you’re not aware of. Until they’re cleared, you can’t renew. <em>Therefore</em>, let us check first, so you can clear them in time to renew.</p>
+  </div></section>
   <section class="flow-band">
     <div class="wrap" id="flow" aria-live="polite">
 
@@ -300,74 +289,6 @@
 
     </div>
   </section>
-
-  <section class="rec-band" id="your-record" aria-labelledby="rec-title">
-  <div class="wrap">
-    <p class="rec-eyebrow">Your driving record</p>
-    <h2 id="rec-title">Your licence now keeps score</h2>
-    <p class="rec-lead">For years, paying a ticket felt like the end of it. Now it’s the other way round. Paying is what puts the points on your licence.</p>
-    <p class="rec-rule">Paying a ticket doesn’t make it go away. Paying it is what puts the points on your licence.</p>
-
-    <div class="rec-video">
-      <p class="rec-eyebrow">Prefer to watch? Missed court, unpaid tickets and demerit points in one video.</p>
-      <div class="rec-frame"><iframe src="https://www.youtube-nocookie.com/embed/cviiVQRCAd0" title="Video: Unpaid Traffic Tickets in Jamaica? Missed Court? What to Do Next" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    </div>
-
-    <h3>If you pay a ticket</h3>
-    <p>Every driver starts at zero. Points are added for certain traffic offences, <em>but</em> not when the police hand you the ticket. They’re added when you pay the fine, or when you’re convicted in court. <em>Therefore</em>, when points reach set levels, the licence is suspended.</p>
-    <div class="rec-thr" role="table" aria-label="Suspension levels">
-      <div role="row"><span role="cell">10 to 13 points</span><strong role="cell">Suspended 6 months</strong></div>
-      <div role="row"><span role="cell">14 to 19 points</span><strong role="cell">Suspended 1 year</strong></div>
-      <div role="row"><span role="cell">20 or more points</span><strong role="cell">Suspended 2 years</strong></div>
-    </div>
-    <p>The good news: points clear after 15 months, as long as your licence wasn’t suspended in that time.</p>
-
-    <h3>If you collect a few small tickets</h3>
-    <p>No seatbelt is 2 points. Using a phone while driving is 3. Two of each is 10 points, and that’s six months without your licence.</p>
-
-    <h3>Where it stands right now</h3>
-    <div class="rec-status">
-      <span class="rec-asat">Correct as at 4 November 2026</span>
-      <p>The Government announced that the system would start on 1 October 2026. In August it began a review, and on 28 August the Transport Authority said the start was delayed until a full revision is done.</p>
-      <p>On 9 October, Minister Vaz said the demerit rules are law, but the Island Traffic Authority’s processes aren’t finished. The delay is to complete them, correct data, and decide the legal way to reset existing points.</p>
-      <p>The review is also looking at which offences should carry points, so the list may change. No new start date has been announced. The Minister has said there will be zero tolerance once the system is fully in place.</p>
-    </div>
-
-    <h3>If a case goes to court</h3>
-    <p>None of this replaces what a judge can do. The Chief Justice has said that courts continue to apply demerit points and disqualify drivers where the law requires, whatever the administrative system is doing.</p>
-
-    <h3>If you’re waiting for an amnesty</h3>
-    <p>In July, the Minister said that even if the Government considers an amnesty on outstanding ticket fines, it would not apply to suspension of a licence under the demerit system. Paying late is better than not paying, <em>but</em> it won’t make the points disappear.</p>
-
-    <h3>If you’ve been putting off a ticket</h3>
-    <p>Look first. The free lookup shows what’s outstanding on your licence, and it’s better to find out now than at the cashier line. Then deal with what you find while the points system is still waiting to start.</p>
-    <p>Nobody knows the new start date, which offences will count, or how existing points will be handled. What you do know is that outstanding tickets block your renewal, and a ticket left too long can end up in court, where it can’t be paid online.</p>
-    <p>Before the planned start, the Government urged drivers to pay outstanding tickets by 30 September. That date has passed, <em>but</em> the idea behind it hasn’t. <em>Therefore</em>, check now, settle what’s there, and you won’t be caught out when the system starts.</p>
-
-    <p>If a ticket is past its court date, it can’t be paid online. Contact one of these:</p>
-    <ul class="rec-list">
-      <li>The parish court where the ticket was issued</li>
-      <li><a href="https://cad.gov.jm/" target="_blank" rel="noopener">Court Administration Division</a> (cad.gov.jm) · <a href="mailto:customerservice@cad.gov.jm">customerservice@cad.gov.jm</a></li>
-      <li><a href="https://jcf.gov.jm/" target="_blank" rel="noopener">JCF Public Safety and Traffic Enforcement Branch</a> (jcf.gov.jm) · <a href="mailto:psteb@jcf.gov.jm">psteb@jcf.gov.jm</a></li>
-    </ul>
-
-    <h3>Keeping your record clean</h3>
-    <p>The Government says the point of the system is safer roads: fewer violations, more accountability and lives saved. It has also said it remains committed to bringing the system in, so a clean record is worth building now.</p>
-    <p>The simplest habits are the ones most drivers already know. <strong>Seatbelt on. Phone down.</strong> Those are exactly the 2-point and 3-point tickets. And if you do get a ticket, don’t ignore it, because an outstanding ticket will block your renewal.</p>
-
-    <h3>If you’re due to renew</h3>
-    <p>A licence can’t be renewed while there are outstanding tickets, and the same goes for transferring a vehicle’s ownership. You can check yours for free at <a href="https://trafficticketlookup.gov.jm" target="_blank" rel="noopener">trafficticketlookup.gov.jm</a>. Have your licence card in front of you.</p>
-    <p>If you’d rather not chase it, we can check your tickets for you.</p>
-
-    <p class="rec-rule">Drive safely, keep your record clean, and remember: paying a ticket doesn’t make it go away.</p>
-
-    <a href="#ticket-lookup" class="start-btn" data-open="ticket-lookup">Check my tickets</a>
-
-    <p class="rec-links">Due for a renewal? <a href="/drivers-licence-renewal.html#renewal" data-open="renewal">Renew my driver’s licence</a> or <a href="/motor-vehicle-licence-renewal.html">renew my motor vehicle licence</a>.</p>
-
-    <p class="rec-fine">General information, correct as at 4 November 2026. The status can change, so check before you rely on it. This is not legal advice. Sources: <a href="https://jis.gov.jm/information/get-the-facts/implementation-of-goj-demerit-system/" target="_blank" rel="noopener">JIS</a>, <a href="https://www.jamaicaobserver.com/2026/10/09/key-processes-remain-incomplete-implementation-demerit-system-vaz/" target="_blank" rel="noopener">Jamaica Observer</a>, <a href="https://jis.gov.jm/demerit-points-system-not-yet-fully-implemented/" target="_blank" rel="noopener">JIS (10 October)</a>, <a href="https://jamaica-gleaner.com/article/news/20260629/chief-justice-traffic-offenders-still-liable-demerit-points-drivers-licence" target="_blank" rel="noopener">Gleaner (Chief Justice)</a>, <a href="https://jamaica-gleaner.com/article/news/20260717/zero-tolerance-approach-traffic-offences-under-demerit-points-system-minister" target="_blank" rel="noopener">Gleaner (17 July)</a>, <a href="https://jamaica-gleaner.com/article/news/20260625/demerit-point-system-take-effect-october-1-drivers-urged-pay-outstanding" target="_blank" rel="noopener">Gleaner (25 June)</a>, <a href="https://jis.gov.jm/govt-reaffirms-commitment-to-implementing-demerit-points-system/" target="_blank" rel="noopener">JIS (7 September)</a>.</p>
-  </div>
-</section>
 
 
   <section class="gtk-band">
