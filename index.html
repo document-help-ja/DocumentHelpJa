@@ -821,13 +821,15 @@ h1,h2,h3{color:var(--ink)}
 .nh .nh-btn-light:hover{background:var(--nh-mint)}
 .nh .nh-note{color:#9FE1CB;font-size:13px;margin:16px 0 0}
 @media(min-width:861px){.nh .nh-hero{position:relative;min-height:600px;display:flex;align-items:center}.nh .nh-hero-media{position:absolute;inset:0;height:auto}.nh .nh-hero-media img{object-position:60% 35%}.nh .nh-hero-media::after{background:linear-gradient(90deg,rgba(8,69,54,.95) 0,rgba(8,69,54,.88) 30%,rgba(8,69,54,.35) 50%,rgba(8,69,54,0) 62%)}.nh .nh-hero-text{position:relative;padding:72px 24px 72px max(24px,calc((100% - 72rem)/2 + 24px));max-width:none;width:min(640px,48%)}}
-.nh .nh-cards{max-width:72rem;margin:0 auto;padding:36px 20px 0;display:grid;gap:20px}
+.nh .nh-cards{max-width:72rem;margin:0 auto;padding:52px 20px 0;display:grid;gap:24px}
 @media(min-width:861px){.nh .nh-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding:64px 24px 0;align-items:start}}
 .nh .nh-card{border:1px solid var(--nh-line);background:#fff;scroll-margin-top:90px}
 .nh .nh-card>img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
 .nh .nh-card-body{padding:18px 18px 0}
 .nh .nh-kicker{margin:0;color:var(--nh-teal);font-size:15px;font-weight:600}
 .nh .nh-card h2{font-family:var(--sans);color:var(--nh-ink);font-size:20px;line-height:1.35;font-weight:700;margin:6px 0 0}
+@media(min-width:861px){.nh .nh-card h2{min-height:5.4em}}
+@media(min-width:1100px){.nh .nh-card h2{min-height:4.05em}}
 .nh .nh-more>summary{list-style:none;cursor:pointer;margin:16px 18px 18px;min-height:46px;display:flex;align-items:center;justify-content:center;border:1px solid var(--nh-teal);color:var(--nh-teal);font-weight:600}
 .nh .nh-more>summary::-webkit-details-marker{display:none}
 .nh .nh-more>summary:hover{background:var(--nh-mint)}
@@ -865,6 +867,27 @@ h1,h2,h3{color:var(--ink)}
 .nh .nh-req{display:flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:12px;border:1px solid #5DCAA5;color:#fff;font-weight:500;text-decoration:none}
 .nh .nh-req:hover{background:rgba(255,255,255,.08)}
 @media(min-width:861px){.nh .nh-close-inner{grid-template-columns:1fr auto;align-items:center;padding:56px 24px}.nh .nh-close-btns{display:flex;gap:14px}}
+/* charcoal header and footer */
+body .site-header{background:#1E2724}
+body .mark{border-color:#5DCAA5;color:#9FE1CB}
+body .brand-name small{color:#9FE1CB}
+body .nav-btn:hover,body .nav-link:hover,body .nav-btn[aria-expanded="true"]{color:#9FE1CB}
+body .menu-btn{border-color:#9FE1CB}
+body .btn-gold{background:#5DCAA5;color:#06241D}
+body .btn-gold:hover{background:#9FE1CB;color:#06241D}
+body .dd-col h3,body .mnav .sub .grp{color:#0F6E56}
+body .dd-col a:hover{color:#0F6E56}
+body .mnav summary,body .mnav > a{color:#1E2724}
+body .site-footer{background:#1E2724;border-top:0;color:#C9D6D1}
+body .fcols h3{color:#9FE1CB}
+body .fcols a{color:#fff}
+body .fcols a:hover{color:#9FE1CB}
+body .fbrand .brand{color:#fff}
+body .fbrand .brand-name small{color:#9FE1CB}
+body .fbrand p{color:#C9D6D1}
+body .legal{border-top-color:rgba(255,255,255,.14);color:#A9B8B2}
+body .legal a{color:#fff}
+body .legal a.top{color:#9FE1CB}
 </style>
 </head>
 <body id="top">
@@ -878,9 +901,9 @@ h1,h2,h3{color:var(--ink)}
     </a>
     <nav class="nav" aria-label="Main">
       <button class="nav-btn" type="button" aria-expanded="false" aria-controls="dd-services">Services
-        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F6DFA6" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9FE1CB" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
       <button class="nav-btn" type="button" aria-expanded="false" aria-controls="dd-guides">Guides
-        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F6DFA6" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9FE1CB" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
       <a class="nav-link" href="/about.html">About</a>
       <a class="nav-link" href="/contact.html">Contact</a>
       <a class="btn btn-gold btn-sm" href="#services">Choose your service</a>
