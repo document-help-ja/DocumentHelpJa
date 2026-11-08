@@ -815,14 +815,18 @@ h1,h2,h3{color:var(--ink)}
 .nh .nh-hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% 35%}
 .nh .nh-hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,69,54,0) 68%,#084536 100%),linear-gradient(90deg,rgba(8,69,54,.6) 0,rgba(8,69,54,0) 48%)}
 .nh .nh-hero-text{padding:4px 24px 36px;max-width:38rem}
-.nh .nh-hero h1{font-family:var(--sans);color:#fff;font-size:clamp(30px,5vw,52px);line-height:1.12;font-weight:700;letter-spacing:-.02em;margin:0 0 14px}
+.nh .nh-hero h1{font-family:var(--sans);color:#fff;font-size:clamp(26px,3.4vw,40px);line-height:1.18;font-weight:700;letter-spacing:-.02em;margin:0 0 14px}
 .nh .nh-lead{color:var(--nh-mint);font-size:18px;line-height:1.55;margin:0 0 22px}
 .nh .nh-btn-light{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 30px;border-radius:12px;background:#fff;color:var(--nh-dark);font-weight:600;text-decoration:none}
 .nh .nh-btn-light:hover{background:var(--nh-mint)}
 .nh .nh-note{color:#9FE1CB;font-size:13px;margin:16px 0 0}
 @media(min-width:861px){.nh .nh-hero{position:relative;min-height:600px;display:flex;align-items:center}.nh .nh-hero-media{position:absolute;inset:0;height:auto}.nh .nh-hero-media img{object-position:60% 35%}.nh .nh-hero-media::after{background:linear-gradient(90deg,rgba(8,69,54,.95) 0,rgba(8,69,54,.88) 30%,rgba(8,69,54,.35) 50%,rgba(8,69,54,0) 62%)}.nh .nh-hero-text{position:relative;padding:72px 24px 72px max(24px,calc((100% - 72rem)/2 + 24px));max-width:none;width:min(640px,48%)}}
-.nh .nh-cards{max-width:72rem;margin:0 auto;padding:52px 20px 0;display:grid;gap:24px}
-@media(min-width:861px){.nh .nh-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding:64px 24px 0;align-items:start}}
+.nh .nh-intro{max-width:40rem;margin:0 auto;padding:44px 24px 0;text-align:center}
+.nh .nh-intro h2{font-family:var(--sans);color:var(--nh-ink);font-size:clamp(22px,2.4vw,28px);font-weight:700;line-height:1.25;margin:0 0 8px}
+.nh .nh-intro p{margin:0;color:var(--nh-text);font-size:16px;line-height:1.55}
+.nh .nh-intro .nh-conf{margin-top:6px;color:#55625E;font-size:14px}
+.nh .nh-cards{max-width:72rem;margin:0 auto;padding:28px 20px 0;display:grid;gap:24px}
+@media(min-width:861px){.nh .nh-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding:36px 24px 0;align-items:start}.nh .nh-intro{padding-top:64px}}
 .nh .nh-card{border:1px solid var(--nh-line);background:#fff;scroll-margin-top:90px}
 .nh .nh-card>img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
 .nh .nh-card-body{padding:18px 18px 0}
@@ -860,7 +864,7 @@ h1,h2,h3{color:var(--ink)}
 @media(min-width:861px){.nh .nh-steps{padding:0 24px;margin-top:48px}.nh .nh-steps-box{display:flex;align-items:center;gap:40px;padding:26px 32px}.nh .nh-steps h2{margin:0;flex:none}.nh .nh-steps ol{display:flex;flex:1;gap:32px}}
 .nh .nh-close{background:var(--nh-dark);color:#fff;margin-top:48px}
 .nh .nh-close-inner{max-width:72rem;margin:0 auto;padding:40px 24px;display:grid;gap:20px}
-.nh .nh-close h2{font-family:var(--sans);color:#fff;font-size:clamp(26px,3vw,34px);font-weight:700;margin:0 0 6px}
+.nh .nh-close h2{font-family:var(--sans);color:#fff;font-size:clamp(24px,2.4vw,30px);font-weight:700;margin:0 0 6px}
 .nh .nh-close p{margin:0;color:#CFEDE2;font-size:18px}
 .nh .nh-close-btns{display:grid;gap:12px}
 .nh .nh-wa{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:12px;background:#25D366;color:#0B2E1F;font-weight:600;text-decoration:none}
@@ -1003,7 +1007,13 @@ body .legal a.top{color:#9FE1CB}
 </div>
 </section>
 
-<section class="nh-cards" id="services" aria-label="Our services">
+<section class="nh-intro" aria-labelledby="services-title">
+<h2 id="services-title">How can we help?</h2>
+<p>Choose what fits you to see what we handle.</p>
+<p class="nh-conf">Your details are always kept confidential.</p>
+</section>
+
+<section class="nh-cards" id="services" aria-labelledby="services-title">
 
 <article class="nh-card" id="self-employed-assistance">
 <img src="assets/home-card-tax-marcia-salon-768.webp" width="768" height="429" alt="Marcia, a hairdresser, smiling on the phone at her salon counter with her receipts sorted into folders" loading="lazy" decoding="async" style="object-position:55% 40%">
@@ -1099,9 +1109,10 @@ body .legal a.top{color:#9FE1CB}
 <div class="st-rev-row sc-row-like" tabindex="0" aria-label="Client reviews, swipe for more">
 <figure class="st-rev"><div class="st-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“The service provided was excellent. I was very impressed with the efficiency and exceptional attention to every detail. The speedy delivery was a plus for me.”</blockquote><figcaption><strong>Owen M.</strong> Passport renewal from overseas</figcaption></figure>
 <figure class="st-rev"><div class="st-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“From getting passport-size pictures to getting through at the office and collecting my new ID, the process was smooth and easy. Thanks so much for your expertise!”</blockquote><figcaption><strong>Danielle H.</strong> Passport in Jamaica</figcaption></figure>
+<figure class="st-rev"><blockquote>“Laura gets the business done. She is very knowledgeable, resourceful and efficient. I highly recommend her services.”</blockquote><figcaption><strong>Juli B.</strong> Google review</figcaption></figure>
 <a class="st-rev st-rev-more" href="/about.html#reviews">See all reviews</a>
 </div>
-<div class="sc-dots st-rev-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="sc-dots st-rev-dots" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
 </div>
 </section>
 
