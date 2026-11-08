@@ -150,12 +150,14 @@ h1,h2,h3{color:inherit;margin:0}
 .ok{font-weight:600;color:var(--teal)!important}
 
 /* How it works */
-.how{background:#F4F7F6;border-radius:16px;padding:26px 28px;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center}
-.how h2{font-size:20px;font-weight:700}
+.how{background:#F4F7F6;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:20px}
+.how h2{font-size:22px;font-weight:700;text-align:center}
 .how-dark{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;margin-top:clamp(28px,4vw,40px)}
 .how-dark .num{background:#5DCAA5;color:#06241D}
-.how ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:14px 32px;flex:1 1 400px}
-.how li{display:flex;align-items:center;gap:10px;font-size:16px}
+.how ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:700px){.how ol{grid-template-columns:1fr}}
+.how li{display:flex;align-items:center;gap:12px;font-size:16px;background:#fff;border-radius:12px;padding:14px 16px}
+.how-dark li{background:rgba(255,255,255,.08)}
 
 /* Closing */
 .close{background:var(--dark);color:#fff;padding:48px 0}
@@ -165,9 +167,22 @@ h1,h2,h3{color:inherit;margin:0}
 @media (max-width:640px){.close .btn{width:100%}}
 
 /* Footer */
-.site-footer{background:var(--char);color:#A9B8B2;padding:28px 0;font-size:13px}
-.site-footer p{margin:0 0 10px}
-.site-footer a{color:#fff}
+.site-footer{background:var(--char);color:#C9D6D1;font-size:15px}
+.ft{padding-top:44px;padding-bottom:32px;display:flex;flex-direction:column;gap:28px}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px 32px}
+.fcols h3{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9FE1CB;margin:0 0 8px}
+.fcols ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.fcols a{color:#fff;text-decoration:none;font-weight:500}
+.fcols a:hover{color:#9FE1CB;text-decoration:underline}
+.fbrand{display:flex;flex-direction:column;gap:12px}
+.fbrand p{margin:0;font-size:14px}
+.legal{display:flex;justify-content:space-between;gap:10px 20px;flex-wrap:wrap;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);font-size:12.5px;color:#A9B8B2}
+.legal p{margin:0;max-width:42rem}
+.legal nav{display:flex;gap:18px;flex-wrap:wrap}
+.legal a{color:#fff}
+.legal a.top{color:#9FE1CB;font-weight:700}
+.scope-line{margin:0;font-size:13px;color:#A9B8B2}
+@media (max-width:820px){.fcols{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}}
 </style>
 </head>
 <body id="top">
@@ -330,9 +345,37 @@ h1,h2,h3{color:inherit;margin:0}
 </main>
 
 <footer class="site-footer">
-<div class="wrap">
-<p>Administrative support only. Tax calculations, deductions and professional tax advice may require a qualified tax professional.</p>
-<p>© <span id="year">2026</span> Laura Clarke Administrative Services · Registered with the Companies Office of Jamaica · Independent private service, not affiliated with the Government of Jamaica. · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+<div class="wrap ft">
+<div class="fcols">
+<div class="fbrand">
+<a class="brand" href="/"><span class="mark" aria-hidden="true">LC</span><span class="brand-name">Laura Clarke<small>Administrative Services</small></span></a>
+<p>Private document representative for Jamaicans at home and abroad.</p>
+</div>
+<div>
+<h3>Explore</h3>
+<ul>
+<li><a href="/self-employed-tax">Self-employed tax</a></li>
+<li><a href="/motorist">Motorist</a></li>
+<li><a href="/travel-documents">Travel documents</a></li>
+<li><a href="/insights.html">Free guides</a></li>
+<li><a href="/about.html">About Laura</a></li>
+<li><a href="/faq.html">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h3>Contact</h3>
+<ul>
+<li><a href="https://wa.me/18765612614" target="_blank" rel="noopener">WhatsApp +1 (876) 561-2614</a></li>
+<li><a href="mailto:info@documenthelpja.com">info@documenthelpja.com</a></li>
+<li><a href="/contact.html">Send an enquiry</a></li>
+</ul>
+</div>
+</div>
+<p class="scope-line">Administrative support only. Tax calculations, deductions and professional tax advice may require a qualified tax professional.</p>
+<div class="legal">
+<p>© <span id="year">2026</span> Laura Clarke Administrative Services · Registered with the Companies Office of Jamaica · Independent private service, not affiliated with the Government of Jamaica.</p>
+<nav aria-label="Legal"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a class="top" href="#top">Back to top ↑</a></nav>
+</div>
 </div>
 </footer>
 
