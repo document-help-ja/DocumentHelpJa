@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="935" height="1210" viewBox="0 0 935 1210">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F6E56"/>
+      <stop offset="1" stop-color="#084536"/>
+    </linearGradient>
+  </defs>
+  <rect width="935" height="1210" fill="url(#g)"/>
+  <rect width="36" height="1210" fill="#000000" opacity="0.18"/>
+  <g font-family="Inter, Arial, Helvetica, sans-serif" text-anchor="middle" fill="#FFFFFF">
+    <text x="485" y="300" font-size="44" font-weight="700" letter-spacing="8" fill="#9FE1CB">S04 · JAMAICA</text>
+    <text x="485" y="510" font-size="108" font-weight="700">Don't Pay</text>
+    <text x="485" y="640" font-size="108" font-weight="700">Tax You</text>
+    <text x="485" y="770" font-size="108" font-weight="700">Don't Owe</text>
+    <text x="485" y="940" font-size="42" fill="#CFEDE2">For your tax return</text>
+    <text x="485" y="1000" font-size="42" fill="#CFEDE2">on the TAJ portal</text>
+  </g>
+</svg>

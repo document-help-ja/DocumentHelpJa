@@ -135,15 +135,11 @@ h1,h2,h3{color:inherit;margin:0}
 .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(40px,4vw,48px);align-items:stretch}
 .tool{background:#fff;border:2px solid #B9C9C3;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;box-shadow:0 2px 10px rgba(15,37,55,.06)}
 .tool-free{background:var(--mint);border:2px solid var(--teal)}
-.tool img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;border-radius:8px}
+.cover{position:relative;width:100%;aspect-ratio:1/1;background:#fff;border-radius:8px;overflow:hidden}
+.cover img{position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);object-fit:contain}
 .tool h3{font-size:20px;font-weight:700}
 .tool p{margin:0;color:var(--text);font-size:15px}
 .tool .btn,.tool form{margin-top:auto}
-.book-ph{position:relative;width:100%;aspect-ratio:4/3;background:#fff;border-radius:8px}
-.book-ph-cover{position:absolute;top:14px;bottom:14px;left:50%;transform:translateX(-50%);aspect-ratio:3/4;background:linear-gradient(160deg,#0F6E56,#084536);border-radius:4px 10px 10px 4px;box-shadow:inset 6px 0 0 rgba(0,0,0,.18),0 6px 16px rgba(8,69,54,.25);color:#fff;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:14px;text-align:center}
-.book-ph-tag{font-size:10px;font-weight:700;letter-spacing:1.5px;color:#9FE1CB}
-.book-ph-title{font-size:17px;line-height:1.2;font-weight:700}
-.book-ph-sub{font-size:10px;line-height:1.35;color:#CFEDE2}
 .badge{font-size:13px;font-weight:700;letter-spacing:1px;padding:4px 12px;border-radius:999px}
 .badge-free{background:var(--teal);color:#fff}
 .badge-soon{background:#F3E3B5;color:#5A4310}
@@ -287,7 +283,7 @@ h1,h2,h3{color:inherit;margin:0}
 <div class="tool-grid">
 
 <div class="tool tool-free">
-<img src="assets/s04-income-expense-tracker-cover.webp" width="600" height="450" alt="Cover of the S04 Income and Expense Tracker" loading="lazy" decoding="async">
+<div class="cover"><img src="assets/s04-income-expense-tracker-cover.webp" width="600" height="450" alt="Cover of the S04 Income and Expense Tracker" loading="lazy" decoding="async"></div>
 <span class="badge badge-free">FREE</span>
 <h3>S04 Income and Expense Tracker</h3>
 <p>Sort your income and expenses the way you'll need them at filing time. Type straight in, no printer needed.</p>
@@ -295,7 +291,7 @@ h1,h2,h3{color:inherit;margin:0}
 </div>
 
 <div class="tool">
-<img src="assets/s04-tax-record-planner-cover.webp" width="600" height="450" alt="Cover of the S04 Tax Record Planner" loading="lazy" decoding="async">
+<div class="cover"><img src="assets/s04-tax-record-planner-cover.webp" width="600" height="450" alt="Cover of the S04 Tax Record Planner" loading="lazy" decoding="async"></div>
 <span class="tool-price">J$2,000</span>
 <h3>S04 Tax Record Planner</h3>
 <p>Your records in the order the TAJ portal asks for them, all year.</p>
@@ -303,7 +299,7 @@ h1,h2,h3{color:inherit;margin:0}
 </div>
 
 <div class="tool">
-<div class="book-ph" role="img" aria-label="The S04 book, Don't Pay Tax You Don't Owe, coming in December"><div class="book-ph-cover"><span class="book-ph-tag">S04 · JAMAICA</span><span class="book-ph-title">Don't Pay Tax You Don't Owe</span><span class="book-ph-sub">For your tax return on the TAJ portal</span></div></div>
+<div class="cover"><img src="assets/s04-book-coming-soon.svg" width="600" height="450" alt="The S04 book, Don't Pay Tax You Don't Owe, coming in December" loading="lazy" decoding="async"></div>
 <span class="badge badge-soon">COMING DECEMBER</span>
 <h3>The S04 book</h3>
 <p>File it yourself, step by step. Leave your email and we'll tell you the day it's out.</p>
