@@ -133,14 +133,14 @@ h1,h2,h3{color:inherit;margin:0}
 .tools{background:#FAFAF8;padding:clamp(80px,10vw,128px) 0}
 .tools-sub{margin:8px 0 clamp(36px,5vw,56px);color:var(--text);font-size:16px;text-align:center}
 .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(40px,4vw,48px);align-items:stretch}
-.tool{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;box-shadow:0 2px 10px rgba(15,37,55,.06)}
+.tool{background:#fff;border:2px solid #B9C9C3;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;box-shadow:0 2px 10px rgba(15,37,55,.06)}
 .tool-free{background:var(--mint);border:2px solid var(--teal)}
 .tool img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;border-radius:8px}
 .tool h3{font-size:20px;font-weight:700}
 .tool p{margin:0;color:var(--text);font-size:15px}
 .tool .btn,.tool form{margin-top:auto}
-.book-ph{width:100%;aspect-ratio:4/3;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:14px}
-.book-ph-cover{height:100%;aspect-ratio:3/4;background:linear-gradient(160deg,#0F6E56,#084536);border-radius:4px 10px 10px 4px;box-shadow:inset 6px 0 0 rgba(0,0,0,.18),0 6px 16px rgba(8,69,54,.25);color:#fff;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:14px;text-align:center}
+.book-ph{position:relative;width:100%;aspect-ratio:4/3;background:#fff;border-radius:8px}
+.book-ph-cover{position:absolute;top:14px;bottom:14px;left:50%;transform:translateX(-50%);aspect-ratio:3/4;background:linear-gradient(160deg,#0F6E56,#084536);border-radius:4px 10px 10px 4px;box-shadow:inset 6px 0 0 rgba(0,0,0,.18),0 6px 16px rgba(8,69,54,.25);color:#fff;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:14px;text-align:center}
 .book-ph-tag{font-size:10px;font-weight:700;letter-spacing:1.5px;color:#9FE1CB}
 .book-ph-title{font-size:17px;line-height:1.2;font-weight:700}
 .book-ph-sub{font-size:10px;line-height:1.35;color:#CFEDE2}
