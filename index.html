@@ -895,6 +895,8 @@ body .legal a.top{color:#9FE1CB}
 .nh .nh-go{display:flex;align-items:center;justify-content:center;margin:16px 18px 18px;min-height:46px;border:1px solid var(--nh-teal);color:var(--nh-teal);font-weight:600;text-decoration:none}
 .nh .nh-go:hover{background:var(--nh-mint)}
 @media(max-width:860px){.nh .nh-cards{gap:56px;padding-top:36px}.nh .nh-card{box-shadow:0 2px 12px rgba(15,37,55,.08)}}
+body .dd-col h3 a{color:inherit;text-decoration:none}
+body .dd-col h3 a:hover{text-decoration:underline}
 </style>
 </head>
 <body id="top">
@@ -909,7 +911,7 @@ body .legal a.top{color:#9FE1CB}
     <nav class="nav" aria-label="Main">
       <button class="nav-btn" type="button" aria-expanded="false" aria-controls="dd-services">Services
         <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9FE1CB" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
-      <button class="nav-btn" type="button" aria-expanded="false" aria-controls="dd-guides">Guides
+      <button class="nav-btn" type="button" aria-expanded="false" aria-controls="dd-guides">Guides &amp; tips
         <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9FE1CB" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
       <a class="nav-link" href="/about.html">About</a>
       <a class="nav-link" href="/contact.html">Contact</a>
@@ -927,38 +929,41 @@ body .legal a.top{color:#9FE1CB}
   <div class="dd" id="dd-guides" hidden>
     <div class="wrap dd-inner">
       <div class="dd-col">
-        <h3>Passport &amp; travel</h3>
+        <h3><a href="/insights.html#cat-tax">Self-employed tax &amp; NIS</a></h3>
         <ul>
-          <li><a href="/jamaica-passport-guide">Passport: what to know before you apply</a></li>
-          <li><a href="/pica-card-payment-failed">PICA card payment failed?</a></li>
-          <li><a href="/jamaica-us-visitor-visa-guide">US visitor visa from Jamaica</a></li>
-          <li><a href="/jamaica-h2b-work-visa-guide">H-2B work visa: steps &amp; scam checks</a></li>
-          <li><a href="/jamaican-citizenship-by-descent">Citizenship by descent</a></li>
-        </ul>
-      </div>
-      <div class="dd-col">
-        <h3>Driving &amp; vehicles</h3>
-        <ul>
-          <li><a href="/jamaica-learners-permit-guide.html">Learner's permit</a></li>
-          <li><a href="/drivers-licence-renewal.html">Driver’s licence renewal</a></li>
-        </ul>
-      </div>
-      <div class="dd-col">
-        <h3>Records &amp; IDs</h3>
-        <ul>
-          <li><a href="/jamaica-rgd-certificates-guide">Birth &amp; marriage certificates</a></li>
-        </ul>
-      </div>
-      <div class="dd-col">
-        <h3>Tax &amp; NIS</h3>
-        <ul>
-          <li><a href="/self-employed-s04-tax-guide">Working for yourself in Jamaica?</a></li>
+          <li><a href="/self-employed-s04-tax-guide">Working for yourself? Start here</a></li>
           <li><a href="/self-employed-tax-traps-jamaica">Self-employed tax traps</a></li>
           <li><a href="/self-employed-nis-minimum-jamaica">Self-employed NIS minimum</a></li>
           <li><a href="/jamaica-nis-guide">NIS: missing contributions</a></li>
         </ul>
       </div>
-      <p class="dd-foot"><a class="link-strong" href="/insights.html">See all guides →</a></p>
+      <div class="dd-col">
+        <h3><a href="/insights.html#cat-travel">Passport &amp; travel</a></h3>
+        <ul>
+          <li><a href="/jamaica-passport-guide">Passport: what to know before you apply</a></li>
+          <li><a href="/pica-card-payment-failed">PICA card payment failed?</a></li>
+          <li><a href="/jamaica-us-visitor-visa-guide">US visitor visa from Jamaica</a></li>
+          <li><a href="/jamaica-h2b-work-visa-guide">H-2B work visa: steps &amp; scam checks</a></li>
+          <li><a href="/jamaica-c5-travel-form">C5 travel form</a></li>
+        </ul>
+      </div>
+      <div class="dd-col">
+        <h3><a href="/insights.html#cat-driving">Driving &amp; vehicles</a></h3>
+        <ul>
+          <li><a href="/jamaica-learners-permit-guide">Learner's permit</a></li>
+          <li><a href="/jamaica-traffic-tickets-demerit-points">Tickets &amp; demerit points</a></li>
+        </ul>
+      </div>
+      <div class="dd-col">
+        <h3><a href="/insights.html#cat-citizenship">Records &amp; IDs</a></h3>
+        <ul>
+          <li><a href="/jamaican-citizenship-by-descent">Citizenship by descent</a></li>
+          <li><a href="/jamaican-citizenship-while-home">Citizenship while at home</a></li>
+          <li><a href="/jamaica-rgd-certificates-guide">Birth, marriage &amp; death certificates</a></li>
+          <li><a href="/trn-without-photo-id">TRN without photo ID</a></li>
+        </ul>
+      </div>
+      <p class="dd-foot"><a class="link-strong" href="/insights.html">See all guides &amp; tips →</a></p>
     </div>
   </div>
 
@@ -969,25 +974,28 @@ body .legal a.top{color:#9FE1CB}
       <div class="sub"><span class="grp">Passport, visa &amp; police record</span><a href="/jamaican-passport-services.html">Online passport renewal</a><a href="/us-visitor-visa-services.html">U.S. visitor visa assistance</a><a href="#travel-assistance">Police record application assistance</a><span class="grp">Driver &amp; vehicle</span><a href="/motor-vehicle-licence-renewal.html">Motor vehicle renewal</a><a href="/drivers-licence-renewal.html">Driver’s licence renewal</a><a href="/motor-vehicle-licence-renewal.html#ticket-lookup">Traffic tickets</a><span class="grp">Self-employed</span><a href="/self-employed-tax">File and pay your taxes online</a><a href="/contact.html">Other administrative enquiries</a></div>
     </details>
     <details>
-      <summary>Free guides <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2537" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <summary>Guides &amp; tips <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2537" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
       <div class="sub">
-        <span class="grp">Passport &amp; travel</span>
-        <a href="/jamaica-passport-guide">Passport: apply or renew</a>
-        <a href="/pica-card-payment-failed">PICA card payment failed?</a>
-        <a href="/jamaica-us-visitor-visa-guide">US visitor visa</a>
-        <a href="/jamaica-h2b-work-visa-guide">H-2B work visa</a>
-        <a href="/jamaican-citizenship-by-descent">Citizenship by descent</a>
-        <span class="grp">Driving &amp; vehicles</span>
-        <a href="/jamaica-learners-permit-guide.html">Learner's permit</a>
-        <a href="/drivers-licence-renewal.html">Driver’s licence renewal</a>
-        <span class="grp">Records &amp; IDs</span>
-        <a href="/jamaica-rgd-certificates-guide">Birth &amp; marriage certificates</a>
-        <span class="grp">Tax &amp; NIS</span>
-        <a href="/self-employed-s04-tax-guide">Working for yourself in Jamaica?</a>
+        <span class="grp">Self-employed tax &amp; NIS</span>
+        <a href="/self-employed-s04-tax-guide">Working for yourself? Start here</a>
         <a href="/self-employed-tax-traps-jamaica">Self-employed tax traps</a>
         <a href="/self-employed-nis-minimum-jamaica">Self-employed NIS minimum</a>
         <a href="/jamaica-nis-guide">NIS: missing contributions</a>
-        <a href="/insights.html"><strong>See all guides →</strong></a>
+        <span class="grp">Passport &amp; travel</span>
+        <a href="/jamaica-passport-guide">Passport: what to know before you apply</a>
+        <a href="/pica-card-payment-failed">PICA card payment failed?</a>
+        <a href="/jamaica-us-visitor-visa-guide">US visitor visa from Jamaica</a>
+        <a href="/jamaica-h2b-work-visa-guide">H-2B work visa: steps &amp; scam checks</a>
+        <a href="/jamaica-c5-travel-form">C5 travel form</a>
+        <span class="grp">Driving &amp; vehicles</span>
+        <a href="/jamaica-learners-permit-guide">Learner's permit</a>
+        <a href="/jamaica-traffic-tickets-demerit-points">Tickets &amp; demerit points</a>
+        <span class="grp">Records &amp; IDs</span>
+        <a href="/jamaican-citizenship-by-descent">Citizenship by descent</a>
+        <a href="/jamaican-citizenship-while-home">Citizenship while at home</a>
+        <a href="/jamaica-rgd-certificates-guide">Birth, marriage &amp; death certificates</a>
+        <a href="/trn-without-photo-id">TRN without photo ID</a>
+        <a href="/insights.html"><strong>See all guides &amp; tips →</strong></a>
       </div>
     </details>
     <a href="/about.html">About Laura</a>
@@ -1087,7 +1095,7 @@ body .legal a.top{color:#9FE1CB}
 
 <section class="st-guides">
 <h2>Prefer to read up first?</h2>
-<p><a href="/insights.html">Browse our free guides</a></p>
+<p><a href="/insights.html">Browse free guides &amp; tips</a></p>
 </section>
 
 <section class="nh-close" id="start" aria-labelledby="close-title">
@@ -1116,7 +1124,7 @@ body .legal a.top{color:#9FE1CB}
         <h3>Explore</h3>
         <ul>
           <li><a href="#services">Services</a></li>
-          <li><a href="/insights.html">Free guides</a></li>
+          <li><a href="/insights.html">Guides &amp; tips</a></li>
           <li><a href="/free-kits">Free kits</a></li>
           <li><a href="/about.html">About Laura</a></li>
           <li><a href="/faq.html">FAQ</a></li>
