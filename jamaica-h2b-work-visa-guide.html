@@ -109,6 +109,20 @@ a:hover{color:var(--primary)}
 @media(min-width:860px){.footer-top{grid-template-columns:1.4fr 1fr}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
+<style>
+.taxcard{background:#E7EFE6;border-left:4px solid #5E7F5B;border-radius:0;padding:26px 24px;margin:0;color:#2F3538;text-align:left}
+.taxcard .tc-eyebrow{display:block;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4F6E4C;margin:0 0 8px}
+.taxcard h2{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:clamp(1.25rem,4.5vw,1.5rem);line-height:1.25;color:#0F2537;margin:0 0 10px;letter-spacing:-.01em}
+.taxcard p{margin:0 0 14px;font-size:1rem;line-height:1.6}
+.taxcard ul.tc-ticks{list-style:none;padding:0;margin:0 0 20px}
+.taxcard ul.tc-ticks li{position:relative;padding:3px 0 3px 26px;margin:0}
+.taxcard ul.tc-ticks li::before{content:"\2713";position:absolute;left:0;color:#5E7F5B;font-weight:700}
+.taxcard .tc-acts{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center}
+.taxcard a.tc-btn{display:inline-block;padding:13px 22px;background:#0F2537;color:#fff;text-decoration:none;font-weight:600;border-radius:0}
+.taxcard a.tc-link{color:#7A5C17;font-weight:600;text-decoration:none}
+.taxcard a.tc-link:hover,.taxcard a.tc-btn:hover{text-decoration:underline}
+.taxcard .tc-fine{font-size:.85rem;color:#565E63;margin:20px 0 0}
+</style>
 </head>
 <body id="top">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -179,6 +193,19 @@ a:hover{color:var(--primary)}
 <div class="callout-box"><p><strong>Timing matters.</strong> Employers typically file in early January for jobs starting in April, so October to December is the time to get your documents ready and make your agency calls. Dates shift each year, so confirm the current position on the USCIS website.</p></div>
 </section>
 
+<section class="taxcard" aria-labelledby="taxcard-title">
+<span class="tc-eyebrow">Home between seasons?</span>
+<h2 id="taxcard-title">Working for yourself when you're back in Jamaica?</h2>
+<p>Filing your taxes as a self-employed person does more than keep TAJ happy:</p>
+<ul class="tc-ticks">
+<li>A TCC and proof of income for your next visa</li>
+<li>NHT and bank loans</li>
+<li>Your NIS pension for later</li>
+</ul>
+<div class="tc-acts"><a class="tc-btn" href="/self-employed-tax">See how it works</a><a class="tc-link" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27m%20self-employed%20and%20want%20to%20know%20what%20filing%20my%20taxes%20can%20do%20for%20me." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
+<p class="tc-fine">We sort out your records and file for you. All online, no office visit.</p>
+</section>
+
 <section class="card" id="ministry" aria-labelledby="ministry-title">
 <span class="eyebrow">One more option</span>
 <h2 id="ministry-title">The Ministry’s own programme</h2>
@@ -208,7 +235,7 @@ a:hover{color:var(--primary)}
 <h2 id="bridge-title">Need your documents ready in time?</h2>
 <p>Paperwork is often the slowest part. This is the part we help with:</p>
 <ul class="bridge">
-<li><strong>Passport:</strong> we make the digital application to renew where PICA allows. For other passports, our prep package fills in your form and gives you a checklist, and you apply in person.</li>
+<li><strong>Passport:</strong> we make the digital application to renew your passport where PICA allows it online. First-time and other passports are applied for in person at PICA.</li>
 <li><strong>Police record:</strong> we complete your application, pay the fee and book your fingerprinting appointment.</li>
 <li><strong>TRN and NIS:</strong> free at the agency, and you apply in person. Our <a class="inl" href="/trn-without-photo-id">TRN guide</a> and <a class="inl" href="/jamaica-nis-guide">NIS guide</a> show you how.</li>
 <li><strong>Birth certificate:</strong> we collect certified copies from the RGD for you.</li>
