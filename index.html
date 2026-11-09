@@ -902,6 +902,10 @@ body .legal a.top{color:#9FE1CB}
 .nh .nh-card .nh-go{background:#fff}
 .nh .nh-card .nh-go:hover{background:var(--nh-mint)}
 @media(max-width:860px){.nh .nh-cards{gap:44px;padding-top:32px}}
+.nh .nh-cat{scroll-margin-top:90px}
+.nh .nh-cat-title{font-family:var(--sans);font-size:26px;line-height:1.2;font-weight:800;letter-spacing:-.01em;margin:0 0 12px;padding-left:12px;border-left:5px solid var(--cat-accent);color:var(--nh-ink)}
+.nh .cat-tax{--cat-accent:#0F6E56}.nh .cat-motor{--cat-accent:#3D6585}.nh .cat-travel{--cat-accent:#B9995C}
+.nh .nh-card .nh-card-body{padding-top:20px}
 @media(max-width:860px){.nh .nh-cards{gap:56px;padding-top:36px}.nh .nh-card{box-shadow:0 2px 12px rgba(15,37,55,.08)}}
 body .dd-col h3 a{color:inherit;text-decoration:none}
 body .dd-col h3 a:hover{text-decoration:underline}
@@ -1034,32 +1038,38 @@ body .dd-col h3 a:hover{text-decoration:underline}
 
 <section class="nh-cards" id="services" aria-labelledby="services-title">
 
+<div class="nh-cat cat-tax">
+<h3 class="nh-cat-title">Self-employed tax</h3>
 <article class="nh-card" id="self-employed-assistance">
 <img src="assets/home-card-tax-marcia-salon-768.webp" width="768" height="429" alt="Marcia, a hairdresser, smiling on the phone at her salon counter with her receipts sorted into folders" loading="lazy" decoding="async" style="object-position:55% 40%">
 <div class="nh-card-body">
-<p class="nh-kicker">Self-employed tax</p>
 <h2>Want a visa, a loan or a pension one day? Filing your taxes opens those doors.</h2>
 </div>
 <a class="nh-go" href="/self-employed-tax">Learn more</a>
 </article>
+</div>
 
+<div class="nh-cat cat-motor">
+<h3 class="nh-cat-title">Motorists</h3>
 <article class="nh-card" id="renewal-assistance">
 <img src="assets/home-card-motorist-checkpoint-768.webp" width="768" height="429" alt="A smiling driver passing a police checkpoint on a sunny Jamaican road" loading="lazy" decoding="async" style="object-position:62% 45%">
 <div class="nh-card-body">
-<p class="nh-kicker">Motorist</p>
 <h2>Can you drive past a police checkpoint without worrying?</h2>
 </div>
 <a class="nh-go" href="/motorist">Learn more</a>
 </article>
+</div>
 
+<div class="nh-cat cat-travel">
+<h3 class="nh-cat-title">Travel &amp; documents</h3>
 <article class="nh-card" id="travel-assistance">
 <img src="assets/home-card-documents-airport-768.webp" width="768" height="429" alt="A smiling traveller at an airport check-in holding her passport and boarding pass" loading="lazy" decoding="async" style="object-position:50% 40%">
 <div class="nh-card-body">
-<p class="nh-kicker">Documents</p>
 <h2>Planning to travel? Don't let paperwork hold you back.</h2>
 </div>
 <a class="nh-go" href="/travel-documents">Learn more</a>
 </article>
+</div>
 
 </section>
 
