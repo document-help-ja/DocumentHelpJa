@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_JM">
 <meta property="og:site_name" content="Laura Clarke Administrative Services">
 <meta property="og:title" content="Insights &amp; Advisory: Jamaican Document Guides">
-<meta property="og:description" content="Plain-language guides to the counter rules at PICA, TAJ, RGD, JCF, ITA, Customs and NIS.">
+<meta property="og:description" content="Plain-language guides to Jamaican tax, licences, travel documents and records, sorted by topic.">
 <meta property="og:url" content="https://documenthelpja.com/insights.html">
 <meta property="og:image" content="https://documenthelpja.com/assets/share-laura.jpg">
 <meta property="og:image:width" content="1200">
@@ -609,6 +609,24 @@ main { display: flex; flex-direction: column; }
 .more-btn { min-width: 14rem; }
 .unlisted { border-radius: 0; margin-top: 3rem; }
 </style>
+<style id="guide-cats">
+.cat-jump{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 8px}
+.cat-jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:#E1F5EE;color:#084536;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid #0F6E56}
+.cat-jump a:hover{background:#0F6E56;color:#fff}
+.cat-sec{margin-top:clamp(48px,6vw,72px);scroll-margin-top:90px}
+.cat-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#084536;color:#fff;border-radius:14px;padding:18px 22px;margin-bottom:24px}
+.cat-head h2{margin:0;font-size:24px;color:#fff}
+.cat-head p{margin:4px 0 0;color:#CFEDE2;font-size:15px}
+.cat-count{background:rgba(255,255,255,.14);color:#fff;font-size:13px;font-weight:600;padding:5px 12px;border-radius:999px;white-space:nowrap}
+.cat-travel .cat-head{background:#2A4566}.cat-travel .cat-head p{color:#D6E2F2}
+.cat-driving .cat-head{background:#5A4A1E}.cat-driving .cat-head p{color:#F0E4C4}
+.cat-citizenship .cat-head{background:#4A3B5C}.cat-citizenship .cat-head p{color:#E3DAEE}
+.cat-more{margin:18px 0 0;text-align:right}
+.cat-more a{font-weight:600;color:#0F6E56}
+@media(max-width:640px){.cat-more{text-align:left}.cat-sec .article-grid{gap:28px}}
+@media(min-width:1100px){.cat-tax .article-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:700px) and (max-width:1099px){.cat-tax .article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
 </head>
 
 <body id="top">
@@ -661,8 +679,8 @@ main { display: flex; flex-direction: column; }
   <section class="page-hero" aria-labelledby="page-title">
     <div class="wrap">
       <h1 id="page-title">Insights &amp; Advisory</h1>
-      <p class="page-lead">Plain-language guides to Jamaican government bureaucracy. Each one sets out the exact counter rules at PICA, TAJ, RGD, JCF, ITA, Customs and NIS, so you arrive with the right documents and leave with what you came for.</p>
-      <p class="page-byline">Written and checked by Laura Clarke, based on what the counters actually accept.</p>
+      <p class="page-lead">Plain-language guides to Jamaican tax, licences, travel documents and records. Each one explains what's needed and the common mistakes to avoid, so you get it right the first time.</p>
+      <p class="page-byline">Written and checked by Laura Clarke.</p>
       <p class="page-byline"><a href="/free-kits" style="color:#F6DFA6;font-weight:600;text-underline-offset:3px">Free printable kits: download them all in one place →</a></p>
 
     </div>
@@ -672,23 +690,26 @@ main { display: flex; flex-direction: column; }
   <div class="groups-wrap">
   <section class="section library" aria-labelledby="all-title">
     <div class="wrap">
-      <h2 class="all-title" id="all-title">Latest guides</h2>
-      <div class="article-grid" id="guide-list">
-          <article id="g-jamaican-citizenship-while-home" class="article-card" data-cat="records">
-            <div class="card-media"><img src="/assets/family-airport-1200.webp" alt="A Jamaican family walking through the airport on a trip home" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat"><span class="featured-badge">New</span> Citizenship</span><time datetime="2026-10-20">Oct 20, 2026</time></div>
-              <h3><a href="/jamaican-citizenship-while-home">Coming Home? Start Your Jamaican Citizenship While You’re Here</a></h3>
-              <p class="excerpt">A Jamaican parent or grandparent doesn’t make you Jamaican on paper. Why your trip home is the best time to apply, and what to sort out before you fly.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
+      <h2 class="all-title" id="all-title">Browse guides by topic</h2>
+      <nav class="cat-jump" aria-label="Guide categories"><a href="#cat-tax">Self-employed tax</a><a href="#cat-travel">Travel</a><a href="#cat-driving">Driving</a><a href="#cat-citizenship">Citizenship</a></nav>
+      <section class="cat-sec cat-tax" id="cat-tax" aria-labelledby="cat-tax-title">
+        <div class="cat-head"><div><h2 id="cat-tax-title">Self-employed tax &amp; NIS</h2><p>Filing your S04, catching up, and your NIS.</p></div><span class="cat-count">4 guides</span></div>
+        <div class="article-grid">
           <article id="g-self-employed-s04-tax-guide" class="article-card" data-cat="tax">
             <div class="card-media"><img src="/assets/marcia-self-employed-jamaica-768.webp" alt="Marcia, a Jamaican small business owner, holding her business notebook and folder" loading="lazy" decoding="async"></div>
             <div class="card-body">
               <div class="post-meta"><span class="cat">Self-employed · Start here</span><time datetime="2026-11-01">Nov 1, 2026</time></div>
               <h3><a href="/self-employed-s04-tax-guide">Working for Yourself in Jamaica?</a></h3>
               <p class="excerpt">Start here: what the S04 and S04A are, the March 15 filing date and quarterly payments, getting your records ready, and which guide to read next.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-self-employed-tax-traps-jamaica" class="article-card" data-cat="tax">
+            <div class="card-media"><img src="/assets/s04-barber-sorting-records-768.webp" alt="A barber sorting receipts into folders at his shop desk" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat"><span class="featured-badge">New</span> Self-employed · Getting back on track</span><time datetime="2026-11-01">Nov 1, 2026</time></div>
+              <h3><a href="/self-employed-tax-traps-jamaica">Behind on Your S04 Returns or Payments? Where to Start</a></h3>
+              <p class="excerpt">Six practical steps: gather your records, find what is outstanding, deal with deadlines, file, pay and stay up to date.</p>
               <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
             </div>
           </article>
@@ -701,12 +722,27 @@ main { display: flex; flex-direction: column; }
               <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
             </div>
           </article>
-          <article id="g-self-employed-tax-traps-jamaica" class="article-card" data-cat="tax">
-            <div class="card-media"><img src="/assets/s04-barber-sorting-records-768.webp" alt="A barber sorting receipts into folders at his shop desk" loading="lazy" decoding="async"></div>
+          <article id="g-jamaica-nis-guide" class="article-card" data-cat="tax">
+            <div class="card-media"><img src="/assets/nis-contribution-record-review-768.webp" alt="A woman comparing her NIS contribution history with payslips at home" loading="lazy" decoding="async"></div>
             <div class="card-body">
-              <div class="post-meta"><span class="cat"><span class="featured-badge">New</span> Self-employed · Getting back on track</span><time datetime="2026-11-01">Nov 1, 2026</time></div>
-              <h3><a href="/self-employed-tax-traps-jamaica">Behind on Your S04 Returns or Payments? Where to Start</a></h3>
-              <p class="excerpt">Six practical steps: gather your records, find what is outstanding, deal with deadlines, file, pay and stay up to date.</p>
+              <div class="post-meta"><span class="cat">NIS record</span><time datetime="2026-11-01">Nov 1, 2026</time></div>
+              <h3><a href="/jamaica-nis-guide">Are Your NIS Contributions on Record? A Guide for Jamaicans</a></h3>
+              <p class="excerpt">Changed jobs, changed your name or started working for yourself? What to gather and what to ask NIS about your contribution record.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+        </div>
+        <p class="cat-more"><a href="/self-employed-tax">See self-employed tax services →</a></p>
+      </section>
+      <section class="cat-sec cat-travel" id="cat-travel" aria-labelledby="cat-travel-title">
+        <div class="cat-head"><div><h2 id="cat-travel-title">Travel &amp; documents</h2><p>Passports, visas and travel paperwork.</p></div><span class="cat-count">5 guides</span></div>
+        <div class="article-grid">
+          <article id="g-jamaica-passport-guide" class="article-card" data-cat="travel">
+            <div class="card-media"><img src="/assets/passport-renewal-800.webp" alt="Jamaican passport on a desk" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">Passport</span><time datetime="2026-10">Oct 2026</time></div>
+              <h3><a href="/jamaica-passport-guide">Getting a Jamaican Passport: What to Know Before You Apply</a></h3>
+              <p class="excerpt">Which passport lane fits you, what PICA checks, and the common mistakes that get applications sent back.</p>
               <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
             </div>
           </article>
@@ -737,12 +773,60 @@ main { display: flex; flex-direction: column; }
               <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
             </div>
           </article>
-          <article id="g-jamaica-passport-guide" class="article-card" data-cat="travel">
-            <div class="card-media"><img src="/assets/passport-renewal-800.webp" alt="Jamaican passport on a desk" loading="lazy" decoding="async"></div>
+          <article id="g-jamaica-c5-travel-form" class="article-card" data-cat="travel">
+            <div class="card-media"><img src="/assets/wharf-barrel-clearance.webp" alt="Customs barrel shipping" loading="lazy" decoding="async"></div>
             <div class="card-body">
-              <div class="post-meta"><span class="cat">Passport</span><time datetime="2026-10">Oct 2026</time></div>
-              <h3><a href="/jamaica-passport-guide">Getting a Jamaican Passport: What to Know Before You Apply</a></h3>
-              <p class="excerpt">Which passport lane fits you, what PICA checks, and the common mistakes that get applications sent back.</p>
+              <div class="post-meta"><span class="cat">Customs</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
+              <h3><a href="/jamaica-c5-travel-form">Don't Let the C5 Travel Form Trap Your Barrels at the Wharf</a></h3>
+              <p class="excerpt">A step-by-step walk through the C5 declaration, what counts as a personal effect, and the listing mistakes that leave barrels sitting at the wharf racking up storage fees.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+        </div>
+        <p class="cat-more"><a href="/travel-documents">See travel document services →</a></p>
+      </section>
+      <section class="cat-sec cat-driving" id="cat-driving" aria-labelledby="cat-driving-title">
+        <div class="cat-head"><div><h2 id="cat-driving-title">Driving &amp; IDs</h2><p>Your TRN and learner's permit.</p></div><span class="cat-count">2 guides</span></div>
+        <div class="article-grid">
+          <article id="g-trn-without-photo-id" class="article-card" data-cat="tax">
+            <div class="card-media"><img src="/assets/trn-application-800.webp" alt="TRN application document" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">TRN</span><time datetime="2026-09-30">Sep 30, 2026</time></div>
+              <h3><a href="/trn-without-photo-id">How to Get a TRN in Jamaica Without Photo ID: The Birth Certificate Route</a></h3>
+              <p class="excerpt">Expired or missing photo ID doesn't have to stop your TRN. The birth certificate route TAJ accepts, how parents and guardians get a TRN for a child, and how to apply from overseas.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-jamaica-learners-permit-guide" class="article-card" data-cat="driving">
+            <div class="card-media"><img src="/assets/motor-vehicle-800.webp" alt="Learner driver behind the wheel with an L plate" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">Learner’s permit</span><time datetime="2026-09-29">Sep 29, 2026</time></div>
+              <h3><a href="/jamaica-learners-permit-guide">How to Get Your Jamaican Learner’s Permit: The Complete Step-by-Step Guide</a></h3>
+              <p class="excerpt">The Road Code Test now comes before the tax office. Who qualifies, the Form H3A document checklist, a ready-to-send booking email, official study sources and the J$1,800 fee, step by step.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+        </div>
+        <p class="cat-more"><a href="/motorist">See motorist services →</a></p>
+      </section>
+      <section class="cat-sec cat-citizenship" id="cat-citizenship" aria-labelledby="cat-citizenship-title">
+        <div class="cat-head"><div><h2 id="cat-citizenship-title">Citizenship &amp; certificates</h2><p>Claiming citizenship and getting your records.</p></div><span class="cat-count">3 guides</span></div>
+        <div class="article-grid">
+          <article id="g-jamaican-citizenship-by-descent" class="article-card" data-cat="records">
+            <div class="card-media"><img src="/assets/citizenship-descent-hero-800.webp" alt="Jamaican citizenship documents" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat">Citizenship</span><time datetime="2026-09-21">Sep 21, 2026</time></div>
+              <h3><a href="/jamaican-citizenship-by-descent">How Do I Claim Jamaican Citizenship Through a Jamaican Parent?</a></h3>
+              <p class="excerpt">Claiming your Jamaican heritage is a constitutional right, but PICA requires line-for-line documentary alignment. Learn how to verify your lineage without getting stuck in bureaucratic limbo.</p>
+              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
+            </div>
+          </article>
+          <article id="g-jamaican-citizenship-while-home" class="article-card" data-cat="records">
+            <div class="card-media"><img src="/assets/family-airport-1200.webp" alt="A Jamaican family walking through the airport on a trip home" loading="lazy" decoding="async"></div>
+            <div class="card-body">
+              <div class="post-meta"><span class="cat"><span class="featured-badge">New</span> Citizenship</span><time datetime="2026-10-20">Oct 20, 2026</time></div>
+              <h3><a href="/jamaican-citizenship-while-home">Coming Home? Start Your Jamaican Citizenship While You’re Here</a></h3>
+              <p class="excerpt">A Jamaican parent or grandparent doesn’t make you Jamaican on paper. Why your trip home is the best time to apply, and what to sort out before you fly.</p>
               <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
             </div>
           </article>
@@ -755,85 +839,21 @@ main { display: flex; flex-direction: column; }
               <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
             </div>
           </article>
-          <article id="g-trn-without-photo-id" class="article-card" data-cat="tax">
-            <div class="card-media"><img src="/assets/trn-application-800.webp" alt="TRN application document" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">TRN</span><time datetime="2026-09-30">Sep 30, 2026</time></div>
-              <h3><a href="/trn-without-photo-id">How to Get a TRN in Jamaica Without Photo ID: The Birth Certificate Route</a></h3>
-              <p class="excerpt">Expired or missing photo ID doesn't have to stop your TRN. The birth certificate route TAJ accepts, how parents and guardians get a TRN for a child, and how to apply from overseas.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-          <article id="g-jamaica-learners-permit-guide" class="article-card more-guide" hidden data-cat="driving">
-            <div class="card-media"><img src="/assets/motor-vehicle-800.webp" alt="Learner driver behind the wheel with an L plate" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">Learner’s permit</span><time datetime="2026-09-29">Sep 29, 2026</time></div>
-              <h3><a href="/jamaica-learners-permit-guide">How to Get Your Jamaican Learner’s Permit: The Complete Step-by-Step Guide</a></h3>
-              <p class="excerpt">The Road Code Test now comes before the tax office. Who qualifies, the Form H3A document checklist, a ready-to-send booking email, official study sources and the J$1,800 fee, step by step.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-          <article id="g-jamaica-nis-guide" class="article-card more-guide" hidden data-cat="tax">
-            <div class="card-media"><img src="/assets/nis-contribution-record-review-768.webp" alt="A woman comparing her NIS contribution history with payslips at home" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">NIS record</span><time datetime="2026-11-01">Nov 1, 2026</time></div>
-              <h3><a href="/jamaica-nis-guide">Are Your NIS Contributions on Record? A Guide for Jamaicans</a></h3>
-              <p class="excerpt">Changed jobs, changed your name or started working for yourself? What to gather and what to ask NIS about your contribution record.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-          <article id="g-jamaican-citizenship-by-descent" class="article-card more-guide" hidden data-cat="records">
-            <div class="card-media"><img src="/assets/citizenship-descent-hero-800.webp" alt="Jamaican citizenship documents" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">Citizenship</span><time datetime="2026-09-21">Sep 21, 2026</time></div>
-              <h3><a href="/jamaican-citizenship-by-descent">How Do I Claim Jamaican Citizenship Through a Jamaican Parent?</a></h3>
-              <p class="excerpt">Claiming your Jamaican heritage is a constitutional right, but PICA requires line-for-line documentary alignment. Learn how to verify your lineage without getting stuck in bureaucratic limbo.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-          <article id="g-jamaica-c5-travel-form" class="article-card more-guide" hidden data-cat="travel">
-            <div class="card-media"><img src="/assets/wharf-barrel-clearance.webp" alt="Customs barrel shipping" loading="lazy" decoding="async"></div>
-            <div class="card-body">
-              <div class="post-meta"><span class="cat">Customs</span><time datetime="2026-09-18">Sep 18, 2026</time></div>
-              <h3><a href="/jamaica-c5-travel-form">Don't Let the C5 Travel Form Trap Your Barrels at the Wharf</a></h3>
-              <p class="excerpt">A step-by-step walk through the C5 declaration, what counts as a personal effect, and the listing mistakes that leave barrels sitting at the wharf racking up storage fees.</p>
-              <span class="read-link" aria-hidden="true">Read guide <svg class="icon"><use href="#i-chev"/></svg></span>
-            </div>
-          </article>
-      </div>
-      <p class="more-wrap"><button type="button" class="btn btn-line more-btn" id="more-guides" aria-controls="guide-list" aria-expanded="false">Show more guides</button></p>
+        </div>
+        <p class="cat-more"><a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20read%20your%20citizenship%20guide%20and%20I%20have%20a%20question." target="_blank" rel="noopener">Ask on WhatsApp →</a></p>
+      </section>
 
       <!-- Help callout -->
       <aside class="unlisted" aria-labelledby="help-title">
         <div>
           <h3 id="help-title">Can't find your situation in a guide?</h3>
-          <p>Every file is different. Send us a message with what you're applying for and where you are, and we'll tell you exactly what the counter will ask for before you pay any government fee.</p>
+          <p>Every file is different. Send us a message with what you're applying for and where you are, and we'll tell you exactly what's needed before you pay any government fee.</p>
         </div>
         <a class="btn btn-gold" href="/contact.html">Tell us how we can help</a>
       </aside>
     </div>
   </section>
   </div>
-
-  <!-- ===================== NEWSLETTER ===================== -->
-  <section class="section newsletter" id="newsletter" aria-labelledby="nl-title">
-    <div class="wrap">
-      <h2 id="nl-title">Get It Right the First Time</h2>
-      <p class="lead">New guides, agency rule changes, new fees and counter tips, sent when something actually changes.</p>
-
-      <form id="newsletter-form" class="nl-form" data-newsletter data-success="newsletter-success">
-        <label for="nl-email" class="sr-only">Email address</label>
-        <input id="nl-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
-        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
-        <button type="submit" class="btn btn-gold">Subscribe</button>
-      </form>
-
-      <div id="newsletter-success" class="nl-success" hidden role="status">
-        <strong>You're on the list</strong>
-        <p>A welcome email is on its way. If you do not see it in a few minutes, look in your spam folder.</p>
-      </div>
-    </div>
-  </section>
 
 </main>
 
