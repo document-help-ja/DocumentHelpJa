@@ -894,6 +894,14 @@ body .legal a{color:#fff}
 body .legal a.top{color:#9FE1CB}
 .nh .nh-go{display:flex;align-items:center;justify-content:center;margin:16px 18px 18px;min-height:46px;border:1px solid var(--nh-teal);color:var(--nh-teal);font-weight:600;text-decoration:none}
 .nh .nh-go:hover{background:var(--nh-mint)}
+/* Service categories: each in its own soft colour, more space between on phones */
+.nh .nh-card{border:1px solid var(--cat-line);border-top:4px solid var(--cat-accent);background:var(--cat-bg)}
+.nh #self-employed-assistance{--cat-bg:#EEF6F2;--cat-line:#CFE3D9;--cat-accent:#0F6E56}
+.nh #renewal-assistance{--cat-bg:#EEF3F8;--cat-line:#D3DEEA;--cat-accent:#3D6585}
+.nh #travel-assistance{--cat-bg:#F8F3EA;--cat-line:#E8DCC4;--cat-accent:#B9995C}
+.nh .nh-card .nh-go{background:#fff}
+.nh .nh-card .nh-go:hover{background:var(--nh-mint)}
+@media(max-width:860px){.nh .nh-cards{gap:44px;padding-top:32px}}
 @media(max-width:860px){.nh .nh-cards{gap:56px;padding-top:36px}.nh .nh-card{box-shadow:0 2px 12px rgba(15,37,55,.08)}}
 body .dd-col h3 a{color:inherit;text-decoration:none}
 body .dd-col h3 a:hover{text-decoration:underline}
