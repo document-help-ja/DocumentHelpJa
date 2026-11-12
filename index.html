@@ -912,6 +912,74 @@ body .legal a.top{color:#9FE1CB}
 body .dd-col h3 a{color:inherit;text-decoration:none}
 body .dd-col h3 a:hover{text-decoration:underline}
 </style>
+<style id="home-books">
+/* Books and planners section (Nov 2026) */
+.nh .nh-books{background:#F4F7F6;border-top:1px solid #DDE5E2;border-bottom:1px solid #DDE5E2;margin-top:56px;padding:56px 0 64px;scroll-margin-top:90px}
+.nh .nh-books-inner{max-width:72rem;margin:0 auto;padding:0 20px}
+.nh .nh-books-head{max-width:40rem;margin:0 auto 32px;text-align:center}
+.nh .nh-books-head h2{font-family:var(--sans);color:#1F2A27;font-size:clamp(24px,2.6vw,30px);font-weight:700;line-height:1.25;margin:0 0 8px}
+.nh .nh-books-head p{margin:0;color:#3E4B47;font-size:16px;line-height:1.55}
+.nh .nh-books-grid{display:grid;gap:24px}
+@media(min-width:861px){.nh .nh-books-inner{padding:0 24px}.nh .nh-books-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:stretch}}
+.nh .nh-book{background:#fff;border:1px solid #DDE5E2;display:flex;flex-direction:column}
+.nh .nh-book.is-out{border:2px solid #0F6E56}
+.nh .nh-book-cover{background:#EEF6F2;padding:20px;display:flex;justify-content:center;align-items:center;aspect-ratio:4/3}
+.nh .nh-book-cover img{height:100%;width:auto;max-width:100%;border:1px solid #CFE3D9;background:#fff}
+.nh .nh-book.is-soon .nh-book-cover{background:#EEF1F0;color:#55625E;font-size:15px;font-weight:600;text-align:center}
+.nh .nh-book-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.nh .nh-book-tag{align-self:flex-start;font-size:13px;font-weight:600;padding:3px 10px;background:#E1F5EE;color:#085041}
+.nh .nh-book.is-soon .nh-book-tag{background:#EEF1F0;color:#3E4B47}
+.nh .nh-book-no{margin:6px 0 0;color:#55625E;font-size:14px}
+.nh .nh-book h3{font-family:var(--sans);color:#1F2A27;font-size:20px;line-height:1.3;font-weight:700;margin:0}
+.nh .nh-book p.nh-book-line{margin:0;color:#3E4B47;font-size:15.5px;line-height:1.5}
+.nh .nh-book-price{margin:6px 0 0;color:#1F2A27;font-size:18px;font-weight:700}
+.nh .nh-book .nh-go{margin:auto 0 0;padding:0 20px;background:#fff}
+.nh .nh-book .nh-book-price+.nh-go,.nh .nh-book p.nh-book-line+.nh-go{margin-top:16px}
+@media(min-width:861px){.nh .nh-book .nh-go{margin-top:auto!important}}
+@media(max-width:860px){.nh .nh-books{margin-top:0;padding:64px 0 72px}}
+/* Featured book across the screen, coming-soon books underneath */
+@media(min-width:861px){
+ .nh .nh-books-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+ .nh .nh-book.is-out{grid-column:1/-1;display:grid;grid-template-columns:minmax(220px,320px) 1fr}
+ .nh .nh-book.is-out .nh-book-cover{aspect-ratio:auto;height:100%;min-height:300px}
+ .nh .nh-book.is-out .nh-book-cover img{height:auto;max-height:340px;width:auto}
+ .nh .nh-book.is-out .nh-book-body{padding:32px 36px;justify-content:center}
+ .nh .nh-book.is-out h3{font-size:26px}
+ .nh .nh-book.is-out .nh-go{margin-top:18px!important;align-self:flex-start;min-width:220px}
+}
+.nh .nh-book.is-soon .nh-book-body{padding:16px 20px}
+.nh .nh-book.is-soon{background:#FAFCFB}
+/* Desktop: more white space between the main sections (Nov 2026) */
+@media(min-width:861px){
+ .nh .nh-intro{padding-top:120px}
+ .nh .nh-cards{padding-top:48px}
+ .nh .nh-steps{margin-top:64px}
+ .nh .nh-books{margin-top:120px;padding:96px 0 104px}
+ .nh .nh-books-head{margin-bottom:48px}
+ .nh .st-about{padding:120px 0 88px}
+}
+/* Featured book: half the width for the cover, a stronger hook, a buy button (Nov 2026) */
+.nh .nh-book-name{margin:8px 0 0;color:#55625E;font-size:14px;font-weight:600}
+.nh .nh-book-ctas{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:16px}
+.nh .nh-buy{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 30px;background:#0F6E56;color:#fff;font-weight:600;text-decoration:none}
+.nh .nh-buy:hover{background:#085041;color:#fff}
+.nh .nh-inside{color:#0F6E56;font-weight:600;font-size:15px}
+.nh .nh-book.is-out h3{font-size:22px;line-height:1.3}
+@media(max-width:860px){.nh .nh-buy{width:100%}}
+@media(min-width:861px){
+ .nh .nh-book.is-out{grid-template-columns:1fr 1fr}
+ .nh .nh-book.is-out .nh-book-cover{padding:40px;min-height:440px}
+ .nh .nh-book.is-out .nh-book-cover img{max-height:420px}
+ .nh .nh-book.is-out .nh-book-body{padding:40px 44px}
+ .nh .nh-book.is-out h3{font-size:28px}
+ .nh .nh-book.is-out p.nh-book-line{font-size:17px;line-height:1.6}
+}
+/* About and reviews as one section */
+.nh .st-about{padding-bottom:16px}
+.nh .st-reviews{background:var(--st-sand);padding:40px 0 64px}
+.nh .st-rev{background:#fff}
+@media(min-width:861px){.nh .st-about{padding-bottom:24px}.nh .st-reviews{padding:48px 0 96px}}
+</style>
 </head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
@@ -938,7 +1006,7 @@ body .dd-col h3 a:hover{text-decoration:underline}
   </div>
 
   <!-- Desktop: Services -->
-<div class="dd" id="dd-services" hidden><div class="wrap dd-inner"><div class="dd-col services"><h3>Passport, visa &amp; police record</h3><ul><li><a href="/jamaican-passport-services.html">Online passport renewal →</a></li><li><a href="/us-visitor-visa-services.html">U.S. visitor visa assistance →</a></li><li><a href="/jamaica-police-record">Police record application assistance →</a></li></ul></div><div class="dd-col services"><h3>Driver &amp; vehicle</h3><ul><li><a href="/motor-vehicle-licence-renewal.html">Motor vehicle renewal →</a></li><li><a href="/drivers-licence-renewal.html">Driver’s licence renewal →</a></li><li><a href="/motor-vehicle-licence-renewal.html#ticket-lookup">Traffic tickets →</a></li></ul></div><div class="dd-col services"><h3>Self-employed</h3><ul><li><a href="/self-employed-tax">File and pay your taxes online →</a></li><li><a href="/contact.html">Other administrative enquiries →</a></li></ul></div></div></div>
+<div class="dd" id="dd-services" hidden><div class="wrap dd-inner"><div class="dd-col services"><h3>Passport, visa &amp; police record</h3><ul><li><a href="/jamaican-passport-services.html">Online passport renewal →</a></li><li><a href="/us-visitor-visa-services.html">U.S. visitor visa assistance →</a></li><li><a href="/jamaica-police-record">Police record application assistance →</a></li></ul></div><div class="dd-col services"><h3>Driver &amp; vehicle</h3><ul><li><a href="/motor-vehicle-licence-renewal.html">Motor vehicle renewal →</a></li><li><a href="/drivers-licence-renewal.html">Driver’s licence renewal →</a></li><li><a href="/motor-vehicle-licence-renewal.html#ticket-lookup">Traffic tickets →</a></li></ul></div><div class="dd-col services"><h3>Self-employed</h3><ul><li><a href="/self-employed-tax">File and pay your taxes online →</a></li><li><a href="/s04-tax-record-planner">S04 Tax Record Planner →</a></li><li><a href="/contact.html">Other administrative enquiries →</a></li></ul></div></div></div>
   <!-- Desktop: Guides (table of contents) -->
   <div class="dd" id="dd-guides" hidden>
     <div class="wrap dd-inner">
@@ -985,7 +1053,7 @@ body .dd-col h3 a:hover{text-decoration:underline}
   <nav class="mnav" id="mnav" aria-label="Mobile menu" hidden>
     <details>
       <summary>Services <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2537" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
-      <div class="sub"><span class="grp">Passport, visa &amp; police record</span><a href="/jamaican-passport-services.html">Online passport renewal</a><a href="/us-visitor-visa-services.html">U.S. visitor visa assistance</a><a href="/jamaica-police-record">Police record application assistance</a><span class="grp">Driver &amp; vehicle</span><a href="/motor-vehicle-licence-renewal.html">Motor vehicle renewal</a><a href="/drivers-licence-renewal.html">Driver’s licence renewal</a><a href="/motor-vehicle-licence-renewal.html#ticket-lookup">Traffic tickets</a><span class="grp">Self-employed</span><a href="/self-employed-tax">File and pay your taxes online</a><a href="/contact.html">Other administrative enquiries</a></div>
+      <div class="sub"><span class="grp">Passport, visa &amp; police record</span><a href="/jamaican-passport-services.html">Online passport renewal</a><a href="/us-visitor-visa-services.html">U.S. visitor visa assistance</a><a href="/jamaica-police-record">Police record application assistance</a><span class="grp">Driver &amp; vehicle</span><a href="/motor-vehicle-licence-renewal.html">Motor vehicle renewal</a><a href="/drivers-licence-renewal.html">Driver’s licence renewal</a><a href="/motor-vehicle-licence-renewal.html#ticket-lookup">Traffic tickets</a><span class="grp">Self-employed</span><a href="/self-employed-tax">File and pay your taxes online</a><a href="/s04-tax-record-planner">S04 Tax Record Planner</a><a href="/contact.html">Other administrative enquiries</a></div>
     </details>
     <details>
       <summary>Guides &amp; tips <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2537" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
@@ -1085,6 +1153,51 @@ body .dd-col h3 a:hover{text-decoration:underline}
 </div>
 </section>
 
+<section class="nh-books" id="books" aria-labelledby="books-title">
+<div class="nh-books-inner">
+<div class="nh-books-head">
+<h2 id="books-title">Tools for preparers and filers</h2>
+<p>Planners and guides for anyone who files the S04, for clients or for themselves. See what's out now and what's coming next.</p>
+</div>
+<div class="nh-books-grid">
+
+<article class="nh-book is-out">
+<div class="nh-book-cover"><img src="assets/s04-tax-record-planner-cover.webp" width="935" height="1210" alt="Cover of the S04 Tax Record Planner – Jamaica" loading="lazy" decoding="async"></div>
+<div class="nh-book-body">
+<span class="nh-book-tag">Available now</span>
+<h3>Enter it once. In the right box.</h3>
+<p class="nh-book-line">Every S04 figure, in the order the TAJ portal asks for it. Hand it to your clients in January, and by March each figure is ready for its box. No more sorting through the receipt bag.</p>
+<p class="nh-book-name">S04 Tax Record Planner, Book 1</p>
+<p class="nh-book-price">J$2,000 PDF</p>
+<div class="nh-book-ctas">
+<a class="nh-buy" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20get%20the%20S04%20Tax%20Record%20Planner%20%28J%242%2C000%29." target="_blank" rel="noopener">Get your copy</a>
+<a class="nh-inside" href="/s04-tax-record-planner">See what's inside</a>
+</div>
+</div>
+</article>
+
+<article class="nh-book is-soon">
+<div class="nh-book-body">
+<span class="nh-book-tag">Coming soon</span>
+<p class="nh-book-no">Book 2</p>
+<h3>Filing your S04 on the TAJ portal</h3>
+<p class="nh-book-line">Follow the portal screens step by step as you file.</p>
+</div>
+</article>
+
+<article class="nh-book is-soon">
+<div class="nh-book-body">
+<span class="nh-book-tag">Coming soon</span>
+<p class="nh-book-no">Book 3</p>
+<h3>Employer records planner</h3>
+<p class="nh-book-line">For the self-employed who pay a few workers.</p>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
 <section class="st-about" aria-labelledby="about-title">
 <div class="st-wrap st-about-card">
 <div class="st-about-head">
@@ -1143,6 +1256,7 @@ body .dd-col h3 a:hover{text-decoration:underline}
         <h3>Explore</h3>
         <ul>
           <li><a href="#services">Services</a></li>
+          <li><a href="/s04-tax-record-planner">S04 Tax Record Planner</a></li>
           <li><a href="/insights.html">Guides &amp; tips</a></li>
           <li><a href="/free-kits">Free kits</a></li>
           <li><a href="/about.html">About Laura</a></li>
