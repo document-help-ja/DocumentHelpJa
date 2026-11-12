@@ -159,6 +159,17 @@ h1,h2,h3,.hook{font-variant-numeric:lining-nums}
 .story .row .quote{background:#fff}
 @media(min-width:800px){.story .row{padding:28px;gap:36px;margin-bottom:48px}}
 .how-title{margin-top:48px}
+
+/* Closing buy box (Nov 2026) */
+.buy-again{display:grid;gap:18px;margin-top:40px;background:var(--navy);color:#fff;border-top:4px solid var(--gold);padding:26px 20px}
+.buy-again .buy-copy{display:grid;gap:8px}
+.buy-again h3{font:600 1.5rem/1.25 var(--serif);color:#fff;margin:0}
+.buy-again .buy-copy p{margin:0;color:#D5DEE8}
+.buy-again .price{color:#fff;font-size:1.35rem;margin-top:6px}
+.buy-again .price .note{color:#C8D2DC}
+.buy-again .btn{min-width:0;width:100%}
+.buy-again .btn.gold:hover{background:#E1BE4B}
+@media(min-width:700px){.buy-again{grid-template-columns:1fr auto;align-items:end;padding:32px}.buy-again .btn{width:auto;min-width:280px}}
 </style>
 <style id="lch-style">
 :root { --header-h: 68px; }
@@ -341,7 +352,11 @@ h1,h2,h3,.hook{font-variant-numeric:lining-nums}
       <div><h3>Filing your own?</h3><p>Ten minutes at the end of each month, and your figures are ready when March comes.</p></div>
     </div>
     <div class="buy-again">
-      <p class="price">J$2,000 <span class="note" style="display:inline">· PDF</span></p>
+      <div class="buy-copy">
+        <h3>Ready for March?</h3>
+        <p>Get the planner today and start with this month's figures.</p>
+        <p class="price">J$2,000 <span class="note" style="display:inline">· PDF, sent to you on WhatsApp</span></p>
+      </div>
       <a class="btn gold" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20get%20the%20S04%20Tax%20Record%20Planner%20%28J%242%2C000%29." target="_blank" rel="noopener">Get your copy on WhatsApp</a>
     </div>
   </div>
