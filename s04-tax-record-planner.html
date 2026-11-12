@@ -149,6 +149,16 @@ h1,h2,h3,.hook{font-variant-numeric:lining-nums}
 .inside+.note{margin-top:14px}
 .story{margin-top:56px;padding-top:56px}
 @media(min-width:900px){.pitch{margin-top:36px}}
+
+/* Story sections as tinted cards: each picture sits with its own words (Nov 2026) */
+.story .row{background:var(--tint);border:1px solid var(--line);border-top:3px solid var(--gold);padding:16px 16px 22px;gap:18px;margin:0 0 32px}
+.story .row .row-pic{background:#fff}
+.story .row .row-photo img{border:0}
+.story .row .row-text h3{margin-top:4px}
+.story .row .row-text p:last-of-type{margin-bottom:0}
+.story .row .quote{background:#fff}
+@media(min-width:800px){.story .row{padding:28px;gap:36px;margin-bottom:48px}}
+.how-title{margin-top:48px}
 </style>
 <style id="lch-style">
 :root { --header-h: 68px; }
