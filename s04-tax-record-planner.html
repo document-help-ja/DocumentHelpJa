@@ -132,6 +132,23 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
 .book.now .tag{background:var(--gold)}
 .row-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line)}
 .row-text .quote{margin:16px 0 0}
+
+/* Breathing room: group the buy block, the pitch, and the previews (Nov 2026) */
+h1,h2,h3,.hook{font-variant-numeric:lining-nums}
+.pinfo{gap:0}
+.pinfo .crumbs{margin-bottom:18px}
+.pinfo .kick{margin-bottom:8px}
+.pinfo h1{margin-bottom:12px}
+.pinfo .price{margin-bottom:20px}
+.pitch{margin-top:44px;padding-top:36px;border-top:1px solid var(--line);display:grid;gap:16px}
+.pinfo p.hook{font-size:clamp(1.5rem,5vw,1.9rem)}
+.peek{margin-top:48px}
+.peek h2,.inside h2{font-size:1.05rem;font-weight:600;margin-bottom:12px}
+.peek .note{margin-top:8px}
+.inside{margin-top:44px;padding:20px 22px}
+.inside+.note{margin-top:14px}
+.story{margin-top:56px;padding-top:56px}
+@media(min-width:900px){.pitch{margin-top:36px}}
 </style>
 <style id="lch-style">
 :root { --header-h: 68px; }
@@ -246,8 +263,10 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
       <h1>S04 Tax Record Planner</h1>
       <p class="price">J$2,000 <span class="note" style="display:inline">· PDF</span></p>
       <a class="btn gold" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20get%20the%20S04%20Tax%20Record%20Planner%20%28J%242%2C000%29." target="_blank" rel="noopener">Get your copy on WhatsApp</a>
+      <div class="pitch">
       <p class="hook">Enter it once. In the right box.</p>
       <p class="lead">Every S04 figure, in the order the TAJ portal asks for it. Fill it in with your client, or a little each month for yourself, and by March each figure is ready for its box. No more sorting through the receipt bag.</p>
+      </div>
       <div class="peek">
         <h2>Look inside</h2>
         <div class="strip" tabindex="0" role="region" aria-label="Preview pages, scroll sideways">
