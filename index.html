@@ -979,6 +979,22 @@ body .dd-col h3 a:hover{text-decoration:underline}
 .nh .st-reviews{background:var(--st-sand);padding:40px 0 64px}
 .nh .st-rev{background:#fff}
 @media(min-width:861px){.nh .st-about{padding-bottom:24px}.nh .st-reviews{padding:48px 0 96px}}
+
+/* Square edges throughout; gold buy button for the planner (Nov 2026) */
+.nh .nh-btn-light,.nh .nh-wa,.nh .nh-req{border-radius:0}
+.nh .st-about-card{border-radius:0}
+.nh .st-about-facts li{border-radius:0;background:transparent;border:1px solid #CFE3D9}
+.nh .st-rev{border-radius:0}
+.nh .nh-buy{background:#D4AF37;color:#0F2537}
+.nh .nh-buy:hover{background:#C29F2B;color:#0F2537}
+
+/* Book cover: size by width so it never stretches (Nov 2026) */
+.nh .nh-book-cover{aspect-ratio:auto;height:auto;padding:24px 20px}
+.nh .nh-book-cover img{display:block;width:min(62%,230px);height:auto;max-height:none;max-width:100%;object-fit:contain}
+@media(min-width:861px){
+ .nh .nh-book.is-out .nh-book-cover{height:auto;min-height:0;padding:40px}
+ .nh .nh-book.is-out .nh-book-cover img{width:min(80%,320px);height:auto;max-height:none}
+}
 </style>
 </head>
 <body id="top">
@@ -1166,7 +1182,7 @@ body .dd-col h3 a:hover{text-decoration:underline}
 <div class="nh-book-body">
 <span class="nh-book-tag">Available now</span>
 <h3>Enter it once. In the right box.</h3>
-<p class="nh-book-line">Every S04 figure, in the order the TAJ portal asks for it. Hand it to your clients in January, and by March each figure is ready for its box. No more sorting through the receipt bag.</p>
+<p class="nh-book-line">Every S04 figure, in the order the TAJ portal asks for it. Fill it in with your client, or a little each month for yourself, and by March each figure is ready for its box. No more sorting through the receipt bag.</p>
 <p class="nh-book-name">S04 Tax Record Planner, Book 1</p>
 <p class="nh-book-price">J$2,000 PDF</p>
 <div class="nh-book-ctas">
@@ -1266,7 +1282,7 @@ body .dd-col h3 a:hover{text-decoration:underline}
       <div>
         <h3>Contact</h3>
         <ul>
-          <li><a href="https://wa.me/18765612614" target="_blank" rel="noopener">WhatsApp +1 (876) 561-2614</a></li>
+          <li><a href="https://wa.me/18765612614" target="_blank" rel="noopener" style="white-space:nowrap">WhatsApp 876-561-2614</a></li>
           <li><a href="mailto:info@documenthelpja.com">info@documenthelpja.com</a></li>
           <li><a href="/contact.html">Send an enquiry</a></li>
         </ul>
