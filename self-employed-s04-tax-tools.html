@@ -92,7 +92,8 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
 .body h2{font-size:1.35rem;line-height:1.3}
 .body p{margin:0}
 .body .btn{margin-top:8px}
-.soon{margin-top:28px;display:flex;gap:18px;align-items:center;border:1px dashed var(--line);background:#fff;padding:16px 18px}
+.soonrow{display:grid;gap:16px;margin-top:32px}@media(min-width:760px){.soonrow{grid-template-columns:1fr 1fr}}
+.soon{display:flex;gap:18px;align-items:center;border:1px dashed var(--line);background:#fff;padding:16px 18px}
 .soon img{width:110px;flex:0 0 110px;border:1px solid var(--line)}
 .soon .tag{display:inline-block;font-size:.75rem;letter-spacing:.07em;text-transform:uppercase;background:var(--tint);color:var(--navy);padding:3px 9px;margin:0 0 6px}
 .soon h2{font-size:1.1rem;line-height:1.3;margin:0 0 4px}.soon p{margin:0;font-size:.95rem}
@@ -234,10 +235,10 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
 </article> <article class="card t"> <a class="cover" href="/assets/self-employed-income-expense-tracker-jamaica.pdf" download tabindex="-1" aria-hidden="true"><img src="assets/s04-income-expense-tracker-cover.webp" width="935" height="1210" loading="lazy" decoding="async" alt=""></a> <div class="body"> <p class="kick">Free · For your S04 tax return</p> <h2>S04 Income and Expense Tracker</h2> <p>Write down every payment in and out, ready for your S04.</p> <p class="price">Free</p> <a class="btn" href="/assets/self-employed-income-expense-tracker-jamaica.pdf" download>Download free</a> </div> </article>
 
   </div>
-  <div class="wrap"><aside class="soon" aria-label="Coming soon">
-    <img src="assets/s04-book-coming-soon.svg" width="600" height="450" loading="lazy" decoding="async" alt="">
-    <div><p class="tag">Coming December</p><h2>Don't Pay Tax You Don't Owe</h2><p>The step-by-step book for filing your S04 on the TAJ portal.</p></div>
-  </aside></div>
+  <div class="wrap soonrow" aria-label="Coming soon in the series">
+    <aside class="soon"><div><p class="tag">Book 2 · Coming soon</p><h2>Filing your S04 on the TAJ portal</h2><p>Follow the portal screens as you file, using the figures from your Planner.</p></div></aside>
+    <aside class="soon"><div><p class="tag">Book 3 · Coming soon</p><h2>Employer records planner</h2><p>For the self-employed who pay a few workers.</p></div></aside>
+  </div>
 </section>
 <section class="how" aria-labelledby="how-title">
   <div class="wrap"><div class="box">
