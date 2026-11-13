@@ -75,7 +75,12 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
 .quote cite{display:block;font-family:var(--sans);font-style:normal;font-size:.85rem;color:var(--gold-text);margin-top:8px}
 .hero .btn{align-self:flex-start;min-width:220px}
 /* catalogue */
-.tools{padding-block:48px 24px}
+.tools{padding-block:48px 48px;background:#183650}
+.tools .card{border-width:0}
+.tools .card{background:transparent}.tools .cover{background:transparent;padding:8px 0 22px}.tools .cover img{border:0;box-shadow:0 10px 28px rgba(0,0,0,.35)}
+.tools .soon{border:0}
+.tools .body{padding-left:0;padding-right:0}.tools .body .kick{color:var(--gold)}.tools .body h2,.tools .body .price{color:#fff}.tools .body p{color:#D7DEE5}
+.tools .body .btn:not(.gold){color:#fff;border-color:#fff}.tools .body .btn:not(.gold):hover{background:rgba(255,255,255,.12)}
 .grid{display:grid;gap:28px;grid-template-columns:1fr}
 @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}.card.b{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr}}
 .card{border:1px solid var(--gold);display:flex;flex-direction:column;background:#fff}
@@ -91,7 +96,7 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
 .soon img{width:110px;flex:0 0 110px;border:1px solid var(--line)}
 .soon .tag{display:inline-block;font-size:.75rem;letter-spacing:.07em;text-transform:uppercase;background:var(--tint);color:var(--navy);padding:3px 9px;margin:0 0 6px}
 .soon h2{font-size:1.1rem;line-height:1.3;margin:0 0 4px}.soon p{margin:0;font-size:.95rem}
-.how{padding-block:24px 8px}
+.how{padding-block:40px 8px}
 .how .box{background:var(--tint);padding:20px 22px;max-width:46rem;margin:0 auto}
 .how h2{font-size:1.2rem;margin-bottom:8px}
 .how ol{margin:0;padding-left:20px}.how li{margin:4px 0}
