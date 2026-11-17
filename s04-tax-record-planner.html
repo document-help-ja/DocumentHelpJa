@@ -252,6 +252,15 @@ main{font-family:"Lora",Georgia,"Times New Roman",serif}
 h1,h2,h3{font-family:"Lora",Georgia,serif!important;font-weight:500!important;color:#3A4440!important}
 .btn,.kick,.price,.note,.crumbs,.field label,input,select,button,.tag,.save,.consent{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 </style>
+<style id="ways-style">
+.ways{display:flex;flex-direction:column;gap:14px;margin:4px 0 8px}
+.ways-title{font-size:1.25rem!important;margin:0!important}
+.ways-why{margin:0;color:var(--muted)}
+.way{border:1px solid var(--line);padding:16px 16px 18px;display:flex;flex-direction:column;gap:8px;background:#fff}
+.way-name{margin:0;font-size:1.1rem;color:#3A4440}
+.way-price{font-family:Inter,system-ui,sans-serif;font-size:.85rem;color:var(--muted);margin-left:6px}
+.way-line{margin:0;font-size:.98rem}
+</style>
 </head>
 <body id="top">
 <a href="#main" class="skip">Skip to content</a>
@@ -297,12 +306,20 @@ h1,h2,h3{font-family:"Lora",Georgia,serif!important;font-weight:500!important;co
       <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › Self-Employed Tax Record Planner</nav>
       <p class="kick">For preparers and anyone filing an S04</p>
       <h1>Self-Employed Tax Record Planner <span style="display:block;font-size:.55em;letter-spacing:.08em;margin-top:6px">JAMAICA</span></h1>
-      <p class="price">J$2,000 <span class="note" style="display:inline">· PDF you can type into</span></p>
-      <a class="btn gold" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20get%20the%20Self-Employed%20Tax%20Record%20Planner%20%28J%242%2C000%29." target="_blank" rel="noopener">Get your copy on WhatsApp</a>
-      <div class="amz">
-        <p class="price" style="margin:4px 0 8px">US$14.99 <span class="note" style="display:inline">· Printed paperback, shipped by Amazon</span></p>
-        <a class="btn" href="https://link.amazon/B0abubDg1" target="_blank" rel="noopener sponsored">Buy the paperback on Amazon</a>
-        <p class="note" style="margin-top:8px;font-size:.8rem">As an Amazon Associate I earn from qualifying purchases.</p>
+      <div class="ways">
+        <h2 class="ways-title">Two ways to get it</h2>
+        <p class="ways-why">Same planner, same pages. Pick the one that suits how you work.</p>
+        <div class="way">
+          <p class="way-name">Type it <span class="way-price">J$2,000 · PDF</span></p>
+          <p class="way-line">Fill it in on your computer or phone, and keep it on file. Best if you file for several clients or don’t have a printer. Sent to you today on WhatsApp.</p>
+          <a class="btn gold" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20get%20the%20Self-Employed%20Tax%20Record%20Planner%20%28J%242%2C000%29." target="_blank" rel="noopener">Get the PDF on WhatsApp</a>
+        </div>
+        <div class="way">
+          <p class="way-name">Write in it <span class="way-price">US$14.99 · Paperback</span></p>
+          <p class="way-line">A printed book to fill in by hand. Shipped by Amazon to you or your courier address, so it works from anywhere.</p>
+          <a class="btn" href="https://link.amazon/B0abubDg1" target="_blank" rel="noopener sponsored">Buy the paperback on Amazon</a>
+          <p class="note" style="margin-top:8px;font-size:.8rem">As an Amazon Associate I earn from qualifying purchases.</p>
+        </div>
       </div>
       <div class="pitch">
       <p class="hook">Know exactly what goes in every box before you open the TAJ portal.</p>
