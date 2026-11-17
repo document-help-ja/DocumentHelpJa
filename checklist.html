@@ -237,6 +237,7 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
     <div class="cl-form">
       <form class="fcard" id="cl-form" novalidate>
         <h2>Get the checklist free</h2>
+        <p class="hint" style="font-size:.95rem;margin-top:-8px">We email it to you as a PDF. Check your spam folder if it isn’t there in a few minutes.</p>
         <div class="field" id="f-name">
           <label for="name">Your name</label>
           <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required>
@@ -246,20 +247,6 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
           <label for="email">Email</label>
           <input id="email" name="email" type="email" autocomplete="email" maxlength="120" required>
           <p class="oops" id="email-oops" hidden>Please check your email address.</p>
-        </div>
-        <div class="field" id="f-phone">
-          <label for="phone">WhatsApp number</label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="30" required>
-          <p class="hint">So I can let you know when filing season opens.</p>
-          <p class="oops" id="phone-oops" hidden>Please check your WhatsApp number.</p>
-        </div>
-        <div class="field" id="f-where">
-          <label for="where">Where are you right now?</label>
-          <select id="where" name="where" required>
-            <option value="">Choose one</option>
-            <option>Jamaica</option><option>United States</option><option>United Kingdom</option><option>Canada</option><option>Another country</option>
-          </select>
-          <p class="oops" id="where-oops" hidden>Please choose where you are.</p>
         </div>
         <div class="field" id="f-heard">
           <label for="heard">How did you hear about the checklist?</label>
@@ -275,18 +262,17 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
         <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
         <label class="consent" id="f-consent">
           <input type="checkbox" id="consent" name="consent">
-          <span>I agree that Laura Clarke Administrative Services may keep these details to send me the checklist and contact me about filing my tax return. I can ask for them to be removed at any time, as set out in the <a href="/privacy.html">Privacy Policy</a>.</span>
+          <span>I agree that Laura Clarke Administrative Services may keep my name and email to send me the checklist and contact me about filing my tax return. I can ask for them to be removed at any time, as set out in the <a href="/privacy.html">Privacy Policy</a>.</span>
         </label>
         <p class="oops" id="consent-oops" hidden>Please tick the box so I can send you the checklist.</p>
-        <button class="btn gold" type="submit" id="send">Get the free checklist</button>
+        <button class="btn gold" type="submit" id="send">Email me the checklist</button>
         <p class="oops" id="send-oops" role="alert" hidden></p>
       </form>
 
       <div class="done" id="done" tabindex="-1" hidden>
         <p class="kick">Thank you</p>
-        <h2>Your checklist is ready</h2>
-        <p>Tap the button to download it. Send it to as many clients as you like.</p>
-        <a class="btn gold" href="/assets/s04-client-papers-checklist.pdf" download>Download the checklist (PDF)</a>
+        <h2>Check your email</h2>
+        <p id="done-msg">Your checklist is on its way to <strong id="done-email"></strong>. It usually arrives within a few minutes. If it isn’t in your inbox, check your spam or promotions folder.</p>
         <p class="note">Want every S04 figure in portal order? See the <a href="/s04-tax-record-planner">Self-Employed Tax Record Planner</a>.</p>
       </div>
     </div>
@@ -302,8 +288,6 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
   var checks = {
     name: function (v) { return /^[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F .'\u2019\-]{1,79}$/.test(v); },
     email: function (v) { return /^[^\s@<>,;]+@[^\s@<>,;]+\.[^\s@<>,;]{2,}$/.test(v); },
-    phone: function (v) { var d = v.replace(/\D/g, ''); return d.length >= 7 && d.length <= 15; },
-    where: function (v) { return !!v; },
     heard: function (v) { return !!v; }
   };
   function mark(id, bad) {
@@ -311,8 +295,12 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
     var o = el(id + '-oops'); if (o) o.hidden = !bad;
     return bad;
   }
-  function done() { form.hidden = true; var d = el('done'); d.hidden = false; d.focus(); d.scrollIntoView({ block: 'start' }); }
-  function fail(msg) { btn.disabled = false; btn.textContent = 'Get the free checklist'; oops.textContent = msg; oops.hidden = false; }
+  function done(msg) {
+    form.hidden = true; el('done-email').textContent = val('email');
+    if (msg) el('done-msg').textContent = msg;
+    var d = el('done'); d.hidden = false; d.focus(); d.scrollIntoView({ block: 'start' });
+  }
+  function fail(msg) { btn.disabled = false; btn.textContent = 'Email me the checklist'; oops.textContent = msg; oops.hidden = false; }
   form.addEventListener('submit', function (e) {
     e.preventDefault(); oops.hidden = true;
     var first = null;
@@ -320,23 +308,23 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
     if (mark('consent', !el('consent').checked) && !first) first = 'consent';
     if (first) { el(first).focus(); return; }
     var data = new URLSearchParams();
-    data.set('kit', 'contact');
-    ['name', 'phone', 'email', 'where'].forEach(function (id) { data.set(id, val(id)); });
-    data.set('need', 'Free Client Papers Checklist. Heard about it from: ' + val('heard'));
-    data.set('consent', 'yes');
+    data.set('kit', 'checklist');
+    data.set('name', val('name'));
+    data.set('email', val('email'));
+    data.set('page', '/checklist | heard: ' + val('heard'));
     data.set('website', form.elements.website.value);
-    data.set('page', location.pathname);
     btn.disabled = true; btn.textContent = 'Sending…';
     fetch(URL_, { method: 'POST', body: data })
       .then(function (r) { return r.json(); })
       .then(function (reply) {
-        if (reply && reply.result === 'Saved') return done();
-        if (reply && reply.result === 'Invalid' && el(reply.field)) { mark(reply.field, true); el(reply.field).focus(); return fail('Please check the highlighted answer and try again.'); }
-        if (reply && reply.result === 'Busy') return fail('Too many requests today. Please message me on WhatsApp for the checklist.');
-        return fail('That did not send. Please try again, or message me on WhatsApp.');
+        var r = reply && reply.result;
+        if (r === 'Sent') return done();
+        if (r === 'Repeat') return done('We already emailed the checklist to this address today. Please check your inbox and spam folder.');
+        if (r === 'Daily limit') return done('Lots of people asked for the checklist today. Yours is saved and will reach you by email within a day.');
+        return fail('That did not send. Please try again in a moment, or message me on WhatsApp at 876-561-2614.');
       }, function () {
         return fetch(URL_, { method: 'POST', body: data, mode: 'no-cors' })
-          .then(done, function () { fail('That did not send. Check your connection and try again.'); });
+          .then(function () { done(); }, function () { fail('That did not send. Check your connection and try again.'); });
       });
   });
 })();
