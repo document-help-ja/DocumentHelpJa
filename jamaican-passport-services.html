@@ -14,14 +14,14 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Laura Clarke Administrative Services">
   <meta property="og:locale" content="en_JM">
-  <meta property="og:title" content="Jamaican Passport Renewal: J$3,500 in Jamaica (30% off)">
+  <meta property="og:title" content="Jamaican Passport Renewal: J$5,000 in Jamaica">
   <meta property="og:description" content="Check if you qualify and we make your online adult renewal for you, delivered to your door.">
   <meta property="og:url" content="https://documenthelpja.com/jamaican-passport-services.html">
   <meta property="og:image" content="https://documenthelpja.com/assets/share-laura.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Jamaican Passport Renewal: J$3,500 in Jamaica (30% off)">
+  <meta name="twitter:title" content="Jamaican Passport Renewal: J$5,000 in Jamaica">
   <meta name="twitter:description" content="Check if you qualify and we make your online adult renewal for you, delivered to your door.">
 
   <script type="application/ld+json">
@@ -116,7 +116,7 @@
      {
       "@type": "Offer",
       "name": "Adult passport renewal: digital application made for you",
-      "price": "3500",
+      "price": "5000",
       "priceCurrency": "JMD",
       "url": "https://documenthelpja.com/jamaican-passport-services.html#digital-application",
       "description": "Service fee. US$70 for overseas clients. PICA's fee is separate; in Jamaica, PICA's quote includes courier to your door."
@@ -957,9 +957,8 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
             <label><input type="radio" name="where" value="ja" checked><span>Jamaica</span></label>
             <label><input type="radio" name="where" value="os"><span>Overseas</span></label>
           </div>
-          <p class="sale-note" data-sale-note hidden>Sale: 30% off our fee for clients in Jamaica, until 30 November.</p>
           <div class="fee-pair">
-            <div class="mine"><span class="lbl2">Our fee</span><b data-our>J$3,500</b></div>
+            <div class="mine"><span class="lbl2">Our fee</span><b data-our>J$5,000</b></div>
             <div class="agency"><span class="lbl2">PICA's fee, from</span><b data-pica>J$8,850</b><small data-pica-note>Courier included</small></div>
           </div>
           <p class="lbl2">How do you want to receive it?</p>
@@ -968,7 +967,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
             <label data-ja-only><input type="radio" name="deliv" value="collect"><span>Collect at PICA</span></label>
           </div>
           <p class="deliv-note">PICA needs to know from the start, so choose now.</p>
-          <div class="ptotal" aria-live="polite"><span class="lbl2">Your total, from</span><b data-total>J$12,350</b><small data-total-note>J$3,500 our fee + J$8,850 PICA, courier included</small><p class="ps-dn" data-courier-note hidden>The courier fee depends on your location. PICA adds it, and we confirm it with you before you pay.</p></div>
+          <div class="ptotal" aria-live="polite"><span class="lbl2">Your total, from</span><b data-total>J$13,850</b><small data-total-note>J$5,000 our fee + J$8,850 PICA, courier included</small><p class="ps-dn" data-courier-note hidden>The courier fee depends on your location. PICA adds it, and we confirm it with you before you pay.</p></div>
           <a href="/start.html?service=passport&amp;source=passport-digital" class="btn btn-dark btn-block start-btn">Start my digital renewal</a>
           <p class="wa-chat" style="margin:12px 0 0;text-align:center;font-size:.92rem;color:var(--muted,#59636B)">Have a quick question? <a href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%20have%20a%20quick%20question%20about%20a%20passport%20renewal." target="_blank" rel="noopener" style="color:var(--gold-text,#7A6030);font-weight:500">Ask us on WhatsApp, free</a></p>
           <p class="note">PICA sets the final fee, which depends on the country you apply from. We confirm it with you before you pay. By proceeding you agree to our <a href="/terms.html">Terms &amp; Conditions</a>.</p>
@@ -1061,7 +1060,6 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
   </div>
 </footer>
 
-<script src="/assets/sale.js"></script>
 <script>
 (function () {
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -1095,8 +1093,8 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
 
   /* Digital renewal total: Jamaica (J$) or overseas (US$), and how they receive it */
   var P = {
-    ja: { courier: { our: 'J$3,500', pica: 'J$8,850', note: 'Courier included', total: 'J$12,350', tnote: 'J$3,500 our fee + J$8,850 PICA, courier included' },
-          collect: { our: 'J$3,500', pica: 'J$6,500', note: 'Collect at PICA', total: 'J$10,000', tnote: 'J$3,500 our fee + J$6,500 PICA' } },
+    ja: { courier: { our: 'J$5,000', pica: 'J$8,850', note: 'Courier included', total: 'J$13,850', tnote: 'J$5,000 our fee + J$8,850 PICA, courier included' },
+          collect: { our: 'J$5,000', pica: 'J$6,500', note: 'Collect at PICA', total: 'J$11,500', tnote: 'J$5,000 our fee + J$6,500 PICA' } },
     os: { courier: { our: 'US$70', pica: 'US$80', note: 'Plus courier, by location', total: 'US$150 + courier', tnote: 'US$70 our fee + US$80 PICA' } } };
   function price() {
     var w = ($('input[name="where"]:checked') || {}).value || 'ja';
@@ -1105,7 +1103,7 @@ main.banded { background: none !important; padding: 0 !important; margin: 0 !imp
     if (w !== 'ja' && collect.checked) { collect.checked = false; $('input[name="deliv"][value="courier"]').checked = true; }
     var courier = $('input[name="deliv"][value="courier"]').checked;
     var x = P[w][courier ? 'courier' : 'collect'];
-    $('[data-our]').innerHTML = x.our; $('[data-sale-note]').hidden = true; $('[data-pica]').textContent = x.pica; $('[data-pica-note]').textContent = x.note;
+    $('[data-our]').innerHTML = x.our; $('[data-pica]').textContent = x.pica; $('[data-pica-note]').textContent = x.note;
     $('[data-total]').textContent = x.total;
     $('[data-total-note]').textContent = x.tnote;
     $('[data-courier-note]').hidden = w === 'ja';
