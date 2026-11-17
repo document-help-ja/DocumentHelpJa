@@ -667,6 +667,21 @@ main { display: flex; flex-direction: column; }
 .gk-paid,.gk-free{font-size:13px;padding:4px 10px;white-space:nowrap}
 .gk-paid{background:#FAEEDA;color:#633806}
 .gk-free{background:#EAF3DE;color:#27500A}
+.gk-shelf{display:grid;gap:20px}
+@media(min-width:700px){.gk-shelf{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}}
+.gk-shelf-card{display:grid;grid-template-columns:110px 1fr;gap:16px;border:1px solid var(--line,#D5DCE3);background:#fff;padding:16px}
+@media(min-width:700px){.gk-shelf-card{grid-template-columns:1fr;padding:0}.gk-cv{background:var(--tone,#EEF1F4);padding:28px 28px 0;display:flex;justify-content:center}.gk-shelf-card .gk-cv img,.gk-shelf-card .gk-cv-soon{width:46%;box-shadow:0 6px 18px rgba(15,37,55,.15)}.gk-shelf-body{padding:20px 22px 24px}}
+.gk-cv img{display:block;width:100%;height:auto;aspect-ratio:600/776;object-fit:cover;border:1px solid var(--line,#D5DCE3)}
+.gk-cv-soon{aspect-ratio:600/776;background:#E9ECEF;border:1px dashed #B9C1C8;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font-family:Georgia,serif;font-size:14px;color:#6B757D}
+.gk-shelf-card.is-soon{border-style:dashed}
+.gk-shelf-body h3{font-size:17px;line-height:1.35;margin:8px 0 0;color:var(--ink,#0F2537)}
+.gk-shelf-body p{font-size:14px;line-height:1.55;color:var(--muted,#565E63);margin:6px 0 0}
+.gk-shelf-btn{display:inline-flex;align-items:center;min-height:42px;padding:0 16px;margin-top:14px;border:1px solid #0B5D56;color:#0B5D56;font-weight:600;font-size:14px;text-decoration:none;background:#fff}
+.gk-soon-tag{display:inline-block;margin-top:14px;font-size:13px;padding:4px 10px;background:#EEF1F4;color:#565E63}
+.gk-custom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-top:28px;padding:20px 22px;background:var(--tone,#EEF1F4);text-decoration:none;color:var(--ink,#0F2537)}
+.gk-custom b{display:block;font-size:17px}.gk-custom small{display:block;font-size:14px;color:var(--muted,#565E63);margin-top:4px}
+.gk-custom-card{background:var(--tone,#EEF1F4);text-decoration:none;color:inherit;display:flex;align-items:center}
+@media(max-width:699px){.gk-custom-card{display:block}}
 .gk-end{padding-bottom:72px}
 .gk-soon{border-style:dashed;background:#FAFBFC}
 .gk-btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;background:#0B5D56;color:#fff;font-weight:600;text-decoration:none}
@@ -795,15 +810,26 @@ main { display: flex; flex-direction: column; }
 </section>
 
 <section class="gk-sec gk-wrap" id="kits" aria-labelledby="gk-kits">
-<h2 id="gk-kits">Kits and books</h2>
-<p class="gk-sub">Keep these and follow them step by step.</p>
-<div class="gk-kits">
-<div class="gk-kit gk-soon"><span><b>US visa "be ready" guide</b><small>Requirements, documents and the questions to prepare for. Coming soon</small></span><span class="gk-paid">J$3,000</span></div>
-<div class="gk-kit gk-soon"><span><b>H-2B guide</b><small>Your roadmap from start to finish, with scam checks. Coming soon</small></span><span class="gk-paid">J$2,000</span></div>
-<a class="gk-kit" href="/s04-tax-record-planner"><span><b>Self-Employed Tax Record Planner</b><small>Every S04 figure in the order the portal asks for it</small></span><span class="gk-paid">J$2,000</span></a>
-<a class="gk-kit" href="/checklist"><span><b>Client Papers Checklist</b><small>Every paper for the S04, gathered in one go</small></span><span class="gk-free">Free</span></a>
-<a class="gk-kit" href="/assets/kits/tax-backlog-recovery-guide.pdf"><span><b>Tax Backlog Recovery Guide</b><small>Catch up on missed years</small></span><span class="gk-free">Free</span></a>
-<a class="gk-kit" href="/assets/h2b-application-toolkit.pdf"><span><b>H-2B Application Toolkit</b><small>Checklist, call script and scam checks</small></span><span class="gk-free">Free</span></a>
+<h2 id="gk-kits">Guides and kits</h2>
+<p class="gk-sub">Some are free and some are paid. Each one shows which.</p>
+<div class="gk-shelf">
+<article class="gk-shelf-card">
+<div class="gk-cv"><img src="/assets/s04-tax-record-planner-cover.webp" alt="Cover of Self-Employed Tax Record Planner" width="600" height="776" loading="lazy" decoding="async"></div>
+<div class="gk-shelf-body"><span class="gk-paid">J$2,000</span><h3>Self-Employed Tax Record Planner</h3><p>Every S04 figure in the order the TAJ portal asks for it.</p><a class="gk-shelf-btn" href="/s04-tax-record-planner">Get the planner</a></div>
+</article><article class="gk-shelf-card">
+<div class="gk-cv"><img src="/assets/s04-client-papers-checklist-cover.webp" alt="Cover of Client Papers Checklist" width="600" height="776" loading="lazy" decoding="async"></div>
+<div class="gk-shelf-body"><span class="gk-free">Free</span><h3>Client Papers Checklist</h3><p>Every paper for the S04, gathered in one go.</p><a class="gk-shelf-btn" href="/checklist">Get it free</a></div>
+</article><article class="gk-shelf-card">
+<div class="gk-cv"><img src="/assets/kit-cover-backlog.webp" alt="Cover of Tax Backlog Recovery Guide" width="600" height="776" loading="lazy" decoding="async"></div>
+<div class="gk-shelf-body"><span class="gk-free">Free</span><h3>Tax Backlog Recovery Guide</h3><p>See where you stand and catch up on missed years, in the right order.</p><a class="gk-shelf-btn" href="/assets/kits/tax-backlog-recovery-guide.pdf" target="_blank" rel="noopener">Download the PDF</a></div>
+</article><article class="gk-shelf-card">
+<div class="gk-cv"><img src="/assets/kit-cover-h2b.webp" alt="Cover of H-2B Process Guide and Toolkit" width="600" height="776" loading="lazy" decoding="async"></div>
+<div class="gk-shelf-body"><span class="gk-free">Free for now</span><h3>H-2B Process Guide and Toolkit</h3><p>The 6 steps, agency checks and a call script. A fuller paid guide is coming.</p><a class="gk-shelf-btn" href="/assets/h2b-application-toolkit.pdf" target="_blank" rel="noopener">Download the PDF</a></div>
+</article><article class="gk-shelf-card is-soon">
+<div class="gk-cv"><div class="gk-cv-soon"><span>US visa "be ready" guide</span></div></div>
+<div class="gk-shelf-body"><span class="gk-paid">J$3,000</span><h3>US visa "be ready" guide</h3><p>Requirements, documents and the questions to prepare for.</p><span class="gk-soon-tag">Coming soon</span></div>
+</article>
+<a class="gk-shelf-card gk-custom-card" href="/contact.html"><div class="gk-shelf-body"><span class="gk-soon-tag" style="margin-top:0">Custom</span><h3>Need something for your own case?</h3><p>When a ready-made guide doesn't fit, I put one together for your situation. Quoted after your free first chat.</p><span class="gk-shelf-btn">Start a free first chat</span></div></a>
 </div>
 </section>
 
