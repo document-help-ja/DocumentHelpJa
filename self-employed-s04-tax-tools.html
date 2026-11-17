@@ -75,12 +75,11 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
 .quote cite{display:block;font-family:var(--sans);font-style:normal;font-size:.85rem;color:var(--gold-text);margin-top:8px}
 .hero .btn{align-self:flex-start;min-width:220px}
 /* catalogue */
-.tools{padding-block:48px 48px;background:#183650}
-.tools .card{border-width:0}
-.tools .card{background:transparent}.tools .cover{background:transparent;padding:8px 0 22px}.tools .cover img{border:0;box-shadow:0 10px 28px rgba(0,0,0,.35)}
-.tools .soon{border:0}
-.tools .body{padding-left:0;padding-right:0}.tools .body .kick{color:var(--gold)}.tools .body h2,.tools .body .price{color:#fff}.tools .body p{color:#D7DEE5}
-.tools .body .btn:not(.gold){color:#fff;border-color:#fff}.tools .body .btn:not(.gold):hover{background:rgba(255,255,255,.12)}
+.tools{padding-block:48px 56px;background:#F5F1E8}
+.tools .card{border:0;background:transparent}.tools .cover{background:transparent;padding:8px 0 22px}.tools .cover img{width:min(78%,360px);border:0;box-shadow:0 10px 28px rgba(15,37,55,.22)}
+.tools .soon{border:1px dashed #D6CDB8}
+.tools .body{padding-left:0;padding-right:0}.tools .body .kick{color:var(--gold-text)}
+@media(min-width:760px){.tools .grid{gap:48px}.tools .card .body{max-width:30rem;margin:0 auto;width:100%}}
 .grid{display:grid;gap:28px;grid-template-columns:1fr}
 @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}.card.b{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr}}
 .card{border:1px solid var(--gold);display:flex;flex-direction:column;background:#fff}
@@ -225,7 +224,7 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
 <main id="main">
 <section class="tools" id="tools" aria-label="S04 tax tools">
   <div class="wrap grid">
-<article class="card wide">
+<article class="card">
   <a class="cover" href="/s04-tax-record-planner" tabindex="-1" aria-hidden="true"><img src="assets/s04-tax-record-planner-cover.webp" width="935" height="1210" loading="lazy" decoding="async" alt=""></a>
   <div class="body">
     <p class="kick">For your S04 tax return</p>
@@ -234,19 +233,12 @@ h1,h2{font-family:var(--serif);font-weight:600;color:var(--navy);text-wrap:balan
     <p class="price">J$2,000</p>
     <a class="btn gold" href="/s04-tax-record-planner">View details</a>
   </div>
-</article> <article class="card t wide"> <a class="cover" href="/checklist" tabindex="-1" aria-hidden="true"><img src="assets/s04-client-papers-checklist-cover.webp" width="935" height="1210" loading="lazy" decoding="async" alt=""></a> <div class="body"> <p class="kick">Free · For preparers and their clients</p> <h2>Papers to send for your tax return</h2> <p>A free checklist of everything to gather for the S04, so it all comes in one go. Type in your TRN, NIS and business details, and tick the boxes, on your phone or computer. Download it and share it with as many clients as you like.</p> <p class="price">Free</p> <a class="btn" href="/checklist">Get it free</a> </div> </article>
+</article> <article class="card t"> <a class="cover" href="/checklist" tabindex="-1" aria-hidden="true"><img src="assets/s04-client-papers-checklist-cover.webp" width="935" height="1210" loading="lazy" decoding="async" alt=""></a> <div class="body"> <p class="kick">Free · For preparers and their clients</p> <h2>Client Papers Checklist</h2> <p>A free checklist of everything to gather for the S04, so it all comes in one go. Clients type in their details and tick the boxes on a phone or computer. We email it to you free, to share with as many clients as you like.</p> <p class="price">Free</p> <a class="btn" href="/checklist">Get it free</a> </div> </article>
   </div>
   <div class="wrap soonrow" aria-label="Coming soon in the series">
     <aside class="soon"><div><p class="tag">Book 2 · Coming soon</p><h2>Filing your S04 on the TAJ portal</h2><p>Follow the portal screens as you file, using the figures from your Planner.</p></div></aside>
     <aside class="soon"><div><p class="tag">Book 3 · Coming soon</p><h2>Employer records planner</h2><p>For the self-employed who pay a few workers.</p></div></aside>
   </div>
-</section>
-<section class="how" aria-labelledby="how-title">
-  <div class="wrap"><div class="box">
-    <h2 id="how-title">How buying works</h2>
-    <ol><li>Tap the button and send the message on WhatsApp.</li><li>Pay by Lynk or bank transfer.</li><li>We send your download link on WhatsApp.</li></ol>
-    <p class="note" style="margin-top:10px">PDF to type into on a computer or print. Record-keeping tools, not tax advice.</p>
-  </div></div>
 </section>
 </main>
 <footer class="lcf">
