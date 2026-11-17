@@ -265,6 +265,7 @@
         <label for="service" id="service-label">What do you need?</label>
         <select id="service" name="service" required>
           <option value="">Choose a service</option>
+            <option value="portal-guidance">Portal and Paperwork Help</option>
             <option value="passport">Passport</option>
             <option value="us-visa">US visa</option>
             <option value="drivers-licence">Driver's licence renewal</option>
@@ -457,7 +458,7 @@
 
       /* ---------- The request form ---------- */
       var REQUEST_URL = 'https://script.google.com/macros/s/AKfycbzrkEPs6xf6WhdJbZuYBUYCittkeJGW7d83mUh77jdVSrG7Jto_nl5PCik36JfBvimCDg/exec';
-      var SERVICES = {"passport": "Passport", "us-visa": "US visitor visa", "us-visa-consultation": "Consultation (new US visa application)", "citizenship": "Citizenship by descent", "trn": "TRN", "drivers-licence": "Driver's licence renewal", "motor-vehicle": "Motor vehicle licence renewal", "driving-abstract": "Driving abstract", "police-record": "Police record", "certificates": "Birth or marriage certificate", "consultation": "Consultation (citizenship by descent)", "self-employed-tax": "Self-employed tax (S04) guidance", "portal-guidance": "Government portal help (video call)"};
+      var SERVICES = {"passport": "Passport", "us-visa": "US visa", "us-visa-consultation": "Consultation (new US visa application)", "citizenship": "Citizenship by descent", "trn": "TRN", "drivers-licence": "Driver's licence renewal", "motor-vehicle": "Motor vehicle licence renewal", "driving-abstract": "Driving abstract", "police-record": "Police record", "certificates": "Birth or marriage certificate", "consultation": "Consultation (citizenship by descent)", "self-employed-tax": "Self-employed tax (S04) guidance", "portal-guidance": "Portal and Paperwork Help"};
       /* Services added on the website only. Until the Kit Delivery script knows them, they are sent as "other"
          with the service named at the top of the notes, so nothing is rejected. */
       var SEND_AS_OTHER = {"us-visa": true, "us-visa-consultation": true, "self-employed-tax": true, "portal-guidance": true, "consultation": true};
