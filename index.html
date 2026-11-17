@@ -975,6 +975,20 @@ body .dd-col h3 a:hover{text-decoration:underline}
  .nh .nh-book.is-out h3{font-size:28px}
  .nh .nh-book.is-out p.nh-book-line{font-size:17px;line-height:1.6}
 }
+/* Bookstore section: label, free checklist card, link to the Bookstore (Nov 2026) */
+.nh .nh-books-kick{margin:0 0 6px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#0F6E56}
+.nh .nh-book.is-free{border:1px solid #C9D6C5;background:#EEF3EC}
+.nh .nh-book.is-free .nh-book-cover{background:transparent;aspect-ratio:auto;padding:20px 20px 0}
+.nh .nh-book.is-free .nh-book-cover img{height:auto;max-height:220px}
+.nh .nh-book.is-free .nh-book-tag{background:#fff;color:#085041}
+.nh .nh-books-more{text-align:center;margin:36px 0 0}
+@media(min-width:861px){
+ .nh .nh-book.is-free{grid-column:1/-1;display:grid;grid-template-columns:220px 1fr;align-items:center}
+ .nh .nh-book.is-free .nh-book-cover{padding:24px 0 24px 28px}
+ .nh .nh-book.is-free .nh-book-body{padding:24px 32px}
+ .nh .nh-books-more{margin-top:48px}
+ .nh .nh-books-more .nh-buy{min-width:260px}
+}
 /* About and reviews as one section */
 .nh .st-about{padding-bottom:16px}
 .nh .st-reviews{background:var(--st-sand);padding:40px 0 64px}
@@ -1175,8 +1189,9 @@ body .dd-col h3 a:hover{text-decoration:underline}
 <section class="nh-books" id="books" aria-labelledby="books-title">
 <div class="nh-books-inner">
 <div class="nh-books-head">
-<h2 id="books-title">Tools for preparers and filers</h2>
-<p>Planners and guides for anyone who files the S04, for clients or for themselves. See what's out now and what's coming next.</p>
+<p class="nh-books-kick">Bookstore</p>
+<h2 id="books-title">A look inside our Bookstore</h2>
+<p>Planners, guides and a free checklist for anyone who files the S04, for clients or for themselves. See what's out now and what's coming next.</p>
 </div>
 <div class="nh-books-grid">
 
@@ -1192,6 +1207,16 @@ body .dd-col h3 a:hover{text-decoration:underline}
 <a class="nh-buy" href="https://wa.me/18765612614?text=Hi%20Laura%2C%20I%27d%20like%20to%20get%20the%20Self-Employed%20Tax%20Record%20Planner%20%28J%242%2C000%29." target="_blank" rel="noopener">Get your copy</a>
 <a class="nh-inside" href="/s04-tax-record-planner">See what's inside</a>
 </div>
+</div>
+</article>
+
+<article class="nh-book is-free">
+<div class="nh-book-cover"><img src="assets/s04-client-papers-checklist-cover.webp" width="935" height="1210" alt="Page one of the free Client Papers Checklist" loading="lazy" decoding="async"></div>
+<div class="nh-book-body">
+<span class="nh-book-tag">Free</span>
+<h3>Client Papers Checklist</h3>
+<p class="nh-book-line">Send it to each client so they gather every paper for the S04 in one go. They type in their details and tick the boxes on a phone or computer.</p>
+<div class="nh-book-ctas"><a class="nh-inside" href="/checklist">Get it free by email</a></div>
 </div>
 </article>
 
@@ -1214,6 +1239,7 @@ body .dd-col h3 a:hover{text-decoration:underline}
 </article>
 
 </div>
+<p class="nh-books-more"><a class="nh-buy" href="/self-employed-s04-tax-tools">Visit the Bookstore</a></p>
 </div>
 </section>
 
