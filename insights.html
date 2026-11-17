@@ -641,6 +641,7 @@ main { display: flex; flex-direction: column; }
 .gk-grid{display:grid;gap:28px;margin-top:20px}
 @media(min-width:700px){.gk-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .gk-card{display:flex;flex-direction:column;border:1px solid var(--line,#D5DCE3);background:#fff;text-decoration:none;color:inherit}
+@media(min-width:700px){.gk-grid>.gk-card:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto 1fr}.gk-grid>.gk-card:last-child:nth-child(odd) img{grid-row:1/5;height:100%}}
 .gk-card img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .gk-cat{margin:16px 18px 0;font-size:13px;font-weight:600;color:#7A6030}
 .gk-title{margin:6px 18px 0;font-size:18px;line-height:1.4;font-weight:700;color:var(--ink,#0F2537)}
@@ -759,12 +760,6 @@ main { display: flex; flex-direction: column; }
 <span class="gk-title">Tickets, Demerit Points and Your Driver’s Licence</span>
 <span class="gk-ex">Paying a ticket is what puts the points on your licence. What the new points system means for your driver’s licence, and what to do about old tickets.</span>
 <span class="gk-lead">Leads to: Ticket lookup and payment</span>
-</a><a class="gk-card" href="/pica-card-payment-failed">
-<img src="/assets/pica-passport-800.webp" alt="Jamaican passport and pen on a desk" width="768" height="430" loading="lazy" decoding="async">
-<span class="gk-cat">Passport</span>
-<span class="gk-title">PICA Portal “Transaction Failed”? Why Your Card Keeps Getting Declined and How to Fix It</span>
-<span class="gk-ex">Why overseas cards often fail at PICA’s payment step, why your draft locks, and the 4-step fix that gets your online passport renewal paid. Includes a short video walkthrough.</span>
-<span class="gk-lead">Leads to: Passport renewal</span>
 </a><a class="gk-card" href="/jamaican-citizenship-by-descent">
 <img src="/assets/citizenship-descent-hero-800.webp" alt="Jamaican citizenship documents" width="768" height="430" loading="lazy" decoding="async">
 <span class="gk-cat">Citizenship</span>
@@ -793,7 +788,7 @@ main { display: flex; flex-direction: column; }
 <h2 id="gk-read">More reading</h2>
 <div class="gk-topics">
 <div class="gk-topic"><h3>Self-employed tax and NIS</h3><ul><li><a href="/self-employed-tax-traps-jamaica">Behind on Your S04 Returns or Payments? Where to Start</a></li><li><a href="/self-employed-nis-minimum-jamaica">Working for Yourself in Jamaica: Why Might NIS Still Be Payable?</a></li><li><a href="/jamaica-nis-guide">Are Your NIS Contributions on Record? A Guide for Jamaicans</a></li></ul></div>
-<div class="gk-topic"><h3>Travel and documents</h3><ul><li><a href="/jamaica-c5-travel-form">Don&#x27;t Let the C5 Travel Form Trap Your Barrels at the Wharf</a></li><li><a href="/jamaican-citizenship-while-home">Coming Home? Start Your Jamaican Citizenship While You’re Here</a></li></ul></div>
+<div class="gk-topic"><h3>Travel and documents</h3><ul><li><a href="/pica-card-payment-failed">PICA Portal “Transaction Failed”? Why Your Card Keeps Getting Declined and How to Fix It</a></li><li><a href="/jamaica-c5-travel-form">Don&#x27;t Let the C5 Travel Form Trap Your Barrels at the Wharf</a></li><li><a href="/jamaican-citizenship-while-home">Coming Home? Start Your Jamaican Citizenship While You’re Here</a></li></ul></div>
 <div class="gk-topic"><h3>IDs and certificates</h3><ul><li><a href="/trn-without-photo-id">How to Get a TRN in Jamaica Without Photo ID: The Birth Certificate Route</a></li><li><a href="/jamaica-rgd-certificates-guide">How to Get a Jamaican Birth, Marriage or Death Certificate (and Fix One That&#x27;s Wrong)</a></li></ul></div>
 </div>
 </section>
