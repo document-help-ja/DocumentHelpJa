@@ -295,8 +295,8 @@
   <p><a class="btn btn-gold" href="/insights.html">Browse free guides</a></p>
 </section>
       <section class="card contact-card" id="form-card" aria-labelledby="contact-title">
-        <h1 id="contact-title">Tell us how we can help</h1>
-        <p>Leave your details and I'll get in touch to talk through your situation. No documents needed yet.</p>
+        <h1 id="contact-title">Start your free first chat</h1>
+        <p>Tell me what's happening and I'll get back to you to talk it through. No documents needed yet.</p>
 
         <form id="contact-form" novalidate>
           <div class="field" id="f-name">
@@ -326,10 +326,21 @@
             </select>
             <p class="oops" id="where-oops" hidden>Please choose where you are.</p>
           </div>
+          <div class="field" id="f-help">
+            <label for="help">What kind of help?</label>
+            <select id="help" name="help">
+              <option value="">Choose one</option>
+              <option value="Portal and Paperwork Help">Stuck online / letter or form</option>
+              <option value="Motorists">Driver's licence, vehicle or tickets</option>
+              <option value="Travel and documents">Passport, US visa or police record</option>
+              <option value="Self-employed tax">Self-employed tax</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
           <div class="field" id="f-need">
-            <label for="need">What do you need help with?</label>
+            <label for="need">What's happening?</label>
             <textarea id="need" name="need" maxlength="600" required></textarea>
-            <p class="hint">A line or two is fine, for example "Renew my passport, I live in Canada."</p>
+            <p class="hint">A few lines is fine. For example: "My account won't go through on the portal" or "I got a letter and don't understand what it wants."</p>
             <p class="oops" id="need-oops" hidden>Please tell me briefly what you need.</p>
           </div>
           <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
@@ -347,16 +358,16 @@
 
       <section class="card next" id="next-card" aria-labelledby="next-title">
         <h2 id="next-title">What happens next</h2>
-        <p>I'll contact you, usually within one working day, to talk about what you need. If I can help, I'll explain the next steps and the cost before anything starts.</p>
+        <p>I'll reply by WhatsApp message or email, usually within one working day. If I can help, I'll explain the next steps and the cost before anything starts.</p>
       </section>
 
       <section class="card done" id="done" hidden tabindex="-1" aria-labelledby="done-title">
         <h1 id="done-title">Thank you, your message is in</h1>
-        <p>I'll be in touch soon on WhatsApp, by phone or by email.</p>
+        <p>I'll be in touch soon by WhatsApp message or email.</p>
         <p>Already know which service you need? <a href="/#services">See the services</a> for what's involved and the fees.</p>
       </section>
 
-      <p class="alt">Prefer WhatsApp? Message me at <a href="https://wa.me/18765612614" target="_blank" rel="noopener">+1 (876) 561-2614</a>.</p>
+      <p class="alt">Prefer WhatsApp? Send a text message to <a href="https://wa.me/18765612614" target="_blank" rel="noopener">+1 (876) 561-2614</a>. Messages only, please, no calls. I reply within one working day.</p>
     </div>
 
   </main>
@@ -367,7 +378,7 @@
       <div class="footer-top">
         <div>
           <p class="footer-brand">Laura Clarke Administrative Services</p>
-          <p>Pre-audits and local representation for Jamaican government documents, for clients at home and abroad.</p>
+          <p>Administrative consultant for Jamaicans at home and abroad.</p>
         </div>
         <nav class="footer-nav" aria-label="Footer">
           <ul>
@@ -446,6 +457,7 @@ if (INTAKE_PAUSED) {
   el('paused').hidden = false;
   return;
 }
+      (function () { var h = new URLSearchParams(location.search).get('help'); var map = { portal: 'Portal and Paperwork Help', motorist: 'Motorists', travel: 'Travel and documents', tax: 'Self-employed tax' }; if (h && map[h]) el('help').value = map[h]; })();
       var checks = {
         name: function (v) { return /^[A-Za-z\u00C0-\u024F][A-Za-z\u00C0-\u024F .'\u2019\-]{1,79}$/.test(v); },
         phone: function (v) { var d = v.replace(/\D/g, ''); return d.length >= 7 && d.length <= 15; },
@@ -478,6 +490,7 @@ if (INTAKE_PAUSED) {
         var data = new URLSearchParams();
         data.set('kit', 'contact');
         ['name', 'phone', 'email', 'where', 'need'].forEach(function (id) { data.set(id, val(id)); });
+        if (val('help')) data.set('need', '[' + val('help') + '] ' + val('need'));
         data.set('consent', 'yes');
         data.set('website', form.elements.website.value);
         data.set('page', location.pathname);
