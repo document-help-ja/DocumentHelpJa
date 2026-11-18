@@ -234,6 +234,14 @@
     @media (min-width: 860px) { .steps, .trust { grid-template-columns: repeat(3, minmax(0, 1fr)); } .reviews { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 619px) { .steps .card, .trust .card, .reviews .card { border: 1px solid var(--line); padding: 1.25rem; } }
   </style>
+<style>
+.tiers{grid-template-columns:minmax(0,1fr)}
+@media(min-width:760px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr))!important}.trust{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+.limits{list-style:none;counter-reset:lim;margin:0;padding:0;display:grid;gap:12px}
+.limits li{counter-increment:lim;position:relative;padding:16px 18px 16px 56px;background:#fff;border:1px solid var(--line);line-height:1.6;color:var(--muted)}
+.limits li::before{content:counter(lim);position:absolute;left:18px;top:16px;width:26px;height:26px;border-radius:50%;background:var(--tone,#EEF1F4);color:var(--ink,#0F2537);font-weight:600;font-size:14px;display:flex;align-items:center;justify-content:center}
+.limits b{color:var(--ink,#0F2537)}
+</style>
 </head>
 <body id="top">
   <a class="skip" href="#main">Skip to main content</a>
@@ -289,9 +297,9 @@
     </nav>
 
     <header class="about-hero">
-      <span class="tag">Online, for Jamaicans at home and abroad</span>
+      <span class="tag">Administrative consultant, for Jamaicans at home and abroad</span>
       <h1>About Laura Clarke Administrative Services</h1>
-      <p>Your tax, licences and documents, handled online. No office visits, no lines.</p>
+      <p>I help you get through portals, paperwork and agencies.</p>
     </header>
 
     <!-- MAIN COPY CARD WITH PROFILE IMAGE -->
@@ -300,31 +308,31 @@
         <img src="/assets/profile.webp" alt="Laura Clarke" width="510" height="507" decoding="async">
       </div>
       <div class="story-content">
-        <h2 id="story-title">Why I Built This Service</h2>
+        <h2 id="story-title">I've been stuck too</h2>
         <p>I've stood in those lines, got stuck on those forms and hit the same roadblocks you have. When I applied for a Tax Compliance Certificate (TCC) to open a business bank account, it was refused, because my own self-employed tax returns hadn't been filed. That's how I learned to file online through the TAJ portal, and why I now help others do it right the first time.</p>
 
-        <p>Today everything I do is online. Most of these processes can now be done through government portals, and I know where people get stuck. I check your details carefully before anything is submitted, so you avoid the mistakes that cause delays and rejections.</p>
+        <p>Today almost every Jamaican service runs through an online portal, but the steps aren't always clear, and some aren't written anywhere. I know where people get stuck. I find the missing step, explain it in plain words, and check your details carefully before anything is submitted.</p>
 
         <p>Trust and security are at the core of my work. I spent <strong>14 years in banking</strong>, working under Know Your Customer rules, and every year I administer exams for the <strong>Overseas Examinations Commission</strong>, where protecting confidential materials is the job. I bring that same care to your records. Your information is used only for the service you asked for, and your supporting documents are deleted automatically within 30 days of completion. The details are in my <a href="/privacy.html">Privacy Policy</a>.</p>
 
-        <p>Whether you're running your own business in Jamaica or handling your affairs from overseas, you send your details and I take it from there.</p>
+        <p>Whether you're running your own business in Jamaica or handling your affairs from overseas, tell me what's happening, and I'll show you the next step: a guide, help to finish, or I do it for you.</p>
       </div>
     </section>
 
     <!-- WHAT I HELP WITH -->
     <div class="approach-head">
       <h2>What I help with</h2>
-      <p>Three areas, all handled online.</p>
+      <p>Four areas, all handled online.</p>
     </div>
 
     <div class="tiers">
 
-      <section class="card tier" aria-labelledby="area-1">
+      <section class="card tier" aria-labelledby="area-0">
         <span class="num">1</span>
-        <h3 id="area-1">Self-employed tax</h3>
-        <span class="badge">TAJ account, filing and payments</span>
-        <p>Guided filing of your yearly self-employed tax return (S04) on the TAJ portal, set-up and tour of your TAJ online account, and paying your tax or NIS balance for you. Tools to keep your records in order all year.</p>
-        <p class="eg"><a href="/self-employed-tax">See self-employed tax →</a></p>
+        <h3 id="area-0">Portal and Paperwork Help</h3>
+        <span class="badge">Stuck online, or a letter you don't understand</span>
+        <p>Started something online and can't finish? Got a form or letter and don't know what it wants? I find out what's needed, contact the agency if I have to, and give you every step in writing.</p>
+        <p class="eg"><a href="/portal-paperwork-help">See Portal and Paperwork Help →</a></p>
       </section>
 
       <section class="card tier" aria-labelledby="area-2">
@@ -339,8 +347,16 @@
         <span class="num">3</span>
         <h3 id="area-3">Travel documents</h3>
         <span class="badge">Passport, visa and police record</span>
-        <p>Digital passport renewal delivered to your door, US visitor visa forms prepared and reviewed with you, and police record applications set up right the first time.</p>
+        <p>Digital passport renewal delivered to your door, US visa forms prepared and reviewed with you, and police record applications set up right the first time.</p>
         <p class="eg"><a href="/travel-documents">See travel documents →</a></p>
+      </section>
+
+      <section class="card tier" aria-labelledby="area-1">
+        <span class="num">4</span>
+        <h3 id="area-1">Self-employed tax</h3>
+        <span class="badge">TAJ account, filing and payments</span>
+        <p>Guided filing of your yearly self-employed tax return (S04) on the TAJ portal, set-up and tour of your TAJ online account, and paying your tax or NIS balance for you. Tools to keep your records in order all year.</p>
+        <p class="eg"><a href="/self-employed-tax">See self-employed tax →</a></p>
       </section>
 
     </div>
@@ -350,9 +366,24 @@
       <h2>How it works</h2>
     </div>
     <ol class="steps">
-      <li class="card"><span class="step-num" aria-hidden="true">1</span><h3>Choose your service</h3><p>Answer a few quick questions about your situation. It takes about two minutes.</p></li>
-      <li class="card"><span class="step-num" aria-hidden="true">2</span><h3>I confirm everything before you pay</h3><p>What's needed and the full cost, agency fees included, before any money goes to the agency.</p></li>
-      <li class="card"><span class="step-num" aria-hidden="true">3</span><h3>Accept my terms, then I take it from there</h3><p>Filing, follow-up and delivery by pickup or courier, with updates along the way.</p></li>
+      <li class="card"><span class="step-num" aria-hidden="true">1</span><h3>Free first chat</h3><p>Tell me what's happening. I listen, ask questions and find out what your case really needs.</p></li>
+      <li class="card"><span class="step-num" aria-hidden="true">2</span><h3>I tell you what I can do and the fee</h3><p>A guide, help to finish, or I do it for you. You know the full cost, agency fees included, before you pay anything.</p></li>
+      <li class="card"><span class="step-num" aria-hidden="true">3</span><h3>You decide, then I get to work</h3><p>No pressure. If you go ahead, I take it from there, with updates along the way.</p></li>
+    </ol>
+
+    <!-- WHERE I DRAW THE LINE -->
+    <div class="approach-head" id="limits">
+      <h2>Where I draw the line</h2>
+      <p>So you know exactly what to expect from me.</p>
+    </div>
+    <ol class="limits">
+      <li><b>I'm not a lawyer.</b> I don't give legal advice. If your case needs one, I'll tell you.</li>
+      <li><b>I don't give tax advice.</b> I help you file and pay correctly, but you work out your own figures.</li>
+      <li><b>I never ask for your passwords, PINs or card numbers.</b> You stay in charge of your own accounts.</li>
+      <li><b>I can't promise an agency's decision.</b> A visa, a passport or an approval is up to the agency. I make sure you're as ready as you can be.</li>
+      <li><b>I only work with people I can verify.</b></li>
+      <li><b>Everything is online.</b> I don't meet clients in person.</li>
+      <li><b>I'm independent.</b> I'm not part of, or acting for, any government agency.</li>
     </ol>
 
     <!-- WHY CLIENTS TRUST ME (moved from the homepage) -->
@@ -362,6 +393,7 @@
     <div class="trust">
       <section class="card"><h3>Checked before you pay</h3><p>I review your details against each agency's requirements before anything is submitted, so you avoid rejections, delays and wasted trips to PICA, TAJ and the JCF.</p></section>
       <section class="card"><h3>Your documents are safe with me</h3><p>Used only to prepare your application, never shared with third parties, and securely deleted once it's complete. Read my <a href="/privacy.html">Privacy Policy</a>.</p></section>
+      <section class="card"><h3>No pressure</h3><p>Your first chat is free, and you decide before you pay anything.</p></section>
       <section class="card"><h3>A registered Jamaican business</h3><p>Laura Clarke Administrative Services is registered with the Companies Office of Jamaica.</p></section>
     </div>
 
@@ -381,10 +413,10 @@
     <!-- CTA BANNER -->
     <section class="cta" aria-labelledby="cta-title">
       <h2 id="cta-title">Ready to get your paperwork sorted?</h2>
-      <p>Choose your service to see what's included and the fee, then start your request.</p>
+      <p>Tell me what's happening. Your first chat is free.</p>
       <div class="cta-actions">
-        <a class="btn btn-gold" href="/#services">See the services</a>
-        <a class="btn btn-ghost" href="/contact.html">Tell us how we can help</a>
+        <a class="btn btn-gold" href="/contact.html">Start a free first chat</a>
+        <a class="btn btn-ghost" href="/#services">See the services</a>
       </div>
     </section>
 
@@ -396,7 +428,7 @@
       <div class="footer-top">
         <div>
           <p class="footer-brand">Laura Clarke Administrative Services</p>
-          <p>Pre-audits and local representation for Jamaican government documents, for clients at home and abroad.</p>
+          <p>Administrative consultant for Jamaicans at home and abroad.</p>
         </div>
         <nav class="footer-nav" aria-label="Footer">
           <ul>
