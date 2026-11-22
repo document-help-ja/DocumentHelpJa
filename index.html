@@ -1073,6 +1073,9 @@ body .dd-col h3 a:hover{text-decoration:underline}
 .nh .nh-hero-media img{object-position:58% 50%!important}
 @media(max-width:860px){.nh .nh-hero-media{height:260px}.nh .nh-hero-text{padding:24px 24px 8px}}
 @media(min-width:861px){.nh .nh-hero{display:grid!important;grid-template-columns:45% 55%;min-height:540px;align-items:stretch}.nh .nh-hero-media{position:relative!important;order:2;height:auto}.nh .nh-hero-text{order:1;align-self:center;justify-self:end;width:100%!important;max-width:32rem!important;margin:0!important;padding:48px 48px 48px 24px!important;position:static!important;transform:none!important}.nh .nh-hero h1{font-size:40px!important}}
+.nh .nh-hero-btns{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.nh .nh-btn-books{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border:1px solid var(--nh-teal,#0F6E56);color:var(--nh-teal,#0F6E56);font-weight:600;text-decoration:none;background:#fff}
+.nh .nh-btn-books:hover{background:#F0F6F4}
 </style>
 <header class="site-header">
   <div class="wrap hdr">
@@ -1081,6 +1084,7 @@ body .dd-col h3 a:hover{text-decoration:underline}
       <span class="brand-name">Laura Clarke<small>Administrative Services</small></span>
     </a>
     <nav class="nav" aria-label="Main">
+      <a class="nav-link" href="/books">Books</a>
       <button class="nav-btn" type="button" aria-expanded="false" aria-controls="dd-services">Services
         <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9FE1CB" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
       <button class="nav-btn" type="button" aria-expanded="false" aria-controls="dd-guides">Guides &amp; tips
@@ -1173,7 +1177,7 @@ body .dd-col h3 a:hover{text-decoration:underline}
     <a href="/about.html">About Laura</a>
     <a href="/faq.html">FAQ</a>
     <a href="/contact.html">Contact</a>
-    <a class="btn btn-navy" href="#services">Choose your service</a>
+    <a class="btn btn-navy" href="#doors">Choose your service</a>
   </nav>
 </header>
 
@@ -1185,7 +1189,7 @@ body .dd-col h3 a:hover{text-decoration:underline}
 <div class="nh-hero-text">
 <h1 id="hero-title">Jamaican paperwork, explained step by step.</h1>
 <p class="nh-lead">Taxes, driving, travel, working abroad, hiring staff. Find your situation, follow the steps, and get it right the first time.</p>
-<a class="nh-btn-light" href="#doors">Where are you stuck? ↓</a>
+<div class="nh-hero-btns"><a class="nh-btn-light" href="#doors">Where are you stuck? ↓</a><a class="nh-btn-books" href="/books">See the books</a></div>
 <p class="nh-note">Independent private service. Not a government agency.</p>
 </div>
 </section>
@@ -1220,7 +1224,7 @@ body .dd-col h3 a:hover{text-decoration:underline}
 <section class="bks" aria-labelledby="books-title">
 <div class="bks-in">
 <h2 id="books-title">The books</h2>
-<p>Paperbacks on Amazon, shipped to you or your courier address. Tap a cover to look inside.</p>
+<p>Paperbacks on Amazon, shipped to you or your courier address. Tap a cover to look inside, or <a href="/books" style="color:#fff;text-decoration:underline">see all the books</a>.</p>
 <div class="bks-row"><a class="bk" href="/s04-tax-record-planner"><img src="assets/s04-tax-record-planner-cover.webp" alt="Cover of the Self-Employed Tax Record Planner" loading="lazy" decoding="async"><span class="bk-t">Tax Record Planner</span><span class="bk-s">Book 1 · US$19.99</span></a><a class="bk" href="/dont-pay-tax-you-dont-owe"><img src="assets/dont-pay-tax-you-dont-owe-cover.webp" alt="Cover of Don’t Pay Tax You Don’t Owe" loading="lazy" decoding="async"><span class="bk-t">Don’t Pay Tax You Don’t Owe</span><span class="bk-s">Book 2 · US$17.99</span></a><a class="bk" href="/sole-traders-guide-to-payroll"><img src="assets/sole-traders-guide-to-payroll-cover.webp" alt="Cover of The Sole Trader’s Guide to Payroll" loading="lazy" decoding="async"><span class="bk-t">The Sole Trader’s Guide to Payroll</span><span class="bk-s">Book 3 · Coming soon</span></a><a class="bk" href="/your-h2b-season"><img src="assets/your-h2b-season-cover.webp" alt="Cover of Your H-2B Season" loading="lazy" decoding="async"><span class="bk-t">Your H-2B Season</span><span class="bk-s">Coming soon</span></a></div>
 </div>
 </section>
@@ -1274,7 +1278,8 @@ body .dd-col h3 a:hover{text-decoration:underline}
       <div>
         <h3>Explore</h3>
         <ul>
-          <li><a href="#services">Services</a></li>
+          <li><a href="/books">Books</a></li>
+          <li><a href="#doors">Services</a></li>
           <li><a href="/s04-tax-record-planner">Self-Employed Tax Record Planner</a></li>
           <li><a href="/insights.html">Guides &amp; tips</a></li>
           <li><a href="/free-kits">Free kits</a></li>
