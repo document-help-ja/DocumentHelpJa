@@ -1201,6 +1201,14 @@ body .dd-col h3 a:hover{text-decoration:underline}
 .fc-more{display:block;text-align:center;color:var(--nh-teal);font:500 14px var(--sans);margin-top:2px}
 @media(min-width:700px){.fc{padding:44px 24px 46px}.fc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}}
 @media(min-width:1000px){.fc{margin-top:24px;padding:36px 24px}.fc-in{max-width:72rem;display:grid;grid-template-columns:15rem minmax(0,1fr);gap:40px;align-items:center}.fc-head{text-align:left;margin:0}.fc-head p{font-size:15px}.fc-card{padding:18px 20px;gap:6px}.fc-card h3{font-size:18px}.fc-card p.fc-l{font-size:14px;margin-bottom:6px}.fc-btn{padding:11px 14px;font-size:14px}}
+.fc-feat{border:1px solid #185FA5;border-left:1px solid #185FA5;align-items:center;text-align:center}
+.fc-cover{display:block;width:150px;margin:0 auto 6px}.fc-cover img{display:block;width:100%;height:auto;border:1px solid #DDE5E2}
+.fc-feat-body{display:flex;flex-direction:column;gap:8px;width:100%}
+.fc-card.fc-feat h3{font-family:Georgia,'Times New Roman',serif;font-size:30px;line-height:1.15;font-weight:700;margin:2px 0 0}
+.fc-buy{display:block;text-align:center;border:1px solid var(--nh-teal);color:var(--nh-teal);text-decoration:none;font:600 15px/1.2 var(--sans);padding:13px 16px}
+.fc-buy:hover{background:var(--nh-mint)}
+@media(min-width:700px){.fc-feat{grid-column:1/-1;flex-direction:row;text-align:left;gap:24px}.fc-cover{width:170px;margin:0;flex:none}.fc-feat-body .fc-btn,.fc-feat-body .fc-buy{max-width:22rem}.fc-card.tax{grid-column:1/-1}.fc-card.tax .fc-btn,.fc-card.tax .fc-more{max-width:22rem}}
+@media(min-width:1000px){.fc-card.fc-feat h3{font-size:30px}.fc-card.fc-feat{padding:22px 24px}}
 </style>
 <main id="main" class="story nh">
 
@@ -1222,12 +1230,15 @@ body .dd-col h3 a:hover{text-decoration:underline}
 <p>12 quick questions. Tick Yes or Not sure, and see where you stand before you start.</p>
 </div>
 <div class="fc-grid">
-<div class="fc-card abroad">
-<p class="fc-cat">WORKING ABROAD · H-2B</p>
-<h3>Before You Say Yes</h3>
-<p class="fc-l">For anyone about to take H-2B work. Check it before you sign, pay or pack.</p>
-<a class="fc-btn" href="/assets/h2b-before-you-say-yes-checklist.pdf" download>Download the free PDF</a>
-<a class="fc-more" href="/your-h2b-season">See the H-2B book →</a>
+<div class="fc-card abroad fc-feat">
+<a class="fc-cover" href="/your-h2b-season"><img src="assets/your-h2b-season-cover.webp" width="935" height="1210" alt="Cover of Your H-2B Season, guidebook and planner" loading="lazy" decoding="async"></a>
+<div class="fc-feat-body">
+<p class="fc-cat">IN SEASON NOW · H-2B</p>
+<h3>Your H-2B Season</h3>
+<p class="fc-l">Guidebook and planner. Your numbers, papers and money records in one place, from job offer to coming home.</p>
+<a class="fc-btn" href="/assets/h2b-before-you-say-yes-checklist.pdf" download>Free checklist: Before You Say Yes</a>
+<a class="fc-buy" href="/your-h2b-season">Get the book · US$14.99</a>
+</div>
 </div>
 <div class="fc-card tax">
 <p class="fc-cat">SELF-EMPLOYED TAX · S04</p>
