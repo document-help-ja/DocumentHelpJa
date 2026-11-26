@@ -1215,7 +1215,28 @@ body .dd-col h3 a:hover{text-decoration:underline}
 @media(min-width:700px){.fc-feat{grid-column:1/-1;flex-direction:row;text-align:left;gap:24px}.fc-feat-body .fc-more{text-align:left}.fc-cover{width:170px;margin:0;flex:none}.fc-feat-body .fc-btn,.fc-feat-body .fc-buy,.fc-feat-body .fc-soon{max-width:22rem}}
 @media(min-width:1000px){.fc-card.fc-feat h3{font-size:30px}.fc-card.fc-feat{padding:22px 24px}}
 .fc-more-list{grid-column:1/-1;background:#fff;border:1px solid #DDE5E2;padding:6px 22px}.fc-ml-h{font:600 12px/1.2 var(--sans);letter-spacing:1.2px;text-transform:uppercase;color:#6B7570;margin:12px 0 4px}.fc-more-list a{display:grid;grid-template-columns:1fr auto;column-gap:16px;text-decoration:none;padding:13px 0;border-top:1px solid #E6ECEA;color:inherit}.fc-ml-t{font:600 15px/1.35 var(--sans);color:#1d2a2a}.fc-ml-s{grid-column:1;font-size:13px;color:#6B7570;margin-top:3px}.fc-ml-go{grid-column:2;grid-row:1/3;align-self:center;font:500 14px var(--sans);color:var(--nh-teal);text-decoration:underline;white-space:nowrap}
-.fc-dl{display:flex;flex-direction:column;gap:3px;padding:13px 16px}.fc-dl-t{font:700 15px/1.25 var(--sans)}.fc-dl-s{font:400 13px/1.3 var(--sans);opacity:.88}.fc-navy{background:#183650}.fc-navy:hover{background:#0f2840}
+.hf{grid-column:1/-1;background:#fff;border:1px solid #185FA5;padding:24px 26px}
+.hf-book{display:flex;gap:28px;align-items:center}
+.hf-cover{flex:none;width:170px;display:block}.hf-cover img{display:block;width:100%;height:auto;border:1px solid #DDE5E2}
+.hf-info{display:flex;flex-direction:column;gap:8px;min-width:0}
+.hf-info h3{font-family:Georgia,'Times New Roman',serif;font-size:30px;line-height:1.15;font-weight:700;margin:2px 0 0}
+.hf-sub{font-size:15px;color:#4A5560;margin:0}
+.hf-info .fc-l{margin:4px 0 0}
+.hf-price{font-size:15px;margin:6px 0 2px;color:#1d2a2a}
+.hf-amz{display:block;max-width:22rem;text-align:center;background:#D4A23A;color:#0B1F37;text-decoration:none;font:700 15px/1.2 var(--sans);padding:14px 16px}
+.hf-amz:hover{background:#c39230}
+.hf-with{font:600 12px/1.2 var(--sans);letter-spacing:1.2px;text-transform:uppercase;color:#6B7570;margin:26px 0 12px;padding-top:20px;border-top:1px solid #E6ECEA}
+.hf-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.hf-dl{display:flex;flex-direction:column;gap:6px;padding:18px 18px 20px;border-top:5px solid}
+.hf-dl h4{font-family:Georgia,'Times New Roman',serif;font-size:22px;line-height:1.2;margin:0}
+.hf-dl p{margin:0;font-size:14px;line-height:1.5;color:#2f3b3b}
+.hf-tag{font:700 11px/1.2 var(--sans)!important;letter-spacing:1.3px}
+.hf-btn{display:block;text-align:center;color:#fff;text-decoration:none;font:600 15px/1.2 var(--sans);padding:13px 14px;margin-top:auto}
+.hf-dl p:nth-of-type(2){margin-bottom:10px}
+.hf-green{background:#E8F3EE;border-color:#0E6E55}.hf-green .hf-tag{color:#0E6E55}.hf-green .hf-btn{background:#0E6E55}
+.hf-navy{background:#E9EEF4;border-color:#183650}.hf-navy .hf-tag{color:#183650}.hf-navy .hf-btn{background:#183650}
+.hf .fc-tt{margin:14px 0 0;font-size:13px;color:#6B7570}
+@media(max-width:640px){.hf{padding:18px}.hf-book{flex-direction:column;text-align:center}.hf-cover{width:160px}.hf-amz{max-width:none}.hf-pair{grid-template-columns:1fr}.hf .fc-tt{text-align:center}}
 </style>
 <main id="main" class="story nh">
 
@@ -1232,27 +1253,52 @@ body .dd-col h3 a:hover{text-decoration:underline}
 <section class="fc" id="free-checklists" aria-labelledby="fc-title">
 <div class="fc-in">
 <div class="fc-head">
-<p class="fc-tag">FREE · NO SIGN-UP</p>
-<h2 id="fc-title">Free checklists</h2>
-<p>12 quick questions. Tick Yes or Not sure, and see where you stand before you start.</p>
+<p class="fc-tag">IN SEASON NOW</p>
+<h2 id="fc-title">The book and free checklists</h2>
+<p>See the book first, then download the free checklists. No sign-up needed.</p>
 </div>
 <div class="fc-grid">
-<div class="fc-card abroad fc-feat">
-<a class="fc-cover" href="/your-h2b-season"><img src="assets/your-h2b-season-cover.webp" width="935" height="1210" alt="Cover of Your H-2B Season: A Guidebook and Seasonal Planner, by Laura K. Clarke" loading="lazy" decoding="async"></a>
-<div class="fc-feat-body">
-<p class="fc-cat">H-2B SEASON IS ON</p>
+<div class="hf">
+<div class="hf-book">
+<a class="hf-cover" href="/your-h2b-season"><img src="assets/your-h2b-season-cover.webp" width="935" height="1210" alt="Cover of Your H-2B Season: A Guidebook and Seasonal Planner, by Laura K. Clarke" loading="lazy" decoding="async"></a>
+<div class="hf-info">
+<p class="fc-cat">H-2B SEASON IS ON · THE BOOK</p>
 <h3>Your H-2B Season</h3>
-<p class="fc-l">Going to the U.S. on H-2B work? Start with the two free downloads below. Then keep the guidebook and planner with you all season, from the first call to the flight home.</p>
-<a class="fc-btn fc-dl" href="/assets/h2b-before-you-say-yes-checklist.pdf" download><span class="fc-dl-t">Free checklist: Before You Say Yes</span><span class="fc-dl-s">12 questions before you sign, pay or pack · PDF</span></a>
-<a class="fc-btn fc-dl fc-navy" href="/assets/h2b-going-direct-guide.pdf" download><span class="fc-dl-t">Free guide: Going Direct</span><span class="fc-dl-s">Find the jobs and contact the employer yourself · PDF</span></a>
-<a class="fc-buy" href="https://link.amazon/B06OdfnSz" target="_blank" rel="noopener sponsored">Get the book on Amazon · US$14.99</a>
+<p class="hf-sub">A guidebook and seasonal planner for Jamaican H-2B workers</p>
+<p class="fc-l">Going direct or using an agency, keep everything for your season in one place, from the first call to the flight home.</p>
+<p class="hf-price">Paperback · <strong>US$14.99</strong></p>
+<a class="hf-amz" href="https://link.amazon/B06OdfnSz" target="_blank" rel="noopener sponsored">Buy the paperback on Amazon</a>
+</div>
+</div>
+<p class="hf-with">Free with this book · no sign-up</p>
+<div class="hf-pair">
+<div class="hf-dl hf-green">
+<p class="hf-tag">FREE CHECKLIST</p>
+<h4>Before You Say Yes</h4>
+<p>12 questions to answer before you sign, pay or pack.</p>
+<a class="hf-btn" href="/assets/h2b-before-you-say-yes-checklist.pdf" download>Download the checklist</a>
+</div>
+<div class="hf-dl hf-navy">
+<p class="hf-tag">FREE GUIDE</p>
+<h4>Going Direct</h4>
+<p>Find real jobs and contact the employer yourself. 18 pages.</p>
+<a class="hf-btn" href="/assets/h2b-going-direct-guide.pdf" download>Download the guide</a>
+</div>
+</div>
 <p class="fc-tt">Saw our TikTok videos? Both free downloads are here.</p>
 </div>
+<div class="fc-card farm">
+<p class="fc-cat">CANADA FARM WORK</p>
+<h3>Before You Say Yes: Canada</h3>
+<p class="fc-l">12 questions before you go on farm work in Canada. Book coming soon.</p>
+<a class="fc-btn" href="/assets/farm-work-before-you-say-yes-checklist.pdf" download>Free checklist: Canada farm work</a>
 </div>
-<div class="fc-more-list">
-<p class="fc-ml-h">More free checklists</p>
-<a href="/assets/farm-work-before-you-say-yes-checklist.pdf" download><span class="fc-ml-t">Before You Say Yes: Canada farm work</span><span class="fc-ml-s">12 questions before you go · Book coming soon</span><span class="fc-ml-go">Download PDF ↓</span></a>
-<a href="/assets/s04-before-you-hit-submit-checklist.pdf" download><span class="fc-ml-t">Before You Hit Submit: S04</span><span class="fc-ml-s">For filing your S04 on the TAJ portal</span><span class="fc-ml-go">Download PDF ↓</span></a>
+<div class="fc-card tax">
+<p class="fc-cat">SELF-EMPLOYED TAX · S04</p>
+<h3>Before You Hit Submit</h3>
+<p class="fc-l">For anyone filing an S04 on the TAJ portal. Check it before you open your return.</p>
+<a class="fc-btn" href="/assets/s04-before-you-hit-submit-checklist.pdf" download>Download the free PDF</a>
+<a class="fc-more" href="/dont-pay-tax-you-dont-owe">See the S04 filing book →</a>
 </div>
 </div>
 </div>
