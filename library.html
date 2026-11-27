@@ -221,6 +221,11 @@ a{color:var(--navy)}
 .topic .goes{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
 .topic .goes a{color:var(--navy);font-weight:600}
 .final.plain{background:#fff}
+.to-shelves{margin-top:28px}
+.top-btn{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--navy);color:#fff;border:1.5px solid var(--brass);font-size:20px;text-decoration:none;opacity:0;pointer-events:none;transition:opacity .2s}
+.top-btn.show{opacity:1;pointer-events:auto}
+.top-btn:hover{color:var(--brass-light)}
+@media (min-width:861px){.top-btn{display:none}}
 </style>
 </head>
 <body id="top">
@@ -254,7 +259,7 @@ a{color:var(--navy)}
 
 <main id="main">
 
-<section class="page-head" aria-labelledby="lib-title">
+<section class="page-head" id="shelves" aria-labelledby="lib-title">
   <div class="wrap">
     <p class="label">The Library</p>
     <h1 id="lib-title">Books, checklists and guides</h1>
@@ -289,7 +294,7 @@ a{color:var(--navy)}
           <p class="label">Self-employed tax · Book 1</p>
           <h3>Self-Employed Tax Record Planner</h3>
           <p class="d">Every S04 figure, in portal order. For anyone filing their own, or a preparer filing for clients.</p>
-          <p class="pr">Paperback · US$19.99</p>
+          <p class="pr">Paperback · US$17.99</p>
           <div class="acts"><a class="btn" href="PASTE-AMAZON-LINK-BOOK-1" target="_blank" rel="noopener sponsored">Buy on Amazon</a><a class="link" href="/s04-tax-record-planner">Look inside</a></div>
         </div>
         <a class="cover3d" href="/s04-tax-record-planner"><img src="assets/s04-tax-record-planner-cover.webp" alt="Cover of the Self-Employed Tax Record Planner" loading="lazy" decoding="async"></a>
@@ -316,6 +321,7 @@ a{color:var(--navy)}
       </article>
     </div>
     <p class="shelf-note">General guides, not tax, legal or immigration advice.</p>
+    <p class="to-shelves"><a class="link" href="#shelves">Back to the top ↑</a></p>
   </div>
 </section>
 
@@ -342,6 +348,7 @@ a{color:var(--navy)}
         <div class="cl"><h4>Self-Employed Tax Survival Kit</h4><p>Papers, dates and claims.</p><p class="meta">Free PDF · 2 pages</p><a class="link" href="PASTE-PDF-LINK-SURVIVAL-KIT" download>Download the kit</a></div>
       </div>
     </div>
+    <p class="to-shelves"><a class="link" href="#shelves">Back to the top ↑</a></p>
   </div>
 </section>
 
@@ -385,6 +392,7 @@ a{color:var(--navy)}
         <ul><li><a href="/pica-card-payment-failed">PICA portal payment failed? Fixes to try</a></li><li><a href="PASTE-GUIDE-LINK-POLICE-RECORD">Getting your police record</a></li></ul>
       </article>
     </div>
+    <p class="to-shelves"><a class="link" href="#shelves">Back to the top ↑</a></p>
   </div>
 </section>
 
@@ -397,6 +405,7 @@ a{color:var(--navy)}
 </section>
 
 </main>
+<a class="top-btn" href="#shelves" aria-label="Back to the top">↑</a>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -441,6 +450,14 @@ a{color:var(--navy)}
   });
   nav.addEventListener('click',function(e){if(e.target.closest('a')){nav.hidden=true;btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}});
   document.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+<script>
+(function(){
+  var b=document.querySelector('.top-btn'),j=document.querySelector('.jump');
+  if(!b||!j)return;
+  function u(){b.classList.toggle('show',j.getBoundingClientRect().bottom<0);}
+  window.addEventListener('scroll',u,{passive:true});u();
 })();
 </script>
 </body>
