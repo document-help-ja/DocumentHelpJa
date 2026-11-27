@@ -1,51 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core Site Pages -->
-  <url><loc>https://documenthelpja.com/</loc><lastmod>2026-11-22</lastmod></url>
-  <url><loc>https://documenthelpja.com/insights.html</loc><lastmod>2026-11-21</lastmod></url>
-  <url><loc>https://documenthelpja.com/free-kits</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://documenthelpja.com/about.html</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://documenthelpja.com/contact.html</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://documenthelpja.com/faq.html</loc><lastmod>2026-11-01</lastmod></url>
+  <!-- Main pages -->
+  <url><loc>https://documenthelpja.com/</loc><lastmod>2026-11-27</lastmod></url>
+  <url><loc>https://documenthelpja.com/library</loc><lastmod>2026-11-27</lastmod></url>
+  <url><loc>https://documenthelpja.com/consultation</loc><lastmod>2026-11-27</lastmod></url>
+  <url><loc>https://documenthelpja.com/renewals</loc><lastmod>2026-11-27</lastmod></url>
+  <url><loc>https://documenthelpja.com/about</loc><lastmod>2026-11-27</lastmod></url>
   <url><loc>https://documenthelpja.com/terms.html</loc><lastmod>2026-10-24</lastmod></url>
-  <url><loc>https://documenthelpja.com/card.html</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://documenthelpja.com/privacy.html</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://documenthelpja.com/card.html</loc><lastmod>2026-10-27</lastmod></url>
 
-  <!-- Service Pages -->
+  <!-- Books and checklist sign-up -->
+  <url><loc>https://documenthelpja.com/your-h2b-season</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://documenthelpja.com/s04-tax-record-planner</loc><lastmod>2026-11-27</lastmod></url>
+  <url><loc>https://documenthelpja.com/dont-pay-tax-you-dont-owe</loc><lastmod>2026-11-22</lastmod></url>
+  <url><loc>https://documenthelpja.com/sole-traders-guide-to-payroll</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://documenthelpja.com/checklist</loc><lastmod>2026-11-16</lastmod></url>
+
+  <!-- Renewal services -->
   <url><loc>https://documenthelpja.com/jamaican-passport-services.html</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaica-police-record.html</loc><lastmod>2026-10-27</lastmod></url>
   <url><loc>https://documenthelpja.com/drivers-licence-renewal.html</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://documenthelpja.com/motor-vehicle-licence-renewal.html</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaica-police-record.html</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaican-rgd-certificates.html</loc><lastmod>2026-10-27</lastmod></url>
 
   <!-- Guides -->
   <url><loc>https://documenthelpja.com/jamaica-h2b-work-visa-guide</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaica-rgd-certificates-guide</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://documenthelpja.com/pica-card-payment-failed</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://documenthelpja.com/trn-without-photo-id</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaica-passport-guide</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaican-citizenship-while-home</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaican-citizenship-by-descent</loc><lastmod>2026-10-27</lastmod></url>
+  <url><loc>https://documenthelpja.com/self-employed-s04-tax-guide</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://documenthelpja.com/self-employed-tax-traps-jamaica</loc><lastmod>2026-11-21</lastmod></url>
+  <url><loc>https://documenthelpja.com/self-employed-nis-minimum-jamaica</loc><lastmod>2026-11-21</lastmod></url>
   <url><loc>https://documenthelpja.com/jamaica-learners-permit-guide.html</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://documenthelpja.com/jamaica-traffic-tickets-demerit-points</loc><lastmod>2026-11-08</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaica-c5-travel-form</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaica-nis-guide</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://documenthelpja.com/self-employed-s04-tax-guide</loc><lastmod>2026-11-21</lastmod></url>
-  <url><loc>https://documenthelpja.com/self-employed-nis-minimum-jamaica</loc><lastmod>2026-11-21</lastmod></url>
-  <url><loc>https://documenthelpja.com/self-employed-tax-traps-jamaica</loc><lastmod>2026-11-21</lastmod></url>
-  <url><loc>https://documenthelpja.com/us-visitor-visa-services.html</loc><lastmod>2026-10-27</lastmod></url>
-  <url><loc>https://documenthelpja.com/jamaica-us-visitor-visa-guide</loc><lastmod>2026-10-31</lastmod></url>
-  <url><loc>https://documenthelpja.com/books</loc><lastmod>2026-11-22</lastmod></url>
-  <url><loc>https://documenthelpja.com/s04-tax-record-planner</loc><lastmod>2026-11-21</lastmod></url>
-  <url><loc>https://documenthelpja.com/dont-pay-tax-you-dont-owe</loc><lastmod>2026-11-22</lastmod></url>
-  <url><loc>https://documenthelpja.com/sole-traders-guide-to-payroll</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://documenthelpja.com/your-h2b-season</loc><lastmod>2026-11-22</lastmod></url>
-  <url><loc>https://documenthelpja.com/checklist</loc><lastmod>2026-11-16</lastmod></url>
-  <url><loc>https://documenthelpja.com/self-employed-tax</loc><lastmod>2026-11-21</lastmod></url>
-  <url>
-    <loc>https://documenthelpja.com/portal-paperwork-help</loc>
-    <lastmod>2026-11-17</lastmod>
-  </url>
-  <url><loc>https://documenthelpja.com/motorist</loc><lastmod>2026-11-08</lastmod></url>
-  <url><loc>https://documenthelpja.com/travel-documents</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://documenthelpja.com/jamaica-passport-guide</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://documenthelpja.com/pica-card-payment-failed</loc><lastmod>2026-10-27</lastmod></url>
 </urlset>
